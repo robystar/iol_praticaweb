@@ -16,6 +16,7 @@ if 'btn_successivo' in context.REQUEST.keys():
 <p><span class="plominoSubformClass">sub_parti_comuni</span></p>
 <p><span class="plominoSubformClass">sub_immobile_destinazione</span></p>
 <p><span class="plominoSubformClass">sub_intervento_cila</span></p>
+<p><span class="plominoSubformClass">sub_precedenti_edilizi_cila</span></p>
 <p><span class="plominoSubformClass">sub_tipologia_intervento_cila</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

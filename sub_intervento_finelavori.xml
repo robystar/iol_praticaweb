@@ -23,6 +23,12 @@
 <h5>(ai sensi del'art. 26 comma 10 della L.R. 16/08 la comunicazione di fine lavori deve pervenire entro sessanta giorni dall'avvenuta ultimazione dei lavori; in caso di mancata comunicazione della data di ultimazione lavori sarà applicata la sanzione amministrativa pecuniaria pari a € 1033,00)</h5>
 <div class="alert alert-success"><h5>IL MANCATO TEMPESTIVO INVIO DELLA COMUNICAZIONE DI ULTIMAZIONE LAVORI COSTITUISCE VIOLAZIONE DELL'ART. 92 DEL VIGENTE REGOLAMENTO EDILIZIO SOGGETTA ALL'APPLICAZIONE DELLE PROCEDURE SANZIONARIE PREVISTE ALL'ART. 143 DEL REGOLAMENTO EDILIZIO. IN TALE EVENTUALITA LA COMUNICAZIONE DI ULTIMAZIONE DOVRA ESSERE TRASMESSA SOTTO FORMA DI AUTOCERTIFICAZIONE.</h5></div>
 </fieldset>
+<fieldset class="scheduler-border" title="Richiedente">
+<legend class="scheduler-border">Segnalazione Certificata di Agibilità (SCA)</legend>
+<div>
+<span class="plominoLabelClass">presentazione_sca_opt</span><span class="plominoFieldClass">presentazione_sca_opt</span>
+</div>
+</fieldset>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">TIPOLOGIA DI INTERVENTO E DESCRIZIONE SINTETICA DELLE OPERE</legend>
 <div>
@@ -153,6 +159,42 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 <member>
 <name>selectionlistformula</name>
 <value><string>['''non configurano variazione essenziale e sono conformi alle prescrizioni urbanistico edilizie (articolo 25, comma 2 l.r. 16/2008 e s.m.)|1''','''consistono in opere realizzabili mediante CILA ai sensi articolo 6 bis d.P.R. 380/2001 (art. 25, comma 3 l.r. 16/2008 e s.m.)|2''','''non sono state realizzate varianti in corso d'opera|3''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="presentazione_sca_opt" title="Presentazione di Segnalazione Certificata di Agibilità" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">presentazione_sca_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Le opere NON richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) in quanto NON rientrano nei casi previsti dall'art.24 del DPR 380/01 e s.m.i.|1''','''Le opere richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) ai sensi dell'art.24 del DPR 380/01 e s.m.i., tale comunicazione verrà inoltrata a termini di legge|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

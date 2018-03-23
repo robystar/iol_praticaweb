@@ -11,8 +11,7 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <fieldset class="scheduler-border" title="Sportello">
-<legend class="scheduler-border">SPORTELLO AL QUALE INVIARE L'ISTANZA</legend> <span class="plominoFieldClass">nascondi_comune_richiesta</span>
-<div class="row-fluid">
+<legend class="scheduler-border">SPORTELLO AL QUALE INVIARE L'ISTANZA</legend> <span class="plominoFieldClass">nascondi_comune_richiesta</span><div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">iol_tipo_proc</span><span class="plominoFieldClass">iol_tipo_proc</span>
 </div>
@@ -24,11 +23,9 @@
 <p><span class="plominoHidewhenClass">start:hw_pagopa_disabled</span></p>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">Modalità di pagamento</legend>
-<div class="row-fluid">
-<div class="span6">
+<div class="row-fluid"><div class="span6">
 <span class="plominoLabelClass">modalita_pagamento</span><span class="plominoFieldClass">modalita_pagamento</span>
-</div>
-</div>
+</div></div>
 </fieldset>
 <p><span class="plominoHidewhenClass">end:hw_pagopa_disabled</span></p>
 ]]></FormLayout>

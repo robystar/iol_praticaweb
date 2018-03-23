@@ -57,8 +57,8 @@
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>sourceview</name>
-<value><string>vista-istanze-da-protocollare</string></value>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -85,8 +85,8 @@
 ]</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
+<name>sourceview</name>
+<value><string>vista-istanze-da-protocollare</string></value>
 </member>
 </struct></value>
 </param>

@@ -16,12 +16,10 @@
 <div><span class="plominoSubformClass">00-protocollo</span></div>
 <p><span class="plominoFieldClass">iol_workflow_status</span></p>
 </fieldset>
-<!--RESPONSABILE DEL PROCEDIMENTO ASSEGNATO -->
-<p><span class="plominoHidewhenClass">start:hw_no_assegnata</span></p>
+<!--RESPONSABILE DEL PROCEDIMENTO ASSEGNATO --><p><span class="plominoHidewhenClass">start:hw_no_assegnata</span></p>
 <p><span class="plominoSubformClass">00-assegnazione</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_assegnata</span></p>
-<!--EVENTUALE CERTIFICATO RILASCIATO -->
-<p><span class="plominoHidewhenClass">start:hw_no_certificato</span></p>
+<!--EVENTUALE CERTIFICATO RILASCIATO --><p><span class="plominoHidewhenClass">start:hw_no_certificato</span></p>
 <p><span class="plominoSubformClass">00-certificato</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_certificato</span></p>
 <p><span class="plominoFieldClass">resoconto_finale</span></p>
@@ -310,6 +308,10 @@ return result]]></Formula>
 <value><string>INLINE</string></value>
 </member>
 <member>
+<name>field_mapping</name>
+<value><string>data_ora,annotazione,utente</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Data ora" },
@@ -327,10 +329,6 @@ return result]]></Formula>
         "height": 300
     }
 </string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>data_ora,annotazione,utente</string></value>
 </member>
 </struct></value>
 </param>

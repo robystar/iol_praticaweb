@@ -57,6 +57,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>MODAL</string></value>
 </member>
 <member>
+<name>field_mapping</name>
+<value><string>data_ora,attivita,utente,notifica,tipo</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Data ora" },
@@ -76,10 +80,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>data_ora,attivita,utente,notifica,tipo</string></value>
 </member>
 </struct></value>
 </param>

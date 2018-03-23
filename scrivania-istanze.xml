@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="scrivania-istanze" title="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" type="PlominoForm">
+    <element id="scrivania-istanze" title="LE MIE PRATICHE" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">scrivania-istanze</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
@@ -67,8 +67,8 @@
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>sourceview</name>
-<value><string>vista-istanze-compilazione</string></value>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -99,8 +99,8 @@
 ]</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
+<name>sourceview</name>
+<value><string>vista-istanze-compilazione</string></value>
 </member>
 </struct></value>
 </param>
@@ -126,8 +126,8 @@
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>sourceview</name>
-<value><string>vista-istanze-protocollate</string></value>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -160,8 +160,8 @@
 ]</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
+<name>sourceview</name>
+<value><string>vista-istanze-protocollate</string></value>
 </member>
 </struct></value>
 </param>
@@ -187,8 +187,8 @@
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>sourceview</name>
-<value><string>vista-istanze-da-protocollare</string></value>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -203,8 +203,8 @@
                  </string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
+<name>sourceview</name>
+<value><string>vista-istanze-da-protocollare</string></value>
 </member>
 </struct></value>
 </param>

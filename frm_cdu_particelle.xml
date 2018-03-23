@@ -66,6 +66,10 @@ if 'btn_successivo' in context.REQUEST.keys():
 <value><string>dlg_ubicazione_nct</string></value>
 </member>
 <member>
+<name>field_mapping</name>
+<value><string>nct_sezione,nct_foglio,nct_particella,nct_geometry</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Sezione" },
@@ -86,10 +90,6 @@ if 'btn_successivo' in context.REQUEST.keys():
         "height": 350
     }
 </string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>nct_sezione,nct_foglio,nct_particella,nct_geometry</string></value>
 </member>
 </struct></value>
 </param>

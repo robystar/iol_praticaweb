@@ -16,9 +16,7 @@
 <p><span class="plominoFieldClass">elenco_pagamenti</span></p>
 </fieldset>
 <!--
-<p><span class="plominoHidewhenClass">start:hw_pagamento_online_oneri</span></p>
-<p>Pagamento Online disattivato o Modalità di pagamento non online</p>
-<p><span class="plominoHidewhenClass">end:hw_pagamento_online_oneri</span></p>
+<p><span class="plominoHidewhenClass">start:hw_pagamento_online_oneri</span></p><p>Pagamento Online disattivato o Modalità di pagamento non online</p><p><span class="plominoHidewhenClass">end:hw_pagamento_online_oneri</span></p>
 -->
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
@@ -105,41 +103,29 @@ url = '%s/inviaPagoPA' %(context.absolute_url())
 html = ''
 if esito == 'OK':
     html = '''
-<div class="row-fluid">
-<div class="span12 alert alert-info">
+<div class="row-fluid"><div class="span12 alert alert-info">
     <h5>Pagamento effettuato. E' possibile effettuare un ulteriore pagamento.</h5>
-    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a>
-</div>
-</div>
+    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a></div></div>
 ''' %url
 elif esito == '':
     html = '''
-<div class="row-fluid">
-<div class="span12 alert alert-danger">
+<div class="row-fluid"><div class="span12 alert alert-danger">
     <h4>Non risultano pagamenti registrati.<br>Per proseguire è necessario effettuare il pagamento.</h4>
-    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a>
-</div>
-</div>
+    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a></div></div>
 ''' %url
 elif esito == 'ANNULLATA':
     html = '''
-<div class="row-fluid">
-<div class="span12 alert alert-danger">
+<div class="row-fluid"><div class="span12 alert alert-danger">
     <h4>Il pagamento è stato annullato.<br>Per proseguire è necessario effettuare il pagamento.</h4>
-    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a>
-</div>
-</div>
+    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a></div></div>
 ''' %url
 elif esito == 'ERRORE':
     html = '''
-<div class="row-fluid">
-<div class="span12 alert alert-danger">
+<div class="row-fluid"><div class="span12 alert alert-danger">
     <h4>Si sono verificati errori durante la procedura di pagamento.<br>Per proseguire è necessario effettuare il pagamento.</h4>
-    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a>
-</div>
-</div>
+    <a style="width:200px" class="btn pull-right wf-actions" id="" href="%s"><i class='icon-hand-right'></i><span>Effettua pagamento online</span></a></div></div>
 ''' %url
-return html    ]]></Formula>
+return html]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

@@ -18,7 +18,8 @@
 <span class="plominoHidewhenClass">start:hw_no_regolarita_immobile_2</span><div class="row-fluid"><div class="span5">
 <span class="plominoLabelClass">data_precedenti_edilizi</span><span class="plominoFieldClass">data_precedenti_edilizi</span>
 </div></div>
-<span class="plominoHidewhenClass">end:hw_no_regolarita_immobile_2</span> <span class="plominoHidewhenClass">start:hw_no_titoli_edilizi</span><p><span class="plominoLabelClass">elenco_titoli_edilizi</span><span class="plominoFieldClass">elenco_titoli_edilizi</span></p>
+<span class="plominoHidewhenClass">end:hw_no_regolarita_immobile_2</span> <span class="plominoHidewhenClass">start:hw_no_titoli_edilizi</span><p> </p>
+<p><span class="plominoLabelClass">elenco_titoli_edilizi</span><span class="plominoFieldClass">elenco_titoli_edilizi</span></p>
 <span class="plominoHidewhenClass">end:hw_no_titoli_edilizi</span><div>
 <span class="plominoFieldClass">regolarita_interventi_incorso</span><span class="plominoLabelClass">regolarita_interventi_incorso</span>
 </div>
@@ -170,7 +171,7 @@
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[if context.REQUEST.get('elenco_titoli_edilizi')=='[]':
     return "Inserire almeno un titolo nella tabella Titoli edilizi "]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>

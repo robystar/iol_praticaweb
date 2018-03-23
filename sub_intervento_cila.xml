@@ -241,7 +241,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-100Y", "dateFormat": "dd/mm/yy", "yearRange": "-100:+0"}'
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
@@ -315,6 +315,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>dlg_comunicazioni_cila</string></value>
 </member>
 <member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -332,10 +336,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 600
     }
 </string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
 </member>
 </struct></value>
 </param>
@@ -366,6 +366,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>dlg_comunicazioni_cila</string></value>
 </member>
 <member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -383,10 +387,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 600
     }
 </string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
 </member>
 </struct></value>
 </param>

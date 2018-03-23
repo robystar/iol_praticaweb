@@ -129,6 +129,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>dlg_comunicazioni_cila</string></value>
 </member>
 <member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -146,10 +150,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 600
     }
 </string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
 </member>
 </struct></value>
 </param>

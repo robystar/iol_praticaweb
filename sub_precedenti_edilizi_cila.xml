@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_precedenti_edilizi_scia" title="sub_precedenti_edilizi_scia" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_precedenti_edilizi_scia</id>
+    <element id="sub_precedenti_edilizi_cila" title="sub_precedenti_edilizi_cila" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_precedenti_edilizi_cila</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>

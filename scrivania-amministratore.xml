@@ -61,8 +61,8 @@
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>sourceview</name>
-<value><string>vista-tutte-istanze</string></value>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -94,8 +94,8 @@
 ]</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
+<name>sourceview</name>
+<value><string>vista-tutte-istanze</string></value>
 </member>
 </struct></value>
 </param>

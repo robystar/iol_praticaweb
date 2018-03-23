@@ -27,8 +27,7 @@ else:
 </div>
 <div class="span5">
 <p><span class="plominoHidewhenClass">start:hw_no_edit</span></p>
-<span class="plominoLabelClass">documenti_da_scaricare</span><span class="plominoFieldClass">documenti_da_scaricare</span>
-<p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
+<span class="plominoLabelClass">documenti_da_scaricare</span><span class="plominoFieldClass">documenti_da_scaricare</span><p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
 </div>
 <div class="span4">
 <span class="plominoLabelClass">allegato_certificato</span><span class="plominoFieldClass">allegato_certificato</span>

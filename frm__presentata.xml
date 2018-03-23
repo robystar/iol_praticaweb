@@ -54,8 +54,7 @@ if 'btn_successivo' in context.REQUEST.keys():
 ++resource++iol.document/js/iolGoogleMap.js
 ++resource++iol.praticaweb/js/controller_combo_civici.js
 ++resource++iol.praticaweb/js/controller_combo_particelle.js
-++resource++iol.praticaweb/js/controller_combo_particelle_nceu.js
-]]></ResourcesJS>
+++resource++iol.praticaweb/js/controller_combo_particelle_nceu.js]]></ResourcesJS>
       <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
 ++resource++iol.praticaweb/css/iol-sue.css
 resources/iol-custom.css]]></ResourcesCSS>
