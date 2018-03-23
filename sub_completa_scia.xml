@@ -1,0 +1,126 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_completa_scia" title="sub_completa_scia" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_scia</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
+<p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_comunicazione_digitale</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
+<fieldset class="scheduler-border" title="Protocollo">
+<legend class="scheduler-border">Dati di Protocollazione</legend>
+<p><span class="plominoSubformClass">base_sub_protocollo</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
+<!--FORM RICHIEDENTE--><fieldset class="scheduler-border" title="Richiedente">
+<legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
+<p><span class="plominoSubformClass">base_sub_fisica</span></p>
+<p><span class="plominoSubformClass">base_sub_fisica_recapiti</span></p>
+<p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
+<p><span class="plominoSubformClass">base_sub_giuridica</span></p>
+<p><span class="plominoSubformClass">sub_condominio</span></p>
+<p><span class="plominoSubformClass">sub_comproprietari</span></p>
+<p><span class="plominoSubformClass">base_sub_delegato</span></p>
+</fieldset>
+<p><span class="plominoSubformClass">sub_firma_digitale</span></p>
+<p><span class="plominoSubformClass">sub_consenso_pec</span></p>
+<p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
+<!--FORM UBICAZIONE INTERVENTO--><fieldset class="scheduler-border">
+<legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazioni_elenco</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">REGIMI VINCOLISTICI</legend> <span class="plominoSubformClass">sub_ubicazioni_vincoli</span>
+</fieldset>
+<!-- FORM INTERVENTO --><p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
+<p><span class="plominoSubformClass">sub_intervento_scia</span></p>
+<p><span class="plominoSubformClass">sub_immobile_destinazione</span></p>
+<p><span class="plominoSubformClass">sub_parti_comuni</span></p>
+<p><span class="plominoSubformClass">sub_precedenti_edilizi_scia</span></p>
+<p><span class="plominoSubformClass">sub_tipologia_intervento_scia</span></p>
+<p><span class="plominoSubformClass">sub_dati_geometrici</span></p>
+<!-- FORM TECNICI --><fieldset class="scheduler-border" title="Progettista">
+<legend class="scheduler-border">Progettista delle opere architettoniche</legend> <span class="plominoSubformClass">base_sub_progettista</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Direttore dei lavori delle opere architettoniche</legend> <span class="plominoSubformClass">sub_direttore</span>
+</fieldset>
+<p><span class="plominoSubformClass">sub_progettista_strutt</span></p>
+<p><span class="plominoSubformClass">sub_direttore_strutt</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border required">Altri Tecnici incaricati</legend>
+<p><span class="plominoSubformClass">sub_altri_tecnici</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Esecuzione delle opere</legend> <span class="plominoSubformClass">sub_esecutore</span>
+</fieldset>
+<!-- FORM SICUREZZA --><p><span class="plominoSubformClass">sub_sicurezza</span></p>
+<!-- FORM ASSEVERATA --><p><span class="plominoSubformClass">sub_asseverata_barriere_architettoniche</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_sicurezza_impianti</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_consumi_energetici</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_impatto_acustico</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_materiali_risulta</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_prevenzione_incendi</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_amianto</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_conformita_igienicosanitaria</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_interventi_strutturali</span></p>
+<!-- FORM VINCOLI --><h4 class="alert-info">DICHIARAZIONI RELATIVE AI VINCOLI</h4>
+<h5 class="alert-info">TUTELA STORICO-PAESAGGISTICA</h5>
+<p><span class="plominoSubformClass">sub_vincoli_paesaggistica</span></p>
+<p><span class="plominoSubformClass">sub_vincoli_soprintendenza</span></p>
+<p><span class="plominoSubformClass">sub_vincoli_area_protetta</span></p>
+<h5 class="alert-info">TUTELA ECOLOGICA/AMBIENTALE</h5>
+<p><span class="plominoSubformClass">sub_vincoli_idrogeologico</span></p>
+<p><span class="plominoSubformClass">sub_vincoli_idraulico</span></p>
+<p><span class="plominoSubformClass">sub_vincoli_natura2000</span></p>
+<p><span class="plominoSubformClass">sub_vincoli_cimiteriale</span></p>
+<p><span class="plominoSubformClass">sub_vincoli_incidente</span></p>
+<p><span class="plominoSubformClass">sub_vincoli_dg</span></p>
+<!-- FORM ONERI --><fieldset class="scheduler-border">
+<legend class="scheduler-border">CONTRIBUTO DI COSTRUZIONE</legend>
+<p><span class="plominoSubformClass">sub_contributo_costruzione_scia</span></p>
+<p><span class="plominoSubformClass">base_sub_info_pagamenti</span></p>
+</fieldset>
+<!-- ALLEGATI --><p><span class="plominoSubformClass">base_sub_stampa</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="hw_no_protocollo" title="hw_no_protocollo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_protocollo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('numero_protocollo','')=='']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_comunicazione_digitale" title="hw_no_comunicazione_digitale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_digitale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={}]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

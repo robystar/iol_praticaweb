@@ -1,0 +1,72 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_completa_aua" title="sub_completa_aua" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_aua</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
+<p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_comunicazione_digitale</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
+<fieldset class="scheduler-border" title="Protocollo">
+<legend class="scheduler-border">Dati di Protocollazione</legend>
+<p><span class="plominoSubformClass">base_sub_protocollo</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI DEL GESTORE</legend>
+<p><span class="plominoSubformClass">base_sub_fisica</span></p>
+<p><span class="plominoSubformClass">base_sub_fisica_recapiti</span></p>
+</fieldset>
+<p><span class="plominoSubformClass">sub_aua_referente</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI DELLA DITTA / SOCIETA'/ IMPRESA</legend>
+<p><span class="plominoSubformClass">sub_aua_giuridica</span></p>
+</fieldset>
+<p><span class="plominoSubformClass">sub_ubicazioni_aua</span></p>
+<p><span class="plominoSubformClass">sub_aua_impianto</span></p>
+<p><span class="plominoSubformClass">sub_aua_dichiarazioni</span></p>
+<p><span class="plominoSubformClass">sub_aua_istanza</span></p>
+<p><span class="plominoSubformClass">base_sub_stampa</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="hw_no_protocollo" title="hw_no_protocollo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_protocollo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('numero_protocollo','')=='']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_comunicazione_digitale" title="hw_no_comunicazione_digitale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_digitale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={}]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

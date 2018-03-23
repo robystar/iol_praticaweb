@@ -1,0 +1,227 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_scia_cambio_destinazione_uso" title="sub_scia_cambio_destinazione_uso" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_scia_cambio_destinazione_uso</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div><span class="plominoFieldClass">cambio_uso_hide</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_cambio_uso_hide</span></p>
+<div class="alert alert-info"><h5>Da compilare in caso di passaggio a diversa categoria funzionale; è opportuno concordare preventivamente con gli uffici comunali tale adempimento</h5></div>
+<div><span class="plominoFieldClass">cambio_uso_opt</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_standard_urbanistici</span></p>
+<div>
+<span class="plominoLabelClass">motivo_no_std_urbanistici</span><span class="plominoFieldClass">motivo_no_std_urbanistici</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_standard_urbanistici</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_vincolo</span></p>
+<div class="row-fluid">
+<div class="span6">
+<span class="plominoLabelClass">cambio_uso_elaborato_allegato</span><span class="plominoFieldClass">cambio_uso_elaborato_allegato</span>
+</div>
+<div class="span6">
+<p><span class="plominoHidewhenClass">start:hw_pagamento_online_cambiods</span></p>
+<span class="plominoHidewhenClass">start:hw_no_monetizzazione</span> <span class="plominoLabelClass">cambio_uso_versamento_allegato</span> <span class="plominoFieldClass">cambio_uso_versamento_allegato</span> <span class="plominoHidewhenClass">end:hw_no_monetizzazione</span><p><span class="plominoHidewhenClass">end:hw_pagamento_online_cambiods</span></p>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_vincolo</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_cambio_uso_hide</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="cambio_uso_hide" title="cambio_uso_hide" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">cambio_uso_hide</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_scia_cambio_destinazione_uso''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Passaggio a diversa categoria funzionale|cambio_uso']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_cambio_uso_hide" title="hw_no_cambio_uso_hide" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_cambio_uso_hide</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    return not context.getItem('cambio_uso_hide')
+except:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="cambio_uso_opt" title="cambio_uso_opt" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">cambio_uso_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_scia_cambio_destinazione_uso''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Il cambio di destinazione d’uso funzionale comporta la necessità di reperimento degli standards urbanistici pubblici(aree a parcheggio e verde) quantificati ed identificati come da elaborato allegato e pertanto si allega impegno a formalizzare entro la fine dei lavori il relativo atto di vincolo da trascrivere nei registri immobiliari|vincolo''','''Il cambio di destinazione d’uso funzionale comporta la necessità di reperimento degli standards urbanistici pubblici quantificati come da elaborato allegato ma nell'impossibilità di reperire tali aree si è optato per la  monetizzazione secondo le tariffe stabilite del Comune provvedendo al relativo versamento di cui si trasmette copia|monetizzazione''','''Il cambio di destinazione d’uso funzionale non comporta la necessità di reperimento degli standards urbanistici|no_standard''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_standard_urbanistici" title="hw_no_standard_urbanistici" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_standard_urbanistici</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    return 'no_standard' not in context.getItem('cambio_uso_opt')
+except:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="motivo_no_std_urbanistici" title="Specificare la motivazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">motivo_no_std_urbanistici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>2</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_vincolo" title="hw_no_vincolo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_vincolo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    return 'no_standard' in context.getItem('cambio_uso_opt')
+except:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_monetizzazione" title="hw_no_monetizzazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_monetizzazione</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    return 'monetizzazione' not in context.getItem('cambio_uso_opt')
+except:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="cambio_uso_elaborato_allegato" title="Elaborato allegato" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">cambio_uso_elaborato_allegato</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="cambio_uso_versamento_allegato" title="Versamento allegato" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">cambio_uso_versamento_allegato</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_pagamento_online_cambiods" title="Nascondi se il pagamento avviene online" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_pagamento_online_cambiods</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[diz = context.getParentDatabase().resources.config_praticaweb()
+pagopa_enabled = bool(diz.get('pagopa_enabled',0))
+pagamento_online = (context.getItem('modalita_pagamento','')=='pagopa')
+return (pagopa_enabled and pagamento_online)]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

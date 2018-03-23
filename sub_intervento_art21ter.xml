@@ -1,0 +1,432 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_intervento_art21ter" title="Sub Form con informazioni intervento Art.21 TER" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_intervento_art21ter</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">COMUNICA</legend>
+<h4>ai sensi e per gli effetti dell’art. 21 ter della L.R. 16/08 e s.m.i., dell'art. 6 del D.Lgs 28/11 e s.m.i. e dell'art. 6 del D.P.R. 380/2001 e s.m.i. che nel rispetto delle previsioni della strumentazione urbanistico territoriale vigente e/o operante in salvaguardia, del regolamento edilizio, delle normative di settore e delle indicazioni contenute nelle linee guida di cui alla D.G.R. n. 1122 del 21.09.12, darà inizio</h4>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">data_inizio_installazione</span><span class="plominoFieldClass">data_inizio_installazione</span>
+</div></div>
+<div>
+<span class="plominoLabelClass">descrizione_impianto</span><span class="plominoFieldClass">descrizione_impianto</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TIPOLOGIA IMPIANTO</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_impianto_solare</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_solare</span></div>
+<p><span class="plominoHidewhenClass">end:hw_no_impianto_solare</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_solare_2</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_impianto_solare_altro</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_solare_altro</span></div>
+<p><span class="plominoHidewhenClass">end:hw_no_impianto_solare_altro</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_impianto_energia_termica</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_energia_termica</span></div>
+<p><span class="plominoHidewhenClass">end:hw_no_impianto_energia_termica</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_eolico</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_impianto_biomassa</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_biomassa</span></div>
+<p><span class="plominoHidewhenClass">end:hw_no_impianto_biomassa</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_impianto_biomassa_altro</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_biomassa_altro</span></div>
+<p><span class="plominoHidewhenClass">end:hw_no_impianto_biomassa_altro</span></p>
+<div><span class="plominoFieldClass">tipologia_impianto_idroelettrico</span></div>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="data_inizio_installazione" title="Data inizio installazione impianto" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_inizio_installazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="descrizione_impianto" title="Descrizione impianto " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_impianto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="tipologia_impianto_solare" title="Tipologia impianto" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_solare</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA['']]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''pannelli solari termici o impianti fotovoltaici di qualsiasi potenza, integrati o aderenti con la stessa inclinazione e lo stesso orientamento della copertura, purche' di superficie non superiore a quella del tetto dell'edificio;|1''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipologia_impianto_solare_altro" title="tipologia_impianto_solare_altro" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_solare_altro</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti solari termici, da realizzare su edifici o altre strutture esistenti o loro pertinenze al di fuori della zona A di cui al decreto del Ministro dei lavori pubblici 1444/1968;|1''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_impianto_solare_altro" title="hw_no_impianto_solare_altro" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_impianto_solare_altro</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[solare = context.getItem('tipologia_impianto_solare',[]) 
+if '1' in solare:
+    return True
+else:
+    return False]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="tipologia_impianto_energia_termica" title="tipologia_impianto_energia_termica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_energia_termica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti di produzione di energia termica da fonti rinnovabili  realizzati negli edifici esistenti e negli spazi liberi privati annessi e destinati unicamente alla produzione di acqua calda e di aria per utilizzo nei medesimi edifici;|1''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipologia_impianto_eolico" title="tipologia_impianto_eolico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_eolico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''generatori eolici con altezza complessiva non superiore a 1,5 metri e diametro non superiore a 1 metro;|1''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipologia_impianto_biomassa" title="tipologia_impianto_biomassa" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_biomassa</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA['']]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti alimentati da biomasse, gas di discarica, gas residuati da processi di depurazione e biogas operanti in assetto cogenerativo e aventi capacita' di generazione massima inferiore a 50 kWe (micro cogenerazione);|1''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipologia_impianto_biomassa_altro" title="tipologia_impianto_biomassa_altro" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_biomassa_altro</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''impianti alimentati da biomasse, gas di discarica, gas residuati da processi di depurazione e biogas, aventi capacita' di generazione compatibile con il regime di scambio sul posto, da realizzare all'interno di edifici esistenti, purche' non comportanti alterazione dei volumi o delle superfici, modifiche delle destinazioni d’uso, che non riguardino le parti strutturali dell'edificio, non comportino aumento del numero delle unita' immobiliari e non implichino incremento dei parametri urbanistici;|1'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipologia_impianto_idroelettrico" title="tipologia_impianto_idroelettrico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_idroelettrico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''impianti idroelettrici e geotermoelettrici, aventi una capacita' di generazione compatibile con il regime di scambio sul posto, da realizzare in edifici esistenti, purche' non comportanti realizzazione di nuove opere di presa, alterazione dei volumi o delle superfici, modifiche delle destinazioni d'uso, che non riguardino le parti strutturali dell'edificio, non comportino aumento del numero delle unita' immobiliari e non implichino incremento dei parametri urbanistici.|1'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_impianto_solare" title="hw_no_impianto_solare" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_impianto_solare</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[solare = context.getItem('tipologia_impianto_solare_altro',[])
+termica = context.getItem('tipologia_impianto_energia_termica',[])
+if '1' in solare or '1' in termica:
+    return True
+else:
+    return False]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_impianto_biomassa_altro" title="hw_no_impianto_biomassa_altro" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_impianto_biomassa_altro</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[biomassa = context.getItem('tipologia_impianto_biomassa',[])
+return '1' in biomassa]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_impianto_biomassa" title="hw_no_impianto_biomassa" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_impianto_biomassa</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1' in context.getItem('tipologia_impianto_biomassa_altro',[])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_impianto_energia_termica" title="hw_no_impianto_energia_termica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_impianto_energia_termica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[solare = context.getItem('tipologia_impianto_solare',[]) 
+if '1' in solare:
+    return True
+else:
+    return False]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="tipologia_impianto_solare_2" title="Tipologia impianto solare 2" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_impianto_solare_2</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA['']]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti fotovoltaici di qualsiasi potenza, anche con caratteristiche diverse da quelle di cui al punto 1, da realizzare su edifici o altre strutture esistenti o loro pertinenze;|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

@@ -1,0 +1,143 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_pdc_atti_assenso" title="sub_pdc_atti_assenso" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_pdc_atti_assenso</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+<legend class="scheduler-border">PRESENTAZIONE DELLA DENUNCIA DI INIZIO ATTIVITA</legend>
+<div>
+<span class="plominoLabelClass">atti_assenso_opt</span><span class="plominoFieldClass">atti_assenso_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_atti_assenso</span></p>
+<div>
+<span class="plominoLabelClass">atti_assenso_tipo</span><span class="plominoFieldClass">atti_assenso_tipo</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_atti_assenso</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="atti_assenso_opt" title="L'inizio dei lavori:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">atti_assenso_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_pdc_atti_assenso''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''NON PREVEDE altri atti di assenso|no_atti''','''PREVEDE altri atti di assenso|si_atti''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="atti_assenso_tipo" title="Acquisizione atti di assenso" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">atti_assenso_tipo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_pdc_atti_assenso''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Per la realizzazione delle opere sono necessari altri atti di assenso, già rilasciati dalle competenti amministrazioni|atti_rilasciati''',
+'''Per la realizzazione delle opere si richiede l'acquisizione d'ufficio, da parte dello sportello unico, degli atti di assenso necessari. Il titolare dichiara di essere a conoscenza che l'intervento può essere iniziato dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|atti_acquisiti'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_atti_assenso_no_data" title="hw_atti_assenso_no_data" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_atti_assenso_no_data</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('atti_assenso_opt')!='no_atti':
+    return 'atti_acquisiti' in context.getItem('atti_assenso_tipo')
+else:
+    return False]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_atti_assenso_no_acquisiti" title="hw_atti_assenso_no_acquisiti" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_atti_assenso_no_acquisiti</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'atti_acquisiti' not in context.getItem('atti_assenso_tipo')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_atti_assenso_no_rilasciati" title="hw_atti_assenso_no_rilasciati" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_atti_assenso_no_rilasciati</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'atti_rilasciati' not in context.getItem('atti_assenso_tipo')
+#return 'atti_rilasciati' in context.getItem('atti_assenso_tipo')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_atti_assenso" title="hw_no_atti_assenso" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_atti_assenso</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return plominoDocument.getItem('atti_assenso_opt','no_atti')!='si_atti']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

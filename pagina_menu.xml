@@ -1,0 +1,56 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="pagina_menu" title="Servizi OnLine" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">pagina_menu</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="sezione">
+<p class="avviso avviso2" style="text-align: center; "><strong>EDILIZIA<br></strong></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_scia_richiedenti/OpenForm" target="_self" title="">Presentazione SCIA</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_scia2_richiedenti/OpenForm" target="_self" title="">Presentazione SCIA 2 (ex D.lgs 222/2016)</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_cila_richiedenti/OpenForm" target="_self" title="">Presentazione CILA</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_dia_richiedenti/OpenForm" target="_self" title="">Presentazione DIA</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_pdc_richiedenti/OpenForm" target="_self" title="">Presentazione Permesso di Costruire</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_art22_richiedenti/OpenForm" target="_self" title="">Regolarizzazione sotto il profilo amministrativo ai sensi dell'art 22 L.R. 16/08</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_art48_richiedenti/OpenForm" target="_self" title="">Regolarizzazione opere in difformità ai sensi dell'art. 48 L.R. 16/08</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_sca_richiedenti/OpenForm" target="_self" title="">Segnalazione certificata di agibilità</a></p>
+</div>
+<div class="sezione">
+<p class="avviso avviso2" style="text-align: center; "><strong>SUE/SUAP</strong></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_integrazione_base/OpenForm" target="_self" title="">Trasmissione Integrazioni</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_iniziolavori_base/OpenForm" target="_self" title="">Comunicazione Inizio Lavori</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_finelavori_base/OpenForm" target="_self" title="">Comunicazione Fine Lavori</a></p>
+</div>
+<div class="sezione">
+<p class="avviso avviso2" style="text-align: center; "><strong>PAESAGGIO</strong></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_paesaggistica_richiedenti/?iol_tipo_proc=sue&amp;qualificazione_intervento=1" target="_self" title="">Autorizzazione paesaggistica Ordinaria</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_paesaggistica_richiedenti/?iol_tipo_proc=sue&amp;qualificazione_intervento=2" target="_self" title="">Autorizzazione paesaggistica Semplificata</a></p>
+<p style="text-align: center; "><a class="button sue-menu" href="iol_sue/frm_paesaggistica_richiedenti/?iol_tipo_proc=sue&amp;qualificazione_intervento=3" target="_self" title="">Accertamento di Compatibilità Paesaggistica</a></p>
+</div>
+<div class="sezione"><p style="text-align: center; "><a class="button  sue-menu button1" href="cruscotto-praticaweb" target="_self" title="">LE MIE PRATICHE</a></p></div>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">True</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+    </element>
+  </design>
+</plominodatabase>

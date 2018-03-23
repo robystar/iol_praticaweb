@@ -1,0 +1,184 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_allegati_interventi_strutturali" title="sub_allegati_interventi_strutturali" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_interventi_strutturali</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+<legend class="scheduler-border"> Interventi strutturali e/o in zona sismica</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_doc_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_doc_denuncia_art65</span><span class="plominoFieldClass">allegato_doc_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_art65</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_denuncia_art65</span><span class="plominoFieldClass">allegato_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_denuncia_lavori_sismica</span></p>
+<p><span class="plominoLabelClass">allegato_denuncia_lavori_sismica</span><span class="plominoFieldClass">allegato_denuncia_lavori_sismica</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_denuncia_lavori_sismica</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_doc_denuncia_lavori_sismica</span></p>
+<p><span class="plominoLabelClass">allegato_doc_denuncia_lavori_sismica</span><span class="plominoFieldClass">allegato_doc_denuncia_lavori_sismica</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_lavori_sismica</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_autorizzazione_sismica</span></p>
+<p><span class="plominoLabelClass">allegato_autorizzazione_sismica</span><span class="plominoFieldClass">allegato_autorizzazione_sismica</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_autorizzazione_sismica</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_doc_autorizzazione_sismica</span></p>
+<p><span class="plominoLabelClass">allegato_doc_autorizzazione_sismica</span><span class="plominoFieldClass">allegato_doc_autorizzazione_sismica</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_doc_autorizzazione_sismica</span></p>
+<p><span class="plominoHidewhenClass">start:hw_interventistrutturali</span></p>
+<div class="text-label">Nessun documento da allegare</div>
+<p><span class="plominoHidewhenClass">end:hw_interventistrutturali</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegato_doc_denuncia_art65" title="Documentazione relativa alla denuncia art. 65:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_doc_denuncia_art65</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file allegato","maxsize":"3"}
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_denuncia_art65" title="Denuncia art. 65:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_denuncia_art65</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file allegato","maxsize":"3"}
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_denuncia_lavori_sismica" title="Denuncia dei lavori in zona sismica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_denuncia_lavori_sismica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_doc_denuncia_lavori_sismica" title="Documentazione relativa alla denuncia dei lavori in zona sismica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_doc_denuncia_lavori_sismica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_autorizzazione_sismica" title="Autorizzazione sismica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_autorizzazione_sismica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_doc_autorizzazione_sismica" title="Documentazione necessaria per il rilascio dell'autorizzazione sismica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_doc_autorizzazione_sismica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_denuncia_lavori_sismica" title="hw_no_denuncia_lavori_sismica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_denuncia_lavori_sismica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('denuncia_lavori_sismica','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_doc_denuncia_lavori_sismica" title="hw_no_doc_denuncia_lavori_sismica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_doc_denuncia_lavori_sismica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('denuncia_lavori_sismica','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_autorizzazione_sismica" title="hw_no_autorizzazione_sismica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_autorizzazione_sismica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('autorizzazione_opere_sismiche','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_doc_autorizzazione_sismica" title="hw_no_doc_autorizzazione_sismica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_doc_autorizzazione_sismica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('autorizzazione_opere_sismiche','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_interventistrutturali" title="hw_interventistrutturali" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_interventistrutturali</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_doc_denuncia_art65" title="hw_no_doc_denuncia_art65" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_doc_denuncia_art65</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_denuncia_art65" title="hw_no_denuncia_art65" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_denuncia_art65</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('conglomerato_cementizio_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

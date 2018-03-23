@@ -1,0 +1,773 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_sca" title="sub_asseverata_sca" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_sca</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">SICUREZZA DEGLI IMPIANTI</legend>
+<div>
+<span class="plominoLabelClass">sicurezza_impianti_opt</span><span class="plominoFieldClass">sicurezza_impianti_opt</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_no_sicurezza_impianti</span><div>
+<span class="plominoLabelClass">elenco_impianti_dg</span> <span class="plominoFieldClass">elenco_impianti_dg</span>
+</div>
+<span class="plominoHidewhenClass">end:hw_no_sicurezza_impianti</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">SICUREZZA STATICA E SISMICA</legend>
+<div>
+<span class="plominoLabelClass">sicurezza_statica_opt</span><span class="plominoFieldClass">sicurezza_statica_opt</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_no_sicurezza_statica</span><div>
+<span class="plominoLabelClass">certificato_collaudo_opt</span><span class="plominoFieldClass">certificato_collaudo_opt</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_no_certificato_collaudo</span><fieldset class="scheduler-border">
+<legend class="scheduler-border">Certificato di collaudo statico</legend>
+<div class="row-fluid">
+<div class="span5">
+<span class="plominoLabelClass">certificato_collaudo_ente</span><span class="plominoFieldClass">certificato_collaudo_ente</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">certificato_collaudo_protocollo</span><span class="plominoFieldClass">certificato_collaudo_protocollo</span>
+</div>
+<div class="span2">
+<span class="plominoLabelClass">certificato_collaudo_data</span><span class="plominoFieldClass">certificato_collaudo_data</span>
+</div>
+</div>
+</fieldset>
+<span class="plominoHidewhenClass">end:hw_no_certificato_collaudo</span> <span class="plominoHidewhenClass">start:hw_no_regolare_esecuzione</span><fieldset class="scheduler-border">
+<legend class="scheduler-border">Dichiarazione di regolare esecuzione</legend>
+<div class="row-fluid">
+<div class="span5">
+<span class="plominoLabelClass">regolare_esecuzione_ente</span><span class="plominoFieldClass">regolare_esecuzione_ente</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">regolare_esecuzione_protocollo</span><span class="plominoFieldClass">regolare_esecuzione_protocollo</span>
+</div>
+<div class="span2">
+<span class="plominoLabelClass">regolare_esecuzione_data</span><span class="plominoFieldClass">regolare_esecuzione_data</span>
+</div>
+</div>
+</fieldset>
+<span class="plominoHidewhenClass">end:hw_no_regolare_esecuzione</span> <span class="plominoHidewhenClass">end:hw_no_sicurezza_statica</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">PRESTAZIONE ENERGETICA DEGLI EDIFICI (d.lgs. n. 192/2005)</legend>
+<div>
+<span class="plominoLabelClass">prestazione_energetica_opt</span><span class="plominoFieldClass">prestazione_energetica_opt</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">BARRIERE ARCHITETTONICHE</legend>
+<div>
+<span class="plominoLabelClass">barriere_architettoniche_opt</span><span class="plominoFieldClass">barriere_architettoniche_opt</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DOCUMENTAZIONE CATASTALE</legend>
+<div>
+<span class="plominoLabelClass">variazione_catastale_opt</span><span class="plominoFieldClass">variazione_catastale_opt</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_no_variazione_catastale</span><div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">variazione_catastale_protocollo</span><span class="plominoFieldClass">variazione_catastale_protocollo</span>
+</div>
+<div class="span2">
+<span class="plominoLabelClass">variazione_catastale_data</span><span class="plominoFieldClass">variazione_catastale_data</span>
+</div>
+</div>
+<span class="plominoHidewhenClass">end:hw_no_variazione_catastale</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TOPONOMASTICA</legend>
+<div>
+<span class="plominoLabelClass">variazione_civico_opt</span><span class="plominoFieldClass">variazione_civico_opt</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_no_variazione_civico</span><div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">variazione_civico_protocollo</span><span class="plominoFieldClass">variazione_civico_protocollo</span>
+</div>
+<div class="span2">
+<span class="plominoLabelClass">variazione_civico_data</span><span class="plominoFieldClass">variazione_civico_data</span>
+</div>
+</div>
+<span class="plominoHidewhenClass">end:hw_no_variazione_civico</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">PREVENZIONE INCENDI</legend>
+<div>
+<span class="plominoLabelClass">prevenzione_incendi_opt</span><span class="plominoFieldClass">prevenzione_incendi_opt</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">IMPIANTI DI ASCENSORI E MONTACARICHI</legend>
+<div class="alert alert-info"><small>La compilazione del quadro è facoltativa. La comunicazione, ai sensi dell’art. 12, comma 2 del d.P.R. n. 162/1999, come modificato dal d.P.R. n. 23/2017, deve essere effettuata entro 60 giorni dalla data di dichiarazione di conformità dell’impianto.</small></div>
+<div>
+<span class="plominoLabelClass">comunicazione_ascensore_opt</span><span class="plominoFieldClass">comunicazione_ascensore_opt</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_no_comunicazione_ascensore</span><div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">comunicazione_ascensore_protocollo</span><span class="plominoFieldClass">comunicazione_ascensore_protocollo</span>
+</div>
+<div class="span2">
+<span class="plominoLabelClass">comunicazione_ascensore_data</span><span class="plominoFieldClass">comunicazione_ascensore_data</span>
+</div>
+</div>
+<span class="plominoHidewhenClass">end:hw_no_comunicazione_ascensore</span><div class="alert alert-info"><small>(*) ascensori o montacarichi o altro apparecchio di sollevamento rispondenti alla definizione di ascensore, al cui velocità di spostamento non supera 0,15 m/s, non destinati ad un servizio pubblico di trasporto</small></div>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="sicurezza_impianti_opt" title="L'intervento, riguardo alla sicurezza impianti:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">sicurezza_impianti_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_sca''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non ha interessato gli impianti;|1''','''ha interessato i seguenti impianti dotati della certificazione di seguito indicata|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_sicurezza_impianti" title="hw_no_sicurezza_impianti" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_sicurezza_impianti</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('sicurezza_impianti_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="elenco_impianti_dg" title="Informazioni sugli impianti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_impianti_dg</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[if context.REQUEST.get('elenco_impianti_dg')=='[]':
+    return "Inserire le informazioni sugli impianti"]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>dlg_certificazione_impianto</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>id_certificato_impianto,tipo_impianto,tipo_documento,documento_opt,subalterni,numero_protocollo,data_protocollo,tipo_impianto_altro</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "ID" , "bVisible": false},              
+    { "sTitle": "Tipo impianto"},
+    { "sTitle": "Tipo documento"},
+    { "sTitle": "Certificato"},
+    { "sTitle": "Subalterni" },    
+    { "sTitle": "Protocollo"},
+    { "sTitle": "Data"}
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 900,
+        "height": 400
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="sicurezza_statica_opt" title="L'intervento, in merito alla sicurezza statica e sismica:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">sicurezza_statica_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_sca''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non ha interessato le strutture dell’edificio|1''','''ha interessato le strutture dell'edificio e pertanto:|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="certificato_collaudo_opt" title="Certificato di collaudo / regolare esecuzione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">certificato_collaudo_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_sca''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''si allega certificato di collaudo statico (previsto dal d.m. 14 settembre 2005, dal d.m. 14 gennaio 2008 e dall'art. 67 del d.P.R. n. 380/2001)|1''','''si comunicano gli estremi del certificato di collaudo statico|2''','''si allega la dichiarazione di regolare esecuzione per gli interventi di riparazione e per gli interventi locali sulle costruzioni esistenti, come definiti dalla normativa tecnica (prevista dall’art. 67, c. 8-bis del d.P.R. n. 380/2001)|3''','''si comunicano gli estremi della dichiarazione di regolare esecuzione per gli interventi di riparazione e per gli interventi locali sulle costruzioni esistenti, come definiti dalla normativa tecnica|4''','''non si è proceduto al collaudo statico trattandosi di interventi strutturali minori non soggetti ad obbligo di collaudo (p.to 8.4.3 d.m. 14 gennaio 2008)|5''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_sicurezza_statica" title="hw_no_sicurezza_statica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_sicurezza_statica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('sicurezza_statica_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="prestazione_energetica_opt" title="L'intervento, in merito alla prestazione energetica degli edifici:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">prestazione_energetica_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non è soggetto all'osservanza dei requisiti minimi di prestazione energetica;|1''','''è soggetto all'osservanza dei requisiti minimi di prestazione energetica, e pertanto si allega attestato di qualificazione energetica (AQE) dell'edificio o dell'unità immobiliare, redatto da tecnico abilitato;|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="barriere_architettoniche_opt" title="L'intervento, in merito alle barriere architettoniche:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">barriere_architettoniche_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non è soggetto alle prescrizioni sull'abbattimento delle barriere architettoniche di cui al d.P.R. n. 380/2001 e al d.m. 14 giugno 1989, n. 236 o della corrispondente normativa regionale;|1''','''interessa un edificio privato ed è soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989, e pertanto le opere realizzate sono conformi alla normativa in materia di superamento delle barriere architettoniche ai sensi art.11 del d.m. n. 236/1989 e a quanto previsto nel titolo edilizio;|2''','''interessa un edificio privato aperto al pubblico ed è soggetto alle prescrizioni degli articoli 82 e seguenti del d.P.R. n. 380/2001 e del d.m. 236/1989 e pertanto le opere realizzate sono conformi alla normativa in materia di superamento delle barriere architettoniche ai sensi dell'art. 82, comma 4, del d.P.R. n. 380/2001|3''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="variazione_catastale_opt" title="L'intervento, in merito a variazioni catastali:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">variazione_catastale_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_sca''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non comporta variazione dell'iscrizione catastale;|1''','''comporta variazione dell'iscrizione catastale e si comunicano gli estremi dell’avvenuta Dichiarazione di aggiornamento catastale|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="variazione_catastale_protocollo" title="Protocollo n." type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">variazione_catastale_protocollo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="variazione_catastale_data" title="Data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">variazione_catastale_data</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_variazione_catastale" title="hw_no_variazione_catastale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_variazione_catastale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('variazione_catastale_opt')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="variazione_civico_opt" title="L'intervento, in merito a variazioni di numerazione civica:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">variazione_civico_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_sca''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non comporta variazione di numerazione civica;|1''','''comporta variazione di numerazione civica, e si allega richiesta di assegnazione o aggiornamento di numerazione civica|2''','''si comunicano gli estremi della richiesta di assegnazione o aggiornamento di numerazione civica, già presentata all'amministrazione comunale con atto:|3''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="variazione_civico_protocollo" title="Protocollo n." type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">variazione_civico_protocollo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="variazione_civico_data" title="Data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">variazione_civico_data</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_variazione_civico" title="hw_no_variazione_civico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_variazione_civico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('variazione_civico_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="certificato_collaudo_ente" title="Ente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">certificato_collaudo_ente</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="certificato_collaudo_protocollo" title="Protocollo n." type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">certificato_collaudo_protocollo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="certificato_collaudo_data" title="Data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">certificato_collaudo_data</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_certificato_collaudo" title="hw_no_certificato_collaudo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_certificato_collaudo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('certificato_collaudo_opt')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="regolare_esecuzione_ente" title="Ente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">regolare_esecuzione_ente</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="regolare_esecuzione_protocollo" title="Protocollo n." type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">regolare_esecuzione_protocollo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="regolare_esecuzione_data" title="Data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">regolare_esecuzione_data</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_regolare_esecuzione" title="hw_no_regolare_esecuzione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_regolare_esecuzione</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('certificato_collaudo_opt')!='4']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="prevenzione_incendi_opt" title="I lavori realizzati, in materia di prevenzione incendi:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">prevenzione_incendi_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_sca''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non hanno comportato variazioni alle condizioni di sicurezza antincendio dell'immobile e non è previsto lo svolgimento di attività soggette al controllo dei Vigili del Fuoco, ai sensi del d.P.R. n. 151/2011, allegato I;|1''','''hanno comportato variazioni alle condizioni di sicurezza antincendio dell'immobile ed è previsto lo svolgimento di attività soggette al controllo dei Vigili del Fuoco e pertanto si allega SCIA, ai sensi dell'art. 4, comma 1, del d.P.R. n.151/2011|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="comunicazione_ascensore_opt" title="Con riferimento agli impianti di ascensori o montacarichi (*):" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">comunicazione_ascensore_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_sca''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''la presente segnalazione ha il valore e gli effetti di comunicazione al Comune, o alla provincia autonoma competente, ai sensi dell’art. 12, commi 1, 2 e 2-bis, del d.P.R. n. 162/1999, come modificato dal d.P.R. n. 23/2017, ai fini dell’assegnazione all’impianto della matricola;|1''','''la comunicazione, presentata prima della segnalazione certificata di agibilità, è reperibile presso l'amministrazione comunale, atto:|2''','''non sono presenti impianti di ascensori o montacarichi|3''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_comunicazione_ascensore" title="hw_no_comunicazione_ascensore" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_ascensore</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('comunicazione_ascensore_opt')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="comunicazione_ascensore_protocollo" title="Protocollo n." type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">comunicazione_ascensore_protocollo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="comunicazione_ascensore_data" title="Data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">comunicazione_ascensore_data</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

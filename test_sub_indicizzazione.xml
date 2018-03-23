@@ -1,0 +1,223 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="test_sub_indicizzazione" title="test_sub_indicizzazione" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">test_sub_indicizzazione</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<p>87y89</p>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="fisica_search" title="Trova nominativo esistente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">fisica_search</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['%s %s %s' %(plominoDocument.getItem('fisica_cognome',''),plominoDocument.getItem('fisica_nome',''),plominoDocument.getItem('fisica_cf',''))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
+data-plugin='iolAutocompleteForm' 
+data-plugin-options="{url:'@@plomino_search',placeholder:'Ricerca nominativo esistente',allowClear:true,minimumInputLength:0,id:function(e){return e.fisica_cf;},formatResult: function(name){return'<div><b>'+name.fisica_cognome+' '+name.fisica_nome+' cf. '+name.fisica_cf+'</b>'},formatSelection:function(name){return name.fisica_cognome+' '+name.fisica_nome+' '+name.fisica_cf; },data:function(term,page){return{forms:'base_sub_fisica,base_sub_giuridica',grid:'anagrafica_soggetti',grid_form:'sub_comproprietari',reverse:1,sort_index:'data_pratica',distinct:'fisica_search',search_item:'fisica_search',term:term,page:page,size:100}}}"
+''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
+        </element>
+        <element id="progettista_search" title="Trova nominativo esistente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_search</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '%s %s' %(plominoDocument.getItem('progettista_cognome',''),plominoDocument.getItem('progettista_nome',''))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
+data-plugin='iolAutocompleteForm' 
+data-plugin-options="{url:'@@plomino_search',placeholder:'Ricerca nominativo esistente',allowClear:true,minimumInputLength:0,id:function(e){return e.progettista_cf;},formatResult: function(name){return'<div><b>'+name.progettista_cognome+' '+name.progettista_nome+'</b>'},formatSelection:function(name){return name.progettista_cognome+ ' '+name.progettista_nome; },data:function(term,page){return{forms:'base_sub_progettista',reverse:1,distinct:'progettista_search',search_item:'progettista_search',term:term,page:page,size:10}}}"
+''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
+        </element>
+        <element id="progettista_strutt_search" title="Trova nominativo esistente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_strutt_search</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '%s %s' %(plominoDocument.getItem('progettista_strutt_cognome',''),plominoDocument.getItem('progettista_strutt_nome',''))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
+data-plugin='iolAutocompleteForm' 
+data-plugin-options="{url:'@@plomino_search',placeholder:'Ricerca nominativo esistente',allowClear:true,minimumInputLength:0,id:function(e){return e.progettista_strutt_cf;},formatResult: function(name){return'<div><b>'+name.progettista_strutt_cognome+' '+name.progettista_strutt_nome+'</b>'},formatSelection:function(name){return name.progettista_strutt_cognome+ ' '+name.progettista_strutt_nome; },data:function(term,page){return{forms:'base_sub_progettista_strutt',reverse:1,distinct:'progettista_strutt_search',search_item:'progettista_strutt_search',term:term,page:page,size:10}}}"
+''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
+        </element>
+        <element id="direttore_search" title="Trova nominativo esistente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">direttore_search</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['%s %s' %(plominoDocument.getItem('direttore_cognome',''),plominoDocument.getItem('direttore_nome',''))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
+data-plugin='iolAutocompleteForm' 
+data-plugin-options="{url:'@@plomino_search',placeholder:'Ricerca nominativo esistente',allowClear:true,minimumInputLength:0,id:function(e){return e.direttore_cf;},formatResult: function(name){return'<div><b>'+name.direttore_cognome+' '+name.direttore_nome+'</b>'},formatSelection:function(name){return name.direttore_cognome+ ' '+name.direttore_nome; },data:function(term,page){return{forms:'base_sub_direttore',reverse:1,distinct:'direttore_search',search_item:'direttore_search',term:term,page:page,size:10}}}"
+''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
+        </element>
+        <element id="esecutore_search" title="Trova nominativo esistente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">esecutore_search</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['%s %s' %(plominoDocument.getItem('esecutore_cognome',''),plominoDocument.getItem('esecutore_nome',''))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
+data-plugin='iolAutocompleteForm' 
+data-plugin-options="{url:'@@plomino_search',placeholder:'Ricerca nominativo esistente',allowClear:true,minimumInputLength:0,id:function(e){return e.esecutore_cf;},formatResult: function(name){return'<div><b>'+name.esecutore_cognome+' '+name.esecutore_nome+'</b>'},formatSelection:function(name){return name.esecutore_cognome+ ' '+name.esecutore_nome; },data:function(term,page){return{forms:'base_sub_esecutore',reverse:1,distinct:'esecutore_search',search_item:'esecutore_search',term:term,page:page,size:10}}}"
+''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>255</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tecnico_search" title="Trova nominativo esistente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tecnico_search</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '%s %s' %(plominoDocument.getItem('tecnico_cognome',''),plominoDocument.getItem('tecnico_nome',''))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
+data-plugin='iolAutocompleteForm' 
+data-plugin-options="{url:'@@plomino_search',placeholder:'Ricerca nominativo esistente',allowClear:true,minimumInputLength:0,id:function(e){return e.tecnico_cf;},formatResult: function(name){return'<div><b>'+name.tecnico_cognome+' '+name.tecnico_nome+'</b>'},formatSelection:function(name){return name.tecnico_cognome+ ' '+name.tecnico_nome; },data:function(term,page){return{forms:'dlg_tecnico',reverse:1,distinct:'tecnico_search',search_item:'tecnico_search',term:term,page:page,size:10}}}"
+''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
+        </element>
+        <element id="anagrafica_soggetti" title="Altri cointestatari/richiedenti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">anagrafica_soggetti</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>sub_fisica_giuridica</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>fisica_cognome,fisica_nome,fisica_comune_nato,fisica_cf,fisica_comune,fisica_indirizzo,fisica_civico,fisica_email,fisica_pec,fisica_telefono,giuridica_qualita,giuridica_denominazione,fisica_data_nato,fisica_sesso,giuridica_piva,giuridica_cf,giuridica_comune,giuridica_provincia,giuridica_cap,giuridica_localita,giuridica_indirizzo,giuridica_civico,giuridica_email,giuridica_pec,giuridica_telefono,giuridica_cellulare,giuridica_fax,fisica_app,fisica_titolo,fisica_provincia_nato,fisica_provincia,fisica_cap</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Cognome" },
+    { "sTitle": "Nome"},    
+    { "sTitle": "Comune nascita"},    
+    { "sTitle": "Cod. fiscale"}, 
+    { "sTitle": "Comune residenza"},
+    { "sTitle": "Indirizzo residenza"},
+    { "sTitle": "Civico"},
+    { "sTitle": "E-mail"},
+    { "sTitle": "Pec"},   
+    { "sTitle": "Telefono"} ,
+    { "sTitle": "in qualità"},
+    { "sTitle": "denominazione"},
+  
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": true,
+"plominoDialogOptions": {
+        "width": 1000,
+        "height": 800
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="pw_tipopratica" title="pw_tipopratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">pw_tipopratica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[# TODO CON DAVIDE
+return context.getItem('iol_tipo_app')]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="pw_normativa" title="pw_normativa" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">pw_normativa</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[# TODO CON DAVIDE
+return context.getItem('iol_tipo_app')]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

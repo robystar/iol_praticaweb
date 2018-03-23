@@ -1,0 +1,136 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_allegati_acustico" title="sub_allegati_acustico" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_acustico</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+<legend class="scheduler-border"> Tutela dell'inquinamento acustico</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_impatto_acustico</span></p>
+<span class="plominoLabelClass">allegato_impatto_acustico</span><span class="plominoFieldClass">allegato_impatto_acustico</span><p><span class="plominoHidewhenClass">end:hw_no_impatto_acustico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_clima_acustico</span></p>
+<span class="plominoLabelClass">allegato_clima_acustico</span><span class="plominoFieldClass">allegato_clima_acustico</span><p><span class="plominoHidewhenClass">end:hw_no_clima_acustico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_dichiarazione_acustico</span></p>
+<span class="plominoLabelClass">allegato_dichiarazione_acustico</span><span class="plominoFieldClass">allegato_dichiarazione_acustico</span><p><span class="plominoHidewhenClass">end:hw_no_dichiarazione_acustico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_documentazione_acustico</span></p>
+<span class="plominoLabelClass">allegato_documentazione_acustico</span><span class="plominoFieldClass">allegato_documentazione_acustico</span><p><span class="plominoHidewhenClass">end:hw_no_documentazione_acustico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_impatto_acustico</span></p>
+<div class="text-label">Nessun documento da allegare</div>
+<p><span class="plominoHidewhenClass">end:hw_impatto_acustico</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegato_impatto_acustico" title="Documentazione di impatto acustico:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_impatto_acustico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_clima_acustico" title="Valutazione previsionale di clima acustico:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_clima_acustico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_dichiarazione_acustico" title="Dichiarazione sostitutiva atto di notorietà:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_dichiarazione_acustico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_documentazione_acustico" title="Documentazione di previsione di impatto acustico ai fini del rilascio del nulla osta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_documentazione_acustico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_impatto_acustico" title="hw_no_impatto_acustico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_impatto_acustico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('inquinamento_acustico_opt','')!='2' or not '1' in context.getItem('inquinamento_acustico_art_8',[])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_clima_acustico" title="hw_no_clima_acustico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_clima_acustico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('inquinamento_acustico_opt','')!='2' or not '2' in context.getItem('inquinamento_acustico_art_8',[])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_dichiarazione_acustico" title="hw_no_dichiarazione_acustico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_dichiarazione_acustico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('inquinamento_acustico_opt','')!='2' or not '3' in context.getItem('inquinamento_acustico_art_8',[])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_documentazione_acustico" title="hw_no_documentazione_acustico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_documentazione_acustico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('inquinamento_acustico_opt','')!='2' or not '4' in context.getItem('inquinamento_acustico_art_8',[])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_impatto_acustico" title="hw_impatto_acustico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_impatto_acustico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('inquinamento_acustico_opt','')=='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

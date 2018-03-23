@@ -1,0 +1,591 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_paesaggistica" title="sub_asseverata_paesaggistica" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_paesaggistica</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border required">3. Opera correlata a :</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">opera_correlata_opt</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border required">4. Carattere dell'intervento</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">carattere_intervento_opt</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">5.A Destinazione d'uso del manufatto esistente o dell'area interessata (se edificio o area di pertinenza)</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">immobile_destinazione</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">5.B Uso attuale del suolo (se lotto di terreno)</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">uso_attuale_suolo_opt</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">6. Contesto paesaggistico dell'intervento e/o dell'opera</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">contesto_paesaggistico_opt</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">7. Morfologia del contesto paesaggistico</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">morfologia_opt</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">8. Ubicazione dell'opera e/o dell'intervento</legend>
+<div class="row-fluid"><div class="span12 alert alert-info">
+<p><b>sul quale sia riportato se ricadente in area urbana: </b></p>
+<p>a) estratto stradario con indicazione precisa dell’edificio, via, piazza, n. civico</p>
+<p><b>se ricadente in territorio extraurbano o rurale: </b></p>
+<p>b) estratto CTR / IGM / ORTOFOTO</p>
+<p>Sulla cartografia l'edificio/area di intervento devono essere evidenziati attraverso apposito segno grafico o coloritura, nonché dovranno essere evidenziati i punti di ripresa fotografica (da 2 a 4).</p>
+<p>c) estratto tavola PRG e relative norme che evidenzino: l'edificio o sua parte; area di pertinenza/il lotto di terreno, l'intorno su cui si intende intervenire</p>
+<p>d) estratto degli strumenti di pianificazione paesistica quali P.P.; P.T.C.P.; P.U.RT. che evidenzino il contesto paesaggistico e l'area dell'intervento</p>
+</div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">9. Documentazione fotografica </legend>
+<div class="row-fluid"><div class="span12 alert alert-info">
+<p><b>Le riprese fotografiche (da 2 a 4) devono permettere una vista di dettaglio dell'area di intervento e una vista panoramica del contesto da punti dai quali è possibile cogliere con completezza le fisionomie fondamentali del contesto paesaggistico, le aree di intervisibilità del sito.</b></p>
+<p><b>Le riprese fotografiche vanno corredate da note esplicative e dall'individuazione del contesto paesaggistico e dell'area di intervento.</b></p>
+</div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">10.A Estremi del provvedimento ministeriale o regionale di notevole interesse pubblico del vincolo per immobili o aree dichiarate di notevole interesse pubblico (art. 136 - 141 - 157 D.Lgs. n. 42/2004)</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">interesse_pubblico_opt</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">10.B Presenza di aree tutelate per legge (art. 142 del D.Lgs n. 42/2004)</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">aree_tutelate_opt</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">11. Note descrittive dello stato attuale dell'immobile o dell'area tutelata</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">note_stato_attuale</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">12. Descrizione sintetica dell'interventoe delle caratteristiche dell'opera (dimensioni materiali, finiture, modalità di messa in opera etc.) </legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">descrizione_sintetica</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">13. Effetti conseguenti alla realizzazione dell'opera</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">effetti_opera</span></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">14. Mitigazione dell'impatto dell'intervento</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">mitigazione_impatto_intervento</span></div></div>
+</fieldset>
+<p><span class="plominoHidewhenClass">start:hw_rel_semplificata</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">15. Simulazione dello stato dei luoghi a seguito della realizzazione del progetto: foto, modellazione fotografica ...</legend>
+<div class="row-fluid"><div class="span12 alert alert-info"></div></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">16. Previsioni degli effetti delle trasformazioni dal punto di vista paesaggistico (a breve e medio termine)</legend>
+<div class="row-fluid"><div class="span12"><span class="plominoFieldClass">previsioni_effetti_opera</span></div></div>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_rel_semplificata</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="opera_correlata_opt" title="Opera correlata a" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">opera_correlata_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Edificio|1''',
+'''Area di pertinenza o intorno dell'edificio|2''',
+'''Lotto di terreno|3''',
+'''Strade o corsi d'acqua|4''',
+'''Territorio aperto|5'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="carattere_intervento_opt" title="Carattere dell'intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">carattere_intervento_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Temporaneo o stagionale|1''',
+'''Permanente fisso|2''',
+'''Permanente rimovibile|3'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="immobile_destinazione" title="Destinazione d'uso del manufatto esistente o dell'area interessata (se edificio o area di pertinenza)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">immobile_destinazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="uso_attuale_suolo_opt" title="Uso attuale del suolo (se lotto di terreno)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">uso_attuale_suolo_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Urbano|1''',
+'''Agricolo|2''',
+'''Boscato|3''',
+'''Naturale non coltivato|4''',
+'''Altro|5'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="contesto_paesaggistico_opt" title="Contesto paesaggistico dell'intervento e/o dell'opera" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">contesto_paesaggistico_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Centro storico|1''',
+'''Area urbana|2''',
+'''Area periurbana|3''',
+'''Territorio agricolo|4''',
+'''Insediamento sparso|5''',
+'''Insediamento agricolo|6''',
+'''Area naturale|7'''
+]
+</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="morfologia_opt" title="Morfologia del contesto paesaggistico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">morfologia_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Costa (bassa/alta)|1''',
+'''Ambito lacustre/vallivo|2''',
+'''Pianura|3''',
+'''Versante (collinare/montano)|4''',
+'''Altopiano/Promontorio|5''',
+'''Piana valliva (montana/collinare)|6''',
+'''Terrazzamento|7''',
+'''Crinale|8'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="interesse_pubblico_opt" title="Estremi del provvedimento ministeriale o regionale di notevole interesse pubblico del vincolo per immobili o aree dichiarate di notevole interesse pubblico (art. 136 - 141 - 157 D.Lgs. n. 42/2004)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">interesse_pubblico_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Cose immobili|1''',
+'''Ville, giardini, parchi|2''',
+'''Complessi di cose immobili|3''',
+'''Bellezze panoramiche|4''',
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="aree_tutelate_opt" title="Presenza di aree tutelate per legge (art. 142 del D.Lgs n. 42/2004)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">aree_tutelate_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Terreni costieri|1''',
+'''Terreni contermini ai laghi|2''',
+'''Fiumi, torrenti, corsi d'acqua|3''',
+'''Montagne sup. 1200/1600 m|4''',
+'''Ghiacciai e circhi glaciali|5''',
+'''Parchi e riserve|6''',
+'''Territori coperti da foreste e boschi|7''',
+'''Università agrarie e usi civici|8''',
+'''Zone umide|9''',
+'''Vulcani|10''',
+'''Zone di interesse archeologico|11'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="note_stato_attuale" title="Note descrittive dello stato attuale dell'immobile o dell'area tutelata" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">note_stato_attuale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="effetti_opera" title="Effetti conseguenti alla realizzazione dell'opera" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">effetti_opera</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="mitigazione_impatto_intervento" title="Mitagazione dell'impatto dell'intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">mitigazione_impatto_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="previsioni_effetti_opera" title="Previsioni degli effetti delle trasformazioni dal punto di vista paesaggistico (a breve e medio termine)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">previsioni_effetti_opera</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="descrizione_sintetica" title="Descrizione sintetica dell'interventoe delle caratteristiche dell'opera (dimensioni materiali, finiture, modalità di messa in opera etc.) " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_sintetica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_rel_semplificata" title="hw_rel_semplificata" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_rel_semplificata</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app')=='paesaggistica-semplificata']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

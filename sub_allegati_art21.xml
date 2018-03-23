@@ -1,0 +1,156 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_allegati_art21" title="sub_allegati_art21" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_art21</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvvv-content-title" title="allegati">
+<legend class="scheduler-border">Documentazione da presentare</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_allegati_esterni</span></p>
+<div>
+<span class="plominoLabelClass">allegati_foto_esterno</span><span class="plominoFieldClass">allegati_foto_esterno</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_allegati_esterni</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_pompe_allegati</span></p>
+<div>
+<span class="plominoLabelClass">allegati_progetto_pompe</span><span class="plominoFieldClass">allegati_progetto_pompe</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_pompe_allegati</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_allegato_vincolo_paesaggistico</span></p>
+<div>
+<span class="plominoLabelClass">allegati_vincolo_paesaggistico</span><span class="plominoFieldClass">allegati_vincolo_paesaggistico</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_allegato_vincolo_paesaggistico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_allegati_autorizzazione_sopraintendenza</span></p>
+<div>
+<span class="plominoLabelClass">allegati_autorizzazione_soprintendenza</span><span class="plominoFieldClass">allegati_autorizzazione_soprintendenza</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_allegati_autorizzazione_sopraintendenza</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_allegati_descrizione_opere</span></p>
+<div>
+<span class="plominoLabelClass">allegati_descrizione_opere</span><span class="plominoFieldClass">allegati_descrizione_opere</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_allegati_descrizione_opere</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegati_foto_esterno" title="Documentazione fotografica per interventi esterni" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_foto_esterno</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_allegati_esterni" title="hw_no_allegati_esterni" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_allegati_esterni</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('interventi_esterno_edificio',[])==[]]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="allegati_progetto_pompe" title="Progetto redatto da tecnico abilitato ai sensi della vigente normativa in materia di utilizzo delle fonti energetiche rinnovabili e di risparmio energetico (art.28 L 10/91 2 e successive modifiche legislative statali ai sensi di L.R. 22 del 29/05/2007)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_progetto_pompe</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_pompe_allegati" title="hw_no_pompe_allegati" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pompe_allegati</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('pompe_calore_opt')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="allegati_vincolo_paesaggistico" title="Autorizzazione paesaggistica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_vincolo_paesaggistico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]} data-tooltip="da allegare solo nel caso che la competenza al rilascio sia regionale come ad esempio in ambito demaniale diversamente citare solo gli estremi"''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_allegato_vincolo_paesaggistico" title="hw_no_allegato_vincolo_paesaggistico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_allegato_vincolo_paesaggistico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('vincolo_paesaggistico','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_allegati_autorizzazione_sopraintendenza" title="hw_no_allegati_autorizzazione_sopraintendenza" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_allegati_autorizzazione_sopraintendenza</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('dichiarazione_tutela_storico','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="allegati_autorizzazione_soprintendenza" title="Autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_autorizzazione_soprintendenza</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]} ''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_allegati_descrizione_opere" title="hw_no_allegati_descrizione_opere" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_allegati_descrizione_opere</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1' not in context.getItem('interventi_edilizia_libera',[])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="allegati_descrizione_opere" title="Descrizione delle opere" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_descrizione_opere</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]} ''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_allegati" title="Nascondi quando sono presenti allegati" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_allegati</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>
