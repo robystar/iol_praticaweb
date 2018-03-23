@@ -216,7 +216,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-100Y", "dateFormat": "dd/mm/yy", "yearRange": "-100:+0"}'
 ''']]></HTMLAttributesFormula>
           <params>
 <param>

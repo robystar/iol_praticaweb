@@ -15,7 +15,7 @@
 <legend class="scheduler-border">Note agli allegati</legend>
 <p><span class="plominoFieldClass">note_allegati</span></p>
 </fieldset>
-<div class="hidden">
+<div class="invisible">
 <p><span class="plominoFieldClass">consenso_pec_value</span></p>
 <p><span class="plominoFieldClass">invio_pec</span></p>
 <p><span class="plominoFieldClass">delegato_opt_value</span></p>
