@@ -1,0 +1,20 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="config_printservice" title="" type="Script (Python)"><![CDATA[## Script (Python) "config_printservice"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+diz={
+     "convertpdf": "http://webservice.gisweb.it/printservice-bb/xDoc2Pdf.php",
+     "createdocx": "http://webservice.gisweb.it/printservice-bb/xCreateDocument.php",
+     "template_folder": "modelli", 
+}
+return diz
+]]></resource>
+  </design>
+</plominodatabase>

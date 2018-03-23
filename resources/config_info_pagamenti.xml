@@ -1,0 +1,19 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="config_info_pagamenti" title="" type="Script (Python)"><![CDATA[## Script (Python) "config_info_pagamenti"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+ccp = ""
+ccb = "TESORERIA COMUNALE - CASSA DI RISPARMIO DI DEMO - IBAN: IT 0000000000000000000000"
+causale = "Attestazione avvenuto pagamento dei diritti di segreteria - Nominativo - Indirizzo Immobile" 
+
+return '%s <br>con causale :"%s"' %(ccb,causale)
+]]></resource>
+  </design>
+</plominodatabase>

@@ -1,0 +1,105 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="config_documenti_stampe" title="" type="Script (Python)"><![CDATA[## Script (Python) "config_documenti_stampe"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+comunicazione = {
+   "art21": "Istanza di Comunicazione Art.21|comunicazione_art21",
+   "art21ter": "Istanza di Comunicazione Art.21 TER|comunicazione_art21ter",
+   "art22": "Istanza di Comunicazione Art.22|comunicazione_art22",
+   "art48": "Istanza di Comunicazione Art.48|comunicazione_art48",
+   "cila": "Comunicazione CILA|comunicazione_cila",
+   "cil": "Comunicazione CIL|comunicazione_cil",
+   "dia": "Comunicazione DIA|comunicazione_dia",
+   "finelavori": "Comunicazione di Fine Lavori|comunicazione_fine_lavori",
+   "iniziolavori": "Comunicazione di Inizio Lavori|comunicazione_inizio_lavori",
+   "integrazione": "Comunicazione Integrazione|comunicazione_integrazione",
+   "lr25": "Istanza di Comunicazione Cambio di Destinazione d'uso|comunicazione_lr25",
+   "parere": "Comunicazione Parere|comunicazione_parere",
+   "pdc": "Istanza di Permesso di Costruire|comunicazione_pdc",
+   "sca": "Comunicazione SCA|comunicazione_sca",
+   "scia": "Comunicazione SCIA|comunicazione_scia",
+   "scia2": "Comunicazione SCIA|comunicazione_scia2",
+   "paesaggistica-ordinaria": "Comunicazione Autorizzazione Paesaggistica Ordinaria|comunicazione_paes_ordinaria",
+   "paesaggistica-semplificata": "Comunicazione Autorizzazione Paesaggistica Sempificata|comunicazione_paes_semplificata",
+   "paesaggistica-accertamento": "Comunicazione Accertamento di Compatib Paesaggistica|comunicazione_accert_compatibilita",
+   "aua": "Autorizzazione AUA|autorizzazione_aua"
+
+}
+
+
+if not doc.isDocument(): 
+    return []
+    
+tipo_app=doc.getItem('iol_tipo_app')
+
+
+relazione_asseverata="Relazione asseverata|rel_asseverata_%s" %tipo_app
+autocertificazione_sicurezza="Autocertificazione sicurezza|autocertificazione_sicurezza"
+autocertificazione_imprese="Autocertificazione impresa esecutrice %s|autocertificazione_impresa"
+
+
+#dipende dal tipo nel campo relazione_paesaggistica
+relazione_paesaggistica = {
+    "1":"Relazione Paesaggistica Semplificata|rel_paes_semplificata",
+    "2":"Relazione Paesaggistica Completa|rel_paes_completa"
+}
+     
+
+elenco=[]
+elenco.append(comunicazione[tipo_app]+"&pdf=1")
+    
+if tipo_app=='art22':
+    elenco.append("Relazione descrittiva per opere interne alle costruzioni|rel_descrittiva_art22")
+
+if tipo_app in ['scia','scia2','pdc']:
+    elenco.append(relazione_asseverata+"&pdf=1")
+       
+if doc.getItem('resp_sicurezza_nome'):
+    elenco.append(autocertificazione_sicurezza+"&pdf=1")
+   
+if doc.getItem('lavori_economia_opt','') =='2':
+    elenco.append(autocertificazione_imprese %1)
+    esecutori = doc.getItem('altri_esecutori_grid', [['prova 2'],['prova 3'],['prova 4']])
+    s=autocertificazione_imprese
+    for i,v in enumerate(esecutori):
+        autocertificazione_imprese = s + "&grid=altri_esecutori_grid&grid_index=" + str(i)
+        elenco.append(autocertificazione_imprese %(i+2))
+         
+if tipo_app=='paesaggistica-ordinaria':
+    opt = doc.getItem('relazione_paesaggistica')
+    if opt=='1':
+        elenco.append("Relazione Paesaggistica Completa|rel_paes_completa") 
+    elif opt=='2':
+        elenco.append("Relazione Paesaggistica Semplificata|rel_paes_semplificata")     
+    
+if tipo_app=='paesaggistica-semplificata':
+    elenco.append("Relazione Paesaggistica Semplificata|rel_paes_semplificata")       
+    
+if tipo_app=='paesaggistica-accertamento':
+    elenco.append("Relazione Paesaggistica Completa|rel_paes_completa")
+ 
+if tipo_app=='cila':
+    elenco.append("Dichiarazioni del Progettista|rel_dichiarazioni_progettista_cila&pdf=1")    
+
+elenco_tipo_relazione = context.config_praticaweb().get('relazione_descrittiva',[])
+if tipo_app in elenco_tipo_relazione:
+    elenco.append("Relazione descrittiva delle opere|rel_descrittiva_%s" %tipo_app)      
+    
+#######AGGIUNGO I PARAMETRI 
+for k in range(len(elenco)):
+    if 'rel_' in elenco[k]:
+        elenco[k] = "%s&app=praticaweb&grp=relazioni&form=sub_completa_%s" %(elenco[k],tipo_app)
+    else:
+        elenco[k] = "%s&app=praticaweb&grp=autorizzazione&form=sub_completa_%s" %(elenco[k],tipo_app)
+        
+return elenco
+]]></resource>
+  </design>
+</plominodatabase>

@@ -1,0 +1,427 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="wizard" title="" type="Folder">
+      <resource id="art22" title="" type="Script (Python)"><![CDATA[## Script (Python) "art22"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus = [
+    {"label": "Richiedenti", "frm": "frm_art22", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_art22_intervento", "title": "Oggetto della comunicazione"}, 
+    {"label": "Progettista", "frm": "frm__progettista", "title": "Progettista incaricato"}, 
+    {"label": "Allegati", "frm": "frm_art22_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}  
+]
+return menus
+]]></resource>
+      <resource id="art48" title="" type="Script (Python)"><![CDATA[## Script (Python) "art48"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus = [
+    {"label": "Richiedenti", "frm": "frm_art48", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_art48_intervento", "title": "Oggetto della comunicazione"}, 
+    {"label": "Progettista", "frm": "frm__progettista", "title": "Progettista incaricato"}, 
+    {"label": "Allegati", "frm": "frm_art48_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}  
+]
+return menus
+]]></resource>
+      <resource id="cila" title="" type="Script (Python)"><![CDATA[## Script (Python) "cila"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_cila", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione_vincoli", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "frm_cila_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Tecnici", "frm": "frm__tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Sicurezza", "frm": "frm__sicurezza", "title": "Sicurezza nei luogi di lavoro"}, 
+    {"label": "Oneri", "frm": "frm_cila_oneri", "title": "Contributo di costruzione"}, 
+    {"label": "Allegati", "frm": "frm_cila_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="parere" title="" type="Script (Python)"><![CDATA[## Script (Python) "parere"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_parere", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_parere_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Progettista", "frm": "frm__progettista", "title": "Progettista incaricato"}, 
+    {"label": "Allegati", "frm": "frm_parere_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="pdc" title="" type="Script (Python)"><![CDATA[## Script (Python) "pdc"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_pdc", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione_vincoli", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "frm_pdc_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Tecnici", "frm": "frm__tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Sicurezza", "frm": "frm__sicurezza", "title": "Sicurezza nei luogi di lavoro"}, 
+    {"label": "Asseverata", "frm": "frm__asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Vincoli", "frm": "frm__vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"}, 
+    {"label": "Oneri", "frm": "frm_pdc_oneri", "title": "Contributo di costruzione e oneri di urbanizzazione"}, 
+    {"label": "Allegati", "frm": "frm__allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="sca" title="" type="Script (Python)"><![CDATA[## Script (Python) "sca"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_sca", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Intervento", "frm": "frm_sca_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Tecnici", "frm": "frm_sca_tecnico", "title": "Tecnici incaricati"}, 
+    {"label": "Asseverata", "frm": "frm_sca_asseverata", "title": "Dichiarazioni di asseverazione"},     
+    {"label": "Allegati", "frm": "frm_sca_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="scia" title="" type="Script (Python)"><![CDATA[## Script (Python) "scia"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_scia", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione_vincoli", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "frm_scia_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Tecnici", "frm": "frm__tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Sicurezza", "frm": "frm__sicurezza", "title": "Sicurezza nei luogi di lavoro"}, 
+    {"label": "Asseverata", "frm": "frm__asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Vincoli", "frm": "frm__vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"}, 
+    {"label": "Oneri", "frm": "frm_scia_oneri", "title": "Contributo di costruzione e oneri di urbanizzazione"}, 
+    {"label": "Allegati", "frm": "frm__allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="scia2" title="" type="Script (Python)"><![CDATA[## Script (Python) "scia2"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_scia2", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione_vincoli", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "frm_scia2_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Tecnici", "frm": "frm__tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Sicurezza", "frm": "frm__sicurezza", "title": "Sicurezza nei luogi di lavoro"}, 
+    {"label": "Asseverata", "frm": "frm__asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Vincoli", "frm": "frm__vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"}, 
+    {"label": "Oneri", "frm": "frm_scia2_oneri", "title": "Contributo di costruzione e oneri di urbanizzazione"}, 
+    {"label": "Allegati", "frm": "frm__allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="lr25" title="" type="Script (Python)"><![CDATA[## Script (Python) "lr25"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus = [
+    {"label": "Richiedenti", "frm": "frm_lr25", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione_vincoli", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "frm_lr25_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Allegati", "frm": "frm_lr25_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}  
+]
+return menus
+]]></resource>
+      <resource id="wizard_menu" title="" type="Script (Python)"><![CDATA[## Script (Python) "wizard_menu"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import json_dumps
+
+obj = context.REQUEST.PARENTS[2]
+visitati = []
+menus = []
+tipo_app = ''
+if obj.isDocument():
+    if obj.getItem('Form')=='frm__presentata':
+        return
+    tipo_app=obj.getItem('iol_tipo_app')
+    visitati=obj.getItem('iol_menu_list',[])
+    currentForm = context.REQUEST.get('openwithform')
+    pratica_esistente = len(visitati)==0
+    
+
+else:
+    currentForm = obj.getId()
+    pratica_esistente = False
+    v = currentForm.split('_')
+    if len(v) > 1:
+        tipo_app = v[1]
+
+if not tipo_app in context:
+    #errore manca i menu per tipo_app todo
+    return dict()
+ 
+#DA RIVEDERE !!!!!!!!!!!!! 
+menus = context[tipo_app]() 
+    
+#if obj.isDocument() and context.getItem('data_presentazione','')!='':
+#    menus = []
+    
+    
+#if True and pratica_esistente and context.getItem('Form')!='frm_pratica_presentata':
+
+
+for menu in menus:
+    menu["enabled"] = pratica_esistente or menu["frm"] in visitati
+    menu["edit"] = 1#obj.isCurrentUserAuthor(obj)    DA VEDERE!!!!!!!!!!!!!!!
+    if currentForm == menu["frm"]:
+        menu["active"]=True
+
+return json_dumps(menus)
+]]></resource>
+      <resource id="iniziolavori" title="" type="Script (Python)"><![CDATA[## Script (Python) "iniziolavori"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus = [
+    {"label": "Dati del dichiarante", "frm": "frm_iniziolavori", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Tecnici", "frm": "frm_iniziolavori_tecnici", "title": "Tecnici incaricati"},     
+    {"label": "Documentazione allegata", "frm": "frm_iniziolavori_allegati", "title": "Documentazione allegata"},
+    {"label": "Resoconto Finale", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="finelavori" title="" type="Script (Python)"><![CDATA[## Script (Python) "finelavori"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus = [
+    {"label": "Dati del dichiarante", "frm": "frm_finelavori", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Intervento", "frm": "frm_finelavori_intervento", "title": "Tipo di intervento"}, 
+    {"label": "Documentazione allegata", "frm": "frm_finelavori_allegati", "title": "Documentazione allegata"},
+    {"label": "Resoconto Finale", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="integrazione" title="" type="Script (Python)"><![CDATA[## Script (Python) "integrazione"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus = [
+    {"label": "Dati del dichiarante", "frm": "frm_integrazione", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Tecnici", "frm": "frm_integrazione_tecnici", "title": "Tecnici incaricati"},     
+    {"label": "Documentazione allegata", "frm": "frm_integrazione_allegati", "title": "Documentazione allegata"},
+    {"label": "Resoconto Finale", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="cil" title="" type="Script (Python)"><![CDATA[## Script (Python) "cil"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_cil", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "frm_cil_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Tecnici", "frm": "frm_cil_tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Sicurezza", "frm": "frm__sicurezza", "title": "Sicurezza nei luogi di lavoro"}, 
+    {"label": "Allegati", "frm": "frm_cil_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="paesaggistica-ordinaria" title="" type="Script (Python)"><![CDATA[## Script (Python) "paesaggistica-ordinaria"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_paesaggistica-ordinaria", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_paesaggistica_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Progettista", "frm": "frm__progettista", "title": "Progettista incaricato"}, 
+    {"label": "Asseverata", "frm": "frm_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Allegati", "frm": "frm_paesaggistica_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="paesaggistica-semplificata" title="" type="Script (Python)"><![CDATA[## Script (Python) "paesaggistica-semplificata"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_paesaggistica-semplificata", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_paesaggistica_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Progettista", "frm": "frm__progettista", "title": "Progettista incaricato"}, 
+    {"label": "Asseverata", "frm": "frm_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Allegati", "frm": "frm_paesaggistica_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="paesaggistica-accertamento" title="" type="Script (Python)"><![CDATA[## Script (Python) "paesaggistica-accertamento"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_paesaggistica-accertamento", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_paesaggistica_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Progettista", "frm": "frm__progettista", "title": "Progettista incaricato"}, 
+    {"label": "Asseverata", "frm": "frm_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"},     
+    {"label": "Allegati", "frm": "frm_paesaggistica_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="art21" title="" type="Script (Python)"><![CDATA[## Script (Python) "art21"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus = [
+    {"label": "Richiedenti", "frm": "frm_art21", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm__ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_art21_intervento", "title": "Oggetto della comunicazione"}, 
+    {"label": "Allegati", "frm": "frm_art21_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}  
+]
+return menus
+]]></resource>
+      <resource id="aua" title="" type="Script (Python)"><![CDATA[## Script (Python) "aua"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Gestore", "frm": "frm_aua", "title": "Dati anagrafici del gestore"}, 
+    {"label": "Ubicazione", "frm": "frm_aua_ubicazione", "title": "Localizzazione dell'impianto"}, 
+    {"label": "Richiesta", "frm": "frm_aua_richiesta", "title": "Richiesta"}, 
+    {"label": "Completata", "frm": "frm__completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+      <resource id="cdu" title="" type="Script (Python)"><![CDATA[## Script (Python) "cdu"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus =[
+    {"label": "Richiedenti", "frm": "frm_cdu", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Particelle", "frm": "frm_cdu_particelle", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Vincoli", "frm": "frm_cdu_vincoli", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Allegati", "frm": "frm_cdu_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm_cdu_completata", "title": "Istanza completata - resoconto finale"}
+]
+return menus
+]]></resource>
+    </resource>
+  </design>
+</plominodatabase>
