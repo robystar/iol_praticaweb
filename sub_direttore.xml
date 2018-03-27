@@ -57,10 +57,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori;|1','Il direttore dei lavori coincide con il progettista delle opere;|2','Il direttore dei lavori è persona diversa dal progettista;|3','''Il direttore dei lavori sarà comunicato prima dell'inizio dei lavori;|4''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -72,6 +68,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori;|1','Il direttore dei lavori coincide con il progettista delle opere;|2','Il direttore dei lavori è persona diversa dal progettista;|3','''Il direttore dei lavori sarà comunicato prima dell'inizio dei lavori;|4''']</string></value>
 </member>
 </struct></value>
 </param>

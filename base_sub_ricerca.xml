@@ -74,17 +74,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>if context.resources.get('config_pratica_ricerca'):
-    return context.resources.config_pratica_ricerca()
-else:
-    return []</string></value>
-</member>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -96,6 +85,17 @@ else:
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>if context.resources.get('config_pratica_ricerca'):
+    return context.resources.config_pratica_ricerca()
+else:
+    return []</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>
@@ -117,14 +117,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['SUE|sue','SUAP|suap']</string></value>
-</member>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -136,6 +128,14 @@ else:
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SUE|sue','SUAP|suap']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>

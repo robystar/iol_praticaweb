@@ -63,10 +63,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Richiesta inviata|INVIATA','Errore nel pagamento|ERRORE','Pagamento Annullato|ANNULLATA','Pagamento Effettuato|OK','In attesa di approvazione|ATTESA']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -74,6 +70,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Richiesta inviata|INVIATA','Errore nel pagamento|ERRORE','Pagamento Annullato|ANNULLATA','Pagamento Effettuato|OK','In attesa di approvazione|ATTESA']</string></value>
 </member>
 </struct></value>
 </param>
@@ -108,12 +108,12 @@
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%7.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%7.2f</string></value>
 </member>
 </struct></value>
 </param>

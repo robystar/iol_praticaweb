@@ -1,0 +1,193 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="dlg_allegati_enti_settings" title="Configurazione allegato ed ente" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">dlg_allegati_enti_settings</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div>
+<span class="plominoLabelClass">allegato_tipo</span><span class="plominoFieldClass">allegato_tipo</span>
+</div>
+<div>
+<span class="plominoLabelClass">allegato_nome</span><span class="plominoFieldClass">allegato_nome</span>
+</div>
+<div>
+<span class="plominoLabelClass">allegato_ente_opt</span><span class="plominoFieldClass">allegato_ente_opt</span>
+</div>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.praticaweb/css/iol-sue.css
+++resource++iol.document/css/bootstrap.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegato_tipo" title="Tipo in praticaweb" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_tipo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>result=['|']
+
+for res in context.resources.zsql.ElencoTipoDocumento().dictionaries():
+    result.append('%s|%s' %(res['nome'],res['id']))
+     
+return result
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegato_nome" title="Campo documento allegato" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_nome</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>rows = context.resources.customscripts.getElencoAllegati()
+result=[]
+for row in rows:
+    result.append('%s (%s)|%s' %(row[0],row[1],row[1]))    
+return result
+</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegato_ente_opt" title="Ufficio / Ente di competenza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_ente_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import getUserGroupFullName
+settings = context.resources.customscripts.getDocSettings()
+grpPareri = settings.getItem('grp_pareri_interni',[])+settings.getItem('grp_pareri_esterni',[])
+elenco=['|']
+for grp in grpPareri:
+    elenco.append("%s|%s" %(getUserGroupFullName(context,grp),grp))
+
+return elenco
+
+context.plone_log(grpPareri)
+
+
+return elencoUtentiGruppi(context,groups=grpPareri)</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

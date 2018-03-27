@@ -87,11 +87,6 @@ if db.getDocument(docId):
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -103,6 +98,11 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
 </member>
 </struct></value>
 </param>
@@ -129,11 +129,6 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -145,6 +140,11 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
 </member>
 </struct></value>
 </param>
@@ -171,11 +171,6 @@ return elencoGruppi(context)</string></value>
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -187,6 +182,11 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
 </member>
 </struct></value>
 </param>
@@ -213,11 +213,6 @@ return elencoGruppi(context)</string></value>
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -229,6 +224,11 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
 </member>
 </struct></value>
 </param>
@@ -255,11 +255,6 @@ return elencoGruppi(context)</string></value>
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -271,6 +266,11 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
 </member>
 </struct></value>
 </param>
@@ -292,16 +292,16 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
+<name>field_mapping</name>
+<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>REGULAR</string></value>
 </member>
 <member>
 <name>associated_form</name>
 <value><string>dlg-mail-settings</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -323,8 +323,8 @@ return elencoGruppi(context)</string></value>
 </string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
 </member>
 </struct></value>
 </param>
@@ -370,14 +370,6 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['CIL|cil','CILA|cila','SCIA|scia','SCIA2|scia2','DIA|dia','PDC|pdc','Paesaggistica|paesaggistica','SCA|sca','Art.22|art22','Art.48|art48','Inizio lavori|iniziolavori','Fine lavori|finelavori','Integrazione|integrazione']</string></value>
-</member>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -389,6 +381,14 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['CIL|cil','CILA|cila','SCIA|scia','SCIA2|scia2','DIA|dia','PDC|pdc','Paesaggistica|paesaggistica','SCA|sca','Art.22|art22','Art.48|art48','Inizio lavori|iniziolavori','Fine lavori|finelavori','Integrazione|integrazione']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>

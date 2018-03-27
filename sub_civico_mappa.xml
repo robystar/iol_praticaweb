@@ -80,10 +80,6 @@ data-base-type = "roadmap"
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Accessi|accessi','Viabilità|viabilita']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -95,6 +91,10 @@ data-base-type = "roadmap"
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Accessi|accessi','Viabilità|viabilita']</string></value>
 </member>
 </struct></value>
 </param>
@@ -163,10 +163,6 @@ data-geocoding='find_location'
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['|empty','Elemento puntuale|punto']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -178,6 +174,10 @@ data-geocoding='find_location'
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['|empty','Elemento puntuale|punto']</string></value>
 </member>
 </struct></value>
 </param>
@@ -199,10 +199,6 @@ data-geocoding='find_location'
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoVie(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -210,6 +206,10 @@ data-geocoding='find_location'
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoVie(context)</string></value>
 </member>
 </struct></value>
 </param>
@@ -257,12 +257,12 @@ data-geocoding='find_location'
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_assegnazione_civici</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>numero_civico,via,accesso,piano,destinazione_locale,foglio,mappale,subalterno,lat,lng,geom</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_assegnazione_civici</string></value>
 </member>
 <member>
 <name>jssettings</name>

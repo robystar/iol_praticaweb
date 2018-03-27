@@ -104,10 +104,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Ho Letto l'Informativa sulla Privacy ed Accetto le Condizioni|1''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -119,6 +115,10 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Ho Letto l'Informativa sulla Privacy ed Accetto le Condizioni|1''']</string></value>
 </member>
 </struct></value>
 </param>

@@ -94,12 +94,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%d/%m/%Y</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
 </member>
 </struct></value>
 </param>
@@ -112,7 +112,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         </element>
         <element id="hw_no_comunicazione_digitale" title="hw_no_comunicazione_digitale" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_digitale</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={}]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={} or context.getItem('Form')=='frm__presentata']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

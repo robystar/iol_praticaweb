@@ -10,6 +10,7 @@ if True or  'btn_successivo' in context.REQUEST.keys():
     inviaPratica = context.restrictedTraverse('@@pw-invia-pratica')
     if inviaPratica:
         inviaPratica()  
+        newState = context.doAction('10_invia_domanda')
     else:
         context.plone_utils.addPortalMessage('invio pratica fallito, manca pw-invia-pratica','error')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
@@ -85,10 +86,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_documenti_stampe(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -100,6 +97,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_documenti_stampe(context)</string></value>
 </member>
 </struct></value>
 </param>

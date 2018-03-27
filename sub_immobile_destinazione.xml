@@ -49,10 +49,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['','Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -60,6 +56,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['','Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
 </member>
 </struct></value>
 </param>

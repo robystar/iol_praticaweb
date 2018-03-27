@@ -179,10 +179,6 @@
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''non ricade nell'ambito di applicazione del Titolo IV del d.lgs. n. 81/2008|non_ricade''','''ricade nell'ambito di applicazione del Titolo IV del d.lgs. n. 81/2008|ricade''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -194,6 +190,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''non ricade nell'ambito di applicazione del Titolo IV del d.lgs. n. 81/2008|non_ricade''','''ricade nell'ambito di applicazione del Titolo IV del d.lgs. n. 81/2008|ricade''']</string></value>
 </member>
 </struct></value>
 </param>
@@ -264,10 +264,6 @@
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''L’intervento non è soggetto all’invio della notifica|no-notifica''','''Allega alla presente comunicazione la notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|allega''','''Indica gli estremi della notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|indica''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -279,6 +275,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''L’intervento non è soggetto all’invio della notifica|no-notifica''','''Allega alla presente comunicazione la notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|allega''','''Indica gli estremi della notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|indica''']</string></value>
 </member>
 </struct></value>
 </param>

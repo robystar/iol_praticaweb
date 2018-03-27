@@ -88,10 +88,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoVie(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -99,6 +95,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoVie(context)</string></value>
 </member>
 </struct></value>
 </param>
@@ -159,10 +159,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Abitazioni','Negozi','Uffici','Magazzini','Autorimesse Pubbliche','Autorimesse Private','Locali di Pubblici spettacoli','Varia']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -170,6 +166,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Abitazioni','Negozi','Uffici','Magazzini','Autorimesse Pubbliche','Autorimesse Private','Locali di Pubblici spettacoli','Varia']</string></value>
 </member>
 </struct></value>
 </param>

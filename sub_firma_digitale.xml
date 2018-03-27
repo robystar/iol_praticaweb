@@ -12,7 +12,9 @@
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div><fieldset class="scheduler-border">
 <legend class="scheduler-border">FIRMA DIGITALE</legend>
 <div class="alert alert-info">Qualora il richiedente fosse sprovvisto del dispositivo di firma digitale potrà optare tra due modalità:<br> richiedere al progettista di stampare tutti documenti ove richiesta la propria firma, che verranno successivamente scannerizzati e allegati congiuntamente alla copia del documento di identità di ciascun dichiarante oppure rilasciare una procura al progettista, rilasciata da ciascun dichiarante, da allegare alla presente comunicazione/istanza, affinchè possa firmare tutti i documenti con la propria firma digitale</div>
-<div><span class="plominoFieldClass">firma_digitale_opt</span></div>
+<div>
+<span class="plominoLabelClass">firma_digitale_opt</span><span class="plominoFieldClass">firma_digitale_opt</span>
+</div>
 </fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -48,10 +50,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Il richiedente utilizzerà la propria firma digitale;|1''','''Il richiedente firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista;|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista;|3''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -63,6 +61,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Il richiedente utilizzerà la propria firma digitale;|1''','''Il richiedente firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista;|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista;|3''']</string></value>
 </member>
 </struct></value>
 </param>

@@ -64,10 +64,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''nel comune non e' presente un'attività a rischio d'incidente rilevante;|1''','''nel comune e' presente un'attività a rischio d'incidente rilevante e la relativa "area di danno" e' individuata nella pianificazione comunale:|2''','''nel comune e' presente un'attivita' a rischio d'incidente rilevante e la relativa "area di danno" non e' individuata nella pianificazione comunale pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|3''','''la valutazione del progetto è stata rilasciata con atto:|4''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -79,6 +75,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''nel comune non e' presente un'attività a rischio d'incidente rilevante;|1''','''nel comune e' presente un'attività a rischio d'incidente rilevante e la relativa "area di danno" e' individuata nella pianificazione comunale:|2''','''nel comune e' presente un'attivita' a rischio d'incidente rilevante e la relativa "area di danno" non e' individuata nella pianificazione comunale pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|3''','''la valutazione del progetto è stata rilasciata con atto:|4''']</string></value>
 </member>
 </struct></value>
 </param>
@@ -100,10 +100,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''l'intervento non ricade nell'area di danno;|1''','''l'intervento ricade in area di danno, pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -115,6 +111,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''l'intervento non ricade nell'area di danno;|1''','''l'intervento ricade in area di danno, pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|2''']</string></value>
 </member>
 </struct></value>
 </param>

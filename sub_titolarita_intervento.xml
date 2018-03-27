@@ -12,7 +12,9 @@
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
 <legend class="scheduler-border">TITOLARITA' DELL'INTERVENTO</legend>
 <div class="alert alert-info">Qualora il richiedente non avesse piena titolarità per l'esecuzione dell'intervento, è necessario allegare una dichiarazione di consenso dell'avente titolo o aventi titolo, congiuntamente ai rispettivi documenti di identità.</div>
-<div><span class="plominoFieldClass">titolarita_opt</span></div>
+<div>
+<span class="plominoLabelClass">titolarita_opt</span><span class="plominoFieldClass">titolarita_opt</span>
+</div>
 </fieldset>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -48,10 +50,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Il richiedente ha la titolarità esclusiva all'esecuzione dell'intervento|1''','''Il richiedente non ha la titolarità esclusiva all'esecuzione dell'intervento ma dispone comunque della dichiarazione di assenso dei terzi titolari di altri diritti reali o obbligatori|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -63,6 +61,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Il richiedente ha la titolarità esclusiva all'esecuzione dell'intervento|1''','''Il richiedente non ha la titolarità esclusiva all'esecuzione dell'intervento ma dispone comunque della dichiarazione di assenso dei terzi titolari di altri diritti reali o obbligatori|2''']</string></value>
 </member>
 </struct></value>
 </param>

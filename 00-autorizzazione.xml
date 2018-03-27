@@ -74,12 +74,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%d/%m/%Y</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
 </member>
 </struct></value>
 </param>
@@ -117,13 +117,6 @@ data-target="documenti_da_scaricare"
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>#Elenco modelli presi dalla cartella
-from iol.document.plomino_utils import getTemplateFolderContents
-return getTemplateFolderContents(context,filter={"portal_type" : "File"},printForm='00-print')
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -131,6 +124,13 @@ return getTemplateFolderContents(context,filter={"portal_type" : "File"},printFo
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>#Elenco modelli presi dalla cartella
+from iol.document.plomino_utils import getTemplateFolderContents
+return getTemplateFolderContents(context,filter={"portal_type" : "File"},printForm='00-print')
+</string></value>
 </member>
 </struct></value>
 </param>
@@ -157,11 +157,6 @@ return getTemplateFolderContents(context,filter={"portal_type" : "File"},printFo
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll = ['Autorizzazione AUA|autorizzazione_aua&amp;grp=suap&amp;form=00-print']       
-return ll</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -173,6 +168,11 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['Autorizzazione AUA|autorizzazione_aua&amp;grp=suap&amp;form=00-print']       
+return ll</string></value>
 </member>
 </struct></value>
 </param>

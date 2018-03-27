@@ -414,10 +414,6 @@
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Non presente|no','Solo partita IVA|piva','Scheda completa della persona giuridica|giuridica']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -429,6 +425,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Non presente|no','Solo partita IVA|piva','Scheda completa della persona giuridica|giuridica']</string></value>
 </member>
 </struct></value>
 </param>

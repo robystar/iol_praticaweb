@@ -59,10 +59,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''non è sottoposta a tutela;|1''','''è sottoposta a tutela e l’intervento rientra nei casi eseguibili senza autorizzazione di cui al comma 5 dell’articolo 61 del d.lgs. n. 152/2006 e al r.d.l. 3267/1923;|2''','''è sottoposta a tutela ed è necessario il rilascio dell’autorizzazione (articolo 61 comma 5 del d.lgs. n. 152/2006 ; r.d.l. 3267/1923; l.r. n. 4/1999; l.r. 7/2011) si allega la documentazione necessaria ai fini del rilascio dell’autorizzazione;|3''','''l'autorizzazione è stata rilasciata con atto:|4''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -74,6 +70,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non è sottoposta a tutela;|1''','''è sottoposta a tutela e l’intervento rientra nei casi eseguibili senza autorizzazione di cui al comma 5 dell’articolo 61 del d.lgs. n. 152/2006 e al r.d.l. 3267/1923;|2''','''è sottoposta a tutela ed è necessario il rilascio dell’autorizzazione (articolo 61 comma 5 del d.lgs. n. 152/2006 ; r.d.l. 3267/1923; l.r. n. 4/1999; l.r. 7/2011) si allega la documentazione necessaria ai fini del rilascio dell’autorizzazione;|3''','''l'autorizzazione è stata rilasciata con atto:|4''']</string></value>
 </member>
 </struct></value>
 </param>

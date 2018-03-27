@@ -56,16 +56,6 @@
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>result=['|']
-
-for res in context.resources.zsql.ElencoTipoDocumento().dictionaries():
-    result.append('%s|%s' %(res['nome'],res['id']))
-     
-return result
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -77,6 +67,16 @@ return result
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>result=['|']
+
+for res in context.resources.zsql.ElencoTipoDocumento().dictionaries():
+    result.append('%s|%s' %(res['nome'],res['id']))
+     
+return result
+</string></value>
 </member>
 </struct></value>
 </param>
@@ -103,10 +103,6 @@ return result
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -118,6 +114,10 @@ return result
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
 </member>
 </struct></value>
 </param>
@@ -144,10 +144,6 @@ return result
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -159,6 +155,10 @@ return result
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
 </member>
 </struct></value>
 </param>
@@ -185,19 +185,6 @@ return result
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>rows = context.resources.customscripts.getElencoAllegati()
-result=['|']
-for row in rows:
-    result.append('%s (%s)|%s' %(row[0],row[1],row[1]))    
-return result
-</string></value>
-</member>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -209,6 +196,19 @@ return result
 <member>
 <name>widget</name>
 <value><string>MULTISELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>rows = context.resources.customscripts.getElencoAllegati()
+result=['|']
+for row in rows:
+    result.append('%s (%s)|%s' %(row[0],row[1],row[1]))    
+return result
+</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>

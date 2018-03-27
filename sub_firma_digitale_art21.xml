@@ -48,10 +48,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Il richiedente utilizzerà la propria firma digitale;|1''','''Il richiedente firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del procuratore;|2''','''Tutti i documenti verranno firmati digitalmente dal solo procuratore;|3''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -63,6 +59,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Il richiedente utilizzerà la propria firma digitale;|1''','''Il richiedente firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del procuratore;|2''','''Tutti i documenti verranno firmati digitalmente dal solo procuratore;|3''']</string></value>
 </member>
 </struct></value>
 </param>

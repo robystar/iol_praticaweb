@@ -63,10 +63,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''già accatastate all'epoca della loro esecuzione e munite di certificato di abitabilità/agibilità (art 48 comma 1)|1''','''non accatastate all'epoca della loro realizzazione o non risultanti dal certificato di abitabilità/agibilità (art 48 comma 2)|2''','''concretano variazioni in aumento della superficie della costruzione o dell'unità immobiliare (art 48 comma 3)|3''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -78,6 +74,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''già accatastate all'epoca della loro esecuzione e munite di certificato di abitabilità/agibilità (art 48 comma 1)|1''','''non accatastate all'epoca della loro realizzazione o non risultanti dal certificato di abitabilità/agibilità (art 48 comma 2)|2''','''concretano variazioni in aumento della superficie della costruzione o dell'unità immobiliare (art 48 comma 3)|3''']</string></value>
 </member>
 </struct></value>
 </param>
@@ -99,10 +99,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['che in data antecedente al 1 settembre 1967|1','che in corso di realizzazione alla data del 1 settembre 1967(con titolo edilizio rilasciato in data antecedente)|2']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -114,6 +110,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['che in data antecedente al 1 settembre 1967|1','che in corso di realizzazione alla data del 1 settembre 1967(con titolo edilizio rilasciato in data antecedente)|2']</string></value>
 </member>
 </struct></value>
 </param>
@@ -135,12 +135,12 @@
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>3</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>3</string></value>
 </member>
 </struct></value>
 </param>
@@ -162,10 +162,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -173,6 +169,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
 </member>
 </struct></value>
 </param>
@@ -194,12 +194,12 @@
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>

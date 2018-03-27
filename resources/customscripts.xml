@@ -1861,16 +1861,41 @@ for istruttore in istruttore_notifica:
 docId = context.aq_parent.config_praticaweb().get('doc_settings','0-settings')
 return context.getDocument(docId)
 ]]></resource>
-      <resource id="qualcosa" title="" type="Script (Python)"><![CDATA[## Script (Python) "qualcosa"
+      <resource id="getIstanzaAllegati" title="Elenco degli allegati istanza" type="Script (Python)"><![CDATA[## Script (Python) "getIstanzaAllegati"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=
-##title=
+##parameters=doc=None, field='allegati_istanza'
+##title=Elenco degli allegati istanza
 ##
-return context
+db=context.getParentDatabase()
+elenco_campi = context.getElencoAllegati()
+docId = "%s-allegati" %context.getDocSettingsId()
+settings = db.getDocument(docId)
+rows = settings.getItem(field)
+elenco_ok = []
+for row in rows:
+    elenco_ok = elenco_ok + row[1]
+    
+if not doc:
+    doc=db.getDocument('00021-2018-scia')
+    if not doc:
+        return list()
+    
+    
+result = list()
+for row in elenco_campi:
+    if row[1] in elenco_ok:
+        fieldValue = doc.getItem(row[1],{})
+        if fieldValue!={}:
+            titolo=row[0]
+            names=[]
+            for name in fieldValue.keys():
+                names.append(name)
+            result.append({"label":titolo,"files":names})
+return result
 ]]></resource>
     </resource>
   </design>

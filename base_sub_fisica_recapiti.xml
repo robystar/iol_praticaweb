@@ -27,9 +27,7 @@
 <span class="plominoLabelClass">fisica_fax</span><span class="plominoFieldClass">fisica_fax</span>
 </div>
 </div>
-<div class="alert alert-warning">
-<h5>Per consentire eventuali successive comunicazioni via Posta Certificata, è necessario completare l'indirizzo PEC</h5>
-</div>
+<div class="alert alert-warning"><h5>Per consentire eventuali successive comunicazioni via Posta Certificata, è necessario completare l'indirizzo PEC</h5></div>
 </div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>

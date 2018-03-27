@@ -58,10 +58,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Assegnata in valutazione|assegnata','Domanda arrivata in attesa di assegnazione|presentata','Certificato rilasciato|rilasciato','Richiesta rigettata|rigettata']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -73,6 +69,10 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Assegnata in valutazione|assegnata','Domanda arrivata in attesa di assegnazione|presentata','Certificato rilasciato|rilasciato','Richiesta rigettata|rigettata']</string></value>
 </member>
 </struct></value>
 </param>
@@ -94,12 +94,8 @@
 <param>
 <value><struct>
 <member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-cdu-protocollati</string></value>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -131,8 +127,12 @@
 ]</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
+<name>sourceview</name>
+<value><string>vista-cdu-protocollati</string></value>
+</member>
+<member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
 </member>
 </struct></value>
 </param>

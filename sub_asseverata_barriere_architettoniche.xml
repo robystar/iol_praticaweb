@@ -54,13 +54,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''non è soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989)|1''','''interessa un edificio privato aperto al pubblico e che le opere previste sono conformi all’articolo 82 del d.P.R. n. 380/2001 o della corrispondente normativa regionale (l.r. 15/1989) come da relazione e schemi dimostrativi allegati al progetto|2''','''è soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989) e, come da relazione e schemi dimostrativi allegati, soddisfa il/i requisit/i di:|3''','''pur essendo soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989), non rispetta la normativa in materia di barriere architettoniche, pertanto si presenta, contestualmente alla SCIA condizionata ,la documentazione per la richiesta di deroga l’istanza di deroga, come meglio descritto nella relazione tecnica allegata e schemi dimostrativi allegati|4''']
-if context.getItem('iol_tipo_app','')=='pdc':
-    ll[3] = '''pur essendo soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989), non rispetta la normativa in materia di barriere architettoniche, pertanto si presenta contestualmente la documentazione per la richiesta di deroga come meglio descritto nella relazione tecnica allegata e schemi dimostrativi allegati.|4'''
-return ll</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -72,6 +65,13 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['''non è soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989)|1''','''interessa un edificio privato aperto al pubblico e che le opere previste sono conformi all’articolo 82 del d.P.R. n. 380/2001 o della corrispondente normativa regionale (l.r. 15/1989) come da relazione e schemi dimostrativi allegati al progetto|2''','''è soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989) e, come da relazione e schemi dimostrativi allegati, soddisfa il/i requisit/i di:|3''','''pur essendo soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989), non rispetta la normativa in materia di barriere architettoniche, pertanto si presenta, contestualmente alla SCIA condizionata ,la documentazione per la richiesta di deroga l’istanza di deroga, come meglio descritto nella relazione tecnica allegata e schemi dimostrativi allegati|4''']
+if context.getItem('iol_tipo_app','')=='pdc':
+    ll[3] = '''pur essendo soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 o della corrispondente normativa regionale (l.r. 15/1989), non rispetta la normativa in materia di barriere architettoniche, pertanto si presenta contestualmente la documentazione per la richiesta di deroga come meglio descritto nella relazione tecnica allegata e schemi dimostrativi allegati.|4'''
+return ll</string></value>
 </member>
 </struct></value>
 </param>
@@ -93,10 +93,6 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''accessibilità|accesibilita''','''visitabilità|visibilita''','''adattabilità|adattabilita''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -108,6 +104,10 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''accessibilità|accesibilita''','''visitabilità|visibilita''','''adattabilità|adattabilita''']</string></value>
 </member>
 </struct></value>
 </param>

@@ -88,10 +88,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''CERTIFICAZIONE della numerazione civica in assenza di interventi edilizi|certificazione_fabbricato''','''ATTRIBUZIONE della nuova numerazione civica avendo ultimato i lavori per la realizzazione di nuovo fabbricato|nuovo_fabbricato''','''VARIAZIONE della numerazione civica avendo ultimato i lavori per modifiche conseguenti a intervento edilizio|variazione_fabbricato''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -103,6 +99,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''CERTIFICAZIONE della numerazione civica in assenza di interventi edilizi|certificazione_fabbricato''','''ATTRIBUZIONE della nuova numerazione civica avendo ultimato i lavori per la realizzazione di nuovo fabbricato|nuovo_fabbricato''','''VARIAZIONE della numerazione civica avendo ultimato i lavori per modifiche conseguenti a intervento edilizio|variazione_fabbricato''']</string></value>
 </member>
 </struct></value>
 </param>
@@ -245,12 +245,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_nceu</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>nceu_foglio,nceu_mappale,nceu_subalterno</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_nceu</string></value>
 </member>
 <member>
 <name>jssettings</name>

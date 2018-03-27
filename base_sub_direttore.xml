@@ -247,10 +247,6 @@
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Maschile','Femminile']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -262,6 +258,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Maschile','Femminile']</string></value>
 </member>
 </struct></value>
 </param>
@@ -391,16 +391,16 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+<member>
 <name>startingyear</name>
 <value><string>1900</string></value>
 </member>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>

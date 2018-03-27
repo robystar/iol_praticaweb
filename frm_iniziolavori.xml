@@ -11,6 +11,7 @@ if 'btn_successivo' in context.REQUEST.keys():
     view = context.restrictedTraverse('@@pw-info-procedimento')
     if view:
         view.setInfoProcedimento()
+        context.doAction('init')
         return context.toNextForm()              
     else:
         context.plone_utils.addPortalMessage('info procedimento fallito, manca pw-info-procedimento','error')]]></onSaveDocument>

@@ -300,16 +300,12 @@ return result]]></Formula>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_annotazione</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>INLINE</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>data_ora,annotazione,utente</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_annotazione</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -329,6 +325,10 @@ return result]]></Formula>
         "height": 300
     }
 </string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>INLINE</string></value>
 </member>
 </struct></value>
 </param>

@@ -63,12 +63,12 @@
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_civico</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>civico_via,civico_civico,civico_interno,civico_geometry</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_civico</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -110,12 +110,12 @@
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_nct</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>nct_sezione,nct_foglio,nct_particella,nct_geometry</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_nct</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -190,11 +190,6 @@ return "data-map-layers='%s'  data-map-types='%s'  data-base-type='%s'"  %(json_
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>layersSettings = context.getParentDatabase().resources.customscripts.getLayersSettings(context)
-return layersSettings["layersList"]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -206,6 +201,11 @@ return layersSettings["layersList"]</string></value>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>layersSettings = context.getParentDatabase().resources.customscripts.getLayersSettings(context)
+return layersSettings["layersList"]</string></value>
 </member>
 </struct></value>
 </param>

@@ -1,0 +1,25 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="config_mailhost" title="" type="Script (Python)"><![CDATA[## Script (Python) "config_mailhost"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+diz = {
+    "mailhost": "xxxxxxxxxx",
+    "user": "xxxxxxxxxxxx",
+    "pwd": "xxx",
+    "from": "xxxxxxxxxxxxxxxxx",
+    "port": "465",
+    "tls": 0,
+    "ssl": 1
+  }
+
+return diz
+]]></resource>
+  </design>
+</plominodatabase>

@@ -122,16 +122,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Edificio|1''',
-'''Area di pertinenza o intorno dell'edificio|2''',
-'''Lotto di terreno|3''',
-'''Strade o corsi d'acqua|4''',
-'''Territorio aperto|5'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -143,6 +133,16 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Edificio|1''',
+'''Area di pertinenza o intorno dell'edificio|2''',
+'''Lotto di terreno|3''',
+'''Strade o corsi d'acqua|4''',
+'''Territorio aperto|5'''
+]</string></value>
 </member>
 </struct></value>
 </param>
@@ -164,14 +164,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Temporaneo o stagionale|1''',
-'''Permanente fisso|2''',
-'''Permanente rimovibile|3'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -183,6 +175,14 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Temporaneo o stagionale|1''',
+'''Permanente fisso|2''',
+'''Permanente rimovibile|3'''
+]</string></value>
 </member>
 </struct></value>
 </param>
@@ -204,10 +204,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -219,6 +215,10 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
 </member>
 </struct></value>
 </param>
@@ -240,16 +240,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Urbano|1''',
-'''Agricolo|2''',
-'''Boscato|3''',
-'''Naturale non coltivato|4''',
-'''Altro|5'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -261,6 +251,16 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Urbano|1''',
+'''Agricolo|2''',
+'''Boscato|3''',
+'''Naturale non coltivato|4''',
+'''Altro|5'''
+]</string></value>
 </member>
 </struct></value>
 </param>
@@ -282,19 +282,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Centro storico|1''',
-'''Area urbana|2''',
-'''Area periurbana|3''',
-'''Territorio agricolo|4''',
-'''Insediamento sparso|5''',
-'''Insediamento agricolo|6''',
-'''Area naturale|7'''
-]
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -306,6 +293,19 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Centro storico|1''',
+'''Area urbana|2''',
+'''Area periurbana|3''',
+'''Territorio agricolo|4''',
+'''Insediamento sparso|5''',
+'''Insediamento agricolo|6''',
+'''Area naturale|7'''
+]
+</string></value>
 </member>
 </struct></value>
 </param>
@@ -327,19 +327,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Costa (bassa/alta)|1''',
-'''Ambito lacustre/vallivo|2''',
-'''Pianura|3''',
-'''Versante (collinare/montano)|4''',
-'''Altopiano/Promontorio|5''',
-'''Piana valliva (montana/collinare)|6''',
-'''Terrazzamento|7''',
-'''Crinale|8'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -351,6 +338,19 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Costa (bassa/alta)|1''',
+'''Ambito lacustre/vallivo|2''',
+'''Pianura|3''',
+'''Versante (collinare/montano)|4''',
+'''Altopiano/Promontorio|5''',
+'''Piana valliva (montana/collinare)|6''',
+'''Terrazzamento|7''',
+'''Crinale|8'''
+]</string></value>
 </member>
 </struct></value>
 </param>
@@ -372,15 +372,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Cose immobili|1''',
-'''Ville, giardini, parchi|2''',
-'''Complessi di cose immobili|3''',
-'''Bellezze panoramiche|4''',
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -392,6 +383,15 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Cose immobili|1''',
+'''Ville, giardini, parchi|2''',
+'''Complessi di cose immobili|3''',
+'''Bellezze panoramiche|4''',
+]</string></value>
 </member>
 </struct></value>
 </param>
@@ -413,6 +413,19 @@
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Terreni costieri|1''',
@@ -427,19 +440,6 @@
 '''Vulcani|10''',
 '''Zone di interesse archeologico|11'''
 ]</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -461,12 +461,12 @@
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>
@@ -488,12 +488,12 @@
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>
@@ -515,12 +515,12 @@
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>
@@ -542,12 +542,12 @@
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>
@@ -569,12 +569,12 @@
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>

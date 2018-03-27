@@ -1,0 +1,460 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="00-settings" title="Impostazioni generali" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">00-settings</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[#### TODO 
+#FAR PASSARE SOLO AMMINISTRATORI E RUOLO SETTATO IN PLOMINO
+return '' 
+
+
+### AGGIUNGERE IL RUOLO DI PLOMINO PER L'ACCESSO AI SETTINGS
+if not '[Amministratore impostazioni]' in context.getUserRoles():
+    return '<h3>Non sei autorizzato ad accedere al contenuto della pagina <a href="%s"><< ritorna</a></h3>' %context.getParentDatabase().absolute_url()]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[from iol.document.plomino_utils import setPlominoRole
+setPlominoRole(context, None, 'PlominoAuthor', context.getItem('grp_richiedenti'))
+setPlominoRole(context, None, 'PlominoReader', context.getItem('grp_readers'))
+setPlominoRole(context, None, 'PlominoEditor', context.getItem('grp_istruttori'))
+
+
+if not context.getItem('mail_settings'):
+    ll = 	[['presentazione-ok', 'invio_pec', '', '', 'Comune di Sanremo - Portale Istanze Online - Ricevuta di presentazione Pratica', u"Il Portale Istanze Online ha ricevuto la seguente comunicazione: \r\n%(tipo_pratica_value)s \r\npresentata da %(fisica_nome)s %(fisica_cognome)s %(cointestatari_value)s \r\n\r\nSeguir\xe0 notifica di protocollo appena disponibile. \r\n\r\nQuesto messaggio e' stato generato da un sistema automatizzato, si prega pertanto di non rispondere. \r\n\r\nLa pratica \xe8 disponibile a questo indirizzo %(link_pratica)s", ''], ['presentazione-ko', 'assistenza@istanze-online.it', '', '', 'Comune di Sanremo - Portale Istanze Online - Notifica di Mancata Ricezione Pratica', u"Un problema di natura tecnica ha impedito l'invio della seguente comunicazione: \r\n%(tipo_pratica_value)s\r\npresentata da %(fisica_nome)s %(fisica_cognome)s %(cointestatari_value)s \r\n\r\nLa pratica \xe8 disponibile a questo indirizzo %(link_pratica)s", ''], ['protocollazione-ok', 'invio_pec', '', '', 'Comune di Sanremo - Portale Istanze Online - Notifica di protocollazione Pratica', u"La seguente comunicazione:\r\n%(tipo_pratica_value)s \r\npresentata da %(fisica_nome)s %(fisica_cognome)s %(cointestatari_value)s \r\ntrasmessa in data %(data_presentazione)s e' stata recepita agli atti Comunali con Protocollo n. %(numero_protocollo)s del %(data_protocollo)s\r\n\r\nLa pratica \xe8 disponibile a questo indirizzo %(link_pratica)s", ''], ['protocollazione-ko', 'assistenza@istanze-online.it', '', '', 'Comune di Sanremo - Portale Istanze Online - Notifica di Mancata protocollazione Pratica', u'Un problema di natura tecnica ha impedito la protocollazione della seguente comunicazione:\r\n%(tipo_pratica_value)s \r\npresentata da %(fisica_nome)s %(fisica_cognome)s %(cointestatari_value)s \r\n\r\nLa pratica \xe8 disponibile a questo indirizzo %(link_pratica)s\r\n', '']] 
+    context.setItem('mail_settings',ll)]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[return
+
+docId = context.resources.customscripts.getDocSettingsId()
+db=context.getParentDatabase()
+if db.getDocument(docId):
+    context.REQUEST.RESPONSE.redirect(db.getDocument(docId).doc_url())]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">IMPOSTAZIONE GRUPPI UTENTE</legend>
+<div class="row-fluid">
+<div class="span4">
+<span class="plominoLabelClass">grp_richiedenti</span><span class="plominoFieldClass">grp_richiedenti</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">grp_istruttori</span><span class="plominoFieldClass">grp_istruttori</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">grp_readers</span><span class="plominoFieldClass">grp_readers</span>
+</div>
+</div>
+<div class="row-fluid">
+<div class="span4">
+<span class="plominoLabelClass">grp_pareri_interni</span><span class="plominoFieldClass">grp_pareri_interni</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">grp_pareri_esterni</span><span class="plominoFieldClass">grp_pareri_esterni</span>
+</div>
+</div>
+<p class="text-warning">Se il gruppo istruttori contiene un solo utente l'assegnazione all'istruttore sarà automatica</p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">IMPOSTAZIONE MESSAGGI DI POSTA</legend>
+<div><span class="plominoFieldClass">mail_settings</span></div>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[return context.resources.customscripts.getDocSettingsId()]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">BOTTOM</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
+++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="grp_richiedenti" title="Gruppo degli utenti richiedenti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">grp_richiedenti</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="grp_istruttori" title="Gruppo degli utenti istruttori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">grp_istruttori</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="grp_readers" title="Gruppo utenti accesso in lettura" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">grp_readers</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="grp_rup" title="Responsabile procedimento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">grp_rup</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="grp_pareri_interni" title="Gruppo pareri uffici interni" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">grp_pareri_interni</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="grp_pareri_esterni" title="Gruppo pareri enti esterni" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">grp_pareri_esterni</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="mail_settings" title="mail_settings" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">mail_settings</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg-mail-settings</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "AZIONE" },
+    { "sTitle": "A" },
+    { "sTitle": "CC"}
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 800,
+        "height": 800
+    }
+</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="btn_edit" title="Modifica" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_edit</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.absolute_url()+'/EditDocument']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_save" title="Salva" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_save</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_close" title="Esci" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_close</id>
+          <ActionType type="Products.Archetypes.Field.StringField">CLOSE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="iol_tipo_app" title="Tipo di pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-target=istanze_presentate']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['CIL|cil','CILA|cila','SCIA|scia','SCIA2|scia2','DIA|dia','PDC|pdc','Paesaggistica|paesaggistica','SCA|sca','Art.22|art22','Art.48|art48','Inizio lavori|iniziolavori','Fine lavori|finelavori','Integrazione|integrazione']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

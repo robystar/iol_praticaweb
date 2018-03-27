@@ -80,11 +80,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 </data></array></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll = ['Comunicazione da firmare digitalmente|@@wkpdf?openwithform=00-wkpdf']       
-return ll</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -96,6 +91,11 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['Comunicazione da firmare digitalmente|@@wkpdf?openwithform=00-wkpdf']       
+return ll</string></value>
 </member>
 </struct></value>
 </param>

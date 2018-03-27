@@ -50,11 +50,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''attività che rientrano nell’ambito del procedimento automatizzato;|1''','''attività che rientrano nell’ambito del procedimento unico;|2''']
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -66,6 +61,11 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''attività che rientrano nell’ambito del procedimento automatizzato;|1''','''attività che rientrano nell’ambito del procedimento unico;|2''']
+</string></value>
 </member>
 </struct></value>
 </param>

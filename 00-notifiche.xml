@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="00-notifiche" title="Notifiche" type="PlominoForm">
+    <element id="00-notifiche" title="Notifiche utente" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">00-notifiche</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
@@ -9,7 +9,7 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<p><span class="plominoFieldClass">arrivate_online</span></p>]]></FormLayout>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<p><span class="plominoLabelClass">elenco_notifiche</span><span class="plominoFieldClass">elenco_notifiche</span></p>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -17,7 +17,7 @@
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
       <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
-      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
       <SearchView type="Products.Archetypes.Field.StringField"/>
@@ -31,11 +31,11 @@
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="arrivate_online" title="Pratiche arrivate on-line" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">arrivate_online</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '']]></Formula>
+        <element id="elenco_notifiche" title="Notifiche utente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_notifiche</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -43,6 +43,49 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>utente,data,testo,letto,docid</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>READ_STATIC</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_notifica</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Data" },
+    { "sTitle": "Testo" },
+    { "sTitle": "Utente" },    
+    { "sTitle": "Letto" },
+    { "sTitle": "Doc id" }
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 400,
+        "height": 300
+    }
+</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>INLINE</string></value>
+</member>
+</struct></value>
+</param>
+</params>
         </element>
       </elements>
     </element>

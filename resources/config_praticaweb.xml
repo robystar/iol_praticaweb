@@ -10,9 +10,9 @@
 ##title=
 ##
 dz = dict(
-pagopa_enabled = 1, #PagoPA Abilitato
-doc_settings = "00-settings", #id del documento dove sono salvati i settings          
-wsUrl = "http://webservice.gisweb.it/wspraticaweb/demo.wsPraticawebxx.php?wsdl",
+pagopa_enabled = 0, #PagoPA Abilitato
+doc_settings = "0-settings", #id del documento dove sono salvati i settings          
+wsUrl = "http://webservice.gisweb.it/wspraticaweb/demo.wsPraticaweb.php?wsdl",
 elenco_comuni = ['Andora|A278','Cesio|C578','Chiusanico|C657','Stellanello|I947','Testico|L152'],
 comune_default = "A278",
 #indirizzi per il modello di stampa

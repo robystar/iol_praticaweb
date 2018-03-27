@@ -49,16 +49,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_attivita</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>data_ora,attivita,utente,notifica,tipo</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_attivita</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -80,6 +76,10 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
 </member>
 </struct></value>
 </param>

@@ -8,6 +8,7 @@ context.setItem('Plomino_Authors',[context.getCurrentUser().getId()])]]></onCrea
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
 if 'btn_successivo' in context.REQUEST.keys():
+    context.doAction('init')
     return context.toNextForm()]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>

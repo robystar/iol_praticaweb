@@ -63,12 +63,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
-ll = context.getParentDatabase().resources.config_praticaweb().get('sportello',ll)
-return ll</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -80,6 +74,12 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
+ll = context.getParentDatabase().resources.config_praticaweb().get('sportello',ll)
+return ll</string></value>
 </member>
 </struct></value>
 </param>
@@ -101,10 +101,6 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.resources.customscripts.getElencoComuni()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -112,6 +108,10 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.resources.customscripts.getElencoComuni()</string></value>
 </member>
 </struct></value>
 </param>
@@ -167,10 +167,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Differita (Allegando le ricevute di versamento)|differita''','''Online (Attraverso il nodo regionale di Pago PA)|pagopa''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -182,6 +178,10 @@ else:
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Differita (Allegando le ricevute di versamento)|differita''','''Online (Attraverso il nodo regionale di Pago PA)|pagopa''']</string></value>
 </member>
 </struct></value>
 </param>

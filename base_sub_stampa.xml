@@ -10,7 +10,11 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<h4 class="alert-info">QUADRO RIEPILOGATIVO DELLA DOCUMENTAZIONE</h4>
 <p><span class="plominoFieldClass">allegati_istanza_elenco</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_condizionata</span></p>
+<p><span class="plominoFieldClass">allegati_scia_condizionata_elenco</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_condizionata</span></p>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">Note agli allegati</legend>
 <p><span class="plominoFieldClass">note_allegati</span></p>
@@ -72,18 +76,20 @@
           <id type="Products.Archetypes.Field.StringField">allegati_istanza_elenco</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
-elenco_campi = context.resources.customscripts.getElencoAllegati()
-result = list()
-for row in elenco_campi:
-    fieldValue = context.getItem(row[1],{})
-    if fieldValue!={}:
-        titolo=row[0]
-        names=[]
-        for name in fieldValue.keys():
-            names.append(name)
-        result.append({"label":titolo,"files":names})
-return result]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.resources.customscripts.getIstanzaAllegati(doc=context,field='allegati_istanza')]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">iol_attachments_view</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_scia_condizionata_elenco" title="Richiesta di acquisizione di atti di assenso" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_scia_condizionata_elenco</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.resources.customscripts.getIstanzaAllegati(doc=context,field='allegati_scia_condizionata')]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">iol_attachments_view</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -645,6 +651,11 @@ return destinatari]]></Formula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_condizionata" title="hw_no_condizionata" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_condizionata</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in ['cila','scia','scia2','sca']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

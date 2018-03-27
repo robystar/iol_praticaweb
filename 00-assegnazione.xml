@@ -77,12 +77,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>5</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>5</string></value>
 </member>
 </struct></value>
 </param>
@@ -104,15 +104,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
-db = context.getParentDatabase()
-settings = db.getDocument('00-settings')
-grpIstruttori = settings.getItem('grp_istruttori')
-return elencoUtentiGruppi(context,groups=[grpIstruttori])
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -120,6 +111,16 @@ return elencoUtentiGruppi(context,groups=[grpIstruttori])
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
+db = context.getParentDatabase()
+docId = context.resources.customscripts.getDocSettingsId()
+settings = db.getDocument(docId)
+grpIstruttori = settings.getItem('grp_istruttori')
+return elencoUtentiGruppi(context,groups=[grpIstruttori])
+</string></value>
 </member>
 </struct></value>
 </param>
@@ -144,12 +145,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%d/%m/%Y</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
 </member>
 </struct></value>
 </param>
@@ -187,12 +188,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>5</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>5</string></value>
 </member>
 </struct></value>
 </param>

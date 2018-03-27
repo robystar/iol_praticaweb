@@ -90,10 +90,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''SCIA|1''','''SCIA più altre segnalazioni o comunicazioni (SCIA Unica): contestualmente alla SCIA le altre segnalazioni o comunicazioni necessarie alla realizzazione dell’intervento indicate nel quadro riepilogativo allegato.|2''','''SCIA più domanda per il rilascio di atti di assenso (SCIA Condizionata da atti di assenso): contestualmente alla SCIA, richiesta per l’acquisizione da parte dell’amministrazione degli atti di assenso necessari alla realizzazione dell’intervento, indicati nel quadro riepilogativo allegato. Il titolare dichiara di  essere a conoscenza che intervento oggetto della segnalazione può essere iniziato dopo la comunicazione da parte del Comune dell’avvenuto rilascio dei relativi atti di assenso.|3''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -105,6 +101,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''SCIA|1''','''SCIA più altre segnalazioni o comunicazioni (SCIA Unica): contestualmente alla SCIA le altre segnalazioni o comunicazioni necessarie alla realizzazione dell’intervento indicate nel quadro riepilogativo allegato.|2''','''SCIA più domanda per il rilascio di atti di assenso (SCIA Condizionata da atti di assenso): contestualmente alla SCIA, richiesta per l’acquisizione da parte dell’amministrazione degli atti di assenso necessari alla realizzazione dell’intervento, indicati nel quadro riepilogativo allegato. Il titolare dichiara di  essere a conoscenza che intervento oggetto della segnalazione può essere iniziato dopo la comunicazione da parte del Comune dell’avvenuto rilascio dei relativi atti di assenso.|3''']</string></value>
 </member>
 </struct></value>
 </param>
@@ -156,10 +156,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''intervento di manutenzione straordinaria (pesante), restauro, risanamento conservativo (pesante) e ristrutturazione edilizia (leggera)(*) [d.P.R. n. 380/2001, articolo 22, comma 1, articolo 3, comma 1, lett. b), c) e d). Punti 4, 6 e 7 della Sezione II – EDILIZIA – della Tabella A del d.lgs. 222/2016]; intervento di recupero a fini abitativi di sottotetto esistente non comportante modifiche della sagoma dell’edificio (l.r. 24/2001 , articolo 2, comma 5)|1''','''intervento in corso di esecuzione, con pagamento di sanzione (d.P.R. n. 380/2001, articolo 37, comma 5), e pertanto si allega la ricevuta di versamento di € 516,00|2''','''sanatoria di intervento già realizzato conforme alla disciplina urbanistica ed edilizia vigente sia al momento della realizzazione, sia al momento della presentazione della segnalazione (d.P.R. n. 380/2001, articolo 37, comma 4. Punto 41 della Sezione II – EDILIZIA – della Tabella A del d.lgs. 222/2016), pertanto si allega la ricevuta di versamento minimo di € 516,00, che sarà soggetto ad eventuale conguaglio a seguito di istruttoria edilizia|3''','''variante in corso d’opera a PERMESSO DI COSTRUIRE/SCIA che non incide sui parametri urbanistici e non costituisce variante essenziale (d.P.R. n. 380/2001, art. 22, commi 2, 2-bis. Punti 35 e 36 della Sezione II – EDILIZIA – della Tabella A del d.lgs. 222/2016; L.R. 16/2008, art. 25, comma 1)|4''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -171,6 +167,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''intervento di manutenzione straordinaria (pesante), restauro, risanamento conservativo (pesante) e ristrutturazione edilizia (leggera)(*) [d.P.R. n. 380/2001, articolo 22, comma 1, articolo 3, comma 1, lett. b), c) e d). Punti 4, 6 e 7 della Sezione II – EDILIZIA – della Tabella A del d.lgs. 222/2016]; intervento di recupero a fini abitativi di sottotetto esistente non comportante modifiche della sagoma dell’edificio (l.r. 24/2001 , articolo 2, comma 5)|1''','''intervento in corso di esecuzione, con pagamento di sanzione (d.P.R. n. 380/2001, articolo 37, comma 5), e pertanto si allega la ricevuta di versamento di € 516,00|2''','''sanatoria di intervento già realizzato conforme alla disciplina urbanistica ed edilizia vigente sia al momento della realizzazione, sia al momento della presentazione della segnalazione (d.P.R. n. 380/2001, articolo 37, comma 4. Punto 41 della Sezione II – EDILIZIA – della Tabella A del d.lgs. 222/2016), pertanto si allega la ricevuta di versamento minimo di € 516,00, che sarà soggetto ad eventuale conguaglio a seguito di istruttoria edilizia|3''','''variante in corso d’opera a PERMESSO DI COSTRUIRE/SCIA che non incide sui parametri urbanistici e non costituisce variante essenziale (d.P.R. n. 380/2001, art. 22, commi 2, 2-bis. Punti 35 e 36 della Sezione II – EDILIZIA – della Tabella A del d.lgs. 222/2016; L.R. 16/2008, art. 25, comma 1)|4''']</string></value>
 </member>
 </struct></value>
 </param>
@@ -260,10 +260,6 @@ return context.getItem('iol_tipo_app')]]></Formula>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['SCIA','PERMESSO DI COSTRUIRE']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -275,6 +271,10 @@ return context.getItem('iol_tipo_app')]]></Formula>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SCIA','PERMESSO DI COSTRUIRE']</string></value>
 </member>
 </struct></value>
 </param>
@@ -311,16 +311,16 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+<member>
 <name>startingyear</name>
 <value><string>1950</string></value>
 </member>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -342,10 +342,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''I lavori avranno inizio in data:|1''','''In quanto intendo avvalermi della possibilità di comunicare direttore dei lavori e/o ditta esecutrice prima dell'inizio dei lavori, mi impegno a presentare la comunicazione di inizio lavori prima dell'inizio degli stessi.|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -357,6 +353,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''I lavori avranno inizio in data:|1''','''In quanto intendo avvalermi della possibilità di comunicare direttore dei lavori e/o ditta esecutrice prima dell'inizio dei lavori, mi impegno a presentare la comunicazione di inizio lavori prima dell'inizio degli stessi.|2''']</string></value>
 </member>
 </struct></value>
 </param>

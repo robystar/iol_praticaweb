@@ -58,13 +58,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Interventi di recupero di locali sottotetto di cui all’articolo 2, della l.r. 6 agosto 2001, n. 24 e s.m. non comportanti modificazioni della sagoma dell’edificio esistente|1''',
-'''Interventi di ampliamento di edifici esistenti di cui agli articoli 3 e 4 della l.r. 3 novembre 2009, n. 49 e s.m.|2'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -76,6 +69,13 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Interventi di recupero di locali sottotetto di cui all’articolo 2, della l.r. 6 agosto 2001, n. 24 e s.m. non comportanti modificazioni della sagoma dell’edificio esistente|1''',
+'''Interventi di ampliamento di edifici esistenti di cui agli articoli 3 e 4 della l.r. 3 novembre 2009, n. 49 e s.m.|2'''
+]</string></value>
 </member>
 </struct></value>
 </param>
@@ -97,10 +97,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -108,6 +104,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
 </member>
 </struct></value>
 </param>

@@ -63,10 +63,6 @@ if db.getDocument(newId):
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['pdc','scia2','scia','cila','cil','sca','art22','art48','lr25','art21','paesaggistica-ordinaria','paesaggistica-semplificata','paesaggistica-accertamento','parere','iniziolavori','finelavori','integrazione']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -78,6 +74,10 @@ if db.getDocument(newId):
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['pdc','scia2','scia','cila','cil','sca','art22','art48','lr25','art21','paesaggistica-ordinaria','paesaggistica-semplificata','paesaggistica-accertamento','parere','iniziolavori','finelavori','integrazione']</string></value>
 </member>
 </struct></value>
 </param>
@@ -99,10 +99,6 @@ if db.getDocument(newId):
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['sue','suap']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -114,6 +110,10 @@ if db.getDocument(newId):
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['sue','suap']</string></value>
 </member>
 </struct></value>
 </param>

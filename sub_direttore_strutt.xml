@@ -55,11 +55,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori delle opere strutturali|1''','''Il direttore dei lavori delle opere architettoniche coincide con il progettista delle opere strutturali|2''','''Il direttore dei lavori delle opere architettoniche è persona diversa dal progettista delle opere strutturali|3''','''Il direttore dei lavori delle opere strutturali sarà individuato prima dell'inizio dei lavori|4''']
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -71,6 +66,11 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori delle opere strutturali|1''','''Il direttore dei lavori delle opere architettoniche coincide con il progettista delle opere strutturali|2''','''Il direttore dei lavori delle opere architettoniche è persona diversa dal progettista delle opere strutturali|3''','''Il direttore dei lavori delle opere strutturali sarà individuato prima dell'inizio dei lavori|4''']
+</string></value>
 </member>
 </struct></value>
 </param>

@@ -83,10 +83,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -98,6 +94,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
 </member>
 </struct></value>
 </param>
@@ -119,10 +119,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''ALLEGA LA SCHEDA A contenente i dati e le informazioni necessari per gli scarichi di acque reflue;|1''','''DICHIARA l'invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 Autorizzazioni e titoli ambientali ex art. 3 DPR 59/2013 relativamente agli scarichi di acque reflue;|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -134,6 +130,10 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''ALLEGA LA SCHEDA A contenente i dati e le informazioni necessari per gli scarichi di acque reflue;|1''','''DICHIARA l'invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 Autorizzazioni e titoli ambientali ex art. 3 DPR 59/2013 relativamente agli scarichi di acque reflue;|2''']</string></value>
 </member>
 </struct></value>
 </param>

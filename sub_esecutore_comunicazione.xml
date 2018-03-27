@@ -50,13 +50,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'Lavori in economia o impresa/e esecutrice/i già comunicate|1',
-'Aggiungere esecutore dei lavori|2'
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -68,6 +61,13 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'Lavori in economia o impresa/e esecutrice/i già comunicate|1',
+'Aggiungere esecutore dei lavori|2'
+]</string></value>
 </member>
 </struct></value>
 </param>
@@ -94,10 +94,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Aggiungere nuova ditta esecutrice|nuovo_esecutore']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -109,6 +105,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Aggiungere nuova ditta esecutrice|nuovo_esecutore']</string></value>
 </member>
 </struct></value>
 </param>
@@ -130,12 +130,12 @@
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>base_sub_esecutore</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>esecutore_denominazione,esecutore_cognome,esecutore_comune,esecutore_cf,esecutore_app,esecutore_cap,esecutore_cap_residenza,esecutore_cciaa,esecutore_cciaa_numero,esecutore_cellulare,esecutore_civico,esecutore_civico_residenza,esecutore_cod_cat_nato,esecutore_comune_nato,esecutore_comune_residenza,esecutore_data_nato,esecutore_edile_numero,esecutore_edile_prov,esecutore_email,esecutore_fax,esecutore_inail,esecutore_indirizzo,esecutore_indirizzo_residenza,esecutore_inps,esecutore_nome,esecutore_pec,esecutore_piva,esecutore_piva_comunitaria,esecutore_provincia,esecutore_provincia_nato,esecutore_provincia_residenza,esecutore_qualita,esecutore_qualita_altro,esecutore_ruolo,esecutore_search,esecutore_sesso,esecutore_telefono</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>base_sub_esecutore</string></value>
 </member>
 <member>
 <name>jssettings</name>

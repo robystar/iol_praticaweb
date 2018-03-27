@@ -149,12 +149,12 @@ data-plugin-options="{url:'@@plomino_search',placeholder:'Ricerca nominativo esi
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>sub_fisica_giuridica</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>fisica_cognome,fisica_nome,fisica_comune_nato,fisica_cf,fisica_comune,fisica_indirizzo,fisica_civico,fisica_email,fisica_pec,fisica_telefono,giuridica_qualita,giuridica_denominazione,fisica_data_nato,fisica_sesso,giuridica_piva,giuridica_cf,giuridica_comune,giuridica_provincia,giuridica_cap,giuridica_localita,giuridica_indirizzo,giuridica_civico,giuridica_email,giuridica_pec,giuridica_telefono,giuridica_cellulare,giuridica_fax,fisica_app,fisica_titolo,fisica_provincia_nato,fisica_provincia,fisica_cap</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>sub_fisica_giuridica</string></value>
 </member>
 <member>
 <name>jssettings</name>

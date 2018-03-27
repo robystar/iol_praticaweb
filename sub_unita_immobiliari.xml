@@ -51,12 +51,12 @@
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_unita_immobiliare</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>civico_via,ui_civico,ui_interno,ui_scala,ui_piano,ui_sezione,ui_foglio,ui_mappale,ui_sub,ui_cons_vani,ui_cons_sup,ui_destuso</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_unita_immobiliare</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -106,14 +106,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['FABBRICATI','TERRENI']</string></value>
-</member>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -125,6 +117,14 @@
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['FABBRICATI','TERRENI']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>

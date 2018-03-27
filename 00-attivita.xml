@@ -67,15 +67,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
-db = context.getParentDatabase()
-settings = db.getDocument('0-suap-settings')
-grpIstruttori = settings.getItem('grp_istruttori')
-return ['Nessuna Notifica|'] + elencoUtentiGruppi(context,groups=[grpIstruttori])
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -83,6 +74,15 @@ return ['Nessuna Notifica|'] + elencoUtentiGruppi(context,groups=[grpIstruttori]
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
+db = context.getParentDatabase()
+settings = db.getDocument('0-suap-settings')
+grpIstruttori = settings.getItem('grp_istruttori')
+return ['Nessuna Notifica|'] + elencoUtentiGruppi(context,groups=[grpIstruttori])
+</string></value>
 </member>
 </struct></value>
 </param>

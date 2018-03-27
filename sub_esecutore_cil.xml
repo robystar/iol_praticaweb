@@ -60,10 +60,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''In quanto opere di modesta entità che non interessano le specifiche normative di settore, i lavori sono eseguiti / sono stati eseguiti in prima persona, senza alcun affidamento a ditte esterne;|1''','''I lavori saranno eseguiti da un impresa;|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -75,6 +71,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''In quanto opere di modesta entità che non interessano le specifiche normative di settore, i lavori sono eseguiti / sono stati eseguiti in prima persona, senza alcun affidamento a ditte esterne;|1''','''I lavori saranno eseguiti da un impresa;|2''']</string></value>
 </member>
 </struct></value>
 </param>
@@ -106,12 +106,12 @@
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>base_sub_esecutore</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>esecutore_denominazione,esecutore_cognome,esecutore_comune,esecutore_cf,esecutore_app,esecutore_cap,esecutore_cap_residenza,esecutore_cciaa,esecutore_cciaa_numero,esecutore_cellulare,esecutore_civico,esecutore_civico_residenza,esecutore_cod_cat_nato,esecutore_comune_nato,esecutore_comune_residenza,esecutore_data_nato,esecutore_edile_numero,esecutore_edile_prov,esecutore_email,esecutore_fax,esecutore_inail,esecutore_indirizzo,esecutore_indirizzo_residenza,esecutore_inps,esecutore_nome,esecutore_pec,esecutore_piva,esecutore_piva_comunitaria,esecutore_provincia,esecutore_provincia_nato,esecutore_provincia_residenza,esecutore_qualita,esecutore_qualita_altro,esecutore_ruolo,esecutore_search,esecutore_sesso,esecutore_telefono</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>base_sub_esecutore</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -153,10 +153,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Il legale rappresentante utilizzerà la propria firma digitale|1''','''Il legale rappresentante firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista|3''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -168,6 +164,10 @@
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Il legale rappresentante utilizzerà la propria firma digitale|1''','''Il legale rappresentante firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista|3''']</string></value>
 </member>
 </struct></value>
 </param>

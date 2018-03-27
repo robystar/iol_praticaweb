@@ -78,11 +78,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoSezioni(context)
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -90,6 +85,11 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoSezioni(context)
+</string></value>
 </member>
 </struct></value>
 </param>
@@ -165,10 +165,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoVincoli(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -176,6 +172,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoVincoli(context)</string></value>
 </member>
 </struct></value>
 </param>
@@ -249,12 +249,12 @@
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%1.2f%%</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%1.2f%%</string></value>
 </member>
 </struct></value>
 </param>

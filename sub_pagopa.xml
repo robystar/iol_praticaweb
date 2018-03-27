@@ -53,12 +53,12 @@
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>sub_pagopa</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>iuv,esito,data,importo,tipo_pagamento,causale</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>sub_pagopa</string></value>
 </member>
 <member>
 <name>jssettings</name>
