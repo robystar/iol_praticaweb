@@ -9,7 +9,22 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<p><span class="plominoLabelClass">allegato_modello_istat</span><span class="plominoFieldClass">allegato_modello_istat</span></p>]]></FormLayout>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Modello ISTAT</legend>
+<div class="alert alert-error">Attenzione in caso di NUOVA COSTRUZIONE o AMPLIAMENTO allegare il modello ISTAT compilato</div>
+<div>
+<span class="plominoFieldClass">modello_istat_opt</span><span class="plominoLabelClass">modello_istat_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_modello_istat</span></p>
+<div class="row-fluid">
+<div class="span4">
+<span class="plominoLabelClass">allegato_modello_istat</span><span class="plominoFieldClass">allegato_modello_istat</span>
+</div>
+<div class="span4"><a href="modelli/praticaweb/autorizzazione/modello-istat-per-edilizia-residenziale" target="_blank" title="Modello per edilizia residenziale"><span class="label"><img src="pdf.png"> Modello per edilizia residenziale </span></a></div>
+<div class="span4"><a href="modelli/praticaweb/autorizzazione/modello-istat-per-edilizia-non-residenziale" target="_blank" title="Modello per edilizia non residenziale"><span class="label"><img src="pdf.png"> Modello per edilizia non residenziale </span></a></div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_modello_istat</span></p>
+</fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -24,25 +39,46 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="allegato_modello_istat" title="Modello ISTAT" type="PlominoField">
+        <element id="allegato_modello_istat" title="Modello ISTAT compilato" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_modello_istat</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
+        </element>
+        <element id="modello_istat_opt" title="L'intervento non riguarda nuove costruzioni o ampliamenti per i quali è previsto il modello ISTAT" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">modello_istat_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">BOOLEAN</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_allegati_modello_istat']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_modello_istat" title="hw_no_modello_istat" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_modello_istat</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('modello_istat_opt',False)]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
       </elements>
     </element>

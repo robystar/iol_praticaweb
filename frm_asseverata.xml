@@ -1,0 +1,61 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_asseverata" title="Asseverazione" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_asseverata</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
+if 'btn_next' in context.REQUEST.keys():
+    return context.toNextForm()]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoSubformClass">base_sub_toolbar</span></p>
+<h4 class="alert-info">DICHIARAZIONI</h4>
+<p><span class="plominoSubformClass">sub_asseverata_barriere_architettoniche</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_sicurezza_impianti</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_consumi_energetici</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_impatto_acustico</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_materiali_risulta</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_prevenzione_incendi</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_amianto</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_conformita_igienicosanitaria</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_interventi_strutturali</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_pdc</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_qualita_ambientale</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_scarichi_idrici</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_urbanizzazione_primaria</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_pdc</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="hw_no_pdc" title="hw_no_pdc" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pdc</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app') not in ['scia2','pdc']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

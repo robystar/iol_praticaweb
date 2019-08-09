@@ -30,8 +30,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="elenco_unita_immobiliare" title="Informazioni sulle unità immobiliari" type="PlominoField">
@@ -53,10 +56,6 @@
 <member>
 <name>field_mapping</name>
 <value><string>civico_via,ui_civico,ui_interno,ui_scala,ui_piano,ui_sezione,ui_foglio,ui_mappale,ui_sub,ui_cons_vani,ui_cons_sup,ui_destuso</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_unita_immobiliare</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -85,6 +84,10 @@
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_unita_immobiliare</string></value>
 </member>
 </struct></value>
 </param>
@@ -119,12 +122,12 @@
 <value><string>CHECKBOX</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['FABBRICATI','TERRENI']</string></value>
-</member>
-<member>
 <name>separator</name>
 <value><string>&lt;br&gt;</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['FABBRICATI','TERRENI']</string></value>
 </member>
 </struct></value>
 </param>

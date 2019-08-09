@@ -9,7 +9,7 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Bene sottoposto a vincolo idrogeologico</legend>
 <div>
 <span class="plominoLabelClass">vincolo_idrogeologico_opt</span><span class="plominoFieldClass">vincolo_idrogeologico_opt</span>
@@ -24,7 +24,7 @@
 </div>
 </div>
 <p><span class="plominoHidewhenClass">end:hw_no_estremi_vincolo_idrogeologico</span></p>
-</fieldset>]]></FormLayout>
+</fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -39,8 +39,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="vincolo_idrogeologico_opt" title="L'area oggetto dell'intervento, ai fini del vincolo idrogeologico:" type="PlominoField">
@@ -73,7 +76,7 @@
 </member>
 <member>
 <name>selectionlistformula</name>
-<value><string>['''non è sottoposta a tutela;|1''','''è sottoposta a tutela e l’intervento rientra nei casi eseguibili senza autorizzazione di cui al comma 5 dell’articolo 61 del d.lgs. n. 152/2006 e al r.d.l. 3267/1923;|2''','''è sottoposta a tutela ed è necessario il rilascio dell’autorizzazione (articolo 61 comma 5 del d.lgs. n. 152/2006 ; r.d.l. 3267/1923; l.r. n. 4/1999; l.r. 7/2011) si allega la documentazione necessaria ai fini del rilascio dell’autorizzazione;|3''','''l'autorizzazione è stata rilasciata con atto:|4''']</string></value>
+<value><string>['''non è sottoposta a tutela;|1''','''è sottoposta a tutela e l’intervento rientra nei casi eseguibili senza autorizzazione di cui al comma 5 dell’articolo 61 del d.lgs. n. 152/2006 e al r.d.l. 3267/1923;|2''','''è sottoposta a tutela ed è necessario il rilascio dell’autorizzazione (articolo 61 comma 5 del d.lgs. n. 152/2006 ; r.d.l. 3267/1923; l.r. n. 4/1999; l.r. 7/2011) si allega la documentazione necessaria ai fini del rilascio dell’autorizzazione;|3''','''l'autorizzazione è stata rilasciata con atto:|4''','''è sottoposta a tutela ed è necessario il rilascio dell’autorizzazione (articolo 61 comma 5 del d.lgs. n. 152/2006 ; r.d.l. 3267/1923; l.r. n. 4/1999; l.r. 7/2011) e la documentazione necessaria ai fini del rilascio dell’autorizzazione verrà inviata prima dell'inizio dei lavori;|5''']</string></value>
 </member>
 </struct></value>
 </param>

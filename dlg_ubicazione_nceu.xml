@@ -42,9 +42,12 @@
       <SearchView type="Products.Archetypes.Field.StringField"/>
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
-      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/js/controller_combo_particelle_nceu.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="nceu_sezione" title="Sezione" type="PlominoField">
@@ -90,7 +93,8 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-tool=autocomplete-nceu-foglio']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getParentDatabase().resources.config().get('autocomplete_nceu'):
+    return 'data-tool=autocomplete-nceu-foglio']]></HTMLAttributesFormula>
         </element>
         <element id="nceu_particella" title="Mappale" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">nceu_particella</id>
@@ -103,7 +107,8 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-tool=autocomplete-nceu-particella']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getParentDatabase().resources.config().get('autocomplete_nceu'):
+    return 'data-tool=autocomplete-nceu-particella']]></HTMLAttributesFormula>
         </element>
         <element id="nceu_subalterno" title="Subalterno" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">nceu_subalterno</id>
@@ -116,7 +121,8 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-tool=autocomplete-nceu-subalterno']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getParentDatabase().resources.config().get('autocomplete_nceu'):
+    return 'data-tool=autocomplete-nceu-subalterno']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><struct>
@@ -130,7 +136,7 @@
         </element>
         <element id="hw_no_sezione" title="hw_no_sezione" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_sezione</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getParentDatabase().resources.config_praticaweb().get('sezione_catasto')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getParentDatabase().resources.config().get('sezione_catasto')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="comune" title="comune" type="PlominoField">

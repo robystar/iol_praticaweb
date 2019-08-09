@@ -9,7 +9,8 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
+		  <fieldset class="scheduler-border">
 <legend class="scheduler-border">TIPOLOGIA DI INTERVENTO E DESCRIZIONE SINTETICA DELLE OPERE</legend>
 <div>
 <span class="plominoLabelClass">tipologia_intervento_opt</span><span class="plominoFieldClass">tipologia_intervento_opt</span>
@@ -21,7 +22,8 @@
 <div>
 <span class="plominoLabelClass">descrizione_intervento</span> <span class="plominoFieldClass">descrizione_intervento</span>
 </div>
-</fieldset>]]></FormLayout>
+</fieldset>
+</div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -36,8 +38,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="tipologia_intervento_opt" title="Le opere in progetto sono subordinate a Segnalazione Certificata di Inizio Attività Alternativa al Permesso di Costruire in quanto rientrano nella seguente tipologia di intervento ai sensi dell’articolo 23 del d.P.R. n. 380/2001:" type="PlominoField">

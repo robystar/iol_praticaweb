@@ -9,22 +9,28 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvvv-content-title" title="allegati">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Documentazione da presentare</legend>
-<p><span class="plominoHidewhenClass">start:hw_no_allegati_esterni</span></p>
+<p><span class="plominoHidewhenClass">start:hw_proprietario</span></p>
 <div>
-<span class="plominoLabelClass">allegati_foto_esterno</span><span class="plominoFieldClass">allegati_foto_esterno</span>
+<span class="plominoLabelClass">allegato_assenso_proprietario</span><span class="plominoFieldClass">allegato_assenso_proprietario</span>
 </div>
-<p><span class="plominoHidewhenClass">end:hw_no_allegati_esterni</span></p>
-<p><span class="plominoHidewhenClass">start:hw_no_pompe_allegati</span></p>
+<p><span class="plominoHidewhenClass">end:hw_proprietario</span></p>
 <div>
-<span class="plominoLabelClass">allegati_progetto_pompe</span><span class="plominoFieldClass">allegati_progetto_pompe</span>
+<span class="plominoLabelClass">allegato_documentazione_fotografica</span><span class="plominoFieldClass">allegato_documentazione_fotografica</span>
 </div>
-<p><span class="plominoHidewhenClass">end:hw_no_pompe_allegati</span></p>
+<div>
+<span class="plominoLabelClass">allegato_relazione_tecnica</span><span class="plominoFieldClass">allegato_relazione_tecnica</span>
+</div>
+<div>
+<span class="plominoLabelClass">allegato_relaz_consumi_energetici</span><span class="plominoFieldClass">allegato_relaz_consumi_energetici</span>
+</div>
+<div class="alert alert-info">(*) qualora gli interventi di ripristino dell'involucro edilizio non coinvolgano unicamente strati di finitura, interni ed esterni, inifluenti dal punto di vista termico (quali la tinteggiatura) e comportino il rifacimento di porzioni di intonaco superiore al 10% della superficie disperdente lorda complessiva dell'edificio oppure, in caso di rifacimento della copertura (qualora la superficie disperdente interessata sia maggiore del 10% della superficie disperdente lorda complessiva dell'edificio) occorre ottemperare alle disposizioni di cui al Dlgs 192/2005 e D.M. 26/6/2015 in materia di risparmio energetico allegando la relativa progettazione a firma di tecnico abilitato.</div>
 <p><span class="plominoHidewhenClass">start:hw_no_allegato_vincolo_paesaggistico</span></p>
 <div>
 <span class="plominoLabelClass">allegati_vincolo_paesaggistico</span><span class="plominoFieldClass">allegati_vincolo_paesaggistico</span>
 </div>
+<div class="alert alert-info">(**) da allegare solo nel caso che la competenza al rilascio sia regionale come ad esempio in ambito demaniale diversamente citare solo gli estremi</div>
 <p><span class="plominoHidewhenClass">end:hw_no_allegato_vincolo_paesaggistico</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_allegati_autorizzazione_sopraintendenza</span></p>
 <div>
@@ -36,7 +42,7 @@
 <span class="plominoLabelClass">allegati_descrizione_opere</span><span class="plominoFieldClass">allegati_descrizione_opere</span>
 </div>
 <p><span class="plominoHidewhenClass">end:hw_no_allegati_descrizione_opere</span></p>
-</fieldset>]]></FormLayout>
+</fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -51,8 +57,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="allegati_foto_esterno" title="Documentazione fotografica per interventi esterni" type="PlominoField">
@@ -66,7 +75,10 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_allegati_esterni" title="hw_no_allegati_esterni" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_allegati_esterni</id>
@@ -84,25 +96,32 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_pompe_allegati" title="hw_no_pompe_allegati" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_pompe_allegati</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('pompe_calore_opt')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="allegati_vincolo_paesaggistico" title="Autorizzazione paesaggistica" type="PlominoField">
+        <element id="allegati_vincolo_paesaggistico" title="Autorizzazione paesaggistica (**)" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegati_vincolo_paesaggistico</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]} data-tooltip="da allegare solo nel caso che la competenza al rilascio sia regionale come ad esempio in ambito demaniale diversamente citare solo gli estremi"''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''
+			  data-plugin = "iolUploadFile" 
+			  data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+			  data-tooltip="da allegare solo nel caso che la competenza al rilascio sia regionale come ad esempio in ambito demaniale diversamente citare solo gli estremi"
+         ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_allegato_vincolo_paesaggistico" title="hw_no_allegato_vincolo_paesaggistico" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_allegato_vincolo_paesaggistico</id>
@@ -125,7 +144,10 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]} ''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_allegati_descrizione_opere" title="hw_no_allegati_descrizione_opere" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_allegati_descrizione_opere</id>
@@ -143,11 +165,83 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]} ''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_allegati" title="Nascondi quando sono presenti allegati" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_allegati</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="allegato_documentazione_fotografica" title="Documentazione fotografica di dettaglio (obbligatoria in caso di interventi su facciate decorate)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_documentazione_fotografica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_relazione_tecnica" title="Relazione tecnica/descrizione delle opere" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_relazione_tecnica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_relaz_consumi_energetici" title="Relazione  in materia di risparmio energetico (*)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_relaz_consumi_energetici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_assenso_proprietario" title="Nota di assenso del proprietario" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_assenso_proprietario</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"10"}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_proprietario" title="hw_proprietario" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_proprietario</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('fisica_titolo','Proprietario')=='Proprietario']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

@@ -10,10 +10,10 @@
 ##title=
 ##
 ccp = ""
-ccb = "TESORERIA COMUNALE - CASSA DI RISPARMIO DI DEMO - IBAN: IT 0000000000000000000000"
+ccb = "Conto di Tesoreria presso Banca d’Alba - Filiale di Diano Marina, Corso Roma 92 - Codice IBAN: IT92K0853049000000490800442"
 causale = "Attestazione avvenuto pagamento dei diritti di segreteria - Nominativo - Indirizzo Immobile" 
 
-return '%s <br>con causale :"%s"' %(ccb,causale)
+return 'Il pagamento deve essere effettuato sulla piattaforma Online PagoPa'
 ]]></resource>
   </design>
 </plominodatabase>

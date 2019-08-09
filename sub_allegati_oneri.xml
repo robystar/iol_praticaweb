@@ -9,7 +9,7 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Contributo di costruzione</legend>
 <p><span class="plominoHidewhenClass">start:hw_no_documentazione_cc</span></p>
 <div>
@@ -46,7 +46,7 @@
 <p><span class="plominoHidewhenClass">start:hw_cc</span></p>
 <div class="text-label">Nessun documento da allegare</div>
 <p><span class="plominoHidewhenClass">end:hw_cc</span></p>
-</fieldset>]]></FormLayout>
+</fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -61,8 +61,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="allegato_calcolo_cc" title="Prospetto di calcolo preventivo del contributo di costruzione" type="PlominoField">
@@ -77,8 +80,8 @@
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_documentazione_cc" title="Documentazione tecnica necessaria alla determinazione del contributo di costruzione" type="PlominoField">
@@ -93,8 +96,8 @@ data-tooltip = "firmato digitalmente"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_versamento_cc" title="Copia del versamento del contributo di costruzione" type="PlominoField">
@@ -109,12 +112,15 @@ data-tooltip = "firmato digitalmente"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["jpg","png","pdf","p7m"]}'"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_allegato_calcolo_cc" title="hw_no_allegato_calcolo_cc" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_allegato_calcolo_cc</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('contributo_costruzione_opt','')!='2' or context.getItem('contributo_costruzione_calcolo','')!= '2']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('iol_tipo_app') in ['scia','scia2','pdc']:
+    return context.getItem('contributo_costruzione_opt','')!='2' or context.getItem('contributo_costruzione_calcolo','')!= '2'
+else:
+    return context.getItem('contributo_costruzione_opt','')!='2']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_documentazione_cc" title="hw_no_documentazione_cc" type="PlominoHidewhen">
@@ -139,8 +145,8 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_opere_urbanizzazione" title="hw_no_opere_urbanizzazione" type="PlominoHidewhen">
@@ -180,8 +186,8 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_atto_convenzione" title="hw_no_atto_convenzione" type="PlominoHidewhen">
@@ -191,7 +197,7 @@ data-tooltip = "firmato digitalmente"
         </element>
         <element id="hw_no_oblazione" title="hw_no_oblazione" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_oblazione</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('qualifica_interventi_opt','') in ['2','3'] and context.getItem('iol_tipo_app','') == 'cila')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('qualificazione_intervento_opt','') in ['2','3'] and context.getItem('iol_tipo_app','') == 'cila')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="allegato_versamento_prima_rata" title="Copia del versamento della prima rata del contributo di costruzione" type="PlominoField">
@@ -214,12 +220,9 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('contributo_costruzione_pagamento_opt','')== '3' and context.getItem('contributo_costruzione_rateizzazione_opt','')== '2' and context.getItem('contributo_costruzione_pagamento_rata_opt','')== '1')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="hw_pagamento_online_oneri" title="Nascondi se il pagamento avviene online" type="PlominoHidewhen">
+        <element id="hw_pagamento_online_oneri" title="hw_pagamento_online_oneri" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_pagamento_online_oneri</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[diz = context.getParentDatabase().resources.config_praticaweb()
-pagopa_enabled = bool(diz.get('pagopa_enabled',0))
-pagamento_online = (context.getItem('modalita_pagamento','')=='pagopa')
-return (pagopa_enabled and pagamento_online)]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.customscripts.getPagoPaEnabled(context)]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

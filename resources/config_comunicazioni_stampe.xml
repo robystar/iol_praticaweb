@@ -1,0 +1,39 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="config_comunicazioni_stampe" title="Elenco dei modelli di stampa per comunicazioni backoffice" type="Script (Python)"><![CDATA[## Script (Python) "config_comunicazioni_stampe"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None,azione=''
+##title=Elenco dei modelli di stampa per comunicazioni backoffice
+##
+if not doc: 
+    return []
+    
+tipo_app=doc.getItem('iol_tipo_app')
+parentId = context.getItem('parent_document')
+diz = dict()
+
+diz['avvio_procedimento']=['Avvio procedimento|avvio-procedimento','Avvio procedimento/sospensione SCIA|avvio-procedimento-sospensione-scia','Avvio procedimento da conformare SCIA|avvio-procedimento-da-conformare-scia']
+
+diz['richiesta_integrazione']=['Richiesta integrazione|richiesta-integrazione&parent=%s' %parentId]  
+   
+ 
+if tipo_app=='aua':
+    diz['avvio_procedimento']=['Avvio procedimento AUA|avvio-procedimento-aua']    
+    diz['richiesta_integrazione']=['Richiesta integrazione AUA|richiesta-integrazione-aua&parent=%s' %parentId]  
+    
+    
+    
+    
+elenco=diz.get(azione) or []    
+#######AGGIUNGO I PARAMETRI 
+for k in range(len(elenco)):
+    elenco[k] = "%s&app=sue&grp=backoffice&form=%s" %(elenco[k],doc.getItem('iol_start_form'))
+        
+return elenco
+]]></resource>
+  </design>
+</plominodatabase>

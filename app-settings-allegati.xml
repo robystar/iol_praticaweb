@@ -12,25 +12,52 @@ return ''
 if not '[Amministratore impostazioni]' in context.getUserRoles():
     return '<h3>Non sei autorizzato ad accedere al contenuto della pagina <a href="%s"><< ritorna</a></h3>' %context.getParentDatabase().absolute_url()]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('allegati_settings'):
-    ll=[['562', ['dimostrazione_accatastamento', 'documentazione_catastale_immobile', 'allegati_planimetria_catastale']], ['546', ['allegato_allacciamento_servizi']], ['653', ['allegati_vincoli_tutela_ecologica_dg']], ['654', ['allegati_vincoli_suolo_dg']], ['553', ['allegato_altro_fine', 'allegato_cerificato_collaudo', 'allegato_certificato_reg_arte']], ['552', ['allegato_altro_inizio', 'allegato_ditta_esecutrice_inizio']], ['551', ['allegato_altro_integrazione']], ['607', ['altra_documentazione_specifica']], ['535', ['allegato_documentazione_altro', 'altra_documentazione_regolarizzazione', 'copia_agibilita']], ['630', ['allegato_qualita_terreni']], ['504', []], ['649', []], ['651', []], ['529', []], ['505', []], ['617', ['allegato_autocert_titolare_arpa']], ['557', []], ['501', []], ['561', []], ['614', []], ['587', ['autocertificazioni_imprese_digitale', 'autocertificazione_sicurezza_digitale']], ['518', ['allegati_autocert_scavo_rocce']], ['631', []], ['628', ['allegato_autorizzazione_sismica']], ['640', ['allegati_autorizzazione_idraulico']], ['638', []], ['511', []], ['522', ['allegato_atto_convenzione', 'allegato_calcolo_cc', 'allegato_documentazione_cc', 'allegato_opere_urbanizzazione', 'allegato_versamento_cc', 'allegato_marca_bollo', 'allegato_versamento_ds']], ['559', ['ricevuta_versamento_somma', 'allegato_ricevuta_versamento_inizio', 'allegato_versamento_prima_rata', 'allegato_cil_monetizzazione_posteggio', 'allegato_cila_monetizzazione_posteggio']], ['660', ['allegato_collaudo_finale']], ['525', []], ['523', []], ['507', []], ['544', ['allegato_dichi_conformita']], ['540', []], ['506', []], ['626', ['allegato_denuncia_lavori_sismica']], ['657', ['allegato_denuncia_art65', 'allegato_doc_denuncia_art65']], ['644', []], ['620', ['allegato_deroga_prevenzione_incendi']], ['543', ['allegato_certificato_collaudo']], ['514', []], ['548', ['allegato_dich_conf_direttore']], ['615', ['allegato_dichiarazione_acustico']], ['500', ['ricevuta_diritti_segreteria']], ['558', ['allegato_autocert_ditta', 'allegato_copia_asl']], ['502', []], ['656', ['allegato_doc_denuncia_art65']], ['512', ['documentazione_fotografica', 'allegato_documentazione_fotografica', 'allegato_foto_stato_di_fatto']], ['513', []], ['643', []], ['536', ['allegati_atti_assenso_dg', 'allegato_documentazione_attiassenso_altro', 'allegati_atti_assenso_cila_dg']], ['650', ['', 'allegati_vincoli_tutela_ecologica_dg']], ['652', ['allegati_vincoli_suolo_dg']], ['629', ['allegato_autorizzazione_sismica', 'allegato_denuncia_lavori_sismica', 'allegato_doc_autorizzazione_sismica', 'allegato_doc_denuncia_lavori_sismica']], ['634', ['rel_paesaggistica_digitale', 'allegato_autorizzazione_ente_parco', 'allegato_modula_a', 'allegato_precedenti_paesaggistici', 'allegato_precedenti_provvedimenti_cautelari', 'allegato_precedenti_sanatorie', 'allegati_relazione_paesaggistica', 'allegati_rilascio_autorizzazione_paesaggistica', 'allegato_estratti_cartografici', 'allegato_relazione_illustrativa_paesaggistica', 'allegato_soi', 'allegato_tavola_sinottica']], ['632', ['allegato_scarichi_idrici']], ['635', ['allegati_rilascio_autorizzazione_soprintendenza']], ['641', ['allegati_rilascio_autorizzazione_idraulico']], ['639', ['allegati_rilascio_autorizzazione_idrogeologico']], ['627', ['allegato_doc_denuncia_lavori_sismica']], ['645', ['allegati_rilascio_deroga_cimiteriale']], ['637', ['allegati_rilascio_parere_area_protetta']], ['625', ['allegato_deroga_igienico_sanitario', 'parere_asl']], ['619', ['allegato_progetto_vigili_fuoco']], ['647', ['allegati_rilascio_progetto_incidente']], ['659', ['allegati_rilascio_vinca_natura2000']], ['520', ['allegato_relaz_consumi_energetici']], ['516', []], ['589', []], ['590', []], ['531', ['allegato_delega', 'di_altri_tecnici', 'di_comproprietari', 'di_direttore', 'di_direttore_strutt', 'di_esecutore', 'di_progettista', 'di_progettista_strutt', 'di_proprietario', 'di_richiedente', 'procura_comproprietari', 'procura_esecutore', 'procura_proprietario', 'procura_richiedente', 'allegati_documento_identita', 'ci_progettista', 'ci_richiedente', 'allegato_assenso_proprietario', 'allegato_ci_proprietario', 'titolarita_firma_digitale_ci', 'titolarita_firma_digitale_procura']], ['509', ['elaborati_grafici', 'allegato_elaborato_grafico', 'tavole_grafiche', 'allegato_elaborati_grafici', 'allegato_elaborati_progetto', 'allegato_elaborati_raffronto', 'allegato_elaborati_rilievo']], ['608', ['allegato_barriere_architettoniche']], ['539', ['cambio_uso_versamento_allegato', 'nuova_unita_versamento_allegato']], ['524', []], ['526', []], ['547', []], ['612', ['allegato_impatto_acustico']], ['519', []], ['532', ['comunicazione_digitale']], ['537', ['allega_notifica_prel', 'allegato_notifica_preliminare']], ['648', []], ['533', ['allegato_oblazione_art48', 'allegato_versamento_oblazione', 'versamento_sanzione_art21bis']], ['624', []], ['636', []], ['655', []], ['528', []], ['623', ['allegato_amianto']], ['622', ['allegato_amianto_presentato']], ['550', ['allegato_dich_rispetto_direttive', 'allegato_prevenzione_incendi']], ['610', ['allegato_progetto_impianti']], ['517', []], ['515', []], ['616', ['allegato_provvedi_via']], ['534', ['asseverata_digitale', 'rel_asseverata_digitale']], ['633', ['allegati_relazione_geologica']], ['521', []], ['563', ['relazione_illustrativa']], ['560', ['relazione_descrittiva_art22', 'relazione_igienico_sanitari']], ['503', ['allegato_calcoli_ampliamento_superficie', 'relazione_descrittiva_opere', 'allegato_relazione_tecnica']], ['611', ['allegato_relaz_consumi_energetici']], ['530', ['allegato_modello_istat']], ['621', []], ['609', ['allegato_deroga_barriere_architettoniche']], ['541', []], ['545', ['allegato_autorizzazione_smaltimento']], ['508', ['allegati_stralcio_planimetrico']], ['646', ['allegati_progetto_incidente']], ['642', ['allegati_vinca_natura2000']], ['613', ['allegato_clima_acustico', 'allegato_documentazione_acustico']], ['618', []], ['658', []], ['542', ['ricevuta_presentazione', 'allegato_variazione_catastale']], ['549', ['allegato_verbale_visita']], ['538', ['nuova_unita_elaborato_allegato', 'cambio_uso_elaborato_allegato']], ['527', []], ['510', []], ['535', ['autocertificazione_realizzazione_lavori', 'autocertificazione_realizzazione_lavori', 'allegati_comunicazioni_dg', 'di_tecnico_sca', 'allegato_autocertificazione_ditta', 'allegato_regolare_esecuzione', 'allegato_certificato_collaudo_impianti', 'allegato_dichiarazione_conformita_impianti', 'allegato_numerazione_civica', 'allegato_qualificazione_energetica', 'allegato_regolare_esecuzione', 'allegati_comunicazioni_cila_dg']]]
-    context.setItem('allegati_settings',ll)]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
-      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[docId = "%s-allegati" %context.resources.customscripts.getDocSettingsId()
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[docId = "%s-allegati" %context.getParentDatabase().resources.customscripts.getDocSettingsId()
 db=context.getParentDatabase()
 if db.getDocument(docId):
     context.REQUEST.RESPONSE.redirect(db.getDocument(docId).doc_url())]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
-<legend class="scheduler-border">IMPOSTAZIONE TIPO ALLEGATO PRATICAWEB</legend>
-<div><span class="plominoFieldClass">allegati_settings</span></div>
-</fieldset>]]></FormLayout>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="iol-toolbar"></div>
+<p><span class="plominoHidewhenClass">start:hw_no_sue</span></p>
+<div>
+<span class="plominoLabelClass">allegati_no_match_sue</span><span class="plominoFieldClass">allegati_no_match_sue</span>
+</div>
+<hr>
+<div>
+<span class="plominoLabelClass">allegati_istanza_sue</span><span class="plominoFieldClass">allegati_istanza_sue</span>
+</div>
+<hr>
+<div>
+<span class="plominoLabelClass">allegati_scia_condizionata_sue</span><span class="plominoFieldClass">allegati_scia_condizionata_sue</span>
+</div>
+<hr>
+<div>
+<span class="plominoLabelClass">allegati_istruttoria_sue</span><span class="plominoFieldClass">allegati_istruttoria_sue</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_sue</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_pw</span></p>
+<div>
+<span class="plominoLabelClass">allegati_no_match</span><span class="plominoFieldClass">allegati_no_match</span>
+</div>
+<hr>
+<div>
+<span class="plominoLabelClass">allegati_istanza</span><span class="plominoFieldClass">allegati_istanza</span>
+</div>
+<hr>
+<div>
+<span class="plominoLabelClass">allegati_scia_condizionata</span><span class="plominoFieldClass">allegati_scia_condizionata</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_pw</span></p>
+]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
-      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[return "%s-allegati" %context.resources.customscripts.getDocSettingsId()]]></DocumentId>
-      <ActionBarPosition type="Products.Archetypes.Field.StringField">BOTTOM</ActionBarPosition>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[return "%s-allegati" %context.getParentDatabase().resources.customscripts.getDocSettingsId()]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
       <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
@@ -39,12 +66,51 @@ if db.getDocument(docId):
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.praticaweb/css/iol-sue.css
-++resource++iol.document/css/bootstrap.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="allegati_settings" title="allegati_settings" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">allegati_settings</id>
+        <element id="allegati_no_match" title="Campi che non sono stati mappati" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_no_match</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[elencoCampi = context.getParentDatabase().resources.customscripts.getElencoAllegati()
+doc = context.getDocument('0-settings-allegati')    
+settings = doc.getItem('allegati_istanza',[])+doc.getItem('allegati_scia_condizionata',[])
+
+ll=[l[1] for l in settings]
+elencoSettings=[]
+for l in ll:
+    for x in l:
+        elencoSettings.append(x)
+        
+return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSettings])]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegati_istanza" title="DOCUMENTAZIONE ALLEGATA ALL'ISTANZA" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_istanza</id>
           <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -63,25 +129,17 @@ if db.getDocument(docId):
 <value><string>allegato_tipo,allegato_nome</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_allegati_settings</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
-    { "sTitle": "Tipo documento in praticaweb" },  
-    { "sTitle": "Nome campo allegato" }
-],  
+    { "sTitle": "Tipo documento in praticaweb" ,"width": "30px"},  
+    { "sTitle": "Nome del campo allegato" }
+],   
 "bPaginate": false,
 "bLengthChange": false,
 "bFilter": false,
-"bSort": false,
+"bSort": true,
 "bInfo": false,
-"bAutoWidth": true,
+"bAutoWidth": false,
 "plominoDialogOptions": {
         "width": 800,
         "height": 800
@@ -89,8 +147,268 @@ if db.getDocument(docId):
 </string></value>
 </member>
 <member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
 <name>associated_form_rendering</name>
 <value><string>MODAL</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegati_scia_condizionata" title="RICHIESTA DI ACQUISIZIONE DI ATTI DI ASSENSO" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_scia_condizionata</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_tipo,allegato_nome,allegato_ente_opt</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Tipo documento in praticaweb" ,"width": "30px"},  
+    { "sTitle": "Nome del campo allegato" },
+    { "sTitle": "Ufficio o Ente di competenza" ,"width": "30px"},    
+],   
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": true,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 800,
+        "height": 800
+    }
+</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_enti_settings</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegati_no_match_sue" title="Campi che non sono stati mappati (sue)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_no_match_sue</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[elencoCampi = context.getParentDatabase().resources.customscripts.getElencoAllegati()
+doc = context.getDocument('0-settings-allegati')    
+settings = doc.getItem('allegati_istanza_sue',[])+doc.getItem('allegati_scia_condizionata_sue',[])+doc.getItem('allegati_istruttoria_sue',[])
+
+ll=[l[0] for l in settings]
+        
+return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegati_istanza_sue" title="CAMPI DOCUMENTAZIONE ALLEGATA ALL'ISTANZA SUE" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_istanza_sue</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Nome del campo allegato" },
+    { "sTitle": "Obbligatorio" },
+    { "sTitle": "Firma digitale" },
+    { "sTitle": "Dim max" }
+],   
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": true,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 800,
+        "height": 800
+    }
+</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings_sue</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegati_scia_condizionata_sue" title="CAMPI RICHIESTA DI ACQUISIZIONE DI ATTI DI ASSENSO SUE" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_scia_condizionata_sue</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Nome del campo allegato" },
+    { "sTitle": "Obbligatorio" },
+    { "sTitle": "Firma digitale" },
+    { "sTitle": "Dim max" }
+],   
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": true,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 800,
+        "height": 800
+    }
+</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings_sue</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegati_istruttoria_sue" title="CAMPI ALLEGATI ISTRUTTORIA SUE" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_istruttoria_sue</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Nome del campo allegato" },
+    { "sTitle": "Obbligatorio" },
+    { "sTitle": "Firma digitale" },
+    { "sTitle": "Dim max" }
+],   
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": true,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 800,
+        "height": 800
+    }
+</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings_sue</string></value>
 </member>
 </struct></value>
 </param>
@@ -119,6 +437,16 @@ if db.getDocument(docId):
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="hw_no_pw" title="hw_no_pw" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pw</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider')!='praticaweb']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_sue" title="hw_no_sue" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_sue</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider')!='sue']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

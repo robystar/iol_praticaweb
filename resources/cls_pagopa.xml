@@ -1,0 +1,323 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="cls_pagopa" title="Python class di PagoPA" type="Script (Python)"><![CDATA[## Script (Python) "cls_pagopa"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=Python class di PagoPA
+##
+from Products.CMFPlomino.PlominoUtils import urlencode, asList, htmlencode
+
+
+class pagopa:
+    enabled = 1
+    importi_bloccati = 0
+    url = "http://pagopa.istanze-online.it/SUE-CAndora-M1/richiediIuv"
+    url_avviso = ""
+    editform = "frm_pagopa"
+    user = "pagopa@istanze-online.it"
+    #user = "pagopa-user"
+    passwd = "pagopa-user$$"
+    metodi_pagamento = [{'codice': 'BOLLETTINO', 'label': 'Differita - Bollettino'},
+                        {'codice': 'Online', 'label': 'Online'}]
+    codici_pagamento = {
+        'DIRITT': {'codice': 'DIRITT', 'label': 'Diritti di segreteria - Edilizia, Urbanistica, SUAP', 'ordine': 1,'scadenza': 'Alla presentazione'},
+        'CONCSANZ': {'codice': 'CONCSANZ', 'label': 'Proventi derivanti da concessioni edilizie e da sanzioni previste dalla disciplina urbanistica', 'ordine': 2, 'scadenza': 'Alla presentazione'},
+        'URBA': {'codice': 'URBA', 'label': 'Urbanistica - Oneri derivanti da L.R. 16/2008 art. 38 comma 6bis', 'ordine': 3, 'scadenza': ''},
+        'SANAT': {'codice': 'SANAT', 'label': 'Proventi derivanti da concessioni o autorizzazioni in sanatoria ai sensi D.L. 269/2003', 'ordine': 4, 'scadenza': ''},
+        # 'URBA07':{'codice':'URBA07','label':'Quota 7% Urbanizzazione','ordine':'2','scadenza':''},
+        # 'URBA10':{'codice':'URBA10','label':'Quota 10% Urbanizzazione','ordine':'2','scadenza':''},
+        # 'COND':{'codice':'COND','label':'Oneri Condono','ordine':'10','scadenza':''},
+        # 'SANZ':{'codice':'SANZ','label':'Sanzione Danno Ambientale','ordine':'10','scadenza':''},
+        # 'COND3':{'codice':'COND3','label':'Oneri Terzo Condono','ordine':'10','scadenza':''},
+
+        # 'SVINC':{'codice':'SVINC','label':'Svincolo Obblighi Convenzionali','ordine':'10','scadenza':''},
+        # 'CAUZ':{'codice':'CAUZ','label':'Deposito Cauzionale','ordine':'10','scadenza':''},
+        # 'CIVICI':{'codice':'CIVICI','label':'Proventi Rilascio Targhette','ordine':'20','scadenza':''},
+        # 'TOPONOM':{'codice':'TOPONOM','label':'Diritti Istruttoria Toponomastica','ordine':'20','scadenza':''},
+        # 'ISTR':{'codice':'ISTR','label':'Diritti Istruttoria Ambiente','ordine':'20','scadenza':''},
+        # 'RIMB':{'codice':'RIMB','label':'Rimborsi e Recuperi Diversi','ordine':'20','scadenza':''},
+    }
+    tipi_pratica = {
+        'cil': {'label':'CIL','ordine':1,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'cila': {'label':'CILA','ordine':2,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'scia': {'label':'SCIA','ordine':3,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'scia2': {'label':'SCIA2','ordine':4,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'pdc': {'label':'PDC','ordine':5,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'paesaggistica-ordinaria': {'label':'Paes. ordinaria','ordine':6,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'paesaggistica-accertamento': {'label':'Paes. accertamento','ordine':7,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'paesaggistica-semplificata': {'label':'Paes. semplificata','ordine':8,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'aua': {'label':'AUA','ordine':9,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'sca': {'label':'SCA','ordine':10,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'art22': {'label':'Art.22','ordine':11,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'art48': {'label':'Art.48','ordine':12,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'iniziolavori': {'label':'Inizio lavori','ordine':13,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 0, 'URBA':0, 'CARTELLE':0 }},
+        'finelavori': {'label':'Fine lavori','ordine':14,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'integrazione': {'label':'Integrazione','ordine':15,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'idrogeologico-aut': {'label':'AUT vincolo idrogeologico','ordine':16,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'idrogeologico-scia': {'label':'SCIA vincolo idrogeologico','ordine':17,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'dsi': {'label':'Denuncia Sismica Integrata','ordine':18,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+    }
+    importi_field = "elenco_pagamenti"
+    pagamenti_field = "pagamenti_online"
+    back_url = "%s"
+    callback_url = "%s/notificaPagoPA"
+
+    # Metodo che restituisce il documento anche se plomino ID
+    def getDoc(self, doc):
+        db = context.getParentDatabase()
+        if isinstance(doc, basestring):
+            doc = db.getDocument(doc)
+            if not doc:
+                return None
+        elif doc.portal_type != 'PlominoDocument':
+            return None
+        return doc
+
+    # Metodo che restituisci l'elenco dei metodi di pagamento abilitati per l'applicazione da inserire in una selection list
+
+    def codici_metodi_pagamento(self):
+        res = list()
+        for k in self.metodi_pagamento:
+            res.append("%s|%s" % (k['label'], k['codice']))
+        return res
+
+    # Metodo che restituisci l'elenco dei codici pagamento abilitati per l'applicazione da inserire in una selection list
+
+    # Metodo che restituisci l'elenco dei codici pagamento abilitati per l'applicazione da inserire in una selection list ordinati per il campo ordine
+    def codici_importi(self):
+        res = list()
+        for k in self.codici_pagamento:
+            res.append("%s|%s|%d" % (self.codici_pagamento[k]['label'], k,self.codici_pagamento[k]['ordine']))
+        res.sort(key=lambda x: int(x.split('|')[2]))
+        res = ['|'.join(s.split('|')[0:2]) for s in res]
+        return res
+
+    # Metodo che restituisce la label del codice pagamento
+
+    def getLabel(self, k):
+        if k in self.codici_pagamento.keys():
+            return self.codici_pagamento[k]['label']
+        else:
+            return ''
+
+    # Metodo che dato un codice di pagamento dell'applicazione restituisce il corrispondente codice pagopa
+
+    def getCodicePagoPA(self, k):
+        if k in self.codici_pagamento.keys():
+            return self.codici_pagamento[k]['codice']
+        else:
+            return ''
+
+    def calcola_importi(self, doc):
+        tipo = doc.getItem('iol_tipo_app', '')
+        volume = doc.getItem('immobile_volumetria', 0)
+        pagam = self.tipi_pratica[tipo]['pagamenti']
+        res = dict()
+        i = 1
+        pagamento = 0
+        identificativo = doc.getItem('numero_pratica') or doc.getId()
+        for k in pagam:
+            if i > 1:
+                pagamento = 1
+            
+            causale = ("%s della pratica %s" % (self.getLabel(k), identificativo))[0:140]
+            causale = causale.replace('/','-')
+            if pagam[k]==0:
+                pass
+            elif pagam[k] ==-1:
+                importo = self.calcolo_formula(k,int(volume))
+                d = {'importo%d' %i:importo,'tipoPagamento%d' % i:k, 'causale%d' %i: causale,'pagamento_%d' %i:pagamento}
+                res.update(d)
+                i+=1
+            else:
+                d = {'importo%d' %i:pagam[k],'tipoPagamento%d' % i:k, 'causale%d' %i:causale,'pagamento_%d' %i:pagamento}
+                res.update(d)
+                i+=1
+        return res
+
+    def calcolo_formula(self,tipo_pagamento, prm):
+        res = 0.0
+        if prm <= 30:
+            res = 51.65
+        elif prm <=100:
+            res = 103.29
+        elif prm <= 300:
+            res = 154.94
+        elif prm <= 500:
+            res = 258.23
+        elif prm <= 1000:
+            res = 413.17
+        elif prm > 1000:
+            res = 516.46
+            
+        return res
+
+    # Metodo che restituisce la url con le informazioni di Pagamento
+    def creaurl(self, doc):
+        doc = self.getDoc(doc)
+        db = context.getParentDatabase()
+        result = dict()
+        result['anagraficaPagatore'] = htmlencode(doc.getItem('anagraficaPagatore', ''))
+        result['tipoPagatore'] = doc.getItem('tipoPagatore', 'F')
+        result['identificativoFiscalePagatore'] = doc.getItem('identificativoFiscalePagatore', '')
+        result['email'] = doc.getItem('email', '')
+        result['metodo_pagamento'] = doc.getItem('metodo_pagamento', '')
+
+        result['foreign_id'] = doc.getId()
+        result['foreign_url'] = doc.absolute_url()
+        result['redirect_url'] = doc.absolute_url()
+        result['callback_url'] = self.callback_url % db.aq_parent.absolute_url()
+        application = db.id
+        result['application'] = application
+        result['foreign_action'] = 'InviaPratica'
+        result['openwithform'] = self.editform
+        importi = self.calcola_importi(doc)
+        result.update(importi)
+        url = "EditDocument?%s" % urlencode(result)
+        for i in [1, 2, 3, 4, 5]:
+            doc.removeItem('importo_%d' % i)
+            doc.removeItem('causale_%d' % i)
+            doc.removeItem('tipoPagamento_%d' % i)        
+        return url
+
+    # Metodo che setta il campo elenco pagamenti
+
+    def set_elenco_pagamenti(self, doc):
+
+        doc = self.getDoc(doc)
+        rr = doc.getItem('elenco_pagamenti',[])
+        result = list()
+        for r in rr:
+            if r[1] == 'OK':
+                result.append(r)
+        for i in [1, 2, 3, 4, 5]:
+            importo = doc.getItem('importo_%d' % i, 0)
+            causale = doc.getItem('causale_%d' % i, '')
+            tipoPag = doc.getItem('tipoPagamento_%d' % i, '')
+            if importo > 0:
+                result.append([
+                    '',
+                    'COMPILAZIONE',
+                    '',
+                    importo,
+                    tipoPag,
+                    causale,
+                    doc.getItem('identificativoFiscalePagatore', ''),
+                    doc.getItem('anagraficaPagatore', ''),
+                    doc.getItem('metodo_pagamento', '')
+                ])
+
+        doc.setItem(self.importi_field, result)
+        return 1
+
+    #Metodo che setta informazioni dello IUV sul campo pagamento e sul campo importi da versare una volta effettuata la richiesta di IUV
+    #CAMPO PAGAMENTI :
+    #[IUV, ESITO, DATA ORA, IMPORTO, CODICE PAGAMENTO APPLICAZIONE, CAUSALE,METODO PAGAMENTO, CODICE PAGAMENTO PAGOPA,URL PAGAMENTO]
+    #CAMPO IMPORTI DOVUTI :
+    #[IUV, ESITO, DATA ORA, IMPORTO, CODICE PAGAMENTO APPLICAZIONE, CAUSALE, IDENTIFICATIVO FISCALE, NOMINATIVO, METODO PAGAMENTO]
+    def setInfoIuv(self, doc, gruppo_pagamento, iuv, orario,url, data):
+        
+        doc = self.getDoc(doc)
+        importi = doc.getItem(self.importi_field, [])
+        r = list()
+        for i in importi:
+            if not i[0]:
+                i[0] = iuv
+                i[1] = 'INVIATA'
+                i[2] = orario
+            r.append(i)
+        doc.setItem(self.importi_field, r)
+        
+        pagamenti = doc.getItem(self.pagamenti_field, [])
+        if 'pagamenti' in data.keys():
+            for i in data['pagamenti']:
+                p = data['pagamenti'][i]
+                pagamenti.append([iuv,'INVIATA',orario,p['importo'],p['codice'],p['causale'],data['metodo_pagamento'],p['tipoPagamento'],url])
+        
+        doc.setItem(self.pagamenti_field, pagamenti)
+
+    # METODO CHE SETTA l'ESITO DEL PAGAMENTO SUI CAMPI DEL DOCUMENTO    
+    def setEsitoPagamento(self, doc, data):
+        doc = self.getDoc(doc)
+        importi = doc.getItem(self.importi_field, [])
+        r = list()
+        for i in importi:
+            if i[0] == data['iuv']:
+                i[1] = data['esito']
+                i[2] = data['orario']
+            r.append(i)
+        doc.setItem(self.importi_field, r)
+        
+        pagamenti = doc.getItem(self.pagamenti_field, [])
+        for i in pagamenti:
+            if pagamenti[i][0] == data['iuv']:
+                pagamenti[i][1] = data['esito']
+                pagamenti[i][2] = data['orario']
+        
+        doc.setItem(self.pagamenti_field, pagamenti)
+    
+    def calcola_pagamento(self, doc, importo):
+        result = dict()
+        doc = self.getDoc(doc)
+        db = context.getParentDatabase()
+        res = list()
+        for i in [1, 2, 3, 4, 5]:
+            importo = doc.getItem('importo_%d' % i, 0)
+            causale = doc.getItem('causale_%d' % i, '')
+            tipoPag = doc.getItem('tipoPagamento_%d' % i, '')
+            if importo > 0:
+                res.append(
+                    dict(importo=importo, codice=tipoPag, causale=causale, tipoPagamento=self.getCodicePagoPA(tipoPag)))
+                result['tipoPagamento_%d' % i] = self.getCodicePagoPA(tipoPag)
+                result['importo_%d' % i] = importo
+                result['causale_%d' % i] = causale
+
+        result['pagamenti'] = res
+
+        result['anagraficaPagatore'] = htmlencode(doc.getItem('anagraficaPagatore', ''))
+        result['tipoPagatore'] = doc.getItem('tipoPagatore', 'F')
+        result['identificativoFiscalePagatore'] = doc.getItem('identificativoFiscalePagatore', '')
+        result['email'] = doc.getItem('email', '')
+        result['metodo_pagamento'] = doc.getItem('metodo_pagamento', '')
+
+        result['foreign_id'] = doc.getId()
+        result['foreign_url'] = doc.absolute_url()
+        result['redirect_url'] = doc.absolute_url()
+        result['callback_url'] = self.callback_url % db.aq_parent.absolute_url()
+        application = db.id
+        result['application'] = application
+        result['foreign_action'] = 'InviaPratica'
+        if doc.getItem('richiedi_nuovo_pagamento', 0) == 1:
+            self.set_elenco_pagamenti(doc)
+
+        if str(importo) == '1':
+            return totale
+        else:
+            return result
+
+    def backurl(self, doc):
+        if doc:
+            return self.back_url % doc.absolute_url()
+        else:
+            return ''
+
+    def invia(self, doc):
+        view = doc.restrictedTraverse('pagopa-service')
+        res = view.inviaPagoPa()
+
+    def isEnabled(self):
+        try:
+            enabled = self.enabled
+        except:
+            enabled = 0
+        return enabled
+
+
+return pagopa()
+]]></resource>
+  </design>
+</plominodatabase>

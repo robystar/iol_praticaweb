@@ -23,7 +23,7 @@
 <span class="plominoLabelClass">numero</span><span class="plominoFieldClass">numero</span>
 </div>
 <div class="span3">
-<span class="plominoLabelClass">data</span><span class="plominoFieldClass">data</span>
+<span class="plominoLabelClass">data_certificazione</span><span class="plominoFieldClass">data_certificazione</span>
 </div>
 </div>
 <div>
@@ -44,8 +44,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="certificazione" title="Certificazione" type="PlominoField">
@@ -87,8 +90,8 @@
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="data" title="Data" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">data</id>
+        <element id="data_certificazione" title="Data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_certificazione</id>
           <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>

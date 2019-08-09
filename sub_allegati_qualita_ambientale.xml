@@ -10,7 +10,7 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<fieldset class="scheduler-border" title="Qualità ambientale dei terreni ">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Qualità ambientale dei terreni </legend>
 <p><span class="plominoHidewhenClass">start:hw_no_qualita_terreni</span></p>
 <p><span class="plominoLabelClass">allegato_qualita_terreni</span><span class="plominoFieldClass">allegato_qualita_terreni</span></p>
@@ -18,8 +18,10 @@
 <p><span class="plominoHidewhenClass">start:hw_qualita_terreni</span></p>
 <div class="text-label">Nessun documento da allegare</div>
 <p><span class="plominoHidewhenClass">end:hw_qualita_terreni</span></p>
-</fieldset>
-<p><span class="plominoLabelClass">allegati_relazione_geologica</span><span class="plominoFieldClass">allegati_relazione_geologica</span></p>
+</fieldset></div>
+<div class="v-content well">
+<span class="plominoLabelClass">allegati_relazione_geologica</span><span class="plominoFieldClass">allegati_relazione_geologica</span>
+</div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -35,7 +37,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="allegato_qualita_terreni" title="Risultati delle analisi ambientali sulla qualità dei terreni" type="PlominoField">
@@ -50,8 +56,8 @@
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_qualita_terreni" title="hw_no_qualita_terreni" type="PlominoHidewhen">
@@ -71,8 +77,8 @@ data-tooltip = "firmato digitalmente"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_qualita_terreni" title="hw_qualita_terreni" type="PlominoHidewhen">

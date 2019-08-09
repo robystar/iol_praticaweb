@@ -11,32 +11,39 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
 <p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
-</fieldset>
+</fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_comunicazione_digitale</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
-<fieldset class="scheduler-border" title="Protocollo">
-<legend class="scheduler-border">Dati di Protocollazione</legend>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI DI PROTOCOLLAZIONE</legend>
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
-</fieldset>
+</fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DEL GESTORE</legend>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
-<p><span class="plominoSubformClass">base_sub_fisica_recapiti</span></p>
-</fieldset>
-<p><span class="plominoSubformClass">sub_aua_referente</span></p>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><p><span class="plominoSubformClass">sub_aua_referente</span></p></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DELLA DITTA / SOCIETA'/ IMPRESA</legend>
 <p><span class="plominoSubformClass">sub_aua_giuridica</span></p>
-</fieldset>
-<p><span class="plominoSubformClass">sub_ubicazioni_aua</span></p>
+</fieldset></div>
+<p><span class="plominoSubformClass">sub_ubicazione</span></p>
 <p><span class="plominoSubformClass">sub_aua_impianto</span></p>
 <p><span class="plominoSubformClass">sub_aua_dichiarazioni</span></p>
 <p><span class="plominoSubformClass">sub_aua_istanza</span></p>
-<p><span class="plominoSubformClass">base_sub_stampa</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_a</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_b</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_c</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_d</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_e</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_f</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_g1</span></p>
+<p><span class="plominoSubformClass">sub_aua_scheda_g2</span></p>
+<div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -52,8 +59,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="hw_no_protocollo" title="hw_no_protocollo" type="PlominoHidewhen">
@@ -63,7 +73,7 @@
         </element>
         <element id="hw_no_comunicazione_digitale" title="hw_no_comunicazione_digitale" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_digitale</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={} or context.getItem('Form')=='frm__presentata']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={} or context.getItem('Form') in ['frm__presentata','frm_presentata']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

@@ -9,9 +9,9 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
-<legend class="scheduler-border">Documenti di identità e procure</legend>
-<div class="alert alert-info"><h5>Si può scaricare (se necessario) un modello di di procura <a class="external-link" href="istruzioni/modello-di-procura" target="_new" title="Modello procura">qui</a>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Documenti di identità e deleghe</legend>
+<div class="alert alert-info"><h5>Si può scaricare (se necessario) un modello di delega <a class="external-link" href="istruzioni/modello-di-delega" target="_new" title="Modello delega">qui</a>
 </h5></div>
 <p><span class="plominoHidewhenClass">start:hw_no_di_richiedente</span></p>
 <span class="plominoLabelClass">di_richiedente</span> <span class="plominoFieldClass">di_richiedente</span><p><span class="plominoHidewhenClass">end:hw_no_di_richiedente</span></p>
@@ -19,8 +19,6 @@
 <span class="plominoLabelClass">di_proprietario</span> <span class="plominoFieldClass">di_proprietario</span><p><span class="plominoHidewhenClass">end:hw_no_di_proprietario</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_di_comproprietario</span></p>
 <span class="plominoLabelClass">di_comproprietari</span> <span class="plominoFieldClass">di_comproprietari</span><p><span class="plominoHidewhenClass">end:hw_no_di_comproprietario</span></p>
-<p><span class="plominoHidewhenClass">start:hw_no_di_esecutore</span></p>
-<span class="plominoLabelClass">di_esecutore</span> <span class="plominoFieldClass">di_esecutore</span><p><span class="plominoHidewhenClass">end:hw_no_di_esecutore</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_di_direttore</span></p>
 <span class="plominoLabelClass">di_direttore</span> <span class="plominoFieldClass">di_direttore</span><p><span class="plominoHidewhenClass">end:hw_no_di_direttore</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_di_progettista_strutt</span></p>
@@ -31,7 +29,7 @@
 <span class="plominoLabelClass">di_altri_tecnici</span> <span class="plominoFieldClass">di_altri_tecnici</span><p><span class="plominoHidewhenClass">end:hw_no_di_altri_tecnici</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_allegato_delegato</span></p>
 <span class="plominoLabelClass">allegato_delega</span><span class="plominoFieldClass">allegato_delega</span><p><span class="plominoHidewhenClass">end:hw_no_allegato_delegato</span></p>
-</fieldset>]]></FormLayout>
+</fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -46,8 +44,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="di_richiedente" title="Documenti d'identità dei richiedenti" type="PlominoField">
@@ -95,21 +96,6 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
 ''']]></HTMLAttributesFormula>
         </element>
-        <element id="di_esecutore" title="Documento d'identità degli esecutori dei lavori" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">di_esecutore</id>
-          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
-''']]></HTMLAttributesFormula>
-        </element>
         <element id="di_comproprietari" title="Documento d'identità di comproprietari / terzi titolari di altri diritti" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">di_comproprietari</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
@@ -133,14 +119,6 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
         <element id="hw_no_di_comproprietario" title="hw_no_di_comproprietario" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_di_comproprietario</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('titolarita_opt','')!='2']]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
-        </element>
-        <element id="hw_no_di_esecutore" title="hw_no_di_esecutore" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_di_esecutore</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('lavori_economia_opt')!='2':
-    return True
-else:
-    return context.getItem('firma_digitale_impresa_opt')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="di_progettista_strutt" title="Documento d'identità del progettista strutturale" type="PlominoField">
@@ -230,10 +208,10 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
         </element>
         <element id="hw_no_allegato_delegato" title="hw_no_allegato_delegato" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_allegato_delegato</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('firma_digitale_opt')=='3' or context.getItem('firma_digitale_impresa_opt')=='3' or context.getItem('delegato_opt') or context.getItem('titolarita_opt')=='2')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('firma_digitale_opt')=='3' or context.getItem('delegato_opt') or context.getItem('titolarita_opt')=='2')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="allegato_delega" title="Procura/delega" type="PlominoField">
+        <element id="allegato_delega" title="Procura/Delega" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_delega</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -246,7 +224,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente"
+data-tooltip = "firmato digitalmente max 10Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_sca" title="hw_no_sca" type="PlominoHidewhen">

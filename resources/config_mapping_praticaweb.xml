@@ -6,7 +6,7 @@
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=test=0
+##parameters=doc=None,test=0
 ##title=
 ##
 diz = {
@@ -597,17 +597,20 @@ diz = {
     "interno": "ui_interno",
     "civico": "ui_civico"
   },
+
   "nct": {
     "sezione": "nct_sezione",
     "foglio": "nct_foglio",
     "mappale": "nct_particella"
   },
+
   "nceu": {
     "sezione": "nceu_sezione",
     "foglio": "nceu_foglio",
     "mappale": "nceu_particella",
     "sub": "nceu_subalterno"
   },
+
   "impianto": {
       "denominazione": "impianto_denominazione",
       "descrizione_attivita": "impianto_attivita_descrizione",
@@ -622,14 +625,104 @@ diz = {
       "giorni_anno": "impianto_periodo_2",
       "mesi_anno": "impianto_periodo_3",
       "giorni_settimana": "impianto_periodo_4"
-  }
+  },
+
+  "tipo_pratica": {
+      "sca":70000,          
+      "pdc":100000,
+      "scia":110000,
+      "scia2":120000,
+      "cila":130000,
+      "cil":140000,
+      "paesaggistica-ordinaria":150000,
+      "paesaggistica-semplificata":150000,
+      "paesaggistica-accertamento":160000,
+      "art21":31000,    
+      "art22":170000,
+      "art48":170000,
+      "parere":51000,
+      "lr25":36000,
+      "aua":165000,
+      "idrogeologico-scia":210000,
+      "idrogeologico-aut":211000,
+      "fotovoltaico":190000,
+      "dsi":201000,
+      "deposito-impianti":220000,
+},
+  "categoria_pratica": {
+      "scia-1":1,
+      "scia-2":2,
+      "scia-3":3,
+      "scia-4":(5 if doc and doc.getItem("titolo_esistente_tipo") == "SCIA" else 4),
+      "scia-5":(5 if doc and doc.getItem("titolo_esistente_tipo") == "SCIA" else 4),
+      "scia2-1":6,
+      "cila-1":7,
+      "cila-2":8,
+      "cila-3":9,
+      "pdc-1":10,
+      "pdc-2":11,
+      "pdc-3":12,
+      "pdc-4":13,
+      "pdc-5":14,
+      "pdc-6":15,
+      "pdc-7":16,
+      "cil":17,
+      "paesaggistica-ordinaria":18,
+      "paesaggistica-semplificata":19,
+      "paesaggistica-accertamento":20,
+      "art22":21,
+      "art48":22,
+      "art48-1":222,
+      "art48-2":223,
+      "art48-3":224,
+      "art48-15":225,
+      "art48-25":226,
+      "art48-35":227,
+      "art21":999,
+      "parere":999,
+      "lr25":999,
+      "sca":999,
+      "aua":999,
+      "dsi":999,
+      "deposito-impianti":999,
+      "deposito-impianti-1":231,
+      "deposito-impianti-2":232,
+      "deposito-impianti-3":233,
+      "deposito-impianti-4":234,
+      "deposito-impianti-0":230,
+  },
+
+    "pagamento":{
+        "anagrafica":"anagrafica",
+        "causale":"causale",
+        "data_pagamento":"data",
+        "identificativofiscale":"identificativofiscale",
+        "importo":"importo",
+        "codice_univoco":"iuv",
+        "metodo":"metodo_pagamento",
+        "tipo":"tipo_pagamento"
+    },
+    "search_form_list" : ["procedimento","soggetti","integrazioni","lavori"],
+    "search_form_result":{
+        "procedimento":"sub_search_procedimento_result",
+        "soggetti":"sub_search_soggetti_result",
+        "indirizzi":"",
+        "cterreni":"",
+        "curbano":"",
+        "vincoli":"",
+        "pareri":"",
+        "lavori":"sub_search_lavori_result",
+        "integrazioni":"sub_search_integrazioni_result",
+        "allegati":"",
+        "titolo":"",
+        "pagamenti":"",
+        "documenti":"",
+        "iter":""
+    },
 }
 
-if test=='1':
-    from Products.CMFPlomino.PlominoUtils import json_dumps
-    return json_dumps(diz)
-else:
-    return diz
+
+return diz
 ]]></resource>
   </design>
 </plominodatabase>

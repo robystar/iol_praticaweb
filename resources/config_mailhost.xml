@@ -9,11 +9,14 @@
 ##parameters=
 ##title=
 ##
+if script.getId() in context.REQUEST.get('URL'):
+    context.REQUEST.RESPONSE.redirect(context.getParentDatabase().absolute_url())
+
 diz = {
-    "mailhost": "xxxxxxxxxx",
-    "user": "xxxxxxxxxxxx",
-    "pwd": "xxx",
-    "from": "xxxxxxxxxxxxxxxxx",
+    "mailhost": "smtps.pec.aruba.it",
+    "user": "amministrazione@pec.gisweb.it",
+    "pwd": "P3cg1sw3b",
+    "from": "amministrazione@pec.gisweb.it",
     "port": "465",
     "tls": 0,
     "ssl": 1

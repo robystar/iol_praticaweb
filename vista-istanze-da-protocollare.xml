@@ -38,8 +38,8 @@
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">True</excludeFromNav>
       <elements>
-        <element id="tipo-pratica" title="Tipo pratica" type="PlominoColumn">
-          <id type="Products.Archetypes.Field.StringField">tipo-pratica</id>
+        <element id="tipo" title="Tipo pratica" type="PlominoColumn">
+          <id type="Products.Archetypes.Field.StringField">tipo</id>
           <SelectedField type="Products.Archetypes.Field.StringField">base_sub_ricerca/iol_tipo_app</SelectedField>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <HiddenColumn type="Products.Archetypes.Field.BooleanField">False</HiddenColumn>

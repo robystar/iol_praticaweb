@@ -10,31 +10,31 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border required">3. Opera correlata a :</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">opera_correlata_opt</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border required">4. Carattere dell'intervento</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">carattere_intervento_opt</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">5.A Destinazione d'uso del manufatto esistente o dell'area interessata (se edificio o area di pertinenza)</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">immobile_destinazione</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">5.B Uso attuale del suolo (se lotto di terreno)</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">uso_attuale_suolo_opt</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">6. Contesto paesaggistico dell'intervento e/o dell'opera</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">contesto_paesaggistico_opt</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">7. Morfologia del contesto paesaggistico</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">morfologia_opt</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">8. Ubicazione dell'opera e/o dell'intervento</legend>
 <div class="row-fluid"><div class="span12 alert alert-info">
 <p><b>sul quale sia riportato se ricadente in area urbana: </b></p>
@@ -45,14 +45,15 @@
 <p>c) estratto tavola PRG e relative norme che evidenzino: l'edificio o sua parte; area di pertinenza/il lotto di terreno, l'intorno su cui si intende intervenire</p>
 <p>d) estratto degli strumenti di pianificazione paesistica quali P.P.; P.T.C.P.; P.U.RT. che evidenzino il contesto paesaggistico e l'area dell'intervento</p>
 </div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">9. Documentazione fotografica </legend>
 <div class="row-fluid"><div class="span12 alert alert-info">
 <p><b>Le riprese fotografiche (da 2 a 4) devono permettere una vista di dettaglio dell'area di intervento e una vista panoramica del contesto da punti dai quali è possibile cogliere con completezza le fisionomie fondamentali del contesto paesaggistico, le aree di intervisibilità del sito.</b></p>
 <p><b>Le riprese fotografiche vanno corredate da note esplicative e dall'individuazione del contesto paesaggistico e dell'area di intervento.</b></p>
 </div></div>
-</fieldset>
+</fieldset></div>
+<div class="v-content well">
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">10.A Estremi del provvedimento ministeriale o regionale di notevole interesse pubblico del vincolo per immobili o aree dichiarate di notevole interesse pubblico (art. 136 - 141 - 157 D.Lgs. n. 42/2004)</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">interesse_pubblico_opt</span></div></div>
@@ -61,31 +62,32 @@
 <legend class="scheduler-border">10.B Presenza di aree tutelate per legge (art. 142 del D.Lgs n. 42/2004)</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">aree_tutelate_opt</span></div></div>
 </fieldset>
-<fieldset class="scheduler-border">
+</div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">11. Note descrittive dello stato attuale dell'immobile o dell'area tutelata</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">note_stato_attuale</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">12. Descrizione sintetica dell'interventoe delle caratteristiche dell'opera (dimensioni materiali, finiture, modalità di messa in opera etc.) </legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">descrizione_sintetica</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">13. Effetti conseguenti alla realizzazione dell'opera</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">effetti_opera</span></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">14. Mitigazione dell'impatto dell'intervento</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">mitigazione_impatto_intervento</span></div></div>
-</fieldset>
+</fieldset></div>
 <p><span class="plominoHidewhenClass">start:hw_rel_semplificata</span></p>
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">15. Simulazione dello stato dei luoghi a seguito della realizzazione del progetto: foto, modellazione fotografica ...</legend>
 <div class="row-fluid"><div class="span12 alert alert-info"></div></div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">16. Previsioni degli effetti delle trasformazioni dal punto di vista paesaggistico (a breve e medio termine)</legend>
 <div class="row-fluid"><div class="span12"><span class="plominoFieldClass">previsioni_effetti_opera</span></div></div>
-</fieldset>
+</fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_rel_semplificata</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
@@ -102,8 +104,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="opera_correlata_opt" title="Opera correlata a" type="PlominoField">
@@ -111,8 +116,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -153,8 +158,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -193,8 +198,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -218,7 +223,7 @@
 </member>
 <member>
 <name>selectionlistformula</name>
-<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
+<value><string>return context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
 </member>
 </struct></value>
 </param>
@@ -229,8 +234,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -271,8 +276,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -316,8 +321,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -361,8 +366,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -402,8 +407,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>

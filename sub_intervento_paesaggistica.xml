@@ -11,7 +11,7 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">TUTELA PAESAGGISTICA</legend>
 <div>
 <span class="plominoLabelClass">dichiarazione_intervento_opt</span><span class="plominoFieldClass">dichiarazione_intervento_opt</span>
@@ -59,8 +59,8 @@
 <div>
 <span class="plominoLabelClass">descrizione_intervento</span> <span class="plominoFieldClass">descrizione_intervento</span>
 </div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DICHIARAZIONE</legend>
 <div>
 <span class="plominoLabelClass">dichiarazione_titolo_opt</span> <span class="plominoFieldClass">dichiarazione_titolo_opt</span>
@@ -74,7 +74,7 @@
 </div>
 </div>
 <span class="plominoHidewhenClass">end:hw_no_dichiarazione_titolo_1</span>
-</fieldset>
+</fieldset></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -90,8 +90,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="dichiarazione_intervento_opt" title="L’intervento necessita di autorizzazione paesaggistica, ai sensi dell’articolo 146 del d.lgs. n. 42/2004 e s.m.i., in quanto lo stesso ricade in ambito assoggettato a tutela paesaggistica ai sensi:" type="PlominoField">
@@ -124,7 +127,9 @@
 </member>
 <member>
 <name>selectionlistformula</name>
-<value><string>['''dell’art. 136, c. 1, lett. …..) del d.lgs. n. 42/2004|1''','''dell’art. 142, c. 1, lett. …..) del d.lgs. n. 42/2004|2''','''dell’art. 134, c. 1, lett. c) del d.lgs. n. 42/2004|3''']</string></value>
+<value><string>ll = ['''dell’art. 136, c. 1, lett. …..) del d.lgs. n. 42/2004|1''','''dell’art. 142, c. 1, lett. …..) del d.lgs. n. 42/2004|2''','''dell’art. 134, c. 1, lett. c) del d.lgs. n. 42/2004|3''']
+ll = context.getParentDatabase().resources.config().get('vincoli_paesaggistica',ll)
+return ll</string></value>
 </member>
 </struct></value>
 </param>
@@ -176,8 +181,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>

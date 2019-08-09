@@ -50,8 +50,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="contributo_costruzione_opt" title="L'intervento da realizzare:" type="PlominoField">
@@ -59,8 +62,8 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -156,10 +159,10 @@
 </member>
 <member>
 <name>selectionlistformula</name>
-<value><string>ll=['''si allega l’attestazione del completo versamento del contributo dovuto;|1''']
+<value><string>ll=['''si allega l’attestazione del completo versamento del contributo dovuto ovvero si procede al pagamento online;|1''']
 if context.getItem('atti_assenso_opt','3')=='3':
     ll.append('''si riserva di trasmettere prima dell’inizio dei lavori l’attestazione del completo versamento del
-contributo dovuto;|2''')
+contributo dovuto ovvero pagamento online;|2''')
 ll.append('''chiede di avvalersi della possibilità del pagamento nel corso dei lavori ed in particolare:|3''')
     
 return ll</string></value>
@@ -264,7 +267,7 @@ return context.getItem('contributo_costruzione_opt','')!='1' or tipo in ['pdc','
 </member>
 <member>
 <name>selectionlistformula</name>
-<value><string>ll=['''si allega l’attestazione del versamento della prima rata.|1''']
+<value><string>ll=['''si allega l’attestazione del versamento della prima rata ovvero si procede mediante pagamento online.|1''']
 if context.getItem('atti_assenso_opt','3')=='3':
     ll.append('''si impegna a trasmettere prima dell’inizio dei lavori, o congiuntamente allo stesso, il pagamento della prima rata degli oneri dovuti e la fideiussione, redatta con le modalità disposte dal Comune, a garanzia dell’importo residuo degli oneri.|2''')
     

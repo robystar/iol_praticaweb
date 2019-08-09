@@ -1,0 +1,63 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="getVincoliParticelle-Spezia" title="Elenco della zonizzazione (La Spezia)" type="Script (Python)"><![CDATA[## Script (Python) "getVincoliParticelle-Spezia"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=comune='E463',sezioni='',fogli='',particelle=''
+##title=Elenco della zonizzazione (La Spezia)
+##
+# -*- coding: utf-8 -*-
+from Products.CMFPlomino.PlominoUtils import json_dumps,StringToDate,DateToString,open_url,asUnicode
+from iol.document.plomino_utils import parseXML, requests_post, requests_get
+from Products.CMFPlomino.PlominoUtils import json_dumps
+
+#SERVIZIO DESTINAZIONE URBANISTICA FABIO
+wsUrl = 'http://127.0.0.1/cduspezia/cdu.php'
+
+def getElencoZone(sezione='',foglio='',particella=''):
+    try:
+        resp = requests_post(wsUrl, data=dict(fg=foglio,map=particella))
+        ret = "Nessuna zona trovata"
+        if resp["status_code"] == 200:
+            data = asUnicode(resp["text"])
+            data =  parseXML(resp["text"])
+            context.plone_log(data)
+            if "Destinazione" in data:
+                if "mappale" in data["Destinazione"]:
+                    rows = [data["Destinazione"]['mappale']]
+                    for key in ['variante2','variante1','puc','vincoli']:
+                        if key in data["Destinazione"]:
+                            if isinstance(data["Destinazione"][key],basestring):
+                                rows.append(data["Destinazione"][key])
+                            else:
+                                rows = rows + data["Destinazione"][key]
+                    ret= "\n".join(rows)
+    except Exception as err:
+        ret="Errore: %s" %err
+            
+                
+    return ret
+
+####code
+sezioni = sezioni.split(',')
+fogli = fogli.split(',')
+particelle = particelle.split(',')
+elencoZone=[]
+
+for index in range(len(particelle)):
+    if len(sezioni)>1:
+        sezione = sezioni[index]
+    else:
+        sezione=''
+    foglio = fogli[index]
+    particella = particelle[index]
+    elencoZone.append(getElencoZone(sezione,foglio,particella))
+    
+    
+return "\n==================\n".join(elencoZone);
+]]></resource>
+  </design>
+</plominodatabase>

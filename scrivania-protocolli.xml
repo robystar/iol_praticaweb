@@ -10,12 +10,11 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<div><span class="plominoActionClass">btn_chiudi</span></div>
-<p> </p>
-<hr>
+<div class="iol-control-buttons"><span class="plominoActionClass">btn_chiudi</span></div>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">ISTANZE DA PROTOCOLLARE</legend>
 <p><span class="plominoFieldClass">istanze_da_protocollare</span></p>
-<hr>
-<div><span class="plominoActionClass">btn_chiudi_2</span></div>
+</fieldset>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -23,18 +22,19 @@
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
-      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
-      <isPage type="Products.Archetypes.Field.BooleanField">True</isPage>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">True</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
       <SearchView type="Products.Archetypes.Field.StringField"/>
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
-      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/js/plomino.search.dataTables.js
-++resource++iol.praticaweb/js/controller_trova_procedimento.js]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.document/css/bootstrap.dataTables.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/js/plomino.search.dataTables.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="istanze_da_protocollare" title="Istanze da protocollare" type="PlominoField">
@@ -53,8 +53,8 @@
 <param>
 <value><struct>
 <member>
-<name>sourceview</name>
-<value><string>vista-istanze-da-protocollare</string></value>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -81,8 +81,8 @@
 ]</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
+<name>sourceview</name>
+<value><string>vista-istanze-da-protocollare</string></value>
 </member>
 <member>
 <name>labelcolumn</name>
@@ -98,15 +98,7 @@
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
-          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
-        </element>
-        <element id="btn_chiudi_2" title="Chiudi" type="PlominoAction">
-          <id type="Products.Archetypes.Field.StringField">btn_chiudi_2</id>
-          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
-          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
-          <Content type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().absolute_url()]]></Content>
-          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
-          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
         </element>
       </elements>
     </element>

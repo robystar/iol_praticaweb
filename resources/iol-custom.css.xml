@@ -1,7 +1,5 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <resource contenttype="text/css" id="iol-custom.css" title="Custom css per adattarsi allo skin corrente" type="File"><![CDATA[I21haW4tbmF2aWdhdGlvbiwKI3BvcnRhbC1zZWFyY2hib3gKewoKICAgZGlzcGxheTpub25lOwoK
-fQ==
-]]></resource>
+    <resource contenttype="text/css" id="iol-custom.css" title="Custom css per adattarsi allo skin corrente" type="File"><![CDATA[]]></resource>
   </design>
 </plominodatabase>

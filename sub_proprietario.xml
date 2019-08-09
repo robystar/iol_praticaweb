@@ -64,9 +64,9 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","docx","jpg","p7m"]}
-data-tooltip = "Nel caso in cui il richiedente sia diverso dal proprietario occorre allegare Nota di Assenso debitamente sottoscritta dal proprietario con indicazione delle generalità e domicilio dello stesso, specifica in relazione all'intervento, e copia del documento d'identità in corso di validità"
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_ci_proprietario" title="Documento d'identità del proprietario" type="PlominoField">
@@ -80,9 +80,9 @@ data-tooltip = "Nel caso in cui il richiedente sia diverso dal proprietario occo
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","docx","jpg","p7m"]}
-data-tooltip = "Allegare copia del documento d'identità in corso di validità"
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
 ''']]></HTMLAttributesFormula>
         </element>
       </elements>

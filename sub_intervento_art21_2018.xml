@@ -1,0 +1,931 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_intervento_art21_2018" title="sub_intervento_art21_2018" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_intervento_art21_2018</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Interventi previsti</legend>
+<div class="row-fluid"><div class="span3">
+<span class="plominoLabelClass">data_inizio_interventi</span><span class="plominoFieldClass">data_inizio_interventi</span>
+</div></div>
+<div>
+<span class="plominoLabelClass">interventi_edilizia_libera_descrizione</span><span class="plominoFieldClass">interventi_edilizia_libera_descrizione</span>
+</div>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">tipo_opere_opt</span><span class="plominoFieldClass">tipo_opere_opt</span>
+</div></div>
+</fieldset></div>
+<h5>Gli interventi sopra descritti sono riconducibili alle casistiche sottoriportate:</h5>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Manutenzione ordinaria (elemento - opera)</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6 comma 1, lett. a); art.3, comma 1, lett. a</strong> - Interventi edilizi che riguardano le opere di riparazione, rinnovamento e sostituzione delle finiture degli edifici e quelle necessarie ad integrare o mantenere in efficienza gli impianti tecnologici esistenti (d.lgs. n. 222/2016, Tab. A, Sezione II Edilizia - attività 1)</div>
+<div><span class="plominoFieldClass">manutenzione_ordinaria_opt</span></div>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Pompe di calore di potenza termica utile nominale inferiore a 12 kW</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6 comma 1, lett. a-bis)</strong> - Interventi di installazione delle pompe di calore aria-aria di potenza termica utile nominale inferiore a 12 kW(d.lgs. n. 222/2016, Tab. A, Sezione II Edilizia-attività 2)</div>
+<div><span class="plominoFieldClass">pompe_calore_opt</span></div>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Depositi di gas di petrolio liquefatti di capacità complessiva non superiore a 13 mc</legend>
+<div class="alert alert-info"><strong>Edilizia Libera d.lgs. n. 128/2006, art. 17</strong></div>
+<div><span class="plominoFieldClass">deposito_gas_opt</span></div>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Eliminazione delle barriere architettoniche</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6,comma 1, lett. b)</strong> - Interventi volti all'eliminazione di barriere architettoniche <strong>che non comportino la realizzazione di ascensori esterni, ovvero di manufatti che alterino la sagoma dell'edificio.</strong> (d.lgs. n. 222/2016, Tab. A, Sezione II –Edilizia-attività 21)</div>
+<div><span class="plominoFieldClass">barriere_architettoniche_opt</span></div>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Attività di ricerca nel sottosuolo</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6,comma 1, lett. c)</strong> - Opere temporanee per attività di ricerca nel sottosuolo che abbiano carattere geognostico, ad esclusione di attività di ricerca di idrocarburi, e che siano eseguite in aree esterne al centro edificato.(d.lgs. n. 222/2016, Tab. A, Sezione II –Edilizia-attività 23)</div>
+<div><span class="plominoFieldClass">ricerca_sottosuolo_opt</span></div>
+</fieldset></div>
+<div class="v-content well">
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Movimenti di terra</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6,comma 1, lett. d)</strong> - Movimenti di terra strettamente pertinenti all'esercizio dell'attività agricola e le pratiche agro-silvo-pastorali, compresi gli interventi su impianti idraulici agrari.(d.lgs. n. 222/2016, Tab. A, Sezione II –Edilizia-attività 24)</div>
+<div><span class="plominoFieldClass">movimenti_terra_opt</span></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Serre mobili stagionali</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6,comma 1, lett. e)</strong> - Serre mobili stagionali, sprovviste di strutture in muratura, funzionali allo svolgimento dell'attività agricola.(d.lgs. n. 222/2016, Tab. A, Sezione II –Edilizia-attività 25)</div>
+<div><span class="plominoFieldClass">serre_opt</span></div>
+</fieldset>
+</div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Pavimentazione di aree pertinenziali</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6,comma 1, lett. e-ter)</strong> - Opere di pavimentazione e di finitura di spazi esterni, anche per aree di sosta, che siano contenute entro l'indice di permeabilità, ove stabilito dallo strumento urbanistico comunale, ivi compresa la realizzazione di intercapedini interamente interrate e non accessibili, vasche di raccolta delle acque, locali tombati (d.lgs. n. 222/2016, Tab. A, Sezione II –Edilizia-attività 27)</div>
+<div><span class="plominoFieldClass">pavimentazione_opt</span></div>
+</fieldset></div>
+<div class="v-content well">
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Pannelli fotovoltaici a servizio degli edifici</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6,comma 1, lett. e-quater)</strong> - Pannelli solari, fotovoltaici, a servizio degli edifici, da realizzare al di fuori della zona A) di cui al decreto del Ministro dei lavori pubblici 2 aprile 1968, n. 1444.(d.lgs. n. 222/2016, Tab. A, Sezione II –Edilizia-attività 28)</div>
+<div><span class="plominoFieldClass">pannelli_fotovoltaici_opt</span></div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Aree ludiche ed elementi di arredo delle aree di pertinenza</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 6,comma 1, lett. e-quinquies)</strong> - Aree ludiche senza fini di lucro ed elementi di arredo delle aree pertinenziali degli edifici.(d.lgs. n. 222/2016, Tab. A, Sezione II –Edilizia-attività 29)</div>
+<div><span class="plominoFieldClass">aree_ludiche_opt</span></div>
+</fieldset>
+</div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Manufatti leggeri in strutture ricettive</legend>
+<div class="alert alert-info">
+<strong>Edilizia Libera (d.P.R. n. 380/2001,art. 3,comma 1, lett. e.5)</strong> - Installazione di manufatti leggeri, anche prefabbricati, e di strutture di qualsiasi genere, quali roulottes, campers, case mobili, imbarcazioni, in strutture ricettive all'aperto per la sosta e il soggiorno dei turisti, previamente autorizzate sotto il profilo urbanistico, edilizio e, ove previsto, paesaggistico, in conformità alle normative regionali di settore. (d.lgs. n. 222/2016, Tab. A, Sezione II – Edilizia- attività 16)</div>
+<div><span class="plominoFieldClass">manufatti_leggeri_opt</span></div>
+</fieldset></div>
+<h5>Oppure riguardano:</h5>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Lavori relativi ad edifici ed impianti adibiti ad attività industriali conformi ai criteri e ai principi di cui alla circolare Ministero dei Lavori Pubblici 16 novembre 1977, n. 1918</legend>
+<div><span class="plominoFieldClass">impianti_industriali_opt</span></div>
+<ul>
+<li>non compromettano aspetti ambientali e paesaggistici;</li>
+<li>non comportino aumenti di densità (che in materia industriale va espressa in termini di addetti);</li>
+<li>non determinano implicazioni sul territorio in termini di traffico;</li>
+<li>non richiedano nuove opere di urbanizzazione e, più in generale, di infrastrutturazione;</li>
+<li>non determinano alcun pregiudizio di natura igienica ovvero effetti inquinanti;</li>
+<li>non siano in contrasto con specifiche norme di regolamento edilizio o di attuazione dei piani regolatori in materia;</li>
+</ul>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Interventi relativi alle infrastrutture viarie compresi nella manutenzione ordinaria:</legend>
+<div><span class="plominoFieldClass">infrastrutture_viarie_opt</span></div>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Dichiarazioni</legend>
+<h5>Le opere sono conformi al vigente Regolamento Edilizio e alla disciplina di livello puntuale paesistico di PUC (11) e saranno realizzate nel rispetto normative di settore aventi incidenza sulla disciplina dell'attività edilizia e, in particolare, delle norme antisismiche, di sicurezza, antincendio, igienico-sanitarie, di quelle relative all'efficienza energetica, di tutela del rischio idrogeologico, nonché delle disposizioni contenute nel codice dei beni culturali e del paesaggio di cui al D.Lgs 42/04 e s.m.i.</h5>
+<div>
+<span class="plominoLabelClass">dichiarazione_tutela_storico</span><span class="plominoFieldClass">dichiarazione_tutela_storico</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_opere_esterne</span></p>
+<div>
+<span class="plominoLabelClass">vincolo_paesaggistico</span><span class="plominoFieldClass">vincolo_paesaggistico</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_vincolo_paesaggistico</span></p>
+<div class="row-fluid">
+<div class="span4">
+<span class="plominoLabelClass">numero_autorizzazione_paesaggistica</span><span class="plominoFieldClass">numero_autorizzazione_paesaggistica</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">data_autorizzazione_paesaggistica</span><span class="plominoFieldClass">data_autorizzazione_paesaggistica</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">ente_rilascio_autorizzazione_paesaggistica</span><span class="plominoFieldClass">ente_rilascio_autorizzazione_paesaggistica</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_vincolo_paesaggistico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_vincolo_paesaggistico_punto</span></p>
+<h5>gli interventi previsti sono esclusi dall'autorizzazione paesaggistica in quanto riconducibili al punto:</h5>
+<div>
+<span class="plominoLabelClass">vincolo_paesaggistico_punto</span><span class="plominoFieldClass">vincolo_paesaggistico_punto</span>
+</div>
+<h5>dell'Allegato A al DPR 13.02.2017 n. 31 “Regolamento recante individuazione degli interventi esclusi dall'autorizzazione paesaggistica o sottoposti a procedura autorizzatoria semplificata”</h5>
+<p><span class="plominoHidewhenClass">end:hw_no_vincolo_paesaggistico_punto</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_opere_esterne</span></p>
+</fieldset></div>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="data_inizio_interventi" title="Data inizio interventi" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_inizio_interventi</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="interventi_edilizia_libera_descrizione" title="Descrizione delle opere che si intende realizzare:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">interventi_edilizia_libera_descrizione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipo_opere_opt" title="Gli interventi riguardano:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipo_opere_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['opere interne;|1','opere esterne;|2']</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="manutenzione_ordinaria_opt" title="Manutenzione ordinaria (elemento - opera)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">manutenzione_ordinaria_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["1) Pavimentazione esterna e interna - Riparazione, sostituzione, rinnovamento (comprese le opere correlate quali guaine, sottofondi, etc.);|1",
+"2) Intonaco interno e esterno - Rifacimento, riparazione, tinteggiatura (comprese le opere correlate);|2",
+"3) Elemento decorativo delle facciate (es. marcapiani, modanature, corniciature, lesene) - Riparazione, sostituzione, rinnovamento;|3",
+"4) Opera di lattoneria (es. grondaie, tubi, pluviali) e impianto di scarico - Riparazione, sostituzione, rinnovamento;|4",
+"5) Rivestimento interno e esterno - Riparazione, sostituzione, rinnovamento;|5",
+"6) Serramento e infisso interno e esterno - Installazione comprese le opere correlate, riparazione, sostituzione, rinnovamento;|6",
+"7) Inferriata/Altri sistemi anti intrusione - Riparazione, sostituzione, rinnovamento, inserimento eventuali elementi accessori, rifiniture necessarie (comprese le opere correlate);|7",
+"8) Elemento di rifinitura delle scale - Riparazione, sostituzione, rinnovamento, inserimento eventuali elementi accessori, rifiniture necessarie (comprese le opere correlate);|8",
+"9) Scala retrattile e di arredo - Riparazione, sostituzione, rinnovamento, inserimento eventuali elementi accessori, rifiniture necessarie (comprese le opere correlate);|9",
+"10) Parapetto e ringhiera - Riparazione, sostituzione, rinnovamento, messa a norma;|10",
+"11) Manto di copertura - Riparazione, rinnovamento, sostituzione nel rispetto delle caratteristiche tipologiche e dei materiali (comprese le opere correlate quali l’inserimento di strati isolanti e coibenti);|11",
+"12) Controsoffitto non strutturale - Riparazione, sostituzione, installazione;|12",
+"13) Controsoffitto strutturale - Riparazione, rinnovamento;|13",
+"14) Comignolo o terminale a tetto di impianti di estrazione fumi - Riparazione, sostituzione, rinnovamento, realizzazione finalizzata all’integrazione impiantistica e messa a norma;|14",
+"15) Ascensore e impianti di sollevamento verticale - Riparazione, rinnovamento o sostituzione di elementi tecnologici o delle cabine e messa a norma;|15",
+"16) Rete fognaria e rete dei sottoservizi - Riparazione e/o sostituzione, realizzazione di tratto di canalizzazione esottoservizi e/o messa a norma;|16",
+"17) Impianto elettrico - Riparazione, integrazione, efficientamento, rinnovamento e/o messa a norma;|17",
+"18) Impianto per la distribuzione e l’utilizzazione di gas - Riparazione, integrazione, efficientamento, rinnovamento, compreso il tratto fino all’allacciamento alla rete pubblica e/o messa a norma;|18",
+"19) Impianto igienico e idro sanitario - Riparazione, integrazione, efficientamento, rinnovamento, sostituzione e integrazione apparecchi sanitari e impianti di scarico e/o messa a norma;|19",
+"20) Impianto di illuminazione esterno - Installazione, riparazione, integrazione, rinnovamento, efficientamento e/o messa a norma;|20",
+"21) Impianto di protezione antincendio - Installazione, adeguamento, integrazione, rinnovamento, efficientamento, riparazione e/o messa a norma;|21",
+"22) Impianto di climatizzazione - Installazione, adeguamento, integrazione, efficientamento (comprese le opere correlate di canalizzazione) e/o messa a norma;|22",
+"23) Impianto di estrazione fumi - Riparazione, adeguamento, integrazione, efficientamento (comprese le opere correlate di canalizzazione) e/o messa a norma;23",
+"24) Antenna/parabola e altri sistemi di ricezione e trasmissione - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|24",
+"25) Punto di ricarica per veicoli elettrici - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|25"]
+        </string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="pompe_calore_opt" title="Pompe di calore di potenza  termica utile nominale  inferiore a 12 kW" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">pompe_calore_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["26) Pompa di calore aria-aria - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;26"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="deposito_gas_opt" title="Depositi di gas di petrolio  liquefatti di capacità complessiva non superiore a 13 mc" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deposito_gas_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["27) Deposito di gas di petrolio liquefatti - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|27"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="barriere_architettoniche_opt" title="Eliminazione delle barriere architettoniche" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">barriere_architettoniche_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["28) Ascensore, montacarichi - Installazione, riparazione, sostituzione, rinnovamento, messa a norma, purché non incida sulla struttura portante;|28",
+"29) Servoscala e assimilabili - Installazione, riparazione, sostituzione, rinnovamento, messa a norma;|29",
+"30) Rampa - Installazione, riparazione, sostituzione, rinnovamento;|30",
+"31) Apparecchio sanitario e impianto igienico e idro-sanitario - Installazione, riparazione, sostituzione, rinnovamento;|31",
+"32) Dispositivi sensoriali - Installazione, riparazione, sostituzione, rinnovamento;|32"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="ricerca_sottosuolo_opt" title="Attività di ricerca nel  sottosuolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">ricerca_sottosuolo_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["33) Opere strumentali all’attività di ricerca nel sottosuolo attraverso carotaggi, perforazioni e altre metodologie;|33"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="movimenti_terra_opt" title="Movimenti di terra" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">movimenti_terra_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["34) Terreno agricolo e pastorale - Manutenzione, gestione e livellamento;|34",
+"35) Vegetazione spontanea - Manutenzione, gestione;|36",
+"36) Impianti di irrigazione e di drenaggio, finalizzati alla regimazione ed uso dell’acqua in agricoltura - Manutenzione, gestione;|36"]
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="serre_opt" title="Serre mobili stagionali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">serre_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["37) Serra compresi elementi di appoggio e/o ancoraggio - Installazione, riparazione, sostituzione, rinnovamento;|37"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="pavimentazione_opt" title="Pavimentazione di aree  pertinenziali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">pavimentazione_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["38) Intercapedine - Realizzazione, riparazione, sostituzione, rifacimento;|38",
+"39) Locale tombato - Realizzazione, riparazione, sostituzione, rifacimento;|39",
+"40) Pavimentazione esterna, comprese le opere correlate, quali guaine e sottofondi - Realizzazione, riparazione, sostituzione, rifacimento;|40",
+"41) Vasca di raccolta delle acque - Realizzazione, riparazione, sostituzione, rifacimento;|41"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="pannelli_fotovoltaici_opt" title="Pannelli fotovoltaici a servizio degli edifici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">pannelli_fotovoltaici_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["42) Pannello solare, fotovoltaico e generatore microeolico - Installazione, riparazione, sostituzione, rinnovamento;|42"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="aree_ludiche_opt" title="Aree ludiche ed elementi di arredo delle aree di pertinenza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">aree_ludiche_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["43) Opera per arredo da giardino (es. barbecue in muratura/ fontana/muretto/scultura/fioriera/panca) e assimilate - Installazione, riparazione,sostituzione, rinnovamento;|43",
+"44) Gazebo, di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|44",
+"45) Gioco per bambini e spazio di gioco in genere, compresa la relativa recinzione - Installazione, riparazione, sostituzione, rinnovamento;|45",
+"46) Pergolato, di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|46",
+"47) Ricovero per animali domestici e da cortile, voliera e assimilata, con relativa recinzione - Installazione, riparazione, sostituzione, rinnovamento;|47",
+"48) Ripostiglio per attrezzi, manufatto accessorio di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|48",
+"49) Sbarra, separatore, dissuasore e simili, stallo biciclette - Installazione, riparazione, sostituzione, rinnovamento;|49",
+"50) Tenda, Tenda a Pergola, Pergotenda, Copertura leggera di arredo - Installazione, riparazione, sostituzione, rinnovamento;|50",
+"51) Elemento divisorio verticale non in muratura, anche di tipo ornamentale e similare - Installazione, riparazione, sostituzione, rinnovamento;|51"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="manufatti_leggeri_opt" title="Manufatti leggeri in strutture ricettive" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">manufatti_leggeri_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["52) Manufatti leggeri in strutture ricettive all’aperto (roulottes, campers, case mobili, imbarcazioni) e assimilati - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|52"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="impianti_industriali_opt" title="Lavori relativi ad edifici ed impianti adibiti ad attività industriali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">impianti_industriali_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["Interventi interni al loro perimetro e non incidenti sulle loro strutture e sulla loro tipologia edilizia e in rapporto alle dimensioni dello stabilimento,  volti ad assicurare la funzionalità e l’adeguamento tecnologico degli impianti produttivi esistenti, sempre che tali interventi:|1"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="infrastrutture_viarie_opt" title="Interventi relativi alle infrastrutture viarie compresi nella manutenzione ordinaria" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">infrastrutture_viarie_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ["Opere di mantenimento, riparazione, ripristino, parziale rinnovamento ed adeguamento necessarie a conservare in efficienza il sistema stradale e le sue pertinenze, impianti, attrezzature e servizi e che non ne comportino modificazioni delle caratteristiche dimensionali e strutturali;|1"]</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="dichiarazione_tutela_storico" title="Le opere in merito alla tutela storico-artistica riguardano un immobile:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">dichiarazione_tutela_storico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004 e pertanto allega alla presente l'autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04;|1''','''NON sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004|2''']</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_opere_esterne" title="hw_no_opere_esterne" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_opere_esterne</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '2' not in context.getItem('tipo_opere_opt')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="vincolo_paesaggistico" title="Le opere in merito al vincolo paesaggistico riguardano un immobile: " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">vincolo_paesaggistico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|1''',
+'''sottoposto  a  vincolo  paesaggistico ai sensi degli 142 del D.Lgs. 42 del 22.1.2004, ma le opere non comportano alterazioni dei luoghi o dell'aspetto esteriore  degli edifici e pertanto non sono soggette ad autorizzazione  ai sensi dell'art. 149 del D.Lgs 42/2004;|2''',
+'''sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004, ma gli interventi previsti sono esclusi dall'autorizzazione paesaggistica;|3''',
+'''NON sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|4''']</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numero_autorizzazione_paesaggistica" title="N. autorizzazione paesaggistica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_autorizzazione_paesaggistica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_autorizzazione_paesaggistica" title="Data autorizzazione paesaggistica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_autorizzazione_paesaggistica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="ente_rilascio_autorizzazione_paesaggistica" title="rilasciata da" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">ente_rilascio_autorizzazione_paesaggistica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_vincolo_paesaggistico" title="hw_no_vincolo_paesaggistico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_vincolo_paesaggistico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('vincolo_paesaggistico','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_vincolo_paesaggistico_punto" title="hw_no_vincolo_paesaggistico_punto" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_vincolo_paesaggistico_punto</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('vincolo_paesaggistico','')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="vincolo_paesaggistico_punto" title="indicare il caso che ricorre:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">vincolo_paesaggistico_punto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="descrizione_intervento" title="descrizione_intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('interventi_edilizia_libera_descrizione')]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

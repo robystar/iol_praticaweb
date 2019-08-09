@@ -5,11 +5,12 @@
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Form','frm_presentata')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="iol-toolbar"></div>
 <div><span class="plominoFieldClass">lavori_economia_opt</span></div>
 <p><span class="plominoHidewhenClass">start:hw_no_avviso</span></p>
 <div class="alert alert-error"><h5>Con la scelta di questa opzione si dichiara di essere consapevole che l’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi all’impresa esecutrice.<br>L’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi all’impresa esecutrice.</h5></div>
@@ -23,9 +24,6 @@
 <div>
 <span class="plominoLabelClass">altri_esecutori_grid</span><span class="plominoFieldClass">altri_esecutori_grid</span>
 </div>
-<div>
-<span class="plominoLabelClass">firma_digitale_impresa_opt</span><span class="plominoFieldClass">firma_digitale_impresa_opt</span>
-</div>
 <hr>
 <p><span class="plominoHidewhenClass">end:hw_lavori_in_economia</span></p>
 ]]></FormLayout>
@@ -35,7 +33,7 @@
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
@@ -43,8 +41,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="lavori_economia_opt" title="Scelta esecuzione delle opere" type="PlominoField">
@@ -52,7 +53,7 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -77,7 +78,24 @@
 </member>
 <member>
 <name>selectionlistformula</name>
-<value><string>['''In quanto opere di modesta entità che non interessano le specifiche normative di settore, i lavori sono eseguiti / sono stati eseguiti in prima persona, senza alcun affidamento a ditte esterne;|1''','''I lavori saranno eseguiti da un impresa;|2''','''l’impresa esecutrice/imprese esecutrici dei lavori sarà/saranno individuata/e prima dell’inizio dei lavori;|3''','''L'attività oggetto della presentre comunicazione/istanza non richiede l'esecuzione di opere.|4''']</string></value>
+<value><string>ll = ['''In quanto opere di modesta entità che non interessano le specifiche normative di settore, i lavori sono eseguiti / sono stati eseguiti in prima persona, senza alcun affidamento a ditte esterne;|1''','''I lavori saranno eseguiti da un impresa;|2''']
+
+if context.getItem('iol_tipo_app','') in ['cil']:
+    return ll
+
+if context.getItem('iol_tipo_app','') in ['cila']:
+    ll.append('''L'attività oggetto della presente comunicazione/istanza non richiede l'esecuzione di opere.|4''')
+    return ll
+
+if context.getItem('iol_tipo_app','') in ['dsi']:
+    ll = ['''I lavori sono in economia diretta cioè, ai sensi dell’art. 67 DPR 380/01, non esiste il Committente ed il Costruttore esegue in proprio;|1''','''I lavori saranno eseguiti da un impresa;|2''']
+    return ll
+
+ll.append('''l’impresa esecutrice/imprese esecutrici dei lavori sarà/saranno individuata/e prima dell’inizio dei lavori;|3''')
+ll.append('''L'attività oggetto della presente comunicazione/istanza non richiede l'esecuzione di opere.|4''')
+
+return ll
+</string></value>
 </member>
 </struct></value>
 </param>
@@ -113,10 +131,6 @@
 <value><string>esecutore_denominazione,esecutore_cognome,esecutore_comune,esecutore_cf,esecutore_app,esecutore_cap,esecutore_cap_residenza,esecutore_cciaa,esecutore_cciaa_numero,esecutore_cellulare,esecutore_civico,esecutore_civico_residenza,esecutore_cod_cat_nato,esecutore_comune_nato,esecutore_comune_residenza,esecutore_data_nato,esecutore_edile_numero,esecutore_edile_prov,esecutore_email,esecutore_fax,esecutore_inail,esecutore_indirizzo,esecutore_indirizzo_residenza,esecutore_inps,esecutore_nome,esecutore_pec,esecutore_piva,esecutore_piva_comunitaria,esecutore_provincia,esecutore_provincia_nato,esecutore_provincia_residenza,esecutore_qualita,esecutore_qualita_altro,esecutore_ruolo,esecutore_search,esecutore_sesso,esecutore_telefono</string></value>
 </member>
 <member>
-<name>associated_form</name>
-<value><string>base_sub_esecutore</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Denominazione"},
@@ -136,41 +150,9 @@
     }
 </string></value>
 </member>
-</struct></value>
-</param>
-</params>
-        </element>
-        <element id="firma_digitale_impresa_opt" title="Firma digitale del legale rappresentante dell'impresa:" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">firma_digitale_impresa_opt</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''Il legale rappresentante utilizzerà la propria firma digitale|1''','''Il legale rappresentante firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista|3''']</string></value>
+<name>associated_form</name>
+<value><string>base_sub_esecutore</string></value>
 </member>
 </struct></value>
 </param>
@@ -180,6 +162,22 @@
           <id type="Products.Archetypes.Field.StringField">hw_no_avviso</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('lavori_economia_opt','')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="btn_save" title="Salva e continua &gt;&gt;" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_save</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_cancel" title="Annulla" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_cancel</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.absolute_url()]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
       </elements>
     </element>

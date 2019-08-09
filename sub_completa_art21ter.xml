@@ -10,49 +10,39 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoHidewhenClass">start:hw_no_presentata</span></p>
-<p>DOCUMENTI FIRMATI DIGITALMENTE</p>
-<div class="row-fluid"><div class="span4">
-<span class="plominoLabelClass">comunicazione_digitale</span><span class="plominoFieldClass">comunicazione_digitale</span>
-</div></div>
-<p><span class="plominoHidewhenClass">end:hw_no_presentata</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
+<p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
+</fieldset></div>
+<p><span class="plominoHidewhenClass">end:hw_no_comunicazione_digitale</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
-<p>Dati di Protocollazione</p>
-<p><span class="plominoSubformClass">sub_protocollo</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI DI PROTOCOLLAZIONE</legend>
+<p><span class="plominoSubformClass">base_sub_protocollo</span></p>
+</fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<!--FORM RICHIEDENTE--><p>DATI ANAGRAFICI DEL RICHIEDENTE</p>
+<p><span class="plominoSubformClass">base_sub_sportello</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
-<p><span class="plominoSubformClass">base_sub_fisica_recapiti</span></p>
 <p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
 <p><span class="plominoSubformClass">base_sub_giuridica</span></p>
 <p><span class="plominoSubformClass">sub_condominio</span></p>
-<p><span class="plominoSubformClass">sub_generalita_proprietario</span></p>
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
+<p><span class="plominoSubformClass">base_sub_delegato</span></p>
+</fieldset></div>
 <p><span class="plominoSubformClass">sub_firma_digitale</span></p>
 <p><span class="plominoSubformClass">sub_consenso_pec</span></p>
-<!-- END FORM --><p> </p>
-<!--FORM UBICAZIONE INTERVENTO--><p>UBICAZIONE DELL'INTERVENTO <span class="plominoSubformClass">sub_ubicazioni_elenco</span></p>
-<!-- END FORM --><p> </p>
-<!--FORM DATI--><p><span class="plominoSubformClass">sub_intervento_art21ter</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazione</span>
+</fieldset></div>
+<p><span class="plominoSubformClass">sub_intervento_art21ter</span></p>
 <p><span class="plominoSubformClass">sub_dichiarazioni_art21ter</span></p>
-<p><span class="plominoSubformClass">sub_intervento_descrizione</span></p>
-<!-- END FORM --><p> </p>
-<!--FORM ALTRI SOGGETTI--><p> </p>
-<p><span class="scheduler-border vvvv-content-title" title="Progettista">Progettista delle opere </span><span class="plominoSubformClass">base_sub_progettista</span></p>
-<fieldset class="scheduler-border">
-<legend class="scheduler-border">Direttore dei lavori delle opere (solo se diverso dal progettista delle opere )</legend> <span class="plominoSubformClass">sub_direttore</span>
-</fieldset>
-<fieldset class="scheduler-border">
-<legend class="scheduler-border">ESECUZIONE DELLE OPERE</legend> <span class="plominoSubformClass">sub_esecutore_lavori</span>
-</fieldset>
-<p><span class="plominoSubformClass">sub_sicurezza</span></p>
-<p> </p>
-<p><span class="plominoSubformClass">sub_info_allegati</span></p>
-<p><span class="plominoSubformClass">sub_allegati_doc_identita</span></p>
-<p><span class="plominoSubformClass">sub_info_pagamenti</span></p>
-<p><span class="plominoSubformClass">sub_allegati_art21ter</span></p>
-<p><span class="plominoSubformClass">sub_allegati_sicurezza</span></p>
-<p><span class="plominoSubformClass">sub_allegati_altro</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">PROGETTISTA</legend> <span class="plominoSubformClass">base_sub_progettista</span>
+</fieldset></div>
+<div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -68,86 +58,21 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="comunicazione_digitale" title="Comunicazione firmata digitalmente" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">comunicazione_digitale</id>
-          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
-data-tooltip = "firmato digitalmente"
-''']]></HTMLAttributesFormula>
-        </element>
-        <element id="rel_asseverata_digitale" title="Relazione Asseverata firmata digitalmente" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">rel_asseverata_digitale</id>
-          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
-data-tooltip = "firmato digitalmente"
-''']]></HTMLAttributesFormula>
-        </element>
-        <element id="autocertificazione_sicurezza_digitale" title="Autocertificazione sicurezza " type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">autocertificazione_sicurezza_digitale</id>
-          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
-data-tooltip = "firmato digitalmente"
-''']]></HTMLAttributesFormula>
-        </element>
-        <element id="autocertificazioni_imprese_digitale" title="Autocertificazione/i impresa" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">autocertificazioni_imprese_digitale</id>
-          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
-data-tooltip = "Allegare le autocertificazioni, firmate digitalmente, di tutte le imprese coinvolte"
-''']]></HTMLAttributesFormula>
-        </element>
-        <element id="hw_no_autocertificazione_imprese_digitale" title="hw_no_autocertificazione_imprese_digitale" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_autocertificazione_imprese_digitale</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('lavori_economia_opt','')=='1']]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
-        </element>
-        <element id="hw_no_presentata" title="Nascondi quando non è presentata" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_presentata</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.wf_getInfoFor('review_state') in ["presentata","protocollata"]]]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
-        </element>
-        <element id="hw_no_protocollo" title="Nascondi quando non ancora protocollata" type="PlominoHidewhen">
+        <element id="hw_no_protocollo" title="hw_no_protocollo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_protocollo</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('numero_protocollo','')=='']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_comunicazione_digitale" title="hw_no_comunicazione_digitale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_digitale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={} or context.getItem('Form') in ['frm__presentata','frm_presentata']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

@@ -9,7 +9,7 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">Altri vincoli di tutela ecologica</legend>
 <div>
@@ -23,7 +23,7 @@
 <span class="plominoLabelClass">vincoli_suolo_dg</span><span class="plominoFieldClass">vincoli_suolo_dg</span>
 </div>
 </fieldset>
-]]></FormLayout>
+</div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -37,9 +37,12 @@
       <SearchView type="Products.Archetypes.Field.StringField"/>
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
-      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.praticaweb/js/controller_combo.js]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/js/controller_combo.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="vincoli_tutela_ecologica_dg" title="L’area/immobile oggetto di intervento risulta assoggettata ai seguenti vincoli" type="PlominoField">
@@ -62,10 +65,6 @@
 <value><string>id_atto_tutela_ecologica,vincolo_tutela_ecologica,ente_tutela_ecologica,mod_rilascio_tutela_ecologica_opt,numero_protocollo_rilascio_tutela_ecologica,data_protocollo_rilascio_tutela_ecologica,vincoli_tutela_ecologica_opt</string></value>
 </member>
 <member>
-<name>associated_form</name>
-<value><string>dlg_vincoli_tutela_ecologica</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -86,6 +85,10 @@
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_vincoli_tutela_ecologica</string></value>
 </member>
 </struct></value>
 </param>
@@ -111,10 +114,6 @@
 <value><string>id_atto_tutela_funzionale,vincolo_tutela_funzionale,ente_tutela_funzionale,mod_rilascio_tutela_funzionale_opt,numero_protocollo_rilascio_tutela_funzionale,data_protocollo_rilascio_tutela_funzionale,vincoli_tutela_funzionale_opt</string></value>
 </member>
 <member>
-<name>associated_form</name>
-<value><string>dlg_vincoli_tutela_funzionale</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -135,6 +134,10 @@
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_vincoli_tutela_funzionale</string></value>
 </member>
 </struct></value>
 </param>

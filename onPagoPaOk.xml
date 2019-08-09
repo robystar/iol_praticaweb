@@ -1,0 +1,18 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="onPagoPaOk" title="onPagoPaOk" type="PlominoAgent">
+      <id type="Products.Archetypes.Field.StringField">onPagoPaOk</id>
+      <Content type="Products.Archetypes.Field.TextField"><![CDATA[docId = args[0]
+data = args[1]
+db=context.getParentDatabase()
+
+if data['esito']=='OK' and data['azioni']:
+    doc=db.getDocument(docId)   
+    azioni=data['azioni'].split(',')
+    for azione in azioni:
+        if doc.isActionSupported(azione):
+            doc.doAction(azione)]]></Content>
+      <RunAs type="Products.Archetypes.Field.StringField">OWNER</RunAs>
+    </element>
+  </design>
+</plominodatabase>

@@ -11,33 +11,45 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
 <p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
-</fieldset>
+</fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_comunicazione_digitale</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
-<fieldset class="scheduler-border" title="Protocollo">
-<legend class="scheduler-border">Dati di Protocollazione</legend>
+
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI DI PROTOCOLLAZIONE</legend>
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
-</fieldset>
+</fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<!--FORM RICHIEDENTE--><fieldset class="scheduler-border" title="Richiedente">
+<p><span class="plominoSubformClass">base_sub_sportello</span></p>
+
+<div class="v-content well">
+
+<fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
-<p><span class="plominoSubformClass">base_sub_fisica_recapiti</span></p>
 <p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
 <p><span class="plominoSubformClass">base_sub_giuridica</span></p>
 <p><span class="plominoSubformClass">sub_condominio</span></p>
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset>
-<!--FORM UBICAZIONE INTERVENTO--><fieldset class="scheduler-border">
-<legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazioni_elenco</span>
-</fieldset>
-<!-- FORM INTERVENTO --><p><span class="plominoSubformClass">sub_intervento_art21</span></p>
+</div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> 
+<span class="plominoSubformClass">sub_ubicazione</span>
+</fieldset></div>
+<p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
+<p><span class="plominoHidewhenClass">start:hw_2018</span></p>
+<p><span class="plominoSubformClass">sub_intervento_art21</span></p>
+<p><span class="plominoHidewhenClass">end:hw_2018</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_2018</span></p>
+<p><span class="plominoSubformClass">sub_intervento_art21_2018</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_2018</span></p>
 <p><span class="plominoSubformClass">sub_immobile_destinazione</span></p>
-<!-- ALLEGATI --><p><span class="plominoSubformClass">base_sub_stampa</span></p>
+<div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -53,8 +65,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="hw_no_protocollo" title="hw_no_protocollo" type="PlominoHidewhen">
@@ -64,7 +79,17 @@
         </element>
         <element id="hw_no_comunicazione_digitale" title="hw_no_comunicazione_digitale" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_digitale</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={} or context.getItem('Form')=='frm__presentata']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={} or context.getItem('Form') in ['frm__presentata','frm_presentata']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_2018" title="hw_no_2018" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_2018</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('tipo_opere_opt','')=='']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_2018" title="hw_2018" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_2018</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_opere_opt','')!='']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

@@ -11,7 +11,7 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">COMUNICAZIONE DI INIZIO LAVORI</legend>
 <h5>Comunicazione di Inizio Lavori per opere dirette a soddisfare obiettive esigenze contingenti e temporanee e ad essere immediatamente rimosse al cessare della necessità e, comunque, entro un termine non superiore a novanta giorni, (art. 6 lettera e bis n. 26 Tabella A, Sez. II del d.lgs n. 222/2016)</h5>
 <h5>I lavori:</h5>
@@ -27,19 +27,19 @@
 </div>
 <div class="span8"><div class="alert alert-info">a data di fine lavori non deve essere superiore a novanta giorni dall’inizio dei lavori</div></div>
 </div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DESCRIZIONE DELLE OPERE</legend>
 <div>
 <span class="plominoLabelClass">descrizione_intervento</span> <span class="plominoFieldClass">descrizione_intervento</span>
 </div>
-</fieldset>
-<fieldset class="scheduler-border">
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">ALTRE COMUNICAZIONI</legend>
 <div>
 <span class="plominoLabelClass">comunicazioni_dg</span><span class="plominoFieldClass">comunicazioni_dg</span>
 </div>
-</fieldset>
+</fieldset></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -55,8 +55,11 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.css
-++resource++iol.praticaweb/css/iol-sue.css]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="data_inizio_lavori" title="avranno inizio in data:" type="PlominoField">
@@ -96,7 +99,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat": "dd/mm/yy"}'
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
@@ -129,10 +132,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>id_atto,comunicazione,ente</string></value>
 </member>
 <member>
-<name>associated_form</name>
-<value><string>dlg_comunicazioni_cila</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -150,6 +149,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_comunicazioni_cila</string></value>
 </member>
 </struct></value>
 </param>
