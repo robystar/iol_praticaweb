@@ -51,6 +51,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>date_time,activity,userid,notify_to,priority</string></value>
 </member>
 <member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_activity</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Data ora" },
@@ -70,14 +78,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_activity</string></value>
 </member>
 </struct></value>
 </param>

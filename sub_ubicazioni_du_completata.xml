@@ -53,12 +53,16 @@
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
 <name>field_mapping</name>
 <value><string>destinazione</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
+<name>associated_form</name>
+<value><string>dlg_vincoli</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -76,10 +80,6 @@
         "height": 800
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_vincoli</string></value>
 </member>
 </struct></value>
 </param>

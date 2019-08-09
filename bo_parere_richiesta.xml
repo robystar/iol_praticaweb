@@ -417,6 +417,10 @@ except:
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -424,10 +428,6 @@ except:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 <member>
 <name>separator</name>

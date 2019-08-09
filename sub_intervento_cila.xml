@@ -104,6 +104,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -111,10 +115,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>separator</name>
@@ -144,6 +144,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -151,10 +155,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -276,6 +276,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -283,10 +287,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -321,6 +321,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>id_atto,comunicazione,ente</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_comunicazioni_cila</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -338,10 +342,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 600
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_comunicazioni_cila</string></value>
 </member>
 </struct></value>
 </param>
@@ -372,6 +372,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>id_atto,comunicazione,ente</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_comunicazioni_cila</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -389,10 +393,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 600
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_comunicazioni_cila</string></value>
 </member>
 </struct></value>
 </param>

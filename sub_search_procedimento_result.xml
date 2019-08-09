@@ -291,12 +291,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>READ_STATIC</string></value>
+</member>
+<member>
 <name>field_mapping</name>
 <value><string>allegati_tipo_file,allegati_nomefile,allegati_stato,allegati_note</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>READ_STATIC</string></value>
+<name>associated_form</name>
+<value><string>dlg_search_allegati</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -317,10 +321,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 300
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_search_allegati</string></value>
 </member>
 </struct></value>
 </param>

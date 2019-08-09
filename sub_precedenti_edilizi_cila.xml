@@ -60,6 +60,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -67,10 +71,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -134,6 +134,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>tipo_titolo,numero_titolo,data_titolo</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_titolo_edilizio</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Titolo" },
@@ -151,10 +155,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_titolo_edilizio</string></value>
 </member>
 </struct></value>
 </param>

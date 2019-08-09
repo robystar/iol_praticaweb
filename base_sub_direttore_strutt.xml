@@ -183,6 +183,15 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+			'bLengthChange': true,
+			'bFilter': true,
+			'bSort': true,
+			'bInfo': true,
+			'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string> |</string></value>
@@ -195,15 +204,6 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 <value><string>Sig.ra</string></value>
 <value><string>Perito Industriale</string></value>
 </data></array></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-			'bLengthChange': true,
-			'bFilter': true,
-			'bSort': true,
-			'bInfo': true,
-			'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -271,9 +271,8 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -285,12 +284,13 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['M','F']</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -312,15 +312,6 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-<value><string> |</string></value>
-<value><string>Amministratore</string></value>
-<value><string>Legale Rappresentante</string></value>
-<value><string>Altro|altro</string></value>
-</data></array></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 			'bLengthChange': true,
@@ -328,6 +319,15 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 			'bSort': true,
 			'bInfo': true,
 			'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+<value><string> |</string></value>
+<value><string>Amministratore</string></value>
+<value><string>Legale Rappresentante</string></value>
+<value><string>Altro|altro</string></value>
+</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -840,17 +840,8 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-<value><string>progettista_strutt|progettista_strutt</string></value>
-<value><string>direttore_strutt lavori|direttore_strutt</string></value>
-<value><string>Responsabile alla sicurezza|sicurezza</string></value>
-<value><string>Collaudatore|collaudatore</string></value>
-<value><string>Esecutore|esecutore</string></value>
-<value><string>Geologo|geologo</string></value>
-<value><string>progettista_strutt C.A.|direttore_strutt_ca</string></value>
-<value><string>Collaudatore C.A.|collaudatore_ca</string></value>
-</data></array></value>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -862,8 +853,17 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 			'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
+<name>selectionlist</name>
+<value><array><data>
+<value><string>progettista_strutt|progettista_strutt</string></value>
+<value><string>direttore_strutt lavori|direttore_strutt</string></value>
+<value><string>Responsabile alla sicurezza|sicurezza</string></value>
+<value><string>Collaudatore|collaudatore</string></value>
+<value><string>Esecutore|esecutore</string></value>
+<value><string>Geologo|geologo</string></value>
+<value><string>progettista_strutt C.A.|direttore_strutt_ca</string></value>
+<value><string>Collaudatore C.A.|collaudatore_ca</string></value>
+</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -957,11 +957,6 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 			'bLengthChange': true,
@@ -973,6 +968,11 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <member>
 <name>selectionlistformula</name>
 <value><string>return context.getParentDatabase().resources.config().get('elenco_albo',[])</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 </struct></value>
 </param>

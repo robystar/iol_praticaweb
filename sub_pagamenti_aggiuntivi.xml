@@ -68,6 +68,10 @@ for row in rows:
 <value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_importi</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
@@ -87,10 +91,6 @@ for row in rows:
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_importi</string></value>
 </member>
 </struct></value>
 </param>

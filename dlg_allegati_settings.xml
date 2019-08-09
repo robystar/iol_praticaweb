@@ -54,9 +54,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -68,10 +67,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>result=['|']
 
@@ -80,6 +75,11 @@ for res in context.getParentDatabase().resources.zsql.ElencoTipoDocumento().dict
      
 return result
 </string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -101,9 +101,8 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -115,12 +114,13 @@ return result
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['SI','NO']</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -142,9 +142,8 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -156,12 +155,13 @@ return result
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['SI','NO']</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -183,9 +183,8 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -195,10 +194,6 @@ return result
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
 </member>
 <member>
 <name>separator</name>
@@ -212,6 +207,11 @@ for row in rows:
     result.append('%s (%s)|%s' %(row[0],row[1],row[1]))    
 return result
 </string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 </struct></value>
 </param>

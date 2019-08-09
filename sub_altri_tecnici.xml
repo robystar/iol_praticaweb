@@ -56,6 +56,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -63,10 +67,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -100,6 +100,10 @@ return ll</string></value>
 <value><string>tecnico_ruolo_opt,tecnico_cognome,tecnico_nome,tecnico_cf,tecnico_albo,tecnico_albo_numero,tecnico_albo_prov,tecnico_sesso,tecnico_ruolo_altro,tecnico_comune_nato,tecnico_provincia_nato,tecnico_data_nato,tecnico_cod_cat_nato,tecnico_cciaa,tecnico_cciaa_prov,tecnico_cciaa_numero,tecnico_piva,tecnico_comune_residenza,tecnico_provincia_residenza,tecnico_cap_residenza,tecnico_indirizzo_residenza,tecnico_civico_residenza,tecnico_denominazione,tecnico_legale_rappresentante,tecnico_abilitazioni,tecnico_indirizzo,tecnico_civico,tecnico_qualita_altro,tecnico_comune,tecnico_provincia,tecnico_cap,tecnico_email,tecnico_pec,tecnico_telefono,tecnico_cellulare,tecnico_fax,tecnico_app,tecnico_search</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_tecnico</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Incarico"},
@@ -121,10 +125,6 @@ return ll</string></value>
         "height": 800
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_tecnico</string></value>
 </member>
 </struct></value>
 </param>

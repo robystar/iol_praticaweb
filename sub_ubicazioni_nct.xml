@@ -69,6 +69,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>civico_via,civico_civico,civico_interno,civico_geometry</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_civico</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Via" },
@@ -86,10 +90,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 350
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_civico</string></value>
 </member>
 </struct></value>
 </param>
@@ -116,6 +116,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>nct_sezione,nct_foglio,nct_particella,nct_geometry</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_nct</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Sezione" },
@@ -136,10 +140,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 350
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_nct</string></value>
 </member>
 </struct></value>
 </param>
@@ -165,6 +165,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>nceu_sezione,nceu_foglio,nceu_particella,nceu_subalterno</string></value>
 </member>
 <member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_nceu</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Sezione"},
@@ -186,10 +190,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 350
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_nceu</string></value>
 </member>
 </struct></value>
 </param>
@@ -242,6 +242,10 @@ return "data-map-layers='%s'  data-map-types='%s'  data-base-type='%s'"  %(json_
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -249,10 +253,6 @@ return "data-map-layers='%s'  data-map-types='%s'  data-base-type='%s'"  %(json_
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>

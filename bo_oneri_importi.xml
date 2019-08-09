@@ -541,12 +541,16 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
 <name>field_mapping</name>
 <value><string>tariffa,classe,elenco_c1,elenco_c4,elenco_c5,elenco_d1,elenco_d2,tipo_intervento,perc_intervento,sup,cc,b1,b2,nocc,classe_precedente</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
+<name>associated_form</name>
+<value><string>dlg_calcolo_oneri</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -576,10 +580,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 800
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_calcolo_oneri</string></value>
 </member>
 </struct></value>
 </param>
