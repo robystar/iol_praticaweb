@@ -90,12 +90,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 ]</string></value>
 </member>
 <member>
-<name>sourceview</name>
-<value><string>vista-tutte-istanze</string></value>
-</member>
-<member>
 <name>labelcolumn</name>
 <value><string>identificativo</string></value>
+</member>
+<member>
+<name>sourceview</name>
+<value><string>vista-tutte-istanze</string></value>
 </member>
 </struct></value>
 </param>

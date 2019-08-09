@@ -101,11 +101,13 @@ if tipo_app in elenco_tipo_relazione:
     elenco.append("Relazione descrittiva delle opere|rel_descrittiva_%s" %tipo_app)      
     
 #######AGGIUNGO I PARAMETRI 
+
+app=context.getParentDatabase().getId().replace('iol_','')
 for k in range(len(elenco)):
     if 'rel_' in elenco[k]:
-        elenco[k] = "%s&app=praticaweb&grp=relazioni&form=sub_completa_%s" %(elenco[k],tipo_app)
+        elenco[k] = "%s&app=%s&grp=relazioni&form=sub_completa_%s" %(elenco[k],app,tipo_app)
     else:
-        elenco[k] = "%s&app=praticaweb&grp=autorizzazione&form=sub_completa_%s" %(elenco[k],tipo_app)
+        elenco[k] = "%s&app=%s&grp=autorizzazione&form=sub_completa_%s" %(elenco[k],app,tipo_app)
         
 return elenco
 ]]></resource>
