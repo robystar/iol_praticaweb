@@ -88,7 +88,7 @@ if context.getItem('iol_tipo_app','') in ['cila']:
     return ll
 
 if context.getItem('iol_tipo_app','') in ['dsi']:
-    ll = ['''I lavori sono in economia diretta cioè, ai sensi dell’art. 67 DPR 380/01, non esiste il Committente ed il Costruttore esegue in proprio;|1''','''I lavori saranno eseguiti da un impresa;|2''']
+    ll = ['''I lavori sono in economia diretta cioè, ai sensi dell’art. 67 DPR 380/01, non esiste il Committente ed il Costruttore esegue in proprio;|1''','''I lavori saranno eseguiti da un impresa;|2''','''l’impresa esecutrice/imprese esecutrici dei lavori sarà/saranno individuata/e prima dell’inizio dei lavori;|3''']
     return ll
 
 ll.append('''l’impresa esecutrice/imprese esecutrici dei lavori sarà/saranno individuata/e prima dell’inizio dei lavori;|3''')

@@ -78,7 +78,7 @@ resources/iol-custom.css]]></ResourcesCSS>
 <name>selectionlistformula</name>
 <value><string>ll = ['La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori;|1','Il direttore dei lavori coincide con il progettista delle opere;|2','Il direttore dei lavori è persona diversa dal progettista;|3','''Il direttore dei lavori sarà comunicato prima dell'inizio dei lavori;|4''']
 
-if context.getItem('iol_tipo_app','') in ['dsi']:
+if context.getItem('iol_tipo_app','') in ['dsixxxxx']:
     ll = ['Il direttore dei lavori coincide con il progettista delle opere;|2','Il direttore dei lavori è persona diversa dal progettista;|3']
     
 return ll</string></value>
