@@ -39,6 +39,7 @@
 </fieldset>
 <p><span class="plominoHidewhenClass">end:hw_no_vincoli</span></p>
 <p><span class="plominoFieldClass">iol_comune</span></p>
+<p><span class="plominoFieldClass">google_map_key</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -53,11 +54,7 @@
       <SearchView type="Products.Archetypes.Field.StringField"/>
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
-      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[https://maps.googleapis.com/maps/api/js?key=AIzaSyC_wNDXNfS3wRXfrwTSIy-MbGvRhavWGcQ&libraries=places,drawing
-++resource++iol.document/js/proj4js.js
-++resource++iol.document/js/proj4js-defs.js
-++resource++iol.document/js/iolGoogleMap.js
-++resource++iol.document/js/controller_combo_civici.js
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/js/controller_combo_civici.js
 ++resource++iol.document/js/controller_combo_particelle.js
 ++resource++iol.document/js/controller_combo_particelle_nceu.js
 ++resource++iol.document/js/controller_posizione_mappale.js
@@ -464,6 +461,27 @@ return val]]></Formula>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="google_map_key" title="google_map_key" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">google_map_key</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+mapKey = db.resources.customscripts.getMapKey()
+return '''  
+... 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=%s&libraries=drawing"></script>
+<script type="text/javascript" src="++resource++iol.document/js/proj4js.js"></script>
+<script type="text/javascript" src="++resource++iol.document/js/proj4js-defs.js"></script>
+<script type="text/javascript" src="++resource++iol.document/js/iolGoogleMap.js"></script>
+''' %mapKey]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

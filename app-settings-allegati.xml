@@ -440,7 +440,7 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
         </element>
         <element id="hw_no_pw" title="hw_no_pw" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_pw</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider')!='praticaweb']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider') not in ['praticaweb','halley']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_sue" title="hw_no_sue" type="PlominoHidewhen">

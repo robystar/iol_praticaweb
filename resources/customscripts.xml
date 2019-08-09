@@ -1611,6 +1611,11 @@ msg = doc.getItem('ws_response_message')
 msgNew = "<div class='alert alert-success'><h5><a href='%s'>Denuncia Sismica Integrata acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
 doc.setItem('ws_response_message',msg + msgNew)
 
+msg = newDoc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Denuncia Sismica Integrata relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
+newDoc.setItem('ws_response_message',msg + msgNew)
+
+
 newDoc.save(onSaveEvent=False)  
                       
 return newDoc.getId()
@@ -1676,6 +1681,10 @@ newDoc.doAction('protocolla')
 msg = doc.getItem('ws_response_message')
 msgNew = "<div class='alert alert-success'><h5><a href='%s'>Richiesta autorizzazione in merito al vincolo idrogeologico acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
 doc.setItem('ws_response_message',msg + msgNew)
+
+msg = newDoc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Richiesta autorizzazione in merito al vincolo idrogeologico relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
+newDoc.setItem('ws_response_message',msg + msgNew)
 
 newDoc.save(onSaveEvent=False)  
                       
@@ -1774,6 +1783,10 @@ newDoc.doAction('protocolla')
 msg = doc.getItem('ws_response_message')
 msgNew = "<div class='alert alert-success'><h5><a href='%s'>Autorizzazione paesaggistica acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
 doc.setItem('ws_response_message',msg + msgNew)
+
+msg = newDoc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Autorizzazione paesaggistica relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
+newDoc.setItem('ws_response_message',msg + msgNew)
 
 newDoc.save(onSaveEvent=False)  
                       
@@ -1960,6 +1973,17 @@ for destinatario in destinatari:
         SendMailJ(url, "FORJMAIL", docId, "1", "suap.comune.laspezia@legalmail.it", destinatario, '', oggetto, testo, "") 
     except Exception as err:
         doc.plone_utils.addPortalMessage('invio mail a %s fallita: %s' %(destinatario,err),'error')
+]]></resource>
+      <resource id="getMapKey" title="" type="Script (Python)"><![CDATA[## Script (Python) "getMapKey"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+return context.aq_parent.config_map().get('mapKey')
 ]]></resource>
     </resource>
   </design>

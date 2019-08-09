@@ -23,11 +23,7 @@
       <SearchView type="Products.Archetypes.Field.StringField"/>
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
-      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[https://maps.googleapis.com/maps/api/js?key=AIzaSyC_wNDXNfS3wRXfrwTSIy-MbGvRhavWGcQ&libraries=places,drawing
-++resource++iol.document/js/proj4js.js
-++resource++iol.document/js/proj4js-defs.js
-++resource++iol.document/js/iolGoogleMap.js
-++resource++iol.document/js/controller_combo_civici.js
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/js/controller_combo_civici.js
 ++resource++iol.document/js/controller_combo_particelle.js
 ++resource++iol.document/js/controller_posizione_mappale.js
 ++resource++iol.document/js/controller_datagrid_comune.js]]></ResourcesJS>

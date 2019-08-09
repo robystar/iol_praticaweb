@@ -10,6 +10,7 @@
 ##title=
 ##
 dz = dict(
+mapKey = "AIzaSyC_wNDXNfS3wRXfrwTSIy-MbGvRhavWGcQ",        
 #inquadramento della mappa
 mapSettings = {"scaleControl": True,"tilt":0, "minZoom": 8, "zoom":12, "center": [43.985,8.06], "scrollwheel": False,"mapTypeId":"","coordsrid":3003},
 #configurazione dei livelli WMS in mappa
