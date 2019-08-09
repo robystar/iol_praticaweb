@@ -121,14 +121,8 @@
         </element>
         <element id="stato" title="Stato" type="PlominoColumn">
           <id type="Products.Archetypes.Field.StringField">stato</id>
-          <SelectedField type="Products.Archetypes.Field.StringField">PlominoPlaceholder1</SelectedField>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('data_presentazione')!='':
-    if context.getItem('data_protocollo')!='':
-        return 'PROTOCOLLATA'
-    else:
-        return 'ATTESA PROTOCOLLAZIONE'
-else:
-    return 'COMPILAZIONE']]></Formula>
+          <SelectedField type="Products.Archetypes.Field.StringField">base_sub_pratica/iol_workflow_status</SelectedField>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <HiddenColumn type="Products.Archetypes.Field.BooleanField">False</HiddenColumn>
           <RenderField type="Products.Archetypes.Field.BooleanField">False</RenderField>
           <DisplaySum type="Products.Archetypes.Field.BooleanField">False</DisplaySum>
