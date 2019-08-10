@@ -1283,8 +1283,8 @@ def inviaPratica():
 #Clone delle pratiche figlie ed eventuale numerazione  
 def setClones():
     
-    if "setNumeroPratica" in context:
-        context.setNumeroPratica(doc)
+    if "setNumeroPratica" in context.aq_parent:
+        context.aq_parent.setNumeroPratica(doc)
 
     if "setClonePaesaggistica" in context and doc.getItem('procedimento_autorizzazione_paesaggistica_opt') in ['1','2']:
         context.setClonePaesaggistica(doc)
@@ -1546,297 +1546,6 @@ html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a hre
     
 return html
 ]]></resource>
-      <resource id="setCloneDsi" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneDsi"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None
-##title=
-##
-if isinstance(doc, basestring):
-    doc = context.getDocument(doc)
-
-app='dsi'
-
-v = doc.getId().split('-')
-newId = v[0]+'-'+v[1]+'-'+ app
-#se l'ho gia duplicato esco
-if context.getDocument(newId):
-    return
-
-newDoc=context.createDocument(docid=newId)
-for item in doc.getItems():
-    newDoc.setItem(item, doc.getItem(item))
-
-for f in doc.getFilenames():
-    attached_file = doc.getfile(f)
-    newDoc.setfile(attached_file,f)
-    
-newDoc.setItem('iol_tipo_app',app)   
-newDoc.setItem('titolo_esistente_protocollo',doc.getItem('numero_protocollo'))   
-newDoc.setItem('titolo_esistente_data',doc.getItem('data_protocollo')) 
-newDoc.setItem('identificativo',newDoc.getId())   
-newDoc.setItem('pagopa_enabled',0)
-
-
-newDoc.removeItem('data_invio_pw')
-newDoc.removeItem('data_protocollo')	
-newDoc.removeItem('numero_protocollo')	
-newDoc.removeItem('qualificazione_intervento_opt')	
-newDoc.removeItem('interventi_strutturali_opt')	
-newDoc.removeItem('vincolo_idrogeologico_opt')
-newDoc.removeItem('procedimento_autorizzazione_paesaggistica_opt')	
-newDoc.removeItem('elenco_pagamenti')	
-newDoc.removeItem('elenco_importi_pagamenti')	
-newDoc.removeItem('elenco_importi_dg')	
-newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
-newDoc.removeItem('pagopa_response')	
-
-
-
-
-
-if doc.getItem('interventi_strutturali_opt') == '3':
-    newDoc.setItem('tipologia_procedura_opt','1')
-elif doc.getItem('interventi_strutturali_opt') == '4':    
-    newDoc.setItem('tipologia_procedura_opt','2')
-
-newDoc.doAction('init')
-newDoc.doAction('presentazione')
-newDoc.doAction('protocolla')
-
-msg = doc.getItem('ws_response_message')
-msgNew = "<div class='alert alert-success'><h5><a href='%s'>Denuncia Sismica Integrata acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
-doc.setItem('ws_response_message',msg + msgNew)
-
-msg = newDoc.getItem('ws_response_message')
-msgNew = "<div class='alert alert-success'><h5><a href='%s'>Denuncia Sismica Integrata relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
-newDoc.setItem('ws_response_message',msg + msgNew)
-
-
-newDoc.save(onSaveEvent=False)  
-                      
-return newDoc.getId()
-]]></resource>
-      <resource id="setCloneIdrogeologico" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneIdrogeologico"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None
-##title=
-##
-if isinstance(doc, basestring):
-    doc = context.getDocument(doc)
-    
-
-app='idrogeologico-aut'
-
-newId = v[0]+'-'+v[1]+'-'+ app
-#se l'ho gia duplicato esco
-if context.getDocument(newId):
-    return
-
-newDoc=context.createDocument(docid=newId)
-for item in doc.getItems():
-    newDoc.setItem(item, doc.getItem(item))
-
-for f in doc.getFilenames():
-    attached_file = doc.getfile(f)
-    newDoc.setfile(attached_file,f)
-    
-newDoc.setItem('iol_tipo_app',app)   
-newDoc.setItem('titolo_esistente_protocollo',doc.getItem('numero_protocollo'))   
-newDoc.setItem('titolo_esistente_data',doc.getItem('data_protocollo')) 
-newDoc.setItem('identificativo',newDoc.getId())   
-newDoc.setItem('pagopa_enabled',0)
-
-
-##specifico
-newDoc.setItem('titolo_esistente_opt',1)
-if doc.getItem('iol_tipo_app')=='pdc':
-    newDoc.setItem('titolo_esistente_tipo','PERMESSO DI COSTRUIRE') 
-else:
-    newDoc.setItem('titolo_esistente_tipo','SCIA') 
-
-newDoc.removeItem('data_invio_pw')
-newDoc.removeItem('data_protocollo')	
-newDoc.removeItem('numero_protocollo')	
-newDoc.removeItem('qualificazione_intervento_opt')	
-newDoc.removeItem('interventi_strutturali_opt')	
-newDoc.removeItem('vincolo_idrogeologico_opt')	
-newDoc.removeItem('elenco_pagamenti')	
-newDoc.removeItem('elenco_importi_pagamenti')	
-newDoc.removeItem('elenco_importi_dg')	
-newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
-newDoc.removeItem('pagopa_response')
-
-newDoc.doAction('init')
-newDoc.doAction('presentazione')
-newDoc.doAction('protocolla')
-
-msg = doc.getItem('ws_response_message')
-msgNew = "<div class='alert alert-success'><h5><a href='%s'>Richiesta autorizzazione in merito al vincolo idrogeologico acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
-doc.setItem('ws_response_message',msg + msgNew)
-
-msg = newDoc.getItem('ws_response_message')
-msgNew = "<div class='alert alert-success'><h5><a href='%s'>Richiesta autorizzazione in merito al vincolo idrogeologico relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
-newDoc.setItem('ws_response_message',msg + msgNew)
-
-newDoc.save(onSaveEvent=False)  
-                      
-return newDoc.getId()
-]]></resource>
-      <resource id="setClonePaesaggistica" title="" type="Script (Python)"><![CDATA[## Script (Python) "setClonePaesaggistica"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None
-##title=
-##
-from Products.CMFPlomino.PlominoUtils import DateToString
-
-if isinstance(doc, basestring):
-    doc = context.getDocument(doc)
-    
-s='paesaggistica'
-app=s
-
-prot = doc.getItem('numero_protocollo')
-data_prot = DateToString(doc.getItem('data_protocollo'),format="%d/%m/%Y")
-
-
-if doc.getItem('procedimento_autorizzazione_paesaggistica_opt')=='1':
-    s='psemplificata'
-    app='paesaggistica-semplificata'
-    msg1='''Istanza di autorizzazione paesaggistica semplificata pervenuta contestualmente all'istanza/comunicazione prot %s del %s''' %(prot,data_prot)
-    msg2='''L'efficacia dell'istanza/comunicazione e' condizionata dall'approvazione dell'autorizzazione paesaggistica semplificata'''
-
-if doc.getItem('procedimento_autorizzazione_paesaggistica_opt')=='2':
-    s='pordinaria'
-    app='paesaggistica-ordinaria'
-    msg1='''Istanza di autorizzazione paesaggistica ordinaria pervenuta contestualmente all'istanza/comunicazione prot %s del %s''' %(prot,data_prot)
-    msg2='''L'efficacia dell'istanza/comunicazione e' condizionata dall'approvazione dell'autorizzazione paesaggistica ordinaria'''
-
-    
-v = doc.getId().split('-')
-newId = v[0]+'-'+v[1]+'-'+ s
-#se l'ho gia duplicato esco
-if context.getDocument(newId):
-    return
-
-newDoc=context.createDocument(docid=newId)
-
-for item in doc.getItems():
-    newDoc.setItem(item, doc.getItem(item))
-
-for f in doc.getFilenames():
-    attached_file = doc.getfile(f)
-    newDoc.setfile(attached_file,f)
- 
-frm = context.getParentDatabase().getForm('frm_' + app)    
-newDoc.setItem('iol_tipo_app',app)
-newDoc.setItem('iol_form_title',frm.Title())
-newDoc.setItem('identificativo',newDoc.getId())
-newDoc.setItem('titolo_esistente_id',doc.getId())
-newDoc.setItem('msg_paesaggistica',msg1)
-newDoc.setItem('pagopa_enabled',0)
-
-
-ref = doc.getItem('titolo_esistente_id')
-if not ref:
-    ref=newDoc.getId()
-elif isinstance(ref, basestring): 
-    ref=[ref,newDoc.getId()]
-else:
-    try:
-        ref.append(newDoc.getId())
-    except:
-        pass
-doc.setItem('titolo_esistente_id',ref)
-doc.setItem('msg_paesaggistica',msg2)
-context.getParentDatabase().getIndex().indexDocument(doc)
-
-newDoc.removeItem('data_invio_pw')
-newDoc.removeItem('data_protocollo')	
-newDoc.removeItem('numero_protocollo')	
-newDoc.removeItem('qualificazione_intervento_opt')	
-newDoc.removeItem('interventi_strutturali_opt')	
-newDoc.removeItem('vincolo_idrogeologico_opt')
-newDoc.removeItem('procedimento_autorizzazione_paesaggistica_opt')	
-newDoc.removeItem('elenco_pagamenti')	
-newDoc.removeItem('elenco_importi_pagamenti')	
-newDoc.removeItem('elenco_importi_dg')	
-newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
-newDoc.removeItem('pagopa_response')
-
-
-newDoc.doAction('init')
-newDoc.doAction('presentazione')
-newDoc.doAction('protocolla')
-
-msg = doc.getItem('ws_response_message')
-msgNew = "<div class='alert alert-success'><h5><a href='%s'>Autorizzazione paesaggistica acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
-doc.setItem('ws_response_message',msg + msgNew)
-
-msg = newDoc.getItem('ws_response_message')
-msgNew = "<div class='alert alert-success'><h5><a href='%s'>Autorizzazione paesaggistica relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
-newDoc.setItem('ws_response_message',msg + msgNew)
-
-newDoc.save(onSaveEvent=False)  
-                      
-return newDoc.getId()
-]]></resource>
-      <resource id="setNumeroPratica" title="" type="Script (Python)"><![CDATA[## Script (Python) "setNumeroPratica"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None
-##title=
-##
-from Products.CMFPlomino.PlominoUtils import DateToString
-
-if doc.getItem('numero_pratica'):
-    return
-
-### impostazione di base protocollo/anno
-anno = DateToString(doc.getItem('data_protocollo'),format='%Y')
-doc.setItem('numero_pratica','%s/%s' %(doc.getItem('numero_protocollo'),anno))
-doc.save(onSaveEvent=False)
-return
-
-
-###fantasie varie tipo progressivo per anno....
-idx = context.getIndex()
-fieldName='progressivo_numero'
-anno = DateToString(doc.getItem('data_protocollo'),format='%Y')+'/01/01'
-query = {fieldName: dict(query=0, range='min'), 'data_protocollo': dict(query=anno, range='min')}
-brains = idx.dbsearch(query, sortindex=fieldName, reverse=1, only_allowed=False)
-if len(brains)==0:
-    newNumber = 1
-else:
-    newNumber = (brains[0].getObject().getItem(fieldName,0) or 0) +1
-return newNumber
-
-###fantasie varie tipo progressivo per anno e tipo pratica ....
-idx = context.getIndex()
-fieldName='progressivo_numero_%s' %doc.getItem('iol_tipo_app')
-anno = DateToString(doc.getItem('data_protocollo'),format='%Y')+'/01/01'
-query = {fieldName: dict(query=0, range='min'), 'data_protocollo': dict(query=anno, range='min')}
-brains = idx.dbsearch(query, sortindex=fieldName, reverse=1, only_allowed=False)
-if len(brains)==0:
-    newNumber = 1
-else:
-    newNumber = (brains[0].getObject().getItem(fieldName,0) or 0) +1
-return newNumber
-]]></resource>
       <resource id="Assegnazione" title="" type="Script (Python)"><![CDATA[## Script (Python) "Assegnazione"
 ##bind container=container
 ##bind context=context
@@ -1984,6 +1693,297 @@ for destinatario in destinatari:
 ##title=
 ##
 return context.aq_parent.config_map().get('mapKey')
+]]></resource>
+      <resource id="setCloneDsiXXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneDsiXXXXXX"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+
+app='dsi'
+
+v = doc.getId().split('-')
+newId = v[0]+'-'+v[1]+'-'+ app
+#se l'ho gia duplicato esco
+if context.getDocument(newId):
+    return
+
+newDoc=context.createDocument(docid=newId)
+for item in doc.getItems():
+    newDoc.setItem(item, doc.getItem(item))
+
+for f in doc.getFilenames():
+    attached_file = doc.getfile(f)
+    newDoc.setfile(attached_file,f)
+    
+newDoc.setItem('iol_tipo_app',app)   
+newDoc.setItem('titolo_esistente_protocollo',doc.getItem('numero_protocollo'))   
+newDoc.setItem('titolo_esistente_data',doc.getItem('data_protocollo')) 
+newDoc.setItem('identificativo',newDoc.getId())   
+newDoc.setItem('pagopa_enabled',0)
+
+
+newDoc.removeItem('data_invio_pw')
+newDoc.removeItem('data_protocollo')	
+newDoc.removeItem('numero_protocollo')	
+newDoc.removeItem('qualificazione_intervento_opt')	
+newDoc.removeItem('interventi_strutturali_opt')	
+newDoc.removeItem('vincolo_idrogeologico_opt')
+newDoc.removeItem('procedimento_autorizzazione_paesaggistica_opt')	
+newDoc.removeItem('elenco_pagamenti')	
+newDoc.removeItem('elenco_importi_pagamenti')	
+newDoc.removeItem('elenco_importi_dg')	
+newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
+newDoc.removeItem('pagopa_response')	
+
+
+
+
+
+if doc.getItem('interventi_strutturali_opt') == '3':
+    newDoc.setItem('tipologia_procedura_opt','1')
+elif doc.getItem('interventi_strutturali_opt') == '4':    
+    newDoc.setItem('tipologia_procedura_opt','2')
+
+newDoc.doAction('init')
+newDoc.doAction('presentazione')
+newDoc.doAction('protocolla')
+
+msg = doc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Denuncia Sismica Integrata acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
+doc.setItem('ws_response_message',msg + msgNew)
+
+msg = newDoc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Denuncia Sismica Integrata relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
+newDoc.setItem('ws_response_message',msg + msgNew)
+
+
+newDoc.save(onSaveEvent=False)  
+                      
+return newDoc.getId()
+]]></resource>
+      <resource id="setCloneIdrogeologicoXXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneIdrogeologicoXXXXXX"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+    
+
+app='idrogeologico-aut'
+
+newId = v[0]+'-'+v[1]+'-'+ app
+#se l'ho gia duplicato esco
+if context.getDocument(newId):
+    return
+
+newDoc=context.createDocument(docid=newId)
+for item in doc.getItems():
+    newDoc.setItem(item, doc.getItem(item))
+
+for f in doc.getFilenames():
+    attached_file = doc.getfile(f)
+    newDoc.setfile(attached_file,f)
+    
+newDoc.setItem('iol_tipo_app',app)   
+newDoc.setItem('titolo_esistente_protocollo',doc.getItem('numero_protocollo'))   
+newDoc.setItem('titolo_esistente_data',doc.getItem('data_protocollo')) 
+newDoc.setItem('identificativo',newDoc.getId())   
+newDoc.setItem('pagopa_enabled',0)
+
+
+##specifico
+newDoc.setItem('titolo_esistente_opt',1)
+if doc.getItem('iol_tipo_app')=='pdc':
+    newDoc.setItem('titolo_esistente_tipo','PERMESSO DI COSTRUIRE') 
+else:
+    newDoc.setItem('titolo_esistente_tipo','SCIA') 
+
+newDoc.removeItem('data_invio_pw')
+newDoc.removeItem('data_protocollo')	
+newDoc.removeItem('numero_protocollo')	
+newDoc.removeItem('qualificazione_intervento_opt')	
+newDoc.removeItem('interventi_strutturali_opt')	
+newDoc.removeItem('vincolo_idrogeologico_opt')	
+newDoc.removeItem('elenco_pagamenti')	
+newDoc.removeItem('elenco_importi_pagamenti')	
+newDoc.removeItem('elenco_importi_dg')	
+newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
+newDoc.removeItem('pagopa_response')
+
+newDoc.doAction('init')
+newDoc.doAction('presentazione')
+newDoc.doAction('protocolla')
+
+msg = doc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Richiesta autorizzazione in merito al vincolo idrogeologico acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
+doc.setItem('ws_response_message',msg + msgNew)
+
+msg = newDoc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Richiesta autorizzazione in merito al vincolo idrogeologico relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
+newDoc.setItem('ws_response_message',msg + msgNew)
+
+newDoc.save(onSaveEvent=False)  
+                      
+return newDoc.getId()
+]]></resource>
+      <resource id="setClonePaesaggisticaXXXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setClonePaesaggisticaXXXXXXX"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import DateToString
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+    
+s='paesaggistica'
+app=s
+
+prot = doc.getItem('numero_protocollo')
+data_prot = DateToString(doc.getItem('data_protocollo'),format="%d/%m/%Y")
+
+
+if doc.getItem('procedimento_autorizzazione_paesaggistica_opt')=='1':
+    s='psemplificata'
+    app='paesaggistica-semplificata'
+    msg1='''Istanza di autorizzazione paesaggistica semplificata pervenuta contestualmente all'istanza/comunicazione prot %s del %s''' %(prot,data_prot)
+    msg2='''L'efficacia dell'istanza/comunicazione e' condizionata dall'approvazione dell'autorizzazione paesaggistica semplificata'''
+
+if doc.getItem('procedimento_autorizzazione_paesaggistica_opt')=='2':
+    s='pordinaria'
+    app='paesaggistica-ordinaria'
+    msg1='''Istanza di autorizzazione paesaggistica ordinaria pervenuta contestualmente all'istanza/comunicazione prot %s del %s''' %(prot,data_prot)
+    msg2='''L'efficacia dell'istanza/comunicazione e' condizionata dall'approvazione dell'autorizzazione paesaggistica ordinaria'''
+
+    
+v = doc.getId().split('-')
+newId = v[0]+'-'+v[1]+'-'+ s
+#se l'ho gia duplicato esco
+if context.getDocument(newId):
+    return
+
+newDoc=context.createDocument(docid=newId)
+
+for item in doc.getItems():
+    newDoc.setItem(item, doc.getItem(item))
+
+for f in doc.getFilenames():
+    attached_file = doc.getfile(f)
+    newDoc.setfile(attached_file,f)
+ 
+frm = context.getParentDatabase().getForm('frm_' + app)    
+newDoc.setItem('iol_tipo_app',app)
+newDoc.setItem('iol_form_title',frm.Title())
+newDoc.setItem('identificativo',newDoc.getId())
+newDoc.setItem('titolo_esistente_id',doc.getId())
+newDoc.setItem('msg_paesaggistica',msg1)
+newDoc.setItem('pagopa_enabled',0)
+
+
+ref = doc.getItem('titolo_esistente_id')
+if not ref:
+    ref=newDoc.getId()
+elif isinstance(ref, basestring): 
+    ref=[ref,newDoc.getId()]
+else:
+    try:
+        ref.append(newDoc.getId())
+    except:
+        pass
+doc.setItem('titolo_esistente_id',ref)
+doc.setItem('msg_paesaggistica',msg2)
+context.getParentDatabase().getIndex().indexDocument(doc)
+
+newDoc.removeItem('data_invio_pw')
+newDoc.removeItem('data_protocollo')	
+newDoc.removeItem('numero_protocollo')	
+newDoc.removeItem('qualificazione_intervento_opt')	
+newDoc.removeItem('interventi_strutturali_opt')	
+newDoc.removeItem('vincolo_idrogeologico_opt')
+newDoc.removeItem('procedimento_autorizzazione_paesaggistica_opt')	
+newDoc.removeItem('elenco_pagamenti')	
+newDoc.removeItem('elenco_importi_pagamenti')	
+newDoc.removeItem('elenco_importi_dg')	
+newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
+newDoc.removeItem('pagopa_response')
+
+
+newDoc.doAction('init')
+newDoc.doAction('presentazione')
+newDoc.doAction('protocolla')
+
+msg = doc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Autorizzazione paesaggistica acquisita con numero pratica  %s </a> </h5></div>" %(newDoc.absolute_url(),newDoc.getItem('numero_pratica'))
+doc.setItem('ws_response_message',msg + msgNew)
+
+msg = newDoc.getItem('ws_response_message')
+msgNew = "<div class='alert alert-success'><h5><a href='%s'>Autorizzazione paesaggistica relativa a pratica %s </a> </h5></div>" %(doc.absolute_url(),doc.getItem('numero_pratica'))
+newDoc.setItem('ws_response_message',msg + msgNew)
+
+newDoc.save(onSaveEvent=False)  
+                      
+return newDoc.getId()
+]]></resource>
+      <resource id="setNumeroPraticaXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setNumeroPraticaXXXXX"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import DateToString
+
+if doc.getItem('numero_pratica'):
+    return
+
+### impostazione di base protocollo/anno
+anno = DateToString(doc.getItem('data_protocollo'),format='%Y')
+doc.setItem('numero_pratica','%s/%s' %(doc.getItem('numero_protocollo'),anno))
+doc.save(onSaveEvent=False)
+return
+
+
+###fantasie varie tipo progressivo per anno....
+idx = context.getIndex()
+fieldName='progressivo_numero'
+anno = DateToString(doc.getItem('data_protocollo'),format='%Y')+'/01/01'
+query = {fieldName: dict(query=0, range='min'), 'data_protocollo': dict(query=anno, range='min')}
+brains = idx.dbsearch(query, sortindex=fieldName, reverse=1, only_allowed=False)
+if len(brains)==0:
+    newNumber = 1
+else:
+    newNumber = (brains[0].getObject().getItem(fieldName,0) or 0) +1
+return newNumber
+
+###fantasie varie tipo progressivo per anno e tipo pratica ....
+idx = context.getIndex()
+fieldName='progressivo_numero_%s' %doc.getItem('iol_tipo_app')
+anno = DateToString(doc.getItem('data_protocollo'),format='%Y')+'/01/01'
+query = {fieldName: dict(query=0, range='min'), 'data_protocollo': dict(query=anno, range='min')}
+brains = idx.dbsearch(query, sortindex=fieldName, reverse=1, only_allowed=False)
+if len(brains)==0:
+    newNumber = 1
+else:
+    newNumber = (brains[0].getObject().getItem(fieldName,0) or 0) +1
+return newNumber
 ]]></resource>
     </resource>
   </design>
