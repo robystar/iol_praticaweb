@@ -187,12 +187,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -214,6 +214,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['Istanza OnLine|1','Istanza presentata in formato cartaceo|0']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -221,10 +225,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['Istanza OnLine|1','Istanza presentata in formato cartaceo|0']</string></value>
 </member>
 </struct></value>
 </param>
@@ -259,6 +259,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.customscripts.getElencoComuni()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -266,10 +270,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.customscripts.getElencoComuni()</string></value>
 </member>
 </struct></value>
 </param>
@@ -291,16 +291,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_search_allegati</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>READ_STATIC</string></value>
 </member>
 <member>
 <name>field_mapping</name>
 <value><string>allegati_tipo_file,allegati_nomefile,allegati_stato,allegati_note</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_search_allegati</string></value>
 </member>
 <member>
 <name>jssettings</name>

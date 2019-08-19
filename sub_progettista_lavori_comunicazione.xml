@@ -55,8 +55,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Progettista lavori architettonici non necessario o già comunicato;|1''',
+'''Comunico le generalità del progettista dei lavori architettonici;|2''',
+'''Comunico le generalità del NUOVO progettista dei lavori architettonici in sostituzione del precedente;|3'''
+]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -68,12 +72,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Progettista lavori architettonici non necessario o già comunicato;|1''',
-'''Comunico le generalità del progettista dei lavori architettonici;|2''',
-'''Comunico le generalità del NUOVO progettista dei lavori architettonici in sostituzione del precedente;|3'''
-]</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

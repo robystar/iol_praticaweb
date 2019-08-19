@@ -202,12 +202,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -229,8 +229,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['opere interne;|1','opere esterne;|2']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -242,8 +242,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['opere interne;|1','opere esterne;|2']</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -264,19 +264,6 @@ resources/iol-custom.css]]></ResourcesCSS>
           <params>
 <param>
 <value><struct>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
 <member>
 <name>selectionlistformula</name>
 <value><string>return ["1) Pavimentazione esterna e interna - Riparazione, sostituzione, rinnovamento (comprese le opere correlate quali guaine, sottofondi, etc.);|1",
@@ -306,6 +293,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 "25) Punto di ricarica per veicoli elettrici - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|25"]
         </string></value>
 </member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
 </struct></value>
 </param>
 </params>
@@ -326,8 +326,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["26) Pompa di calore aria-aria - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;26"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -339,8 +339,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["26) Pompa di calore aria-aria - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;26"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -362,8 +362,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["27) Deposito di gas di petrolio liquefatti - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|27"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -375,8 +375,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["27) Deposito di gas di petrolio liquefatti - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|27"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -398,8 +398,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["28) Ascensore, montacarichi - Installazione, riparazione, sostituzione, rinnovamento, messa a norma, purché non incida sulla struttura portante;|28",
+"29) Servoscala e assimilabili - Installazione, riparazione, sostituzione, rinnovamento, messa a norma;|29",
+"30) Rampa - Installazione, riparazione, sostituzione, rinnovamento;|30",
+"31) Apparecchio sanitario e impianto igienico e idro-sanitario - Installazione, riparazione, sostituzione, rinnovamento;|31",
+"32) Dispositivi sensoriali - Installazione, riparazione, sostituzione, rinnovamento;|32"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -411,12 +415,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["28) Ascensore, montacarichi - Installazione, riparazione, sostituzione, rinnovamento, messa a norma, purché non incida sulla struttura portante;|28",
-"29) Servoscala e assimilabili - Installazione, riparazione, sostituzione, rinnovamento, messa a norma;|29",
-"30) Rampa - Installazione, riparazione, sostituzione, rinnovamento;|30",
-"31) Apparecchio sanitario e impianto igienico e idro-sanitario - Installazione, riparazione, sostituzione, rinnovamento;|31",
-"32) Dispositivi sensoriali - Installazione, riparazione, sostituzione, rinnovamento;|32"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -438,8 +438,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["33) Opere strumentali all’attività di ricerca nel sottosuolo attraverso carotaggi, perforazioni e altre metodologie;|33"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -451,8 +451,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["33) Opere strumentali all’attività di ricerca nel sottosuolo attraverso carotaggi, perforazioni e altre metodologie;|33"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -474,8 +474,11 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["34) Terreno agricolo e pastorale - Manutenzione, gestione e livellamento;|34",
+"35) Vegetazione spontanea - Manutenzione, gestione;|36",
+"36) Impianti di irrigazione e di drenaggio, finalizzati alla regimazione ed uso dell’acqua in agricoltura - Manutenzione, gestione;|36"]
+</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -487,11 +490,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["34) Terreno agricolo e pastorale - Manutenzione, gestione e livellamento;|34",
-"35) Vegetazione spontanea - Manutenzione, gestione;|36",
-"36) Impianti di irrigazione e di drenaggio, finalizzati alla regimazione ed uso dell’acqua in agricoltura - Manutenzione, gestione;|36"]
-</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -513,8 +513,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["37) Serra compresi elementi di appoggio e/o ancoraggio - Installazione, riparazione, sostituzione, rinnovamento;|37"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -526,8 +526,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["37) Serra compresi elementi di appoggio e/o ancoraggio - Installazione, riparazione, sostituzione, rinnovamento;|37"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -549,8 +549,11 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["38) Intercapedine - Realizzazione, riparazione, sostituzione, rifacimento;|38",
+"39) Locale tombato - Realizzazione, riparazione, sostituzione, rifacimento;|39",
+"40) Pavimentazione esterna, comprese le opere correlate, quali guaine e sottofondi - Realizzazione, riparazione, sostituzione, rifacimento;|40",
+"41) Vasca di raccolta delle acque - Realizzazione, riparazione, sostituzione, rifacimento;|41"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -562,11 +565,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["38) Intercapedine - Realizzazione, riparazione, sostituzione, rifacimento;|38",
-"39) Locale tombato - Realizzazione, riparazione, sostituzione, rifacimento;|39",
-"40) Pavimentazione esterna, comprese le opere correlate, quali guaine e sottofondi - Realizzazione, riparazione, sostituzione, rifacimento;|40",
-"41) Vasca di raccolta delle acque - Realizzazione, riparazione, sostituzione, rifacimento;|41"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -588,8 +588,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["42) Pannello solare, fotovoltaico e generatore microeolico - Installazione, riparazione, sostituzione, rinnovamento;|42"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -601,8 +601,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["42) Pannello solare, fotovoltaico e generatore microeolico - Installazione, riparazione, sostituzione, rinnovamento;|42"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -624,8 +624,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["43) Opera per arredo da giardino (es. barbecue in muratura/ fontana/muretto/scultura/fioriera/panca) e assimilate - Installazione, riparazione,sostituzione, rinnovamento;|43",
+"44) Gazebo, di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|44",
+"45) Gioco per bambini e spazio di gioco in genere, compresa la relativa recinzione - Installazione, riparazione, sostituzione, rinnovamento;|45",
+"46) Pergolato, di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|46",
+"47) Ricovero per animali domestici e da cortile, voliera e assimilata, con relativa recinzione - Installazione, riparazione, sostituzione, rinnovamento;|47",
+"48) Ripostiglio per attrezzi, manufatto accessorio di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|48",
+"49) Sbarra, separatore, dissuasore e simili, stallo biciclette - Installazione, riparazione, sostituzione, rinnovamento;|49",
+"50) Tenda, Tenda a Pergola, Pergotenda, Copertura leggera di arredo - Installazione, riparazione, sostituzione, rinnovamento;|50",
+"51) Elemento divisorio verticale non in muratura, anche di tipo ornamentale e similare - Installazione, riparazione, sostituzione, rinnovamento;|51"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -637,16 +645,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["43) Opera per arredo da giardino (es. barbecue in muratura/ fontana/muretto/scultura/fioriera/panca) e assimilate - Installazione, riparazione,sostituzione, rinnovamento;|43",
-"44) Gazebo, di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|44",
-"45) Gioco per bambini e spazio di gioco in genere, compresa la relativa recinzione - Installazione, riparazione, sostituzione, rinnovamento;|45",
-"46) Pergolato, di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|46",
-"47) Ricovero per animali domestici e da cortile, voliera e assimilata, con relativa recinzione - Installazione, riparazione, sostituzione, rinnovamento;|47",
-"48) Ripostiglio per attrezzi, manufatto accessorio di limitate dimensioni e non stabilmente infisso al suolo - Installazione, riparazione, sostituzione, rinnovamento;|48",
-"49) Sbarra, separatore, dissuasore e simili, stallo biciclette - Installazione, riparazione, sostituzione, rinnovamento;|49",
-"50) Tenda, Tenda a Pergola, Pergotenda, Copertura leggera di arredo - Installazione, riparazione, sostituzione, rinnovamento;|50",
-"51) Elemento divisorio verticale non in muratura, anche di tipo ornamentale e similare - Installazione, riparazione, sostituzione, rinnovamento;|51"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -668,8 +668,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["52) Manufatti leggeri in strutture ricettive all’aperto (roulottes, campers, case mobili, imbarcazioni) e assimilati - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|52"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -681,8 +681,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["52) Manufatti leggeri in strutture ricettive all’aperto (roulottes, campers, case mobili, imbarcazioni) e assimilati - Installazione, riparazione, sostituzione, rinnovamento e/o messa a norma;|52"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -704,8 +704,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["Interventi interni al loro perimetro e non incidenti sulle loro strutture e sulla loro tipologia edilizia e in rapporto alle dimensioni dello stabilimento,  volti ad assicurare la funzionalità e l’adeguamento tecnologico degli impianti produttivi esistenti, sempre che tali interventi:|1"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -717,8 +717,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["Interventi interni al loro perimetro e non incidenti sulle loro strutture e sulla loro tipologia edilizia e in rapporto alle dimensioni dello stabilimento,  volti ad assicurare la funzionalità e l’adeguamento tecnologico degli impianti produttivi esistenti, sempre che tali interventi:|1"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -740,8 +740,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ["Opere di mantenimento, riparazione, ripristino, parziale rinnovamento ed adeguamento necessarie a conservare in efficienza il sistema stradale e le sue pertinenze, impianti, attrezzature e servizi e che non ne comportino modificazioni delle caratteristiche dimensionali e strutturali;|1"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -753,8 +753,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ["Opere di mantenimento, riparazione, ripristino, parziale rinnovamento ed adeguamento necessarie a conservare in efficienza il sistema stradale e le sue pertinenze, impianti, attrezzature e servizi e che non ne comportino modificazioni delle caratteristiche dimensionali e strutturali;|1"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -776,8 +776,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['''sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004 e pertanto allega alla presente l'autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04;|1''','''NON sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -789,8 +789,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004 e pertanto allega alla presente l'autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04;|1''','''NON sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -817,8 +817,11 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['''sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|1''',
+'''sottoposto  a  vincolo  paesaggistico ai sensi degli 142 del D.Lgs. 42 del 22.1.2004, ma le opere non comportano alterazioni dei luoghi o dell'aspetto esteriore  degli edifici e pertanto non sono soggette ad autorizzazione  ai sensi dell'art. 149 del D.Lgs 42/2004;|2''',
+'''sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004, ma gli interventi previsti sono esclusi dall'autorizzazione paesaggistica;|3''',
+'''NON sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|4''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -830,11 +833,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|1''',
-'''sottoposto  a  vincolo  paesaggistico ai sensi degli 142 del D.Lgs. 42 del 22.1.2004, ma le opere non comportano alterazioni dei luoghi o dell'aspetto esteriore  degli edifici e pertanto non sono soggette ad autorizzazione  ai sensi dell'art. 149 del D.Lgs 42/2004;|2''',
-'''sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004, ma gli interventi previsti sono esclusi dall'autorizzazione paesaggistica;|3''',
-'''NON sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|4''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

@@ -71,12 +71,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -98,8 +98,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
+<name>selectionlistformula</name>
+<value><string>["Commissione Edilizia|ce","Commissione Edilizia Integrata|cei","Commissione Locale del Paesaggio|clp",]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -111,8 +111,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>["Commissione Edilizia|ce","Commissione Edilizia Integrata|cei","Commissione Locale del Paesaggio|clp",]</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -134,8 +134,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
+<name>selectionlistformula</name>
+<value><string>["","Favorevole","Contrario","Favorevole con prescrizioni","Sospeso per richiesta integrazioni","Sospeso per sopralluogo","Non ancora espresso","Paesisticamente compatibile","Assenso","Autorizzazione","Non Espresso","Non di competenza"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -147,8 +147,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>["","Favorevole","Contrario","Favorevole con prescrizioni","Sospeso per richiesta integrazioni","Sospeso per sopralluogo","Non ancora espresso","Paesisticamente compatibile","Assenso","Autorizzazione","Non Espresso","Non di competenza"]</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -170,12 +170,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>4</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -197,12 +197,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>4</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>

@@ -116,8 +116,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Edificio|1''',
+'''Area di pertinenza o intorno dell'edificio|2''',
+'''Lotto di terreno|3''',
+'''Strade o corsi d'acqua|4''',
+'''Territorio aperto|5'''
+]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -129,14 +135,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Edificio|1''',
-'''Area di pertinenza o intorno dell'edificio|2''',
-'''Lotto di terreno|3''',
-'''Strade o corsi d'acqua|4''',
-'''Territorio aperto|5'''
-]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -158,8 +158,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Temporaneo o stagionale|1''',
+'''Permanente fisso|2''',
+'''Permanente rimovibile|3'''
+]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -171,12 +175,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Temporaneo o stagionale|1''',
-'''Permanente fisso|2''',
-'''Permanente rimovibile|3'''
-]</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -198,8 +198,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -211,8 +211,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -234,8 +234,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Urbano|1''',
+'''Agricolo|2''',
+'''Boscato|3''',
+'''Naturale non coltivato|4''',
+'''Altro|5'''
+]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -247,14 +253,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Urbano|1''',
-'''Agricolo|2''',
-'''Boscato|3''',
-'''Naturale non coltivato|4''',
-'''Altro|5'''
-]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -276,19 +276,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Centro o nucleo storico|1''',
@@ -303,6 +290,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Altro|11'''
 ]
 </string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -324,19 +324,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Costa (bassa/alta)|1''',
@@ -348,6 +335,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Crinale|8''',
 '''Altro|9'''
 ]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -369,8 +369,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Cose immobili|1''',
+'''Ville, giardini, parchi|2''',
+'''Complessi di cose immobili|3''',
+'''Bellezze panoramiche|4''',
+]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -382,13 +387,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Cose immobili|1''',
-'''Ville, giardini, parchi|2''',
-'''Complessi di cose immobili|3''',
-'''Bellezze panoramiche|4''',
-]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -410,19 +410,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Terreni costieri|1''',
@@ -437,6 +424,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Vulcani|10''',
 '''Zone di interesse archeologico|11'''
 ]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -458,12 +458,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -485,12 +485,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -512,12 +512,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -539,12 +539,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -566,12 +566,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -624,12 +624,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>3</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>

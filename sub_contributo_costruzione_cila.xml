@@ -57,8 +57,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''è a titolo gratuito|1''','''è a titolo oneroso (articoli 38 e 39 l.r. 16/2008 e s.m.), pertanto allega il prospetto di calcolo preventivo del contributo di costruzione, commisurato all’incidenza delle sole opere di urbanizzazione, a firma di tecnico abilitato|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -70,8 +70,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''è a titolo gratuito|1''','''è a titolo oneroso (articoli 38 e 39 l.r. 16/2008 e s.m.), pertanto allega il prospetto di calcolo preventivo del contributo di costruzione, commisurato all’incidenza delle sole opere di urbanizzazione, a firma di tecnico abilitato|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -93,8 +93,9 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''allega la ricevuta di versamento ovvero procede al pagamento online|1''','''effettuerà, prima dell’inizio dei lavori, il pagamento del contributo commisurato all’incidenza delle sole opere di urbanizzazione.|2''']
+</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -106,9 +107,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''allega la ricevuta di versamento ovvero procede al pagamento online|1''','''effettuerà, prima dell’inizio dei lavori, il pagamento del contributo commisurato all’incidenza delle sole opere di urbanizzazione.|2''']
-</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -130,8 +130,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''chiede allo Sportello unico di effettuare il calcolo del contributo di costruzione e a tal fine allega la documentazione tecnica necessaria alla sua determinazione|1''','''allega il prospetto di calcolo preventivo del contributo di costruzione a firma del tecnico abilitato|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -143,8 +143,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''chiede allo Sportello unico di effettuare il calcolo del contributo di costruzione e a tal fine allega la documentazione tecnica necessaria alla sua determinazione|1''','''allega il prospetto di calcolo preventivo del contributo di costruzione a firma del tecnico abilitato|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

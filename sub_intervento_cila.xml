@@ -104,8 +104,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>['''per la cui realizzazione non sono necessari altri atti di assenso, altre segnalazioni o comunicazioni|1''','''per la cui realizzazione presenta in allegato alla CILA le comunicazioni o segnalazioni certificate di inizio attività indicate nella sottostante tabella.|2''','''per la cui realizzazione presenta contestualmente alla CILA la domanda per l’acquisizione d’ufficio degli atti assenso necessari alla realizzazione dell’intervento, indicati nella sottostante tabella.|3''']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -117,12 +121,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''per la cui realizzazione non sono necessari altri atti di assenso, altre segnalazioni o comunicazioni|1''','''per la cui realizzazione presenta in allegato alla CILA le comunicazioni o segnalazioni certificate di inizio attività indicate nella sottostante tabella.|2''','''per la cui realizzazione presenta contestualmente alla CILA la domanda per l’acquisizione d’ufficio degli atti assenso necessari alla realizzazione dell’intervento, indicati nella sottostante tabella.|3''']</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -144,8 +144,9 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''intervento descritto di seguito nella dichiarazione del progettista, che rientra tra quelli soggetti alla comunicazione di inizio lavori asseverata (art. 6-bis del d.P.R n. 380/2001 e Sezione II-Edilizia della Tabella A del d.lgs. n. 222/2016)|1''','''intervento in corso di esecuzione,(art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 333,00 ovvero si procede mediante pagamento online|2''','''intervento già realizzato (art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 1000,00 ovvero si procede mediante pagamento online|3''']
+</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -157,9 +158,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''intervento descritto di seguito nella dichiarazione del progettista, che rientra tra quelli soggetti alla comunicazione di inizio lavori asseverata (art. 6-bis del d.P.R n. 380/2001 e Sezione II-Edilizia della Tabella A del d.lgs. n. 222/2016)|1''','''intervento in corso di esecuzione,(art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 333,00 ovvero si procede mediante pagamento online|2''','''intervento già realizzato (art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 1000,00 ovvero si procede mediante pagamento online|3''']
-</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -276,8 +276,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''avranno inizio in data|1''','''avranno inizio dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -289,8 +289,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''avranno inizio in data|1''','''avranno inizio dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -317,12 +317,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
-</member>
-<member>
 <name>associated_form</name>
 <value><string>dlg_comunicazioni_cila</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -368,12 +368,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
-</member>
-<member>
 <name>associated_form</name>
 <value><string>dlg_comunicazioni_cila</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
 </member>
 <member>
 <name>jssettings</name>

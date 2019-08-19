@@ -62,8 +62,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>['''SCIA Alternativa al Permesso di Costruire. (Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della segnalazione)|1''','''SCIA Alternativa al Permesso di Costruire più altre segnalazioni o comunicazioni (SCIA Unica): contestualmente alla SCIA le altre segnalazioni o comunicazioni necessarie alla realizzazione dell’intervento indicate nel quadro riepilogativo allegato. (Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della segnalazione).|2''','''SCIA Alternativa al Permesso di Costruire più domanda per il rilascio di atti di assenso (SCIA Condizionata da atti di assenso): contestualmente alla SCIA la richiesta di acquisizione da parte dell’amministrazione degli atti di assenso necessari alla realizzazione dell’intervento indicati nel quadro riepilogativo allegato. (Il titolare dichiara di essere a conoscenza che l’intervento oggetto della segnalazione può essere iniziato dopo la comunicazione da parte del Comune dell’avvenuto rilascio dei relativi atti di assenso).|3''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -75,8 +75,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''SCIA Alternativa al Permesso di Costruire. (Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della segnalazione)|1''','''SCIA Alternativa al Permesso di Costruire più altre segnalazioni o comunicazioni (SCIA Unica): contestualmente alla SCIA le altre segnalazioni o comunicazioni necessarie alla realizzazione dell’intervento indicate nel quadro riepilogativo allegato. (Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della segnalazione).|2''','''SCIA Alternativa al Permesso di Costruire più domanda per il rilascio di atti di assenso (SCIA Condizionata da atti di assenso): contestualmente alla SCIA la richiesta di acquisizione da parte dell’amministrazione degli atti di assenso necessari alla realizzazione dell’intervento indicati nel quadro riepilogativo allegato. (Il titolare dichiara di essere a conoscenza che l’intervento oggetto della segnalazione può essere iniziato dopo la comunicazione da parte del Comune dell’avvenuto rilascio dei relativi atti di assenso).|3''']</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -98,8 +98,9 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''interventi che ricadono nell’articolo 23, del d.P.R. n. 380/2001 (interventi per cui è possibile presentare la SCIA alternativa al permesso di costruire e elencati nella Sezione II-Edilizia della Tabella A del d.lgs. n. 222/2016|1''']
+</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -111,9 +112,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''interventi che ricadono nell’articolo 23, del d.P.R. n. 380/2001 (interventi per cui è possibile presentare la SCIA alternativa al permesso di costruire e elencati nella Sezione II-Edilizia della Tabella A del d.lgs. n. 222/2016|1''']
-</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

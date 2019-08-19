@@ -88,12 +88,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>rata,importo,data_scadenza,data_pagata</string></value>
-</member>
-<member>
 <name>associated_form</name>
 <value><string>dlg_rata_oneri</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>rata,importo,data_scadenza,data_pagata</string></value>
 </member>
 <member>
 <name>jssettings</name>

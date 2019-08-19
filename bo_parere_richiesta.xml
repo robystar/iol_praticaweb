@@ -124,12 +124,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>4</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -171,12 +171,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -198,6 +198,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-parere')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -205,10 +209,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-parere')</string></value>
 </member>
 </struct></value>
 </param>
@@ -417,8 +417,12 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
+<name>selectionlistformula</name>
+<value><string>['SELEZIONA OPZIONE DI PROTOCOLLAZIONE =&gt;|x','Dovrà essere protocollato in ingresso|1','NON dovrà essere protocollato in ingresso|2','Verrà protocollato manualmente|3']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -430,12 +434,8 @@ except:
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SELEZIONA OPZIONE DI PROTOCOLLAZIONE =&gt;|x','Dovrà essere protocollato in ingresso|1','NON dovrà essere protocollato in ingresso|2','Verrà protocollato manualmente|3']</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>

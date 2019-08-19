@@ -70,8 +70,8 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['No|1','Si|2']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -83,8 +83,8 @@
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['No|1','Si|2']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -106,8 +106,8 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['No|1','Si|2']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -119,8 +119,8 @@
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['No|1','Si|2']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -142,8 +142,8 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['No|1','Si|2']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -155,8 +155,8 @@
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['No|1','Si|2']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -214,8 +214,8 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['''che l'immobile come sopra individuato è agibile ai sensi dell'articolo 24 del d.P.R. 380/01 e s.m.i.|1''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -227,8 +227,8 @@
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''che l'immobile come sopra individuato è agibile ai sensi dell'articolo 24 del d.P.R. 380/01 e s.m.i.|1''']</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>

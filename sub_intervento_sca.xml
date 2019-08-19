@@ -113,8 +113,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''SCIA|1''','''SCIA Unica|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -126,8 +126,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''SCIA|1''','''SCIA Unica|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -149,8 +149,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''l’agibilità relativa all’immobile oggetto dell’intervento edilizio|1''','''l’agibilità parziale relativa a singoli edifici o a singole porzioni della costruzione (art. 24, comma 4, lett. a) del d.P.R. n. 380/2001)|2''','''l’agibilità parziale relativa a singole unità immobiliari (art. 24, comma 4, lett. b) del d.P.R. n. 380/2001)|3''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -162,8 +162,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''l’agibilità relativa all’immobile oggetto dell’intervento edilizio|1''','''l’agibilità parziale relativa a singoli edifici o a singole porzioni della costruzione (art. 24, comma 4, lett. a) del d.P.R. n. 380/2001)|2''','''l’agibilità parziale relativa a singole unità immobiliari (art. 24, comma 4, lett. b) del d.P.R. n. 380/2001)|3''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

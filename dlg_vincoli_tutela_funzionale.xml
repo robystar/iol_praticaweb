@@ -72,8 +72,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
+<name>selectionlistformula</name>
+<value><string>['|','''stradale (d.m. n. 1404/1968, d.P.R. n. 495/92)|1''','''ferroviario (d.P.R. n. 753/1980)|2''','''elettrodotto (d.P.C.M. 23 aprile 1992)|3''','''gasdotto (d.m. 24 novembre 1984)|4''','''militare (d.lgs. n. 66/2010)|5''',   '''aeroportuale (piano di rischio ai sensi dell’art. 707 del Codice della navigazione, specifiche tecniche ENAC)|6''',    '''Altro|0''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -85,8 +85,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['|','''stradale (d.m. n. 1404/1968, d.P.R. n. 495/92)|1''','''ferroviario (d.P.R. n. 753/1980)|2''','''elettrodotto (d.P.C.M. 23 aprile 1992)|3''','''gasdotto (d.m. 24 novembre 1984)|4''','''militare (d.lgs. n. 66/2010)|5''',   '''aeroportuale (piano di rischio ai sensi dell’art. 707 del Codice della navigazione, specifiche tecniche ENAC)|6''',    '''Altro|0''']</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -157,8 +157,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['''si autocertifica la conformità dell’intervento rispetto ai relativi vincoli;|1''','''si allega la documentazione necessaria ai fini del rilascio dei relativi atti di assenso;|2''','''il relativo atto di assenso è stato rilasciato con atto:|3''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -170,8 +170,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''si autocertifica la conformità dell’intervento rispetto ai relativi vincoli;|1''','''si allega la documentazione necessaria ai fini del rilascio dei relativi atti di assenso;|2''','''il relativo atto di assenso è stato rilasciato con atto:|3''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

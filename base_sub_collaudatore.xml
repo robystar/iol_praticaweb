@@ -157,15 +157,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-			'bLengthChange': true,
-			'bFilter': true,
-			'bSort': true,
-			'bInfo': true,
-			'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string> |</string></value>
@@ -178,6 +169,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>Sig.ra</string></value>
 <value><string>Perito Industriale</string></value>
 </data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+			'bLengthChange': true,
+			'bFilter': true,
+			'bSort': true,
+			'bInfo': true,
+			'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -245,8 +245,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['M','F']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -258,13 +263,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['M','F']</string></value>
-</member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -286,15 +286,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-			'bLengthChange': true,
-			'bFilter': true,
-			'bSort': true,
-			'bInfo': true,
-			'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string> |</string></value>
@@ -302,6 +293,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>Legale Rappresentante</string></value>
 <value><string>Altro|altro</string></value>
 </data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+			'bLengthChange': true,
+			'bFilter': true,
+			'bSort': true,
+			'bInfo': true,
+			'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -394,16 +394,16 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
 </member>
 <member>
 <name>startingyear</name>
 <value><string>1900</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -680,6 +680,15 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <param>
 <value><struct>
 <member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config().get('elenco_albo',[])</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -687,15 +696,6 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config().get('elenco_albo',[])</string></value>
-</member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -776,6 +776,11 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <param>
 <value><struct>
 <member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 			'bLengthChange': true,
@@ -783,11 +788,6 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 			'bSort': true,
 			'bInfo': true,
 			'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -861,19 +861,6 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-			'bLengthChange': true,
-			'bFilter': true,
-			'bSort': true,
-			'bInfo': true,
-			'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>collaudatore|collaudatore</string></value>
@@ -885,6 +872,19 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <value><string>collaudatore C.A.|collaudatore_ca</string></value>
 <value><string>Collaudatore C.A.|collaudatore_ca</string></value>
 </data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+			'bLengthChange': true,
+			'bFilter': true,
+			'bSort': true,
+			'bInfo': true,
+			'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
 </member>
 </struct></value>
 </param>

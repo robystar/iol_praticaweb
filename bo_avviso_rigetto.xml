@@ -103,12 +103,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>12</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -136,12 +136,12 @@ return ss]]></HTMLAttributesFormula>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -189,6 +189,10 @@ data-target="documenti_da_scaricare"
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('avviso-rigetto')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -196,10 +200,6 @@ data-target="documenti_da_scaricare"
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('avviso-rigetto')</string></value>
 </member>
 </struct></value>
 </param>
@@ -221,8 +221,14 @@ data-target="documenti_da_scaricare"
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['Titolo selezionato|']       
+return ll</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -234,14 +240,8 @@ data-target="documenti_da_scaricare"
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll = ['Titolo selezionato|']       
-return ll</string></value>
-</member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>

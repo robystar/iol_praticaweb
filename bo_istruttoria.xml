@@ -99,12 +99,12 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>3</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -200,12 +200,12 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%1.2f €</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -227,12 +227,12 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>2</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -289,6 +289,10 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -296,10 +300,6 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
 </member>
 </struct></value>
 </param>

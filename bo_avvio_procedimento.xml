@@ -34,7 +34,8 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p> </p>
+<p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
 <div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">allegato_documento_avvio_procedimento</span><span class="plominoFieldClass">allegato_documento_avvio_procedimento</span>
@@ -46,6 +47,7 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_invia_comunicazione</span>
 </div>
 </div>
+<p> </p>
 <div>
 <span class="plominoFieldClass">comunicazione_avvio_procedimento_opt</span><span class="plominoLabelClass">comunicazione_avvio_procedimento_opt</span>
 </div>
@@ -100,12 +102,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -129,12 +131,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -174,6 +176,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('avvio-procedimento')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -181,10 +187,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('avvio-procedimento')</string></value>
 </member>
 </struct></value>
 </param>

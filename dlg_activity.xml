@@ -128,12 +128,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>MULTI</string></value>
-</member>
-<member>
 <name>restricttogroup</name>
 <value><string>sue_istruttori</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>MULTI</string></value>
 </member>
 </struct></value>
 </param>
@@ -155,6 +155,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>["Alta|1","Normale|2","Bassa|3"]</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -162,10 +166,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>["Alta|1","Normale|2","Bassa|3"]</string></value>
 </member>
 </struct></value>
 </param>

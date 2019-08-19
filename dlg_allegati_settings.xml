@@ -54,17 +54,9 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -77,9 +69,17 @@ return result
 </string></value>
 </member>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -101,8 +101,13 @@ return result
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -114,13 +119,8 @@ return result
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -142,8 +142,13 @@ return result
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -155,13 +160,8 @@ return result
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -183,21 +183,9 @@ return result
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -209,9 +197,21 @@ return result
 </string></value>
 </member>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
 </member>
 </struct></value>
 </param>

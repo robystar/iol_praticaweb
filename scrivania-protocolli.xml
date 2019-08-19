@@ -53,6 +53,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>DYNAMICTABLE</string></value>
 </member>
@@ -83,10 +87,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <member>
 <name>sourceview</name>
 <value><string>vista-istanze-da-protocollare</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
 </member>
 </struct></value>
 </param>

@@ -73,8 +73,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>ll=['''non necessita di autorizzazione allo scarico|1''']
+if context.getItem('iol_tipo_proc','suap')=='suap':
+    ll.append('''necessita di autorizzazione allo scarico e la stessa è stata richiesta / ottenuta nell’ambito di altre autorizzazioni o valutazioni ambientali (AUA, AIA, VIA)|2''')
+ll.append('''necessita di autorizzazione|3''')
+
+return ll</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -86,13 +91,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll=['''non necessita di autorizzazione allo scarico|1''']
-if context.getItem('iol_tipo_proc','suap')=='suap':
-    ll.append('''necessita di autorizzazione allo scarico e la stessa è stata richiesta / ottenuta nell’ambito di altre autorizzazioni o valutazioni ambientali (AUA, AIA, VIA)|2''')
-ll.append('''necessita di autorizzazione|3''')
-
-return ll</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -114,8 +114,8 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''Scarico in pubblica fognatura ai sensi del d.lgs. n. 152/2006 e della l.r. n. 43/1995|1''','''Scarico in acque superficiali, sul suolo e negli strati superficiali del sottosuolo ai sensi del d.lgs. n. 152/2006|2''','''Allaccio in pubblica fognatura ai sensi della l.r. 43/1995|3''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -127,8 +127,8 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Scarico in pubblica fognatura ai sensi del d.lgs. n. 152/2006 e della l.r. n. 43/1995|1''','''Scarico in acque superficiali, sul suolo e negli strati superficiali del sottosuolo ai sensi del d.lgs. n. 152/2006|2''','''Allaccio in pubblica fognatura ai sensi della l.r. 43/1995|3''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -150,8 +150,8 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''si allega la documentazione necessaria ai fini del rilascio dell'autorizzazione|1''','''la relativa autorizzazione è stata ottenuta con atto:|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -163,8 +163,8 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''si allega la documentazione necessaria ai fini del rilascio dell'autorizzazione|1''','''la relativa autorizzazione è stata ottenuta con atto:|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

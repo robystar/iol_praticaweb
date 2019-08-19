@@ -57,8 +57,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''Dichiarazione conformità impianti|1''','''Relazione tecnica ex art. 28 Legge 10/91|2''','''Progetto impianto elettrico DL 37/2008|3''','''Certificazione energetica|4''','''Altro|0''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -70,8 +70,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Dichiarazione conformità impianti|1''','''Relazione tecnica ex art. 28 Legge 10/91|2''','''Progetto impianto elettrico DL 37/2008|3''','''Certificazione energetica|4''','''Altro|0''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

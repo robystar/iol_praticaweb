@@ -73,8 +73,8 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_tipo_pratica()</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -86,8 +86,8 @@
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_tipo_pratica()</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -109,19 +109,6 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
     'CIL|cil',
@@ -140,6 +127,19 @@
     'Fine lavori|finelavori',
     'Integrazione|integrazione',
 ]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -161,12 +161,12 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -201,12 +201,12 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -241,12 +241,12 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>

@@ -67,8 +67,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>ll=['''non è soggetto al deposito del progetto e della relazione tecnica di cui all'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005;|1''']
+if context.getItem('iol_tipo_app','')=='pdc':
+    ll.append('''è soggetto all’applicazione dell’articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, pertanto la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla legge:|3''')
+else:
+    ll.append('''è soggetto al deposito del progetto e della relazione tecnica di cui all' articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, pertanto si allega la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla legge;|2''')
+return ll</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -80,13 +85,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll=['''non è soggetto al deposito del progetto e della relazione tecnica di cui all'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005;|1''']
-if context.getItem('iol_tipo_app','')=='pdc':
-    ll.append('''è soggetto all’applicazione dell’articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, pertanto la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla legge:|3''')
-else:
-    ll.append('''è soggetto al deposito del progetto e della relazione tecnica di cui all' articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, pertanto si allega la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla legge;|2''')
-return ll</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -108,8 +108,8 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''sono allegate alla presente richiesta di permesso di costruire|1''','''saranno presentate in allegato alla comunicazione di inizio lavori|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -121,8 +121,8 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''sono allegate alla presente richiesta di permesso di costruire|1''','''saranno presentate in allegato alla comunicazione di inizio lavori|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -149,8 +149,8 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['''non e' soggetto all'applicazione del d.lgs. n. 28/2011, in quanto non riguarda edifici di nuova costruzione o edifici sottoposti ad una ristrutturazione rilevante|1''','''e' soggetto all'applicazione del d.lgs. n. 28/2011|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -162,8 +162,8 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''non e' soggetto all'applicazione del d.lgs. n. 28/2011, in quanto non riguarda edifici di nuova costruzione o edifici sottoposti ad una ristrutturazione rilevante|1''','''e' soggetto all'applicazione del d.lgs. n. 28/2011|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -185,8 +185,8 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['''il rispetto delle prescrizioni in materia di utilizzo di fonti di energia rinnovabili e' indicato negli elaborati progettuali e nella relazione tecnica prevista dall'articolo 125 del d.P.R. n. 380/2001 e dal d.lgs. n. 192/2005 in materia di risparmio energetico|1''','''l'impossibilita' tecnica di ottemperare, in tutto o in parte, agli obblighi previsti, e' evidenziata nella relazione tecnica dovuta ai sensi dell'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, con l'indicazione della non fattibilita' di tutte le diverse opzioni tecnologiche disponibili|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -198,8 +198,8 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''il rispetto delle prescrizioni in materia di utilizzo di fonti di energia rinnovabili e' indicato negli elaborati progettuali e nella relazione tecnica prevista dall'articolo 125 del d.P.R. n. 380/2001 e dal d.lgs. n. 192/2005 in materia di risparmio energetico|1''','''l'impossibilita' tecnica di ottemperare, in tutto o in parte, agli obblighi previsti, e' evidenziata nella relazione tecnica dovuta ai sensi dell'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, con l'indicazione della non fattibilita' di tutte le diverse opzioni tecnologiche disponibili|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -231,8 +231,8 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''sono allegati alla presente richiesta di permesso di costruire|1''','''saranno presentati in allegato alla comunicazione di inizio lavori|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -244,8 +244,8 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''sono allegati alla presente richiesta di permesso di costruire|1''','''saranno presentati in allegato alla comunicazione di inizio lavori|2''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -272,8 +272,8 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''Ricade nell’articolo 14, comma 6, del d.lgs. n. 102/2014 in merito al computo degli spessori delle murature, nonché alla deroga alle distanze minime e alle altezze massime degli edifici, pertanto si certifica nella relazione tecnica una riduzione minima del 20 per cento dell’indice di prestazione energetica previsto dal d.lgs. n. 192/2005|1''','''Ricade nell’articolo 14, comma 7, del d.lgs. n. 102/2014 in merito alle deroga alle distanze minime e alle altezze massime degli edifici, pertanto si certifica nella relazione tecnica una riduzione minima del 10 per cento del limite di trasmittanza previsto dal d.lgs. 192/2005|2''','''Ricade nell’articolo 12, comma 1, del d.lgs. n. 28/2011 in merito al bonus volumetrico del 5 per cento, pertanto si certifica nella relazione tecnica una copertura dei consumi di calore, di elettricità e per il raffrescamento, mediante energia prodotta da fonti rinnovabili, in misura superiore di almeno il 30 per cento rispetto ai valori minimi obbligatori di cui all’allegato 3 del d.lgs. n. 28/2011|3''','''Non soggetto a interventi di miglioramento energetico|4''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -285,8 +285,8 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Ricade nell’articolo 14, comma 6, del d.lgs. n. 102/2014 in merito al computo degli spessori delle murature, nonché alla deroga alle distanze minime e alle altezze massime degli edifici, pertanto si certifica nella relazione tecnica una riduzione minima del 20 per cento dell’indice di prestazione energetica previsto dal d.lgs. n. 192/2005|1''','''Ricade nell’articolo 14, comma 7, del d.lgs. n. 102/2014 in merito alle deroga alle distanze minime e alle altezze massime degli edifici, pertanto si certifica nella relazione tecnica una riduzione minima del 10 per cento del limite di trasmittanza previsto dal d.lgs. 192/2005|2''','''Ricade nell’articolo 12, comma 1, del d.lgs. n. 28/2011 in merito al bonus volumetrico del 5 per cento, pertanto si certifica nella relazione tecnica una copertura dei consumi di calore, di elettricità e per il raffrescamento, mediante energia prodotta da fonti rinnovabili, in misura superiore di almeno il 30 per cento rispetto ai valori minimi obbligatori di cui all’allegato 3 del d.lgs. n. 28/2011|3''','''Non soggetto a interventi di miglioramento energetico|4''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

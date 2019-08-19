@@ -263,12 +263,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>8</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -330,8 +330,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>["l’impianto sarà realizzato nel rispetto delle disposizioni di cui all’articolo 7-bis, comma 5, del decreto legislativo n. 28 del 2011 e che, quindi, non necessita di alcun atto di assenso comunque denominato;|a","volersi avvalere del regime di scambio sul posto erogato dal GSE;|b","l’impianto rispetta tutte le seguenti caratteristiche: i) sarà realizzato presso un cliente finale già dotato di un punto di prelievo attivo in bassa tensione; ii) avrà potenza non superiore a quella già disponibile in prelievo; iii) avrà potenza nominale non superiore a 20 kW; iv) assenza di ulteriori impianti di produzione sullo stesso punto di prelievo.|c","conferire mandato con rappresentanza al gestore di rete per l’attività di caricamento dell’anagrafica dell’impianto sul portale Gaudì e per quella di trasmissione dati al GSE;|d","darà tempestiva informazione circa ogni eventuale variazione dei dati dichiarati;|e"]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -343,8 +343,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>["l’impianto sarà realizzato nel rispetto delle disposizioni di cui all’articolo 7-bis, comma 5, del decreto legislativo n. 28 del 2011 e che, quindi, non necessita di alcun atto di assenso comunque denominato;|a","volersi avvalere del regime di scambio sul posto erogato dal GSE;|b","l’impianto rispetta tutte le seguenti caratteristiche: i) sarà realizzato presso un cliente finale già dotato di un punto di prelievo attivo in bassa tensione; ii) avrà potenza non superiore a quella già disponibile in prelievo; iii) avrà potenza nominale non superiore a 20 kW; iv) assenza di ulteriori impianti di produzione sullo stesso punto di prelievo.|c","conferire mandato con rappresentanza al gestore di rete per l’attività di caricamento dell’anagrafica dell’impianto sul portale Gaudì e per quella di trasmissione dati al GSE;|d","darà tempestiva informazione circa ogni eventuale variazione dei dati dichiarati;|e"]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>

@@ -93,8 +93,16 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return [
+'''La legittimità urbanistica della destinazione d'uso in atto;|1''',
+'''il cambio di destinazione d'uso non rientra tra quelli individuati dall'art.13 della L.R. 16/08 e s.m.i. in quanto non comporta il passaggio a diverse categorie di funzioni come definite dalla L.R. n.25 del 07/04/95 e non e' quindi soggetto a titolo edilizio;|2''',
+'''l'immobile non è sottoposto a vincolo di destinazione d'uso e/o di pertinenza;|3''',
+'''per la realizzazione del richiesto cambio di destinazione d'uso, non e' necessaria la realizzazione di opere edilizie|5''',
+'''non verranno effettuate opere edilizie, con la sola esclusione di quelle classificabili di ordinaria manutenzione;|6''',
+'''l'immobile possiede tutti i requisiti imposti dalle norme vigenti in materia di superamento delle barriere architettoniche, di igiene, di sicurezza per l'incolumità pubblica e privata e di viabilita' derivanti dal nuovo utilizzo dei locali;|7''',
+'''di effettuare la variazione catastale per la nuova destinazione dell’immobile;|8'''
+]</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -106,16 +114,8 @@ for m in mandatory:
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''La legittimità urbanistica della destinazione d'uso in atto;|1''',
-'''il cambio di destinazione d'uso non rientra tra quelli individuati dall'art.13 della L.R. 16/08 e s.m.i. in quanto non comporta il passaggio a diverse categorie di funzioni come definite dalla L.R. n.25 del 07/04/95 e non e' quindi soggetto a titolo edilizio;|2''',
-'''l'immobile non è sottoposto a vincolo di destinazione d'uso e/o di pertinenza;|3''',
-'''per la realizzazione del richiesto cambio di destinazione d'uso, non e' necessaria la realizzazione di opere edilizie|5''',
-'''non verranno effettuate opere edilizie, con la sola esclusione di quelle classificabili di ordinaria manutenzione;|6''',
-'''l'immobile possiede tutti i requisiti imposti dalle norme vigenti in materia di superamento delle barriere architettoniche, di igiene, di sicurezza per l'incolumità pubblica e privata e di viabilita' derivanti dal nuovo utilizzo dei locali;|7''',
-'''di effettuare la variazione catastale per la nuova destinazione dell’immobile;|8'''
-]</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -137,8 +137,8 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['la nuova destinazione rientra tra quelle ammesse dal P.U.C. vigente|1']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -150,8 +150,8 @@ for m in mandatory:
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['la nuova destinazione rientra tra quelle ammesse dal P.U.C. vigente|1']</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -204,12 +204,12 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -231,6 +231,10 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -238,10 +242,6 @@ for m in mandatory:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
 </member>
 </struct></value>
 </param>

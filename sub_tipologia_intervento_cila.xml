@@ -61,8 +61,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>['''interventi di manutenzione straordinaria di cui all'articolo 3, comma 1, lettera b) del d.P.R. n. 380/2001, ivi compresa l'apertura di porte interne o lo spostamento di pareti interne, sempre che non riguardino le parti strutturali dell'edificio (Attività n. 3, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|1''','''Interventi di restauro e risanamento conservativo di cui all’articolo 3, comma 1, lettera c) del d.P.R. n. 380/2001 qualora non riguardino parti strutturali dell’edificio (Attività n. 5, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|2''','''Interventi di eliminazione delle barriere architettoniche che comportino la realizzazione di ascensori esterni ovvero di manufatti che alterino la sagoma dell’edificio (Attività n. 22, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|3''','''Opere temporanee per attività di ricerca nel sottosuolo che abbiano carattere geognostico (ad esclusione dell’attività di ricerca di idrocarburi) che siano eseguite in aree interne al centro edificato (Attività n. 31, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|4''','''Movimenti di terra non strettamente pertinenti all’esercizio dell’attività agricola e alle pratiche agro-silvo-pastorali (Attività n. 32, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|5''','''Serre mobili stagionali funzionali allo svolgimento dell’attività agricola che presentino strutture in muratura (Attività n. 33, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|6''','''Realizzazione di pertinenze oggetto di specifica disciplina da parte delle norme tecniche degli strumenti urbanistici comunali in relazione alla zonizzazione e al pregio ambientale e paesaggistico delle aree, aventi, ove si tratti di volumi chiusi, dimensioni non superiori al 20 per cento del volume dell’edificio principale e , comunque, non eccedenti 45 metri cubi (articolo 17 l.r. 16/2008 e s.m.; Attività n. 34, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222; articolo 3, comma 1, lett. e.6 del d.P.R. n. 380/2001)|7''','''Altri interventi non riconducibili all’elenco di cui agli articoli 6, 10 e 22 del d.P.R. 6 giugno 2001, n. 380 (Attività n. 30, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|8''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -74,8 +74,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''interventi di manutenzione straordinaria di cui all'articolo 3, comma 1, lettera b) del d.P.R. n. 380/2001, ivi compresa l'apertura di porte interne o lo spostamento di pareti interne, sempre che non riguardino le parti strutturali dell'edificio (Attività n. 3, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|1''','''Interventi di restauro e risanamento conservativo di cui all’articolo 3, comma 1, lettera c) del d.P.R. n. 380/2001 qualora non riguardino parti strutturali dell’edificio (Attività n. 5, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|2''','''Interventi di eliminazione delle barriere architettoniche che comportino la realizzazione di ascensori esterni ovvero di manufatti che alterino la sagoma dell’edificio (Attività n. 22, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|3''','''Opere temporanee per attività di ricerca nel sottosuolo che abbiano carattere geognostico (ad esclusione dell’attività di ricerca di idrocarburi) che siano eseguite in aree interne al centro edificato (Attività n. 31, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|4''','''Movimenti di terra non strettamente pertinenti all’esercizio dell’attività agricola e alle pratiche agro-silvo-pastorali (Attività n. 32, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|5''','''Serre mobili stagionali funzionali allo svolgimento dell’attività agricola che presentino strutture in muratura (Attività n. 33, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|6''','''Realizzazione di pertinenze oggetto di specifica disciplina da parte delle norme tecniche degli strumenti urbanistici comunali in relazione alla zonizzazione e al pregio ambientale e paesaggistico delle aree, aventi, ove si tratti di volumi chiusi, dimensioni non superiori al 20 per cento del volume dell’edificio principale e , comunque, non eccedenti 45 metri cubi (articolo 17 l.r. 16/2008 e s.m.; Attività n. 34, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222; articolo 3, comma 1, lett. e.6 del d.P.R. n. 380/2001)|7''','''Altri interventi non riconducibili all’elenco di cui agli articoli 6, 10 e 22 del d.P.R. 6 giugno 2001, n. 380 (Attività n. 30, Tabella A, Sez. II, d.lgs. 25 novembre 2016, n. 222)|8''']</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -97,12 +97,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>3</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -124,12 +124,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>

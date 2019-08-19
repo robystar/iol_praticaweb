@@ -52,8 +52,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
+<name>selectionlistformula</name>
+<value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
+if (context.getForm().getId() in ['frm_paesaggistica-ordinaria','frm_paesaggistica-accertamento','frm_paesaggistica-semplificata']) or (context.getItem('iol_tipo_app') in ['paesaggistica-ordinaria','paesaggistica-accertamento','paesaggistica-semplificata']):
+    ll=['''Sportello Unico dell'Edilizia|sue''']
+    
+ll = context.getParentDatabase().resources.config().get('sportello',ll)
+return ll</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -65,13 +70,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
-if (context.getForm().getId() in ['frm_paesaggistica-ordinaria','frm_paesaggistica-accertamento','frm_paesaggistica-semplificata']) or (context.getItem('iol_tipo_app') in ['paesaggistica-ordinaria','paesaggistica-accertamento','paesaggistica-semplificata']):
-    ll=['''Sportello Unico dell'Edilizia|sue''']
-    
-ll = context.getParentDatabase().resources.config().get('sportello',ll)
-return ll</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -93,6 +93,10 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.customscripts.getElencoComuni()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -100,10 +104,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.customscripts.getElencoComuni()</string></value>
 </member>
 </struct></value>
 </param>

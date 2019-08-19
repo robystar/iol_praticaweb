@@ -49,8 +49,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return ['''NON RIGUARDANO parti comuni|no_parti_comuni''','''riguardano parti comuni di un FABBRICATO CONDOMINIALE|condomio''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta da ATTO CONSEGNATO AL PROGETTISTA|atto_progettista''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta dalla SOTTOSCRIZIONE DEGLI ELABORATI DA PARTE DI TUTTI I COMPROPRIETARI|sottoscrizione_comproprietari''','''riguardano parti dell'edificio di proprietà comune ma NON NECESSITANO DI ASSENSO perché, secondo l'art. 1102 c.c., apportano, a spese del titolare, le modificazioni necessarie per il miglior godimento delle parti comuni non alterandone la destinazione e senza impedire agli altri partecipanti di usufruirne secondo il loro dititto|no_assenso''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -62,8 +62,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''NON RIGUARDANO parti comuni|no_parti_comuni''','''riguardano parti comuni di un FABBRICATO CONDOMINIALE|condomio''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta da ATTO CONSEGNATO AL PROGETTISTA|atto_progettista''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta dalla SOTTOSCRIZIONE DEGLI ELABORATI DA PARTE DI TUTTI I COMPROPRIETARI|sottoscrizione_comproprietari''','''riguardano parti dell'edificio di proprietà comune ma NON NECESSITANO DI ASSENSO perché, secondo l'art. 1102 c.c., apportano, a spese del titolare, le modificazioni necessarie per il miglior godimento delle parti comuni non alterandone la destinazione e senza impedire agli altri partecipanti di usufruirne secondo il loro dititto|no_assenso''']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
