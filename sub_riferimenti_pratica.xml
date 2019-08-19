@@ -36,7 +36,9 @@
 <span class="plominoLabelClass">titolo_esistente_anagrafica</span> <span class="plominoFieldClass">titolo_esistente_anagrafica</span>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_edit</span></p>
-<div class="alert" id="div-message"><h5>Inserire numero e anno di protocollo della pratica presentata (NON DI EVENTUALE TITOLO RILASCIATO) e cliccare su "Trova pratica"</h5></div>
+<div class="alert" id="div-message">
+<h5>Inserire numero e anno di protocollo della pratica presentata (NON DI EVENTUALE TITOLO RILASCIATO) e cliccare su "Trova pratica" <br> ATTENZIONE: se l'integrazione/fine lavori riguarda una Denuncia Sismica Integrata, utilizzare il numero di protocollo e l'anno relativi a questa comunicazione e NON quello dell'eventuale procedimento edilizio collegato.</h5>
+</div>
 <p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
