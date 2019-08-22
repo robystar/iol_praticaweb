@@ -61,14 +61,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_vincoli_tutela_ecologica</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto_tutela_ecologica,vincolo_tutela_ecologica,ente_tutela_ecologica,mod_rilascio_tutela_ecologica_opt,numero_protocollo_rilascio_tutela_ecologica,data_protocollo_rilascio_tutela_ecologica,vincoli_tutela_ecologica_opt</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -89,6 +81,14 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto_tutela_ecologica,vincolo_tutela_ecologica,ente_tutela_ecologica,mod_rilascio_tutela_ecologica_opt,numero_protocollo_rilascio_tutela_ecologica,data_protocollo_rilascio_tutela_ecologica,vincoli_tutela_ecologica_opt</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_vincoli_tutela_ecologica</string></value>
 </member>
 </struct></value>
 </param>
@@ -110,14 +110,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_vincoli_tutela_funzionale</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto_tutela_funzionale,vincolo_tutela_funzionale,ente_tutela_funzionale,mod_rilascio_tutela_funzionale_opt,numero_protocollo_rilascio_tutela_funzionale,data_protocollo_rilascio_tutela_funzionale,vincoli_tutela_funzionale_opt</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -138,6 +130,14 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto_tutela_funzionale,vincolo_tutela_funzionale,ente_tutela_funzionale,mod_rilascio_tutela_funzionale_opt,numero_protocollo_rilascio_tutela_funzionale,data_protocollo_rilascio_tutela_funzionale,vincoli_tutela_funzionale_opt</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_vincoli_tutela_funzionale</string></value>
 </member>
 </struct></value>
 </param>

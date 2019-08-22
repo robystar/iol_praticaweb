@@ -225,11 +225,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['FAVOREVOLE|1','FAVOREVOLE CON PRESCRIZIONI|2','CONTRARIO|3']
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -237,6 +232,11 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['FAVOREVOLE|1','FAVOREVOLE CON PRESCRIZIONI|2','CONTRARIO|3']
+</string></value>
 </member>
 <member>
 <name>widget</name>

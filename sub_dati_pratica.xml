@@ -393,10 +393,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_tipo_pratica()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -404,6 +400,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_tipo_pratica()</string></value>
 </member>
 <member>
 <name>widget</name>

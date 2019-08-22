@@ -69,10 +69,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Passaggio a diversa categoria funzionale|cambio_uso']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -80,6 +76,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Passaggio a diversa categoria funzionale|cambio_uso']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -113,10 +113,6 @@ except:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Il cambio di destinazione d’uso funzionale comporta la necessità di reperimento degli standards urbanistici pubblici(aree a parcheggio e verde) quantificati ed identificati come da elaborato allegato e pertanto si allega impegno a formalizzare entro la fine dei lavori il relativo atto di vincolo da trascrivere nei registri immobiliari|vincolo''','''Il cambio di destinazione d’uso funzionale comporta la necessità di reperimento degli standards urbanistici pubblici quantificati come da elaborato allegato ma nell'impossibilità di reperire tali aree si è optato per la  monetizzazione secondo le tariffe stabilite del Comune provvedendo al relativo versamento di cui si trasmette copia|monetizzazione''','''Il cambio di destinazione d’uso funzionale non comporta la necessità di reperimento degli standards urbanistici|no_standard''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -124,6 +120,10 @@ except:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Il cambio di destinazione d’uso funzionale comporta la necessità di reperimento degli standards urbanistici pubblici(aree a parcheggio e verde) quantificati ed identificati come da elaborato allegato e pertanto si allega impegno a formalizzare entro la fine dei lavori il relativo atto di vincolo da trascrivere nei registri immobiliari|vincolo''','''Il cambio di destinazione d’uso funzionale comporta la necessità di reperimento degli standards urbanistici pubblici quantificati come da elaborato allegato ma nell'impossibilità di reperire tali aree si è optato per la  monetizzazione secondo le tariffe stabilite del Comune provvedendo al relativo versamento di cui si trasmette copia|monetizzazione''','''Il cambio di destinazione d’uso funzionale non comporta la necessità di reperimento degli standards urbanistici|no_standard''']</string></value>
 </member>
 <member>
 <name>widget</name>

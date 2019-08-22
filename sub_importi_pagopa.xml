@@ -170,10 +170,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Persona Fisica|F','Persona Giuridica|G']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -181,6 +177,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Persona Fisica|F','Persona Giuridica|G']</string></value>
 </member>
 </struct></value>
 </param>
@@ -232,12 +232,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%8.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%8.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -259,11 +259,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -271,6 +266,11 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -315,12 +315,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%8.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%8.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -365,11 +365,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -377,6 +372,11 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -398,12 +398,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%8.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%8.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -448,11 +448,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -460,6 +455,11 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -481,12 +481,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%8.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%8.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -531,11 +531,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -543,6 +538,11 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -564,12 +564,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%8.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%8.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -614,11 +614,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -626,6 +621,11 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -647,12 +647,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-<value><string>Aggiungi un pagamento|1</string></value>
-</data></array></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -660,6 +654,12 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+<value><string>Aggiungi un pagamento|1</string></value>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
@@ -685,10 +685,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -696,6 +692,10 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -721,10 +721,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -732,6 +728,10 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -757,10 +757,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -768,6 +764,10 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -813,11 +813,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_metodi_pagamento()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -825,6 +820,11 @@ return cls.codici_metodi_pagamento()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_metodi_pagamento()</string></value>
 </member>
 </struct></value>
 </param>
@@ -866,6 +866,7 @@ if context.REQUEST.get('importo1',''):
     js = """
 $('#importo_1').prop('readonly', true);
 $('#tipoPagamento_1').prop('readonly', true);
+$('#causale_1').prop('readonly', true);
 """
     jsList.append(js)
     
@@ -874,6 +875,7 @@ if context.REQUEST.get('importo2',''):
 $('#importo_2').prop('readonly', true);
 $('#tipoPagamento_2').prop('readonly', true);
 $('#pagamento_2-1').prop('readonly', true);
+$('#causale_2').prop('readonly', true);
 """
     jsList.append(js)
  
@@ -882,6 +884,7 @@ if context.REQUEST.get('importo3',''):
 $('#importo_3').prop('readonly', true);
 $('#tipoPagamento_3').prop('readonly', true);
 $('#pagamento_3-1').prop('readonly', true);
+$('#causale_3').prop('readonly', true);
 """
     jsList.append(js)
     
@@ -890,6 +893,7 @@ if context.REQUEST.get('importo4',''):
 $('#importo_4').prop('readonly', true);
 $('#tipoPagamento_4').prop('readonly', true);
 $('#pagamento_4-1').prop('readonly', true);
+$('#causale_4').prop('readonly', true);
 """
     jsList.append(js)    
 
@@ -898,6 +902,7 @@ if context.REQUEST.get('importo5',''):
 $('#importo_5').prop('readonly', true);
 $('#tipoPagamento_5').prop('readonly', true);
 $('#pagamento_5-1').prop('readonly', true);
+$('#causale_5').prop('readonly', true);
 """
     jsList.append(js)    
     

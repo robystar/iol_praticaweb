@@ -55,14 +55,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Progettista lavori architettonici non necessario o già comunicato;|1''',
-'''Comunico le generalità del progettista dei lavori architettonici;|2''',
-'''Comunico le generalità del NUOVO progettista dei lavori architettonici in sostituzione del precedente;|3'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -70,6 +62,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Progettista lavori architettonici non necessario o già comunicato;|1''',
+'''Comunico le generalità del progettista dei lavori architettonici;|2''',
+'''Comunico le generalità del NUOVO progettista dei lavori architettonici in sostituzione del precedente;|3'''
+]</string></value>
 </member>
 <member>
 <name>widget</name>

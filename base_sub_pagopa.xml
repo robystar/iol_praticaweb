@@ -65,14 +65,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_pagopa</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>iuv,esito,data,importo,tipo_pagamento,causale,identificativofiscale,anagrafica,metodo_pagamento</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "IUV" },
@@ -97,6 +89,14 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 300
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>iuv,esito,data,importo,tipo_pagamento,causale,identificativofiscale,anagrafica,metodo_pagamento</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_pagopa</string></value>
 </member>
 </struct></value>
 </param>

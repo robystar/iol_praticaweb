@@ -88,14 +88,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_rata_oneri</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>rata,importo,data_scadenza,data_pagata</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Rata n." },              
@@ -114,6 +106,14 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 300
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>rata,importo,data_scadenza,data_pagata</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_rata_oneri</string></value>
 </member>
 </struct></value>
 </param>

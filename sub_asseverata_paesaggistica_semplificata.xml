@@ -116,6 +116,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Edificio|1''',
@@ -124,15 +133,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Strade o corsi d'acqua|4''',
 '''Territorio aperto|5'''
 ]</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -158,14 +158,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Temporaneo o stagionale|1''',
-'''Permanente fisso|2''',
-'''Permanente rimovibile|3'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -173,6 +165,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Temporaneo o stagionale|1''',
+'''Permanente fisso|2''',
+'''Permanente rimovibile|3'''
+]</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -198,10 +198,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -209,6 +205,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -234,6 +234,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Urbano|1''',
@@ -242,15 +251,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Naturale non coltivato|4''',
 '''Altro|5'''
 ]</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -276,6 +276,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Centro o nucleo storico|1''',
@@ -290,15 +299,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Altro|11'''
 ]
 </string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -324,6 +324,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Costa (bassa/alta)|1''',
@@ -335,15 +344,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Crinale|8''',
 '''Altro|9'''
 ]</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -369,15 +369,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Cose immobili|1''',
-'''Ville, giardini, parchi|2''',
-'''Complessi di cose immobili|3''',
-'''Bellezze panoramiche|4''',
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -385,6 +376,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Cose immobili|1''',
+'''Ville, giardini, parchi|2''',
+'''Complessi di cose immobili|3''',
+'''Bellezze panoramiche|4''',
+]</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -410,6 +410,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Terreni costieri|1''',
@@ -424,15 +433,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''Vulcani|10''',
 '''Zone di interesse archeologico|11'''
 ]</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>

@@ -84,14 +84,6 @@ for row in rows:
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_importi</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
@@ -112,6 +104,14 @@ for row in rows:
     }
 </string></value>
 </member>
+<member>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_importi</string></value>
+</member>
 </struct></value>
 </param>
 </params>
@@ -131,14 +131,6 @@ for row in rows:
           <params>
 <param>
 <value><struct>
-<member>
-<name>associated_form</name>
-<value><string>dlg_pagamenti</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>codTrans,IUV,esito,importo,anagrafica,email,data,orario,metodo,uidriscossione,divisa,brand,alias</string></value>
-</member>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -167,6 +159,14 @@ for row in rows:
         "height": 500
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>codTrans,IUV,esito,importo,anagrafica,email,data,orario,metodo,uidriscossione,divisa,brand,alias</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_pagamenti</string></value>
 </member>
 </struct></value>
 </param>

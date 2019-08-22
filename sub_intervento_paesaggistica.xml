@@ -113,12 +113,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''dell’art. 136, c. 1, lett. …..) del d.lgs. n. 42/2004|1''','''dell’art. 142, c. 1, lett. …..) del d.lgs. n. 42/2004|2''','''dell’art. 134, c. 1, lett. c) del d.lgs. n. 42/2004|3''']
-ll = context.getParentDatabase().resources.config().get('vincoli_paesaggistica',ll)
-return ll</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -126,6 +120,12 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['''dell’art. 136, c. 1, lett. …..) del d.lgs. n. 42/2004|1''','''dell’art. 142, c. 1, lett. …..) del d.lgs. n. 42/2004|2''','''dell’art. 134, c. 1, lett. c) del d.lgs. n. 42/2004|3''']
+ll = context.getParentDatabase().resources.config().get('vincoli_paesaggistica',ll)
+return ll</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -192,10 +192,6 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Interventi relativi a fabbricati|1''','''Interventi relativi a strade, manufatti a sviluppo longitudinale e sistemazioni di aree|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -203,6 +199,10 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Interventi relativi a fabbricati|1''','''Interventi relativi a strade, manufatti a sviluppo longitudinale e sistemazioni di aree|2''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -228,11 +228,6 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Interventi soggetti alla redazione della RELAZIONE PAESAGGISTICA COMPLETA;|1''','''Interventi minori per il quale è possibile ricorrere alla redazione della RELAZIONE PAESAGGISTICA SEMPLIFICATA;|2''']
-</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -240,6 +235,11 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Interventi soggetti alla redazione della RELAZIONE PAESAGGISTICA COMPLETA;|1''','''Interventi minori per il quale è possibile ricorrere alla redazione della RELAZIONE PAESAGGISTICA SEMPLIFICATA;|2''']
+</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -374,6 +374,15 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>tipo = context.getItem('qualificazione_intervento','')
 if tipo in['1','3']:
@@ -477,15 +486,6 @@ return result
 </string></value>
 </member>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
 </member>
@@ -509,10 +509,6 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''di aver già inoltrato istanza di pratica edilizia|1''','''che inoltrerà opportuna pratica edilizia, consapevole che, per la realizzazione dell'intervento in caso di autorizzazione sotto il profilo paesaggistico, è necessario il conseguimento del pertinente titolo abilitativo|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -520,6 +516,10 @@ return result
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''di aver già inoltrato istanza di pratica edilizia|1''','''che inoltrerà opportuna pratica edilizia, consapevole che, per la realizzazione dell'intervento in caso di autorizzazione sotto il profilo paesaggistico, è necessario il conseguimento del pertinente titolo abilitativo|2''']</string></value>
 </member>
 <member>
 <name>widget</name>

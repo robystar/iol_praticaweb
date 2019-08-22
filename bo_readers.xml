@@ -89,16 +89,16 @@ except:
 <param>
 <value><struct>
 <member>
-<name>separator</name>
-<value><string> - </string></value>
+<name>type</name>
+<value><string>MULTI</string></value>
 </member>
 <member>
 <name>restricttogroup</name>
 <value><string>praticaweb-accreditati</string></value>
 </member>
 <member>
-<name>type</name>
-<value><string>MULTI</string></value>
+<name>separator</name>
+<value><string> - </string></value>
 </member>
 </struct></value>
 </param>

@@ -62,20 +62,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>rows = context.getParentDatabase().resources.customscripts.getElencoAllegati()
-result = []
-for row in rows:
-    result.append('%s|%s' %(row[0],row[1]))    
-return result
-</string></value>
-</member>
-<member>
 <name>separator</name>
 <value><string>&lt;br&gt;</string></value>
 </member>
@@ -87,6 +73,20 @@ return result
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>rows = context.getParentDatabase().resources.customscripts.getElencoAllegati()
+result = []
+for row in rows:
+    result.append('%s|%s' %(row[0],row[1]))    
+return result
+</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
@@ -112,15 +112,6 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -128,6 +119,15 @@ return result
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
@@ -153,15 +153,6 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -169,6 +160,15 @@ return result
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>

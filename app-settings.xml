@@ -84,16 +84,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -101,6 +91,16 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
@@ -126,16 +126,6 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -143,6 +133,16 @@ return elencoGruppi(context)</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
@@ -168,16 +168,6 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -185,6 +175,16 @@ return elencoGruppi(context)</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
@@ -210,16 +210,6 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -227,6 +217,16 @@ return elencoGruppi(context)</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
@@ -252,22 +252,6 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_mail_settings</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "AZIONE" },
@@ -285,6 +269,22 @@ return elencoGruppi(context)</string></value>
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_mail_settings</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
 </param>

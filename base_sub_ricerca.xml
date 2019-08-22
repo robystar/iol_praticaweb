@@ -101,13 +101,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>if 'tipo_ricerca' in context.getParentDatabase().resources.config():
-    return context.getParentDatabase().resources.config().get('tipo_ricerca')
-else:
-    return []</string></value>
-</member>
-<member>
 <name>separator</name>
 <value><string>&lt;br&gt;</string></value>
 </member>
@@ -119,6 +112,13 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>if 'tipo_ricerca' in context.getParentDatabase().resources.config():
+    return context.getParentDatabase().resources.config().get('tipo_ricerca')
+else:
+    return []</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -144,10 +144,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['SUE|sue','SUAP|suap']</string></value>
-</member>
-<member>
 <name>separator</name>
 <value><string>&lt;br&gt;</string></value>
 </member>
@@ -159,6 +155,10 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SUE|sue','SUAP|suap']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -311,10 +311,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>["Presentata|presentata","Assegnata in istruttoria|istruttoria","Istruttoria completata|istruttoria_ok"]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -322,6 +318,10 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>["Presentata|presentata","Assegnata in istruttoria|istruttoria","Istruttoria completata|istruttoria_ok"]</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -535,10 +535,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''Opere in conglomerato cementizio armato|1''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -546,6 +542,10 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Opere in conglomerato cementizio armato|1''']</string></value>
 </member>
 <member>
 <name>widget</name>

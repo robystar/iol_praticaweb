@@ -95,12 +95,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -122,12 +122,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -149,12 +149,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -177,12 +177,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -204,12 +204,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -231,12 +231,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -259,12 +259,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -328,12 +328,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -397,12 +397,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>
@@ -467,12 +467,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>€ %1.2f</string></value>
-</member>
-<member>
 <name>type</name>
 <value><string>FLOAT</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 </param>

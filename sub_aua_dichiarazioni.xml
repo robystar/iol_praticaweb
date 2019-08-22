@@ -71,14 +71,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_titolo_abilitativo</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>scheda,ente,protocollo,data,scadenza</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Scheda interessata" },
@@ -98,6 +90,14 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>scheda,ente,protocollo,data,scadenza</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_titolo_abilitativo</string></value>
 </member>
 </struct></value>
 </param>
@@ -119,14 +119,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_certificazione_volontaria</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>certificazione,ente,numero,data_certificazione,note</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Certificazione" },
@@ -146,6 +138,14 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>certificazione,ente,numero,data_certificazione,note</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_certificazione_volontaria</string></value>
 </member>
 </struct></value>
 </param>
@@ -172,10 +172,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''l'attività non è assoggettata alla VIA ai sensi del Codice dell’ambiente|1''','''l'autorità competente alla verifica di VIA ha valutato la non assoggettabilità del progetto alla VIA con provvedimento:|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -183,6 +179,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''l'attività non è assoggettata alla VIA ai sensi del Codice dell’ambiente|1''','''l'autorità competente alla verifica di VIA ha valutato la non assoggettabilità del progetto alla VIA con provvedimento:|2''']</string></value>
 </member>
 <member>
 <name>widget</name>

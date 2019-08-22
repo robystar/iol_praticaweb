@@ -1130,7 +1130,7 @@ else:
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=doc=None,azione='presentazione-ok'
+##parameters=doc=None,azione='presentazione-ok',form=''
 ##title=
 ##
 # metodo generico per invio email. TODO da vedere come discriminare meglio
@@ -1141,9 +1141,9 @@ if isinstance(doc, basestring):
     doc = context.getDocument(doc)
 
 if context.aq_parent.config().get('comune_default')=='E463':
-    context.sendMailJ(doc=doc,azione=azione)
+    context.sendMailJ(doc=doc,azione=azione,form=form)
 else:
-    form = 'sub_completa_' + doc.getItem('iol_tipo_app')
+    form = form or 'sub_completa_' + doc.getItem('iol_tipo_app')
     doc.iolSendMail(azione=azione, form=form)
 ]]></resource>
       <resource id="inviaPraticaBO" title="Invio pratica a backoffice" type="Script (Python)"><![CDATA[## Script (Python) "inviaPraticaBO"
@@ -1217,8 +1217,9 @@ if isinstance(doc, basestring):
 
 
 db=context.getParentDatabase()
-doc.setItem('data_avvio_procedimento',Now())
-doc.setWfActivity(activity="Nuova %s" %doc.getItem('iol_form_title'),notifyTo=[istruttore],priority=1)
+doc.setItem('data_comunicazione_avvio_procedimento',Now())
+doc.setWfActivity(activity="Comunicazione avvio del procedimento")
+context.sendMail(doc=doc,azione='avvio-procedimento')
 ]]></resource>
       <resource id="ImpostaTitolo" title="" type="Script (Python)"><![CDATA[## Script (Python) "ImpostaTitolo"
 ##bind container=container
@@ -1253,7 +1254,13 @@ from Products.CMFPlomino.PlominoUtils import StringToDate,Now,DateToString
 
 if isinstance(doc, basestring):
     doc = context.getDocument(doc)
-
+    
+## in caso di protocollazione fallita
+if context.getProvider()=='sue':
+    doc.setItem('Form','frm_presentata')
+else:
+    doc.setItem('Form','frm__presentata')
+    
 ###invio della pratica al BO 
 def inviaPratica(): 
     bw=''
@@ -1581,7 +1588,7 @@ doc.setWfActivity(activity="Nuova %s" %doc.getItem('iol_form_title'),notifyTo=[i
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=doc=None,azione='presentazione-ok'
+##parameters=doc=None,azione='presentazione-ok',form=''
 ##title=
 ##
 from Products.CMFPlomino.PlominoUtils import StringToDate, DateToString, Now, asUnicode
@@ -1625,7 +1632,7 @@ if not docConfig:
     return
 
 #serializzazione dati documento
-formId = 'sub_completa_' + doc.getItem('iol_tipo_app')
+formId = form or 'sub_completa_' + doc.getItem('iol_tipo_app')
 messageConfig = docConfig.getItem("mail_settings",[])
 data = serialDoc(doc,formid=formId)
 if not data:

@@ -77,10 +77,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['','Elettrico','Radiotelevisivo ed elettronico','Riscaldamento e/o climatizzazione','Idrico sanitario','Trasporto e utilizzazione gas','Ascensore e montacarichi ecc...','Impianto protezione antincendio','Impianto protezione scariche atmosfera','Impianto linee vita','Altro impianto|altro']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -88,6 +84,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['','Elettrico','Radiotelevisivo ed elettronico','Riscaldamento e/o climatizzazione','Idrico sanitario','Trasporto e utilizzazione gas','Ascensore e montacarichi ecc...','Impianto protezione antincendio','Impianto protezione scariche atmosfera','Impianto linee vita','Altro impianto|altro']</string></value>
 </member>
 </struct></value>
 </param>
@@ -109,10 +109,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['','Dichiarazione di conformità o di corrispondenza','Certificato di Collaudo','Atto notorio (art. 6 DPR n. 392/1994)']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -120,6 +116,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['','Dichiarazione di conformità o di corrispondenza','Certificato di Collaudo','Atto notorio (art. 6 DPR n. 392/1994)']</string></value>
 </member>
 </struct></value>
 </param>
@@ -192,11 +192,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>###lasciare 10 altrimenti fa casino con il template usate anche per i vncoli
-return ['''si allega il documento;|10''','''il documento è stato depositato con atto:|3''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -204,6 +199,11 @@ return ['''si allega il documento;|10''','''il documento è stato depositato con
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>###lasciare 10 altrimenti fa casino con il template usate anche per i vncoli
+return ['''si allega il documento;|10''','''il documento è stato depositato con atto:|3''']</string></value>
 </member>
 <member>
 <name>widget</name>

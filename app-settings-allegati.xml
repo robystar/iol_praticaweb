@@ -125,22 +125,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_allegati_settings</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_tipo,allegato_nome</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Tipo documento in praticaweb" ,"width": "30px"},  
@@ -157,6 +141,22 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_tipo,allegato_nome</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
 </param>
@@ -178,22 +178,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_allegati_enti_settings</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_tipo,allegato_nome,allegato_ente_opt</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Tipo documento in praticaweb" ,"width": "30px"},  
@@ -211,6 +195,22 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_tipo,allegato_nome,allegato_ente_opt</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_enti_settings</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
 </param>
@@ -265,22 +265,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_allegati_settings_sue</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Nome del campo allegato" },
@@ -299,6 +283,22 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings_sue</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
 </param>
@@ -320,22 +320,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_allegati_settings_sue</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Nome del campo allegato" },
@@ -354,6 +338,22 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings_sue</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
 </param>
@@ -375,22 +375,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_allegati_settings_sue</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Nome del campo allegato" },
@@ -409,6 +393,22 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_allegati_settings_sue</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
 </param>
