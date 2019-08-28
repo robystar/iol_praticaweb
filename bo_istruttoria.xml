@@ -373,7 +373,7 @@ else:
         </element>
         <element id="hw_no_titolo" title="hw_no_titolo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_titolo</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app') not in ['pdc','idrogeologico-aut','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('iol_titolo')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="allegato_relazione_istruttoria" title="Relazione istruttoria" type="PlominoField">
