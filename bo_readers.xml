@@ -58,12 +58,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>5</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>5</string></value>
 </member>
 </struct></value>
 </param>
@@ -89,16 +89,16 @@ except:
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>MULTI</string></value>
-</member>
-<member>
 <name>separator</name>
 <value><string> - </string></value>
 </member>
 <member>
 <name>restricttogroup</name>
 <value><string>praticaweb-accreditati</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>MULTI</string></value>
 </member>
 </struct></value>
 </param>

@@ -126,8 +126,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -144,17 +149,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 </string></value>
 </member>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>
@@ -176,14 +176,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''riparazioni e rifacimenti di pavimentazioni;|1''','''rifacimenti e riparazioni di intonaci, tinteggiature, rivestimenti interni;|2''','''riparazione e sostituzione di serramenti interni;|3''','''riparazione o sostituzione di impianti idraulici, elettrici, di riscaldamento, di ventilazione, per la fornitura del gas che non comportano alterazione delle caratteristiche distributive;|4''','''riparazione o sostituzione di canne fumarie;|5''','''riparazione, rinnovamento o sostituzione di servizi igienico - tecnologici (senza alterazione delle caratteristiche distributive, volumetriche e di destinazione) dell'edificio o delle singole unita' immobiliari;|6''','''inserimento e sostituzione di elementi di coibentazione termica, di impermeabilizzazione, di isolamento;|i7''','''risanamento o costruzione di vespai|8;''','''rifacimento o riparazione della condotta condominiale o della braga all’interno dell’unità immobiliare;|9''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -193,8 +185,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''riparazioni e rifacimenti di pavimentazioni;|1''','''rifacimenti e riparazioni di intonaci, tinteggiature, rivestimenti interni;|2''','''riparazione e sostituzione di serramenti interni;|3''','''riparazione o sostituzione di impianti idraulici, elettrici, di riscaldamento, di ventilazione, per la fornitura del gas che non comportano alterazione delle caratteristiche distributive;|4''','''riparazione o sostituzione di canne fumarie;|5''','''riparazione, rinnovamento o sostituzione di servizi igienico - tecnologici (senza alterazione delle caratteristiche distributive, volumetriche e di destinazione) dell'edificio o delle singole unita' immobiliari;|6''','''inserimento e sostituzione di elementi di coibentazione termica, di impermeabilizzazione, di isolamento;|i7''','''risanamento o costruzione di vespai|8;''','''rifacimento o riparazione della condotta condominiale o della braga all’interno dell’unità immobiliare;|9''']</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>
@@ -216,8 +216,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -235,17 +240,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 '''installazione di impianti di allarme, di rinforzi agli infissi comprese grate o blindature ed, in genere, le strutture relative alla sicurezza passiva dell'edificio ricadenti nella sagoma dello stesso;|12''']</string></value>
 </member>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>
@@ -267,14 +267,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''riparazione, sostituzione ed adeguamento degli impianti e delle relative reti, nonche' installazione di impianti telefonici, televisivi e telematici purche' tali interventi non comportino alterazione dei locali, aperture nelle facciate, modificazione o realizzazione di volumi tecnici;|1''','''riparazione e sostituzione parziale di impianti tecnologici, nonche' realizzazione delle necessarie opere edilizie, sempreche' non comportino modifiche esterne dei locali ne' aumento delle superfici agibili;|2''','''realizzazione di passerelle o strutture in metallo per l'attraversamento aereo delle strade interne con tubazioni;|3''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -284,8 +276,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''riparazione, sostituzione ed adeguamento degli impianti e delle relative reti, nonche' installazione di impianti telefonici, televisivi e telematici purche' tali interventi non comportino alterazione dei locali, aperture nelle facciate, modificazione o realizzazione di volumi tecnici;|1''','''riparazione e sostituzione parziale di impianti tecnologici, nonche' realizzazione delle necessarie opere edilizie, sempreche' non comportino modifiche esterne dei locali ne' aumento delle superfici agibili;|2''','''realizzazione di passerelle o strutture in metallo per l'attraversamento aereo delle strade interne con tubazioni;|3''']</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>
@@ -307,10 +307,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''opere di mantenimento, riparazione, ripristino, parziale rinnovamento ed adeguamento necessarie a conservare in efficienza il sistema stradale e le sue pertinenze, impianti, attrezzature e servizi e che non ne comportino modificazioni delle caratteristiche dimensionali e strutturali.|1''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -318,6 +314,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''opere di mantenimento, riparazione, ripristino, parziale rinnovamento ed adeguamento necessarie a conservare in efficienza il sistema stradale e le sue pertinenze, impianti, attrezzature e servizi e che non ne comportino modificazioni delle caratteristiche dimensionali e strutturali.|1''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -343,10 +343,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Installazione di pompe di calore aria-aria di potenza termica utile nominale inferiore a 12 Kw|1']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -354,6 +350,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Installazione di pompe di calore aria-aria di potenza termica utile nominale inferiore a 12 Kw|1']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -384,17 +384,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''riguardanti facciate secondarie e in ogni caso non visibili da spazi pubblici|1''',
-'''in seguito all'ottenimento di specifica deroga al Regolamento Edilizio e alla disciplina paesistica di PUC  da richiedere per edifici ricadenti negli ambiti storici quali quelli riferiti al centro storico di Noli compresa l'area del Porto e ai centri storici di Lavagnola, Legino e Santuario.|2'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -404,8 +393,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''riguardanti facciate secondarie e in ogni caso non visibili da spazi pubblici|1''',
+'''in seguito all'ottenimento di specifica deroga al Regolamento Edilizio e alla disciplina paesistica di PUC  da richiedere per edifici ricadenti negli ambiti storici quali quelli riferiti al centro storico di Noli compresa l'area del Porto e ai centri storici di Lavagnola, Legino e Santuario.|2'''
+]</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>
@@ -526,12 +526,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'Si impegna a prendere gli opportuni contatti con il Settore Pianificazione Territoriale - Servizio Edilizia Privata di codesto Comune per concordare l’intervento sotto il profilo estetico e cromatico.|1'
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -539,6 +533,12 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'Si impegna a prendere gli opportuni contatti con il Settore Pianificazione Territoriale - Servizio Edilizia Privata di codesto Comune per concordare l’intervento sotto il profilo estetico e cromatico.|1'
+]</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -569,17 +569,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''i lavori riguardano un'immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|1''',
-'''i lavori riguardano  un'immobile  sottoposto  a  vincolo  paesaggistico ai sensi degli 142 del D.Lgs. 42 del 22.1.2004, ma le opere non comportano alterazioni dei luoghi o dell'aspetto esteriore  degli edifici e pertanto non sono soggette ad autorizzazione  ai sensi dell'art. 149 del D.Lgs 42/2004;|2''',
-'''i lavori riguardano un’immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004, ma gli interventi previsti sono esclusi dall'autorizzazione paesaggistica;|3''',
-'''i lavori non riguardano un’immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|4''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -589,8 +578,19 @@ else:
 'bAutoWidth': false</string></value>
 </member>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''i lavori riguardano un'immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|1''',
+'''i lavori riguardano  un'immobile  sottoposto  a  vincolo  paesaggistico ai sensi degli 142 del D.Lgs. 42 del 22.1.2004, ma le opere non comportano alterazioni dei luoghi o dell'aspetto esteriore  degli edifici e pertanto non sono soggette ad autorizzazione  ai sensi dell'art. 149 del D.Lgs 42/2004;|2''',
+'''i lavori riguardano un’immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004, ma gli interventi previsti sono esclusi dall'autorizzazione paesaggistica;|3''',
+'''i lavori non riguardano un’immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|4''']</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>
@@ -666,13 +666,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-u'''riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004 e pertanto allega alla presente l'autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04;|1''',
-u'''non riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004|2'''
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -680,6 +673,13 @@ u'''non riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+u'''riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004 e pertanto allega alla presente l'autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04;|1''',
+u'''non riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004|2'''
+]</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -718,12 +718,12 @@ u'''non riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>
@@ -745,12 +745,12 @@ u'''non riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>

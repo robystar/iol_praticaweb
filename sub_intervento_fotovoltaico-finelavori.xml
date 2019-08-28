@@ -241,12 +241,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>8</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>8</string></value>
 </member>
 </struct></value>
 </param>
@@ -307,12 +307,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>6</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>6</string></value>
 </member>
 </struct></value>
 </param>
@@ -348,10 +348,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>["l’impianto sarà realizzato nel rispetto delle disposizioni di cui all’articolo 7-bis, comma 5, del decreto legislativo n. 28 del 2011;|a","la progettazione e realizzazione dell’impianto e delle opere connesse è stata realizzata in conformità alle disposizioni DM 37/2008 in materia di sicurezza degli impianti e che, presso l’impianto, è resa disponibile la relativa documentazione, ivi inclusa la dichiarazione di conformità di cui al suddetto decreto;|b","l’impianto e le opere connesse sono stati realizzati in conformità alla norma tecnica CEI 0-21 recante “Regola tecnica di riferimento per la connessione di Utenti attivi e passivi alle reti BT delle imprese distributrici di energia elettrica” e successive modifiche e integrazioni;|c","aver preso visione e di accettare il regolamento di esercizio;|d","aver preso visione e di accettare il contratto di erogazione del servizio di scambio sul posto con il GSE;|e","darà tempestiva informazione circa ogni eventuale variazione dei dati dichiarati;|f"]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -359,6 +355,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>["l’impianto sarà realizzato nel rispetto delle disposizioni di cui all’articolo 7-bis, comma 5, del decreto legislativo n. 28 del 2011;|a","la progettazione e realizzazione dell’impianto e delle opere connesse è stata realizzata in conformità alle disposizioni DM 37/2008 in materia di sicurezza degli impianti e che, presso l’impianto, è resa disponibile la relativa documentazione, ivi inclusa la dichiarazione di conformità di cui al suddetto decreto;|b","l’impianto e le opere connesse sono stati realizzati in conformità alla norma tecnica CEI 0-21 recante “Regola tecnica di riferimento per la connessione di Utenti attivi e passivi alle reti BT delle imprese distributrici di energia elettrica” e successive modifiche e integrazioni;|c","aver preso visione e di accettare il regolamento di esercizio;|d","aver preso visione e di accettare il contratto di erogazione del servizio di scambio sul posto con il GSE;|e","darà tempestiva informazione circa ogni eventuale variazione dei dati dichiarati;|f"]</string></value>
 </member>
 <member>
 <name>widget</name>

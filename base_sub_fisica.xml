@@ -252,16 +252,16 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%d/%m/%Y</string></value>
+<name>startingyear</name>
+<value><string>1900</string></value>
 </member>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 <member>
-<name>startingyear</name>
-<value><string>1900</string></value>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
 </member>
 </struct></value>
 </param>
@@ -375,10 +375,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['M','F']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -388,13 +384,17 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['M','F']</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -416,10 +416,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoTitoli()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 			'bLengthChange': true,
@@ -427,6 +423,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 			'bSort': true,
 			'bInfo': true,
 			'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoTitoli()</string></value>
 </member>
 <member>
 <name>selectionlist</name>

@@ -54,6 +54,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>ll=['''La tipologia delle opere da realizzare richiede la nomina di un progettista delle opere strutturali;|1''',
 '''La tipologia delle opere da realizzare non richiede la nomina di un progettista delle opere strutturali;|2''']
@@ -63,15 +72,6 @@ if context.getItem('iol_tipo_app','') in ['scia2','dia','pdc']:
     ll.append('''Il progettista delle opere strutturali sarà individuati prima dell'inizio dei lavori;|3''')
 
 return ll</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>

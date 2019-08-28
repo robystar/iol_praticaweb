@@ -70,6 +70,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>from iol.document.plomino_utils import elencoUtentiGruppi
 settings = context.getParentDatabase().resources.customscripts.getDocSettings()
@@ -78,15 +87,6 @@ if grp:
     return ['|'] + elencoUtentiGruppi(context,groups=[grp])
 else:
     return []</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -111,12 +111,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>format</name>
-<value><string>%d/%m/%Y</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
 </member>
 </struct></value>
 </param>
@@ -138,12 +138,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>5</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>5</string></value>
 </member>
 </struct></value>
 </param>
@@ -195,12 +195,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>4</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>4</string></value>
 </member>
 </struct></value>
 </param>

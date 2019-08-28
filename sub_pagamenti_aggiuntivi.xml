@@ -64,6 +64,10 @@ for row in rows:
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_importi</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
@@ -87,10 +91,6 @@ for row in rows:
 <member>
 <name>field_mapping</name>
 <value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_importi</string></value>
 </member>
 </struct></value>
 </param>
@@ -128,12 +128,12 @@ for row in rows:
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>4</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>4</string></value>
 </member>
 </struct></value>
 </param>

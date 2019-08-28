@@ -75,10 +75,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_documenti_stampe(context)</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -88,13 +84,17 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_documenti_stampe(context)</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>

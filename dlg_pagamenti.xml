@@ -120,10 +120,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_pagopa().get('esito_pagamento')</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -131,6 +127,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_pagopa().get('esito_pagamento')</string></value>
 </member>
 </struct></value>
 </param>
@@ -269,10 +269,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['BOLLETTINO','ONLINE']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -280,6 +276,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['BOLLETTINO','ONLINE']</string></value>
 </member>
 </struct></value>
 </param>

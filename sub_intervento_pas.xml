@@ -130,6 +130,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_comunicazioni_cila</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -152,10 +156,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <name>field_mapping</name>
 <value><string>id_atto,comunicazione,ente</string></value>
 </member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_comunicazioni_cila</string></value>
-</member>
 </struct></value>
 </param>
 </params>
@@ -176,12 +176,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>8</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>8</string></value>
 </member>
 </struct></value>
 </param>
@@ -204,6 +204,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_titolo_edilizio</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Titolo" },
@@ -225,10 +229,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <member>
 <name>field_mapping</name>
 <value><string>tipo_titolo,numero_titolo,data_titolo</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_titolo_edilizio</string></value>
 </member>
 </struct></value>
 </param>

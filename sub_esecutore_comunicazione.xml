@@ -84,14 +84,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Nessuna variazione in merito all'esecuzione dei lavori;|1''',
-'''Comunico le generalità della ditta / impresa esecutrice dei lavori;|2''',
-'''Comunico le generalità della/e NUOVA ditta / impresa esecutrice dei lavori in sostituzione della/e precedenti;|3''',
-]</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -99,6 +91,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Nessuna variazione in merito all'esecuzione dei lavori;|1''',
+'''Comunico le generalità della ditta / impresa esecutrice dei lavori;|2''',
+'''Comunico le generalità della/e NUOVA ditta / impresa esecutrice dei lavori in sostituzione della/e precedenti;|3''',
+]</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -129,10 +129,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Aggiungere nuova ditta esecutrice|nuovo_esecutore']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -140,6 +136,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Aggiungere nuova ditta esecutrice|nuovo_esecutore']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -165,6 +165,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>base_sub_esecutore</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>READ_STATIC</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Denominazione"},
@@ -187,14 +195,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <member>
 <name>field_mapping</name>
 <value><string>esecutore_denominazione,esecutore_cognome,esecutore_comune,esecutore_cf,esecutore_app,esecutore_cap,esecutore_cap_residenza,esecutore_cciaa,esecutore_cciaa_numero,esecutore_cellulare,esecutore_civico,esecutore_civico_residenza,esecutore_cod_cat_nato,esecutore_comune_nato,esecutore_comune_residenza,esecutore_data_nato,esecutore_edile_numero,esecutore_edile_prov,esecutore_email,esecutore_fax,esecutore_inail,esecutore_indirizzo,esecutore_indirizzo_residenza,esecutore_inps,esecutore_nome,esecutore_pec,esecutore_piva,esecutore_piva_comunitaria,esecutore_provincia,esecutore_provincia_nato,esecutore_provincia_residenza,esecutore_qualita,esecutore_qualita_altro,esecutore_ruolo,esecutore_search,esecutore_sesso,esecutore_telefono</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>base_sub_esecutore</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>READ_STATIC</string></value>
 </member>
 </struct></value>
 </param>
@@ -221,6 +221,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>ll = []
 if context.getItem('lavori_economia_opt') in ['1','4']:
@@ -236,22 +245,13 @@ else:
 return ll</string></value>
 </member>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
 </member>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
-</member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
 </member>
 </struct></value>
 </param>
@@ -273,12 +273,6 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''dichiara che l'entità presunta del cantiere è inferiore a 200 uomini-giorno ed i lavori non comportano i rischi particolari di cui all'allegato XI del d.lgs. n. 81/2008 e di aver verificato il certificato di iscrizione alla Camera di commercio, il documento unico di regolarità contributiva, corredato da autocertificazione in ordine al possesso degli altri requisiti previsti dall'allegato XVII del d.lgs. n. 81/2008, e l'autocertificazione relativa al contratto collettivo applicato|1''',
-'''dichiara che l'entità presunta del cantiere è pari o superiore a 200 uomini-giorno o i lavori comportano i rischi particolari di cui all'allegato XI del d.lgs. n. 81/2008 e di aver verificato la documentazione di cui alle lettere a) e b) dell'art. 90 comma 9 prevista dal d.lgs. n. 81/2008 circa l'idoneità tecnico professionale della/e impresa/e esecutrice/i e dei lavoratori autonomi, l'organico medio annuo distinto per qualifica, gli estremi delle denunce dei lavoratori effettuate all'Istituto nazionale della previdenza sociale (INPS), all'Istituto nazionale assicurazione infortuni sul lavoro (INAIL) e alle casse edili, nonché il contratto collettivo applicato ai lavoratori dipendenti, della/e impresa/e esecutrice/i|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -288,13 +282,19 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>return [
+'''dichiara che l'entità presunta del cantiere è inferiore a 200 uomini-giorno ed i lavori non comportano i rischi particolari di cui all'allegato XI del d.lgs. n. 81/2008 e di aver verificato il certificato di iscrizione alla Camera di commercio, il documento unico di regolarità contributiva, corredato da autocertificazione in ordine al possesso degli altri requisiti previsti dall'allegato XVII del d.lgs. n. 81/2008, e l'autocertificazione relativa al contratto collettivo applicato|1''',
+'''dichiara che l'entità presunta del cantiere è pari o superiore a 200 uomini-giorno o i lavori comportano i rischi particolari di cui all'allegato XI del d.lgs. n. 81/2008 e di aver verificato la documentazione di cui alle lettere a) e b) dell'art. 90 comma 9 prevista dal d.lgs. n. 81/2008 circa l'idoneità tecnico professionale della/e impresa/e esecutrice/i e dei lavoratori autonomi, l'organico medio annuo distinto per qualifica, gli estremi delle denunce dei lavoratori effettuate all'Istituto nazionale della previdenza sociale (INPS), all'Istituto nazionale assicurazione infortuni sul lavoro (INAIL) e alle casse edili, nonché il contratto collettivo applicato ai lavoratori dipendenti, della/e impresa/e esecutrice/i|2''']</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -316,10 +316,6 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''L'intervento non è soggetto all'invio della notifica|1''','''Allega alla presente comunicazione la notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|2''']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -329,13 +325,17 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>selectionlistformula</name>
+<value><string>['''L'intervento non è soggetto all'invio della notifica|1''','''Allega alla presente comunicazione la notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|2''']</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

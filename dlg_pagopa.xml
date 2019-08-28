@@ -66,10 +66,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['In attesa di richiesta|COMPILAZIONE','In Attesa di pagamento|INVIATA','Errore nel pagamento|KO','Pagamento Annullato|ANNULLO','Pagamento Effettuato|OK','In attesa di approvazione|ATTESA_RT']</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -77,6 +73,10 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['In attesa di richiesta|COMPILAZIONE','In Attesa di pagamento|INVIATA','Errore nel pagamento|KO','Pagamento Annullato|ANNULLO','Pagamento Effettuato|OK','In attesa di approvazione|ATTESA_RT']</string></value>
 </member>
 </struct></value>
 </param>
@@ -138,11 +138,6 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -150,6 +145,11 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>

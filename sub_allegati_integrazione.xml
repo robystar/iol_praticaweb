@@ -95,12 +95,12 @@ data-tooltip = "firmato digitalmente max 10Mb"
 <param>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>4</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>4</string></value>
 </member>
 </struct></value>
 </param>
