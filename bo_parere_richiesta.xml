@@ -33,9 +33,11 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
 <div class="v-content well">
-<div class="row-fluid"><div class="span6">
+<div class="row-fluid">
+<div class="span6">
 <span class="plominoLabelClass">parere_ente_opt</span><span class="plominoFieldClass">parere_ente_opt</span>
-</div></div>
+</div>
+</div>
 <p><span class="plominoHidewhenClass">start:hw_no_parere_ente_altro</span></p>
 <div class="row-fluid">
 <div class="span6">
@@ -49,7 +51,8 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div>
 <span class="plominoLabelClass">oggetto_richiesta_parere</span><span class="plominoFieldClass">oggetto_richiesta_parere</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span>
+<div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_richiesta_parere</span><span class="plominoFieldClass">modello_stampa_richiesta_parere</span>
 </div>
@@ -57,7 +60,8 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span>
+<p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
 <div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">allegato_documento_richiesta_parere</span><span class="plominoFieldClass">allegato_documento_richiesta_parere</span>
@@ -74,9 +78,6 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_richiesta_parere</span></p>
 <div class="row-fluid">
-<div class="span4">
-<span class="plominoLabelClass">allegato_stampa_richiesta_parere</span><span class="plominoFieldClass">allegato_stampa_richiesta_parere</span>
-</div>
 <div class="span4">
 <span class="plominoLabelClass">allegato_comunicazione_richiesta_parere</span><span class="plominoFieldClass">allegato_comunicazione_richiesta_parere</span>
 </div>
@@ -198,6 +199,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-parere')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -205,10 +210,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-parere')</string></value>
 </member>
 </struct></value>
 </param>
@@ -262,7 +263,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="allegato_comunicazione_richiesta_parere" title="Comunicazione firmata" type="PlominoField">
+        <element id="allegato_comunicazione_richiesta_parere" title="Comunicazione firmata digitalmente" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_comunicazione_richiesta_parere</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -380,10 +381,10 @@ except:
         </element>
         <element id="parere_ente_opt" title="Parere / accertamento richiesto a Ente / Ufficio" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">parere_ente_opt</id>
-          <FieldType type="Products.Archetypes.Field.StringField">NAME</FieldType>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-NAMEFieldRead</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -394,8 +395,23 @@ except:
 <param>
 <value><struct>
 <member>
-<name>restricttogroup</name>
-<value><string>enti_pareri</string></value>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
+settings = context.getParentDatabase().resources.customscripts.getDocSettings()
+grp = settings.getItem('grp_pareri')
+if grp:
+    return ['|'] + elencoUtentiGruppi(context,groups=[grp])
+else:
+    return []</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -421,6 +437,10 @@ except:
 <value><string>&lt;br&gt;</string></value>
 </member>
 <member>
+<name>selectionlistformula</name>
+<value><string>['SELEZIONA OPZIONE DI PROTOCOLLAZIONE =&gt;|x','Dovrà essere protocollato in ingresso|1','NON dovrà essere protocollato in ingresso|2','Verrà protocollato manualmente|3']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -428,10 +448,6 @@ except:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SELEZIONA OPZIONE DI PROTOCOLLAZIONE =&gt;|x','Dovrà essere protocollato in ingresso|1','NON dovrà essere protocollato in ingresso|2','Verrà protocollato manualmente|3']</string></value>
 </member>
 <member>
 <name>widget</name>

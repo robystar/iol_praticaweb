@@ -30,6 +30,11 @@
 <p><span class="plominoHidewhenClass">start:hw_no_ricevuta_dsi</span></p>
 <p><span class="plominoLabelClass">allegato_ricevuta_spese_istruttoria</span><span class="plominoFieldClass">allegato_ricevuta_spese_istruttoria</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_ricevuta_dsi</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_denuncia_sismica</span></p>
+<div class="alert alert-info">Compilare ed allegare il Modulo di Denuncia Sismica integrata relativo al tipo di intervento eseguito, utilizzando la modulistica scaricabile al seguente indirizzo: <a href="https://www.regione.liguria.it/homepage/territorio/urbanistica/moduli-unificati-e-standardizzati-per-la-presentazione-di-segnalazioni-e-istanze-edilizie.html" target="blank_">https://www.regione.liguria.it/homepage/territorio/urbanistica/moduli-unificati-e-standardizzati-per-la-presentazione-di-segnalazioni-e-istanze-edilizie.html</a>
+</div>
+<p><span class="plominoLabelClass">allegato_denuncia_sismica</span><span class="plominoFieldClass">allegato_denuncia_sismica</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_denuncia_sismica</span></p>
 <p><span class="plominoHidewhenClass">start:hw_interventistrutturali</span></p>
 <div class="text-label">Nessun documento da allegare</div>
 <p><span class="plominoHidewhenClass">end:hw_interventistrutturali</span></p>
@@ -171,7 +176,7 @@ data-tooltip = "firmato digitalmente max 10Mb"
         </element>
         <element id="hw_interventistrutturali" title="hw_interventistrutturali" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_interventistrutturali</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2') or context.getItem('interventi_strutturali_opt','') in ['3','4']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_doc_denuncia_art65" title="hw_no_doc_denuncia_art65" type="PlominoHidewhen">
@@ -204,6 +209,30 @@ data-tooltip = "firmato digitalmente"
           <id type="Products.Archetypes.Field.StringField">hw_no_ricevuta_dsi</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('interventi_strutturali_opt','') not in ['3','4']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_denuncia_sismica" title="hw_no_denuncia_sismica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_denuncia_sismica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('interventi_strutturali_opt','') in ['3','4']:
+    return False
+else:
+    return context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="allegato_denuncia_sismica" title="Modulo di Denuncia Sismica Integrata (da compilare e allegare)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_denuncia_sismica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 10Mb"
+''']]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

@@ -73,12 +73,17 @@ data-tooltip = "firmato digitalmente max 10Mb"
         </element>
         <element id="hw_no_allegato_amianto" title="hw_no_allegato_amianto" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_allegato_amianto</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('amianto_opt','1')=='1' or context.getItem('amianto_edifici_opt','2') =='2']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('amianto_opt','1')=='1':
+    return True
+elif context.getItem('amianto_edifici_opt','1')=='1':
+    return False
+else:
+    return True]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_allegato_amianto" title="hw_allegato_amianto" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_allegato_amianto</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('amianto_opt','1')=='1' or context.getItem('amianto_edifici_opt','2') =='2')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('amianto_opt','1')=='1' or context.getItem('amianto_edifici_opt','2') in ['2','3'])]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

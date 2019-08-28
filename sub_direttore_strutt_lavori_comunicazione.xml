@@ -55,6 +55,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Direttore delle opere strutturali non necessario o già comunicato;|1''',
+'''Comunico le generalità del direttore delle opere strutturali;|2''',
+'''Comunico le generalità del NUOVO direttore delle opere strutturali in sostituzione del precedente;|3'''
+]</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -62,14 +70,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Direttore delle opere strutturali non necessario o già comunicato;|1''',
-'''Comunico le generalità del direttore delle opere strutturali;|2''',
-'''Comunico le generalità del NUOVO direttore delle opere strutturali in sostituzione del precedente;|3'''
-]</string></value>
 </member>
 <member>
 <name>widget</name>

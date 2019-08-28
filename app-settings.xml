@@ -84,6 +84,11 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -93,18 +98,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -126,6 +126,11 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -135,18 +140,13 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -168,6 +168,11 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -177,18 +182,13 @@ return elencoGruppi(context)</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -210,6 +210,11 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -219,18 +224,13 @@ return elencoGruppi(context)</string></value>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -279,12 +279,12 @@ return elencoGruppi(context)</string></value>
 <value><string>dlg_mail_settings</string></value>
 </member>
 <member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>REGULAR</string></value>
+</member>
+<member>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
 </member>
 </struct></value>
 </param>

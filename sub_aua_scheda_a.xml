@@ -86,6 +86,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -93,10 +97,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -122,6 +122,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''ALLEGA LA SCHEDA A contenente i dati e le informazioni necessari per gli scarichi di acque reflue;|1''','''DICHIARA l'invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 Autorizzazioni e titoli ambientali ex art. 3 DPR 59/2013 relativamente agli scarichi di acque reflue;|2''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -129,10 +133,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''ALLEGA LA SCHEDA A contenente i dati e le informazioni necessari per gli scarichi di acque reflue;|1''','''DICHIARA l'invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 Autorizzazioni e titoli ambientali ex art. 3 DPR 59/2013 relativamente agli scarichi di acque reflue;|2''']</string></value>
 </member>
 <member>
 <name>widget</name>

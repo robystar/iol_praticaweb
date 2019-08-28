@@ -59,6 +59,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''NON RIGUARDANO parti comuni|1''','''riguardano parti comuni di un FABBRICATO CONDOMINIALE e sono state approvate dall'assemblea condominiale|2''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta da atto consegnato al progettista|3''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta dalla sottoscrizione degli elaborati da parte di tutti i comproprietari corredata da copia di documento di identità|4''','''riguardano parti dell'edificio di proprietà comune ma NON NECESSITANO DI ASSENSO perchè, secondo l'art. 1102 c.c., apportano, a spese del titolare, le modificazioni necessarie per il miglior godimento delle parti comuni non alterandone la destinazione e senza impedire agli altri partecipanti di usufruirne secondo il loro diritto|5''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -66,10 +70,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''NON RIGUARDANO parti comuni|1''','''riguardano parti comuni di un FABBRICATO CONDOMINIALE e sono state approvate dall'assemblea condominiale|2''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta da atto consegnato al progettista|3''','''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condomino. L'intervento è stato approvato dai comproprietari delle parti comuni, come risulta dalla sottoscrizione degli elaborati da parte di tutti i comproprietari corredata da copia di documento di identità|4''','''riguardano parti dell'edificio di proprietà comune ma NON NECESSITANO DI ASSENSO perchè, secondo l'art. 1102 c.c., apportano, a spese del titolare, le modificazioni necessarie per il miglior godimento delle parti comuni non alterandone la destinazione e senza impedire agli altri partecipanti di usufruirne secondo il loro diritto|5''']</string></value>
 </member>
 <member>
 <name>widget</name>

@@ -70,15 +70,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll=['''non prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a struttura metallica;|1''']
 if context.getItem('iol_tipo_app','pdc')=='pdc':
@@ -87,6 +78,15 @@ else:
     ll.append('''prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a
 struttura metallica, pertanto si allega la denuncia di cui all’articolo 65 del d.P.R. n. 380/2001;|2''')
 return ll</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -117,6 +117,10 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''si allega la documentazione relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001;|1''','''la documentazione tecnica relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001 sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -124,10 +128,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''si allega la documentazione relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001;|1''','''la documentazione tecnica relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001 sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -153,6 +153,12 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>ll = ['''non prevede opere da denunciare o autorizzare ai sensi degli articoli 93 e 94 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione);|1''','''costituisce una variante non sostanziale riguardante parti non strutturali relativa ad un progetto esecutivo delle strutture precedentemente presentato con atto:|2''','''prevede opere in zona sismica da denunciare ai sensi dell'articolo 93 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione), pertanto si allega la documentazione relativa alla denuncia dei lavori in zona sismica;|3''','''prevede opere strutturali soggette ad autorizzazione sismica ai sensi dell'articolo 94 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione), pertanto si allega la documentazione necessaria per il rilascio dell’autorizzazione sismica;|4''']
+    
+return ll</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -160,12 +166,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''non prevede opere da denunciare o autorizzare ai sensi degli articoli 93 e 94 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione);|1''','''costituisce una variante non sostanziale riguardante parti non strutturali relativa ad un progetto esecutivo delle strutture precedentemente presentato con atto:|2''','''prevede opere in zona sismica da denunciare ai sensi dell'articolo 93 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione), pertanto si allega la documentazione relativa alla denuncia dei lavori in zona sismica;|3''','''prevede opere strutturali soggette ad autorizzazione sismica ai sensi dell'articolo 94 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione), pertanto si allega la documentazione necessaria per il rilascio dell’autorizzazione sismica;|4''']
-    
-return ll</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -196,6 +196,10 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''si allega la documentazione relativa alla denuncia dei lavori in zona sismica;|1''','''la documentazione relativa alla denuncia dei lavori in zona sismica sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -203,10 +207,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''si allega la documentazione relativa alla denuncia dei lavori in zona sismica;|1''','''la documentazione relativa alla denuncia dei lavori in zona sismica sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
 </member>
 <member>
 <name>widget</name>

@@ -414,6 +414,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['Non presente|no','Solo partita IVA|piva','Scheda completa della persona giuridica|giuridica']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -423,8 +427,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['Non presente|no','Solo partita IVA|piva','Scheda completa della persona giuridica|giuridica']</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>selectionlist</name>
@@ -433,10 +437,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>Solo partita IVA|piva</string></value>
 <value><string>Scheda completa della persona giuridica|giuridica</string></value>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

@@ -63,15 +63,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>db=context.getParentDatabase()
 
@@ -88,6 +79,15 @@ if not result:
     
 return result
 </string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -113,6 +113,10 @@ return result
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['sue','suap']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -120,10 +124,6 @@ return result
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['sue','suap']</string></value>
 </member>
 <member>
 <name>widget</name>

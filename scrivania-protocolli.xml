@@ -57,10 +57,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -83,6 +79,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 }            
                  
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>sourceview</name>

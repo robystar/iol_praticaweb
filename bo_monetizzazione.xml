@@ -11,6 +11,7 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
+<div class="v-content well">
 <div class="row-fluid">
 <div class="span4">
 <span class="plominoLabelClass">parcheggi_nr</span><span class="plominoFieldClass">parcheggi_nr</span>
@@ -42,6 +43,7 @@
 </div>
 <div class="span4">
 <span class="plominoLabelClass">verde_mq_totale</span><span class="plominoFieldClass">verde_mq_totale</span>
+</div>
 </div>
 </div>
 ]]></FormLayout>

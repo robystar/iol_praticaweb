@@ -57,6 +57,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['Selezionare Titolo|','Titolo unico SUAP|suap','Permesso di costruire/Licenza edilizia/Concessione edilizia|permesso_costruire','Autorizzazione edilizia|autorizzazione','Comunicazione edilizia (art.26 l.n. 47/1985)|comunicazione_edilizia','Accertamento di conformità/Condono edilizio|accertamento','Denuncia Inizio attività|dia','DIA/SCIA alternativa al permesso di costruire|scia2','Segnalazione certificata Inizio Attività|scia','Comunicazione inizio dei Lavori asseverata|cila','Altro|altro_titolo','Primo accatastamento|primo_accatastamento']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -64,10 +68,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Selezionare Titolo|','Titolo unico SUAP|suap','Permesso di costruire/Licenza edilizia/Concessione edilizia|permesso_costruire','Autorizzazione edilizia|autorizzazione','Comunicazione edilizia (art.26 l.n. 47/1985)|comunicazione_edilizia','Accertamento di conformità/Condono edilizio|accertamento','Denuncia Inizio attività|dia','DIA/SCIA alternativa al permesso di costruire|scia2','Segnalazione certificata Inizio Attività|scia','Comunicazione inizio dei Lavori asseverata|cila','Altro|altro_titolo','Primo accatastamento|primo_accatastamento']</string></value>
 </member>
 </struct></value>
 </param>

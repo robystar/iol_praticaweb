@@ -5,21 +5,15 @@
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Form','frm_presentata')
+context.doAction('assegna')
+doc=context
+istruttore = str(doc.getItem('istruttore'))
+nomeIstruttore = doc.getUserGroupFullName(istruttore)
+doc.setItem('istruttore_nominativo',nomeIstruttore)
 
-context.setItem('Form','frm_presentata')
-#Azione di workflow
-newState = context.doAction('assegna')
-istruttore = str(context.getItem('istruttore'))
-nomeIstruttore = context.getUserGroupFullName(istruttore)
-context.setItem('istruttore_nominativo',nomeIstruttore)
-
-context.setWfActivity(activity="pratica assegnata a %s" %nomeIstruttore, notifyTo=[istruttore],priority=1)
-
-#if newState:
-#    context.iolSendMail(azione='assegnazione_responsabile',context.getItem('iol_start_form'))
-#else:
-#    context.plone_utils.addPortalMessage('Errore nella transizione assegna','error')]]></onSaveDocument>
+doc.setWfActivity(activity="pratica assegnata a %s" %nomeIstruttore, notifyTo=[istruttore],priority=1)
+]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
@@ -62,10 +56,10 @@ resources/iol-custom.css]]></ResourcesCSS>
       <elements>
         <element id="istruttore" title="Istruttore assegnato" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">istruttore</id>
-          <FieldType type="Products.Archetypes.Field.StringField">NAME</FieldType>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-NAMEFieldRead</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -76,8 +70,23 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>restricttogroup</name>
-<value><string>sue_istruttori</string></value>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
+settings = context.getParentDatabase().resources.customscripts.getDocSettings()
+grp = settings.getItem('grp_istruttori')
+if grp:
+    return ['|'] + elencoUtentiGruppi(context,groups=[grp])
+else:
+    return []</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>

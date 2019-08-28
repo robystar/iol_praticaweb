@@ -154,6 +154,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''"CA" Denuncia di opera in conglomerato cementizio armato, normale e precompresso o in struttura metallica (art. 65 DPR 380/01)|1''','''"ZS" Denuncia di opera in zona sismica (art. 93 DPR 380/01) con struttura diversa dal conglomerato cementizio armato, normale e precompresso e dalla struttura metallica|2''','''"CA+ZS" Denuncia di opera in zona sismica (art. 93 DPR 380/01) con struttura in conglomerato cementizio armato, normale e precompresso o in struttura metallica (art. 65 DPR 380/01)|3''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -161,10 +165,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''"CA" Denuncia di opera in conglomerato cementizio armato, normale e precompresso o in struttura metallica (art. 65 DPR 380/01)|1''','''"ZS" Denuncia di opera in zona sismica (art. 93 DPR 380/01) con struttura diversa dal conglomerato cementizio armato, normale e precompresso e dalla struttura metallica|2''','''"CA+ZS" Denuncia di opera in zona sismica (art. 93 DPR 380/01) con struttura in conglomerato cementizio armato, normale e precompresso o in struttura metallica (art. 65 DPR 380/01)|3''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -190,6 +190,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''Nuova Denuncia|1''','''Variante sostanziale|2''','''Variante non sostanziale|3''','''Altro|4''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -197,10 +201,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Nuova Denuncia|1''','''Variante sostanziale|2''','''Variante non sostanziale|3''','''Altro|4''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -226,6 +226,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''Denuncia/Deposito (art. 65 e art. 93, DPR 380/01)|1''','''Autorizzazione sismica preventiva (art. 94, DPR 380/01)|2''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -233,10 +237,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Denuncia/Deposito (art. 65 e art. 93, DPR 380/01)|1''','''Autorizzazione sismica preventiva (art. 94, DPR 380/01)|2''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -262,6 +262,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''regolare – inizio dei lavori previsto il:|1''','''tardiva – inizio lavori avvenuto il:|2''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -269,10 +273,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''regolare – inizio dei lavori previsto il:|1''','''tardiva – inizio lavori avvenuto il:|2''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -298,6 +298,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''nuova struttura|1''','''opera di sostegno|2''','''adeguamento struttura esistente|3''','''miglioramento struttura esistente|4''','''riparazione/intervento locale su struttura esistente|5''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -305,10 +309,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''nuova struttura|1''','''opera di sostegno|2''','''adeguamento struttura esistente|3''','''miglioramento struttura esistente|4''','''riparazione/intervento locale su struttura esistente|5''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -334,6 +334,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''calcestruzzo armato|1''','''legno|2''','''strutture metalliche|3''','''muratura|4''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -341,10 +345,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''calcestruzzo armato|1''','''legno|2''','''strutture metalliche|3''','''muratura|4''']</string></value>
 </member>
 <member>
 <name>widget</name>

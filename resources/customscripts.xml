@@ -1562,25 +1562,21 @@ return html
 ##parameters=doc=None
 ##title=
 ##
-from Products.CMFPlomino.PlominoUtils import StringToDate, DateToString, Now 
-
-
 if isinstance(doc, basestring):
     doc = context.getDocument(doc)
+ 
+#istruttore = db.resources.config().get('assegnazione_istruttore')
 
+istruttore = str(doc.getItem('istruttore'))
+nomeIstruttore = doc.getUserGroupFullName(istruttore)
+doc.setItem('istruttore_nominativo',nomeIstruttore)
 
-db=context.getParentDatabase()
-#nomeIstruttore = doc.getUserGroupFullName(istruttore)
-istruttore = db.resources.config().get('assegnazione_istruttore')
-doc.setItem('istruttore',istruttore)
-rup = db.resources.config().get("assegnazione_rup")
-doc.setItem('rup',rup)    
+doc.setWfActivity(activity="pratica assegnata a %s" %nomeIstruttore, notifyTo=[istruttore],priority=1)
 
-#doc.setItem('istruttore_nominativo',nomeIstruttore)
-#doc.setWfActivity(activity="pratica assegnata a %s" %nomeIstruttore)
-
-#doc.setItem('data_avvio_procedimento',Now())
-doc.setWfActivity(activity="Nuova %s" %doc.getItem('iol_form_title'),notifyTo=[istruttore],priority=1)
+#if newState:
+#    context.iolSendMail(azione='assegnazione_responsabile',context.getItem('iol_start_form'))
+#else:
+#    context.plone_utils.addPortalMessage('Errore nella transizione assegna','error')
 ]]></resource>
       <resource id="sendMailJ" title="" type="Script (Python)"><![CDATA[## Script (Python) "sendMailJ"
 ##bind container=container

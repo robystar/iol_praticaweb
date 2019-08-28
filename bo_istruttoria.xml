@@ -16,7 +16,16 @@ if 'btn_stampa_titolo' in context.REQUEST.keys():
             pdf=0,
             field='allegato_titolo',
             addform='bo_istruttoria')
-
+        
+if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
+    if context.getItem('allegato_relazione_istruttoria',{})=={}:
+        context.getParentDatabase().resources.customscripts.stampaModulo(context,
+            model=context.getItem('modello_stampa_relazione_istruttoria'),
+            app=context.getParentDatabase().getId().replace('iol_',''),
+            grp='rilascio-titolo',
+            pdf=0,
+            field='allegato_relazione_istruttoria',
+            addform='bo_istruttoria')
     return "%s/EditDocument?openwithform=bo_istruttoria" %context.absolute_url()]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
@@ -24,6 +33,7 @@ if 'btn_stampa_titolo' in context.REQUEST.keys():
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
 <div class="v-content well">
+<span class="plominoHidewhenClass">start:hw_no_titolo</span>
 <div class="row-fluid">
 <div class="span4">
 <span class="plominoLabelClass">numero_titolo</span><span class="plominoFieldClass">numero_titolo</span>
@@ -32,8 +42,17 @@ if 'btn_stampa_titolo' in context.REQUEST.keys():
 <span class="plominoLabelClass">importo_bolli</span><span class="plominoFieldClass">importo_bolli</span>
 </div>
 </div>
-<p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
-<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span>
+<div class="row-fluid">
+<div class="span8">
+<span class="plominoLabelClass">modello_stampa_relazione_istruttoria</span><span class="plominoFieldClass">modello_stampa_relazione_istruttoria</span>
+</div>
+<div class="span4">
+<br><span class="plominoActionClass">btn_stampa_relazione_istruttoria</span>
+</div>
+</div>
+<p> </p>
+<div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_titolo</span><span class="plominoFieldClass">modello_stampa_titolo</span>
 </div>
@@ -41,7 +60,14 @@ if 'btn_stampa_titolo' in context.REQUEST.keys():
 <br><span class="plominoActionClass">btn_stampa_titolo</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoLabelClass">allegato_titolo</span><span class="plominoFieldClass">allegato_titolo</span></p>
+<p> </p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span>
+<p><span class="plominoLabelClass">allegato_titolo</span><span class="plominoFieldClass">allegato_titolo</span></p>
+<p> </p>
+<p><span class="plominoLabelClass">allegato_relazione_istruttoria</span><span class="plominoFieldClass">allegato_relazione_istruttoria</span></p>
+<p> </p>
+<span class="plominoHidewhenClass">end:hw_no_titolo</span>
+<p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
 <p> </p>
 <p class="legend"><span class="plominoSubformClass">sub_istruttoria_allegati</span></p>
 <p><span class="plominoLabelClass">info_sorteggio</span><span class="plominoFieldClass">info_sorteggio</span></p>
@@ -273,7 +299,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="modello_stampa_titolo" title="Seleziona un modello per la stampa" type="PlominoField">
+        <element id="modello_stampa_titolo" title="Seleziona un modello per la stampa del titolo" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">modello_stampa_titolo</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -289,6 +315,10 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -297,15 +327,11 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 'bInfo': true,
 'bAutoWidth': false</string></value>
 </member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
-</member>
 </struct></value>
 </param>
 </params>
         </element>
-        <element id="btn_stampa_titolo" title="&gt;&gt; Crea il documento" type="PlominoAction">
+        <element id="btn_stampa_titolo" title="&gt;&gt;     Crea il documento titolo rilasciato" type="PlominoAction">
           <id type="Products.Archetypes.Field.StringField">btn_stampa_titolo</id>
           <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
@@ -344,6 +370,79 @@ else:
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_titolo" title="hw_no_titolo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_titolo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app') not in ['pdc','idrogeologico-aut','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="allegato_relazione_istruttoria" title="Relazione istruttoria" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_relazione_istruttoria</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTIconFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3","filetype":["docx","odt"]}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>type</name>
+<value><string>SINGLE</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="modello_stampa_relazione_istruttoria" title="Seleziona un modello per la stampa relazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">modello_stampa_relazione_istruttoria</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="btn_stampa_relazione_istruttoria" title="&gt;&gt; Crea il documento relazione istruttoria" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_stampa_relazione_istruttoria</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    return not context.isEditMode() or context.getItem('allegato_relazione_istruttoria',{})!={}
+except:
+    return False]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
         </element>
       </elements>
     </element>

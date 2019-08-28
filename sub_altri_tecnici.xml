@@ -56,6 +56,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>ll=['''Non sono stati incaricati altri tecnici;|1''','''Sono stati incaricati, in qualità di altri tecnici, i seguenti soggetti:|2''']
+if context.getItem('iol_tipo_app','') in ['scia2','dia','pdc','cila']:
+    ll.append('''Altri tecnici incaricati saranno individuati prima dell'inizio dei lavori;|3''')
+
+return ll</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -63,14 +71,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>ll=['''Non sono stati incaricati altri tecnici;|1''','''Sono stati incaricati, in qualità di altri tecnici, i seguenti soggetti:|2''']
-if context.getItem('iol_tipo_app','') in ['scia2','dia','pdc','cila']:
-    ll.append('''Altri tecnici incaricati saranno individuati prima dell'inizio dei lavori;|3''')
-
-return ll</string></value>
 </member>
 <member>
 <name>widget</name>

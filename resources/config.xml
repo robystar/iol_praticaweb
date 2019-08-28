@@ -15,7 +15,7 @@ versionenuova=1,
          
 pagopa = False, #PagoPA Abilitato
 
-provider='praticaweb',
+provider='sue', #Per abilitare BO Praticaweb impostare praticaweb
 
 doc_settings = "0-settings", #id del documento dove sono salvati i settings  
 #ws servizio backoffice pratiche        

@@ -10,9 +10,12 @@
 if 'btn_stampa_comunicazione' in context.REQUEST.keys():
     if context.getItem('allegato_documento_rigetto',{})=={}:
         context.getParentDatabase().resources.customscripts.stampaModulo(context,
-              model=context.getItem('modello_stampa_rigetto'),
-              app='occupazione-suolo',pdf=0,field='allegato_documento_rigetto')
-    return "%s/EditDocument?openwithform=bo_rigetto" %context.absolute_url()]]></onSaveDocument>
+            model=context.getItem('modello_stampa_rigetto'),
+            app=context.getParentDatabase().getId().replace('iol_',''),
+            pdf=0,
+            field='allegato_documento_rigetto')
+    return "%s/EditDocument?openwithform=bo_rigetto" %context.absolute_url()
+]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[parentDoc = context.getParentDatabase().getDocument(context.getItem('parent_document'))
 context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
@@ -23,7 +26,8 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div>
 <span class="plominoLabelClass">oggetto_rigetto</span><span class="plominoFieldClass">oggetto_rigetto</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span>
+<div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_rigetto</span><span class="plominoFieldClass">modello_stampa_rigetto</span>
 </div>
@@ -31,7 +35,8 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span>
+<p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
 <div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">allegato_documento_rigetto</span><span class="plominoFieldClass">allegato_documento_rigetto</span>
@@ -171,6 +176,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>["Comunicazione rigetto istanza|rigetto"]</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -178,10 +187,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>["Comunicazione rigetto istanza|rigetto"]</string></value>
 </member>
 </struct></value>
 </param>

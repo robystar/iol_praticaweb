@@ -64,15 +64,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['''In quanto opere di modesta entità che non interessano le specifiche normative di settore, i lavori sono eseguiti / sono stati eseguiti in prima persona, senza alcun affidamento a ditte esterne;|1''','''I lavori saranno eseguiti da un impresa;|2''']
 
@@ -92,6 +83,15 @@ ll.append('''L'attività oggetto della presente comunicazione/istanza non richie
 
 return ll
 </string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 <member>
 <name>widget</name>

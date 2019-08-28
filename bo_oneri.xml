@@ -46,7 +46,7 @@
 db=context.getParentDatabase()
 renderForm=db.getForm('sub_contributo_costruzione_%s' %context.getItem('iol_tipo_app'))
 if renderForm:
-    return renderForm.displayDocument(context)]]></Formula>
+    return '<div class="v-content well">%s</div>' %renderForm.displayDocument(context)]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -65,9 +65,8 @@ renderForm=db.getForm('bo_oneri_importi')
 content=renderForm.displayDocument(context)
 html=''
 if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_oneri_importi"> COSTO COSTRUZIONE E ONERI DI URBANIZZAZIONE </a></legend>%s</fieldset>'%(context.absolute_url(),content)
-
-    
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_oneri_importi"> Costo di costruzione e oneri di urbanizzazione <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content) 
+      
 return html]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
@@ -87,8 +86,7 @@ renderForm=db.getForm('bo_oneri_rate')
 content=renderForm.displayDocument(context)
 html=''
 if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_oneri_rate"> RATEIZZAZIONE ONERI </a></legend>%s</fieldset>'%(context.absolute_url(),content)
-
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_oneri_rate"> Rateizzazione oneri <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content) 
     
 return html]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
@@ -109,9 +107,8 @@ renderForm=db.getForm('bo_monetizzazione')
 content=renderForm.displayDocument(context)
 html=''
 if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_monetizzazione"> MONETIZZAZIONE AREE VERDI E PARCHEGGI </a></legend>%s</fieldset>'%(context.absolute_url(),content)
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_monetizzazione"> Monetizzazione aree verdi e parcheggi <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content) 
 
-    
 return html]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>

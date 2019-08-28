@@ -186,12 +186,12 @@ return DateToString(Now(),'%d/%m/%Y')]]></Formula>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[elenco = context.getParentDatabase().resources.customscripts.getElencoComuni()
-comune_val = 'NON Trovato'
+comune_val = ''
 for el in elenco:
     v=el.split('|')
     if v[1]==context.getItem('iol_comune'):
         comune_val = v[0]      
-return comune_val]]></Formula>
+return comune_val or  v[1]]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

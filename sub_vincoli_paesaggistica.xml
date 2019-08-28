@@ -70,6 +70,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''non ricade in zona sottoposta a tutela;|1''','''ricade in zona tutelata, ma le opere non comportano alterazione dei luoghi o dell’aspetto esteriore degli edifici ovvero non sono soggetti ad autorizzazione ai sensi dell’art. 149, d.lgs. n. 42/2004 e del d.P.R n. 31/2017, Allegato A e art. 4.;|2''','''ricade in zona tutelata e le opere comportano alterazione dei luoghi o dell'aspetto esteriore degli edifici e:|3''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -77,10 +81,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''non ricade in zona sottoposta a tutela;|1''','''ricade in zona tutelata, ma le opere non comportano alterazione dei luoghi o dell’aspetto esteriore degli edifici ovvero non sono soggetti ad autorizzazione ai sensi dell’art. 149, d.lgs. n. 42/2004 e del d.P.R n. 31/2017, Allegato A e art. 4.;|2''','''ricade in zona tutelata e le opere comportano alterazione dei luoghi o dell'aspetto esteriore degli edifici e:|3''']</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -106,6 +106,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''è assoggettato al procedimento semplificato di autorizzazione paesaggistica, in quanto di lieve entità, secondo quanto previsto dal d.P.R. n. 31/2017 e si allega la relazione paesaggistica semplificata e la documentazione necessaria ai fini del rilascio dell’autorizzazione paesaggistica semplificata|1''','''è assoggettato al procedimento ordinario di autorizzazione paesaggistica, e si allega la relazione paesaggistica e la documentazione necessaria ai fini del rilascio dell’autorizzazione paesaggistica|2''','''l'autorizzazione paesaggistica e' stata rilasciata con atto:|3''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -113,10 +117,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''è assoggettato al procedimento semplificato di autorizzazione paesaggistica, in quanto di lieve entità, secondo quanto previsto dal d.P.R. n. 31/2017 e si allega la relazione paesaggistica semplificata e la documentazione necessaria ai fini del rilascio dell’autorizzazione paesaggistica semplificata|1''','''è assoggettato al procedimento ordinario di autorizzazione paesaggistica, e si allega la relazione paesaggistica e la documentazione necessaria ai fini del rilascio dell’autorizzazione paesaggistica|2''','''l'autorizzazione paesaggistica e' stata rilasciata con atto:|3''']</string></value>
 </member>
 <member>
 <name>widget</name>

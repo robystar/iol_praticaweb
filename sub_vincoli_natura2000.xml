@@ -62,6 +62,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''non è soggetto a Valutazione d’incidenza;|1''','''è soggetto a Valutazione d’incidenza, petanto si allega la documentazione necessaria all’approvazione del progetto;|2''','''la Valutazione di incidenza è stata rilasciata con atto:|3''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -69,10 +73,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''non è soggetto a Valutazione d’incidenza;|1''','''è soggetto a Valutazione d’incidenza, petanto si allega la documentazione necessaria all’approvazione del progetto;|2''','''la Valutazione di incidenza è stata rilasciata con atto:|3''']</string></value>
 </member>
 <member>
 <name>widget</name>

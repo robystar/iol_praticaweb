@@ -237,6 +237,11 @@ return "data-map-layers='%s'  data-map-types='%s'  data-base-type='%s'"  %(json_
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>layersSettings = context.getParentDatabase().resources.customscripts.getLayersSettings(context)
+return layersSettings["layersList"]</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -244,11 +249,6 @@ return "data-map-layers='%s'  data-map-types='%s'  data-base-type='%s'"  %(json_
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>layersSettings = context.getParentDatabase().resources.customscripts.getLayersSettings(context)
-return layersSettings["layersList"]</string></value>
 </member>
 <member>
 <name>widget</name>

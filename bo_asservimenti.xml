@@ -92,7 +92,7 @@ for brain in brains:
     renderForm=db.getForm('sub_vista_asservimento')
     content=content + renderForm.displayDocument(doc)    
     if content:
-        html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s"> ASSERVIMENTO REP. %s </a></legend>%s</fieldset>'%(doc.absolute_url(),doc.getItem('repertorio'),content)
+        html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s"> ASSERVIMENTO REP. %s </a></legend><div class="v-content well">%s</div></fieldset>'%(doc.absolute_url(),doc.getItem('repertorio'),content)
 
     
 return html]]></Formula>

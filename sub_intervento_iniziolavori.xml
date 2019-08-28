@@ -103,6 +103,10 @@ return 'Comunicazione di inizio lavori della pratica %s protocollo n. %s anno %s
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['Copia della ricevuta di versamento degli oneri di costruzione alla denuncia sopracitata|1','''Documentazione in ottemperanza all'art.90 del D.Lgs 9 aprile 2008, n 81 e s.m.i.|2''','''Autocertificazione della ditta esecutrice contenente i dati indispensabili al reperimento delle informazioni per l'acquisizione d'ufficio del DURC|3''']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -110,10 +114,6 @@ return 'Comunicazione di inizio lavori della pratica %s protocollo n. %s anno %s
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Copia della ricevuta di versamento degli oneri di costruzione alla denuncia sopracitata|1','''Documentazione in ottemperanza all'art.90 del D.Lgs 9 aprile 2008, n 81 e s.m.i.|2''','''Autocertificazione della ditta esecutrice contenente i dati indispensabili al reperimento delle informazioni per l'acquisizione d'ufficio del DURC|3''']</string></value>
 </member>
 <member>
 <name>widget</name>

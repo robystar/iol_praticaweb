@@ -67,9 +67,6 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_avvio_procedimento</span></p>
 <div class="row-fluid">
 <div class="span4">
-<span class="plominoLabelClass">allegato_stampa_avvio_procedimento</span><span class="plominoFieldClass">allegato_stampa_avvio_procedimento</span>
-</div>
-<div class="span4">
 <span class="plominoLabelClass">allegato_comunicazione_avvio_procedimento</span><span class="plominoFieldClass">allegato_comunicazione_avvio_procedimento</span>
 </div>
 </div>
@@ -218,6 +215,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('avvio-procedimento')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -225,10 +226,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('avvio-procedimento')</string></value>
 </member>
 </struct></value>
 </param>
@@ -282,7 +279,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="allegato_comunicazione_avvio_procedimento" title="Comunicazione firmata" type="PlominoField">
+        <element id="allegato_comunicazione_avvio_procedimento" title="Comunicazione firmata digitalmente" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_comunicazione_avvio_procedimento</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>

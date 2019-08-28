@@ -25,6 +25,7 @@ if context.getItem('oneri_calcolati_dg'):
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
+<div class="v-content well">
 <div class="row-fluid">
 <div class="span3">
 <span class="plominoLabelClass">oneri_b1</span><span class="plominoFieldClass">oneri_b1</span>
@@ -62,10 +63,13 @@ if context.getItem('oneri_calcolati_dg'):
 </div>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_edit</span></p>
-<div class="alert alert-error"><h5>ATTENZIONE: se sono presenti dei calcoli, al salvataggio i valori correnti di CC, B1 e B2 verranno aggionati con quelli calcolati</h5></div>
+<div class="alert alert-error">
+<h5>ATTENZIONE: se sono presenti dei calcoli, al salvataggio i valori correnti di CC, B1 e B2 verranno aggionati con quelli calcolati</h5>
+</div>
 <p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
 <p><span class="plominoLabelClass">oneri_calcolati_dg</span><span class="plominoFieldClass">oneri_calcolati_dg</span></p>
 <p><span class="plominoFieldClass">nascondi_modifica</span></p>
+</div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>

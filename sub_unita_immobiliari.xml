@@ -113,6 +113,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>&lt;br&gt;</string></value>
 </member>
 <member>
+<name>selectionlistformula</name>
+<value><string>['FABBRICATI','TERRENI']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -120,10 +124,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['FABBRICATI','TERRENI']</string></value>
 </member>
 <member>
 <name>widget</name>
