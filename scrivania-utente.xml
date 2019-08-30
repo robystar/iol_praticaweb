@@ -62,6 +62,18 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+<member>
+<name>sourceview</name>
+<value><string>vista-istanze-compilazione</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -89,18 +101,6 @@ resources/iol-custom.css]]></ResourcesCSS>
                  
 ]</string></value>
 </member>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-istanze-compilazione</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
-</member>
 </struct></value>
 </param>
 </params>
@@ -120,6 +120,18 @@ resources/iol-custom.css]]></ResourcesCSS>
           <params>
 <param>
 <value><struct>
+<member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+<member>
+<name>sourceview</name>
+<value><string>vista-istanze-protocollate</string></value>
+</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -150,18 +162,6 @@ resources/iol-custom.css]]></ResourcesCSS>
                  
 ]</string></value>
 </member>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-istanze-protocollate</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
-</member>
 </struct></value>
 </param>
 </params>
@@ -182,16 +182,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': false,
-'bLengthChange': false,
-'bProcessing': true,
-'bServerSide': true,
-'bFilter': false,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false          
-                 </string></value>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -202,8 +194,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>vista-istanze-da-protocollare</string></value>
 </member>
 <member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': false,
+'bLengthChange': false,
+'bProcessing': true,
+'bServerSide': true,
+'bFilter': false,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false          
+                 </string></value>
 </member>
 </struct></value>
 </param>

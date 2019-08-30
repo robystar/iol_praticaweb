@@ -128,8 +128,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_comunicazioni_cila</string></value>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -151,8 +151,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 </string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
+<name>associated_form</name>
+<value><string>dlg_comunicazioni_cila</string></value>
 </member>
 </struct></value>
 </param>

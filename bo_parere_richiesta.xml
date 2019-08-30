@@ -199,6 +199,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-parere')</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -206,10 +210,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-parere')</string></value>
 </member>
 </struct></value>
 </param>
@@ -395,15 +395,6 @@ except:
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>from iol.document.plomino_utils import elencoUtentiGruppi
 settings = context.getParentDatabase().resources.customscripts.getDocSettings()
@@ -412,6 +403,15 @@ if grp:
     return ['|'] + elencoUtentiGruppi(context,groups=[grp])
 else:
     return []</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -433,6 +433,18 @@ else:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['SELEZIONA OPZIONE DI PROTOCOLLAZIONE =&gt;|x','Dovrà essere protocollato in ingresso|1','NON dovrà essere protocollato in ingresso|2','Verrà protocollato manualmente|3']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -440,18 +452,6 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SELEZIONA OPZIONE DI PROTOCOLLAZIONE =&gt;|x','Dovrà essere protocollato in ingresso|1','NON dovrà essere protocollato in ingresso|2','Verrà protocollato manualmente|3']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
 </member>
 </struct></value>
 </param>

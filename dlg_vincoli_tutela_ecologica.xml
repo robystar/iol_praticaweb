@@ -72,6 +72,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['|','''fascia di rispetto dei depuratori (punto 1.2, allegato 4 della deliberazione 4 febbraio 1977 del Comitato dei Ministri per la tutela delle acque)|1''','''fascia di rispetto per pozzi e emergenze idriche (art. 94, commi 1 e 6, d.lgs. n. 152/2006)|2''','''Altro|0''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -79,14 +87,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['|','''fascia di rispetto dei depuratori (punto 1.2, allegato 4 della deliberazione 4 febbraio 1977 del Comitato dei Ministri per la tutela delle acque)|1''','''fascia di rispetto per pozzi e emergenze idriche (art. 94, commi 1 e 6, d.lgs. n. 152/2006)|2''','''Altro|0''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 </struct></value>
 </param>
@@ -157,6 +157,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''si autocertifica la conformità dell’intervento rispetto ai relativi vincoli;|1''','''si allega la documentazione necessaria ai fini del rilascio dei relativi atti di assenso;|2''','''il relativo atto di assenso è stato rilasciato con atto:|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -164,14 +172,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''si autocertifica la conformità dell’intervento rispetto ai relativi vincoli;|1''','''si allega la documentazione necessaria ai fini del rilascio dei relativi atti di assenso;|2''','''il relativo atto di assenso è stato rilasciato con atto:|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

@@ -195,6 +195,11 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>["Allegato|allegato","Verificato|verificato","Da Verificare|verifica","Mancante|mancante","Sostituito|sostituito","Da Integrare|attesa"]
+</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -202,11 +207,6 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>["Allegato|allegato","Verificato|verificato","Da Verificare|verifica","Mancante|mancante","Sostituito|sostituito","Da Integrare|attesa"]
-</string></value>
 </member>
 </struct></value>
 </param>

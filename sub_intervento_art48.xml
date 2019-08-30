@@ -69,6 +69,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''già accatastate all'epoca della loro esecuzione e munite di certificato di abitabilità/agibilità (art 48 comma 1)|1''','''non accatastate all'epoca della loro realizzazione o non risultanti dal certificato di abitabilità/agibilità (art 48 comma 2)|2''','''concretano variazioni in aumento della superficie della costruzione o dell'unità immobiliare (art 48 comma 3)|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -76,14 +84,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''già accatastate all'epoca della loro esecuzione e munite di certificato di abitabilità/agibilità (art 48 comma 1)|1''','''non accatastate all'epoca della loro realizzazione o non risultanti dal certificato di abitabilità/agibilità (art 48 comma 2)|2''','''concretano variazioni in aumento della superficie della costruzione o dell'unità immobiliare (art 48 comma 3)|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -105,6 +105,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['SI','NO']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -112,14 +120,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['SI','NO']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -141,6 +141,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['le opere sono state eseguite prima del 1 settembre 1967;|1','le opere erano in corso di realizzazione alla data del 1 settembre 1967 (con titolo edilizio rilasciato in data antecedente);|2']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -148,14 +156,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['le opere sono state eseguite prima del 1 settembre 1967;|1','le opere erano in corso di realizzazione alla data del 1 settembre 1967 (con titolo edilizio rilasciato in data antecedente);|2']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -204,6 +204,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -211,10 +215,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
 </member>
 </struct></value>
 </param>

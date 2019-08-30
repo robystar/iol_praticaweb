@@ -56,15 +56,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['''è dotata delle opere di urbanizzazione primaria|1''','''non è dotata delle opere di urbanizzazione primaria e la loro attuazione è prevista da parte dell’amministrazione comunale nel corso del prossimo triennio ovvero la loro attuazione è prevista nella convenzione stipulata in data:|2''']
 </string></value>
@@ -72,6 +63,15 @@ resources/iol-custom.css]]></ResourcesCSS>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>

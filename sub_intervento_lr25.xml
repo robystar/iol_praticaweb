@@ -93,15 +93,6 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''La legittimità urbanistica della destinazione d'uso in atto;|1''',
@@ -116,6 +107,15 @@ for m in mandatory:
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -137,6 +137,14 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['la nuova destinazione rientra tra quelle ammesse dal P.U.C. vigente|1']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -144,14 +152,6 @@ for m in mandatory:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['la nuova destinazione rientra tra quelle ammesse dal P.U.C. vigente|1']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -231,6 +231,10 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -238,10 +242,6 @@ for m in mandatory:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
 </member>
 </struct></value>
 </param>

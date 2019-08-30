@@ -47,8 +47,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_activity</string></value>
+<name>field_mapping</name>
+<value><string>date_time,activity,userid,notify_to,priority</string></value>
 </member>
 <member>
 <name>associated_form_rendering</name>
@@ -76,8 +76,8 @@ resources/iol-custom.css]]></ResourcesCSS>
 </string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>date_time,activity,userid,notify_to,priority</string></value>
+<name>associated_form</name>
+<value><string>dlg_activity</string></value>
 </member>
 </struct></value>
 </param>

@@ -73,6 +73,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''è a titolo gratuito|1''','''è a titolo oneroso ai sensi dell'art. 38 l.r. n. 16/2008 e s.m.|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -80,14 +88,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''è a titolo gratuito|1''','''è a titolo oneroso ai sensi dell'art. 38 l.r. n. 16/2008 e s.m.|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -109,6 +109,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''chiede allo Sportello unico di effettuare il calcolo del contributo di costruzione e a tal fine allega la documentazione tecnica necessaria alla sua determinazione|1''','''allega il prospetto di calcolo preventivo del contributo di costruzione a firma del tecnico abilitato|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -116,14 +124,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''chiede allo Sportello unico di effettuare il calcolo del contributo di costruzione e a tal fine allega la documentazione tecnica necessaria alla sua determinazione|1''','''allega il prospetto di calcolo preventivo del contributo di costruzione a firma del tecnico abilitato|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -145,15 +145,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll=['''si allega l’attestazione del completo versamento del contributo dovuto ovvero si procede al pagamento online;|1''']
 if context.getItem('atti_assenso_opt','3')=='3':
@@ -166,6 +157,15 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -216,15 +216,6 @@ return context.getItem('contributo_costruzione_opt','')!='1' or tipo in ['pdc','
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['''si impegna a corrispondere il costo di costruzione in corso di esecuzione delle opere, con le modalità e le garanzie stabilite dal Comune|1''','''chiede la rateizzazione degli oneri di urbanizzazione, e pertanto:|2''']
 </string></value>
@@ -232,6 +223,15 @@ return context.getItem('contributo_costruzione_opt','')!='1' or tipo in ['pdc','
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -253,15 +253,6 @@ return context.getItem('contributo_costruzione_opt','')!='1' or tipo in ['pdc','
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll=['''si allega l’attestazione del versamento della prima rata ovvero si procede mediante pagamento online.|1''']
 if context.getItem('atti_assenso_opt','3')=='3':
@@ -272,6 +263,15 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>

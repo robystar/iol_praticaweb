@@ -84,15 +84,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>from iol.document.plomino_utils import elencoGruppi
 return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
@@ -105,6 +96,15 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -126,15 +126,6 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>from iol.document.plomino_utils import elencoGruppi
 return elencoGruppi(context)</string></value>
@@ -147,6 +138,15 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -168,15 +168,6 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>from iol.document.plomino_utils import elencoGruppi
 return elencoGruppi(context)</string></value>
@@ -189,6 +180,15 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -210,15 +210,6 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>from iol.document.plomino_utils import elencoGruppi
 return elencoGruppi(context)</string></value>
@@ -231,6 +222,15 @@ return elencoGruppi(context)</string></value>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -252,16 +252,12 @@ return elencoGruppi(context)</string></value>
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_mail_settings</string></value>
+<name>field_mapping</name>
+<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
 </member>
 <member>
 <name>associated_form_rendering</name>
 <value><string>MODAL</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -283,8 +279,12 @@ return elencoGruppi(context)</string></value>
 </string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
+<name>associated_form</name>
+<value><string>dlg_mail_settings</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
 </param>

@@ -112,6 +112,14 @@
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''pannelli solari termici o impianti fotovoltaici di qualsiasi potenza, integrati o aderenti con la stessa inclinazione e lo stesso orientamento della copertura, purche' di superficie non superiore a quella del tetto dell'edificio;|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -119,14 +127,6 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''pannelli solari termici o impianti fotovoltaici di qualsiasi potenza, integrati o aderenti con la stessa inclinazione e lo stesso orientamento della copertura, purche' di superficie non superiore a quella del tetto dell'edificio;|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -148,6 +148,14 @@
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti solari termici, da realizzare su edifici o altre strutture esistenti o loro pertinenze al di fuori della zona A di cui al decreto del Ministro dei lavori pubblici 1444/1968;|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -155,14 +163,6 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''impianti solari termici, da realizzare su edifici o altre strutture esistenti o loro pertinenze al di fuori della zona A di cui al decreto del Ministro dei lavori pubblici 1444/1968;|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -193,6 +193,14 @@ else:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti di produzione di energia termica da fonti rinnovabili  realizzati negli edifici esistenti e negli spazi liberi privati annessi e destinati unicamente alla produzione di acqua calda e di aria per utilizzo nei medesimi edifici;|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -200,14 +208,6 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''impianti di produzione di energia termica da fonti rinnovabili  realizzati negli edifici esistenti e negli spazi liberi privati annessi e destinati unicamente alla produzione di acqua calda e di aria per utilizzo nei medesimi edifici;|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -229,6 +229,14 @@ else:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''generatori eolici con altezza complessiva non superiore a 1,5 metri e diametro non superiore a 1 metro;|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -236,14 +244,6 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''generatori eolici con altezza complessiva non superiore a 1,5 metri e diametro non superiore a 1 metro;|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -265,6 +265,14 @@ else:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti alimentati da biomasse, gas di discarica, gas residuati da processi di depurazione e biogas operanti in assetto cogenerativo e aventi capacita' di generazione massima inferiore a 50 kWe (micro cogenerazione);|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -272,14 +280,6 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''impianti alimentati da biomasse, gas di discarica, gas residuati da processi di depurazione e biogas operanti in assetto cogenerativo e aventi capacita' di generazione massima inferiore a 50 kWe (micro cogenerazione);|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -301,15 +301,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''impianti alimentati da biomasse, gas di discarica, gas residuati da processi di depurazione e biogas, aventi capacita' di generazione compatibile con il regime di scambio sul posto, da realizzare all'interno di edifici esistenti, purche' non comportanti alterazione dei volumi o delle superfici, modifiche delle destinazioni d’uso, che non riguardino le parti strutturali dell'edificio, non comportino aumento del numero delle unita' immobiliari e non implichino incremento dei parametri urbanistici;|1'''
@@ -318,6 +309,15 @@ else:
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -339,15 +339,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''impianti idroelettrici e geotermoelettrici, aventi una capacita' di generazione compatibile con il regime di scambio sul posto, da realizzare in edifici esistenti, purche' non comportanti realizzazione di nuove opere di presa, alterazione dei volumi o delle superfici, modifiche delle destinazioni d'uso, che non riguardino le parti strutturali dell'edificio, non comportino aumento del numero delle unita' immobiliari e non implichino incremento dei parametri urbanistici.|1'''
@@ -356,6 +347,15 @@ else:
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -407,6 +407,14 @@ else:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''impianti fotovoltaici di qualsiasi potenza, anche con caratteristiche diverse da quelle di cui al punto 1, da realizzare su edifici o altre strutture esistenti o loro pertinenze;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -414,14 +422,6 @@ else:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''impianti fotovoltaici di qualsiasi potenza, anche con caratteristiche diverse da quelle di cui al punto 1, da realizzare su edifici o altre strutture esistenti o loro pertinenze;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>

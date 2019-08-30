@@ -58,6 +58,10 @@
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>["CARTA DI IDENTITÀ","PASSAPORTO"," PATENTE DI GUIDA","ALTRO"]</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -65,10 +69,6 @@
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>["CARTA DI IDENTITÀ","PASSAPORTO"," PATENTE DI GUIDA","ALTRO"]</string></value>
 </member>
 </struct></value>
 </param>

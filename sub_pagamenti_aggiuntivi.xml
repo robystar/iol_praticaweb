@@ -64,8 +64,8 @@ for row in rows:
 <param>
 <value><struct>
 <member>
-<name>associated_form</name>
-<value><string>dlg_importi</string></value>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
 </member>
 <member>
 <name>jssettings</name>
@@ -89,8 +89,8 @@ for row in rows:
 </string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
+<name>associated_form</name>
+<value><string>dlg_importi</string></value>
 </member>
 </struct></value>
 </param>

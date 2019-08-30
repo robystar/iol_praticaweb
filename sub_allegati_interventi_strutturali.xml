@@ -11,10 +11,17 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border"> Interventi strutturali e/o in zona sismica</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_denuncia_sismica</span></p>
+<div class="alert alert-info">Compilare ed allegare il Modulo di Denuncia Sismica integrata relativo al tipo di intervento eseguito, utilizzando la modulistica scaricabile al seguente indirizzo: <a href="https://www.regione.liguria.it/homepage/territorio/urbanistica/moduli-unificati-e-standardizzati-per-la-presentazione-di-segnalazioni-e-istanze-edilizie.html" target="blank_">https://www.regione.liguria.it/homepage/territorio/urbanistica/moduli-unificati-e-standardizzati-per-la-presentazione-di-segnalazioni-e-istanze-edilizie.html</a>
+</div>
+<p><span class="plominoLabelClass">allegato_denuncia_sismica</span><span class="plominoFieldClass">allegato_denuncia_sismica</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_denuncia_sismica</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_doc_denuncia_art65</span></p>
-<span class="plominoLabelClass">allegato_doc_denuncia_art65</span><span class="plominoFieldClass">allegato_doc_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_doc_denuncia_art65</span><span class="plominoFieldClass">allegato_doc_denuncia_art65</span>
+<p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_art65</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_denuncia_art65</span></p>
-<span class="plominoLabelClass">allegato_denuncia_art65</span><span class="plominoFieldClass">allegato_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_denuncia_art65</span><span class="plominoFieldClass">allegato_denuncia_art65</span>
+<p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_denuncia_lavori_sismica</span></p>
 <p><span class="plominoLabelClass">allegato_denuncia_lavori_sismica</span><span class="plominoFieldClass">allegato_denuncia_lavori_sismica</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_denuncia_lavori_sismica</span></p>
@@ -30,11 +37,6 @@
 <p><span class="plominoHidewhenClass">start:hw_no_ricevuta_dsi</span></p>
 <p><span class="plominoLabelClass">allegato_ricevuta_spese_istruttoria</span><span class="plominoFieldClass">allegato_ricevuta_spese_istruttoria</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_ricevuta_dsi</span></p>
-<p><span class="plominoHidewhenClass">start:hw_no_denuncia_sismica</span></p>
-<div class="alert alert-info">Compilare ed allegare il Modulo di Denuncia Sismica integrata relativo al tipo di intervento eseguito, utilizzando la modulistica scaricabile al seguente indirizzo: <a href="https://www.regione.liguria.it/homepage/territorio/urbanistica/moduli-unificati-e-standardizzati-per-la-presentazione-di-segnalazioni-e-istanze-edilizie.html" target="blank_">https://www.regione.liguria.it/homepage/territorio/urbanistica/moduli-unificati-e-standardizzati-per-la-presentazione-di-segnalazioni-e-istanze-edilizie.html</a>
-</div>
-<p><span class="plominoLabelClass">allegato_denuncia_sismica</span><span class="plominoFieldClass">allegato_denuncia_sismica</span></p>
-<p><span class="plominoHidewhenClass">end:hw_no_denuncia_sismica</span></p>
 <p><span class="plominoHidewhenClass">start:hw_interventistrutturali</span></p>
 <div class="text-label">Nessun documento da allegare</div>
 <p><span class="plominoHidewhenClass">end:hw_interventistrutturali</span></p>
@@ -161,7 +163,7 @@ data-tooltip = "firmato digitalmente max 10Mb"
         </element>
         <element id="hw_no_doc_denuncia_lavori_sismica" title="hw_no_doc_denuncia_lavori_sismica" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_doc_denuncia_lavori_sismica</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('interventi_strutturali_opt','')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('interventi_strutturali_opt','')=='3' and context.getItem('documentazione_dsi_opt','')=='1')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_autorizzazione_sismica" title="hw_no_autorizzazione_sismica" type="PlominoHidewhen">

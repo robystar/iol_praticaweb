@@ -15,13 +15,22 @@
 <span class="plominoLabelClass">conglomerato_opt</span><span class="plominoFieldClass">conglomerato_opt</span>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_denuncia_art65</span></p>
-<div class="row-fluid riquadro"><div class="span11 offset1">
+<div class="row-fluid riquadro">
+<div class="span11 offset1">
 <span class="plominoLabelClass">denuncia_art65_opt</span><span class="plominoFieldClass">denuncia_art65_opt</span>
-</div></div>
+</div>
+</div>
 <p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
 <div>
 <span class="plominoLabelClass">interventi_strutturali_opt</span><span class="plominoFieldClass">interventi_strutturali_opt</span>
 </div>
+<p><span class="plominoHidewhenClass">start:hw_no_documentazione_dsi</span></p>
+<div class="row-fluid riquadro">
+<div class="span11 offset1">
+<span class="plominoLabelClass">documentazione_dsi_opt</span><span class="plominoFieldClass">documentazione_dsi_opt</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_documentazione_dsi</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_interventi_strutturali_variante</span></p>
 <div class="row-fluid">
 <div class="span3">
@@ -70,15 +79,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll=['''non prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a struttura metallica;|1''']
 if context.getItem('iol_tipo_app','pdc')=='pdc':
@@ -91,6 +91,15 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -117,6 +126,14 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''si allega la documentazione relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001;|1''','''la documentazione tecnica relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001 sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -124,14 +141,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''si allega la documentazione relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001;|1''','''la documentazione tecnica relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001 sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -153,15 +162,6 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['''non prevede opere da denunciare o autorizzare ai sensi degli articoli 93 e 94 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione);|1''','''costituisce una variante non sostanziale riguardante parti non strutturali relativa ad un progetto esecutivo delle strutture precedentemente presentato con atto:|2''','''prevede opere in zona sismica da denunciare ai sensi dell'articolo 93 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione), pertanto si allega la documentazione relativa alla denuncia dei lavori in zona sismica;|3''','''prevede opere strutturali soggette ad autorizzazione sismica ai sensi dell'articolo 94 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r. 29/1983 e relativi provvedimenti di attuazione), pertanto si allega la documentazione necessaria per il rilascio dell’autorizzazione sismica;|4''']
     
@@ -170,6 +170,15 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -196,6 +205,14 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''si allega la documentazione relativa alla denuncia dei lavori in zona sismica;|1''','''la documentazione relativa alla denuncia dei lavori in zona sismica sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -203,14 +220,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''si allega la documentazione relativa alla denuncia dei lavori in zona sismica;|1''','''la documentazione relativa alla denuncia dei lavori in zona sismica sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -273,6 +282,47 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_documentazione_dsi" title="hw_no_documentazione_dsi" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_documentazione_dsi</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('interventi_strutturali_opt','')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="documentazione_dsi_opt" title="pertanto in relazione alla denuncia dei lavori in zona sismica:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">documentazione_dsi_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''si allega la documentazione tecnica relativa alla denuncia dei lavori in zona sismica;|1''','''la documentazione tecnica relativa alla denuncia dei lavori in zona sismica sarà allegata alla comunicazione di inizio lavori;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
         </element>
       </elements>
     </element>

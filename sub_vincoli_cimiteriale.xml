@@ -62,6 +62,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['''non ricade nella fascia di rispetto;|1''','''ricade nella fascia di rispetto ed è consentito;|2''','''ricade in fascia di rispetto cimiteriale e non è consentito, pertanto si allega la documentazione necessaria per la richiesta di deroga|3''','''Il documento di deroga è stato rilasciato con atto:|4''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -69,14 +77,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''non ricade nella fascia di rispetto;|1''','''ricade nella fascia di rispetto ed è consentito;|2''','''ricade in fascia di rispetto cimiteriale e non è consentito, pertanto si allega la documentazione necessaria per la richiesta di deroga|3''','''Il documento di deroga è stato rilasciato con atto:|4''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

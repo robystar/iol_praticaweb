@@ -86,6 +86,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -93,14 +101,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -122,6 +122,14 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''ALLEGA LA SCHEDA E contenente i dati e le informazioni inerenti l’impatto acustico;|1''','''DICHIARA l’invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 “Titoli abilitativi in materia ambientale” relativamente all’impatto acustico;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -129,14 +137,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''ALLEGA LA SCHEDA E contenente i dati e le informazioni inerenti l’impatto acustico;|1''','''DICHIARA l’invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 “Titoli abilitativi in materia ambientale” relativamente all’impatto acustico;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>

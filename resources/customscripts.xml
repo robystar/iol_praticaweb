@@ -743,6 +743,9 @@ else:
 ##parameters=doc=None
 ##title=Vero se abilitato il pagamento con PagoPa
 ##
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+
 # Vero se abilitato il pagamento con PagoPa
 if context.getParentDatabase().resources.config().get('pagopa'):
     return doc.isDocument() and doc.getItem('pagopa_enabled')==1

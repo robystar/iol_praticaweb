@@ -13,14 +13,14 @@ dz = dict(
  
 versionenuova=1,                   
          
-pagopa = False, #PagoPA Abilitato
+pagopa = True, #PagoPA Abilitato
 
 provider='sue', #Per abilitare BO Praticaweb impostare praticaweb
 
 doc_settings = "0-settings", #id del documento dove sono salvati i settings  
 #ws servizio backoffice pratiche        
 #wsUrl = "http://webservice.gisweb.it/wspraticaweb/andora.wsPraticaweb.php?wsdl",
-wsUrl = "http://webservice.gisweb.it/wspraticaweb/demo.wsPraticaweb.php?wsdl",
+#wsUrl = "http://webservice.gisweb.it/wspraticaweb/demo.wsPraticaweb.php?wsdl",
   
 #elenco dei comuni in combo    
 elenco_comuni = ['Andora|A278','Cesio|C578','Chiusanico|C657','Stellanello|I947','Testico|L152'],

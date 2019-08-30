@@ -170,6 +170,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return ['Persona Fisica|F','Persona Giuridica|G']</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -177,10 +181,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Persona Fisica|F','Persona Giuridica|G']</string></value>
 </member>
 </struct></value>
 </param>
@@ -259,6 +259,11 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -266,11 +271,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -365,6 +365,11 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -372,11 +377,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -448,6 +448,11 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -455,11 +460,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -531,6 +531,11 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -538,11 +543,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -614,6 +614,11 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_importi()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -621,11 +626,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_importi()</string></value>
 </member>
 </struct></value>
 </param>
@@ -647,15 +647,6 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Aggiungi un pagamento|1</string></value>
@@ -664,6 +655,15 @@ return cls.codici_importi()</string></value>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -685,6 +685,14 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -692,14 +700,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -721,6 +721,14 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -728,14 +736,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -757,6 +757,14 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -764,14 +772,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>
@@ -813,6 +813,11 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
+return cls.codici_metodi_pagamento()</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -820,11 +825,6 @@ return cls.codici_importi()</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>cls = context.getParentDatabase().resources.cls_pagopa()
-return cls.codici_metodi_pagamento()</string></value>
 </member>
 </struct></value>
 </param>

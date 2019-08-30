@@ -73,15 +73,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll=['''non necessita di autorizzazione allo scarico|1''']
 if context.getItem('iol_tipo_proc','suap')=='suap':
@@ -93,6 +84,15 @@ return ll</string></value>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
@@ -114,6 +114,14 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''Scarico in pubblica fognatura ai sensi del d.lgs. n. 152/2006 e della l.r. n. 43/1995|1''','''Scarico in acque superficiali, sul suolo e negli strati superficiali del sottosuolo ai sensi del d.lgs. n. 152/2006|2''','''Allaccio in pubblica fognatura ai sensi della l.r. 43/1995|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -121,14 +129,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Scarico in pubblica fognatura ai sensi del d.lgs. n. 152/2006 e della l.r. n. 43/1995|1''','''Scarico in acque superficiali, sul suolo e negli strati superficiali del sottosuolo ai sensi del d.lgs. n. 152/2006|2''','''Allaccio in pubblica fognatura ai sensi della l.r. 43/1995|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>
@@ -150,6 +150,14 @@ return ll</string></value>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''si allega la documentazione necessaria ai fini del rilascio dell'autorizzazione|1''','''la relativa autorizzazione è stata ottenuta con atto:|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -157,14 +165,6 @@ return ll</string></value>
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''si allega la documentazione necessaria ai fini del rilascio dell'autorizzazione|1''','''la relativa autorizzazione è stata ottenuta con atto:|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 </struct></value>
 </param>

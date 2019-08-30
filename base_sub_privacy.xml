@@ -70,6 +70,14 @@ Il cittadino/L’interessato può:
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>['''Ho letto l'informativa sulla privacy ed accetto le condizioni|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -77,14 +85,6 @@ Il cittadino/L’interessato può:
 'bSort': true,
 'bInfo': true,
 'bAutoWidth': false</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Ho letto l'informativa sulla privacy ed accetto le condizioni|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
 </param>

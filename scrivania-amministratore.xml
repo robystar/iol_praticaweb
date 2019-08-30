@@ -57,6 +57,18 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+<member>
+<name>sourceview</name>
+<value><string>vista-tutte-istanze</string></value>
+</member>
+<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'alengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
@@ -84,18 +96,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 { "aTargets": [ 3 ], "bSortable": false }         
                  
 ]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-tutte-istanze</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
 </member>
 </struct></value>
 </param>
