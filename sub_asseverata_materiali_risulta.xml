@@ -71,12 +71,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''non sono soggette alla normativa relativa ai materiali da scavo (art. 41-bis D.L. n. 69 del 2013 e art. 184-bis d.lgs. n. 152 del 2006);|1''','''comportano la produzione di materiali da scavo considerati come sottoprodotti ai sensi dell’articolo 184-bis, comma 1, del d.lgs. n. 152/2006, dell’articolo 41-bis, comma 1, D.L. n. 69 del 2013 e del d.m. n. 161/2012;|2''','''comportano la produzione di materiali da scavo che saranno riutilizzati nello stesso luogo di produzione;|3''','''riguardano interventi di demolizione di edifici o altri manufatti preesistenti e producono rifiuti la cui gestione e' disciplinata ai sensi della parte quarta del d.lgs. n. 152/ 2006;|4''','''comportano la produzione di materiali da scavo che saranno gestiti dall'interessato come rifiuti;|5''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non sono soggette alla normativa relativa ai materiali da scavo (art. 41-bis D.L. n. 69 del 2013 e art. 184-bis d.lgs. n. 152 del 2006);|1''','''comportano la produzione di materiali da scavo considerati come sottoprodotti ai sensi dell’articolo 184-bis, comma 1, del d.lgs. n. 152/2006, dell’articolo 41-bis, comma 1, D.L. n. 69 del 2013 e del d.m. n. 161/2012;|2''','''comportano la produzione di materiali da scavo che saranno riutilizzati nello stesso luogo di produzione;|3''','''riguardano interventi di demolizione di edifici o altri manufatti preesistenti e producono rifiuti la cui gestione e' disciplinata ai sensi della parte quarta del d.lgs. n. 152/ 2006;|4''','''comportano la produzione di materiali da scavo che saranno gestiti dall'interessato come rifiuti;|5''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -107,12 +107,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''le opere comportano la produzione di materiali da scavo per un volume inferiore o uguale a 6000 mc ovvero (pur superando tale soglia) non sono soggette a VIA o AIA e pertanto si allega autocertificazione del titolare resa all'ARPAL ai sensi della D.G.R. n. 1423/2013;|1''','''le opere comportano la produzione di materiali da scavo per un volume superiore a 6000 mc e sono soggette a VIA o AIA, e pertanto, ai sensi dell’art. 184-bis, comma 2-bis del d.lgs. n. 152/2006, e del d.m. n. 161/2012 si prevede la realizzazione del Piano di Utilizzo;|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''le opere comportano la produzione di materiali da scavo per un volume inferiore o uguale a 6000 mc ovvero (pur superando tale soglia) non sono soggette a VIA o AIA e pertanto si allega autocertificazione del titolare resa all'ARPAL ai sensi della D.G.R. n. 1423/2013;|1''','''le opere comportano la produzione di materiali da scavo per un volume superiore a 6000 mc e sono soggette a VIA o AIA, e pertanto, ai sensi dell’art. 184-bis, comma 2-bis del d.lgs. n. 152/2006, e del d.m. n. 161/2012 si prevede la realizzazione del Piano di Utilizzo;|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -143,12 +143,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''si allega/si comunicano gli estremi del provvedimento di VIA o AIA, comprensivo dell'assenso al Piano di Utilizzo dei materiali da scavo|1''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''si allega/si comunicano gli estremi del provvedimento di VIA o AIA, comprensivo dell'assenso al Piano di Utilizzo dei materiali da scavo|1''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -231,12 +231,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''allega autocertificazione del titolare (che i materiali da scavo saranno riutilizzati nello stesso luogo di produzione)|1''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''allega autocertificazione del titolare (che i materiali da scavo saranno riutilizzati nello stesso luogo di produzione)|1''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

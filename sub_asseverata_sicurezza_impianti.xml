@@ -61,12 +61,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''non comporta l'installazione, la trasformazione o l'ampliamento di impianti tecnologici;|1''','''comporta l'installazione, la trasformazione o l'ampliamento dei seguenti impianti tecnologici:|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''non comporta l'installazione, la trasformazione o l'ampliamento di impianti tecnologici;|1''','''comporta l'installazione, la trasformazione o l'ampliamento dei seguenti impianti tecnologici:|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -97,12 +97,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''di produzione, trasformazione, trasporto, distribuzione, utilizzazione dell'energia elettrica, di protezione contro le scariche atmosferiche, di automazione di porte, cancelli e barriere|1''','''radiotelevisivi, antenne ed elettronici in genere|2''','''di riscaldamento, di climatizzazione, di condizionamento e di refrigerazione di qualsiasi natura o specie, comprese le opere di evacuazione dei prodotti della combustione e delle condense, e di ventilazione ed aerazione dei locali|3''','''idrici e sanitari di qualsiasi natura o specie|4''','''per la distribuzione e l'utilizzazione di gas di qualsiasi tipo, comprese le opere di evacuazione dei prodotti della combustione e ventilazione ed aerazione dei locali|5''','''impianti di sollevamento di persone o di cose per mezzo di ascensori, di montacarichi, di scale mobili e simili|6''','''di protezione antincendio|7''','''altre tipologie di impianti, anche definite dalla corrispondente normativa regionale|8''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''di produzione, trasformazione, trasporto, distribuzione, utilizzazione dell'energia elettrica, di protezione contro le scariche atmosferiche, di automazione di porte, cancelli e barriere|1''','''radiotelevisivi, antenne ed elettronici in genere|2''','''di riscaldamento, di climatizzazione, di condizionamento e di refrigerazione di qualsiasi natura o specie, comprese le opere di evacuazione dei prodotti della combustione e delle condense, e di ventilazione ed aerazione dei locali|3''','''idrici e sanitari di qualsiasi natura o specie|4''','''per la distribuzione e l'utilizzazione di gas di qualsiasi tipo, comprese le opere di evacuazione dei prodotti della combustione e ventilazione ed aerazione dei locali|5''','''impianti di sollevamento di persone o di cose per mezzo di ascensori, di montacarichi, di scale mobili e simili|6''','''di protezione antincendio|7''','''altre tipologie di impianti, anche definite dalla corrispondente normativa regionale|8''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -133,12 +133,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''non è soggetto agli obblighi di presentazione del progetto;|1''','''è soggetto agli obblighi di presentazione del progetto e pertanto allega i relativi elaborati;|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non è soggetto agli obblighi di presentazione del progetto;|1''','''è soggetto agli obblighi di presentazione del progetto e pertanto allega i relativi elaborati;|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

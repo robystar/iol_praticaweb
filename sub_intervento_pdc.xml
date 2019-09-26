@@ -9,14 +9,17 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
-		  <fieldset class="scheduler-border">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">QUALIFICAZIONE DELL'INTERVENTO</legend>
 <div>
 <span class="plominoLabelClass">qualificazione_intervento_opt</span><span class="plominoFieldClass">qualificazione_intervento_opt</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_specificare</span><p><span class="plominoLabelClass">qualificazione_intervento_specificare</span><span class="plominoFieldClass">qualificazione_intervento_specificare</span></p>
-<span class="plominoHidewhenClass">end:hw_no_specificare</span><p><span class="plominoHidewhenClass">start:hw_no_deroga_urbanistica</span></p>
+<span class="plominoHidewhenClass">start:hw_no_specificare</span>
+<p><span class="plominoLabelClass">qualificazione_intervento_specificare</span><span class="plominoFieldClass">qualificazione_intervento_specificare</span></p>
+<span class="plominoHidewhenClass">end:hw_no_specificare</span>
+<p><span class="plominoHidewhenClass">start:hw_no_deroga_urbanistica</span></p>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">In particolare si chiede di derogare:</legend>
 <div class="row-fluid">
@@ -54,8 +57,8 @@
 </fieldset>
 <p><span class="plominoHidewhenClass">end:hw_no_variazione_essenziale</span></p>
 <p><span class="plominoSubformClass">sub_qualificazione_suap</span></p>
-</fieldset>
-</div>]]></FormLayout>
+</fieldset></div>
+]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -93,12 +96,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''interventi di cui all’articolo 10 del d.P.R. n. 380/2001|1''','''interventi di nuova costruzione di cui all’articolo 14 l.r. 16/2008|2''','''interventi assoggettati a Segnalazione Certificata di Inizio Attività per i quali, ai sensi dell’art. 22, comma 7 del d.P.R. n. 380/2001 è facoltà dell’avente titolo richiedere il rilascio del permesso di costruire|3''','''intervento realizzato, ai sensi dell’articolo 36, comma 1 del d.P.R. n. 380/2001, e conforme alla disciplina urbanistica ed edilizia vigente sia al momento della realizzazione, sia al momento della presentazione della richiesta|4''','''intervento in deroga alle previsioni degli strumenti di pianificazione urbanistica vigenti, ai sensi dell’art. 14 del d.P.R. n. 380/2001. In particolare si chiede di derogare:|5''','''intervento in deroga alle previsioni degli strumenti di pianificazione urbanistica in applicazione di legge regionale|6''','''variazione essenziale e/o sostanziale|7''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''interventi di cui all’articolo 10 del d.P.R. n. 380/2001|1''','''interventi di nuova costruzione di cui all’articolo 14 l.r. 16/2008|2''','''interventi assoggettati a Segnalazione Certificata di Inizio Attività per i quali, ai sensi dell’art. 22, comma 7 del d.P.R. n. 380/2001 è facoltà dell’avente titolo richiedere il rilascio del permesso di costruire|3''','''intervento realizzato, ai sensi dell’articolo 36, comma 1 del d.P.R. n. 380/2001, e conforme alla disciplina urbanistica ed edilizia vigente sia al momento della realizzazione, sia al momento della presentazione della richiesta|4''','''intervento in deroga alle previsioni degli strumenti di pianificazione urbanistica vigenti, ai sensi dell’art. 14 del d.P.R. n. 380/2001. In particolare si chiede di derogare:|5''','''intervento in deroga alle previsioni degli strumenti di pianificazione urbanistica in applicazione di legge regionale|6''','''variazione essenziale e/o sostanziale|7''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -209,12 +212,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Titolo unico|1','','Permesso di costruire|2','Segnalazione certificata/denuncia di inizio attività alternativa al permesso di costruire|3']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Titolo unico|1','','Permesso di costruire|2','Segnalazione certificata/denuncia di inizio attività alternativa al permesso di costruire|3']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -260,16 +263,16 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>startingyear</name>
-<value><string>1950</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>startingyear</name>
+<value><string>1950</string></value>
 </member>
 </struct></value>
 </param>

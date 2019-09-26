@@ -12,7 +12,7 @@
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border" title="Richiedente">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend>
 <div>
-<span class="plominoLabelClass">tipo_pratica</span><span class="plominoFieldClass">tipo_pratica</span>
+<span class="plominoLabelClass">iol_tipo_app</span><span class="plominoFieldClass">iol_tipo_app</span>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_altrotipo</span></p>
 <div>
@@ -57,8 +57,8 @@
 ++resource++iol.document/css/iol.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="tipo_pratica" title="Tipo di pratica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">tipo_pratica</id>
+        <element id="iol_tipo_app" title="Tipo di pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -73,12 +73,15 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_tipo_pratica()</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>if 'tipo_pratica' in context.getParentDatabase().resources.config():
+    return context.getParentDatabase().resources.config().get('tipo_pratica')
+else:
+    return []</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -109,6 +112,10 @@
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
     'CIL|cil',
@@ -127,10 +134,6 @@
     'Fine lavori|finelavori',
     'Integrazione|integrazione',
 ]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -254,7 +257,7 @@
         </element>
         <element id="hw_no_altrotipo" title="hw_no_altrotipo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_altrotipo</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_pratica')!='altro']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app')!='altro']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="tipo_pratica_altro" title="Altro tipo di pratica (archiviate)" type="PlominoField">

@@ -108,12 +108,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -135,12 +135,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -163,12 +163,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -190,12 +190,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -217,12 +217,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -245,12 +245,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -272,12 +272,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -341,12 +341,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -410,12 +410,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -480,12 +480,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -545,6 +545,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>REGULAR</string></value>
+</member>
+<member>
+<name>associated_form</name>
+<value><string>dlg_calcolo_oneri</string></value>
+</member>
+<member>
 <name>field_mapping</name>
 <value><string>tariffa,classe,elenco_c1,elenco_c4,elenco_c5,elenco_d1,elenco_d2,tipo_intervento,perc_intervento,sup,cc,b1,b2,nocc,classe_precedente</string></value>
 </member>
@@ -577,14 +585,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
     }
 </string></value>
 </member>
-<member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_calcolo_oneri</string></value>
-</member>
 </struct></value>
 </param>
 </params>
@@ -605,12 +605,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>Mq %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>

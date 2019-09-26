@@ -10,22 +10,23 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<fieldset class="scheduler-border">
-<legend class="scheduler-border">Dati identificativi della pratica</legend>
-<div class="v-content well"><span class="plominoSubformClass">base_sub_protocollo</span></div>
-<div class="v-content well"><span class="plominoSubformClass">sub_dati_pratica</span></div>
-</fieldset>
+<p><span class="plominoSubformClass">base_sub_protocollo</span></p>
+<p><span class="plominoFieldClass">accertamento</span></p>
 <p><span class="plominoFieldClass">pagamenti</span></p>
-<!-- ISTRUTTORIA --><p><span class="plominoFieldClass">istruttoria</span></p>
-<!-- READERS  --><p><span class="plominoFieldClass">utenti_readers</span></p>
-<!-- RESPONSABILE DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
+<p><span class="plominoFieldClass">riferimenti_integrazione</span></p>
+<p><span class="plominoFieldClass">riferimenti_delega</span></p>
+<p><span class="plominoFieldClass">autorizzazione</span></p>
+<p><span class="plominoFieldClass">istruttoria</span></p>
+<!-- ASSEGNAZIONE DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
 <!-- AVVIO DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">avvio_procedimento</span></p>
-<!-- ELENCO INTEGRAZIONI --><p><span class="plominoFieldClass">elenco_integrazioni</span></p>
-<!-- ELENCO PARERI --><p><span class="plominoFieldClass">elenco_pareri</span></p>
-<!-- ELENCO COMMISSIONI --><p><span class="plominoFieldClass">elenco_commissioni</span></p>
-<!--AVVISO DI RIGETTO --><p><span class="plominoFieldClass">avviso_rigetto</span></p>
-<!--RILASCIO TITOLO --><p><span class="plominoFieldClass">rilascio_titolo</span></p>
-<!--PRATICHE COLLEGATE --><p><span class="plominoFieldClass">pratiche_collegate</span></p>
+<!-- EVENTUALE PREAVVISO DI RIGETTO --><p><span class="plominoFieldClass">preavviso_rigetto</span></p>
+<!-- EVENTUALE RIGETTO --><p><span class="plominoFieldClass">rigetto</span></p>
+<!-- ELENCO DOCUMENTI FIGLI --><p><span class="plominoFieldClass">elenco_integrazioni</span></p>
+<p><span class="plominoFieldClass">elenco_pareri</span></p>
+<!-- READERS  --><p><span class="plominoFieldClass">utenti_readers</span></p>
+<p><span class="plominoFieldClass">rilascio_titolo</span></p>
+<p><span class="plominoFieldClass">pratiche_collegate</span></p>
+<p><span class="plominoFieldClass">ricevute_pec</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -47,14 +48,101 @@
 ++resource++iol.document/css/iol.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
+        <element id="riferimenti_integrazione" title="Riferimenti integrazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">riferimenti_integrazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('iol_tipo_app') not in ['integrazione']:
+    return ''
+
+
+db=context.getParentDatabase()
+renderForm=db.getForm('sub_riferimenti_protocollo')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html='<div class="v-content well"><fieldset class="scheduler-border"><legend class="scheduler-border"> Riferimenti a documento </legend>%s</fieldset></div>'%(content)
+
+renderForm=db.getForm('base_sub_anagrafica')
+content=asUnicode(renderForm.displayDocument(context))     
+
+if content:
+    html=html + '<div class="v-content well"><fieldset class="scheduler-border"><legend class="scheduler-border"> Anagrafica soggetto </legend>%s</fieldset></div>'%(content)
+
+renderForm=db.getForm('base_sub_comunicazione_digitale')
+content=asUnicode(renderForm.displayDocument(context))     
+
+if content:
+    html=html + '<div class="v-content well"><fieldset class="scheduler-border"><legend class="scheduler-border"> Comunicazione inviata </legend>%s</fieldset></div>'%(content)       
+        
+renderForm=db.getForm('sub_allegati_altro')
+content=asUnicode(renderForm.displayDocument(context))     
+
+if content:
+    html=html + '<div class="v-content well"><fieldset class="scheduler-border"><legend class="scheduler-border"> Documentazione allegata </legend>%s</fieldset></div>'%(content)
+    
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="riferimenti_delega" title="Riferimenti delega" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">riferimenti_delega</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('iol_tipo_app') not in ['delega']:
+    return ''
+
+db=context.getParentDatabase()
+renderForm=db.getForm('sub_occupazione_delega')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html=content
+    
+renderForm=db.getForm('base_sub_anagrafica')
+content=asUnicode(renderForm.displayDocument(context))     
+
+if content:
+    html=html + '<div class="v-content well"><fieldset class="scheduler-border"><legend class="scheduler-border"> Anagrafica soggetto </legend>%s</fieldset></div>'%(content)
+
+renderForm=db.getForm('base_sub_comunicazione_digitale')
+content=asUnicode(renderForm.displayDocument(context))     
+
+if content:
+    html=html + '<div class="v-content well"><fieldset class="scheduler-border"><legend class="scheduler-border"> Comunicazione inviata </legend>%s</fieldset></div>'%(content)    
+    
+    
+renderForm=db.getForm('sub_allegati_altro')
+content=asUnicode(renderForm.displayDocument(context))     
+
+if content:
+    html=html + '<div class="v-content well"><fieldset class="scheduler-border"><legend class="scheduler-border"> Documentazione allegata </legend>%s</fieldset></div>'%(content)
+    
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
         <element id="istruttoria" title="Istruttoria" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">istruttoria</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('iol_tipo_app') in ['integrazione','delega']:
+    return ''
+
+#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_istruttoria')
-content=renderForm.displayDocument(context)
+content=asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
     html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_istruttoria"> Istruttoria <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
@@ -76,7 +164,7 @@ return html]]></Formula>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_readers')
-content=renderForm.displayDocument(context)
+content=asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
     html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_readers"> Utenti accreditati abilitati alla visualizzazione del documento <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
@@ -95,7 +183,7 @@ return html]]></Formula>
           <id type="Products.Archetypes.Field.StringField">pratiche_collegate</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getElencoPraticheCollegate(context.getId())]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getElencoPraticheCollegate(context)]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -113,7 +201,7 @@ return html]]></Formula>
 
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_assegnazione')
-content=renderForm.displayDocument(context)
+content=asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
     html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_assegnazione"> Assegnazione responsabile procedimento <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
@@ -137,7 +225,7 @@ return html]]></Formula>
 
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_avvio_procedimento')
-content=renderForm.displayDocument(context)
+content=asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
     html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_avvio_procedimento"> Avvio del procedimento <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
@@ -161,14 +249,14 @@ db=context.getParentDatabase()
 idx = db.getIndex()
 if not 'parent_document' in idx.indexes():
     return []
-#la ricerca deve restituire i documenti dei queli l'utente corrente è author
+
+#la ricerca deve restituire i documenti dei quali l'utente corrente è author
 brains = idx.dbsearch(dict(parent_document=context.getId(),Form='bo_integrazione_richiesta'))  
 html=''
 for brain in brains:
-    content=''
     doc=brain.getObject()
     renderForm=db.getForm('bo_integrazione_richiesta')
-    content=content + renderForm.displayDocument(doc)    
+    content=asUnicode(renderForm.displayDocument(doc))    
     if content:
         html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument"> Richiesta di documentazione integrativa <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),content)
 
@@ -192,60 +280,20 @@ idx = db.getIndex()
 if not 'parent_document' in idx.indexes():
     return []
 #la ricerca deve restituire i documenti dei queli l'utente corrente è author
-brains = idx.dbsearch(dict(parent_document=context.getId(),Form=['bo_parere','bo_parere_richiesta']))  
+brains = idx.dbsearch(dict(parent_document=context.getId(),Form=['bo_parere_richiesta','bo_parere_risposta']))  
 html=''
 for brain in brains:
-    content=''
     doc=brain.getObject()
-    renderForm=db.getForm('bo_parere')
-    content=content + renderForm.displayDocument(doc)    
-    if content:
-        html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_parere_risposta"> Trasmissione per competenza <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),content)
+    renderForm = db.getForm('bo_parere_richiesta')
+    editForm = 'bo_parere_richiesta'
+    content=asUnicode(renderForm.displayDocument(doc))
+    if doc.getItem('data_richiesta_parere')!='':
+        renderForm=db.getForm('bo_parere_risposta')
+        editForm = 'bo_parere_risposta'
+        content=content + asUnicode(renderForm.displayDocument(doc))  
 
-    
-return html]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><struct>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-</struct></value>
-</param>
-</params>
-        </element>
-        <element id="elenco_verifiche" title="Trasmissione per verifica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">elenco_verifiche</id>
-          <FieldType type="Products.Archetypes.Field.StringField">DOCLINK</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
-db=context.getParentDatabase()
-idx = db.getIndex()
-if not 'parent_document' in idx.indexes():
-    return []
-#la ricerca deve restituire i documenti dei queli l'utente corrente è author
-brains = idx.dbsearch(dict(parent_document=context.getId(),Form='bo_verifica_richiesta'))  
-html=''
-for brain in brains:
-    content=''
-    doc=brain.getObject()
-    renderForm=db.getForm('bo_verifica_richiesta')
-    content=content + renderForm.displayDocument(doc)    
     if content:
-        html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument"> Trasmissione per verifica <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),content)
+        html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=%s"> Richiesta di parere <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),editForm,content)
 
     
 return html]]></Formula>
@@ -280,49 +328,13 @@ return html]]></Formula>
     return ''
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_rilascio_titolo')
-content=renderForm.displayDocument(context)
+content=asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
     html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_rilascio_titolo"> Rilascio del titolo <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
 
     
 return html]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="avviso_rigetto" title="Rigetto istanza" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">avviso_rigetto</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('data_avviso_rigetto'):
-    return ''
-db=context.getParentDatabase()
-renderForm=db.getForm('bo_avviso_rigetto')
-content=renderForm.displayDocument(context)
-html=''
-if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_avviso_rigetto"> Rigetto istanza <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
-
-    
-return html]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="elenco_commissioni" title="Elenco pareri commissioni" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">elenco_commissioni</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getElencoCommissioni(context.getId())]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -341,11 +353,167 @@ if not context.getParentDatabase().resources.customscripts.getPagoPaEnabled(cont
     return
 
 renderForm=db.getForm('base_sub_pagopa')
-content=renderForm.displayDocument(context)
+content=asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
     html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=base_sub_pagopa"> Importi e pagamenti <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
 
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="check_email" title="Verifica email / pec" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">check_email</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
+db=context.getParentDatabase()
+renderForm=db.getForm('sub_check_email')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=sub_check_email"> Elenco comunicazioni email / PEC <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
+
+    
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="accertamento" title="Verbale di accertamento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">accertamento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('accertamento_opt'):
+    return ''
+
+db=context.getParentDatabase()
+renderForm=db.getForm('bo_accertamento')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_accertamento"> Verbale di accertamento <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
+
+    
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="autorizzazione" title="Autorizzazione rilasciata" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">autorizzazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#se non ce titolo non mostro
+if not context.getItem('data_titolo'):
+    return ''
+#se ce tiotolo non ancora autorizzato mostro solo a editor
+if context.getItem('allegato_comunicazione_titolo',{})=={}:
+    if not context.getParentDatabase().hasCurrentUserRight('PlominoEditor'):
+        return ''
+    
+db=context.getParentDatabase()
+renderForm=db.getForm('bo_titolo')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_titolo"> Autorizzazione rilasciata <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
+    
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="rigetto" title="Rigetto istanza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">rigetto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('oggetto_rigetto'):
+    return ''
+db=context.getParentDatabase()
+renderForm=db.getForm('bo_rigetto')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_rigetto"> Rigetto istanza <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
+
+    
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="avviso_rigetto" title="Avviso di rigetto istanza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">avviso_rigetto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('oggetto_avviso_rigetto'):
+    return ''
+db=context.getParentDatabase()
+renderForm=db.getForm('bo_avviso_rigetto')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_avviso_rigetto"> Avviso di rigetto istanza <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
+
+    
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="ricevute_pec" title="Ricevute PEC" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">ricevute_pec</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.customscripts.getElencoPEC(context)]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">tabella_elenco_pec</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="preavviso_rigetto" title="Preavviso di rigetto istanza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">preavviso_rigetto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('oggetto_preavviso_rigetto'):
+    return ''
+db=context.getParentDatabase()
+renderForm=db.getForm('bo_preavviso_rigetto')
+content=asUnicode(renderForm.displayDocument(context))
+html=''
+if content:
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_preavviso_rigetto"> Prevviso di rigetto istanza <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
+
+    
 return html]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>

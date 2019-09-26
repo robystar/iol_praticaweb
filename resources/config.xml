@@ -87,7 +87,7 @@ destinazione_uso = [
 
 
 #elenco check in form di ricerca
-tipo_ricerca = [
+tipo_pratica = [
     'CIL|cil',
     'CILA|cila',
     'SCIA|scia',

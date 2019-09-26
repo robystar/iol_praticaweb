@@ -62,12 +62,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''non e' sottoposto a tutela;|1''','''è sottoposto a tutela e si allega la documentazione necessaria ai fini del rilascio dell’autorizzazione/atto di assenso;|2''','''l'autorizzazione/atto di assenso e' stata rilasciata con atto:|3''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non e' sottoposto a tutela;|1''','''è sottoposto a tutela e si allega la documentazione necessaria ai fini del rilascio dell’autorizzazione/atto di assenso;|2''','''l'autorizzazione/atto di assenso e' stata rilasciata con atto:|3''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

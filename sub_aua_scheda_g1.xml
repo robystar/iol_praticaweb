@@ -86,12 +86,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -122,12 +122,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''ALLEGA LA SCHEDA G1 contenente i dati e le informazioni necessari per lo svolgimento delle operazioni di recupero di rifiuti non pericolosi;|1''','''DICHIARA l’invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 “Titoli abilitativi in materia ambientale” relativamente alle operazioni di recupero di rifiuti speciali non pericolosi;|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''ALLEGA LA SCHEDA G1 contenente i dati e le informazioni necessari per lo svolgimento delle operazioni di recupero di rifiuti non pericolosi;|1''','''DICHIARA l’invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 “Titoli abilitativi in materia ambientale” relativamente alle operazioni di recupero di rifiuti speciali non pericolosi;|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

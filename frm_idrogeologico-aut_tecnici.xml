@@ -59,12 +59,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Non è previsto l'intervento di un progettista;|1''','''Il progettista è:|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Non è previsto l'intervento di un progettista;|1''','''Il progettista è:|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

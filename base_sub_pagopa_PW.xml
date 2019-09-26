@@ -1,0 +1,332 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="base_sub_pagopa_PW" title="base_sub_pagopa" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">base_sub_pagopa_PW</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_no_pagopa</span></p>
+<div class="v-content well">
+<div class="alert alert-info">
+<h5>Per importi e tariffe fare riferimento alle <a href="istruzioni/istruzioni-per-pagamenti" target="_blank">istruzioni per pagamenti</a>
+</h5>
+</div>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Riepilogo dei pagamenti effettuati tramite PagoPA</legend>
+<p><span class="plominoFieldClass">pagopa_info</span></p>
+<p><span class="plominoFieldClass">elenco_pagamenti</span></p>
+<!--
+<p><span class="plominoHidewhenClass">start:hw_pagamento_online_oneri</span></p><p>Pagamento Online disattivato o Modalità di pagamento non online</p><p><span class="plominoHidewhenClass">end:hw_pagamento_online_oneri</span></p>
+-->
+<p><span class="plominoActionClass">btn_richiedi_pagamento</span> <span class="plominoFieldClass">fld_stampa_avviso</span></p>
+<p><span class="plominoActionClass">btn_effettua_pagamento</span></p>
+<p><span class="plominoFieldClass">pagopa_verifica</span></p>
+</fieldset>
+</div>
+<p><span class="plominoFieldClass">page_refresh</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_pagopa</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="elenco_pagamenti" title="elenco_pagamenti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_pagamenti</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>dlg_pagopa</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>iuv,esito,data,importo,tipo_pagamento,causale,identificativofiscale,anagrafica,metodo_pagamento</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "IUV" },
+    { "sTitle": "Esito"},
+    { "sTitle": "Data/Ora"},
+    { "sTitle": "Importo"},
+    { "sTitle": "Tipo Pagamento"},
+    { "sTitle": "Causale"},
+    { "sTitle": "C.F./P.IVA"},
+    { "sTitle": "Anagrafica"},
+    { "sTitle": "Mod. Pagamento"},
+
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 400,
+        "height": 300
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="pagopa_info" title="Informazioni riguardo Pagopa" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">pagopa_info</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[esito = context.getItem('verifica_pagamento','')
+url = '%s/inviaPagoPA' %(context.absolute_url())
+html = ''
+if esito == 'OK':
+    html = '''
+<div class="row-fluid"><div class="span12 alert alert-info">
+    <h5>Pagamento effettuato.</h5>
+    </div></div>
+''' 
+elif esito == 'ATTESA_RT':
+    html = '''
+<div class="row-fluid"><div class="span12 alert alert-danger">
+    <h4>Attenzione il pagamento è in fase di registrazione.<br>Non appena sar&agrave registrato la pratica verra inviata automaticamente</h4>
+    </div></div>
+'''    
+elif esito == '':
+    html = '''
+<div class="row-fluid"><div class="span12 alert alert-danger">
+    <h4>Non risultano pagamenti registrati.<br>Per proseguire è necessario richiedere il pagamento.</h4>
+    </div></div>
+'''
+elif esito == 'INVIATO':
+    html = '''
+<div class="row-fluid"><div class="span12 alert alert-danger">
+    <h4>Per proseguire è necessario effettuare il pagamento.</h4>
+    </div></div>
+'''
+    
+elif esito == 'ANNULLATA':
+    html = '''
+<div class="row-fluid"><div class="span12 alert alert-danger">
+    <h4>Il pagamento è stato annullato.<br>Per proseguire è necessario effettuare il pagamento.</h4>
+    </div></div>
+''' 
+elif esito == 'ERRORE':
+    html = '''
+<div class="row-fluid"><div class="span12 alert alert-danger">
+    <h4>Si sono verificati errori durante la procedura di pagamento.<br>Per proseguire è necessario effettuare il pagamento.</h4>
+    </div></div>
+'''
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="pagopa_verifica" title="verifica pagamento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">pagopa_verifica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'OK']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[#pagamenti = context.getItem('elenco_pagamenti',[])
+#verifica=''
+#if len(pagamenti)==0:
+#     verifica = 'Nessun pagamento registrato con PagoPa'
+       
+#for row in pagamenti:
+#    if row[1] != 'OK':
+#        verifica = 'Manca il pagamento PagoPa'
+
+#return verifica]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>HIDDEN</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_pagopa" title="hw_no_pagopa" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pagopa</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.isNewDocument():
+    return False
+else: 
+    return not context.getParentDatabase().resources.customscripts.getPagoPaEnabled(context) or context.isEditMode()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="btn_stampa_avviso" title="Stampa Bollettino" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_stampa_avviso</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[url = context.getItem('url_pagamento','')
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[if context.isNewDocument():
+    return True
+if context.getItem('metodo_pagamento','')!='BOLLETTINO' or context.getItem('url_pagamento','')=='' or context.getItem('iuv_pagamento','')=='':
+    return True
+else:
+    return False]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
+        </element>
+        <element id="btn_richiedi_pagamento" title="Richiedi / Modifica pagamento" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_richiedi_pagamento</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[#metodo = context.getItem('metodo_pagamento','')
+    
+cls = context.getParentDatabase().resources.cls_pagopa()
+url = "%s/%s" %(context.absolute_url(),cls.creaurl(context))
+return url
+#res = cls.invia(context)
+#if metodo.upper() == 'ONLINE':
+#    url = context.getItem('url_pagamento','')
+#else:
+#    url = context.absolute_url()
+#return url    
+context.REQUEST.RESPONSE.redirect(url)]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[cls = context.getParentDatabase().resources.cls_pagopa()
+if not cls.isEnabled():
+    return True
+if context.isNewDocument() or context.isEditMode():
+    return True
+if not context.getItem('comunicazione_digitale',{}):
+    return True
+if not context.getItem('verifica_pagamento','') in ['OK','ATTESA_RT']:
+    if context.getItem('metodo_pagamento','ONLINE').upper() == 'ONLINE':
+        return False
+    else:
+        return False
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
+        </element>
+        <element id="btn_effettua_pagamento" title="Effettua il Pagamento" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_effettua_pagamento</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[url = context.getItem('url_pagamento','')
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return True
+if context.isNewDocument():
+    return True
+if context.getItem('metodo_pagamento','')!='Online' or context.getItem('url_pagamento','')=='' or context.getItem('iuv_pagamento','')=='':
+    return True
+else:
+    return False]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
+        </element>
+        <element id="fld_stampa_avviso" title="Stampa Bollettino" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">fld_stampa_avviso</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[url = context.getItem('url_pagamento','')
+esito = context.getItem('verifica_pagamento','')
+metodo = context.getItem('metodo_pagamento','')
+if url and metodo=='BOLLETTINO':
+    result ='''
+<a style="width:200px" target="_new" class="btn pull-right" id="" href="%s"><span> Stampa Bollettino</span></a>
+''' %url
+    
+else:
+    result=''
+
+return result]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="testHW" title="Test HW" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">testHW</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return str(context.isNewDocument() or context.isEditMode())]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="elenco_importi_pagamenti" title="elenco_importi_pagamenti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_importi_pagamenti</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DOCLINK</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.document.plomino_utils import serializeGrid
+return serializeGrid(context,'elenco_pagamenti','base_sub_pagopa',False)]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="page_refresh" title="page_refresh" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">page_refresh</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('verifica_pagamento')=='ATTESA_RT':
+    return '''   
+        <script type="text/javascript">setTimeout(function(){window.location.reload(true)}, 30000);</script>
+        ''']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

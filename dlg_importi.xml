@@ -98,12 +98,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>DECIMAL</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>DECIMAL</string></value>
 </member>
 </struct></value>
 </param>

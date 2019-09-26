@@ -128,12 +128,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>MULTI</string></value>
-</member>
-<member>
 <name>restricttogroup</name>
 <value><string>sue_istruttori</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>MULTI</string></value>
 </member>
 </struct></value>
 </param>

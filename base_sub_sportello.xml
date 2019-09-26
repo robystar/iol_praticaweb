@@ -52,6 +52,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
 if (context.getForm().getId() in ['frm_paesaggistica-ordinaria','frm_paesaggistica-accertamento','frm_paesaggistica-semplificata']) or (context.getItem('iol_tipo_app') in ['paesaggistica-ordinaria','paesaggistica-accertamento','paesaggistica-semplificata']):
@@ -59,10 +63,6 @@ if (context.getForm().getId() in ['frm_paesaggistica-ordinaria','frm_paesaggisti
     
 ll = context.getParentDatabase().resources.config().get('sportello',ll)
 return ll</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -1,99 +1,75 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <resource id="config_pagopa" title="Configurazione pagopa e metodi di calcolo" type="Script (Python)"><![CDATA[## Script (Python) "config_pagopa"
+    <resource id="config_pagopa" title="Configurazione pagopa e metodi di calcolo (SPEZIA)" type="Script (Python)"><![CDATA[## Script (Python) "config_pagopa"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
 ##parameters=doc=None,azione=''
-##title=Configurazione pagopa e metodi di calcolo
+##title=Configurazione pagopa e metodi di calcolo (SPEZIA)
 ##
 from Products.CMFPlomino.PlominoUtils import decimal
 # Configurazione pagopa e metodi di calcolo
 
-importo_bollo = 0.5#16
+importo_bollo = 16
 
 dz=dict(
-    
-    nomeEnte="Regione Liguria test",
-    
-    secure="NRP-PagoPA-RL-test",
 
-    aliasPagamentoImmediato = "DEMO-M1M",
-    aliasPagamentoDiretto = "DEMO-M3M",
+    nomeEnte="Comune della Spezia",
     
-    urlPagamentoImmediato = "https://nodopagamenti-test.regione.liguria.it/portale/nodopagamenti/rest/pagamentomultiplo",
-    urlPagamentoDiretto = "https://nodopagamenti-test.regione.liguria.it/portale/nodopagamenti/rest/pagamentodiretto",
-    urlPagamento = "https://nodopagamenti-test.regione.liguria.it/portale/nodopagamenti/pagamento-multiplo-immediato",
-    urlServlet = "https://nodopagamenti-test.regione.liguria.it/portale/nodopagamenti/servlet",    
-    urlInfoPagamento = "https://nodopagamenti-test.regione.liguria.it/portale/nodopagamenti/rest/riconciliazione/iuv",
+    secure="PagoPa-GW!#",
+
+    aliasPagamentoImmediato = "SUE-Claspezia-M1",
+    aliasPagamentoDiretto = "SUE-Claspezia-M1",
+
+    urlPagamentoImmediato = "https://nodopagamenti.regione.liguria.it/portale/nodopagamenti/rest/pagamentomultiplo",
+    urlPagamentoDiretto = "https://nodopagamenti.regione.liguria.it/portale/nodopagamenti/rest/pagamentodiretto",
+    urlPagamento = "https://nodopagamenti.regione.liguria.it/portale/nodopagamenti/pagamento-multiplo-immediato",
+    urlServlet = "https://nodopagamenti.regione.liguria.it/portale/nodopagamenti/servlet",    
+    urlInfoPagamento = "https://nodopagamenti.regione.liguria.it/portale/nodopagamenti/rest/riconciliazione/iuv",
     
-    urlOk = "https://demo.istanze-online.it/iol-PagoPaEsito",
-    ###### provvisorio #################
-    urlPost = "https://demo.istanze-online.it/iol-PagoPaEsito",
+    
+    urlOk = context.portal_url() + '/iol-PagoPaEsito',
+    
+    urlPost = "http://pagopa-sp.iolweb.it/iol-PagoPaEsito",
     
     esito_pagamento = ['BOLLETTINO','OK','KO','ATTESA_RT','ANNULLATO','ERRORE'],
 
     metodo_pagamento = ['BOLLETTINO','ONLINE'],
-    #codice_pagamento = ['BOLLO|BOLLI','DIRITTI DI SEGRETERIA|SEGRETERIA','SPESE DI ISTRUTTORIA|ISTRUTTORIA','COSAP'],
-    #DEFINITI SU SCHEDA NEGOZIO
-    codice_pagamento = ['Pagamento 1|PAG01','Pagamento 2|PAG02','Pagamento 3|PAG03','Pagamento 4|PAG04','Pagamento BOLLO|BOLLO'],
-    #Dove far confluire i pagamenti multipli del bollettino
-    codice_pagamento_diretto = 'MTRE01',
+    codice_pagamento = ['Deposito Cauzionale|CAUZ', 
+                        'Diritti Istruttoria Ambiente|ISTR', 
+                        'Diritti Istruttoria Toponomastica|TOPONOM', 
+                        'Diritti di Segreteria|SEGRETERIA', 
+                        'Marche da Bollo|BOLLIED', 
+                        'Modulistica|CART', 
+                        'Oneri Condono|COND', 
+                        'Oneri Terzo Condono|COND3', 
+                        'Oneri o Sanzioni|URBA', 
+                        'Proventi Rilascio Targhette|CIVICI', 
+                        'Quota 10% Urbanizzazione|URBA10', 
+                        'Quota 7% Urbanizzazione|URBA07', 
+                        'Rimborsi e Recuperi Diversi|RIMB', 
+                        'Sanzione Danno Ambientale|SANZ', 
+                        'Svincolo Obblighi Convenzionali|SVINC'],
+    
 
-    importo_bollo = importo_bollo
+    #Dove far confluire i pagamenti multipli del bollettino
+    codice_pagamento_diretto = 'SEGRETERIA',
+    
+    importo_bollo = importo_bollo,
+    
+    aggiungi_importo = True,
+
     
 )
+
 #se non passo nulla ritorno il diz di configurazione
 if not doc:
     if script.getId() in context.REQUEST.get('URL'):
         context.REQUEST.RESPONSE.redirect(context.getParentDatabase().absolute_url())        
     else:
         return dz
-
-
-#calcolo diritti segreteria in base al n. di particelle
-def getImportoParticelle(index):
-    '''
-    – Fino a 5 particelle (mappali) in un unico Foglio catastale € 20,66
-    – Oltre 5 particelle in un unico Foglio catastale € 30,99
-    – Fino a 5 particelle in 2 Fogli catastali € 30,99
-    – Fino a 9 particelle in 2 Fogli catastali € 41,32
-    – Superiore a 9 particelle € 51,6
-    '''
-    rows = doc.getItem('elenco_nct', [])
-    ff=[]
-    for row in rows:
-        if not row[1] in ff:
-            ff.append(row[1])
-            
-    importo=0
-    if len(ff)==1 and len(rows)<=5:
-        causale = 'fino a 5 particelle in unico foglio'
-        importo = 20.66
-    elif len(ff)==1 and 5<len(rows)<=9:        
-        causale = 'oltre a 5 e fino a 9 particelle in unico foglio'
-        importo = 30.99 
-    elif len(ff)==2 and len(rows)<=5:        
-        causale = 'fino a 5 particelle in 2 fogli'
-        importo = 30.99         
-    elif len(ff)==2 and len(rows)<=9:        
-        causale = 'fino a 9 particelle in 2 fogli'
-        importo = 41.32  
-    else:
-        causale = 'oltre 9 particelle o 2 fogli'
-        importo = 51.65  
-    
-    ########### PROVE #############    
-    importo = 0.1    
-    
-    tipoPag = 'SEGRETERIA'
-    causale = "Diritti segreteria " + causale
-    scadenza = 'Presentazione'
-    azione = ''
-    return ['%02d'%index,tipoPag,causale,decimal(importo),scadenza,azione]
-
 
 #calcolo diritti segreteria in base alla volumetria
 def getImportoVolumetria(index):
@@ -112,55 +88,12 @@ def getImportoVolumetria(index):
     else:
         importo = 516.46
         
-    ########### PROVE #############    
-    importo = 0.1
-        
     tipoPag = 'SEGRETERIA'        
     causale = "Diritti segreteria volumetria %s" %volume
     scadenza = 'Presentazione'
     azione = ''
     return ['%02d'%index,tipoPag,causale,decimal(importo),scadenza,azione]
-
-
-#calcolo importo COSAP
-def getImportoCOSAP(index):
-    ##COSAP intera o a rate
-    cosap = doc.getItem('importo_cosap',0)
-    data=[]
-    
-    ########### PROVE #############    
-    cosap = 0.1
-    
-    
-    tipoPag = 'COSAP'        
-    if cosap>0:
-        if doc.getItem('rate_opt')!='si':
-            causale = 'Importo totale COSAP'
-            scadenza = 'Rilascio autorizzazione'
-            azione = ''
-            data = ['%02d'%index,tipoPag,causale,decimal(cosap),scadenza,azione]
-            
-        else:
-            ##calcolo delle rate da cosap
-            rate = context.cosap.calcoloRate(doc)
-            ##importi rate COSAP
-            nrata=1
-            data=[]
-            for rata in rate:
-                azione = ''
-                importo = rata[0]
-                ########### PROVE #############    
-                importo = 0.1 
-                
-                scadenza = rata[1] or 'Rilascio autorizzazione'
-                causale = 'Importo rata %s COSAP' %nrata
-                data.append(['%02d'%index, tipoPag, causale, importo, scadenza, azione])
-                azione = 'paga_rata'
-                nrata = nrata + 1
-                index = index+1
-                
-    return data
-
+        
 
 # bollo e diritti per presentazione SUE
 def setImportiPresentazioneSUE():
@@ -196,99 +129,7 @@ def setImportiRilascioSUE():
     doc.setItem('elenco_importi_dg',data)
     
     
-# bollo e diritti per presentazione CDU
-def setImportiPresentazioneCDU():
-    data = doc.getItem('elenco_importi_dg', []) 
-    scadenza = 'Presentazione'
-    for d in data:
-        if d[4] == scadenza:
-            #gia' inserito
-            return
-        
-    #Bollo presentazione    
-    maxIndex = doc.getItem('elenco_importi_index',0) + 1
-    causale = 'Bollo per presentazione'
-    tipoPag = 'BOLLI'
-    data.append(['%02d'%maxIndex,tipoPag,causale,decimal(importo_bollo),scadenza,azione])
-    
-    #diritti di segreteria in base al numero dei mappali
-    maxIndex=maxIndex+1
-    data.append(getImportoParticelle(maxIndex))
-    
-    doc.setItem('elenco_importi_index',maxIndex)
-    doc.setItem('elenco_importi_dg',data)
-
-
-# bollo e diritti per presentazione SUOLO PUBBLICO
-def setImportiPresentazioneSP():
-    data = doc.getItem('elenco_importi_dg', []) 
-    scadenza = 'Presentazione'
-    for d in data:
-        if d[4] == scadenza:
-            #gia' inserito
-            return
-        
-    #Bollo presentazione    
-    maxIndex = doc.getItem('elenco_importi_index',0) + 1
-    causale = 'Bollo per presentazione'
-    tipoPag = 'BOLLI'
-    data.append(['%02d'%maxIndex,tipoPag,causale,decimal(importo_bollo),scadenza,azione])
-   
-    doc.setItem('elenco_importi_index',maxIndex)
-    doc.setItem('elenco_importi_dg',data)    
-    
-    
-# bollo e diritti per rilascio certificato CDU
-def setImportiRilascioCDU():
-    
-    data = doc.getItem('elenco_importi_dg', []) 
-    scadenza = 'Rilascio certificato'
-    
-    for d in data:
-        if d[4] == scadenza:
-            #gia' inserito
-            return
-
-    #bolli per il rilascio certificato
-    tipoPag = 'SEGRETERIA'        
-    importo = doc.getItem('importo_bolli')
-    maxIndex = doc.getItem('elenco_importi_index',0) + 1
-    causale = 'Bolli per il rilascio certificato'
-    data.append(['%02d'%maxIndex,tipoPag,causale,decimal(importo),scadenza,azione])   
-        
-    doc.setItem('elenco_importi_index',maxIndex)
-    doc.setItem('elenco_importi_dg',data)
-
-
-# bollo e diritti per rilascio autorizzazione
-def setImportiRilascioSP():
-    
-    data = doc.getItem('elenco_importi_dg', []) 
-    
-    for d in data:
-        if d[4] == 'Rilascio autorizzazione':
-            #gia' inserito
-            return  
-    #bolli
-    tipoPag = 'SEGRETERIA'            
-    maxIndex = doc.getItem('elenco_importi_index',0) + 1
-    causale = 'Bollo per rilascio autorizzazione'
-    data.append(['%02d'%maxIndex,tipoPag,causale,decimal(importo_bollo),'Rilascio autorizzazione',azione])     
-    
-    maxIndex=maxIndex+1
-
-    #COSAP
-    res = getImportoCOSAP(maxIndex) 
-    
-    #nonposso passare per ref la variabile maxindex che viene aggiornata della funct e che dipende dal numero di rate
-    if len(res)>0:
-        maxIndex = int(res[len(res)-1][0])  
-    
-    data = data + res
-    doc.setItem('elenco_importi_index',maxIndex)
-    doc.setItem('elenco_importi_dg',data) 
-    
-        
+       
 if azione == 'presentazione':    
     setImportiPresentazioneSUE()
 

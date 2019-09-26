@@ -20,7 +20,8 @@ orderDG(context,'elenco_importi_aggiuntivi_dg','elenco_importi_index')]]></onSav
 <div><span class="plominoFieldClass">elenco_importi_pagamenti</span></div>
 <p><span class="plominoHidewhenClass">start:hw_no_edit</span></p>
 <p><span class="plominoLabelClass">elenco_importi_dg</span><span class="plominoFieldClass">elenco_importi_dg</span></p>
-<span class="plominoSubformClass">sub_pagamenti_aggiuntivi</span><p><span class="plominoLabelClass">elenco_pagamenti_dg</span><span class="plominoFieldClass">elenco_pagamenti_dg</span></p>
+<span class="plominoSubformClass">sub_pagamenti_aggiuntivi</span>
+<p><span class="plominoLabelClass">elenco_pagamenti_dg</span><span class="plominoFieldClass">elenco_pagamenti_dg</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
 <p><span class="plominoLabelClass">pagopa_note</span><span class="plominoFieldClass">pagopa_note</span></p>
 <span class="plominoFieldClass">page_refresh</span>
@@ -50,8 +51,9 @@ orderDG(context,'elenco_importi_aggiuntivi_dg','elenco_importi_index')]]></onSav
         <element id="elenco_importi_pagamenti" title="Importi e pagamenti" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">elenco_importi_pagamenti</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[view = context.restrictedTraverse('iol-GetElencoImportiPagamenti')
+return view.getElencoImportiPagamenti()]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-PagoPa</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -84,6 +86,10 @@ for row in rows:
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_importi</string></value>
+</member>
+<member>
 <name>field_mapping</name>
 <value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
 </member>
@@ -108,10 +114,6 @@ for row in rows:
     }
 </string></value>
 </member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_importi</string></value>
-</member>
 </struct></value>
 </param>
 </params>
@@ -131,6 +133,10 @@ for row in rows:
           <params>
 <param>
 <value><struct>
+<member>
+<name>associated_form</name>
+<value><string>dlg_pagamenti</string></value>
+</member>
 <member>
 <name>field_mapping</name>
 <value><string>codTrans,IUV,esito,importo,anagrafica,email,data,orario,metodo,uidriscossione,divisa,brand,alias</string></value>
@@ -163,10 +169,6 @@ for row in rows:
         "height": 500
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_pagamenti</string></value>
 </member>
 </struct></value>
 </param>

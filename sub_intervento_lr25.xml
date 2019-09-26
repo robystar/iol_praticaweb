@@ -93,6 +93,10 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''La legittimità urbanistica della destinazione d'uso in atto;|1''',
@@ -103,10 +107,6 @@ for m in mandatory:
 '''l'immobile possiede tutti i requisiti imposti dalle norme vigenti in materia di superamento delle barriere architettoniche, di igiene, di sicurezza per l'incolumità pubblica e privata e di viabilita' derivanti dal nuovo utilizzo dei locali;|7''',
 '''di effettuare la variazione catastale per la nuova destinazione dell’immobile;|8'''
 ]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -137,12 +137,12 @@ for m in mandatory:
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['la nuova destinazione rientra tra quelle ammesse dal P.U.C. vigente|1']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['la nuova destinazione rientra tra quelle ammesse dal P.U.C. vigente|1']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

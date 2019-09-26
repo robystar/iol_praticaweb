@@ -7,6 +7,9 @@
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
 if 'btn_next' in context.REQUEST.keys():
+    #se devo creare le istanze contestuali DSI
+    if context.getItem('interventi_strutturali_opt') == '4' or (context.getItem('interventi_strutturali_opt') == '3' and context.getItem('documentazione_dsi_opt') == '1'):
+        context.getParentDatabase().resources.customscripts.setCloneDsi(context)
     return context.toNextForm()]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>

@@ -19,7 +19,7 @@ if 'btn_stampa_comunicazione' in context.REQUEST.keys():
             parentform='sub_completa_'+parentDoc.getItem('iol_tipo_app'),
             model=context.getItem('modello_stampa_richiesta_integrazione'),
             app=context.getParentDatabase().getId().replace('iol_',''),
-            grp='richiesta-integrazione',
+            grp='back-office',
             pdf=0,
             field='allegato_documento_richiesta_integrazione')
     return "%s/EditDocument" %context.absolute_url()
@@ -36,8 +36,7 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div>
 <span class="plominoLabelClass">oggetto_richiesta_integrazione</span><span class="plominoFieldClass">oggetto_richiesta_integrazione</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span>
-<div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_richiesta_integrazione</span><span class="plominoFieldClass">modello_stampa_richiesta_integrazione</span>
 </div>
@@ -45,8 +44,7 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span>
-<p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
 <div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">allegato_documento_richiesta_integrazione</span><span class="plominoFieldClass">allegato_documento_richiesta_integrazione</span>
@@ -58,15 +56,14 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_invia_comunicazione</span>
 </div>
 </div>
+<p> </p>
 <div>
 <span class="plominoFieldClass">comunicazione_richiesta_integrazione_opt</span><span class="plominoLabelClass">comunicazione_richiesta_integrazione_opt</span>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_richiesta_integrazione</span></p>
-<div class="row-fluid">
-<div class="span4">
+<div class="row-fluid"><div class="span4">
 <span class="plominoLabelClass">allegato_comunicazione_richiesta_integrazione</span><span class="plominoFieldClass">allegato_comunicazione_richiesta_integrazione</span>
-</div>
-</div>
+</div></div>
 <p><span class="plominoHidewhenClass">end:hw_no_allegato_comunicazione_richiesta_integrazione</span></p>
 <p><span class="plominoHidewhenClass">end:hw_new_richiesta</span> <span class="plominoFieldClass">parent_document</span></p>
 <!--CHIAVE ESTERNA CHE PUNTA AL PARENT-->
@@ -185,7 +182,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-integrazione')</string></value>
+<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'richiesta-integrazione')</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

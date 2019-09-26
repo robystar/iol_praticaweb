@@ -65,12 +65,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''non richiede indagini ambientali preventive in relazione alle attività finora svolte sull’area interessata dall’intervento|1''','''a seguito delle preventive analisi ambientali effettuate, non necessita di bonifica, pertanto si allegano i risultati delle analisi ambientali dei terreni|2''','''è stata oggetto di bonifica dei terreni con obiettivi compatibili con la destinazione d’uso del presente intervento, come risulta dalla certificazione conclusiva di avvenuta bonifica rilasciata con atto (rif. artt. 248, c. 2 e 242bis. c. 4 del d.lgs. n. 152/2006):|3''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non richiede indagini ambientali preventive in relazione alle attività finora svolte sull’area interessata dall’intervento|1''','''a seguito delle preventive analisi ambientali effettuate, non necessita di bonifica, pertanto si allegano i risultati delle analisi ambientali dei terreni|2''','''è stata oggetto di bonifica dei terreni con obiettivi compatibili con la destinazione d’uso del presente intervento, come risulta dalla certificazione conclusiva di avvenuta bonifica rilasciata con atto (rif. artt. 248, c. 2 e 242bis. c. 4 del d.lgs. n. 152/2006):|3''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

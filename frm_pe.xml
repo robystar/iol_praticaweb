@@ -7,7 +7,7 @@ context.setItem('Plomino_Authors',[context.getCurrentUser().getId()])]]></onCrea
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
-if 'btn_successivo' in context.REQUEST.keys():
+if 'btn_next' in context.REQUEST.keys():
     context.doAction('init')
     context.setItem('identificativo',context.getId())
     return context.toNextForm()]]></onSaveDocument>
@@ -50,8 +50,8 @@ if 'btn_successivo' in context.REQUEST.keys():
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="iol_tipo_app" title="Tipo Applicazione" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
+        <element id="iol_tipo_appxxxxxxxxxx" title="Tipo Applicazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_appxxxxxxxxxx</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'pe']]></Formula>

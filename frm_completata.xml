@@ -15,6 +15,7 @@ elif context.REQUEST.get('btn_send') or context.REQUEST.get('btn_send_force'):
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
+<p><span class="plominoSubformClass">base_sub_comunicazione_contestuale</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_edit</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DOCUMENTI DA SCARICARE E FIRMARE DIGITALMENTE</legend>
@@ -75,6 +76,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return context.getParentDatabase().resources.config_documenti_stampe(context)</string></value>
 </member>
@@ -82,10 +87,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

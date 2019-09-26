@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="bo_parere" title="bo_parere" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">bo_parere</id>
+    <element id="sub_check_email" title="sub_check_email" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_check_email</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -9,12 +9,9 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoSubformClass">bo_parere_richiesta</span></p>
-<p><span class="plominoHidewhenClass">start:hw_no_risposta</span></p>
-<p><span class="plominoSubformClass">bo_parere_risposta</span></p>
-<p><span class="plominoHidewhenClass">end:hw_no_risposta</span></p>
-]]></FormLayout>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div>
+<span class="plominoLabelClass">iol_check_email</span><span class="plominoFieldClass">iol_check_email</span>
+</div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -36,10 +33,52 @@
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="hw_no_risposta" title="hw_no_risposta" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_risposta</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('data_invio_risposta')]]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        <element id="iol_check_email" title="Elenco comunicazioni email / pec" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_check_email</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>dlg_check_email</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>oggetto,destinatari,accettazione,consegna</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Oggetto" },
+    { "sTitle": "Destinatari"},
+    { "sTitle": "Accettazione"},    
+    { "sTitle": "Consegna"}
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 900,
+        "height": 400
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
         </element>
       </elements>
     </element>

@@ -12,7 +12,7 @@ if 'btn_stampa_comunicazione' in context.REQUEST.keys():
         context.getParentDatabase().resources.customscripts.stampaModulo(context,
             model=context.getItem('modello_stampa_avvio_procedimento'),
             app=context.getParentDatabase().getId().replace('iol_',''),
-            grp='avvio-procedimento',
+            grp='back-office',
             pdf=0,
             field='allegato_documento_avvio_procedimento',
             addform='bo_avvio_procedimento')
@@ -31,17 +31,13 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div class="span3">
 <span class="plominoLabelClass">data_avvio_procedimento</span><span class="plominoFieldClass">data_avvio_procedimento</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_data_comunicazione</span>
-<div class="span3">
+<span class="plominoHidewhenClass">start:hw_no_data_comunicazione</span><div class="span3">
 <span class="plominoLabelClass">data_comunicazione_avvio_procedimento</span><span class="plominoFieldClass">data_comunicazione_avvio_procedimento</span>
 </div>
-<div class="span6">
-<div class="alert alert-info">Per inviare nuovamente la comunicazione annullare il campo "Data comunicazione"</div>
-</div>
+<div class="span6"><div class="alert alert-info">Per inviare nuovamente la comunicazione annullare il campo "Data comunicazione"</div></div>
 <span class="plominoHidewhenClass">end:hw_no_data_comunicazione</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span>
-<div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_avvio_procedimento</span><span class="plominoFieldClass">modello_stampa_avvio_procedimento</span>
 </div>
@@ -49,8 +45,7 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span>
-<p> </p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p> </p>
 <p><span class="plominoHidewhenClass">start:hw_new_comunicazione</span></p>
 <div class="row-fluid">
 <div class="span9">
@@ -65,11 +60,9 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <span class="plominoFieldClass">comunicazione_avvio_procedimento_opt</span><span class="plominoLabelClass">comunicazione_avvio_procedimento_opt</span>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_avvio_procedimento</span></p>
-<div class="row-fluid">
-<div class="span4">
+<div class="row-fluid"><div class="span4">
 <span class="plominoLabelClass">allegato_comunicazione_avvio_procedimento</span><span class="plominoFieldClass">allegato_comunicazione_avvio_procedimento</span>
-</div>
-</div>
+</div></div>
 <p><span class="plominoHidewhenClass">end:hw_no_allegato_comunicazione_avvio_procedimento</span></p>
 <p><span class="plominoHidewhenClass">end:hw_new_comunicazione</span></p>
 </div>
@@ -216,7 +209,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('avvio-procedimento')</string></value>
+<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'avvio-procedimento')</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

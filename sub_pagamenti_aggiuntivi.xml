@@ -64,6 +64,10 @@ for row in rows:
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_importi</string></value>
+</member>
+<member>
 <name>field_mapping</name>
 <value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
 </member>
@@ -87,10 +91,6 @@ for row in rows:
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_importi</string></value>
 </member>
 </struct></value>
 </param>

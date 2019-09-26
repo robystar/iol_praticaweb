@@ -568,7 +568,7 @@ return results
 ##parameters=
 ##title=
 ##
-return context.aq_parent.config().get('provider')
+return context.aq_parent.config().get('provider','sue')
 ]]></resource>
       <resource id="getElencoModelli" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoModelli"
 ##bind container=container
@@ -790,49 +790,6 @@ if pianificazione in context.aq_parent.zsql:
         
 return json_dumps({"success":1, "filter": sFilter, "results":ret})
 ]]></resource>
-      <resource id="stampaModulo_xxxx" title="" type="Script (Python)"><![CDATA[## Script (Python) "stampaModulo_xxxx"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None
-##title=
-##
-from Products.CMFPlomino.PlominoUtils import json_loads, StringToDate
-
-if not doc:
-    doc='00010-2019-perm'
-
-if isinstance(doc, basestring):
-    doc = context.getDocument(doc)    
-      
-print_form = doc.getItem('iol_start_form')
-
-doc.REQUEST.set('app',app)
-doc.REQUEST.set('grp',grp)
-doc.REQUEST.set('model',model)
-doc.REQUEST.set('form',print_form)
-doc.REQUEST.set('pdf',pdf)
-doc.REQUEST.set('field',field)
-doc.REQUEST.set('fromfield',fromfield)
-
-view = doc.restrictedTraverse('@@iol-printdocument')
-
-return view.printDocument()
-if view:
-    try:
-        result = view.printDocument()
-        result = json_loads(result)
-        #print result 
-        #return printed
-################TODO MESSAGGI DI ERRORE ################
-    except Exception, e:
-        doc.plone_utils.addPortalMessage('Errore infase di stampa %s. Verificare il servizio di stampa' %e,'error')
-
-else:
-    doc.plone_utils.addPortalMessage('Servizio di stampa non configurato','error')
-]]></resource>
       <resource id="stampaModulo" title="" type="Script (Python)"><![CDATA[## Script (Python) "stampaModulo"
 ##bind container=container
 ##bind context=context
@@ -1041,12 +998,12 @@ db.getIndex().indexDocument(doc)
 ##parameters=doc=None
 ##title=
 ##
-if not doc:
-    doc=context.getDocument('00002-2019-commercio')
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
     
 val = doc.getItem('via')   
 ret = ''
-frm=context.getForm('sub_ubicazione_posizione')    
+frm=context.getForm('sub_ubicazione')    
 fld = frm.getFormField('via')
 adapt = fld.getSettings()     
 ll = [f.split('|') for f in adapt.getSelectionList(doc)]
@@ -1148,23 +1105,6 @@ if context.aq_parent.config().get('comune_default')=='E463':
 else:
     form = form or 'sub_completa_' + doc.getItem('iol_tipo_app')
     doc.iolSendMail(azione=azione, form=form)
-]]></resource>
-      <resource id="inviaPraticaBO" title="Invio pratica a backoffice" type="Script (Python)"><![CDATA[## Script (Python) "inviaPraticaBO"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None,provider=''
-##title=Invio pratica a backoffice
-##
-if provider=='praticaweb':
-    bw = "@@pw-invia-pratica"
-elif provider=='halley':
-    bw = "@@hl-invia-pratica"
-
-#bw per invio a backoffice
-inviaPratica = doc.restrictedTraverse(bw)
 ]]></resource>
       <resource id="Presentazione" title="" type="Script (Python)"><![CDATA[## Script (Python) "Presentazione"
 ##bind container=container
@@ -1534,25 +1474,30 @@ return trovaCollegate(doc)
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=docId=''
+##parameters=doc=None
 ##title=
 ##
 #NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
 db=context.getParentDatabase()
 idx = db.getIndex()
-if not 'titolo_esistente_id' in idx.indexes():
-    return []
-#la ricerca deve restituire i documenti dei queli l'utente corrente  author
-brains = idx.dbsearch(dict(titolo_esistente_id=docId),sortindex="data_protocollo")
+if not 'numero_pratica' in idx.indexes():
+    return ''
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)  
+    
 html=''
+#la ricerca deve restituire i documenti dei quelli l'utente corrente  author
+brains = idx.dbsearch(dict(numero_pratica=doc.getItem('numero_pratica')),sortindex="data_protocollo")
 for brain in brains:
-    doc=brain.getObject()
-    html=html+'<p><h5><a target="_blank" href="%s">%s prot. %s del %s </a></h5></p>'%(doc.absolute_url(),doc.getItem('iol_form_title','Documento'),doc.getItem('numero_protocollo'),doc.getItem('data_protocollo_testo'))  
+    if brain.id!=doc.getId():
+        dc=brain.getObject()
+        html=html+'<p><h5><a target="_blank" href="%s">%s prot. %s del %s </a></h5></p>'%(dc.absolute_url(),dc.getItem('iol_form_title','Documento'),dc.getItem('numero_protocollo'),dc.getItem('data_protocollo_testo'))  
 
 if not html:
     html = '<p><h5>Nessuna pratica collegata</h5></p>'
     
-html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_pratiche_collegate"> Elenco delle pratiche collegate <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),html)    
+html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_pratiche_collegate"> Elenco delle pratiche collegate <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),html)    
     
 return html
 ]]></resource>
@@ -1567,19 +1512,8 @@ return html
 ##
 if isinstance(doc, basestring):
     doc = context.getDocument(doc)
- 
-#istruttore = db.resources.config().get('assegnazione_istruttore')
 
-istruttore = str(doc.getItem('istruttore'))
-nomeIstruttore = doc.getUserGroupFullName(istruttore)
-doc.setItem('istruttore_nominativo',nomeIstruttore)
-
-doc.setWfActivity(activity="pratica assegnata a %s" %nomeIstruttore, notifyTo=[istruttore],priority=1)
-
-#if newState:
-#    context.iolSendMail(azione='assegnazione_responsabile',context.getItem('iol_start_form'))
-#else:
-#    context.plone_utils.addPortalMessage('Errore nella transizione assegna','error')
+doc.setWfActivity(activity="Pratica assegnata a %s" %doc.getItem('istruttore_nominativo'), notifyTo=[doc.getItem('istruttore')],priority=1)
 ]]></resource>
       <resource id="sendMailJ" title="" type="Script (Python)"><![CDATA[## Script (Python) "sendMailJ"
 ##bind container=container
@@ -1700,7 +1634,8 @@ for destinatario in destinatari:
 ##
 return context.aq_parent.config_map().get('mapKey')
 ]]></resource>
-      <resource id="setCloneDsiXXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneDsiXXXXXX"
+      <resource id="xCLONE" title="" type="Folder">
+        <resource id="setCloneDsi" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneDsi"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
@@ -1774,7 +1709,7 @@ newDoc.save(onSaveEvent=False)
                       
 return newDoc.getId()
 ]]></resource>
-      <resource id="setCloneIdrogeologicoXXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneIdrogeologicoXXXXXX"
+        <resource id="setCloneIdrogeologico" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneIdrogeologico"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
@@ -1788,6 +1723,7 @@ if isinstance(doc, basestring):
     
 
 app='idrogeologico-aut'
+v=doc.getId().split('-')
 
 newId = v[0]+'-'+v[1]+'-'+ app
 #se l'ho gia duplicato esco
@@ -1844,7 +1780,7 @@ newDoc.save(onSaveEvent=False)
                       
 return newDoc.getId()
 ]]></resource>
-      <resource id="setClonePaesaggisticaXXXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setClonePaesaggisticaXXXXXXX"
+        <resource id="setClonePaesaggistica" title="" type="Script (Python)"><![CDATA[## Script (Python) "setClonePaesaggistica"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
@@ -1946,7 +1882,151 @@ newDoc.save(onSaveEvent=False)
                       
 return newDoc.getId()
 ]]></resource>
-      <resource id="setNumeroPraticaXXXXX" title="" type="Script (Python)"><![CDATA[## Script (Python) "setNumeroPraticaXXXXX"
+      </resource>
+      <resource id="getElencoPraticheCollegateSUE" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoPraticheCollegateSUE"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=docId=''
+##title=
+##
+#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
+db=context.getParentDatabase()
+idx = db.getIndex()
+if not 'titolo_esistente_id' in idx.indexes():
+    return []
+#la ricerca deve restituire i documenti dei queli l'utente corrente  author
+brains = idx.dbsearch(dict(titolo_esistente_id=docId),sortindex="data_protocollo")
+html=''
+for brain in brains:
+    doc=brain.getObject()
+    html=html+'<p><h5><a target="_blank" href="%s">%s prot. %s del %s </a></h5></p>'%(doc.absolute_url(),doc.getItem('iol_form_title','Documento'),doc.getItem('numero_protocollo'),doc.getItem('data_protocollo_testo'))  
+
+if not html:
+    html = '<p><h5>Nessuna pratica collegata</h5></p>'
+    
+html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_pratiche_collegate"> Elenco delle pratiche collegate <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),html)    
+    
+return html
+]]></resource>
+      <resource id="setCloneDsi" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneDsi"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+
+app='dsi'
+
+v = doc.getId().split('-')
+newId = v[0]+'-'+v[1]+'-'+ app
+#se l'ho gia duplicato esco
+if context.getDocument(newId):
+    doc.setItem('identificativo_dsi',newId)
+    return doc.getId()
+
+newDoc=context.createDocument(docid=newId)
+for item in doc.getItems():
+    newDoc.setItem(item, doc.getItem(item))
+
+for f in doc.getFilenames():
+    attached_file = doc.getfile(f)
+    newDoc.setfile(attached_file,f)
+    
+newDoc.setItem('iol_tipo_app',app)   
+newDoc.setItem('titolo_esistente_protocollo',doc.getItem('numero_protocollo'))   
+newDoc.setItem('titolo_esistente_data',doc.getItem('data_protocollo')) 
+newDoc.setItem('identificativo',newDoc.getId())   
+newDoc.setItem('pagopa_enabled',0)
+
+
+newDoc.removeItem('data_invio_pw')
+newDoc.removeItem('data_protocollo')	
+newDoc.removeItem('numero_protocollo')	
+newDoc.removeItem('qualificazione_intervento_opt')	
+newDoc.removeItem('interventi_strutturali_opt')	
+newDoc.removeItem('vincolo_idrogeologico_opt')
+newDoc.removeItem('procedimento_autorizzazione_paesaggistica_opt')	
+newDoc.removeItem('elenco_pagamenti')	
+newDoc.removeItem('elenco_importi_pagamenti')	
+newDoc.removeItem('elenco_importi_dg')	
+newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
+newDoc.removeItem('pagopa_response')	
+
+if doc.getItem('interventi_strutturali_opt') == '3':
+    newDoc.setItem('tipologia_procedura_opt','1')
+elif doc.getItem('interventi_strutturali_opt') == '4':    
+    newDoc.setItem('tipologia_procedura_opt','2')
+
+doc.setItem('identificativo_dsi',newId)
+]]></resource>
+      <resource id="setCloneIdrogeologico" title="" type="Script (Python)"><![CDATA[## Script (Python) "setCloneIdrogeologico"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+    
+
+app='idrogeologico-aut'
+v=doc.getId().split('-')
+
+newId = v[0]+'-'+v[1]+'-'+ app
+#se l'ho gia duplicato esco
+if context.getDocument(newId):
+    doc.setItem('identificativo_idrogeologico',newId)
+    return
+
+newDoc=context.createDocument(docid=newId)
+for item in doc.getItems():
+    newDoc.setItem(item, doc.getItem(item))
+
+for f in doc.getFilenames():
+    attached_file = doc.getfile(f)
+    newDoc.setfile(attached_file,f)
+    
+newDoc.setItem('iol_tipo_app',app)   
+newDoc.setItem('titolo_esistente_protocollo',doc.getItem('numero_protocollo'))   
+newDoc.setItem('titolo_esistente_data',doc.getItem('data_protocollo')) 
+newDoc.setItem('identificativo',newDoc.getId())   
+newDoc.setItem('pagopa_enabled',0)
+
+
+##specifico
+newDoc.setItem('titolo_esistente_opt','1')
+if doc.getItem('iol_tipo_app')=='pdc':
+    newDoc.setItem('titolo_esistente_tipo','PERMESSO DI COSTRUIRE') 
+else:
+    newDoc.setItem('titolo_esistente_tipo','SCIA') 
+
+newDoc.removeItem('data_invio_pw')
+newDoc.removeItem('data_protocollo')	
+newDoc.removeItem('numero_protocollo')	
+newDoc.removeItem('qualificazione_intervento_opt')	
+newDoc.removeItem('interventi_strutturali_opt')	
+newDoc.removeItem('vincolo_idrogeologico_opt')	
+newDoc.removeItem('elenco_pagamenti')	
+newDoc.removeItem('elenco_importi_pagamenti')	
+newDoc.removeItem('elenco_importi_dg')	
+newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
+newDoc.removeItem('pagopa_response')
+
+
+doc.setItem('identificativo_idrogeologico',newId)
+]]></resource>
+      <resource id="setClonePaesaggistica" title="" type="Script (Python)"><![CDATA[## Script (Python) "setClonePaesaggistica"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
@@ -1957,39 +2037,103 @@ return newDoc.getId()
 ##
 from Products.CMFPlomino.PlominoUtils import DateToString
 
-if doc.getItem('numero_pratica'):
-    return
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+    
+s='paesaggistica'
+app=s
 
-### impostazione di base protocollo/anno
-anno = DateToString(doc.getItem('data_protocollo'),format='%Y')
-doc.setItem('numero_pratica','%s/%s' %(doc.getItem('numero_protocollo'),anno))
-doc.save(onSaveEvent=False)
-return
+prot = doc.getItem('numero_protocollo')
+data_prot = DateToString(doc.getItem('data_protocollo'),format="%d/%m/%Y")
 
 
-###fantasie varie tipo progressivo per anno....
-idx = context.getIndex()
-fieldName='progressivo_numero'
-anno = DateToString(doc.getItem('data_protocollo'),format='%Y')+'/01/01'
-query = {fieldName: dict(query=0, range='min'), 'data_protocollo': dict(query=anno, range='min')}
-brains = idx.dbsearch(query, sortindex=fieldName, reverse=1, only_allowed=False)
-if len(brains)==0:
-    newNumber = 1
+if doc.getItem('procedimento_autorizzazione_paesaggistica_opt')=='1':
+    s='psemplificata'
+    app='paesaggistica-semplificata'
+    msg1='''Istanza di autorizzazione paesaggistica semplificata pervenuta contestualmente all'istanza/comunicazione prot %s del %s''' %(prot,data_prot)
+    msg2='''L'efficacia dell'istanza/comunicazione e' condizionata dall'approvazione dell'autorizzazione paesaggistica semplificata'''
+
+if doc.getItem('procedimento_autorizzazione_paesaggistica_opt')=='2':
+    s='pordinaria'
+    app='paesaggistica-ordinaria'
+    msg1='''Istanza di autorizzazione paesaggistica ordinaria pervenuta contestualmente all'istanza/comunicazione prot %s del %s''' %(prot,data_prot)
+    msg2='''L'efficacia dell'istanza/comunicazione e' condizionata dall'approvazione dell'autorizzazione paesaggistica ordinaria'''
+
+    
+v = doc.getId().split('-')
+newId = v[0]+'-'+v[1]+'-'+ s
+#se l'ho gia duplicato esco
+if context.getDocument(newId):
+    doc.setItem('identificativo_paesaggistica',newId)
+    return doc.getId()
+
+newDoc=context.createDocument(docid=newId)
+
+for item in doc.getItems():
+    newDoc.setItem(item, doc.getItem(item))
+
+for f in doc.getFilenames():
+    attached_file = doc.getfile(f)
+    newDoc.setfile(attached_file,f)
+ 
+frm = context.getParentDatabase().getForm('frm_' + app)    
+newDoc.setItem('iol_tipo_app',app)
+newDoc.setItem('iol_form_title',frm.Title())
+newDoc.setItem('identificativo',newDoc.getId())
+newDoc.setItem('titolo_esistente_id',doc.getId())
+newDoc.setItem('msg_paesaggistica',msg1)
+newDoc.setItem('pagopa_enabled',0)
+
+
+ref = doc.getItem('titolo_esistente_id')
+if not ref:
+    ref=newDoc.getId()
+elif isinstance(ref, basestring): 
+    ref=[ref,newDoc.getId()]
 else:
-    newNumber = (brains[0].getObject().getItem(fieldName,0) or 0) +1
-return newNumber
+    try:
+        ref.append(newDoc.getId())
+    except:
+        pass
+doc.setItem('titolo_esistente_id',ref)
+doc.setItem('msg_paesaggistica',msg2)
+context.getParentDatabase().getIndex().indexDocument(doc)
 
-###fantasie varie tipo progressivo per anno e tipo pratica ....
-idx = context.getIndex()
-fieldName='progressivo_numero_%s' %doc.getItem('iol_tipo_app')
-anno = DateToString(doc.getItem('data_protocollo'),format='%Y')+'/01/01'
-query = {fieldName: dict(query=0, range='min'), 'data_protocollo': dict(query=anno, range='min')}
-brains = idx.dbsearch(query, sortindex=fieldName, reverse=1, only_allowed=False)
-if len(brains)==0:
-    newNumber = 1
+newDoc.removeItem('data_invio_pw')
+newDoc.removeItem('data_protocollo')	
+newDoc.removeItem('numero_protocollo')	
+newDoc.removeItem('qualificazione_intervento_opt')	
+newDoc.removeItem('interventi_strutturali_opt')	
+newDoc.removeItem('vincolo_idrogeologico_opt')
+newDoc.removeItem('procedimento_autorizzazione_paesaggistica_opt')	
+newDoc.removeItem('elenco_pagamenti')	
+newDoc.removeItem('elenco_importi_pagamenti')	
+newDoc.removeItem('elenco_importi_dg')	
+newDoc.removeItem('elenco_importi_aggiuntivi_dg')	
+newDoc.removeItem('pagopa_response')
+
+doc.setItem('identificativo_paesaggistica',newId)
+]]></resource>
+      <resource id="getLinkContestuale" title="" type="Script (Python)"><![CDATA[## Script (Python) "getLinkContestuale"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+
+if doc.getItem('numero_protocollo'):
+    msg=""
+    cls="success"
 else:
-    newNumber = (brains[0].getObject().getItem(fieldName,0) or 0) +1
-return newNumber
+    msg="Per poter inviare l'istanza occorre prima completare e inviare la seguente comunicazione:<br/>"
+    cls="error"
+    
+return '<div class="alert alert-%s"><h5>%s<a target="blank_" href="%s">%s</a> </h5></div>' %(cls,msg,doc.absolute_url(),doc.absolute_url())
 ]]></resource>
     </resource>
   </design>

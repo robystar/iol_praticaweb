@@ -63,6 +63,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>db=context.getParentDatabase()
 
@@ -79,10 +83,6 @@ if not result:
     
 return result
 </string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -113,12 +113,12 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['sue','suap']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['sue','suap']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
