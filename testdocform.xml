@@ -47,7 +47,7 @@ if db.getDocument(newId):
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="iol_tipo_app" title="Tipo titolo" type="PlominoField">
+        <element id="iol_tipo_app" title="Tipo pratica" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -62,6 +62,10 @@ resources/iol-custom.css]]></ResourcesCSS>
           <params>
 <param>
 <value><struct>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
 <member>
 <name>selectionlistformula</name>
 <value><string>db=context.getParentDatabase()
@@ -79,10 +83,6 @@ if not result:
     
 return result
 </string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -113,12 +113,12 @@ return result
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['sue','suap']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['sue','suap']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

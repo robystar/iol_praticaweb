@@ -17,11 +17,9 @@
 <p><span class="plominoLabelClass">allegato_denuncia_sismica</span><span class="plominoFieldClass">allegato_denuncia_sismica</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_denuncia_sismica</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_doc_denuncia_art65</span></p>
-<span class="plominoLabelClass">allegato_doc_denuncia_art65</span><span class="plominoFieldClass">allegato_doc_denuncia_art65</span>
-<p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_doc_denuncia_art65</span><span class="plominoFieldClass">allegato_doc_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_art65</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_denuncia_art65</span></p>
-<span class="plominoLabelClass">allegato_denuncia_art65</span><span class="plominoFieldClass">allegato_denuncia_art65</span>
-<p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_denuncia_art65</span><span class="plominoFieldClass">allegato_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_denuncia_lavori_sismica</span></p>
 <p><span class="plominoLabelClass">allegato_denuncia_lavori_sismica</span><span class="plominoFieldClass">allegato_denuncia_lavori_sismica</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_denuncia_lavori_sismica</span></p>
@@ -74,7 +72,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file allegato","maxsize":"10"}
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file allegato","maxsize":"7"}
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_denuncia_art65" title="Denuncia art. 65:" type="PlominoField">
@@ -89,7 +87,7 @@ data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file a
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file allegato","maxsize":"10"}
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file allegato","maxsize":"7"}
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_denuncia_lavori_sismica" title="Denuncia dei lavori in zona sismica" type="PlominoField">
@@ -104,8 +102,8 @@ data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"Nessun file a
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_doc_denuncia_lavori_sismica" title="Documentazione relativa alla denuncia dei lavori in zona sismica" type="PlominoField">
@@ -120,8 +118,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_autorizzazione_sismica" title="Autorizzazione sismica" type="PlominoField">
@@ -136,8 +134,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_doc_autorizzazione_sismica" title="Documentazione necessaria per il rilascio dell'autorizzazione sismica" type="PlominoField">
@@ -152,8 +150,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_denuncia_lavori_sismica" title="hw_no_denuncia_lavori_sismica" type="PlominoHidewhen">
@@ -178,7 +176,7 @@ data-tooltip = "firmato digitalmente max 10Mb"
         </element>
         <element id="hw_interventistrutturali" title="hw_interventistrutturali" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_interventistrutturali</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2') or context.getItem('interventi_strutturali_opt','') in ['3','4']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not(context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2' or (context.getItem('interventi_strutturali_opt','') == '3' and context.getItem('documentazione_dsi_opt','')=='2') or context.getItem('interventi_strutturali_opt','') == '4')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_doc_denuncia_art65" title="hw_no_doc_denuncia_art65" type="PlominoHidewhen">
@@ -209,15 +207,22 @@ data-tooltip = "firmato digitalmente"
         </element>
         <element id="hw_no_ricevuta_dsi" title="hw_no_rivevuta_dsi" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_ricevuta_dsi</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('interventi_strutturali_opt','') not in ['3','4']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('interventi_strutturali_opt','') == '4':
+    return False
+elif context.getItem('interventi_strutturali_opt','') == '3':
+    return context.getItem('documentazione_dsi_opt','')=='2'
+else:
+    return True]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_denuncia_sismica" title="hw_no_denuncia_sismica" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_denuncia_sismica</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('interventi_strutturali_opt','') in ['3','4']:
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('interventi_strutturali_opt','') == '4':
     return False
+elif context.getItem('interventi_strutturali_opt','') == '3':
+    return context.getItem('documentazione_dsi_opt','')=='2'
 else:
-    return context.getItem('conglomerato_opt','1')=='1' or context.getItem('denuncia_art65_opt','2') =='2']]></Formula>
+    return True]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="allegato_denuncia_sismica" title="Modulo di Denuncia Sismica Integrata (da compilare e allegare)" type="PlominoField">
@@ -232,8 +237,8 @@ else:
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
       </elements>

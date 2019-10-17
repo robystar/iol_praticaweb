@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="dlg_importi" title="Importo" type="PlominoForm">
+    <element id="dlg_importi" title="Nuovo Importo" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">dlg_importi</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
@@ -11,7 +11,7 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="row-fluid">
-<div class="span7">
+<div class="span9">
 <span class="plominoLabelClass">tipo</span><span class="plominoFieldClass">tipo</span>
 </div>
 <div class="span3">
@@ -98,12 +98,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>DECIMAL</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>DECIMAL</string></value>
 </member>
 </struct></value>
 </param>
@@ -116,11 +116,12 @@ resources/iol-custom.css]]></ResourcesCSS>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA['Presentazione']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[if not 'PlominoEditor' in context.getCurrentUserRights():
+    return 'readonly']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><struct>
@@ -132,7 +133,7 @@ resources/iol-custom.css]]></ResourcesCSS>
 </param>
 </params>
         </element>
-        <element id="causale" title="Dettaglio causale" type="PlominoField">
+        <element id="causale" title="Causale" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">causale</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -143,7 +144,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['maxlength="70"']]></HTMLAttributesFormula>
         </element>
         <element id="codimp" title="codimp" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">codimp</id>
@@ -172,7 +173,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <id type="Products.Archetypes.Field.StringField">azione</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['presentazione']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

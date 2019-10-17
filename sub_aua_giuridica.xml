@@ -464,6 +464,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>['''titolare dell'omonima impresa individuale|1''','''legale rappresentante della Società|2''']</string></value>
 </member>
@@ -471,10 +475,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -510,6 +510,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>['''Il titolare si impegna ad iscriversi al Registro per le Imprese entro 30 giorni dalla data di inizio dell'attività;|1''']</string></value>
 </member>
@@ -517,10 +521,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

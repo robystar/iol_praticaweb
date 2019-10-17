@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_idrogeologico-aut" title="RICHIESTA AUTORIZZAZIONE IN MERITO AL VINCOLO IDROGEOLOGICO  per realizzazione di opere edilizie in zona soggetta a vincolo idrogeologico  - art.35 comma 1 della L.R. Liguria n.4/1999 e ss.mm.ii." type="PlominoForm">
+    <element id="frm_idrogeologico-aut" title="Richiesta di Autorizzazione in merito al Vincolo Idrogeologico per realizzazione di opere edilizie in zona soggetta a vincolo idrogeologico  - art.35 comma 1 della L.R. Liguria n.4/1999 e ss.mm.ii." type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_idrogeologico-aut</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>

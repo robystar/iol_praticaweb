@@ -79,8 +79,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"10"}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"7"}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_relazione_tecnica" title="Relazione tecnica a firma del professionista abilitato" type="PlominoField">
@@ -95,8 +95,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_documentazione_fotografica" title="Documentazione fotografica" type="PlominoField">
@@ -111,8 +111,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_elaborati_grafici" title="Elaborati grafici" type="PlominoField">
@@ -127,8 +127,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_mappa_catastale" title="Estratto di mappa catastale" type="PlominoField">
@@ -143,8 +143,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_ctrn" title="C.T.R" type="PlominoField">
@@ -159,8 +159,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_dissesto" title="Estratto carta suscettività al dissesto dei versanti del Piano di Bacino con individuazione dell’intervento" type="PlominoField">
@@ -175,8 +175,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"10"}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"7"}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_autocertificazione_conformita" title="Autocertificazione che attesti la conformità delle opere da realizzare alle previsioni degli strumenti urbanistici e dei regolamenti edilizi ed il mancato contrasto con le previsioni degli strumenti adottati" type="PlominoField">
@@ -191,8 +191,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_relazione_geologica" title="attestazione o relazione geologica che attesti l’ammissibilità delle opere in relazione alla stabilità dei versanti e dell’assetto idrogeologico del terreno, nonché il rispetto delle norme di sicurezza richieste in terreni vincolati" type="PlominoField">
@@ -207,8 +207,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
       </elements>

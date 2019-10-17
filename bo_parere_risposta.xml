@@ -31,6 +31,9 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <span class="plominoHidewhenClass">start:hw_no_edit</span><div>
 <span class="plominoLabelClass">parere_ente_nome</span><span class="plominoFieldClass">parere_ente_nome</span>
 </div>
+<div class="row-fluid"><div class="span3">
+<span class="plominoLabelClass">data_richiesta_parere</span><span class="plominoFieldClass">data_richiesta_parere</span>
+</div></div>
 <span class="plominoHidewhenClass">end:hw_no_edit</span><div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">parere_tipo</span><span class="plominoFieldClass">parere_tipo</span>
@@ -82,6 +85,35 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
+        <element id="data_richiesta_parere" title="Data invio richiesta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_richiesta_parere</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-110Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+10"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
         <element id="data_invio_risposta" title="data_invio_risposta" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">data_invio_risposta</id>
           <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
@@ -100,12 +132,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -171,12 +203,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>8</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -198,12 +230,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>8</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -216,7 +248,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
@@ -225,13 +257,13 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>['FAVOREVOLE|1','FAVOREVOLE CON PRESCRIZIONI|2','CONTRARIO|3']
 </string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -320,12 +352,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>

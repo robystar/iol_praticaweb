@@ -53,12 +53,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Il richiedente ha la titolarità esclusiva all'esecuzione dell'intervento|1''','''Il richiedente non ha la titolarità esclusiva all'esecuzione dell'intervento ma dispone comunque della dichiarazione di assenso dei terzi titolari di altri diritti reali o obbligatori|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Il richiedente ha la titolarità esclusiva all'esecuzione dell'intervento|1''','''Il richiedente non ha la titolarità esclusiva all'esecuzione dell'intervento ma dispone comunque della dichiarazione di assenso dei terzi titolari di altri diritti reali o obbligatori|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

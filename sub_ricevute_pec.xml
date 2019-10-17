@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="bo_parere" title="bo_parere" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">bo_parere</id>
+    <element id="sub_ricevute_pec" title="sub_ricevute_pec" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_ricevute_pec</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -9,12 +9,7 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoSubformClass">bo_parere_richiesta</span></p>
-<p><span class="plominoHidewhenClass">start:hw_no_risposta</span></p>
-<p><span class="plominoSubformClass">bo_parere_risposta</span></p>
-<p><span class="plominoHidewhenClass">end:hw_no_risposta</span></p>
-]]></FormLayout>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><p><span class="plominoFieldClass">ricevute_pec</span></p></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -36,10 +31,18 @@
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="hw_no_risposta" title="hw_no_risposta" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_risposta</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('data_invio_risposta')]]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        <element id="ricevute_pec" title="Ricevute PEC" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">ricevute_pec</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.customscripts.getElencoPEC(context)]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">tabella_elenco_pec</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

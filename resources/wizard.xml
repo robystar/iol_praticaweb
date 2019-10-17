@@ -161,8 +161,8 @@ menus['back'] = [
     {"label": "Oneri", "frm": "bo_oneri", "title": "Contributo di costruzione e oneri di urbanizzazione"}, 
     {"label": "Inizio / Fine lavori", "frm": "bo_lavori", "title": "Inizio / Fine lavori"},  
     {"label": "Asservimenti", "frm": "bo_asservimenti", "title": "Asservimenti"},     
-    {"label": "Asseverata", "frm": "frm_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
-    {"label": "Vincoli", "frm": "frm_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"},     
+    {"label": "Asseverata", "frm": "bo_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Vincoli", "frm": "bo_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"},     
     {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
 ]
 
@@ -233,8 +233,8 @@ menus['back'] = [
     {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
     {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
     {"label": "Inizio / Fine lavori", "frm": "bo_lavori", "title": "Inizio / Fine lavori"},  
-    {"label": "Asseverata", "frm": "frm_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
-    {"label": "Vincoli", "frm": "frm_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"},     
+    {"label": "Asseverata", "frm": "bo_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Vincoli", "frm": "bo_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"},     
     {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
 ]
 
@@ -274,8 +274,8 @@ menus['back'] = [
     {"label": "Oneri", "frm": "bo_oneri", "title": "Contributo di costruzione e oneri di urbanizzazione"}, 
     {"label": "Inizio / Fine lavori", "frm": "bo_lavori", "title": "Inizio / Fine lavori"},  
     {"label": "Asservimenti", "frm": "bo_asservimenti", "title": "Asservimenti"},     
-    {"label": "Asseverata", "frm": "frm_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
-    {"label": "Vincoli", "frm": "frm_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"},     
+    {"label": "Asseverata", "frm": "bo_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Vincoli", "frm": "bo_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"},     
     {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
 ]
 
@@ -350,7 +350,7 @@ if not tipo_app in context:
 data = context[tipo_app]() 
 
 ##patch per compatib versione precedente
-if doc.isDocument() and doc.getItem('Form') in ['frm__presentata','frm__presentata_altrodb']:
+if doc.isDocument() and doc.getItem('Form') in ['frm_importata','frm__presentata','frm__presentata_altrodb']:
     return    
 
 if doc.isDocument() and doc.getwfVariables(varId='wf_presentata'):
@@ -364,7 +364,7 @@ if doc.isDocument() and doc.getwfVariables(varId='wf_presentata'):
     menus=data['back'] 
 
 
-elif doc.isDocument() and doc.getItem('Form')=='frm_completata':
+elif doc.isDocument() and doc.getItem('Form') in ['frm_completata']:
     menus=[]
 else:   
     menus=data['front']
@@ -506,7 +506,7 @@ menus['back'] = [
     {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
     {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
     {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Asseverata", "frm": "frm_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Asseverata", "frm": "bo_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
     {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
 ]
 
@@ -539,7 +539,7 @@ menus['back'] = [
     {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
     {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
     {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Asseverata", "frm": "frm_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Asseverata", "frm": "bo_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
     {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
 ]
 return menus
@@ -571,7 +571,7 @@ menus['back'] = [
     {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
     {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
     {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Asseverata", "frm": "frm_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
+    {"label": "Asseverata", "frm": "bo_paesaggistica_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
     {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
 ]
 

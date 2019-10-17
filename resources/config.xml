@@ -15,7 +15,7 @@ versionenuova=1,
          
 pagopa = True, #PagoPA Abilitato
 
-provider='sue', #Per abilitare BO Praticaweb impostare praticaweb
+#provider='praticaweb', #Per abilitare BO Praticaweb impostare praticaweb
 
 doc_settings = "0-settings", #id del documento dove sono salvati i settings  
 #ws servizio backoffice pratiche        
@@ -55,6 +55,8 @@ sezione_catasto = True,
 #tipo di pratica con relazione descrittiva aggiuntiva
 #relazione_descrittiva = ['cila','scia'],
 
+volumetria_pagamenti = "<strong>Attenzione l'importo dei diritti di segreteria è calcolato in automatico in base al valore inserito in Volume dell'intervento nella seguente misura:</strong> da 0 a 30: 51.65 fino a 100: 103.29 fino a 300: 154.94 fino a 500: 258.23 fino a 1000: 413.17 oltre 1000: 516.46",
+
 #stampa della ricevuta di presentazione
 ricevuta_presentazione = False,
 
@@ -87,7 +89,7 @@ destinazione_uso = [
 
 
 #elenco check in form di ricerca
-tipo_ricerca = [
+tipo_pratica = [
     'CIL|cil',
     'CILA|cila',
     'SCIA|scia',
@@ -108,6 +110,26 @@ tipo_ricerca = [
     'Denuncia Sismica Integrata|dsi',
     'Pratica importata|pe'
 ],
+
+#elenco per nuova pratica da backoffice
+nuova_pratica = [
+    'Comunicazione Inizio Lavori - CIL|cil',
+    'Comunicazione Inizio Lavori Asseverata - CILA|cila',
+    '''Segnalazione Certificata di Inizio Attivita' - SCIA|scia''',
+    '''Segnalazione Certificata di Inizio Attivita' Alternativa al Permesso di Costruire|scia2''',
+    'Istanza di Permesso di Costruire|pdc',
+    'Richiesta di Autorizzazione Paesaggistica con procedura ordinaria|paesaggistica-ordinaria',
+    'Richiesta di Autorizzazione Paesaggistica con procedura semplificata|paesaggistica-semplificata', 
+    '''Istanza di Accertamento di Compatibilita' Paesaggistica|paesaggistica-accertamento''',
+    '''Segnalazione Certificata di Agibilita'|sca''',
+    '''Regolarizzazione sotto il profilo amministrativo ai sensi dell'art 22|art22''',
+    '''Regolarizzazione opere in difformita' ai sensi dell'art. 48|art48''',
+    'Richiesta di Autorizzazione in merito al Vincolo Idrogeologico|idrogeologico-aut',
+    '''Segnalazione Certificata di Inizio Attivita' per opere edilizie in zona soggetta a vincolo idrogeologico|idrogeologico-scia''',
+    'Denuncia Sismica Integrata|dsi',
+    'Altro tipo di pratica|pe'
+],
+
 
 elenco_albo =[
     'Ordine degli Architetti|architetti',

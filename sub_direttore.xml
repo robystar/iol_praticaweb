@@ -11,10 +11,11 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
-
 <div><span class="plominoFieldClass">direttore_opt</span></div>
 <p><span class="plominoHidewhenClass">start:hw_no_direttore_avviso</span></p>
-<div class="alert alert-error"><h5>Con la scelta di questa opzione si dichiara di essere consapevole che l’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi al direttore dei lavori.<br>L’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi del direttore dei lavori e la sua sottoscrizione</h5></div>
+<div class="alert alert-error">
+<h5>Con la scelta di questa opzione si dichiara di essere consapevole che l’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi al direttore dei lavori.<br>L’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi del direttore dei lavori e la sua sottoscrizione</h5>
+</div>
 <p><span class="plominoHidewhenClass">end:hw_no_direttore_avviso</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_direttore_lavori</span></p>
 <p><span class="plominoSubformClass">base_sub_direttore</span></p>
@@ -26,7 +27,7 @@
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
@@ -62,6 +63,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori;|1','Il direttore dei lavori coincide con il progettista delle opere;|2','Il direttore dei lavori è persona diversa dal progettista;|3','''Il direttore dei lavori sarà comunicato prima dell'inizio dei lavori;|4''']
 
@@ -69,10 +74,6 @@ if context.getItem('iol_tipo_app','') in ['dsixxxxx']:
     ll = ['Il direttore dei lavori coincide con il progettista delle opere;|2','Il direttore dei lavori è persona diversa dal progettista;|3']
     
 return ll</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -91,6 +92,22 @@ return ll</string></value>
           <id type="Products.Archetypes.Field.StringField">hw_no_direttore_avviso</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_opt','')!='4']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="btn_save" title="Salva e continua &gt;&gt;" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_save</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_cancel" title="Annulla" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_cancel</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.absolute_url()]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
       </elements>
     </element>

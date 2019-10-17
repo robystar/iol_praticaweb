@@ -7,7 +7,9 @@
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
 if 'btn_next' in context.REQUEST.keys():
-    return context.toNextForm()]]></onSaveDocument>
+    return context.toNextForm()
+elif 'btn_save' in context.REQUEST.keys():
+    context.setItem('Form','frm_presentata')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
@@ -62,12 +64,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return ['''Non è previsto l'intervento di un progettista;|1''','''Il progettista è:|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Non è previsto l'intervento di un progettista;|1''','''Il progettista è:|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

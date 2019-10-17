@@ -98,12 +98,12 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -124,10 +124,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
           <params>
 <param>
 <value><struct>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_tipo,allegato_nome</string></value>
-</member>
 <member>
 <name>associated_form_rendering</name>
 <value><string>MODAL</string></value>
@@ -155,6 +151,10 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
 <value><string>dlg_allegati_settings</string></value>
 </member>
 <member>
+<name>field_mapping</name>
+<value><string>allegato_tipo,allegato_nome</string></value>
+</member>
+<member>
 <name>widget</name>
 <value><string>REGULAR</string></value>
 </member>
@@ -177,10 +177,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
           <params>
 <param>
 <value><struct>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_tipo,allegato_nome,allegato_ente_opt</string></value>
-</member>
 <member>
 <name>associated_form_rendering</name>
 <value><string>MODAL</string></value>
@@ -207,6 +203,10 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in elencoSe
 <member>
 <name>associated_form</name>
 <value><string>dlg_allegati_enti_settings</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_tipo,allegato_nome,allegato_ente_opt</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -238,12 +238,12 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -264,10 +264,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
           <params>
 <param>
 <value><struct>
-<member>
-<name>field_mapping</name>
-<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
-</member>
 <member>
 <name>associated_form_rendering</name>
 <value><string>MODAL</string></value>
@@ -295,6 +291,10 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <member>
 <name>associated_form</name>
 <value><string>dlg_allegati_settings_sue</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -320,10 +320,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <param>
 <value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
-</member>
-<member>
 <name>associated_form_rendering</name>
 <value><string>MODAL</string></value>
 </member>
@@ -350,6 +346,10 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <member>
 <name>associated_form</name>
 <value><string>dlg_allegati_settings_sue</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -375,10 +375,6 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <param>
 <value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
-</member>
-<member>
 <name>associated_form_rendering</name>
 <value><string>MODAL</string></value>
 </member>
@@ -405,6 +401,10 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
 <member>
 <name>associated_form</name>
 <value><string>dlg_allegati_settings_sue</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>allegato_nome,allegato_obbligatorio,allegato_firma,allegato_maxsize</string></value>
 </member>
 <member>
 <name>widget</name>
@@ -440,12 +440,12 @@ return '<br />'.join([x[0]+'.'+x[1] for x in elencoCampi if x[1] not in ll])]]><
         </element>
         <element id="hw_no_pw" title="hw_no_pw" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_pw</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider') not in ['praticaweb','halley']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider') != 'praticaweb']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_sue" title="hw_no_sue" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_sue</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider')!='sue']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.config().get('provider')=='praticaweb']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

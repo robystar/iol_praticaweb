@@ -62,7 +62,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"15","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_relazione_art28" title="hw_no_relazione_art28" type="PlominoHidewhen">
@@ -83,7 +83,7 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"15","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_impianto_elettrico" title="hw_no_impianto_elettrico" type="PlominoHidewhen">
@@ -104,7 +104,7 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"15","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_certificazione_energetica" title="hw_no_certificazione_energetica" type="PlominoHidewhen">
@@ -125,7 +125,7 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"15","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
       </elements>

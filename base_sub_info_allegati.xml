@@ -10,12 +10,32 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="alert alert-error">
+<h5>REGOLE GENERALI PER LA DENOMINAZIONE DEI FILE:</h5>
+<p><strong>Gli elaborati grafici dovranno essere denominati, a TITOLO ESPLICATIVO ed in base al loro specifico contenuto, come segue:</strong></p>
+<p>TAV_01 - STATO ATTUALE</p>
+<p>TAV_02 - STATO DI PROGETTO</p>
+<p>TAV_03 - STATO DI CONFRONTO</p>
+<p>TAV_04 - ..</p>
+</div>
+<div class="alert alert-error">
+<h5>I FILE FIRMATI DIGITALMENTE DEVONO SEGUIRE OBBLIGATORIAMENTE LE SEGUENTI REGOLE DI DENOMINAZIONE:</h5>
+<p><strong>1) Il nome del file DEVE mantenere anche l'estensione del formato originario (es. nomefile.pdf.p7m)</strong></p>
+<p><strong>2) Non devono essere presenti punti nella parte che precede l'estensione del file (es. non C.I.pdf ma CI.pdf)</strong></p>
+<p><strong>I file che NON RISPETTANO queste regole di denominazione potranno essere rifiutati.</strong></p>
+</div>
 <div class="alert alert-info">
-<h5>Info per allegare documenti</h5>
+<h5>Istruzioni per allegare documenti</h5>
 <ul>
-<li><h5>Per allegare documenti, cliccare sul simbolo di Upload e selezionare il file desiderato dal proprio dispositivo.</h5></li>
-<li><h5>Per allegare più documenti contemporaneamente, cliccare sul simbolo di Upload e selezionare i file desiderati dal proprio dispositivo, tenendo premuto il tasto Ctrl. La dimensione massima si riferisce al singolo file, e non alla somma di più documenti caricati insieme.</h5></li>
-<li><h5>E' possibile aggiungere un file ad una lista di allegati ma solo dopo avere salvato il form in compilazione.</h5></li>
+<li>
+<h5>Per allegare documenti, cliccare sul simbolo di Upload e selezionare il file desiderato dal proprio dispositivo.</h5>
+</li>
+<li>
+<h5>Per allegare più documenti contemporaneamente, cliccare sul simbolo di Upload e selezionare i file desiderati dal proprio dispositivo, tenendo premuto il tasto Ctrl. La dimensione massima si riferisce al singolo file, e non alla somma di più documenti caricati insieme.</h5>
+</li>
+<li>
+<h5>E' possibile aggiungere un file ad una lista di allegati ma solo dopo avere salvato il form in compilazione.</h5>
+</li>
 </ul>
 </div>
 <p><span class="plominoFieldClass">openwithform</span></p>
@@ -34,7 +54,10 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="hw_no_form" title="hw_no_form" type="PlominoHidewhen">

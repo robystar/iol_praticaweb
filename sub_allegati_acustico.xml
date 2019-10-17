@@ -56,8 +56,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_clima_acustico" title="Valutazione previsionale di clima acustico:" type="PlominoField">
@@ -72,8 +72,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_dichiarazione_acustico" title="Dichiarazione sostitutiva atto di notorietà:" type="PlominoField">
@@ -88,8 +88,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_documentazione_acustico" title="Documentazione di previsione di impatto acustico ai fini del rilascio del nulla osta" type="PlominoField">
@@ -104,8 +104,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_impatto_acustico" title="hw_no_impatto_acustico" type="PlominoHidewhen">

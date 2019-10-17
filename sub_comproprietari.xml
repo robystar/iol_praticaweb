@@ -45,10 +45,6 @@
 <param>
 <value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>fisica_cognome,fisica_nome,fisica_comune_nato,fisica_cf,fisica_comune,fisica_indirizzo,fisica_civico,fisica_email,fisica_pec,fisica_telefono,giuridica_qualita,giuridica_denominazione,fisica_data_nato,fisica_sesso,giuridica_piva,giuridica_cf,giuridica_comune,giuridica_provincia,giuridica_cap,giuridica_localita,giuridica_indirizzo,giuridica_civico,giuridica_email,giuridica_pec,giuridica_telefono,giuridica_cellulare,giuridica_fax,fisica_app,fisica_titolo,fisica_provincia_nato,fisica_provincia,fisica_cap,giuridica_opt,fisica_cittadinanza,fisica_cod_cat_nato,fisica_loc,fisica_loc_nato,fisica_cellulare,fisica_fax,giuridica_cciaa,giuridica_cciaa_numero,giuridica_fisica_piva</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Cognome" },
@@ -77,6 +73,10 @@
 <member>
 <name>associated_form</name>
 <value><string>dlg_fisicagiuridica</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>fisica_cognome,fisica_nome,fisica_comune_nato,fisica_cf,fisica_comune,fisica_indirizzo,fisica_civico,fisica_email,fisica_pec,fisica_telefono,giuridica_qualita,giuridica_denominazione,fisica_data_nato,fisica_sesso,giuridica_piva,giuridica_cf,giuridica_comune,giuridica_provincia,giuridica_cap,giuridica_localita,giuridica_indirizzo,giuridica_civico,giuridica_email,giuridica_pec,giuridica_telefono,giuridica_cellulare,giuridica_fax,fisica_app,fisica_titolo,fisica_provincia_nato,fisica_provincia,fisica_cap,giuridica_opt,fisica_cittadinanza,fisica_cod_cat_nato,fisica_loc,fisica_loc_nato,fisica_cellulare,fisica_fax,giuridica_cciaa,giuridica_cciaa_numero,giuridica_fisica_piva</string></value>
 </member>
 </struct></value>
 </param>

@@ -9,8 +9,7 @@
 if context.getItem('fromform'):
     context.setItem('Form',context.getItem('fromform'))
 context.removeItem('fromform')
-#il campo pagopa_note non e in edit, uso un campo analogo nella sub e poi copio il valore
-context.setItem('pagopa_note',context.getItem('pagopa_note_edit'))
+
 orderDG(context,'elenco_importi_aggiuntivi_dg','elenco_importi_index')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
@@ -18,7 +17,6 @@ orderDG(context,'elenco_importi_aggiuntivi_dg','elenco_importi_index')]]></onSav
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
 <p><span class="plominoLabelClass">elenco_importi_aggiuntivi_dg</span><span class="plominoFieldClass">elenco_importi_aggiuntivi_dg</span></p>
-<p><span class="plominoLabelClass">pagopa_note_edit</span><span class="plominoFieldClass">pagopa_note_edit</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -33,7 +31,7 @@ orderDG(context,'elenco_importi_aggiuntivi_dg','elenco_importi_index')]]></onSav
       <SearchView type="Products.Archetypes.Field.StringField"/>
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
-      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.pagopa/controller_combo_causale.js]]></ResourcesJS>
       <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
 ++resource++iol.document/css/bootstrap-accessibile.min.css
 ++resource++iol.document/css/bootstrap-responsive.min.css
@@ -64,10 +62,6 @@ for row in rows:
 <param>
 <value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
@@ -83,7 +77,7 @@ for row in rows:
 "bInfo": false,
 "bAutoWidth": false,
 "plominoDialogOptions": {
-        "width": 800,
+        "width": 900,
         "height": 400
     }
 </string></value>
@@ -91,6 +85,10 @@ for row in rows:
 <member>
 <name>associated_form</name>
 <value><string>dlg_importi</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
 </member>
 </struct></value>
 </param>
@@ -111,33 +109,6 @@ for row in rows:
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[return context.absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
-        </element>
-        <element id="pagopa_note_edit" title="Annotazioni su importi e pagamenti" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">pagopa_note_edit</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
-<name>size</name>
-<value><string>4</string></value>
-</member>
-</struct></value>
-</param>
-</params>
         </element>
       </elements>
     </element>

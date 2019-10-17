@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_sca" title="SEGNALAZIONE CERTIFICATA DI AGIBILITÀ (art. 24 del d.P.R. n. 380/2001 e s.m.i.)" type="PlominoForm">
+    <element id="frm_sca" title="Segnalazione Certificata di Agibilità art. 24 del d.P.R. n. 380/2001 e s.m.i." type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_sca</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>

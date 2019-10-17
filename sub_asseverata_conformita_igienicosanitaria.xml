@@ -52,12 +52,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''è conforme ai requisiti igienico-sanitari e alle ipotesi di deroghe previste;|1''','''non è conforme ai requisiti igienico-sanitari e alle ipotesi di deroghe previste e pertanto si allega la documentazione per la richiesta di deroga;|2''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''è conforme ai requisiti igienico-sanitari e alle ipotesi di deroghe previste;|1''','''non è conforme ai requisiti igienico-sanitari e alle ipotesi di deroghe previste e pertanto si allega la documentazione per la richiesta di deroga;|2''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

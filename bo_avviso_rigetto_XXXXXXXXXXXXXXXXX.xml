@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="bo_avviso_rigetto" title="Comunicazione avviso di rigetto" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">bo_avviso_rigetto</id>
+    <element id="bo_avviso_rigetto_XXXXXXXXXXXXXXXXX" title="Comunicazione avviso di rigetto" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">bo_avviso_rigetto_XXXXXXXXXXXXXXXXX</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -33,13 +33,16 @@ else:
 </div>
 <div class="span9">
 <p><span class="plominoHidewhenClass">start:hw_new_avviso_rigetto</span></p>
-<span class="plominoFieldClass">comunicazione_avviso_rigetto_opt</span><span class="plominoLabelClass">comunicazione_avviso_rigetto_opt</span><p><span class="plominoHidewhenClass">end:hw_new_avviso_rigetto</span></p>
+<span class="plominoFieldClass">comunicazione_avviso_rigetto_opt</span><span class="plominoLabelClass">comunicazione_avviso_rigetto_opt</span>
+<p><span class="plominoHidewhenClass">end:hw_new_avviso_rigetto</span></p>
 </div>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_avviso_rigetto</span></p>
-<div class="row-fluid"><div class="span8">
+<div class="row-fluid">
+<div class="span8">
 <span class="plominoLabelClass">modello_stampa</span><span class="plominoFieldClass">modello_stampa</span>
-</div></div>
+</div>
+</div>
 <div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">documenti_da_scaricare</span><span class="plominoFieldClass">documenti_da_scaricare</span>
@@ -103,12 +106,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>12</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -136,12 +139,12 @@ return ss]]></HTMLAttributesFormula>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -221,6 +224,10 @@ data-target="documenti_da_scaricare"
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['Titolo selezionato|']       
 return ll</string></value>
@@ -229,10 +236,6 @@ return ll</string></value>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

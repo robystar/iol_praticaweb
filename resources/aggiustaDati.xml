@@ -1,0 +1,312 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="aggiustaDati" title="" type="Folder">
+      <resource id="aggiornaVincoliSpezia" title="" type="Script (Python)"><![CDATA[## Script (Python) "aggiornaVincoliSpezia"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import asUnicode
+
+for doc in context.getAllDocuments():
+    elencoZone = doc.getItem('elenco_vincoli_dg')
+    if elencoZone:
+        elencoZone = [row[0] for row in elencoZone] 
+        elencoZone = "\n==================\n".join(elencoZone); 
+        doc.setItem('regimi_vincolistici',elencoZone)
+        print doc.getId()
+        print doc.getItem('regimi_vincolistici')
+        
+        
+return printed
+]]></resource>
+      <resource id="01_FIX_cambio_direttore_strutt" title="" type="Script (Python)"><![CDATA[## Script (Python) "01_FIX_cambio_direttore_strutt"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    if doc.getItem('direttore_strutt_opt')=='' and doc.getItem('direttore_strutturale_opt','')!='':
+        doc.setItem('direttore_strutt_opt', doc.getItem('direttore_strutturale_opt',''))
+        print doc.getId()
+        
+return printed
+]]></resource>
+      <resource id="02_AggiustaForm" title="" type="Script (Python)"><![CDATA[## Script (Python) "02_AggiustaForm"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    frm = doc.getItem('Form')
+    
+    if frm not in ['frm__presentata','frm__presentata_altrodb']:
+        if '__' in frm:
+            print frm
+            doc.setItem('Form',frm.replace('__','_'))
+            
+        ll=doc.getItem('iol_menu_list',[])
+        ll2=[]
+        for l in ll:
+            if '__' in l:
+                l=l.replace('__','_')
+            if l=='frm_ubicazione_vincoli':
+                l='frm_ubicazione'
+            ll2.append(l)
+        doc.setItem('iol_menu_list',ll2)
+            
+        if doc.getItem('Form')=='frm_ubicazione_vincoli':
+            doc.setItem('Form','frm_ubicazione')
+            
+        
+return printed
+]]></resource>
+      <resource id="03_aggiornaVincoli" title="" type="Script (Python)"><![CDATA[## Script (Python) "03_aggiornaVincoli"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import asUnicode
+
+for doc in context.getAllDocuments():
+    if doc.getItem('pianificazione_urbanistica'):
+        text = 'Pianificazione Urbanistica:\n\r'
+        text = text + doc.getItem('pianificazione_urbanistica')
+        text = text + "\n\rPianificazione Territoriale:\n\r"
+        text = text + doc.getItem('pianificazione_territoriale')
+        doc.setItem('regimi_vincolistici',text)
+        print doc.getId()
+        
+return printed
+]]></resource>
+      <resource id="04_AggiornaIndici" title="" type="Script (Python)"><![CDATA[## Script (Python) "04_AggiornaIndici"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import Now, DateToString, StringToDate,json_dumps
+
+
+
+from iol.document.plomino_utils import serializeGrid
+####TODO  vedere se aggiungere quelli su datagrid
+for doc in context.getAllDocuments():
+    
+    if doc.getItem('data_protocollo'):
+        doc.setItem('anno_protocollo',int(DateToString(doc.getItem('data_protocollo'),format='%Y')))
+        
+    if not doc.getItem('iol_tipo_app') in ['iniziolavori','finelavori','integrazione','voltura']:
+        doc.setItem('iol_integrabile',1)
+
+    if doc.getItem('progettista_nome'):
+        doc.setItem('progettista_opt','2')        
+        
+    doc.setItem('tipo_pratica',doc.getItem('iol_tipo_app'))
+
+    v=["%s %s" %(doc.getItem('fisica_cognome',''),doc.getItem('fisica_nome',''))]
+    v=v+["%s %s" %(doc.getItem('progettista_cognome',''),doc.getItem('progettista_nome',''))]
+    v=v+["%s %s" %(doc.getItem('direttore_cognome',''),doc.getItem('direttore_nome',''))]
+    doc.setItem('soggetto_search',v)
+    
+    rows = doc.getItem('elenco_nct',[])
+    fogli=[];mappali=[]
+    for row in rows:
+        if not row[1] in fogli:
+            fogli.append(row[1])
+        if not row[2] in mappali:
+            mappali.append(row[2])
+                       
+    doc.setItem('foglio_search',fogli)                 
+    doc.setItem('mappale_search',mappali)    
+        
+    indirizzi = serializeGrid(doc,fieldName='elenco_civici',formName='sub_ubicazione')
+    val=[]
+    for indirizzo in indirizzi:
+        val.append(indirizzo["civico_via"])
+    doc.setItem('indirizzo_search',indirizzi)    
+    
+    
+    
+return 'ok'
+]]></resource>
+      <resource id="05_AggiornaReaders" title="" type="Script (Python)"><![CDATA[## Script (Python) "05_AggiornaReaders"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    if doc.getItem('Plomino_Readers'):
+        doc.setItem('Plomino_Readers',doc.getItem('Plomino_Readers')+['sue_readers'])
+return 'oko'
+]]></resource>
+      <resource id="06_AggiornaWorkflow" title="" type="Script (Python)"><![CDATA[## Script (Python) "06_AggiornaWorkflow"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+# ATTENZIONE AGGIORNARE IL CAMPO WF_IOL PRIMA DI ESPORTAZIONE
+
+for doc in context.getAllDocuments():
+    if  '0-settings' not in doc.getId():
+        doc.setItem('iol_workflow','iol_sue_wf')
+        doc.doAction('init')
+        print doc.getId()
+        if doc.getItem('data_presentazione')!='':
+            doc.doAction('presentazione')
+            if doc.getItem('data_protocollo')!='':
+                doc.doAction('protocolla')
+            else:
+                doc.doAction('richiedi_protocollo')
+            
+
+
+            
+return printed
+]]></resource>
+      <resource contenttype="text/x-unknown-content-type" id="AAggiungere sue_readers" title="" type="File"><![CDATA[]]></resource>
+      <resource contenttype="text/x-unknown-content-type" id="AAAAAcancellare script" title="" type="File"><![CDATA[]]></resource>
+      <resource contenttype="text/x-unknown-content-type" id="ASOSTITUIREMODELLIPRATICAWEB" title="" type="File"><![CDATA[]]></resource>
+      <resource id="99_AggiustaSUE" title="" type="Script (Python)"><![CDATA[## Script (Python) "99_AggiustaSUE"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    
+    frm = doc.getItem('Form')
+    if frm=='frm__presentata':
+        print doc.getId()
+        doc.setItem('Form','frm_presentata')
+
+        
+return printed
+]]></resource>
+      <resource id="faqualcosa" title="" type="Script (Python)"><![CDATA[## Script (Python) "faqualcosa"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+doc=context.getDocument('02257-2018-scia')
+doc.setItem('Form','frm_presentata')
+]]></resource>
+      <resource contenttype="text/x-unknown-content-type" id="AASostituire 0-settings ATTENZIONE DIFFERENZE SUE PW" title="" type="File"><![CDATA[]]></resource>
+      <resource contenttype="text/x-unknown-content-type" id="AGGIORNARE IL WF azione avvio procedimento automatica o no" title="" type="File"><![CDATA[]]></resource>
+      <resource id="99_Allinea_settings_allegati" title="" type="Script (Python)"><![CDATA[## Script (Python) "99_Allinea_settings_allegati"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+doc=context.getDocument('0-settings-allegati')
+docpw=context.getDocument('0-settings-allegati_pw')
+
+allegati_istanza=docpw.getItem('allegati_istanza')
+allegati_istanza_sue=doc.getItem('allegati_istanza_sue')
+allegati_scia_condizionata=docpw.getItem('allegati_scia_condizionata')
+allegati_scia_condizionata_sue=doc.getItem('allegati_scia_condizionata_sue')
+
+#aggiorno sue con i dati in pw
+doc.setItem('allegati_istanza',allegati_istanza)
+doc.setItem('allegati_scia_condizionata',allegati_scia_condizionata)
+]]></resource>
+      <resource id="ControllaOwner" title="" type="Script (Python)"><![CDATA[## Script (Python) "ControllaOwner"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from iol.document.plomino_utils import getOwner,assignOwner
+from Products.CMFCore.utils import getToolByName
+
+mt = getToolByName(context, 'portal_membership')
+
+
+for doc in context.getAllDocuments():
+    #if str(getOwner(doc)) == 'Anonymous User':
+    if doc.getItem('iol_owner')!=str(getOwner(doc)):
+        user = mt.getMemberById(str(doc.getItem('iol_owner')))
+        if user:
+            print user
+            assignOwner(doc,user)
+        print doc.getId(),doc.getItem('iol_owner'),str(getOwner(doc))
+    
+return printed
+]]></resource>
+      <resource id="99_AggiustaPRATICAWEB" title="" type="Script (Python)"><![CDATA[## Script (Python) "99_AggiustaPRATICAWEB"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    
+    frm = doc.getItem('Form')
+    if frm=='frm_presentata':
+        print doc.getId()
+        doc.setItem('Form','frm__presentata')
+
+        
+return printed
+]]></resource>
+      <resource id="99_ImpostaTitolo" title="" type="Script (Python)"><![CDATA[## Script (Python) "99_ImpostaTitolo"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    if doc.getItem('iol_tipo_app') in ['aua','pdc','idrogeologico-aut','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata']:  
+        doc.setItem('iol_titolo',1)
+return 'ok'
+]]></resource>
+    </resource>
+  </design>
+</plominodatabase>

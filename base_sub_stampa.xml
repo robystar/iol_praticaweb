@@ -186,7 +186,10 @@ return DateToString(Now(),'%d/%m/%Y')]]></Formula>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[elenco = context.getParentDatabase().resources.customscripts.getElencoComuni()
-comune_val = ''
+comune_val=''
+if len(elenco)>0:
+    comune_val = elenco[0].split('|')[0]
+return comune_val    
 for el in elenco:
     v=el.split('|')
     if v[1]==context.getItem('iol_comune'):
@@ -658,7 +661,7 @@ return destinatari]]></Formula>
         </element>
         <element id="hw_no_condizionata" title="hw_no_condizionata" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_condizionata</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in ['cila','scia','scia2','sca']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in ['cila','scia','scia2','sca','pdc','dsi','idrogeologico-aut','paesaggistica-ordinaria','paesaggistica-semplificata']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="ubicazioni_indirizzo" title="ubicazioni_indirizzo" type="PlominoField">
@@ -703,6 +706,32 @@ return context.getParentDatabase().resources.config().get('rpd',rpd)]]></Formula
         </element>
         <element id="data_presentazione_testo" title="data_presentazione_testo" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">data_presentazione_testo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="identificativo" title="identificativo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">identificativo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getId()]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="iol_form_title" title="iol_form_title" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_form_title</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>

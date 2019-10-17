@@ -232,12 +232,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%8.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -315,12 +315,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%8.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -398,12 +398,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%8.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -481,12 +481,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%8.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -564,12 +564,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%8.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>
@@ -647,14 +647,14 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Aggiungi un pagamento|1</string></value>
 </data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -685,12 +685,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -721,12 +721,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -757,12 +757,12 @@ return cls.codici_importi()</string></value>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['Aggiungi un pagamento|1']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Aggiungi un pagamento|1']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

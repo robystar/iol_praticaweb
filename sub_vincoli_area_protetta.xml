@@ -64,12 +64,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>['''non ricade in area tutelata;|1''','''ricade in area tutelata, ma le opere non comportano alterazione dei luoghi o dell’aspetto esteriore degli edifici;|2''','''è sottoposto alle relative disposizioni e pertanto si allega la documentazione necessaria ai fini del rilascio del nulla osta;|3''','''il nulla osta è stato rilasciato con atto:|4''']</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non ricade in area tutelata;|1''','''ricade in area tutelata, ma le opere non comportano alterazione dei luoghi o dell’aspetto esteriore degli edifici;|2''','''è sottoposto alle relative disposizioni e pertanto si allega la documentazione necessaria ai fini del rilascio del nulla osta;|3''','''il nulla osta è stato rilasciato con atto:|4''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

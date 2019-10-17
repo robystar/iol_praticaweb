@@ -107,8 +107,8 @@ data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","max
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="parere_asl" title="Parere Asl per deroga alle norme igienico sanitarie laddove richiesta da specifica norma del Regolamento" type="PlominoField">
@@ -123,8 +123,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="documentazione_fotografica" title="Documentazione fotografica dello stato dei luoghi ed eventuali fotoinserimenti in caso di opere esterne" type="PlominoField">
@@ -139,8 +139,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="altra_documentazione_specifica" title="Documentazione specifica in ordine all'intervento " type="PlominoField">
@@ -155,7 +155,7 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"10","filetype":["jpg","png","pdf","p7m"]}"
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"7","filetype":["jpg","png","pdf","p7m"]}"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="descrizione_documento" title="Descrizione documentazione specifica allegata" type="PlominoField">
@@ -188,8 +188,8 @@ data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","max
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_elaborato_grafico" title="Elaborato grafico quotato rappresentativo dell'intervento" type="PlominoField">
@@ -204,8 +204,8 @@ data-tooltip = "firmato digitalmente max 10Mb"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"10","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 10Mb"
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="allegato_versamento_ds" title="Ricevuta di versamento dei diritti di segreteria" type="PlominoField">

@@ -6,9 +6,7 @@
     doc python:options['doc'];
     db python:doc.getParentDatabase();
     ">
-     
-    <fieldset class="scheduler-border"><legend class="scheduler-border">Elenco comunicazioni via PEC</legend>
-      
+           
     <table class="table table-bordered table-striped">
     <thead>
       <tr class="info">
@@ -39,6 +37,6 @@
         
     </table>
             
-    </fieldset></tal:block>]]></resource>
+</tal:block>]]></resource>
   </design>
 </plominodatabase>

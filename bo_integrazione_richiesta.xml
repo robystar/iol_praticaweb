@@ -19,7 +19,7 @@ if 'btn_stampa_comunicazione' in context.REQUEST.keys():
             parentform='sub_completa_'+parentDoc.getItem('iol_tipo_app'),
             model=context.getItem('modello_stampa_richiesta_integrazione'),
             app=context.getParentDatabase().getId().replace('iol_',''),
-            grp='richiesta-integrazione',
+            grp='back-office',
             pdf=0,
             field='allegato_documento_richiesta_integrazione')
     return "%s/EditDocument" %context.absolute_url()
@@ -36,8 +36,7 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div>
 <span class="plominoLabelClass">oggetto_richiesta_integrazione</span><span class="plominoFieldClass">oggetto_richiesta_integrazione</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span>
-<div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_richiesta_integrazione</span><span class="plominoFieldClass">modello_stampa_richiesta_integrazione</span>
 </div>
@@ -45,32 +44,21 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span>
-<p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoHidewhenClass">start:hw_new_comunicazione</span></p>
 <div class="row-fluid">
-<div class="span6">
+<span class="plominoHidewhenClass">start:hw_no_istruttore_richiesta_integrazione</span><div class="span5">
 <span class="plominoLabelClass">allegato_documento_richiesta_integrazione</span><span class="plominoFieldClass">allegato_documento_richiesta_integrazione</span>
 </div>
-<div class="span3">
-<span class="plominoHidewhenClass">start:hw_no_data_richiesta</span> <span class="plominoLabelClass">data_richiesta_integrazione</span><span class="plominoFieldClass">data_richiesta_integrazione</span> <span class="plominoHidewhenClass">end:hw_no_data_richiesta</span>
-</div>
-<div class="span3">
-<br><span class="plominoActionClass">btn_invia_comunicazione</span>
-</div>
-</div>
-<div>
-<span class="plominoFieldClass">comunicazione_richiesta_integrazione_opt</span><span class="plominoLabelClass">comunicazione_richiesta_integrazione_opt</span>
-</div>
-<p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_richiesta_integrazione</span></p>
-<div class="row-fluid">
-<div class="span4">
+<span class="plominoHidewhenClass">end:hw_no_istruttore_richiesta_integrazione</span><div class="span5">
 <span class="plominoLabelClass">allegato_comunicazione_richiesta_integrazione</span><span class="plominoFieldClass">allegato_comunicazione_richiesta_integrazione</span>
 </div>
+<div class="span2">
+<span class="plominoActionClass">btn_invia_comunicazione</span> <span class="plominoHidewhenClass">start:hw_no_data_comunicazione</span> <span class="plominoLabelClass">data_richiesta_integrazione</span><span class="plominoFieldClass">data_richiesta_integrazione</span> <span class="plominoHidewhenClass">end:hw_no_data_comunicazione</span>
 </div>
-<p><span class="plominoHidewhenClass">end:hw_no_allegato_comunicazione_richiesta_integrazione</span></p>
-<p><span class="plominoHidewhenClass">end:hw_new_richiesta</span> <span class="plominoFieldClass">parent_document</span></p>
-<!--CHIAVE ESTERNA CHE PUNTA AL PARENT-->
 </div>
+<p><span class="plominoHidewhenClass">end:hw_new_comunicazione</span></p>
+</div>
+<p><span class="plominoFieldClass">parent_document</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA['Richiesta integrazione %s' %context.getItem('parent_document')]]></DocumentTitle>
@@ -110,12 +98,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>4</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -157,12 +145,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -185,7 +173,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('richiesta-integrazione')</string></value>
+<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'richiesta-integrazione')</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -200,7 +188,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 </param>
 </params>
         </element>
-        <element id="allegato_documento_richiesta_integrazione" title="Comunicazione richiesta di integrazione" type="PlominoField">
+        <element id="allegato_documento_richiesta_integrazione" title="Documento creato" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_documento_richiesta_integrazione</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -248,7 +236,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="allegato_comunicazione_richiesta_integrazione" title="Comunicazione firmata digitalmente" type="PlominoField">
+        <element id="allegato_comunicazione_richiesta_integrazione" title="Comunicazione di richiesta integrazione" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_comunicazione_richiesta_integrazione</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -260,7 +248,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3","filetype":["p7m"]}'
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"}'
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_edit" title="hw_no_edit" type="PlominoHidewhen">
@@ -268,13 +256,13 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="hw_new_richiesta" title="hw_new_richiesta" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_new_richiesta</id>
+        <element id="hw_new_comunicazione" title="hw_new_comunicazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_new_comunicazione</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('oggetto_richiesta_integrazione')=='']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="hw_no_data_richiesta" title="hw_no_data_richiesta" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_data_richiesta</id>
+        <element id="hw_no_data_comunicazione" title="hw_no_data_comunicazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_data_comunicazione</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('data_richiesta_integrazione')=='']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
@@ -323,6 +311,9 @@ except:
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[parentDoc = context.getParentDatabase().getDocument(context.getItem('parent_document'))
 parentDoc.doAction('richiedi_integrazione')
 context.setItem('data_richiesta_integrazione',Now())
+#Allineo i readers
+context.setItem('Plomino_Readers',parentDoc.getItem('Plomino_Readers'))  
+context.getParentDatabase().getIndex().indexDocument(context)
 return parentDoc.absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[try:
     return context.isEditMode() or plominoDocument.getItem('data_richiesta_integrazione')!=''
@@ -363,6 +354,11 @@ except:
 </struct></value>
 </param>
 </params>
+        </element>
+        <element id="hw_no_istruttore_richiesta_integrazione" title="hw_no_istruttore_richiesta_integrazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_istruttore_richiesta_integrazione</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not 'PlominoEditor' in context.getCurrentUserRights()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

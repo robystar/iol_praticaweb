@@ -66,10 +66,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
 <name>sourceview</name>
 <value><string>vista-istanze-compilazione</string></value>
 </member>
@@ -101,6 +97,10 @@ resources/iol-custom.css]]></ResourcesCSS>
                  
 ]</string></value>
 </member>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
 </struct></value>
 </param>
 </params>
@@ -123,10 +123,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <member>
 <name>labelcolumn</name>
 <value><string>identificativo</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
 </member>
 <member>
 <name>sourceview</name>
@@ -158,9 +154,13 @@ resources/iol-custom.css]]></ResourcesCSS>
    "aTargets": [0]
  
 },
-{ "aTargets": [ 3,9 ], "bSortable": false }         
+{ "aTargets": [ 3 ], "bSortable": false }         
                  
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 </struct></value>
 </param>
@@ -186,10 +186,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><string>identificativo</string></value>
 </member>
 <member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
 <name>sourceview</name>
 <value><string>vista-istanze-da-protocollare</string></value>
 </member>
@@ -204,6 +200,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bInfo': true,
 'bAutoWidth': false          
                  </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
 </member>
 </struct></value>
 </param>

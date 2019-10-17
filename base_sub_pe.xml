@@ -5,20 +5,24 @@
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Form','frm_presentata')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border" title="Richiedente">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="iol-toolbar"></div>
+<div class="v-content well"><fieldset class="scheduler-border" title="Richiedente">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_newdoc</span></p>
 <div>
-<span class="plominoLabelClass">tipo_pratica</span><span class="plominoFieldClass">tipo_pratica</span>
+<span class="plominoLabelClass">iol_tipo_app</span><span class="plominoFieldClass">iol_tipo_app</span>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_altrotipo</span></p>
 <div>
 <span class="plominoLabelClass">tipo_pratica_altro</span><span class="plominoFieldClass">tipo_pratica_altro</span>
 </div>
 <p><span class="plominoHidewhenClass">end:hw_no_altrotipo</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_newdoc</span></p>
 <div>
 <span class="plominoLabelClass">descrizione_intervento</span><span class="plominoFieldClass">descrizione_intervento</span>
 </div>
@@ -36,14 +40,15 @@
 <span class="plominoLabelClass">numero_pratica</span> <span class="plominoFieldClass">numero_pratica</span>
 </div>
 </div>
-</fieldset></div>]]></FormLayout>
+</fieldset></div>
+]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
-      <ActionBarPosition type="Products.Archetypes.Field.StringField">BOTTOM</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
@@ -57,8 +62,8 @@
 ++resource++iol.document/css/iol.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="tipo_pratica" title="Tipo di pratica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">tipo_pratica</id>
+        <element id="iol_tipo_app" title="Tipo di pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -73,12 +78,15 @@
 <param>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_tipo_pratica()</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>SELECT</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>if 'nuova_pratica' in context.getParentDatabase().resources.config():
+    return context.getParentDatabase().resources.config().get('nuova_pratica')
+else:
+    return ['Manca elenco nuova pratica in config']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -93,66 +101,14 @@
 </param>
 </params>
         </element>
-        <element id="tipo_intervento" title="Qualifica intervento (???????possibile allineare????)" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">tipo_intervento</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return [
-    'CIL|cil',
-    'CILA|cila',
-    'SCIA|scia',
-    'SCIA2|scia2',
-    'PDC|pdc',
-    'Paes. ordinaria|paesaggistica-ordinaria',
-    'Paes. accertamento|paesaggistica-accertamento',
-    'Paes. semplificata|paesaggistica-semplificata', 
-    'AUA|aua',
-    'SCA|sca',
-    'Art.22|art22',
-    'Art.48|art48',
-    'Inizio lavori|iniziolavori',
-    'Fine lavori|finelavori',
-    'Integrazione|integrazione',
-]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-</struct></value>
-</param>
-</params>
-        </element>
-        <element id="descrizione_intervento" title="Oggetto" type="PlominoField">
+        <element id="descrizione_intervento" title="Descrizione dell'intervento" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">descrizione_intervento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
@@ -161,12 +117,12 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -201,12 +157,12 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -241,12 +197,12 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -254,7 +210,7 @@
         </element>
         <element id="hw_no_altrotipo" title="hw_no_altrotipo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_altrotipo</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_pratica')!='altro']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app')!='pe']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="tipo_pratica_altro" title="Altro tipo di pratica (archiviate)" type="PlominoField">
@@ -269,6 +225,43 @@
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_presentazione_testo" title="data_presentazione_testo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_presentazione_testo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('anno_protocollo',int(DateToString(context.getItem('data_protocollo'),format='%Y')))
+context.setItem('data_protocollo_testo',DateToString(context.getItem('data_protocollo'),format="%Y/%m/%d %H:%M"))
+context.setItem('numero_protocollo_testo','Anno %s n. % 6d' %(DateToString(context.getItem('data_protocollo'),format='%Y'),int(context.getItem('numero_protocollo'))))    
+return DateToString(context.getItem('data_presentazione'),format="%Y/%m/%d %H:%M")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="btn_save" title="Salva e continua &gt;&gt;" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_save</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_cancel" title="Annulla" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_cancel</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[return context.absolute_url()]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="hw_no_newdoc" title="hw_no_newdoc" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_newdoc</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[not context.isNewDocument()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

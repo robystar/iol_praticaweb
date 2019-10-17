@@ -111,12 +111,12 @@
 <param>
 <value><struct>
 <member>
-<name>type</name>
-<value><string>FLOAT</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%7.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
 </member>
 </struct></value>
 </param>

@@ -6,12 +6,15 @@
 data = args[1]
 db=context.getParentDatabase()
 
-if data['esito']=='OK' and data['azioni']:
-    doc=db.getDocument(docId)   
+if 'esito' in data and data['esito']=='OK' and 'azioni' in data:
+    doc=db.getDocument(docId)
     azioni=data['azioni'].split(',')
     for azione in azioni:
-        if doc.isActionSupported(azione):
-            doc.doAction(azione)]]></Content>
+        if doc and doc.isActionSupported(azione):
+            doc.doAction(azione)            
+            
+            
+            ]]></Content>
       <RunAs type="Products.Archetypes.Field.StringField">OWNER</RunAs>
     </element>
   </design>

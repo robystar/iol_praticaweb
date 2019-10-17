@@ -11,7 +11,6 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
-
 <div><span class="plominoFieldClass">direttore_strutt_opt</span></div>
 <p><span class="plominoHidewhenClass">start:hw_no_direttore_strutt_lavori</span></p>
 <p><span class="plominoSubformClass">base_sub_direttore_strutt</span></p>
@@ -23,7 +22,7 @@
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
@@ -59,16 +58,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>ll= ['''La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori delle opere strutturali;|1''','''Il direttore dei lavori delle opere strutturali coincide con il progettista delle opere strutturali;|2''','''Il direttore dei lavori delle opere strutturali è persona diversa dal progettista delle opere strutturali;|3''','''Il direttore dei lavori delle opere strutturali sarà individuato prima dell'inizio dei lavori;|4''']
 if context.getItem('iol_tipo_app','') in ['dsixxx']:
     ll= ['''Il direttore dei lavori delle opere strutturali coincide con il progettista delle opere strutturali;|2''','''Il direttore dei lavori delle opere strutturali è persona diversa dal progettista delle opere strutturali;|3''']
 
 return ll</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

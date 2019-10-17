@@ -5,7 +5,7 @@
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Form','frm_presentata')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
@@ -55,16 +55,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Progettista lavori architettonici non necessario o già comunicato;|1''',
 '''Comunico le generalità del progettista dei lavori architettonici;|2''',
 '''Comunico le generalità del NUOVO progettista dei lavori architettonici in sostituzione del precedente;|3'''
 ]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
