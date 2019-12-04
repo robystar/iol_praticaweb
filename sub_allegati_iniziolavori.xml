@@ -281,7 +281,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
         </element>
         <element id="hw_no_di_direttore_strutt" title="hw_no_di_direttore_strutt" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_di_direttore_strutt</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutturale_opt','')!='2']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutt_opt','')!='2']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_pagamento_online_iniziolavori" title="Nascondi se il pagamento avviene online" type="PlominoHidewhen">

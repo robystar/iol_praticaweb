@@ -67,6 +67,10 @@ except:
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_pagopa_importi</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
@@ -86,10 +90,6 @@ except:
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_pagopa_importi</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -118,6 +118,10 @@ if conf.get(context.getItem('iol_tipo_app')) and conf.get(context.getItem('iol_t
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_pagopa_importi</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
@@ -139,10 +143,6 @@ if conf.get(context.getItem('iol_tipo_app')) and conf.get(context.getItem('iol_t
 </string></value>
 </member>
 <member>
-<name>associated_form</name>
-<value><string>dlg_pagopa_importi</string></value>
-</member>
-<member>
 <name>field_mapping</name>
 <value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
 </member>
@@ -159,7 +159,7 @@ if conf.get(context.getItem('iol_tipo_app')) and conf.get(context.getItem('iol_t
           <id type="Products.Archetypes.Field.StringField">immobile_volumetria_msg</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getParentDatabase().resources.config().get('volumetria_pagamenti'):
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getParentDatabase().resources.config().get('volumetria_pagamenti') and context.getItem('immobile_volumetria_intervento'):
     return '''<div class="alert alert-info">%s</div>''' %context.getParentDatabase().resources.config().get('volumetria_pagamenti')]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>

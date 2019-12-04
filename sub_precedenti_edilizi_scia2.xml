@@ -74,12 +74,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['''pienamente conforme alla documentazione dello stato di fatto legittimato dal seguente titolo/pratica edilizia (o, in assenza, dal primo accatastamento)|1''','''non sono stati reperiti titoli abilitativi essendo l’immobile di remota costruzione e non interessato successivamente da interventi edilizi per i quali era necessario di munirsi di titoli abilitativi|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -144,6 +144,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_titolo_edilizio</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Titolo" },
@@ -161,10 +165,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_titolo_edilizio</string></value>
 </member>
 <member>
 <name>field_mapping</name>

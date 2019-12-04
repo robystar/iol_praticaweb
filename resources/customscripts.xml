@@ -1126,6 +1126,9 @@ if context.getProvider()=='sue':
 else:
     doc.setItem('Form','frm__presentata')
     
+if doc.getItem('data_protocollo_testo'):
+    return         
+    
 #se avevo gia fatto un invio non aggiorno la data e non invio altra email
 if not doc.getItem('data_presentazione'):
     #setto gli indici per le viste  
@@ -1143,6 +1146,11 @@ else:
     context.sendMail(doc=doc,azione='richiedi-protocollo')
     msg="Comunicazione inviata correttamente al servizio Edilizia Privata. In attesa di essere protocollata"
     doc.setItem('ws_response_message',"<div class='alert alert-success'><h5>%s</h5></div>" %msg)
+
+    
+#se ho configurato la replica su db rilancio un save per sincronizzare i dati in postgresql
+if db.resources.config().get("pgreplica"):
+    doc.save(onSaveEvent=False)
 ]]></resource>
       <resource id="AvvioProcedimento" title="" type="Script (Python)"><![CDATA[## Script (Python) "AvvioProcedimento"
 ##bind container=container
@@ -1184,111 +1192,6 @@ doc.setItem('data_titolo',StringToDate(DateToString(Now())))
 doc.setItem('anno_titolo',int(DateToString(Now(),format='%Y')))
 doc.setItem('numero_titolo',doc.getDocNumber('numero_titolo'))
 doc.getParentDatabase().getIndex().indexDocument(doc)
-]]></resource>
-      <resource id="ProtocollaDocumento" title="" type="Script (Python)"><![CDATA[## Script (Python) "ProtocollaDocumento"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None,docField='comunicazione_digitale'
-##title=
-##
-from Products.CMFPlomino.PlominoUtils import StringToDate,Now,DateToString
-
-if isinstance(doc, basestring):
-    doc = context.getDocument(doc)
-    
-## in caso di protocollazione fallita
-if context.getProvider()=='sue':
-    doc.setItem('Form','frm_presentata')
-else:
-    doc.setItem('Form','frm__presentata')
-    
-###invio della pratica al BO 
-def inviaPratica(): 
-    bw=''
-    provider = context.getProvider()
-
-    if provider == 'praticaweb':
-        bw = "@@pw-invia-pratica"
-    elif provider == 'halley':
-        bw = "@@hl-invia-pratica"
-    else:
-        #se sue setto solo i messaggi
-        setResponseMessage()
-        return True
-    
-    #Bw per invio a backoffice
-    inviaBo = doc.restrictedTraverse(bw) 
-    if inviaBo:
-        ret = inviaBo()
-        if ret:
-            setResponseMessage()
-            return True
-        else:
-            msg="Si sono verificati alcuni errori durante l'invio della comunicazione al servizio Edilizia Privata. Il servizio di assistenza ha gia' preso in carico la segnalazione, entro 24h l'eventuale problema verra' risolto."
-            doc.setItem('ws_response_message',"<div class='alert alert-warning'><h5>%s</h5></div>" %msg)
-   
-
-#Clone delle pratiche figlie ed eventuale numerazione  
-def setClones():
-    
-    if "setNumeroPratica" in context.aq_parent:
-        context.aq_parent.setNumeroPratica(doc)
-
-    if "setClonePaesaggistica" in context and doc.getItem('procedimento_autorizzazione_paesaggistica_opt') in ['1','2']:
-        context.setClonePaesaggistica(doc)
-    
-    if "setCloneDsi" in context and (doc.getItem('interventi_strutturali_opt') == '3' and doc.getItem('documentazione_dsi_opt')=='1') or doc.getItem('interventi_strutturali_opt') == '4':
-        context.setCloneDsi(doc)
-        
-    if "setCloneIdrogeologico" in context and doc.getItem('vincolo_idrogeologico_opt') in ['3','5']:
-        context.setCloneIdrogeologico(doc)
-    
-    
-def setIndiciProtocollo():  
-    nProtocollo=doc.getItem('numero_protocollo')
-    dProtocollo=doc.getItem('data_protocollo')
-    doc.setItem('anno_protocollo',int(DateToString(dProtocollo,format='%Y')))
-    doc.setItem('data_protocollo_testo',DateToString(Now(),format="%Y/%m/%d %H:%M"))
-    doc.setItem('numero_protocollo_testo','Anno %s n. % 6d' %(DateToString(dProtocollo,format='%Y'),int(nProtocollo)))    
-    context.getParentDatabase().getIndex().indexDocument(doc)
-    
-def setResponseMessage():
-    msg = "Comunicazione inviata correttamente al servizio Edilizia Privata, pratica numero %s" %doc.getItem('numero_pratica')
-    doc.setItem('ws_response_message','<div class="alert alert-success"><h5>%s</h5></div>' %msg)
-
-    
-### Se ho gia il protocollo setto solo gli indici (caso protocollazione manuale)
-if doc.getItem('numero_protocollo'):
-    if not doc.getItem('numero_protocollo_testo'):
-        setIndiciProtocollo() 
-        context.sendMail(doc=doc,azione='protocollazione-ok')
-        if inviaPratica():
-            setClones()
-    
-# Provo a richiedere un protocollo al servizio:
-else:
-    viewName = context.aq_parent.config().get("wsprotocollo")
-    if viewName:
-        view = doc.restrictedTraverse(viewName)
-        result = view.protocollaDocumento(docField=docField)
-        
-        if result['success']==1:
-            doc.setItem('numero_protocollo',result['NumeroProtocollo'])
-            doc.setItem('data_protocollo',StringToDate(DateToString(Now())))
-            setIndiciProtocollo() 
-            context.sendMail(doc=doc,azione='protocollazione-ok')
-            if inviaPratica():
-                setClones()
-            
-        else:
-            #protocollazione automatica KO mando mail di controllo ad assistenza con il servizio nostro
-            doc.plone_utils.addPortalMessage('''La richiesta e' stata inviata.Sono occorsi errori durante la protocollazione del documento %s''' %result['message'],'error')
-            msg='''Errore in fase di protocollazione automatica. Il servizio di assistenza ha gia' preso in carico la segnalazione.'''
-            doc.setItem('ws_response_message',"<div class='alert alert-error'><h5>%s</h5></div>" %msg)
-            context.sendMail(doc=doc,azione='protocollazione-ko')
 ]]></resource>
       <resource id="getElencoTipiPratica" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoTipiPratica"
 ##bind container=container
@@ -2246,6 +2149,251 @@ newDoc.save(onSaveEvent=False)
 return newDoc.getId()
 ]]></resource>
       </resource>
+      <resource id="InviaBO" title="" type="Script (Python)"><![CDATA[## Script (Python) "InviaBO"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import StringToDate,Now,DateToString
+#Invio a backoffice
+#lo chiamo sempre o solo per !=sue?
+#DA RIVEDERE
+
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+    
+def inviaPratica(doc): 
+    bw=''
+    provider = context.getProvider()
+
+    if provider == 'praticaweb':
+        bw = "@@pw-invia-pratica"
+    elif provider == 'halley':
+        bw = "@@hl-invia-pratica"
+    else:
+        #se sue setto solo i messaggi
+        setResponseMessage(doc)
+        return True
+    
+    #Bw per invio a backoffice
+    inviaBo = doc.restrictedTraverse(bw) 
+    if inviaBo:
+        ret = inviaBo()
+        if ret:
+            setResponseMessage(doc)
+            return True
+        else:
+            msg="Si sono verificati alcuni errori durante l'invio della comunicazione al servizio Edilizia Privata. Il servizio di assistenza ha gia' preso in carico la segnalazione, entro 24h l'eventuale problema verra' risolto."
+            doc.setItem('ws_response_message',"<div class='alert alert-warning'><h5>%s</h5></div>" %msg)
+   
+
+#Clone delle pratiche figlie ed eventuale numerazione  
+def setClones(doc):
+    
+    if "setNumeroPratica" in context.aq_parent:
+        context.aq_parent.setNumeroPratica(doc)
+
+    if "setClonePaesaggistica" in context and doc.getItem('procedimento_autorizzazione_paesaggistica_opt') in ['1','2']:
+        context.setClonePaesaggistica(doc)
+    
+    if "setCloneDsi" in context and (doc.getItem('interventi_strutturali_opt') == '3' and doc.getItem('documentazione_dsi_opt')=='1') or doc.getItem('interventi_strutturali_opt') == '4':
+        context.setCloneDsi(doc)
+        
+    if "setCloneIdrogeologico" in context and doc.getItem('vincolo_idrogeologico_opt') == '3':
+        context.setCloneIdrogeologico(doc)
+    
+def setResponseMessage(doc):
+    msg = "Comunicazione inviata correttamente al servizio Edilizia Privata, pratica numero %s" %doc.getItem('numero_pratica')
+    doc.setItem('ws_response_message','<div class="alert alert-success"><h5>%s</h5></div>' %msg)
+
+    
+#solo comunicazione senza BO
+if doc.getItem('iol_tipo_app') in ['tipomappale']:
+    msg = "Comunicazione inviata correttamente al servizio Edilizia Privata"
+    doc.setItem('ws_response_message','<div class="alert alert-success"><h5>%s</h5></div>' %msg)
+    return
+    
+if inviaPratica(doc):
+    setClones(doc)
+]]></resource>
+      <resource id="ProtocollaDocumento_TODO" title="" type="Script (Python)"><![CDATA[## Script (Python) "ProtocollaDocumento_TODO"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None,docField='comunicazione_digitale'
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import StringToDate,Now,DateToString
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+    
+if context.getProvider()=='sue':
+    doc.setItem('Form','frm_presentata')
+else:
+    doc.setItem('Form','frm__presentata')
+    
+def setIndiciProtocollo():  
+    nProtocollo=doc.getItem('numero_protocollo')
+    dProtocollo=doc.getItem('data_protocollo')
+    doc.setItem('anno_protocollo',int(DateToString(dProtocollo,format='%Y')))
+    doc.setItem('data_protocollo_testo',DateToString(dProtocollo,format="%Y/%m/%d %H:%M"))
+    doc.setItem('numero_protocollo_testo','Anno %s n. % 6d' %(DateToString(dProtocollo,format='%Y'),int(nProtocollo)))    
+    context.getParentDatabase().getIndex().indexDocument(doc)
+    
+    
+### Se ho gia il protocollo setto solo gli indici (caso protocollazione manuale)
+if doc.getItem('numero_protocollo'):
+    if not doc.getItem('numero_protocollo_testo'):
+        setIndiciProtocollo() 
+        context.sendMail(doc=doc,azione='protocollazione-ok')
+    
+# Provo a richiedere un protocollo al servizio:
+else:
+    viewName = context.aq_parent.config().get("wsprotocollo")
+    if viewName:
+        view = doc.restrictedTraverse(viewName)
+        result = view.protocollaDocumento(docField=docField)
+        
+        if result['success']==1:
+            doc.setItem('numero_protocollo',result['NumeroProtocollo'])
+            doc.setItem('data_protocollo',StringToDate(DateToString(Now())))
+            setIndiciProtocollo() 
+            context.sendMail(doc=doc,azione='protocollazione-ok')
+            
+        else:
+            #protocollazione automatica KO mando mail di controllo ad assistenza con il servizio nostro
+            doc.plone_utils.addPortalMessage('''La richiesta e' stata inviata.Sono occorsi errori durante la protocollazione del documento %s''' %result['message'],'error')
+            msg='''Errore in fase di protocollazione automatica. Il servizio di assistenza ha gia' preso in carico la segnalazione.'''
+            doc.setItem('ws_response_message',"<div class='alert alert-error'><h5>%s</h5></div>" %msg)
+            context.sendMail(doc=doc,azione='protocollazione-ko')
+            
+            
+if context.getProvider()!='sue':         
+    doc.doAction('invia_bo')   #??????????????            
+                       
+
+#????????? da vedere, non serve se uso inviqa_bo anche x sue
+#se ho gia il numero pratica aggiorno il messaggio (in caso di backoffice sue)
+msg = "Comunicazione inviata correttamente al servizio Edilizia Privata"
+if doc.getItem('numero_pratica'):
+    msg = "Comunicazione inviata correttamente al servizio Edilizia Privata, pratica numero %s" %doc.getItem('numero_pratica')
+doc.setItem('ws_response_message','<div class="alert alert-success"><h5>%s</h5></div>' %msg)
+]]></resource>
+      <resource id="ProtocollaDocumento" title="" type="Script (Python)"><![CDATA[## Script (Python) "ProtocollaDocumento"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None,docField='comunicazione_digitale'
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import StringToDate,Now,DateToString
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+    
+## in caso di protocollazione fallita
+if context.getProvider()=='sue':
+    doc.setItem('Form','frm_presentata')
+else:
+    doc.setItem('Form','frm__presentata')
+    
+###invio della pratica al BO 
+def inviaPratica(): 
+    if doc.getItem('iol_tipo_app') in ['tipomappale']:
+        return
+    bw=''
+    provider = context.getProvider()
+
+    if provider == 'praticaweb':
+        bw = "@@pw-invia-pratica"
+    elif provider == 'halley':
+        bw = "@@hl-invia-pratica"
+    else:
+        #se sue setto solo i messaggi
+        setResponseMessage()
+        return True
+    
+    #Bw per invio a backoffice
+    inviaBo = doc.restrictedTraverse(bw) 
+    if inviaBo:
+        ret = inviaBo()
+        if ret:
+            setResponseMessage()
+            return True
+        else:
+            msg="Si sono verificati alcuni errori durante l'invio della comunicazione al servizio Edilizia Privata. Il servizio di assistenza ha gia' preso in carico la segnalazione, entro 24h l'eventuale problema verra' risolto."
+            doc.setItem('ws_response_message',"<div class='alert alert-warning'><h5>%s</h5></div>" %msg)
+   
+
+#Clone delle pratiche figlie ed eventuale numerazione  
+def setClones():
+    
+    if "setNumeroPratica" in context.aq_parent:
+        context.aq_parent.setNumeroPratica(doc)
+
+    if "setClonePaesaggistica" in context and doc.getItem('procedimento_autorizzazione_paesaggistica_opt') in ['1','2']:
+        context.setClonePaesaggistica(doc)
+    
+    if "setCloneDsi" in context and (doc.getItem('interventi_strutturali_opt') == '3' and doc.getItem('documentazione_dsi_opt')=='1') or doc.getItem('interventi_strutturali_opt') == '4':
+        context.setCloneDsi(doc)
+        
+    if "setCloneIdrogeologico" in context and doc.getItem('vincolo_idrogeologico_opt') == '3':
+        context.setCloneIdrogeologico(doc)
+    
+    
+def setIndiciProtocollo():  
+    nProtocollo=doc.getItem('numero_protocollo')
+    dProtocollo=doc.getItem('data_protocollo')
+    doc.setItem('anno_protocollo',int(DateToString(dProtocollo,format='%Y')))
+    doc.setItem('data_protocollo_testo',DateToString(dProtocollo,format="%Y/%m/%d %H:%M"))
+    doc.setItem('numero_protocollo_testo','Anno %s n. % 6d' %(DateToString(dProtocollo,format='%Y'),int(nProtocollo)))    
+    context.getParentDatabase().getIndex().indexDocument(doc)
+    
+def setResponseMessage():
+    msg = "Comunicazione inviata correttamente al servizio Edilizia Privata, pratica numero %s" %doc.getItem('numero_pratica')
+    doc.setItem('ws_response_message','<div class="alert alert-success"><h5>%s</h5></div>' %msg)
+
+    
+### Se ho gia il protocollo setto solo gli indici (caso protocollazione manuale)
+if doc.getItem('numero_protocollo'):
+    if not doc.getItem('numero_protocollo_testo'):
+        setIndiciProtocollo() 
+        context.sendMail(doc=doc,azione='protocollazione-ok')
+        if inviaPratica():
+            setClones()
+    
+# Provo a richiedere un protocollo al servizio:
+else:
+    viewName = context.aq_parent.config().get("wsprotocollo")
+    if viewName:
+        view = doc.restrictedTraverse(viewName)
+        result = view.protocollaDocumento(docField=docField)
+        
+        if result['success']==1:
+            doc.setItem('numero_protocollo',result['NumeroProtocollo'])
+            doc.setItem('data_protocollo',StringToDate(DateToString(Now())))
+            setIndiciProtocollo() 
+            context.sendMail(doc=doc,azione='protocollazione-ok')
+            if inviaPratica():
+                setClones()
+            
+        else:
+            #protocollazione automatica KO mando mail di controllo ad assistenza con il servizio nostro
+            doc.plone_utils.addPortalMessage('''La richiesta e' stata inviata.Sono occorsi errori durante la protocollazione del documento %s''' %result['message'],'error')
+            msg='''Errore in fase di protocollazione automatica. Il servizio di assistenza ha gia' preso in carico la segnalazione.'''
+            doc.setItem('ws_response_message',"<div class='alert alert-error'><h5>%s</h5></div>" %msg)
+            context.sendMail(doc=doc,azione='protocollazione-ko')
+]]></resource>
     </resource>
   </design>
 </plominodatabase>

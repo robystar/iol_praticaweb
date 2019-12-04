@@ -440,8 +440,8 @@ else:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -465,8 +465,8 @@ for brain in brains:
 return allegati</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -630,10 +630,6 @@ return parentDoc.absolute_url()]]></Content>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['Titolo selezionato|']       
 return ll</string></value>
@@ -642,6 +638,10 @@ return ll</string></value>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -89,8 +89,8 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -106,8 +106,8 @@ else:
     return []</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

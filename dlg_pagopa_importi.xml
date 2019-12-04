@@ -10,6 +10,7 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">nascondi_campi_editor</span></p>
 <div class="row-fluid">
 <div class="span9">
 <span class="plominoLabelClass">tipo</span><span class="plominoFieldClass">tipo</span>
@@ -26,8 +27,18 @@
 <span class="plominoLabelClass">scadenza</span><span class="plominoFieldClass">scadenza</span>
 </div>
 </div>
-<p><span class="plominoFieldClass">azione</span></p>
-<p><span class="plominoFieldClass">codimp</span></p>
+<div class="row-fluid" id="editor_div">
+<div class="span4">
+<span class="plominoLabelClass">azione</span><span class="plominoFieldClass">azione</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">codimp</span><span class="plominoFieldClass">codimp</span>
+</div>
+<div class="span5">
+<br>
+<div class="alert alert-info">Lasciare vuoto in fase di inserimento di nuovi importi</div>
+</div>
+</div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -146,7 +157,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['maxlength="70"']]></HTMLAttributesFormula>
         </element>
-        <element id="codimp" title="codimp" type="PlominoField">
+        <element id="codimp" title="Id Importo" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">codimp</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -163,20 +174,20 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><struct>
 <member>
 <name>widget</name>
-<value><string>HIDDEN</string></value>
+<value><string>TEXT</string></value>
 </member>
 </struct></value>
 </param>
 </params>
         </element>
-        <element id="azione" title="azione" type="PlominoField">
+        <element id="azione" title="Azione su pagamento" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">azione</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA['presentazione']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
@@ -185,12 +196,41 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_pagopa().get('azione_pagamento')</string></value>
+</member>
+<member>
 <name>widget</name>
-<value><string>HIDDEN</string></value>
+<value><string>SELECT</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
 </member>
 </struct></value>
 </param>
 </params>
+        </element>
+        <element id="nascondi_campi_editor" title="nascondi_campi_editor" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">nascondi_campi_editor</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not 'PlominoEditor' in context.getCurrentUserRights():
+     return '<style>#editor_div{visibility: hidden;}</style>'
+else:
+    return '']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

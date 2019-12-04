@@ -268,7 +268,7 @@ for brain in brains:
     if doc.getItem('direttore_lavori_opt') in ['2','3']:
         renderForm=db.getForm('sub_direttore_lavori_comunicazione')
         content=content + renderForm.displayDocument(doc)    
-    if doc.getItem('direttore_strutturale_opt') in ['2','3']:
+    if doc.getItem('direttore_strutt_opt') in ['2','3']:
         renderForm=db.getForm('sub_direttore_strutt_lavori_comunicazione')
         content=content + renderForm.displayDocument(doc)    
 

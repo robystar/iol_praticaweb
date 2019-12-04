@@ -117,7 +117,7 @@ data-tooltip = "firmato digitalmente max 7Mb"
         </element>
         <element id="hw_no_ricevuta_versamento_somma" title="hw_no_ricevuta_versamento_somma" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_ricevuta_versamento_somma</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '2' not in context.getItem('comunicazione_opt','')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('comunicazione_opt')!='2']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_pagamento_online_art22" title="hw_pagamento_online_art22" type="PlominoHidewhen">

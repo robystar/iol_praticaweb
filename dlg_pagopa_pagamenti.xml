@@ -22,10 +22,10 @@
 </div>
 </div>
 <div class="row-fluid">
-<div class="span3">
+<div class="span2">
 <span class="plominoLabelClass">importo</span><span class="plominoFieldClass">importo</span>
 </div>
-<div class="span2">
+<div class="span3">
 <span class="plominoLabelClass">data</span><span class="plominoFieldClass">data</span>
 </div>
 <div class="span2">
@@ -136,18 +136,32 @@
 </param>
 </params>
         </element>
-        <element id="importo" title="Importo (centesimi euro)" type="PlominoField">
+        <element id="importo" title="Importo" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">importo</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-NUMBERFieldEdit</FieldEditTemplate>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>format</name>
+<value><string>%1.2f €</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>DECIMAL</string></value>
+</member>
+</struct></value>
+</param>
+</params>
         </element>
         <element id="anagrafica" title="Anagrafica" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">anagrafica</id>
@@ -177,7 +191,7 @@
         </element>
         <element id="data" title="Data" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">data</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
@@ -186,7 +200,23 @@
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat": "dd/mm/yy"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
         </element>
         <element id="orario" title="Ora" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">orario</id>
@@ -270,7 +300,7 @@
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>['BOLLETTINO','ONLINE']</string></value>
+<value><string>return context.getParentDatabase().resources.config_pagopa().get('metodo_pagamento')</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

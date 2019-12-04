@@ -285,19 +285,6 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
-        <element id="btn_delete" title="Elimina" type="PlominoAction">
-          <id type="Products.Archetypes.Field.StringField">btn_delete</id>
-          <ActionType type="Products.Archetypes.Field.StringField">PYTHON</ActionType>
-          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
-          <Content type="Products.Archetypes.Field.TextField"><![CDATA[#potrei eliminare tutti gli item della form ma se uno sbaglia a cliccare di mangia tutto? metto un js di conferma?
-context.removeItem('istruttore')
-context.removeItem('oggetto_avvio_procedimento')
-#context.removeItem('data_avvio_procedimento')
-
-return context.absolute_url()]]></Content>
-          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
-          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
-        </element>
         <element id="btn_invia_comunicazione" title="Invia la comunicazione &gt;&gt;" type="PlominoAction">
           <id type="Products.Archetypes.Field.StringField">btn_invia_comunicazione</id>
           <ActionType type="Products.Archetypes.Field.StringField">PYTHON</ActionType>

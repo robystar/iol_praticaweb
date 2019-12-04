@@ -60,6 +60,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_civico</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Via" },
@@ -77,10 +81,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 350
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_civico</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -107,6 +107,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_nct</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Sezione" },
@@ -127,10 +131,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 350
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_nct</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -156,6 +156,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_ubicazione_nceu</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Sezione"},
@@ -177,10 +181,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 350
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_ubicazione_nceu</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -237,13 +237,13 @@ return "data-map-layers='%s'  data-map-types='%s'  data-base-type='%s'"  %(json_
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>layersSettings = context.getParentDatabase().resources.customscripts.getLayersSettings(context)
 return layersSettings["layersList"]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -102,7 +102,10 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-tool=autocomplete-particella']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[ret = 'data-tool=autocomplete-particella'
+if context.getParentDatabase().resources.config().get('mappale_bloccato'):
+    ret = ret + ' data-lock=1'
+return ret]]></HTMLAttributesFormula>
         </element>
         <element id="nct_geometry" title="Geometria" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">nct_geometry</id>

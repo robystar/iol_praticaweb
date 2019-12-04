@@ -6,25 +6,26 @@
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Form','frm_presentata')
+if context.getItem('allegato_allafirma_titolo',{})!={}:
+    context.doAction('pagamento_titolo')    
 if context.getItem('allegato_comunicazione_titolo',{})!={}:
-    context.setItem('data_firma_titolo',context.getItem('data_titolo'))
     context.doAction('rilascio_titolo')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
-<div class="v-content well"><div class="row-fluid">
-<div class="span3">
-<span class="plominoLabelClass">numero_titolo</span><span class="plominoFieldClass">numero_titolo</span>
+<div class="v-content well">
+<p><span class="plominoFieldClass">istruzioni_titolo</span></p>
+<div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_istruttore_titolo</span><div class="span6">
+<span class="plominoLabelClass">allegato_allafirma_titolo</span><span class="plominoFieldClass">allegato_allafirma_titolo</span>
 </div>
-<div class="span3">
-<span class="plominoLabelClass">data_titolo</span><span class="plominoFieldClass">data_titolo</span>
-</div>
-<div class="span6">
+<span class="plominoHidewhenClass">end:hw_no_istruttore_titolo</span><div class="span6">
 <span class="plominoLabelClass">allegato_comunicazione_titolo</span><span class="plominoFieldClass">allegato_comunicazione_titolo</span>
 </div>
-</div></div>
+</div>
+</div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -63,8 +64,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
-        <element id="allegato_comunicazione_titolo" title="Autorizzazione firmata digitalmente" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">allegato_comunicazione_titolo</id>
+        <element id="allegato_allafirma_titolo" title="Autorizzazione da firmare digitalmente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_allafirma_titolo</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -78,7 +79,22 @@ resources/iol-custom.css]]></ResourcesCSS>
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3"}'
 ''']]></HTMLAttributesFormula>
         </element>
-        <element id="numero_titolo" title="Numero autorizzazione" type="PlominoField">
+        <element id="allegato_comunicazione_titolo" title="Autorizzazione firmata digitalmente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_comunicazione_titolo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTIconFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3"}'
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="numero_titolo" title="N. autorizzazione" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">numero_titolo</id>
           <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -119,6 +135,57 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 </struct></value>
 </param>
 </params>
+        </element>
+        <element id="hw_firmato" title="hw_firmato" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_firmato</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_firmato" title="hw_no_firmato" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_firmato</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="istruzioni_titolo" title="istruzioni_titolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">istruzioni_titolo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('allegato_allafirma_titolo',{})=={}:
+    return '<div class="alert alert-info">Allegare il documento da sottoporre alla firma per inviare il documento di autorizzazione alla firma del responsabile</div>'
+elif context.getItem('allegato_comunicazione_titolo',{})=={}:
+    return '''<div class="alert alert-info">Allegare la comunicazione firmata digitalmente per il rilascio dell'autorizzazione</div>'''
+else:
+    return '''<div class="alert alert-success"><strong>Autorizzazione rilasciata, per la data di rilascio dell'autorizzazione fa fede la data di firma digitale</strong></div>''']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="istruzioni_titoloxx" title="istruzioni_titolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">istruzioni_titoloxx</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('allegato_allafirma_titolo',{})=={}:
+    return '<div class="alert alert-info">Allegare il documento da sottoporre alla firma per inviare il documento di autorizzazione alla firma del responsabile</div>'
+elif context.getItem('allegato_comunicazione_titolo',{})=={}:
+    return '''<div class="alert alert-info">Allegare la comunicazione firmata digitalmente per inviare il l'autorizzazione dell'istanza</div>'''
+else :
+    return '''<div class="alert alert-success"><strong>titolo rilasciato....</strong></div>''']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_istruttore_titolo" title="hw_no_istruttore_titolo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_istruttore_titolo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not 'PlominoEditor' in context.getCurrentUserRights()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

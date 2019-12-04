@@ -78,15 +78,15 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>if 'nuova_pratica' in context.getParentDatabase().resources.config():
     return context.getParentDatabase().resources.config().get('nuova_pratica')
 else:
     return ['Manca elenco nuova pratica in config']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

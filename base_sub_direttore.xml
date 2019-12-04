@@ -245,10 +245,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['M','F']</string></value>
 </member>
@@ -256,6 +252,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -398,12 +398,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>%d/%m/%Y</string></value>
 </member>
 <member>
-<name>startingyear</name>
-<value><string>1900</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
+</member>
+<member>
+<name>startingyear</name>
+<value><string>1900</string></value>
 </member>
 </struct></value>
 </param>
@@ -814,10 +814,6 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Progettista|progettista</string></value>
@@ -829,6 +825,10 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <value><string>Progettista C.A.|direttore_ca</string></value>
 <value><string>Collaudatore C.A.|collaudatore_ca</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

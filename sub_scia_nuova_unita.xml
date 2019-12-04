@@ -62,12 +62,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['Creazione di nuova unità immobiliare ad uso residenziale ottenuta mediante cambio di destinazione d’uso senza opere|nuova_unita']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -106,12 +106,12 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''La creazione di nuova unità immobiliare ad uso residenziale ottenuta mediante cambio di destinazione d’uso senza opere comporta la necessità di reperimento di parcheggi pertinenziali quantificati e individuati come da elaborato allegato e pertanto si allega copia dell'atto di vincolo tra le nuove unità immobiliari derivate dall'intervento e i relativi parcheggi pertinenziali reperiti (l'atto deve essere trasmesso completo degli estremi di registrazione e trascrizione)|vincolo''','''La creazione di nuova unità immobiliare ad uso residenziale ottenuta mediante cambio di destinazione d’uso senza opere comporta la necessità di reperimento di parcheggi pertinenziali quantificati come da elaborato allegato ma nell'impossibilità di reperirli si è optato  per la  monetizzazione secondo le tariffe stabilite dal Comune provvedendo al relativo versamento di cui si trasmette copia.|monetizzazione''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -55,16 +55,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Progettista delle opere strutturali non necessario o già comunicato;|1''',
 '''Comunico le generalità del progettista delle opere strutturali;|2''',
 '''Comunico le generalità del NUOVO progettista delle opere strutturali in sostituzione del precedente;|3'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

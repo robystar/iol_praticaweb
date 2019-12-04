@@ -886,6 +886,184 @@ menus['back'] = [
 ]
 return menus
 ]]></resource>
+      <resource id="sospensione-lavori" title="" type="Script (Python)"><![CDATA[## Script (Python) "sospensione-lavori"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del dichiarante", "frm": "frm_sospensione-lavori", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Comunicazione di sospensione lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+
+return menus
+]]></resource>
+      <resource id="adempimento" title="" type="Script (Python)"><![CDATA[## Script (Python) "adempimento"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del dichiarante", "frm": "frm_adempimento", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Comunicazione di adempimento", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+
+return menus
+]]></resource>
+      <resource id="pagamento" title="" type="Script (Python)"><![CDATA[## Script (Python) "pagamento"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del dichiarante", "frm": "frm_pagamento", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Comunicazione di pagamento", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+
+return menus
+]]></resource>
+      <resource id="tipomappale" title="" type="Script (Python)"><![CDATA[## Script (Python) "tipomappale"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Richiedente", "frm": "frm_tipomappale", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm_ubicazione_tipomappale", "title": "Localizzazione Intervento"}, 
+    {"label": "Allegati", "frm": "frm_tipomappale_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Procedimento", "frm": "bo_procedimento", "title": "Dati del procedimento"}, 
+    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"}, 
+    {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
+]
+
+
+return menus
+]]></resource>
+      <resource id="sostituzione" title="" type="Script (Python)"><![CDATA[## Script (Python) "sostituzione"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del dichiarante", "frm": "frm_sostituzione", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Tecnici incaricati", "frm": "frm_sostituzione_tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Documentazione allegata", "frm": "frm_sostituzione_allegati", "title": "Documentazione allegata"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Invio documentazione integrativa", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+return menus
+]]></resource>
+      <resource id="proroga" title="" type="Script (Python)"><![CDATA[## Script (Python) "proroga"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del dichiarante", "frm": "frm_proroga", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Istanza di proroga inizio lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+
+return menus
+]]></resource>
+      <resource id="ripresa-lavori" title="" type="Script (Python)"><![CDATA[## Script (Python) "ripresa-lavori"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del dichiarante", "frm": "frm_ripresa-lavori", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Comunicazione di sospensione lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+
+return menus
+]]></resource>
+      <resource id="finelavori-multipla" title="" type="Script (Python)"><![CDATA[## Script (Python) "finelavori-multipla"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del dichiarante", "frm": "frm_finelavori-multipla", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Intervento", "frm": "frm_finelavori-multipla_intervento", "title": "Tipo di intervento"}, 
+    {"label": "Documentazione allegata", "frm": "frm_finelavori-multipla_allegati", "title": "Documentazione allegata"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Comunicazione di fine lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+return menus
+]]></resource>
     </resource>
   </design>
 </plominodatabase>

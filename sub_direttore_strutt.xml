@@ -58,16 +58,16 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll= ['''La tipologia delle opere da realizzare non richiede la nomina di un direttore lavori delle opere strutturali;|1''','''Il direttore dei lavori delle opere strutturali coincide con il progettista delle opere strutturali;|2''','''Il direttore dei lavori delle opere strutturali è persona diversa dal progettista delle opere strutturali;|3''','''Il direttore dei lavori delle opere strutturali sarà individuato prima dell'inizio dei lavori;|4''']
 if context.getItem('iol_tipo_app','') in ['dsixxx']:
     ll= ['''Il direttore dei lavori delle opere strutturali coincide con il progettista delle opere strutturali;|2''','''Il direttore dei lavori delle opere strutturali è persona diversa dal progettista delle opere strutturali;|3''']
 
 return ll</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

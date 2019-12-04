@@ -54,6 +54,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+<member>
 <name>labelcolumn</name>
 <value><string>identificativo</string></value>
 </member>
@@ -90,10 +94,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 { "aTargets": [ 3 ], "bSortable": false }         
                  
 ]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
 </member>
 </struct></value>
 </param>

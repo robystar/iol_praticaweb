@@ -1,0 +1,507 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_intervento_finelavori_sp" title="sub_intervento_finelavori_sp" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_intervento_finelavori_sp</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">COMUNICAZIONE</legend>
+<div class="row-fluid">
+<div class="span8">
+<span class="plominoLabelClass">fine_lavori_opt</span><span class="plominoFieldClass">fine_lavori_opt</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">data_fine_lavori</span><span class="plominoFieldClass">data_fine_lavori</span>
+</div>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TIPOLOGIA DI INTERVENTO E DESCRIZIONE SINTETICA DELLE OPERE</legend>
+<div>
+<span class="plominoLabelClass">varianti_lavori_opt</span><span class="plominoFieldClass">varianti_lavori_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_variante_cila</span></p>
+<div>
+<span class="plominoLabelClass">descrizione_opere</span> <span class="plominoFieldClass">descrizione_opere</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_variante_cila</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_variante_scia</span></p>
+<div class="row-fluid">
+<div class="span4">
+<span class="plominoLabelClass">numero_protocollo_variante</span><span class="plominoFieldClass">numero_protocollo_variante</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">data_protocollo_variante</span><span class="plominoFieldClass">data_protocollo_variante</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_variante_scia</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Segnalazione Certificata di Agibilità (SCA)</legend>
+<div>
+<span class="plominoLabelClass">presentazione_sca_opt</span><span class="plominoFieldClass">presentazione_sca_opt</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border"> DICHIARAZIONI IN MERITO AL Dlgs n.192/2005 (Rendimento energetico in edilizia)</legend>
+<div>
+<span class="plominoLabelClass">dichiarazione_art8_opt</span><span class="plominoFieldClass">dichiarazione_art8_opt</span>
+</div>
+<div>
+<span class="plominoLabelClass">dichiarazione_energetica_opt</span><span class="plominoFieldClass">dichiarazione_energetica_opt</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border"> OPERE PER LE QUALI E’ STATA RILASCIATA L’AUTORIZZAZIONE PAESAGGISTICA </legend>
+<div>
+<span class="plominoLabelClass">aut_paesaggistica_opt</span><span class="plominoFieldClass">aut_paesaggistica_opt</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border"> ALTRE DICHIARAZIONI </legend>
+<div>
+<span class="plominoLabelClass">rimozione_baracca_opt</span><span class="plominoFieldClass">rimozione_baracca_opt</span>
+</div>
+<div>
+<span class="plominoLabelClass">numeri_civici_opt</span><span class="plominoFieldClass">numeri_civici_opt</span>
+</div>
+</fieldset>
+</div>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="data_fine_lavori" title="In data:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_fine_lavori</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat": "dd/mm/yy"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="descrizione_intervento" title="descrizione_intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[protocollo = context.getItem('titolo_esistente_protocollo','')
+anno_prot = context.getItem('titolo_esistente_anno','')
+numero = context.getItem('titolo_esistente_numero','')
+
+return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' %(numero,protocollo,anno_prot)]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="fine_lavori_opt" title="I lavori sono stati ultimati:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">fine_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''completamente|1''','''in forma parziale come da planimetria allegata|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="varianti_lavori_opt" title="Varianti in corso d'opera:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">varianti_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non sono state realizzate varianti in corso d'opera;|3''','''in variante ad una CILA, hanno concretizzato solo opere rientranti nel campo di applicazione di tale procedimento (art. 25, comma 3, della L.R. n.16/2008 e s.m.), quali peraltro rappresentate nell’allegato elaborato grafico;|2''','''in variante ad una SCIA, sono state realizzate mediante SCIA, presentata prima della comunicazione di fine lavori in quanto non incidevano sui parametri urbanistici e sulle volumetrie, non modificavano la destinazione d’uso e la categoria edilizia, non alteravano la sagoma dell’edificio qualora sottoposto a vincolo ai sensi del d.lgs. 42/2004 e s.m. e i., e non violavano le eventuali prescrizioni contenute nel permesso di costruire (art. 25, comma 1, della L.R. n.16/2008 e s.m.);|1''','''in variante ad un Permesso di Costruire, ovvero ad una SCIA alternativa al permesso di costruire, sono state realizzate mediante SCIA presentata prima della presente comunicazione di fine dei lavori, ovvero presentata unitamente alla presente, in quanto non configurano una variazione essenziale e sono conformi alle prescrizioni urbanistico-edilizie, ai sensi dell’art.44, comma 2, della LR n.16/2008 e s.m. (art. 25, commi 1 e 2, della L.R. n.16/2008 e s.m.);|4''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="presentazione_sca_opt" title="Presentazione di Segnalazione Certificata di Agibilità" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">presentazione_sca_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Le opere NON richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) in quanto NON rientrano nei casi previsti dall'art.24 del DPR 380/01 e s.m.i.|1''','''Le opere richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) ai sensi dell'art.24 del DPR 380/01 e s.m.i., tale comunicazione verrà inoltrata a termini di legge|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="descrizione_opere" title="Descrizione sintetica delle opere" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_opere</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['maxlength = 200']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_variante_cila" title="hw_no_variante_cila" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_variante_cila</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('varianti_lavori_opt') != '2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_variante_scia" title="hw_no_variante_scia" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_variante_scia</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('varianti_lavori_opt') not in ['1','4']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="dichiarazione_art8_opt" title="Dichiarazione 1???" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">dichiarazione_art8_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''In relazione all'art.8 del D.Lgs. 19 agosto 2005, n.192 e s.m. e i., il direttore dei lavori DICHIARA che nell’ambito delle suddette opere non si è proceduto ad interventi per i quali si sarebbe reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m. (ex art.28, comma 1, della L. n.10/91 e s.m.), ovvero di altre attestazioni sostitutive eventualmente dovute dalle ditte installatrici;|1''','''In relazione all'articolo 8 co.2, e all’articolo 15, co.1, del dlgs n.192/05 e s.m., considerato che nell’ambito delle opere si è proceduto anche ad interventi per i quali si era reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m., , ai sensi dell’articolo 47 del DPR 445/2000 e s.m e i., consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci, ASSEVERA la conformità delle opere realizzate rispetto al progetto e alle sue eventuali varianti e alla relazione tecnica di cui all’articolo 28 della L.10/1991 sopra precisata. In tal senso, la presente è integrata da copia di documento di identità (art.38, comma 3, DPR n.445 e s.m.) del sottoscritto direttore dei lavori;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="dichiarazione_energetica_opt" title="Dichiarazione 2???" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">dichiarazione_energetica_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Con ulteriore riguardo agli adempimenti previsti dal comma 2 del sopra citato art.8, considerato che le opere realizzate integrano uno degli interventi già indicati dal paragrafo 8, punto 3, dell’allegato A al DM 26.06.2009 (il quale prescrive che l’attestato di qualificazione, di cui al comma 2, dell’art.8, del dlgs n.192/05 e s.m., è obbligatorio per gli edifici di nuova costruzione  e per gli interventi ricadenti nell’ambito di applicazione di cui all’articolo 3, comma 2, lettere ‘a’, ‘b’  e ‘c’ , del medesimo decreto legislativo, in questo ultimo caso limitatamente alle ristrutturazioni totali) con la presente si ASSEVERA altresì l’allegato attestato di qualificazione energetica (AQE);|1''','''Con ulteriore riguardo agli adempimenti previsti dal comma 2 del sopra citato art.8, si dichiara che le opere realizzate non integrano alcuno degli interventi indicati dal paragrafo 8, punto 3, dell’allegato A al DM 26.06.2009, con conseguente non necessità della predisposizione e asseverazione dell’attestato di qualificazione energetica (AQE);|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numero_protocollo_variante" title="Numero Prot. Variante" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_protocollo_variante</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_protocollo_variante" title="Data Prot. Variante" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_protocollo_variante</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="rimozione_baracca_opt" title="RIMOZIONE BARACCA DI CANTIERE (art.38, CO.2, del vigente R.E.)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">rimozione_baracca_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Si attesta l’avvenuta RIMOZIONE della/delle BARACCA/BARACCHE di CANTIERE nonché di ogni altra struttura provvisionale già posta in essere per le necessità del cantiere, con ripristino dello stato originario dei luoghi da esse interessato;|1''','''Si dichiara che per la realizzazione dell’intervento non è risultato necessario provvedere all’installazione di alcuna BARACCA di CANTIERE, né di altre strutture provvisionali;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numeri_civici_opt" title="NUMERI CIVICI (art.84 del vigente R.E.)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numeri_civici_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''L’intervento non ha conseguito l’apertura di NUOVI INGRESSI da spazi pubblici o di uso pubblico, ovvero costituzione di nuovi interni;|1''','''L’intervento ha conseguito l’apertura di NUOVI INGRESSI da spazio pubblici o di uso pubblico, ovvero costituzione di nuovi interni, pertanto DICHIARA di aver richiesto l’ASSEGNAZIONE dei NUMERI CIVICI e/o NUMERI INTERNI secondo quanto previsto dal vigente regolamento toponomastico;|2''','''L’intervento prevedeva l’apertura di NUOVI INGRESSI da spazio pubblici o di uso pubblico, ovvero costituzione di nuovi interni, pertanto DICHIARA che, prima della richiesta di agibilità, in quanto da presentarsi successivamente alla presente, provvederà a richiedere l’ASSEGNAZIONE dei NUMERI CIVICI e/o NUMERI INTERNI secondo quanto previsto dal vigente regolamento toponomastico|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="aut_paesaggistica_opt" title="Autorizzazione Paesaggistica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">aut_paesaggistica_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''In relazione all'art.8 del D.Lgs. 19 agosto 2005, n.192 e s.m. e i., il direttore dei lavori DICHIARA che nell’ambito delle suddette opere non si è proceduto ad interventi per i quali si sarebbe reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m. (ex art.28, comma 1, della L. n.10/91 e s.m.), ovvero di altre attestazioni sostitutive eventualmente dovute dalle ditte installatrici;|1''','''In relazione all'articolo 8 co.2, e all’articolo 15, co.1, del dlgs n.192/05 e s.m., considerato che nell’ambito delle opere si è proceduto anche ad interventi per i quali si era reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m., , ai sensi dell’articolo 47 del DPR 445/2000 e s.m e i., consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci, ASSEVERA la conformità delle opere realizzate rispetto al progetto e alle sue eventuali varianti e alla relazione tecnica di cui all’articolo 28 della L.10/1991 sopra precisata. In tal senso, la presente è integrata da copia di documento di identità (art.38, comma 3, DPR n.445 e s.m.) del sottoscritto direttore dei lavori;|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

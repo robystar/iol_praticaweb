@@ -1,0 +1,175 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_sostituzione_tecnici" title="sub_sostituzione_tecnici" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_sostituzione_tecnici</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">titolo_esistente_id</span></p>
+<p><span class="plominoFieldClass">tipo_soggetto</span></p>
+<p><span class="plominoLabelClass">id_soggetto</span><span class="plominoHidewhenClass">start:hw_no_edit</span><span class="plominoFieldClass">id_soggetto</span><span class="plominoHidewhenClass">end:hw_no_edit</span><span class="plominoHidewhenClass">start:hw_edit</span><span class="plominoFieldClass">old_soggetto</span><span class="plominoHidewhenClass">end:hw_edit</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_progettisti</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Nuovo Progettista dei lavori delle opere architettoniche</legend>
+<p><span class="plominoSubformClass">base_sub_progettista</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_progettisti</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_direttori</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Nuovo Direttore dei lavori delle opere architettoniche</legend>
+<p><span class="plominoSubformClass">base_sub_direttore</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_direttori</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">start:hw_no_progettisti_ca</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Nuovo Progettista dei lavori delle opere strutturali</legend>
+<p><span class="plominoSubformClass">base_sub_progettista_strutt</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_progettisti_ca</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_direttori_ca</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Nuovo Direttore dei lavori delle opere strutturali</legend>
+<p><span class="plominoSubformClass">base_sub_direttore_strutt</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_direttori_ca</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">start:hw_no_esecutori</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Nuovo Esecutore delle opere</legend>
+<p><span class="plominoSubformClass">base_sub_esecutore</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_esecutori</span></p>
+</fieldset>
+</fieldset>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="id_soggetto" title="Nominativo del soggetto per il quale si richiede la sostituzione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">id_soggetto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-tool=ricerca-anagrafica']]></HTMLAttributesFormula>
+        </element>
+        <element id="old_soggetto" title="old_soggetto" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">old_soggetto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="tipo_soggetto" title="tipo_soggetto" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipo_soggetto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_sostituzione_tecnici']]></HTMLAttributesFormula>
+        </element>
+        <element id="titolo_esistente_id" title="titolo_esistente_id" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">titolo_esistente_id</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_progettisti" title="hw_no_progettisti" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_progettisti</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_soggetto')!='progettisti']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_progettisti_ca" title="hw_no_progettisti_ca" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_progettisti_ca</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_soggetto')!='progettisti_ca']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_direttori" title="hw_no_direttori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_direttori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_soggetto')!='direttori']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_direttori_ca" title="hw_no_direttori_ca" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_direttori_ca</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_soggetto')!='direttori_ca']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_esecutori" title="hw_no_esecutori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_esecutori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_soggetto')!='esecutori']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_edit" title="hw_edit" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_edit</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_edit" title="hw_no_edit" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_edit</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="nascondi" title="nascondi" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">nascondi</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[ll = context.getParentDatabase().resources.customscripts.getElencoComuni() or []
+if isEditMode():
+     return '<style>#select_div{display:none}</style>'
+else:
+    return '<style>#name_div{display:none}</style>']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

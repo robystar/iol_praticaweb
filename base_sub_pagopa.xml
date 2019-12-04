@@ -91,10 +91,14 @@ for row in rows:
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_pagopa_importi</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
-    { "sTitle": "Tipo", "bVisible": false },             
+    { "sTitle": "Tipo" },             
     { "sTitle": "Causale" },              
     { "sTitle": "Importo" },
     { "sTitle": "Scadenza" }
@@ -106,14 +110,10 @@ for row in rows:
 "bInfo": false,
 "bAutoWidth": false,
 "plominoDialogOptions": {
-        "width": 800,
+        "width": 900,
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_pagopa_importi</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -147,10 +147,14 @@ for row in rows:
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_pagopa_importi</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" }, 
-    { "sTitle": "Tipo", "bVisible": false },             
+    { "sTitle": "Tipo" },             
     { "sTitle": "Causale" },              
     { "sTitle": "Importo" },
     { "sTitle": "Scadenza" }
@@ -166,10 +170,6 @@ for row in rows:
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_pagopa_importi</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -194,6 +194,10 @@ for row in rows:
           <params>
 <param>
 <value><struct>
+<member>
+<name>associated_form</name>
+<value><string>dlg_pagopa_pagamenti</string></value>
+</member>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -222,10 +226,6 @@ for row in rows:
         "height": 500
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_pagopa_pagamenti</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -316,6 +316,19 @@ if context.getItem('attesa_rt'):
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[return context.absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="iol_absolute_url" title="iol_absolute_url" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_absolute_url</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.absolute_url()]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

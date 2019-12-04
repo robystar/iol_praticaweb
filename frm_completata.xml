@@ -34,7 +34,6 @@ elif context.REQUEST.get('btn_send') or context.REQUEST.get('btn_send_force'):
 <legend class="scheduler-border"> ALLEGA I DOCUMENTI FIRMATI DIGITALMENTE </legend>
 <p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
 </fieldset></div>
-<p><span class="plominoSubformClass">base_sub_responsabile_procedimento</span></p>
 <p><span class="plominoSubformClass">base_sub_invio</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
 <p><span class="plominoHidewhenClass">start:hw_edit</span></p>
@@ -85,10 +84,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return context.getParentDatabase().resources.config_documenti_stampe(context)</string></value>
 </member>
@@ -96,6 +91,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

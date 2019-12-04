@@ -256,12 +256,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>%d/%m/%Y</string></value>
 </member>
 <member>
-<name>startingyear</name>
-<value><string>1900</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
+</member>
+<member>
+<name>startingyear</name>
+<value><string>1900</string></value>
 </member>
 </struct></value>
 </param>
@@ -375,10 +375,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['M','F']</string></value>
 </member>
@@ -386,6 +382,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -411,7 +411,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=base_sub_fisica''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=1''']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><struct>

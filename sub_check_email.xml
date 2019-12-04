@@ -50,6 +50,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_check_email</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Oggetto" },
@@ -68,10 +72,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 400
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_check_email</string></value>
 </member>
 <member>
 <name>field_mapping</name>

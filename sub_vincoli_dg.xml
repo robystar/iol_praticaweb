@@ -61,6 +61,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_vincoli_tutela_ecologica</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -81,10 +85,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 600
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_vincoli_tutela_ecologica</string></value>
 </member>
 <member>
 <name>field_mapping</name>
@@ -110,6 +110,10 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_vincoli_tutela_funzionale</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -130,10 +134,6 @@ resources/iol-custom.css]]></ResourcesCSS>
         "height": 600
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_vincoli_tutela_funzionale</string></value>
 </member>
 <member>
 <name>field_mapping</name>

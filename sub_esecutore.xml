@@ -64,10 +64,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['''In quanto opere di modesta entità che non interessano le specifiche normative di settore, i lavori sono eseguiti / sono stati eseguiti in prima persona, senza alcun affidamento a ditte esterne;|1''','''I lavori saranno eseguiti da un impresa;|2''']
 
@@ -87,6 +83,10 @@ ll.append('''L'attività oggetto della presente comunicazione/istanza non richie
 
 return ll
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -127,6 +127,10 @@ return ll
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>base_sub_esecutore</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Denominazione"},
@@ -145,10 +149,6 @@ return ll
         "height": 800
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>base_sub_esecutore</string></value>
 </member>
 <member>
 <name>field_mapping</name>

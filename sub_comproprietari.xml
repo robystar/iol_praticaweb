@@ -45,6 +45,10 @@
 <param>
 <value><struct>
 <member>
+<name>associated_form</name>
+<value><string>dlg_fisicagiuridica</string></value>
+</member>
+<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Cognome" },
@@ -69,10 +73,6 @@
         "height": 800
     }
 </string></value>
-</member>
-<member>
-<name>associated_form</name>
-<value><string>dlg_fisicagiuridica</string></value>
 </member>
 <member>
 <name>field_mapping</name>

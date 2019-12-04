@@ -124,12 +124,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['SCIA','PERMESSO DI COSTRUIRE']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -179,12 +179,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>%d/%m/%Y</string></value>
 </member>
 <member>
-<name>startingyear</name>
-<value><string>1950</string></value>
-</member>
-<member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
+</member>
+<member>
+<name>startingyear</name>
+<value><string>1950</string></value>
 </member>
 </struct></value>
 </param>
@@ -211,12 +211,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>["È stata presentata richiesta di permesso di costruire/S.C.I.A.|1","Non è ancora stata presentata richiesta di permesso di costruire/S.C.I.A.|2"]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

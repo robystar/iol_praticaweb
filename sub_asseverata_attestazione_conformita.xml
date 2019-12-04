@@ -52,10 +52,6 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''Mutamenti di destinazione d'uso di aree, di edifici e di unità immobiliari, senza esecuzione di opere edilizie e
 comportanti il passaggio a diverse categorie di funzioni come definite dalla l.r. 25/1995 e successive modificazioni ed
@@ -63,6 +59,10 @@ integrazioni o comunque comportanti il passaggio a funzioni che richiedano la co
 urbanizzazione maggiori (art. 21 bis, comma 1 lettera f) l.r. 16/2008 e s.m.);|1''',
 '''Demolizione senza ricostruzione (art. 21 bis, comma 1 lettera g) l.r. 16/2008 e s.m.;|2''',
 '''Opere di sistemazione di aree (anche ludico-ricreative), non comportanti creazione di volumetria (art. 21 bis, comma 1 lettera i) l.r. 16/2008 e s.m., come rappresentate negli elaborati grafici allegati;|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

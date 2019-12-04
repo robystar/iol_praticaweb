@@ -61,12 +61,12 @@ resources/iol-custom.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>['''interventi di ristrutturazione edilizia che portino ad un organismo edilizio in tutto o in parte diverso dal precedente e che comportino modifiche della volumetria complessiva degli edifici o dei prospetti, ovvero che, limitatamente agli immobili compresi nelle zone omogenee A, comportino mutamenti della destinazione d’uso, nonché gli interventi che comportino modificazioni della sagoma di immobili sottoposti a vincoli ai sensi del decreto legislativo 22 gennaio 2004, n. 42 e successive modificazioni (Attività n. 8, Tabella A, Sez. II del d.lgs. 222/2016, art. 10 comma 1, lettera c) del d.P.R. n. 380/2001)|1''','''interventi di nuova costruzione o di ristrutturazione urbanistica qualora siano disciplinati da piani attuativi comunque denominati, ivi compresi gli accordi negoziali aventi valore di piano attuativo, che contengano precise disposizioni plano-volumetriche, tipologiche, formali e costruttive, la cui sussistenza sia stata esplicitamente dichiarata dal competente organo comunale in sede di approvazione degli stessi piani o di ricognizione di quelli vigenti (Attività n. 10, Tabella A, Sez. II del d.lgs. 222/2016)|2''','''interventi di nuova costruzione qualora siano in diretta esecuzione di strumenti urbanistici generali recanti precise disposizioni plano-volumetriche (Attività n. 10, Tabella A, Sez. II del d.lgs. 222/2016)|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
