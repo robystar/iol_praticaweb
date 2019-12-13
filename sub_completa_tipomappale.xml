@@ -30,7 +30,9 @@
 <p><span class="plominoSubformClass">base_sub_giuridica</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
-<div class="v-content well"><p><span class="plominoSubformClass">sub_ubicazione_mappali</span></p></div>
+<div class="v-content well">
+<p><span class="plominoSubformClass">sub_ubicazione_mappali</span></p>
+</div>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

@@ -12,34 +12,20 @@
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoFieldClass">info_procedimento</span></p>
 <p><span class="plominoFieldClass">pagamenti</span></p>
-<!-- RIFERIMENTI per integrazioni ecc -->
-<p><span class="plominoFieldClass">riferimenti_pratica</span></p>
-<!-- DATE per integrazioni ecc -->
-<p><span class="plominoFieldClass">riferimenti_comunicazione</span></p>
-<!-- ISTRUTTORIA -->
-<p><span class="plominoFieldClass">istruttoria</span></p>
-<!-- READERS  -->
-<p><span class="plominoFieldClass">utenti_readers</span></p>
-<!-- RESPONSABILE DEL PROCEDIMENTO  -->
-<p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
-<!-- AVVIO DEL PROCEDIMENTO  -->
-<p><span class="plominoFieldClass">avvio_procedimento</span></p>
-<!-- ELENCO INTEGRAZIONI -->
-<p><span class="plominoFieldClass">elenco_integrazioni</span></p>
-<!-- ELENCO PARERI -->
-<p><span class="plominoFieldClass">elenco_pareri</span></p>
-<!-- ELENCO COMMISSIONI -->
-<p><span class="plominoFieldClass">elenco_commissioni</span></p>
-<!--PREAVVISO DI RIGETTO -->
-<p><span class="plominoFieldClass">preavviso_rigetto</span></p>
-<!--RIGETTO -->
-<p><span class="plominoFieldClass">rigetto</span></p>
-<!--RILASCIO TITOLO -->
-<p><span class="plominoFieldClass">rilascio_titolo</span></p>
-<!--PRATICHE COLLEGATE -->
-<p><span class="plominoFieldClass">pratiche_collegate</span></p>
-<!--EMAIL PEC -->
-<p><span class="plominoLabelClass">iol_check_email</span><span class="plominoFieldClass">iol_check_email</span></p>
+<!-- RIFERIMENTI per integrazioni ecc --><p><span class="plominoFieldClass">riferimenti_pratica</span></p>
+<!-- DATE per integrazioni ecc --><p><span class="plominoFieldClass">riferimenti_comunicazione</span></p>
+<!-- ISTRUTTORIA --><p><span class="plominoFieldClass">istruttoria</span></p>
+<!-- READERS  --><p><span class="plominoFieldClass">utenti_readers</span></p>
+<!-- RESPONSABILE DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
+<!-- AVVIO DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">avvio_procedimento</span></p>
+<!-- ELENCO INTEGRAZIONI --><p><span class="plominoFieldClass">elenco_integrazioni</span></p>
+<!-- ELENCO PARERI --><p><span class="plominoFieldClass">elenco_pareri</span></p>
+<!-- ELENCO COMMISSIONI --><p><span class="plominoFieldClass">elenco_commissioni</span></p>
+<!--PREAVVISO DI RIGETTO --><p><span class="plominoFieldClass">preavviso_rigetto</span></p>
+<!--RIGETTO --><p><span class="plominoFieldClass">rigetto</span></p>
+<!--RILASCIO TITOLO --><p><span class="plominoFieldClass">rilascio_titolo</span></p>
+<!--PRATICHE COLLEGATE --><p><span class="plominoFieldClass">pratiche_collegate</span></p>
+<!--EMAIL PEC --><p><span class="plominoLabelClass">iol_check_email</span><span class="plominoFieldClass">iol_check_email</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -552,9 +538,7 @@ try:
     content=asUnicode(renderForm.displayDocument(context))
 except:
     content=''
-return content   
-    
-]]></Formula>
+return content]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

@@ -1,0 +1,20 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="InviaPratica" title="Agent per invio della pratica" type="PlominoAgent">
+      <id type="Products.Archetypes.Field.StringField">InviaPratica</id>
+      <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = args[0]
+db = args[1]
+
+if not doc:
+    return 
+
+if doc.getItem('verifica_pagamento','') == 'OK':
+    doc.setItem('richiedi_nuovo_pagamento',0)
+    doc.doAction('presentazione')     
+    doc.getParentDatabase().getIndex().indexDocument(doc)
+else:
+    doc.setItem('richiedi_nuovo_pagamento',1)]]></Content>
+      <RunAs type="Products.Archetypes.Field.StringField">OWNER</RunAs>
+    </element>
+  </design>
+</plominodatabase>

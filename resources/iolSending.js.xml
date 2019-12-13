@@ -1,0 +1,13 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource contenttype="application/javascript" id="iolSending.js" title="" type="File"><![CDATA[JChkb2N1bWVudCkucmVhZHkoZnVuY3Rpb24gKCkgewogICAgLy9TYWx2YXRhZ2dpbyBzdSBidyBh
+bGxlZ2F0aSBpbiBkYXRhZ3JpZAogICAgLy9pZigkKCIjcGxvbWlub19mb3JtIikuZGF0YSgiY2hh
+bmdlZCIpKXsKCiAgICAgICAgJCgiI3Bsb21pbm9fZm9ybSIpLm9uKCJzdWJtaXQiLGZ1bmN0aW9u
+KGV2ZW50KXsgCiAgICAgICAgICAgIGlmKCQoIiNwbG9taW5vX2Zvcm0iKS5oYXNDbGFzcygicGxv
+bWluby12YWxpZCIpKXsKICAgICAgICAJJCgiW25hbWU9YnRuX3NlbmRfYWN0aW9uIikuYXR0cigi
+ZGlzYWJsZWQiLCJkaXNhYmxlZCIpOwogICAgICAgICAgICAgICAgJCgiI2lvbC1zZW5kaW5nLW1l
+c3NhZ2UiKS5kaWFsb2coe21vZGFsOnRydWUsIHNob3c6ICJibGluZCIsIGhlaWdodDogMzAwLCB3
+aWR0aDogNTAwfSkKICAgICAgICAgICAgfQogICAgICAgIH0pOwogICAgLy99Cn0pOwo=
+]]></resource>
+  </design>
+</plominodatabase>

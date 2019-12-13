@@ -1,0 +1,19 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="config_backoffice_stampe" title="" type="Script (Python)"><![CDATA[## Script (Python) "config_backoffice_stampe"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None,azione=''
+##title=
+##
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+
+#return doc.getPrintFolderContents(grp='back-office')
+return doc.getPrintFolderContents(grp='back-office',filter=dict(Subject=azione))
+]]></resource>
+  </design>
+</plominodatabase>

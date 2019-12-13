@@ -78,7 +78,8 @@ else:
 if pagamento_bollo == 'PagoPa':
     return True
 else:
-    return context.getItem('iol_tipo_app','pdc') not in pagamento_bollo]]></Formula>
+    return context.getItem('iol_tipo_app','pdc') not in pagamento_bollo 
+]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="ricevuta_pagamento_bollo" title="Ricevuta F23 versamento o dichiarazione sostitutiva di annullo (vedi link) per n. 2 marche da bollo da 16 euro ciascuna" type="PlominoField">

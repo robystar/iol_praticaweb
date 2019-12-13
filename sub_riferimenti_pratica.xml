@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_riferimenti_pratica" title="sub_riferimenti_pratica" type="PlominoForm">
+    <element id="sub_riferimenti_pratica" title="riferimento pratica" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">sub_riferimenti_pratica</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
@@ -39,7 +39,9 @@
 <span class="plominoLabelClass">titolo_esistente_anagrafica</span> <span class="plominoFieldClass">titolo_esistente_anagrafica</span>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_edit</span></p>
-<div class="alert" id="div-message"><h5>Inserire numero e anno di protocollo della pratica presentata (NON DI EVENTUALE TITOLO RILASCIATO), codice fiscale dell'intestatario della pratica e cliccare su "Trova pratica".<br> ATTENZIONE: se l'integrazione/fine lavori riguarda una Denuncia Sismica Integrata, utilizzare il numero di protocollo e l'anno relativi a questa comunicazione e NON quello dell'eventuale procedimento edilizio collegato.</h5></div>
+<div class="alert" id="div-message">
+<h5>Inserire numero e anno di protocollo della pratica presentata (NON DI EVENTUALE TITOLO RILASCIATO), codice fiscale dell'intestatario della pratica e cliccare su "Trova pratica".<br> ATTENZIONE: se l'integrazione/fine lavori riguarda una Denuncia Sismica Integrata, utilizzare il numero di protocollo e l'anno relativi a questa comunicazione e NON quello dell'eventuale procedimento edilizio collegato.</h5>
+</div>
 <p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

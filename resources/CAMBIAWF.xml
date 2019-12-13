@@ -1,0 +1,19 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="CAMBIAWF" title="" type="Script (Python)"><![CDATA[## Script (Python) "CAMBIAWF"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    if doc.getItem('iol_workflow'):
+        doc.setItem('iol_workflow','iol_sue_wf')
+        doc.doAction('init')
+return 'ok'
+]]></resource>
+  </design>
+</plominodatabase>

@@ -17,13 +17,19 @@
 <p><span class="plominoFieldClass">riferimenti_delega</span></p>
 <p><span class="plominoFieldClass">autorizzazione</span></p>
 <p><span class="plominoFieldClass">istruttoria</span></p>
-<!-- ASSEGNAZIONE DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
-<!-- AVVIO DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">avvio_procedimento</span></p>
-<!-- EVENTUALE PREAVVISO DI RIGETTO --><p><span class="plominoFieldClass">preavviso_rigetto</span></p>
-<!-- EVENTUALE RIGETTO --><p><span class="plominoFieldClass">rigetto</span></p>
-<!-- ELENCO DOCUMENTI FIGLI --><p><span class="plominoFieldClass">elenco_integrazioni</span></p>
+<!-- ASSEGNAZIONE DEL PROCEDIMENTO  -->
+<p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
+<!-- AVVIO DEL PROCEDIMENTO  -->
+<p><span class="plominoFieldClass">avvio_procedimento</span></p>
+<!-- EVENTUALE PREAVVISO DI RIGETTO -->
+<p><span class="plominoFieldClass">preavviso_rigetto</span></p>
+<!-- EVENTUALE RIGETTO -->
+<p><span class="plominoFieldClass">rigetto</span></p>
+<!-- ELENCO DOCUMENTI FIGLI -->
+<p><span class="plominoFieldClass">elenco_integrazioni</span></p>
 <p><span class="plominoFieldClass">elenco_pareri</span></p>
-<!-- READERS  --><p><span class="plominoFieldClass">utenti_readers</span></p>
+<!-- READERS  -->
+<p><span class="plominoFieldClass">utenti_readers</span></p>
 <p><span class="plominoFieldClass">rilascio_titolo</span></p>
 <p><span class="plominoFieldClass">pratiche_collegate</span></p>
 <p><span class="plominoFieldClass">ricevute_pec</span></p>

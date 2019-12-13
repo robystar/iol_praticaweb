@@ -1,0 +1,56 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="altri_campi_importati" title="" type="Page Template"><![CDATA[<tal:block tal:define="doc python:options['doc'];
+     size python:options['field'].getSettings('size')"
+      tal:condition="python:doc.getItem('importata')==1">
+         
+
+<div class="row-fluid"><div class="span4"><span class="label">Responsabile procedimento</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Responsabileprocedimento')"></span></div>
+
+<div class="span4"><span class="label">Istruttore tecnico</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Istruttoretecnico')"></span></div>
+    
+<div class="span4"><span class="label">Rif. libero</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Riferlibero')"></span></div>
+                   
+</div>   
+         
+<div class="row-fluid"><div class="span3"><span class="label">Data istruttoria</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Dataistruttoria')"></span></div>
+
+<div class="span3"><span class="label">Scadenza istruttoria</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Scadenzaistruttoria')"></span></div>
+       
+<div class="span3"><span class="label">Data rilascio</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Datarilascio')"></span></div>
+
+<div class="span3"><span class="label">N. rilascio</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Nrilascio')"></span></div>    
+    
+    
+</div>           
+         
+<div class="row-fluid"><div class="span3"><span class="label">Data Adozione</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Dataadozione')"></span></div>
+
+<div class="span3"><span class="label">N. Adozione</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Nadozione')"></span></div>
+       
+<div class="span3"><span class="label">Inizio lavori</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Iniziolavori')"></span></div>
+
+<div class="span3"><span class="label">Fine Lavori</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Finelavori')"></span></div>    
+    
+</div>           
+                 
+
+<div class="row-fluid"><div class="span6"><span class="label">Impresa</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Impresa')"></span></div>
+
+<div class="span4"><span class="label">Impresa CF</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('ImpresaCF')"></span></div>
+    
+            
+</div>   
+                
+<div class="row-fluid"><div class="span4"><span class="label">Costo di costruzione</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('Costocostr')"></span></div>
+
+<div class="span4"><span class="label">Oneri I</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('OneriI')"></span></div>
+    
+<div class="span4"><span class="label">Oneri II</span><span class="TEXTFieldRead-TEXT" tal:content="python:doc.getItem('OneriII')"></span></div>
+                   
+</div> 
+         
+         
+</tal:block>]]></resource>
+  </design>
+</plominodatabase>
