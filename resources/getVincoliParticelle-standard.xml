@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <resource id="getVincoliParticelle" title="Elenco della zonizzazione" type="Script (Python)"><![CDATA[## Script (Python) "getVincoliParticelle"
+    <resource id="getVincoliParticelle-standard" title="Elenco della zonizzazione" type="Script (Python)"><![CDATA[## Script (Python) "getVincoliParticelle-standard"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
@@ -13,6 +13,8 @@
 from Products.CMFPlomino.PlominoUtils import json_dumps,StringToDate,DateToString,open_url,asUnicode
 from iol.document.plomino_utils import parseXML, requests_post, requests_get
 from Products.CMFPlomino.PlominoUtils import json_dumps
+
+#comune='A278' and  sezione='UN' and foglio='5' and mappale='5'
 
 def getElencoZone(pianificazione='', comune='',sezione='',foglio='',particella=''):
     ret=[]
@@ -43,7 +45,7 @@ def getElencoZone(pianificazione='', comune='',sezione='',foglio='',particella='
                 
             sVincolo = sVincolo + text + '\n'
   
-        return txtMap + '\n' + sVincolo
+    return txtMap + '\n' + sVincolo
 
 ####code
 sezioni = sezioni.split(',')

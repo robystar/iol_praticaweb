@@ -2221,7 +2221,7 @@ if doc.getItem('iol_tipo_app') in ['tipomappale']:
 if inviaPratica(doc):
     setClones(doc)
 ]]></resource>
-      <resource id="ProtocollaDocumento_TODO" title="" type="Script (Python)"><![CDATA[## Script (Python) "ProtocollaDocumento_TODO"
+      <resource id="ProtocollaDocumento_SUE" title="" type="Script (Python)"><![CDATA[## Script (Python) "ProtocollaDocumento_SUE"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
@@ -2276,9 +2276,7 @@ else:
             context.sendMail(doc=doc,azione='protocollazione-ko')
             
             
-if context.getProvider()!='sue':         
-    doc.doAction('invia_bo')   #??????????????            
-                       
+#doc.doAction('invia_bo')   #??????????????
 
 #????????? da vedere, non serve se uso inviqa_bo anche x sue
 #se ho gia il numero pratica aggiorno il messaggio (in caso di backoffice sue)

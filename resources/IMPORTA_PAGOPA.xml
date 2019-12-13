@@ -1,0 +1,322 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="IMPORTA_PAGOPA" title="" type="Folder">
+      <resource id="01-AggiornaPagopaResponse" title="" type="Script (Python)"><![CDATA[## Script (Python) "01-AggiornaPagopaResponse"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import json_dumps,json_loads,StringToDate,DateToString
+from iol.document.plomino_utils import requests_post
+
+db=context.getParentDatabase()
+url='http://pagopa.istanze-online.it/risposte-pagopa'
+
+for doc in context.getAllDocuments():
+    data=dict(foreign_id=doc.getId(),application='iol_praticaweb')
+    res=None
+    res = requests_post(url, data=data, auth=('rstarnini@inwind.it', 'b3b0b3b0'))
+    info = res["text"]
+    if info:
+        doc.setItem('pagopa_response',json_loads(info))
+        context.plone_log(doc.getId())
+        print doc.getId()
+
+        
+        
+return printed
+]]></resource>
+      <resource id="02-AggiornaImporti" title="" type="Script (Python)"><![CDATA[## Script (Python) "02-AggiornaImporti"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import decimal
+
+for doc in context.getAllDocuments():
+    doc.removeItem('elenco_importi_dg')
+    index=1
+    rows=[]
+    s = '%'+doc.getId()
+    res = context.ElencoImporti(docid=s).dictionaries()
+    if len(res)>0:
+        ret = res[0]
+        if ret['importo_1']:
+            rows.append(['%02d'%index,ret['tipopagamento_1'],ret['causale_1'],decimal(ret['importo_1']),'Presentazione','presentazione'])            
+            if ret['importo_2']:
+                index = index + 1
+                rows.append(['%02d'%index,ret['tipopagamento_2'],ret['causale_2'],decimal(ret['importo_2']),'Presentazione','presentazione'])    
+                if ret['importo_3']:
+                    index = index + 1
+                    rows.append(['%02d'%index,ret['tipopagamento_3'],ret['causale_3'],decimal(ret['importo_3']),'Presentazione','presentazione'])    
+                    if ret['importo_4']:
+                        index = index + 1
+                        rows.append(['%02d'%index,ret['tipopagamento_4'],ret['causale_4'],decimal(ret['importo_4']),'Presentazione','presentazione'])
+                        if ret['importo_5']:
+                            index = index + 1
+                        rows.append(['%02d'%index,ret['tipopagamento_5'],ret['causale_5'],decimal(ret['importo_5']),'Presentazione','presentazione'])    
+    
+    if rows:  
+         print doc.getId(),rows                             
+         doc.setItem('elenco_importi_dg',rows)
+return printed
+]]></resource>
+      <resource id="03-AggiornaPagamenti" title="" type="Script (Python)"><![CDATA[## Script (Python) "03-AggiornaPagamenti"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import decimal
+
+keys = ['IUV','esito','importo','cognome','email','data','orario','metodo','uidriscossione','divisa','brand','alias']
+for doc in context.getAllDocuments():  
+        importi = doc.getItem('elenco_importi_dg',[])
+        codTrans = []
+        for row in importi:
+            codTrans.append(row[0])
+    
+        #pago tutto con quello iuv
+        codTrans = ''.join(codTrans).zfill(10)
+        info = doc.getItem('pagopa_response',[])
+        rows=[]  
+        
+        for row in info:
+            if row['esito']=='OK' and row['data']:
+                row['metodo']='BOLLETTINO' if len(row['IUV'])==15 else 'ONLINE'
+                pagamento=[codTrans]
+                for k in keys:
+                    pagamento.append(row.get(k,''))
+                rows.append(pagamento)
+                                 
+        doc.setItem('elenco_pagamenti_dg',rows)
+        context.plone_log(doc.getId())
+        print doc.getId()
+return printed
+]]></resource>
+      <resource id="faqualcosa" title="" type="Script (Python)"><![CDATA[## Script (Python) "faqualcosa"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import decimal
+
+for doc in context.getAllDocuments():
+    if doc.getItem('aggiustato'):
+        print doc.getId()
+        
+return printed
+
+
+
+##gli importi???
+for doc in context.getAllDocuments():
+    if doc.getItem('pagopa_response') and not doc.getItem('elenco_importi_dg'):
+        index=0
+        rows=[]
+        for row in doc.getItem('elenco_pagamenti',[]):
+            index = index + 1
+            rows.append(['%02d'%index,row[4],row[5],decimal(row[3]),'Presentazione',''])
+            
+        print doc.getId(),rows
+        doc.setItem('aggiustato',1)
+        doc.setItem('elenco_importi_dg',rows)
+        
+return printed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for doc in context.getAllDocuments():
+    if len(doc.getItem('importi_versati'))!=len(doc.getItem('elenco_importi_dg')):
+        print doc.getId()
+
+
+return printed
+
+
+
+
+#dovrebbe esserci un unico pagamento OK
+for doc in context.getAllDocuments():
+    info = doc.getItem('pagopa_response',[])
+    ll=[]
+    for row in info:
+        if row['esito']=='OK' and row['IUV'] not in ll:
+            ll.append(row['IUV'])
+    if len(ll)>1:
+        print doc.getId(),ll
+
+return printed
+
+
+
+
+
+for doc in context.getAllDocuments():
+    if len(doc.getItem('elenco_importi_dg'))>2:
+
+        print doc.getId()
+
+return printed
+
+
+
+for doc in context.getAllDocuments():
+    if len(doc.getItem('elenco_importi_dg'))>2:
+
+        print doc.getId()
+
+return printed
+
+
+
+
+
+'''
+for doc in context.getAllDocuments():
+    info = doc.getItem('pagopa_response',[])
+    ll=[]
+    for row in info:
+        if row['esito']=='OK':
+            print doc.getId(),len(row['IUV'])
+
+return printed
+
+
+'''
+
+
+
+'''
+#dovrebbe esserci un unico pagamento OK
+for doc in context.getAllDocuments():
+    info = doc.getItem('pagopa_response',[])
+    ll=[]
+    for row in info:
+        if row['esito']=='OK' and row['IUV'] not in ll:
+            ll.append(row['IUV'])
+    if len(ll)>1:
+        print doc.getId(),ll
+
+return printed
+'''
+]]></resource>
+      <resource id="copy_of_02-AggiornaImporti" title="" type="Script (Python)"><![CDATA[## Script (Python) "copy_of_02-AggiornaImporti"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import decimal
+
+docs=[context.getDocument('03801-2019-sca')]
+for doc in docs:
+    index=1
+    rows=[]
+    s = '%'+doc.getId()
+    res = context.ElencoImporti(docid=s).dictionaries()
+    if len(res)>0:
+        ret = res[0]
+        if ret['importo_1']:
+            rows.append(['%02d'%index,ret['tipopagamento_1'],ret['causale_1'],decimal(ret['importo_1']),'Presentazione',''])            
+            if ret['importo_2']:
+                index = index + 1
+                rows.append(['%02d'%index,ret['tipopagamento_2'],ret['causale_2'],decimal(ret['importo_2']),'Presentazione',''])    
+                if ret['importo_3']:
+                    index = index + 1
+                    rows.append(['%02d'%index,ret['tipopagamento_3'],ret['causale_3'],decimal(ret['importo_3']),'Presentazione',''])    
+                    if ret['importo_4']:
+                        index = index + 1
+                        rows.append(['%02d'%index,ret['tipopagamento_4'],ret['causale_4'],decimal(ret['importo_4']),'Presentazione',''])
+                        if ret['importo_5']:
+                            index = index + 1
+                        rows.append(['%02d'%index,ret['tipopagamento_5'],ret['causale_5'],decimal(ret['importo_5']),'Presentazione',''])    
+    
+    if rows:  
+         print doc.getId(),rows                             
+         doc.setItem('elenco_importi_dg',rows)
+return printed
+]]></resource>
+      <resource id="04-AggiornaImportiPagamenti" title="" type="Script (Python)"><![CDATA[## Script (Python) "04-AggiornaImportiPagamenti"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+for doc in context.getAllDocuments():
+    if doc.getItem('elenco_pagamenti_dg'):
+        try:
+            view = doc.restrictedTraverse('iol-GetElencoImportiPagamenti')
+            data = view.getElencoImportiPagamenti()
+            doc.setItem('elenco_importi_pagamenti',data)
+            context.plone_log(doc.getId())
+        except:
+            pass
+return 'ok'
+]]></resource>
+      <resource id="salvaTutto" title="" type="Script (Python)"><![CDATA[## Script (Python) "salvaTutto"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+#doc=context.getDocument('03969-2019-integrazione')
+doc=context.getDocument('01635-2019-scia2')
+#doc=context.getDocument('03149-2019-art48')
+
+#doc.setItem('qualificazione_intervento_opt',"interventi che ricadono nell'articolo 23, del d.P.R. n. 380/2001 (interventi per cui è possibile presentare la SCIA alternativa al permesso di costruire e elencati nella Sezione II-Edilizia della Tabella A del d.lgs. n. 222/2016")
+doc.save(onSaveEvent=False)
+
+return 'ok'
+
+
+
+for doc in context.getAllDocuments():
+    if doc.getItem('elenco_importi_pagamenti'):
+        doc.save(onSaveEvent=False)
+        context.plone_log(doc.getId())
+        
+        
+return 'ok'
+]]></resource>
+      <resource id="ElencoImporti" title="" type="Z SQL Method"/>
+    </resource>
+  </design>
+</plominodatabase>

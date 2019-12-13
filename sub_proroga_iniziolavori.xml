@@ -11,11 +11,9 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">RICHIESTA PROROGA INIZIO LAVORI</legend>
-<div class="row-fluid">
-<div class="span4">
+<div class="row-fluid"><div class="span4">
 <span class="plominoLabelClass">data_proroga_iniziolavori</span><span class="plominoFieldClass">data_proroga_iniziolavori</span>
-</div>
-</div>
+</div></div>
 </fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>

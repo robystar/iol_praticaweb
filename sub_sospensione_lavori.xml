@@ -11,11 +11,9 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">COMUNICAZIONE SOSPENSIONE LAVORI</legend>
-<div class="row-fluid">
-<div class="span3">
+<div class="row-fluid"><div class="span3">
 <span class="plominoLabelClass">data_sospensione_lavori</span><span class="plominoFieldClass">data_sospensione_lavori</span>
-</div>
-</div>
+</div></div>
 <div>
 <span class="plominoLabelClass">sospensione_motivazioni</span><span class="plominoFieldClass">sospensione_motivazioni</span>
 </div>

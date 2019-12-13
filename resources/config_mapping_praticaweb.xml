@@ -653,9 +653,7 @@ diz = {
       "fotovoltaico":190000,
       "dsi":201000,
       "deposito-impianti":220000,
-      
-  },
-
+},
   "categoria_pratica": {
       "scia-1":1,
       "scia-2":2,
@@ -691,8 +689,6 @@ diz = {
       "sca":999,
       "aua":999,
       "dsi":999,
-      "idrogeologico-scia":33,
-      "idrogeologico-aut":32,
       "deposito-impianti":999,
       "deposito-impianti-1":231,
       "deposito-impianti-2":232,
@@ -700,6 +696,7 @@ diz = {
       "deposito-impianti-4":234,
       "deposito-impianti-0":230,
   },
+
     "pagamento":{
         "anagrafica":"anagrafica",
         "causale":"causale",

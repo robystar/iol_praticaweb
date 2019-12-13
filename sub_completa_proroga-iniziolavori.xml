@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_completa_finelavori-multipla" title="sub_completa_finelavori-multipla" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_completa_finelavori-multipla</id>
+    <element id="sub_completa_proroga-iniziolavori" title="sub_completa_proroga-iniziolavori" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_proroga-iniziolavori</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -22,9 +22,9 @@
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
 </fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">ELENCO DELLE PRATICHE</legend> <span class="plominoSubformClass">sub_riferimenti_multipli</span>
-</fieldset></div>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
+</fieldset>
 <p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
@@ -35,7 +35,7 @@
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
-<p><span class="plominoSubformClass">sub_intervento_finelavori-multipla</span></p>
+<p><span class="plominoSubformClass">sub_proroga_iniziolavori</span></p>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

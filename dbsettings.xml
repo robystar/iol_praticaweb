@@ -9,11 +9,11 @@
       <debugMode type="Products.Archetypes.Field.BooleanField">False</debugMode>
       <CountDocuments type="Products.Archetypes.Field.BooleanField">False</CountDocuments>
       <DateTimeFormat type="Products.Archetypes.Field.StringField">%d/%m/%Y</DateTimeFormat>
-      <StartPage type="Products.Archetypes.Field.StringField">istanze-online-lp</StartPage>
+      <StartPage type="Products.Archetypes.Field.StringField">sportello-unico-per-ledilizia</StartPage>
       <i18n type="Products.Archetypes.Field.StringField"/>
       <DoNotListUsers type="Products.Archetypes.Field.BooleanField">False</DoNotListUsers>
       <DoNotReindex type="Products.Archetypes.Field.BooleanField">True</DoNotReindex>
-      <IsDatabaseTemplate type="Products.Archetypes.Field.BooleanField">True</IsDatabaseTemplate>
+      <IsDatabaseTemplate type="Products.Archetypes.Field.BooleanField">False</IsDatabaseTemplate>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">True</excludeFromNav>
       <acl AnomynousAccessRight="NoAccess" AuthenticatedAccessRight="NoAccess">
         <params id="UserRoles">

@@ -1,0 +1,42 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="AggiustaOldDb" title="" type="Folder">
+      <resource id="cicla" title="" type="Script (Python)"><![CDATA[## Script (Python) "cicla"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import json_dumps,StringToDate,DateToString
+
+for doc in context.getAllDocuments():
+    if doc.getItem('old_db'):
+        if doc.getItem('iol_tipo_app') in ['integrazione','iniziolavori','finelavori']:
+            print doc.getId()
+            try:
+                doc.setItem('titolo_esistente_protocollo',int(doc.getItem('numero_protocollo_origine','0')))
+                doc.setItem('titolo_esistente_data',doc.getItem('data_protocollo_origine'))
+                doc.setItem('titolo_esistente_anno',int(DateToString(doc.getItem('data_protocollo_origine'),format='%Y')))
+            except:
+                pass
+
+        
+return printed
+
+
+'''
+
+titolo_esistente_anagrafica (Text EDITABLE)  
+titolo_esistente_anno (Number EDITABLE)  
+titolo_esistente_data (Datetime EDITABLE)  
+titolo_esistente_id (Text EDITABLE)  
+titolo_esistente_numero (Text EDITABLE)  
+titolo_esistente_protocollo (Number EDITABLE)  
+'''
+]]></resource>
+    </resource>
+  </design>
+</plominodatabase>

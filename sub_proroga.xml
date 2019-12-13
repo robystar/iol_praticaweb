@@ -16,11 +16,9 @@
 <div>
 <span class="plominoLabelClass">proroga_opt</span><span class="plominoFieldClass">proroga_opt</span>
 </div>
-<div class="row-fluid">
-<div class="span3">
+<div class="row-fluid"><div class="span3">
 <span class="plominoLabelClass">proroga_mesi</span><span class="plominoFieldClass">proroga_mesi</span>
-</div>
-</div>
+</div></div>
 <div>
 <span class="plominoLabelClass">proroga_motivazioni</span><span class="plominoFieldClass">proroga_motivazioni</span>
 </div>

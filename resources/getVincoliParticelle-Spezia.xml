@@ -24,6 +24,7 @@ def getElencoZone(sezione='',foglio='',particella=''):
         if resp["status_code"] == 200:
             data = asUnicode(resp["text"])
             data =  parseXML(resp["text"])
+            context.plone_log(data)
             if "Destinazione" in data:
                 if "mappale" in data["Destinazione"]:
                     rows = [data["Destinazione"]['mappale']]
