@@ -75,16 +75,20 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>€ %1.2f</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>type</name>
 <value><string>FLOAT</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

@@ -46,12 +46,14 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-plugin=iolUploadBase data-max-size=3']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>type</name>
 <value><string>SINGLE</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

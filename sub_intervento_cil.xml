@@ -78,12 +78,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -103,12 +105,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -126,11 +130,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_comunicazioni_cila</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -150,11 +163,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -172,16 +182,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['maxlength = 200']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>8</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

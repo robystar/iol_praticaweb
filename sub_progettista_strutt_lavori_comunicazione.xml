@@ -53,19 +53,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_progettista_strutt_lavori_comunicazione''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Progettista delle opere strutturali non necessario o già comunicato;|1''',
-'''Comunico le generalità del progettista delle opere strutturali;|2''',
-'''Comunico le generalità del NUOVO progettista delle opere strutturali in sostituzione del precedente;|3'''
-]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -76,6 +65,23 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Progettista delle opere strutturali non necessario o già comunicato;|1''',
+'''Comunico le generalità del progettista delle opere strutturali;|2''',
+'''Comunico le generalità del NUOVO progettista delle opere strutturali in sostituzione del precedente;|3'''
+]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

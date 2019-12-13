@@ -102,22 +102,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-target=istanze_presentate']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>if 'tipo_pratica' in context.getParentDatabase().resources.config():
-    return context.getParentDatabase().resources.config().get('tipo_pratica')
-else:
-    return []</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -128,6 +114,28 @@ else:
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>if 'tipo_pratica' in context.getParentDatabase().resources.config():
+    return context.getParentDatabase().resources.config().get('tipo_pratica')
+else:
+    return []</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -145,19 +153,8 @@ else:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SUE|sue','SUAP|suap']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -168,6 +165,25 @@ else:
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SUE|sue','SUAP|suap']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -250,12 +266,14 @@ else:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>HIDDEN</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -312,15 +330,8 @@ else:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>["Presentata|presentata","Assegnata in istruttoria|istruttoria","Istruttoria completata|istruttoria_ok","Attesa pagamento|attesa_pagamento_presentazione"]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -331,6 +342,19 @@ else:
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>["Presentata|presentata","Assegnata in istruttoria|istruttoria","Istruttoria completata|istruttoria_ok","Attesa pagamento|attesa_pagamento_presentazione"]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -536,15 +560,8 @@ else:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Opere in conglomerato cementizio armato|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -555,6 +572,19 @@ else:
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Opere in conglomerato cementizio armato|1''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -573,6 +603,19 @@ else:
         </element>
         <element id="pratica" title="pratica" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">pratica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="praticaweb_id" title="praticaweb_id" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">praticaweb_id</id>
           <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>

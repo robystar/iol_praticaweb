@@ -3,14 +3,7 @@
     <element id="app-settings" title="Impostazioni generali" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">app-settings</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
-      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[#### TODO 
-#FAR PASSARE SOLO AMMINISTRATORI E RUOLO SETTATO IN PLOMINO
-return '' 
-
-
-### AGGIUNGERE IL RUOLO DI PLOMINO PER L'ACCESSO AI SETTINGS
-if not '[Amministratore impostazioni]' in context.getUserRoles():
-    return '<h3>Non sei autorizzato ad accedere al contenuto della pagina <a href="%s"><< ritorna</a></h3>' %context.getParentDatabase().absolute_url()]]></onOpenDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[from iol.document.plomino_utils import setPlominoRole
 setPlominoRole(context, None, 'PlominoAuthor', context.getItem('grp_richiedenti'))
@@ -82,21 +75,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -107,6 +87,27 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -124,21 +125,8 @@ return elencoGruppi(context)+['Utente non registrato|Anonymous']</string></value
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -149,6 +137,27 @@ return elencoGruppi(context)</string></value>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -166,21 +175,8 @@ return elencoGruppi(context)</string></value>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -191,6 +187,27 @@ return elencoGruppi(context)</string></value>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -208,21 +225,8 @@ return elencoGruppi(context)</string></value>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoGruppi
-return elencoGruppi(context)</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -233,6 +237,27 @@ return elencoGruppi(context)</string></value>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoGruppi
+return elencoGruppi(context)</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -250,15 +275,26 @@ return elencoGruppi(context)</string></value>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_mail_settings</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
-<name>widget</name>
-<value><string>REGULAR</string></value>
+<name>associated_form_rendering</name>
+<value><string>MODAL</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -278,15 +314,14 @@ return elencoGruppi(context)</string></value>
     }
 </string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
-<name>field_mapping</name>
-<value><string>azione,destinatari_a,destinatari_cc,destinatari_ccn,oggetto,testo,allegati</string></value>
-</member>
-<member>
-<name>associated_form_rendering</name>
-<value><string>MODAL</string></value>
+<name>widget</name>
+<value><string>REGULAR</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

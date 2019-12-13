@@ -55,15 +55,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_pdc_atti_assenso''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''NON PREVEDE altri atti di assenso|no_atti''','''PREVEDE altri atti di assenso|si_atti''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -74,6 +67,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''NON PREVEDE altri atti di assenso|no_atti''','''PREVEDE altri atti di assenso|si_atti''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -91,18 +97,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_pdc_atti_assenso''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''Per la realizzazione delle opere sono necessari altri atti di assenso, già rilasciati dalle competenti amministrazioni|atti_rilasciati''',
-'''Per la realizzazione delle opere si richiede l'acquisizione d'ufficio, da parte dello sportello unico, degli atti di assenso necessari. Il titolare dichiara di essere a conoscenza che l'intervento può essere iniziato dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|atti_acquisiti'''
-]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -113,6 +109,22 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Per la realizzazione delle opere sono necessari altri atti di assenso, già rilasciati dalle competenti amministrazioni|atti_rilasciati''',
+'''Per la realizzazione delle opere si richiede l'acquisizione d'ufficio, da parte dello sportello unico, degli atti di assenso necessari. Il titolare dichiara di essere a conoscenza che l'intervento può essere iniziato dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|atti_acquisiti'''
+]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

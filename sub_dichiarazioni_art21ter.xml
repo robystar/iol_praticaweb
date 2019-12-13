@@ -75,15 +75,8 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004 e pertanto allega alla presente l'autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04;|1''','''non riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -94,6 +87,19 @@
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004 e pertanto allega alla presente l'autorizzazione rilasciata dalla Soprintendenza per Beni Architettonici e per il Paesaggio della Liguria rilasciata ai sensi dell'art. 21 del D.Lgs 42/04;|1''','''non riguardano un'immobile sottoposto a tutela storico-artistica ai sensi ai sensi del Titolo I, parte seconda del D.Lgs. 42 del 22.1.2004|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -111,15 +117,8 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''riguardano un’immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|1''','''riguardano un'immobile sottoposto a vincolo paesaggistico ai sensi degli 142 del D.Lgs. 42 del 22.1.2004, non ricompreso in area individuata nel regime di conservazione dell'assetto insediativo del PTCP (zone classificate (ANI-CE, IS-CE, ID-CE, NI-CE, ME, SME, PU) ma non sono soggette al rilascio dell'autorizzazione paesaggistica  in quanto realizzati secondo le tipologie e modalita' costruttive approvate nel protocollo d'intesa stipulato in data 9.2.2012 tra la Soprintendenza per i Beni Architettonici e per il Paesaggio della Liguria e la Regione Liguria (BURL n. 10 del 7.3.12 parte II)|2''','''non riguardano un'immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -130,6 +129,19 @@
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''riguardano un’immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|1''','''riguardano un'immobile sottoposto a vincolo paesaggistico ai sensi degli 142 del D.Lgs. 42 del 22.1.2004, non ricompreso in area individuata nel regime di conservazione dell'assetto insediativo del PTCP (zone classificate (ANI-CE, IS-CE, ID-CE, NI-CE, ME, SME, PU) ma non sono soggette al rilascio dell'autorizzazione paesaggistica  in quanto realizzati secondo le tipologie e modalita' costruttive approvate nel protocollo d'intesa stipulato in data 9.2.2012 tra la Soprintendenza per i Beni Architettonici e per il Paesaggio della Liguria e la Regione Liguria (BURL n. 10 del 7.3.12 parte II)|2''','''non riguardano un'immobile sottoposto a vincolo paesaggistico ai sensi degli art. 136 o 142 del D.Lgs. 42 del 22.1.2004|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -147,15 +159,8 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''che per l'esecuzione delle opere non e' necessario il rilascio di pareri o assensi comunque denominati;|1''','''di aver ottenuto i pareri o assensi comunque denominato che si allegano in copia.|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -166,6 +171,19 @@
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''che per l'esecuzione delle opere non e' necessario il rilascio di pareri o assensi comunque denominati;|1''','''di aver ottenuto i pareri o assensi comunque denominato che si allegano in copia.|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -196,12 +214,14 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -263,15 +283,8 @@ else:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''a trasmettere, ultimati i lavori, il certificato di collaudo firmato da tecnico abilitato che attesti la conformità dell'opera al progetto e  la rispondenza alle normative di sicurezza, igienico-sanitarie e in materia di risparmio energetico|1''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -282,6 +295,19 @@ else:
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''a trasmettere, ultimati i lavori, il certificato di collaudo firmato da tecnico abilitato che attesti la conformità dell'opera al progetto e  la rispondenza alle normative di sicurezza, igienico-sanitarie e in materia di risparmio energetico|1''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

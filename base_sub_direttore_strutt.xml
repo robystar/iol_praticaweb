@@ -158,12 +158,14 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 ''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -172,7 +174,7 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -181,6 +183,18 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+			'bLengthChange': true,
+			'bFilter': true,
+			'bSort': true,
+			'bInfo': true,
+			'bAutoWidth': false</string></value>
+</member>
+</struct></value>
 <value><struct>
 <member>
 <name>selectionlist</name>
@@ -196,16 +210,8 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 <value><string>Perito Industriale</string></value>
 </data></array></value>
 </member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-			'bLengthChange': true,
-			'bFilter': true,
-			'bSort': true,
-			'bInfo': true,
-			'bAutoWidth': false</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -223,12 +229,14 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['uppercase=1']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -246,12 +254,14 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['uppercase=1']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -269,20 +279,8 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['M','F']</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -293,6 +291,26 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['M','F']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -310,16 +328,8 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=base_sub_direttore_strutt''']]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-<value><string> |</string></value>
-<value><string>Amministratore</string></value>
-<value><string>Legale Rappresentante</string></value>
-<value><string>Altro|altro</string></value>
-</data></array></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -330,6 +340,18 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
 			'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+<value><string> |</string></value>
+<value><string>Amministratore</string></value>
+<value><string>Legale Rappresentante</string></value>
+<value><string>Altro|altro</string></value>
+</data></array></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -347,12 +369,14 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -370,12 +394,14 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-plugin="iolElencoComuni"']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -393,12 +419,14 @@ data-plugin-options="{soggetto:'direttore_strutt'}"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''maxlength="2"''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -418,20 +446,26 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
 </member>
-<member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
+</struct></value>
+<value><struct>
 <member>
 <name>startingyear</name>
 <value><string>1900</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -449,12 +483,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -472,12 +508,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -495,12 +533,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-plugin="iolElencoComuni" data-field-description="indicare ....."']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -518,12 +558,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''maxlength="2"''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -541,12 +583,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -564,12 +608,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -589,12 +635,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 ''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>16</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -612,12 +660,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -635,12 +685,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -658,12 +710,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -681,12 +735,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -704,12 +760,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -727,12 +785,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['uppercase=1 maxlength=2']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>2</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -750,12 +810,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -838,6 +900,18 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+			'bLengthChange': true,
+			'bFilter': true,
+			'bSort': true,
+			'bInfo': true,
+			'bAutoWidth': false</string></value>
+</member>
+</struct></value>
 <value><struct>
 <member>
 <name>selectionlist</name>
@@ -852,20 +926,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 <value><string>Collaudatore C.A.|collaudatore_ca</string></value>
 </data></array></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>MULTISELECT</string></value>
 </member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-			'bLengthChange': true,
-			'bFilter': true,
-			'bSort': true,
-			'bInfo': true,
-			'bAutoWidth': false</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -896,12 +964,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>HIDDEN</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -955,16 +1025,8 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config().get('elenco_albo',[])</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -975,6 +1037,20 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
 			'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config().get('elenco_albo',[])</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -1044,12 +1120,14 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>255</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

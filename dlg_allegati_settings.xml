@@ -52,6 +52,25 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
 <value><struct>
 <member>
 <name>selectionlistformula</name>
@@ -63,25 +82,14 @@ for res in context.getParentDatabase().resources.zsql.ElencoTipoDocumento().dict
 return result
 </string></value>
 </member>
-<member>
-<name>selectionlist</name>
-<value><array><data>
-</data></array></value>
-</member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>SELECT</string></value>
 </member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -99,20 +107,8 @@ return result
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -123,6 +119,26 @@ return result
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -140,20 +156,8 @@ return result
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['SI','NO']</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -164,6 +168,26 @@ return result
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['SI','NO']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -181,29 +205,8 @@ return result
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
-<value><struct>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>rows = context.getParentDatabase().resources.customscripts.getElencoAllegati()
-result=['|']
-for row in rows:
-    result.append('%s (%s)|%s' %(row[0],row[1],row[1]))    
-return result
-</string></value>
-</member>
-<member>
-<name>selectionlist</name>
 <value><array><data>
-</data></array></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
-</member>
+<value><struct>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -214,6 +217,37 @@ return result
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>rows = context.getParentDatabase().resources.customscripts.getElencoAllegati()
+result=['|']
+for row in rows:
+    result.append('%s (%s)|%s' %(row[0],row[1],row[1]))    
+return result
+</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

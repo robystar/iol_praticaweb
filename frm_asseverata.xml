@@ -54,7 +54,7 @@ resources/iol-custom.css]]></ResourcesCSS>
       <elements>
         <element id="hw_no_pdc" title="hw_no_pdc" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_pdc</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app') not in ['scia2','pdc']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app') not in ['scia2','pdc','lr36']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

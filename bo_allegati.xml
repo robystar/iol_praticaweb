@@ -147,8 +147,7 @@ if content:
     html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=sub_allegati_pe"> Documentazione allegata alla pratica <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
 
     
-return html
-]]></Formula>
+return html]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

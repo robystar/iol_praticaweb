@@ -11,11 +11,9 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">COMUNICAZIONE SOSPENSIONE LAVORI</legend>
-<div class="row-fluid">
-<div class="span3">
+<div class="row-fluid"><div class="span3">
 <span class="plominoLabelClass">data_sospensione_lavori</span><span class="plominoFieldClass">data_sospensione_lavori</span>
-</div>
-</div>
+</div></div>
 <div>
 <span class="plominoLabelClass">sospensione_motivazioni</span><span class="plominoFieldClass">sospensione_motivazioni</span>
 </div>
@@ -63,16 +61,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -90,16 +92,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>4</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -117,15 +123,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>["provvederà a comunicare la ripresa degli stessi, consapevole che l'interruzione non comporta il differimento dell'efficacia temporale del titolo edilizio, così come prevista dall'Art. 15 del DPR 380/2001|1"]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -136,6 +135,19 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>["provvederà a comunicare la ripresa degli stessi, consapevole che l'interruzione non comporta il differimento dell'efficacia temporale del titolo edilizio, così come prevista dall'Art. 15 del DPR 380/2001|1"]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -153,15 +165,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>["di adottare tutti gli accorgimento necessari a garantire la sicurezza l'igiene e il decoro pubblico del cantiere, nonché di ottemperare a tutto quanto previsto dal comma 6 dell'Art. 22 del vigente REC in relazione ad una interruzione dei lavori da protrarsi per oltre 30 giorni.|1"]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -172,6 +177,19 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>["di adottare tutti gli accorgimento necessari a garantire la sicurezza l'igiene e il decoro pubblico del cantiere, nonché di ottemperare a tutto quanto previsto dal comma 6 dell'Art. 22 del vigente REC in relazione ad una interruzione dei lavori da protrarsi per oltre 30 giorni.|1"]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

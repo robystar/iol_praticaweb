@@ -68,7 +68,7 @@ if 'btn_next' in context.REQUEST.keys():
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
 <p><span class="plominoSubformClass">sub_consenso_pec</span></p>
-<p><span class="plominoSubformClass">sub_intervento_iniziolavori</span></p>
+<p><span class="plominoSubformClass">sub_iniziolavori</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentTitle(context)]]></DocumentTitle>

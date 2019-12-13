@@ -44,18 +44,8 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return [
-'''l'intervento per cui si chiede il rilascio del permesso di costruire non richiede stipula di atto convenzionale|1''',
-'''l'intervento per cui si chiede il rilascio del permesso di costruire richiede stipula di atto convenzionale per cui si allega il relativo schema di convenzione da approvarsi prima del rilascio del permesso ai sensi dell'art.31 l.r. 16/2008 e s.m.. L'efficacia del permesso di costruzione è comunque subordinata alla stipula dell'atto convenzionale|2'''
-]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -66,6 +56,22 @@
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''l'intervento per cui si chiede il rilascio del permesso di costruire non richiede stipula di atto convenzionale|1''',
+'''l'intervento per cui si chiede il rilascio del permesso di costruire richiede stipula di atto convenzionale per cui si allega il relativo schema di convenzione da approvarsi prima del rilascio del permesso ai sensi dell'art.31 l.r. 16/2008 e s.m.. L'efficacia del permesso di costruzione è comunque subordinata alla stipula dell'atto convenzionale|2'''
+]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

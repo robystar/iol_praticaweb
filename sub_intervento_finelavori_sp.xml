@@ -110,16 +110,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -154,15 +158,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''completamente|1''','''in forma parziale come da planimetria allegata|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -173,6 +170,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''completamente|1''','''in forma parziale come da planimetria allegata|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -190,15 +200,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''non sono state realizzate varianti in corso d'opera;|3''','''in variante ad una CILA, hanno concretizzato solo opere rientranti nel campo di applicazione di tale procedimento (art. 25, comma 3, della L.R. n.16/2008 e s.m.), quali peraltro rappresentate nell’allegato elaborato grafico;|2''','''in variante ad una SCIA, sono state realizzate mediante SCIA, presentata prima della comunicazione di fine lavori in quanto non incidevano sui parametri urbanistici e sulle volumetrie, non modificavano la destinazione d’uso e la categoria edilizia, non alteravano la sagoma dell’edificio qualora sottoposto a vincolo ai sensi del d.lgs. 42/2004 e s.m. e i., e non violavano le eventuali prescrizioni contenute nel permesso di costruire (art. 25, comma 1, della L.R. n.16/2008 e s.m.);|1''','''in variante ad un Permesso di Costruire, ovvero ad una SCIA alternativa al permesso di costruire, sono state realizzate mediante SCIA presentata prima della presente comunicazione di fine dei lavori, ovvero presentata unitamente alla presente, in quanto non configurano una variazione essenziale e sono conformi alle prescrizioni urbanistico-edilizie, ai sensi dell’art.44, comma 2, della LR n.16/2008 e s.m. (art. 25, commi 1 e 2, della L.R. n.16/2008 e s.m.);|4''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -209,6 +212,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non sono state realizzate varianti in corso d'opera;|3''','''in variante ad una CILA, hanno concretizzato solo opere rientranti nel campo di applicazione di tale procedimento (art. 25, comma 3, della L.R. n.16/2008 e s.m.), quali peraltro rappresentate nell’allegato elaborato grafico;|2''','''in variante ad una SCIA, sono state realizzate mediante SCIA, presentata prima della comunicazione di fine lavori in quanto non incidevano sui parametri urbanistici e sulle volumetrie, non modificavano la destinazione d’uso e la categoria edilizia, non alteravano la sagoma dell’edificio qualora sottoposto a vincolo ai sensi del d.lgs. 42/2004 e s.m. e i., e non violavano le eventuali prescrizioni contenute nel permesso di costruire (art. 25, comma 1, della L.R. n.16/2008 e s.m.);|1''','''in variante ad un Permesso di Costruire, ovvero ad una SCIA alternativa al permesso di costruire, sono state realizzate mediante SCIA presentata prima della presente comunicazione di fine dei lavori, ovvero presentata unitamente alla presente, in quanto non configurano una variazione essenziale e sono conformi alle prescrizioni urbanistico-edilizie, ai sensi dell’art.44, comma 2, della LR n.16/2008 e s.m. (art. 25, commi 1 e 2, della L.R. n.16/2008 e s.m.);|4''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -226,15 +242,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Le opere NON richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) in quanto NON rientrano nei casi previsti dall'art.24 del DPR 380/01 e s.m.i.|1''','''Le opere richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) ai sensi dell'art.24 del DPR 380/01 e s.m.i., tale comunicazione verrà inoltrata a termini di legge|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -245,6 +254,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Le opere NON richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) in quanto NON rientrano nei casi previsti dall'art.24 del DPR 380/01 e s.m.i.|1''','''Le opere richiedono la presentazione di Segnalazione Certificata di Agibilità (SCA) ai sensi dell'art.24 del DPR 380/01 e s.m.i., tale comunicazione verrà inoltrata a termini di legge|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -262,16 +284,20 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['maxlength = 200']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>6</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -299,15 +325,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''In relazione all'art.8 del D.Lgs. 19 agosto 2005, n.192 e s.m. e i., il direttore dei lavori DICHIARA che nell’ambito delle suddette opere non si è proceduto ad interventi per i quali si sarebbe reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m. (ex art.28, comma 1, della L. n.10/91 e s.m.), ovvero di altre attestazioni sostitutive eventualmente dovute dalle ditte installatrici;|1''','''In relazione all'articolo 8 co.2, e all’articolo 15, co.1, del dlgs n.192/05 e s.m., considerato che nell’ambito delle opere si è proceduto anche ad interventi per i quali si era reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m., , ai sensi dell’articolo 47 del DPR 445/2000 e s.m e i., consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci, ASSEVERA la conformità delle opere realizzate rispetto al progetto e alle sue eventuali varianti e alla relazione tecnica di cui all’articolo 28 della L.10/1991 sopra precisata. In tal senso, la presente è integrata da copia di documento di identità (art.38, comma 3, DPR n.445 e s.m.) del sottoscritto direttore dei lavori;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -318,6 +337,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''In relazione all'art.8 del D.Lgs. 19 agosto 2005, n.192 e s.m. e i., il direttore dei lavori DICHIARA che nell’ambito delle suddette opere non si è proceduto ad interventi per i quali si sarebbe reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m. (ex art.28, comma 1, della L. n.10/91 e s.m.), ovvero di altre attestazioni sostitutive eventualmente dovute dalle ditte installatrici;|1''','''In relazione all'articolo 8 co.2, e all’articolo 15, co.1, del dlgs n.192/05 e s.m., considerato che nell’ambito delle opere si è proceduto anche ad interventi per i quali si era reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m., , ai sensi dell’articolo 47 del DPR 445/2000 e s.m e i., consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci, ASSEVERA la conformità delle opere realizzate rispetto al progetto e alle sue eventuali varianti e alla relazione tecnica di cui all’articolo 28 della L.10/1991 sopra precisata. In tal senso, la presente è integrata da copia di documento di identità (art.38, comma 3, DPR n.445 e s.m.) del sottoscritto direttore dei lavori;|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -335,15 +367,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Con ulteriore riguardo agli adempimenti previsti dal comma 2 del sopra citato art.8, considerato che le opere realizzate integrano uno degli interventi già indicati dal paragrafo 8, punto 3, dell’allegato A al DM 26.06.2009 (il quale prescrive che l’attestato di qualificazione, di cui al comma 2, dell’art.8, del dlgs n.192/05 e s.m., è obbligatorio per gli edifici di nuova costruzione  e per gli interventi ricadenti nell’ambito di applicazione di cui all’articolo 3, comma 2, lettere ‘a’, ‘b’  e ‘c’ , del medesimo decreto legislativo, in questo ultimo caso limitatamente alle ristrutturazioni totali) con la presente si ASSEVERA altresì l’allegato attestato di qualificazione energetica (AQE);|1''','''Con ulteriore riguardo agli adempimenti previsti dal comma 2 del sopra citato art.8, si dichiara che le opere realizzate non integrano alcuno degli interventi indicati dal paragrafo 8, punto 3, dell’allegato A al DM 26.06.2009, con conseguente non necessità della predisposizione e asseverazione dell’attestato di qualificazione energetica (AQE);|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -354,6 +379,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Con ulteriore riguardo agli adempimenti previsti dal comma 2 del sopra citato art.8, considerato che le opere realizzate integrano uno degli interventi già indicati dal paragrafo 8, punto 3, dell’allegato A al DM 26.06.2009 (il quale prescrive che l’attestato di qualificazione, di cui al comma 2, dell’art.8, del dlgs n.192/05 e s.m., è obbligatorio per gli edifici di nuova costruzione  e per gli interventi ricadenti nell’ambito di applicazione di cui all’articolo 3, comma 2, lettere ‘a’, ‘b’  e ‘c’ , del medesimo decreto legislativo, in questo ultimo caso limitatamente alle ristrutturazioni totali) con la presente si ASSEVERA altresì l’allegato attestato di qualificazione energetica (AQE);|1''','''Con ulteriore riguardo agli adempimenti previsti dal comma 2 del sopra citato art.8, si dichiara che le opere realizzate non integrano alcuno degli interventi indicati dal paragrafo 8, punto 3, dell’allegato A al DM 26.06.2009, con conseguente non necessità della predisposizione e asseverazione dell’attestato di qualificazione energetica (AQE);|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -384,12 +422,14 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -407,15 +447,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Si attesta l’avvenuta RIMOZIONE della/delle BARACCA/BARACCHE di CANTIERE nonché di ogni altra struttura provvisionale già posta in essere per le necessità del cantiere, con ripristino dello stato originario dei luoghi da esse interessato;|1''','''Si dichiara che per la realizzazione dell’intervento non è risultato necessario provvedere all’installazione di alcuna BARACCA di CANTIERE, né di altre strutture provvisionali;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -426,6 +459,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Si attesta l’avvenuta RIMOZIONE della/delle BARACCA/BARACCHE di CANTIERE nonché di ogni altra struttura provvisionale già posta in essere per le necessità del cantiere, con ripristino dello stato originario dei luoghi da esse interessato;|1''','''Si dichiara che per la realizzazione dell’intervento non è risultato necessario provvedere all’installazione di alcuna BARACCA di CANTIERE, né di altre strutture provvisionali;|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -443,15 +489,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''L’intervento non ha conseguito l’apertura di NUOVI INGRESSI da spazi pubblici o di uso pubblico, ovvero costituzione di nuovi interni;|1''','''L’intervento ha conseguito l’apertura di NUOVI INGRESSI da spazio pubblici o di uso pubblico, ovvero costituzione di nuovi interni, pertanto DICHIARA di aver richiesto l’ASSEGNAZIONE dei NUMERI CIVICI e/o NUMERI INTERNI secondo quanto previsto dal vigente regolamento toponomastico;|2''','''L’intervento prevedeva l’apertura di NUOVI INGRESSI da spazio pubblici o di uso pubblico, ovvero costituzione di nuovi interni, pertanto DICHIARA che, prima della richiesta di agibilità, in quanto da presentarsi successivamente alla presente, provvederà a richiedere l’ASSEGNAZIONE dei NUMERI CIVICI e/o NUMERI INTERNI secondo quanto previsto dal vigente regolamento toponomastico|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -462,6 +501,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''L’intervento non ha conseguito l’apertura di NUOVI INGRESSI da spazi pubblici o di uso pubblico, ovvero costituzione di nuovi interni;|1''','''L’intervento ha conseguito l’apertura di NUOVI INGRESSI da spazio pubblici o di uso pubblico, ovvero costituzione di nuovi interni, pertanto DICHIARA di aver richiesto l’ASSEGNAZIONE dei NUMERI CIVICI e/o NUMERI INTERNI secondo quanto previsto dal vigente regolamento toponomastico;|2''','''L’intervento prevedeva l’apertura di NUOVI INGRESSI da spazio pubblici o di uso pubblico, ovvero costituzione di nuovi interni, pertanto DICHIARA che, prima della richiesta di agibilità, in quanto da presentarsi successivamente alla presente, provvederà a richiedere l’ASSEGNAZIONE dei NUMERI CIVICI e/o NUMERI INTERNI secondo quanto previsto dal vigente regolamento toponomastico|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -479,15 +531,8 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_intervento_finelavori_sp']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''In relazione all'art.8 del D.Lgs. 19 agosto 2005, n.192 e s.m. e i., il direttore dei lavori DICHIARA che nell’ambito delle suddette opere non si è proceduto ad interventi per i quali si sarebbe reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m. (ex art.28, comma 1, della L. n.10/91 e s.m.), ovvero di altre attestazioni sostitutive eventualmente dovute dalle ditte installatrici;|1''','''In relazione all'articolo 8 co.2, e all’articolo 15, co.1, del dlgs n.192/05 e s.m., considerato che nell’ambito delle opere si è proceduto anche ad interventi per i quali si era reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m., , ai sensi dell’articolo 47 del DPR 445/2000 e s.m e i., consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci, ASSEVERA la conformità delle opere realizzate rispetto al progetto e alle sue eventuali varianti e alla relazione tecnica di cui all’articolo 28 della L.10/1991 sopra precisata. In tal senso, la presente è integrata da copia di documento di identità (art.38, comma 3, DPR n.445 e s.m.) del sottoscritto direttore dei lavori;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -498,6 +543,19 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''In relazione all'art.8 del D.Lgs. 19 agosto 2005, n.192 e s.m. e i., il direttore dei lavori DICHIARA che nell’ambito delle suddette opere non si è proceduto ad interventi per i quali si sarebbe reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m. (ex art.28, comma 1, della L. n.10/91 e s.m.), ovvero di altre attestazioni sostitutive eventualmente dovute dalle ditte installatrici;|1''','''In relazione all'articolo 8 co.2, e all’articolo 15, co.1, del dlgs n.192/05 e s.m., considerato che nell’ambito delle opere si è proceduto anche ad interventi per i quali si era reso necessario il deposito della documentazione di cui all’art. 8, comma 1, del Dlgs n.192/2005 e s.m., , ai sensi dell’articolo 47 del DPR 445/2000 e s.m e i., consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci, ASSEVERA la conformità delle opere realizzate rispetto al progetto e alle sue eventuali varianti e alla relazione tecnica di cui all’articolo 28 della L.10/1991 sopra precisata. In tal senso, la presente è integrata da copia di documento di identità (art.38, comma 3, DPR n.445 e s.m.) del sottoscritto direttore dei lavori;|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

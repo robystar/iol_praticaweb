@@ -66,12 +66,14 @@ data-tooltip = "firmato digitalmente max 7Mb"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_allegati_tipomappale''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>CHECKBOX</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

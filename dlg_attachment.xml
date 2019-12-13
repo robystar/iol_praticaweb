@@ -75,12 +75,14 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>HIDDEN</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -98,12 +100,14 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXT</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -121,12 +125,14 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXT</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -144,12 +150,14 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXT</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -193,12 +201,8 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>["Allegato|allegato","Verificato|verificato","Da Verificare|verifica","Mancante|mancante","Sostituito|sostituito","Da Integrare|attesa"]
-</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -209,6 +213,14 @@ return context.absolute_url() + '/EditDocument']]></onSaveDocument>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>["Allegato|allegato","Verificato|verificato","Da Verificare|verifica","Mancante|mancante","Sostituito|sostituito","Da Integrare|attesa"]
+</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

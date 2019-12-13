@@ -60,11 +60,20 @@ for row in rows:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_importi</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -86,11 +95,8 @@ for row in rows:
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

@@ -84,15 +84,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -103,6 +96,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['rinnovo|1','nuova|2','modifica sostanziale|3','proseguimento senza modifiche|4']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -120,15 +126,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''ALLEGA LA SCHEDA F contenente i dati e le informazioni necessari per l’utilizzo dei fanghi derivanti dal processo di depurazione in agricoltura;|1''','''DICHIARA l’invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 “Titoli abilitativi in materia ambientale” relativamente all’utilizzazione dei fanghi derivanti dal processo di depurazione in agricoltura;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -139,6 +138,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''ALLEGA LA SCHEDA F contenente i dati e le informazioni necessari per l’utilizzo dei fanghi derivanti dal processo di depurazione in agricoltura;|1''','''DICHIARA l’invarianza delle condizioni di esercizio alla base del rilascio del precedente titolo autorizzativo come descritto nella sezione 6.1 “Titoli abilitativi in materia ambientale” relativamente all’utilizzazione dei fanghi derivanti dal processo di depurazione in agricoltura;|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -159,12 +171,14 @@ data-tooltip = "firmato digitalmente"
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>type</name>
 <value><string>MULTI</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

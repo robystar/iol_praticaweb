@@ -57,16 +57,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -101,15 +105,8 @@ return 'Comunicazione di inizio lavori della pratica %s protocollo n. %s anno %s
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Copia della ricevuta di versamento degli oneri di costruzione alla denuncia sopracitata|1','''Documentazione in ottemperanza all'art.90 del D.Lgs 9 aprile 2008, n 81 e s.m.i.|2''','''Autocertificazione della ditta esecutrice contenente i dati indispensabili al reperimento delle informazioni per l'acquisizione d'ufficio del DURC|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -120,6 +117,19 @@ return 'Comunicazione di inizio lavori della pratica %s protocollo n. %s anno %s
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Copia della ricevuta di versamento degli oneri di costruzione alla denuncia sopracitata|1','''Documentazione in ottemperanza all'art.90 del D.Lgs 9 aprile 2008, n 81 e s.m.i.|2''','''Autocertificazione della ditta esecutrice contenente i dati indispensabili al reperimento delle informazioni per l'acquisizione d'ufficio del DURC|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

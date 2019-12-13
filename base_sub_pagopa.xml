@@ -89,11 +89,20 @@ for row in rows:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_pagopa_importi</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -115,11 +124,8 @@ for row in rows:
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -145,11 +151,20 @@ for row in rows:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_pagopa_importi</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -171,11 +186,8 @@ for row in rows:
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -193,11 +205,20 @@ for row in rows:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_pagopa_pagamenti</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codTrans,IUV,esito_pagamento,importo_pagamento,anagrafica_pagamento,email_pagamento,data_pagamento,orario_pagamento,metodo_pagamento,uidriscossione_pagamento,divisa_pagamento,brand_pagamento,alias_pagamento</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -227,11 +248,8 @@ for row in rows:
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>codTrans,IUV,esito,importo,anagrafica,email,data,orario,metodo,uidriscossione,divisa,brand,alias</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -288,16 +306,20 @@ if context.getItem('attesa_rt'):
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>4</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

@@ -65,11 +65,20 @@ except:
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_pagopa_importi</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -91,11 +100,8 @@ except:
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -116,11 +122,20 @@ if conf.get(context.getItem('iol_tipo_app')) and conf.get(context.getItem('iol_t
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_pagopa_importi</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -142,11 +157,8 @@ if conf.get(context.getItem('iol_tipo_app')) and conf.get(context.getItem('iol_t
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>codimp,tipo,causale,importo,scadenza,azione</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

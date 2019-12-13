@@ -53,15 +53,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>["Nomina del Collaudatore;|1","Il Collaudatore verrà scelto tra una terna di professionisti indicati dall’Ordine degli Ingegneri/Architetti, in base a richiesta già inoltrata al detto Ordine;|2","Ai sensi dell’art.67, c.8bis del DPR 380/01, il collaudo non è dovuto per interventi locali/riparazione ai sensi delle vigenti norme tecniche sulle costruzioni;|3","Il collaudatore verrà individuato prima dell’inizio dei lavori;|4"]</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -72,6 +65,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>["Nomina del Collaudatore;|1","Il Collaudatore verrà scelto tra una terna di professionisti indicati dall’Ordine degli Ingegneri/Architetti, in base a richiesta già inoltrata al detto Ordine;|2","Ai sensi dell’art.67, c.8bis del DPR 380/01, il collaudo non è dovuto per interventi locali/riparazione ai sensi delle vigenti norme tecniche sulle costruzioni;|3","Il collaudatore verrà individuato prima dell’inizio dei lavori;|4"]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

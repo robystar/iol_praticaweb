@@ -74,15 +74,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''lavori, realizzati in assenza o difformità dall'autorizzazione paesaggistica, che non abbiano determinato creazione di superfici utili o volumi ovvero aumento di quelli legittimamente realizzati;|1''','''impiego di materiali in difformità dall'autorizzazione paesaggistica;|2''','''lavori comunque configurabili quali interventi di manutenzione ordinaria o straordinaria ai sensi dell'articolo 3 del decreto del Presidente della Repubblica 6 giugno 2001, n. 380|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -93,6 +86,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''lavori, realizzati in assenza o difformità dall'autorizzazione paesaggistica, che non abbiano determinato creazione di superfici utili o volumi ovvero aumento di quelli legittimamente realizzati;|1''','''impiego di materiali in difformità dall'autorizzazione paesaggistica;|2''','''lavori comunque configurabili quali interventi di manutenzione ordinaria o straordinaria ai sensi dell'articolo 3 del decreto del Presidente della Repubblica 6 giugno 2001, n. 380|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -110,12 +116,14 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -133,16 +141,20 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>3</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXT</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -160,16 +172,20 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['maxlength = 200']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>6</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -223,12 +239,14 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -246,15 +264,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_intervento_paesaggistica_accertamento''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''di aver già inoltrato istanza di accertamento di conformità al fine dell'ottenimento del titolo edilizio in sanatoria|1''','''che le opere realizzate non necessitano di accertamento di conformità sotto il profilo urbanistico-edilizio|2''','''l’istanza di accertamento di conformità verrà presentata non appena ottenuto il provvedimento di accertamento di compatibilità paesaggistica|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -265,6 +276,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''di aver già inoltrato istanza di accertamento di conformità al fine dell'ottenimento del titolo edilizio in sanatoria|1''','''che le opere realizzate non necessitano di accertamento di conformità sotto il profilo urbanistico-edilizio|2''','''l’istanza di accertamento di conformità verrà presentata non appena ottenuto il provvedimento di accertamento di compatibilità paesaggistica|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

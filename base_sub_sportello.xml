@@ -50,20 +50,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
-if (context.getForm().getId() in ['frm_paesaggistica-ordinaria','frm_paesaggistica-accertamento','frm_paesaggistica-semplificata']) or (context.getItem('iol_tipo_app') in ['paesaggistica-ordinaria','paesaggistica-accertamento','paesaggistica-semplificata']):
-    ll=['''Sportello Unico dell'Edilizia|sue''']
-    
-ll = context.getParentDatabase().resources.config().get('sportello',ll)
-return ll</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -74,6 +62,24 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
+if (context.getForm().getId() in ['frm_paesaggistica-ordinaria','frm_paesaggistica-accertamento','frm_paesaggistica-semplificata']) or (context.getItem('iol_tipo_app') in ['paesaggistica-ordinaria','paesaggistica-accertamento','paesaggistica-semplificata']):
+    ll=['''Sportello Unico dell'Edilizia|sue''']
+    
+ll = context.getParentDatabase().resources.config().get('sportello',ll)
+return ll</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -91,11 +97,8 @@ return ll</string></value>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.customscripts.getElencoComuni()</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -106,6 +109,13 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.customscripts.getElencoComuni()</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

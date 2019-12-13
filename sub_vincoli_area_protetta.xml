@@ -62,15 +62,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_vincoli_area_protetta''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''non ricade in area tutelata;|1''','''ricade in area tutelata, ma le opere non comportano alterazione dei luoghi o dell’aspetto esteriore degli edifici;|2''','''è sottoposto alle relative disposizioni e pertanto si allega la documentazione necessaria ai fini del rilascio del nulla osta;|3''','''il nulla osta è stato rilasciato con atto:|4''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -81,6 +74,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''non ricade in area tutelata;|1''','''ricade in area tutelata, ma le opere non comportano alterazione dei luoghi o dell’aspetto esteriore degli edifici;|2''','''è sottoposto alle relative disposizioni e pertanto si allega la documentazione necessaria ai fini del rilascio del nulla osta;|3''','''il nulla osta è stato rilasciato con atto:|4''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -114,12 +120,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

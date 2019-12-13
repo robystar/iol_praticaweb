@@ -18,43 +18,43 @@
 <span class="plominoLabelClass">IUV</span><span class="plominoFieldClass">IUV</span>
 </div>
 <div class="span4">
-<span class="plominoLabelClass">esito</span><span class="plominoFieldClass">esito</span>
+<span class="plominoLabelClass">esito_pagamento</span><span class="plominoFieldClass">esito_pagamento</span>
 </div>
 </div>
 <div class="row-fluid">
 <div class="span2">
-<span class="plominoLabelClass">importo</span><span class="plominoFieldClass">importo</span>
+<span class="plominoLabelClass">importo_pagamento</span><span class="plominoFieldClass">importo_pagamento</span>
 </div>
 <div class="span3">
-<span class="plominoLabelClass">data</span><span class="plominoFieldClass">data</span>
+<span class="plominoLabelClass">data_pagamento</span><span class="plominoFieldClass">data_pagamento</span>
 </div>
 <div class="span2">
-<span class="plominoLabelClass">orario</span><span class="plominoFieldClass">orario</span>
+<span class="plominoLabelClass">orario_pagamento</span><span class="plominoFieldClass">orario_pagamento</span>
 </div>
 <div class="span2">
-<span class="plominoLabelClass">divisa</span><span class="plominoFieldClass">divisa</span>
+<span class="plominoLabelClass">divisa_pagamento</span><span class="plominoFieldClass">divisa_pagamento</span>
 </div>
 <div class="span3">
-<span class="plominoLabelClass">uidriscossione</span><span class="plominoFieldClass">uidriscossione</span>
+<span class="plominoLabelClass">uidriscossione_pagamento</span><span class="plominoFieldClass">uidriscossione_pagamento</span>
 </div>
 </div>
 <div class="row-fluid">
 <div class="span8">
-<span class="plominoLabelClass">anagrafica</span><span class="plominoFieldClass">anagrafica</span>
+<span class="plominoLabelClass">anagrafica_pagamento</span><span class="plominoFieldClass">anagrafica_pagamento</span>
 </div>
 <div class="span4">
-<span class="plominoLabelClass">email</span><span class="plominoFieldClass">email</span>
+<span class="plominoLabelClass">email_pagamento</span><span class="plominoFieldClass">email_pagamento</span>
 </div>
 </div>
 <div class="row-fluid">
 <div class="span5">
-<span class="plominoLabelClass">brand</span><span class="plominoFieldClass">brand</span>
+<span class="plominoLabelClass">brand_pagamento</span><span class="plominoFieldClass">brand_pagamento</span>
 </div>
 <div class="span5">
-<span class="plominoLabelClass">alias</span><span class="plominoFieldClass">alias</span>
+<span class="plominoLabelClass">alias_pagamento</span><span class="plominoFieldClass">alias_pagamento</span>
 </div>
 <div class="span2">
-<span class="plominoLabelClass">metodo</span><span class="plominoFieldClass">metodo</span>
+<span class="plominoLabelClass">metodo_pagamento</span><span class="plominoFieldClass">metodo_pagamento</span>
 </div>
 </div>
 ]]></FormLayout>
@@ -104,8 +104,8 @@
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="esito" title="Esito" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">esito</id>
+        <element id="esito_pagamento" title="Esito" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">esito_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -118,11 +118,8 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_pagopa().get('esito_pagamento')</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -133,11 +130,18 @@
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_pagopa().get('esito_pagamento')</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
-        <element id="importo" title="Importo" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">importo</id>
+        <element id="importo_pagamento" title="Importo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">importo_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -150,21 +154,25 @@
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
-<value><string>%1.2f €</string></value>
+<value><string>€ %1.2f</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>type</name>
 <value><string>DECIMAL</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
-        <element id="anagrafica" title="Anagrafica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">anagrafica</id>
+        <element id="anagrafica_pagamento" title="Anagrafica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">anagrafica_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -176,8 +184,8 @@
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="email" title="Email" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">email</id>
+        <element id="email_pagamento" title="Email" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">email_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -189,8 +197,8 @@
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="data" title="Data" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">data</id>
+        <element id="data_pagamento" title="Data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -205,21 +213,25 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
-        <element id="orario" title="Ora" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">orario</id>
+        <element id="orario_pagamento" title="Ora" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">orario_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -231,8 +243,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="uidriscossione" title="uid Riscossione" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">uidriscossione</id>
+        <element id="uidriscossione_pagamento" title="uid Riscossione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">uidriscossione_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -244,8 +256,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="divisa" title="Divisa" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">divisa</id>
+        <element id="divisa_pagamento" title="Divisa" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">divisa_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -257,8 +269,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="brand" title="Banca" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">brand</id>
+        <element id="brand_pagamento" title="Banca" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">brand_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -270,8 +282,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="alias" title="Alias" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">alias</id>
+        <element id="alias_pagamento" title="Alias" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">alias_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -283,8 +295,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="metodo" title="Metodo" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">metodo</id>
+        <element id="metodo_pagamento" title="Metodo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">metodo_pagamento</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -297,11 +309,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_pagopa().get('metodo_pagamento')</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -312,6 +321,13 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return context.getParentDatabase().resources.config_pagopa().get('metodo_pagamento')</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

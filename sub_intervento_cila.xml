@@ -102,19 +102,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_intervento_cila''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>separator</name>
-<value><string>&lt;br&gt;</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''per la cui realizzazione non sono necessari altri atti di assenso, altre segnalazioni o comunicazioni|1''','''per la cui realizzazione presenta in allegato alla CILA le comunicazioni o segnalazioni certificate di inizio attività indicate nella sottostante tabella.|2''','''per la cui realizzazione presenta contestualmente alla CILA la domanda per l’acquisizione d’ufficio degli atti assenso necessari alla realizzazione dell’intervento, indicati nella sottostante tabella.|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -125,6 +114,25 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''per la cui realizzazione non sono necessari altri atti di assenso, altre segnalazioni o comunicazioni|1''','''per la cui realizzazione presenta in allegato alla CILA le comunicazioni o segnalazioni certificate di inizio attività indicate nella sottostante tabella.|2''','''per la cui realizzazione presenta contestualmente alla CILA la domanda per l’acquisizione d’ufficio degli atti assenso necessari alla realizzazione dell’intervento, indicati nella sottostante tabella.|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>separator</name>
+<value><string>&lt;br&gt;</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -142,16 +150,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_intervento_cila''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''intervento descritto di seguito nella dichiarazione del progettista, che rientra tra quelli soggetti alla comunicazione di inizio lavori asseverata (art. 6-bis del d.P.R n. 380/2001 e Sezione II-Edilizia della Tabella A del d.lgs. n. 222/2016)|1''','''intervento in corso di esecuzione,(art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 333,00 ovvero si procede mediante pagamento online|2''','''intervento già realizzato (art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 1000,00 ovvero si procede mediante pagamento online|3''']
-</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -162,6 +162,20 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''intervento descritto di seguito nella dichiarazione del progettista, che rientra tra quelli soggetti alla comunicazione di inizio lavori asseverata (art. 6-bis del d.P.R n. 380/2001 e Sezione II-Edilizia della Tabella A del d.lgs. n. 222/2016)|1''','''intervento in corso di esecuzione,(art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 333,00 ovvero si procede mediante pagamento online|2''','''intervento già realizzato (art. 6-bis, comma 5 del d.P.R. n. 380/2001) con pagamento di sanzione e pertanto si allega la ricevuta di versamento di € 1000,00 ovvero si procede mediante pagamento online|3''']
+</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -201,12 +215,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -226,12 +242,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -251,12 +269,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -274,15 +294,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_intervento_cila''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''avranno inizio in data|1''','''avranno inizio dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -293,6 +306,19 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''avranno inizio in data|1''','''avranno inizio dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -315,11 +341,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_comunicazioni_cila</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -339,11 +374,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -366,11 +398,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_comunicazioni_cila</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto,comunicazione,ente</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -390,11 +431,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>id_atto,comunicazione,ente</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

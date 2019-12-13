@@ -55,15 +55,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_deposito_impianti']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Dichiarazione conformità impianti|1''','''Relazione tecnica ex art. 28 Legge 10/91|2''','''Progetto impianto elettrico DL 37/2008|3''','''Certificazione energetica|4''','''Altro|0''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -74,6 +67,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Dichiarazione conformità impianti|1''','''Relazione tecnica ex art. 28 Legge 10/91|2''','''Progetto impianto elettrico DL 37/2008|3''','''Certificazione energetica|4''','''Altro|0''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

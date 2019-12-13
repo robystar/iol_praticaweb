@@ -65,11 +65,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['SCHEDA A – SCARICHI ACQUE REFLUE|A','SCHEDA B – UTILIZZAZIONE AGRONOMICA|B','SCHEDA C – EMISSIONI IN ATMOSFERA PER GLI STABILIMENTI|C','SCHEDA D – EMISSIONI IN ATMOSFERA PER IMPIANTI E ATTIVITA’ IN DEROGA|D','SCHEDA E – IMPATTO ACUSTICO|E','SCHEDA F – UTILIZZO DEI FANGHI DERIVANTI DAL PROCESSO DI DEPURAZIONE IN AGRICOLTURA|F','SCHEDA G1 – OPERAZIONI DI RECUPERO DI RIFIUTI NON PERICOLOSI|G1','SCHEDA G2 – OPERAZIONI DI RECUPERO DI RIFIUTI PERICOLOSI|G2']</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -80,6 +77,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['SCHEDA A – SCARICHI ACQUE REFLUE|A','SCHEDA B – UTILIZZAZIONE AGRONOMICA|B','SCHEDA C – EMISSIONI IN ATMOSFERA PER GLI STABILIMENTI|C','SCHEDA D – EMISSIONI IN ATMOSFERA PER IMPIANTI E ATTIVITA’ IN DEROGA|D','SCHEDA E – IMPATTO ACUSTICO|E','SCHEDA F – UTILIZZO DEI FANGHI DERIVANTI DAL PROCESSO DI DEPURAZIONE IN AGRICOLTURA|F','SCHEDA G1 – OPERAZIONI DI RECUPERO DI RIFIUTI NON PERICOLOSI|G1','SCHEDA G2 – OPERAZIONI DI RECUPERO DI RIFIUTI PERICOLOSI|G2']</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -125,12 +129,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -150,12 +156,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

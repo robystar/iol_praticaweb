@@ -55,20 +55,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_amianto''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>ll=['''non interessano parti di edifici con presenza di fibre di amianto|1''']
-if context.getItem('iol_tipo_app','') in ['pdc','scia2']:
-    ll.append('''interessano parti di edifici con presenza di fibre di amianto e che e' stato predisposto, ai sensi dei commi 2 e 5 dell’articolo 256 del d.lgs. n. 81/2008, il Piano di Lavoro di demolizione o rimozione dell'amianto:|3''')
-else:
-    ll.append('''interessano parti di edifici con presenza di fibre di amianto e che è stato predisposto, ai sensi dei commi 2 e 5 dell’articolo 256 del d.lgs. n. 81/2008, il Piano di Lavoro di demolizione o rimozione dell’amianto in allegato alla presente relazione di asseverazione;|2''')
-return ll</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -79,6 +67,24 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll=['''non interessano parti di edifici con presenza di fibre di amianto|1''']
+if context.getItem('iol_tipo_app','') in ['pdc','scia2']:
+    ll.append('''interessano parti di edifici con presenza di fibre di amianto e che e' stato predisposto, ai sensi dei commi 2 e 5 dell’articolo 256 del d.lgs. n. 81/2008, il Piano di Lavoro di demolizione o rimozione dell'amianto:|3''')
+else:
+    ll.append('''interessano parti di edifici con presenza di fibre di amianto e che è stato predisposto, ai sensi dei commi 2 e 5 dell’articolo 256 del d.lgs. n. 81/2008, il Piano di Lavoro di demolizione o rimozione dell’amianto in allegato alla presente relazione di asseverazione;|2''')
+return ll</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -101,18 +107,8 @@ return ll</string></value>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_amianto''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''in allegato alla presente relazione di asseverazione;|1''','''sarà presentato 30 giorni prima dell’inizio dei lavori;|2''']
-if context.getItem('iol_tipo_app')=='scia2':
-    ll[1]='''sarà presentato prima dell’inizio dei lavori;|2'''
-return ll</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -123,6 +119,22 @@ return ll</string></value>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['''in allegato alla presente relazione di asseverazione;|1''','''sarà presentato 30 giorni prima dell’inizio dei lavori;|2''']
+if context.getItem('iol_tipo_app')=='scia2':
+    ll[1]='''sarà presentato prima dell’inizio dei lavori;|2'''
+return ll</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

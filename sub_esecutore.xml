@@ -62,6 +62,18 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_esecutore''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
 <value><struct>
 <member>
 <name>selectionlistformula</name>
@@ -84,20 +96,14 @@ ll.append('''L'attività oggetto della presente comunicazione/istanza non richie
 return ll
 </string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>RADIO</string></value>
 </member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -125,11 +131,20 @@ return ll
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>base_sub_esecutore</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>esecutore_denominazione,esecutore_cognome,esecutore_comune,esecutore_cf,esecutore_app,esecutore_cap,esecutore_cap_residenza,esecutore_cciaa,esecutore_cciaa_numero,esecutore_cellulare,esecutore_civico,esecutore_civico_residenza,esecutore_cod_cat_nato,esecutore_comune_nato,esecutore_comune_residenza,esecutore_data_nato,esecutore_edile_numero,esecutore_edile_prov,esecutore_email,esecutore_fax,esecutore_inail,esecutore_indirizzo,esecutore_indirizzo_residenza,esecutore_inps,esecutore_nome,esecutore_pec,esecutore_piva,esecutore_piva_comunitaria,esecutore_provincia,esecutore_provincia_nato,esecutore_provincia_residenza,esecutore_qualita,esecutore_qualita_altro,esecutore_ruolo,esecutore_search,esecutore_sesso,esecutore_telefono</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -150,11 +165,8 @@ return ll
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>esecutore_denominazione,esecutore_cognome,esecutore_comune,esecutore_cf,esecutore_app,esecutore_cap,esecutore_cap_residenza,esecutore_cciaa,esecutore_cciaa_numero,esecutore_cellulare,esecutore_civico,esecutore_civico_residenza,esecutore_cod_cat_nato,esecutore_comune_nato,esecutore_comune_residenza,esecutore_data_nato,esecutore_edile_numero,esecutore_edile_prov,esecutore_email,esecutore_fax,esecutore_inail,esecutore_indirizzo,esecutore_indirizzo_residenza,esecutore_inps,esecutore_nome,esecutore_pec,esecutore_piva,esecutore_piva_comunitaria,esecutore_provincia,esecutore_provincia_nato,esecutore_provincia_residenza,esecutore_qualita,esecutore_qualita_altro,esecutore_ruolo,esecutore_search,esecutore_sesso,esecutore_telefono</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

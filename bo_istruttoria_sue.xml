@@ -33,8 +33,7 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
 <div class="v-content well">
-<span class="plominoHidewhenClass">start:hw_no_titolo</span>
-<div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_titolo</span><div class="row-fluid">
 <div class="span4">
 <span class="plominoLabelClass">numero_titolo</span><span class="plominoFieldClass">numero_titolo</span>
 </div>
@@ -42,8 +41,7 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <span class="plominoLabelClass">importo_bolli</span><span class="plominoFieldClass">importo_bolli</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span>
-<div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_relazione_istruttoria</span><span class="plominoFieldClass">modello_stampa_relazione_istruttoria</span>
 </div>
@@ -61,13 +59,11 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 </div>
 </div>
 <p> </p>
-<span class="plominoHidewhenClass">end:hw_no_edit</span>
-<p><span class="plominoLabelClass">allegato_titolo</span><span class="plominoFieldClass">allegato_titolo</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoLabelClass">allegato_titolo</span><span class="plominoFieldClass">allegato_titolo</span></p>
 <p> </p>
 <p><span class="plominoLabelClass">allegato_relazione_istruttoria</span><span class="plominoFieldClass">allegato_relazione_istruttoria</span></p>
 <p> </p>
-<span class="plominoHidewhenClass">end:hw_no_titolo</span>
-<p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
+<span class="plominoHidewhenClass">end:hw_no_titolo</span><p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
 <p> </p>
 <p class="legend"><span class="plominoSubformClass">sub_istruttoria_allegati</span></p>
 <p><span class="plominoLabelClass">info_sorteggio</span><span class="plominoFieldClass">info_sorteggio</span></p>
@@ -123,16 +119,20 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>3</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -201,12 +201,14 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>type</name>
 <value><string>INTEGER</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -224,16 +226,20 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>%1.2f €</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>type</name>
 <value><string>FLOAT</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -251,16 +257,20 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>2</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -290,12 +300,14 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>type</name>
 <value><string>SINGLE</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -313,11 +325,8 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -328,6 +337,13 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -392,12 +408,14 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>type</name>
 <value><string>SINGLE</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -415,11 +433,8 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -430,6 +445,13 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

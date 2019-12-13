@@ -757,11 +757,20 @@ return context.getParentDatabase().resources.config().get('rpd',rpd)]]></Formula
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_pagopa_pagamenti</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codTrans,IUV,esito_pagamento,importo_pagamento,anagrafica_pagamento,email_pagamento,data_pagamento,orario_pagamento,metodo_pagamento,uidriscossione_pagamento,divisa_pagamento,brand_pagamento,alias_pagamento</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -791,11 +800,8 @@ return context.getParentDatabase().resources.config().get('rpd',rpd)]]></Formula
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>codTrans,IUV,esito,importo,anagrafica,email,data,orario,metodo,uidriscossione,divisa,brand,alias</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

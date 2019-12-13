@@ -61,19 +61,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-istanze-compilazione</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -103,6 +92,25 @@ resources/iol-custom.css]]></ResourcesCSS>
 ]</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>sourceview</name>
+<value><string>vista-istanze-compilazione</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -120,19 +128,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-tool=view-details']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-istanze-protocollate</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -164,6 +161,25 @@ resources/iol-custom.css]]></ResourcesCSS>
 ]</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>sourceview</name>
+<value><string>vista-istanze-protocollate</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -181,19 +197,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-istanze-da-protocollare</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': false,
@@ -207,6 +212,25 @@ resources/iol-custom.css]]></ResourcesCSS>
                  </string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>sourceview</name>
+<value><string>vista-istanze-da-protocollare</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -225,8 +249,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[msg='''Per attivare le pratiche importate vai qui: <a href="../frm_associa_pratica">Associa pratica</a>'''
 
 if context.getParentDatabase().resources.config().get('associa_pratica'):
-    return msg
-]]></Formula>
+    return msg]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

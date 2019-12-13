@@ -55,19 +55,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-tool=view-details']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>widget</name>
-<value><string>DYNAMICTABLE</string></value>
-</member>
-<member>
-<name>labelcolumn</name>
-<value><string>identificativo</string></value>
-</member>
-<member>
-<name>sourceview</name>
-<value><string>vista-tutte-istanze</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -98,6 +87,25 @@ resources/iol-custom.css]]></ResourcesCSS>
 ]</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>labelcolumn</name>
+<value><string>identificativo</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>sourceview</name>
+<value><string>vista-tutte-istanze</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>DYNAMICTABLE</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

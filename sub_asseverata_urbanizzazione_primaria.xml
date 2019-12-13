@@ -54,16 +54,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_asseverata_urbanizzazione_primaria''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''è dotata delle opere di urbanizzazione primaria|1''','''non è dotata delle opere di urbanizzazione primaria e la loro attuazione è prevista da parte dell’amministrazione comunale nel corso del prossimo triennio ovvero la loro attuazione è prevista nella convenzione stipulata in data:|2''']
-</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -74,6 +66,20 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''è dotata delle opere di urbanizzazione primaria|1''','''non è dotata delle opere di urbanizzazione primaria e la loro attuazione è prevista da parte dell’amministrazione comunale nel corso del prossimo triennio ovvero la loro attuazione è prevista nella convenzione stipulata in data:|2''']
+</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -93,12 +99,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

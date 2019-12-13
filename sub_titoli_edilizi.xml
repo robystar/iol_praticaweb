@@ -70,11 +70,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_titoli_edilizi''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Selezionare Titolo|','Titolo unico SUAP|suap','Permesso di costruire/Licenza edilizia/Concessione edilizia|permesso_costruire','Autorizzazione edilizia|autorizzazione','Comunicazione edilizia (art.26 l.n. 47/1985)|comunicazione_edilizia','Accertamento di conformità/Condono edilizio|accertamento','Denuncia Inizio attività|dia','Segnalazione certificata Inizio Attività|scia','Comunicazione inizio dei Lavori asseverata|cila','Altro|altro_titolo','Primo accatastamento|primo_accatastamento']</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -85,6 +82,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Selezionare Titolo|','Titolo unico SUAP|suap','Permesso di costruire/Licenza edilizia/Concessione edilizia|permesso_costruire','Autorizzazione edilizia|autorizzazione','Comunicazione edilizia (art.26 l.n. 47/1985)|comunicazione_edilizia','Accertamento di conformità/Condono edilizio|accertamento','Denuncia Inizio attività|dia','Segnalazione certificata Inizio Attività|scia','Comunicazione inizio dei Lavori asseverata|cila','Altro|altro_titolo','Primo accatastamento|primo_accatastamento']</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -102,15 +106,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_titoli_edilizi''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''di aver già inoltrato istanza di pratica edilizia.|1''','''di inoltrare, contestualmente alla presente, istanza di pratica edilizia.|2''','''che inoltrerà opportuna pratica edilizia, consapevole che, per la realizzazione dell'intervento in caso di autorizzazione sotto il profilo paesaggistico, è necessario il conseguimento del pertinente titolo abilitativo.|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -121,6 +118,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''di aver già inoltrato istanza di pratica edilizia.|1''','''di inoltrare, contestualmente alla presente, istanza di pratica edilizia.|2''','''che inoltrerà opportuna pratica edilizia, consapevole che, per la realizzazione dell'intervento in caso di autorizzazione sotto il profilo paesaggistico, è necessario il conseguimento del pertinente titolo abilitativo.|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -151,12 +161,14 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -187,12 +199,14 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

@@ -12,13 +12,22 @@
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoFieldClass">ws_response_message</span></p>
 <p><span class="plominoFieldClass">iol_workflow_title</span></p>
-<!--PAGAMENTI--><p><span class="plominoFieldClass">pagamenti</span></p>
-<!-- AUTORIZZAZIONE --><p><span class="plominoFieldClass">autorizzazione</span></p>
-<!-- EVENTUALE AVVISO DI RIGETTO --><p><span class="plominoFieldClass">avviso_rigetto</span></p>
-<!-- EVENTUALE RIGETTO --><p><span class="plominoFieldClass">rigetto</span></p>
-<!-- VISTA PRATICA --><p><span class="plominoFieldClass">display_document</span></p>
-<!-- INTEGRAZIONI --><p><span class="plominoFieldClass">elenco_integrazioni</span></p>
-<!-- PRATICHE COLLEGATE --><p><span class="plominoFieldClass">pratiche_collegate</span></p>
+<!--PAGAMENTI-->
+<p><span class="plominoFieldClass">pagamenti</span></p>
+<!-- AUTORIZZAZIONE -->
+<p><span class="plominoFieldClass">autorizzazione</span></p>
+<!-- EVENTUALE AVVISO DI RIGETTO -->
+<p><span class="plominoFieldClass">avviso_rigetto</span></p>
+<!-- EVENTUALE RIGETTO -->
+<p><span class="plominoFieldClass">rigetto</span></p>
+<!-- VISTA PRATICA -->
+<p><span class="plominoFieldClass">display_document</span></p>
+<!-- INTEGRAZIONI -->
+<p><span class="plominoFieldClass">elenco_integrazioni</span></p>
+<!-- PRATICHE COLLEGATE -->
+<div class="v-content well">
+<p><span class="plominoFieldClass">pratiche_collegate</span></p>
+</div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -157,7 +166,7 @@ return renderForm.displayDocument(context)]]></Formula>
           <id type="Products.Archetypes.Field.StringField">ws_response_message</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['''<div class='alert alert-success'><h5>%s</h5></div>''' %context.getItem('ws_response_message',"COMUNICAZIONE INVIATA ....")]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('ws_response_message',"COMUNICAZIONE INVIATA")]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -197,6 +206,7 @@ return html]]></Formula>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>dynamictableparam</name>
@@ -208,6 +218,7 @@ return html]]></Formula>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -242,6 +253,7 @@ return html]]></Formula>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>dynamictableparam</name>
@@ -253,6 +265,7 @@ return html]]></Formula>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -337,25 +350,7 @@ return renderForm.displayDocument(context)]]></Formula>
           <id type="Products.Archetypes.Field.StringField">pratiche_collegate</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
-db=context.getParentDatabase()
-idx = db.getIndex()
-if not 'numero_pratica' in idx.indexes():
-    return []
-#la ricerca deve restituire i documenti dei queli l'utente corrente è author
-brains = idx.dbsearch(dict(numero_pratica=context.getItem('numero_pratica')),sortindex="data_protocollo")
-html=''
-for brain in brains:
-    doc=brain.getObject()
-    if doc.getId()!=context.getId():
-        html=html+'<p><h5><a target="_blank" href="%s">%s prot. %s del %s </a></h5></p>'%(doc.absolute_url(),doc.getItem('iol_form_title','Documento'),doc.getItem('numero_protocollo'),doc.getItem('data_protocollo_testo'))  
-
-if not html:
-    html = '<p><h5>Nessuna pratica collegata</h5></p>'
-    
-html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_pratiche_collegate"> Elenco delle pratiche collegate <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),html)    
-    
-return html]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.customscripts.getElencoPraticheCollegate(context)]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

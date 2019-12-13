@@ -50,11 +50,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -65,6 +62,13 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Seleziona -&gt;&gt;|'] + context.getParentDatabase().resources.config().get('destinazione_uso', [])</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

@@ -65,15 +65,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_vincoli_incidente''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''nel comune non e' presente un'attività a rischio d'incidente rilevante;|1''','''nel comune e' presente un'attività a rischio d'incidente rilevante e la relativa "area di danno" e' individuata nella pianificazione comunale:|2''','''nel comune e' presente un'attivita' a rischio d'incidente rilevante e la relativa "area di danno" non e' individuata nella pianificazione comunale pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|3''','''la valutazione del progetto è stata rilasciata con atto:|4''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -84,6 +77,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''nel comune non e' presente un'attività a rischio d'incidente rilevante;|1''','''nel comune e' presente un'attività a rischio d'incidente rilevante e la relativa "area di danno" e' individuata nella pianificazione comunale:|2''','''nel comune e' presente un'attivita' a rischio d'incidente rilevante e la relativa "area di danno" non e' individuata nella pianificazione comunale pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|3''','''la valutazione del progetto è stata rilasciata con atto:|4''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -101,15 +107,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''l'intervento non ricade nell'area di danno;|1''','''l'intervento ricade in area di danno, pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|2''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -120,6 +119,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''l'intervento non ricade nell'area di danno;|1''','''l'intervento ricade in area di danno, pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale;|2''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -153,12 +165,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

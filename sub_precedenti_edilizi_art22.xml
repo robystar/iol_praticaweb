@@ -58,15 +58,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=sub_precedenti_edilizi_art22''']]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''pienamente conformi alla documentazione dello stato di fatto legittimato dal seguente titolo/pratica edilizia (o, in assenza, dal primo accatastamento)|1''','''in difformità rispetto al seguente titolo/pratica edilizia (o, in assenza, dal primo accatastamento)|2''','''non sono stati reperiti titoli abilitativi essendo l’immobile di remota costruzione e non interessato successivamente da interventi edilizi per i quali era necessario di munirsi di titoli abilitativi|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -77,6 +70,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''pienamente conformi alla documentazione dello stato di fatto legittimato dal seguente titolo/pratica edilizia (o, in assenza, dal primo accatastamento)|1''','''in difformità rispetto al seguente titolo/pratica edilizia (o, in assenza, dal primo accatastamento)|2''','''non sono stati reperiti titoli abilitativi essendo l’immobile di remota costruzione e non interessato successivamente da interventi edilizi per i quali era necessario di munirsi di titoli abilitativi|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -99,12 +105,14 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -128,11 +136,20 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>associated_form</name>
 <value><string>dlg_titolo_edilizio</string></value>
 </member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>tipo_titolo,numero_titolo,data_titolo</string></value>
+</member>
+</struct></value>
+<value><struct>
 <member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
@@ -152,11 +169,8 @@ resources/iol-custom.css]]></ResourcesCSS>
     }
 </string></value>
 </member>
-<member>
-<name>field_mapping</name>
-<value><string>tipo_titolo,numero_titolo,data_titolo</string></value>
-</member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

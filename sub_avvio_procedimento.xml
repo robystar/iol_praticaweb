@@ -10,8 +10,7 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
-<span class="plominoLabelClass">oggetto_avvio_procedimento</span><span class="plominoFieldClass">oggetto_avvio_procedimento</span>
-<div class="row-fluid">
+<span class="plominoLabelClass">oggetto_avvio_procedimento</span><span class="plominoFieldClass">oggetto_avvio_procedimento</span><div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">allegato_comunicazione_avvio_procedimento</span><span class="plominoFieldClass">allegato_comunicazione_avvio_procedimento</span>
 </div>
@@ -61,16 +60,20 @@ if context.getItem('IOL_AVVIOPROC'):
 return ss]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>JQUERY</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
@@ -101,16 +104,20 @@ return ss]]></HTMLAttributesFormula>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
 <member>
 <name>size</name>
 <value><string>12</string></value>
 </member>
+</struct></value>
+<value><struct>
 <member>
 <name>widget</name>
 <value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
+</data></array></value>
 </param>
 </params>
         </element>

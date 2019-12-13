@@ -51,15 +51,8 @@ resources/iol-custom.css]]></ResourcesCSS>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
 <param>
+<value><array><data>
 <value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>['''Il richiedente utilizzerà la propria firma digitale;|1''','''Il richiedente firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista;|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista;|3''']</string></value>
-</member>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
 <member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
@@ -70,6 +63,19 @@ resources/iol-custom.css]]></ResourcesCSS>
 'bAutoWidth': false</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['''Il richiedente utilizzerà la propria firma digitale;|1''','''Il richiedente firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista;|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista;|3''']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
 </param>
 </params>
         </element>
