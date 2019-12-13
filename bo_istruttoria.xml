@@ -66,7 +66,6 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <span class="plominoHidewhenClass">end:hw_no_titolo</span><p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
 <p> </p>
 <p class="legend"><span class="plominoSubformClass">sub_istruttoria_allegati</span></p>
-<p><span class="plominoLabelClass">allegati_controfirmati</span><span class="plominoFieldClass">allegati_controfirmati</span></p>
 <p><span class="plominoLabelClass">info_sorteggio</span><span class="plominoFieldClass">info_sorteggio</span></p>
 </div>
 ]]></FormLayout>
@@ -466,22 +465,6 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 except:
     return False]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
-        </element>
-        <element id="allegati_controfirmati" title="Documentazione controfirmata" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">allegati_controfirmati</id>
-          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"15","filetype":["p7m"]}'
-data-tooltip = "firmato digitalmente max 15Mb"
-''']]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

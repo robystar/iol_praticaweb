@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_paesaggistica-accertamento" title="Istanza di Accertamento di Compatibilità Paesaggistica ex art. 167 del DLGS 22.1.2004 N. 42 e smi" type="PlominoForm">
+    <element id="frm_paesaggistica-accertamento" title="ISTANZA DI ACCERTAMENTO DI COMPATIBILITA’ PAESAGGISTICA ex art. 167 del DLGS 22.1.2004 N. 42 e smi" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_paesaggistica-accertamento</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>

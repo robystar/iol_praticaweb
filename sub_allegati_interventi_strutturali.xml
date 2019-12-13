@@ -17,9 +17,11 @@
 <p><span class="plominoLabelClass">allegato_denuncia_sismica</span><span class="plominoFieldClass">allegato_denuncia_sismica</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_denuncia_sismica</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_doc_denuncia_art65</span></p>
-<span class="plominoLabelClass">allegato_doc_denuncia_art65</span><span class="plominoFieldClass">allegato_doc_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_doc_denuncia_art65</span><span class="plominoFieldClass">allegato_doc_denuncia_art65</span>
+<p><span class="plominoHidewhenClass">end:hw_no_doc_denuncia_art65</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_denuncia_art65</span></p>
-<span class="plominoLabelClass">allegato_denuncia_art65</span><span class="plominoFieldClass">allegato_denuncia_art65</span><p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
+<span class="plominoLabelClass">allegato_denuncia_art65</span><span class="plominoFieldClass">allegato_denuncia_art65</span>
+<p><span class="plominoHidewhenClass">end:hw_no_denuncia_art65</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_denuncia_lavori_sismica</span></p>
 <p><span class="plominoLabelClass">allegato_denuncia_lavori_sismica</span><span class="plominoFieldClass">allegato_denuncia_lavori_sismica</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_denuncia_lavori_sismica</span></p>

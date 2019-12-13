@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_paesaggistica-ordinaria" title="Richiesta di Autorizzazione Paesaggistica con procedura ordinaria ex art. 146 DLGS 42/2004 (aggiornamento aprile 2017)" type="PlominoForm">
+    <element id="frm_paesaggistica-ordinaria" title="RICHIESTA DI AUTORIZZAZIONE PAESAGGISTICA CON PROCEDURA ORDINARIA EX ART. 146 DLGS 42/2004 (aggiornamento aprile 2017)" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_paesaggistica-ordinaria</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>

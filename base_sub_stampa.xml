@@ -186,10 +186,7 @@ return DateToString(Now(),'%d/%m/%Y')]]></Formula>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[elenco = context.getParentDatabase().resources.customscripts.getElencoComuni()
-comune_val=''
-if len(elenco)>0:
-    comune_val = elenco[0].split('|')[0]
-return comune_val    
+comune_val = ''
 for el in elenco:
     v=el.split('|')
     if v[1]==context.getItem('iol_comune'):
@@ -661,7 +658,7 @@ return destinatari]]></Formula>
         </element>
         <element id="hw_no_condizionata" title="hw_no_condizionata" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_condizionata</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in ['cila','scia','scia2','sca','pdc','dsi','idrogeologico-aut','paesaggistica-ordinaria','paesaggistica-semplificata']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in ['cila','scia','scia2','sca']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="ubicazioni_indirizzo" title="ubicazioni_indirizzo" type="PlominoField">
@@ -729,81 +726,6 @@ return context.getParentDatabase().resources.config().get('rpd',rpd)]]></Formula
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="iol_form_title" title="iol_form_title" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">iol_form_title</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="elenco_pagamenti_dg" title="Pagamenti" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">elenco_pagamenti_dg</id>
-          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>associated_form</name>
-<value><string>dlg_pagopa_pagamenti</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>field_mapping</name>
-<value><string>codTrans,IUV,esito_pagamento,importo_pagamento,anagrafica_pagamento,email_pagamento,data_pagamento,orario_pagamento,metodo_pagamento,uidriscossione_pagamento,divisa_pagamento,brand_pagamento,alias_pagamento</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>jssettings</name>
-<value><string>"aoColumns": [
-    {"sTitle": "Cod Trans"},
-    {"sTitle": "IUV"},
-    {"sTitle": "Esito"},
-    {"sTitle": "Importo"},
-    {"sTitle": "Anagrafica"},
-    {"sTitle": "Email"},
-    {"sTitle": "Data"},
-    {"sTitle": "Ora"},
-    {"sTitle": "Metodo"},
-    {"sTitle": "UID R."},
-    {"sTitle": "Divisa"},
-    {"sTitle": "Banca"},
-    {"sTitle": "Alias"}
-],
-"bPaginate": false,
-"bLengthChange": false,
-"bFilter": false,
-"bSort": false,
-"bInfo": false,
-"bAutoWidth": false,
-"plominoDialogOptions": {
-        "width": 900,
-        "height": 500
-    }
-</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
         </element>
       </elements>
     </element>

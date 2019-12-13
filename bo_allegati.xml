@@ -13,7 +13,6 @@
 <div class="iol-toolbar"></div>
 <h4 class="alert-info">QUADRO RIEPILOGATIVO DELLA DOCUMENTAZIONE</h4>
 <p><span class="plominoFieldClass">allegati_istanza</span></p>
-<p><span class="plominoFieldClass">allegati_pe</span></p>
 <p><span class="plominoFieldClass">child_documents</span></p>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">Note agli allegati</legend>
@@ -89,11 +88,7 @@ return html]]></Formula>
           <id type="Products.Archetypes.Field.StringField">allegati_istanza</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('iol_pe'):
-    return 
-
-
-db=context.getParentDatabase()
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
 renderForm=db.getForm('sub_allegati_elenco')
 content=asUnicode(context.editWithForm(renderForm)) if context.isEditMode() else asUnicode(renderForm.displayDocument(context))    
 html=''
@@ -113,7 +108,7 @@ return html]]></Formula>
           <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.absolute_url()+'/EditDocument?openwithform=bo_allegati']]></Content>
-          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode() or not context.hasCurrentUserRight('PlominoEditor') or context.getItem('iol_pe')]]></Hidewhen>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode() or not context.hasCurrentUserRight('PlominoEditor')]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
         <element id="btn_cancel" title="Ritorna" type="PlominoAction">
@@ -129,32 +124,8 @@ return html]]></Formula>
           <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.absolute_url()+'/EditDocument?openwithform=bo_allegati_edit']]></Content>
-          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode() or not context.hasCurrentUserRight('PlominoEditor') or context.getItem('iol_pe')]]></Hidewhen>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode() or not context.hasCurrentUserRight('PlominoEditor')]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
-        </element>
-        <element id="allegati_pe" title="allegati_pe" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">allegati_pe</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('iol_pe'):
-    return 
-
-db=context.getParentDatabase()
-renderForm=db.getForm('sub_allegati_pe')
-content=asUnicode(renderForm.displayDocument(context))
-html=''
-if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=sub_allegati_pe"> Documentazione allegata alla pratica <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
-
-    
-return html]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

@@ -10,7 +10,6 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoFieldClass">bo_date_lavori</span></p>
 <p><span class="plominoFieldClass">bo_iniziolavori</span></p>
 <p><span class="plominoFieldClass">bo_finelavori</span></p>
 <p><span class="plominoFieldClass">comunicazioni_iniziolavori</span></p>
@@ -22,7 +21,7 @@
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
-      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">BOTTOM</ActionBarPosition>
       <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
@@ -75,7 +74,7 @@ return html]]></Formula>
           <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA["%s/bo_iniziolavori" %context.absolute_url()]]></Content>
-          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode()]]></Hidewhen>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
         </element>
         <element id="btn_aggiungi_finelavori" title="Aggiungi comunicazione fine lavori" type="PlominoAction">
@@ -83,7 +82,7 @@ return html]]></Formula>
           <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA["%s/bo_finelavori" %context.absolute_url()]]></Content>
-          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[context.isEditMode()]]></Hidewhen>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
         </element>
         <element id="comunicazioni_iniziolavori" title="comunicazioni_iniziolavori" type="PlominoField">
@@ -218,30 +217,6 @@ for brain in brains:
         html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a target="_blank" href="%s">FINE LAVORI</a></legend>%s</fieldset>'%(doc.absolute_url(),content)  
 
         
-return html]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="bo_date_lavori" title="bo_date_lavori" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">bo_date_lavori</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
-db=context.getParentDatabase()
-renderForm=db.getForm('bo_date_lavori')
-html=''
-if renderForm:
-    content=renderForm.displayDocument(context)
-    if content:
-        html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_date_lavori"> Inizio e fine lavori <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
-else:
-    context.plone_utils.addPortalMessage('manca form %s' %frmId,'error')
-    
 return html]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>

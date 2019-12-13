@@ -7,16 +7,14 @@
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
 if 'btn_next' in context.REQUEST.keys():
-    return context.toNextForm()
-elif 'btn_save' in context.REQUEST.keys():
-    context.setItem('Form','frm_presentata')]]></onSaveDocument>
+    return context.toNextForm()]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoSubformClass">base_sub_toolbar</span></p>
 <p><span class="plominoSubformClass">sub_intervento_art22</span></p>
-<p><span class="plominoSubformClass">sub_precedenti_edilizi_art22</span></p>
+<p><span class="plominoSubformClass">sub_precedenti_edilizi_cila</span></p>
 <p><span class="plominoSubformClass">sub_immobile_destinazione</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

@@ -7,9 +7,7 @@
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
 if 'btn_next' in context.REQUEST.keys():
-    return context.toNextForm()
-elif 'btn_save' in context.REQUEST.keys():
-    context.setItem('Form','frm_presentata')]]></onSaveDocument>
+    return context.toNextForm()]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
@@ -54,7 +52,7 @@ resources/iol-custom.css]]></ResourcesCSS>
       <elements>
         <element id="hw_no_pdc" title="hw_no_pdc" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_pdc</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app') not in ['scia2','pdc','lr36']]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app') not in ['scia2','pdc']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

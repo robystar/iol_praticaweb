@@ -143,11 +143,10 @@ data-tooltip = "firmato digitalmente"
         </element>
         <element id="hw_no_autocertificazione_imprese_digitale" title="hw_no_autocertificazione_imprese_digitale" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_autocertificazione_imprese_digitale</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getParentDatabase().resources.config().get('autocertificazione_imprese'):
-    app = context.getItem('iol_tipo_app','pdc')
-    return app not in ['dia', 'pdc', 'scia', 'scia2','cila','cil'] or context.getItem('lavori_economia_opt','')!='2'
-else:
-    return True]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return True
+
+app = context.getItem('iol_tipo_app','pdc')
+return app not in ['dia', 'pdc', 'scia', 'scia2','cila','cil'] or context.getItem('lavori_economia_opt','')!='2']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_completata" title="hw_no_completata" type="PlominoHidewhen">

@@ -37,8 +37,7 @@ comunicazione = {
    "idrogeologico-scia": "Comunicazione SCIA opere vincolo idrogeologico|comunicazione_scia_idrogeologico",
    "idrogeologico-aut": "Autorizzazione opere vincolo idrogeologico|autorizzazione_idrogeologico",
    "deposito-impianti": "Istanza di deposito impianti|deposito_impianti",
-   "pas":"Procedura Abilitativa Semplificata|procedura_abilitativa_semplificata",
-   "lr36": "Istanza di Procedimento Urbanistico ai sensi della L.R. 36/97|comunicazione_lr36",
+   "pas":"Procedura Abilitativa Semplificata|procedura_abilitativa_semplificata"
 
 }
 
@@ -67,21 +66,20 @@ elenco.append(comunicazione[tipo_app]+"&pdf=1")
 #if tipo_app=='art22':
 #    elenco.append("Relazione descrittiva per opere interne alle costruzioni|rel_descrittiva_art22")
 
-if tipo_app in ['scia','scia2','pdc','lr36']:
+if tipo_app in ['scia','scia2','pdc']:
     elenco.append(relazione_asseverata+"&pdf=1")
        
 if doc.getItem('resp_sicurezza_nome'):
     elenco.append(autocertificazione_sicurezza+"&pdf=1")
-
-if context.config().get('autocertificazione_imprese'):    
-    if doc.getItem('lavori_economia_opt','') =='2':
-        elenco.append(autocertificazione_imprese %1)
-        esecutori = doc.getItem('altri_esecutori_grid', [['prova 2'],['prova 3'],['prova 4']])
-        s=autocertificazione_imprese
-        for i,v in enumerate(esecutori):
-            autocertificazione_imprese = s + "&grid=altri_esecutori_grid&grid_index=" + str(i)
-            elenco.append(autocertificazione_imprese %(i+2))    
-    
+   
+#if doc.getItem('lavori_economia_opt','') =='2':
+#    elenco.append(autocertificazione_imprese %1)
+#    esecutori = doc.getItem('altri_esecutori_grid', [['prova 2'],['prova 3'],['prova 4']])
+#    s=autocertificazione_imprese
+#    for i,v in enumerate(esecutori):
+#        autocertificazione_imprese = s + "&grid=altri_esecutori_grid&grid_index=" + str(i)
+#        elenco.append(autocertificazione_imprese %(i+2))
+         
 if tipo_app=='paesaggistica-ordinaria':
     opt = doc.getItem('relazione_paesaggistica')
     if opt=='1':
@@ -103,11 +101,13 @@ if tipo_app in elenco_tipo_relazione:
     elenco.append("Relazione descrittiva delle opere|rel_descrittiva_%s" %tipo_app)      
     
 #######AGGIUNGO I PARAMETRI 
+
+app=context.getParentDatabase().getId().replace('iol_','')
 for k in range(len(elenco)):
     if 'rel_' in elenco[k]:
-        elenco[k] = "%s&app=praticaweb&grp=relazioni&form=sub_completa_%s" %(elenco[k],tipo_app)
+        elenco[k] = "%s&app=%s&grp=relazioni&form=sub_completa_%s" %(elenco[k],app,tipo_app)
     else:
-        elenco[k] = "%s&app=praticaweb&grp=autorizzazione&form=sub_completa_%s" %(elenco[k],tipo_app)
+        elenco[k] = "%s&app=%s&grp=autorizzazione&form=sub_completa_%s" %(elenco[k],app,tipo_app)
         
 return elenco
 ]]></resource>

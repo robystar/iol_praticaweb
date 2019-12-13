@@ -6,14 +6,11 @@
 data = args[1]
 db=context.getParentDatabase()
 
-if 'esito' in data and data['esito']=='OK' and 'azioni' in data:
-    doc=db.getDocument(docId)
-    #per replica su db
-    if doc:
-        doc.save(onSaveEvent=False)
+if data['esito']=='OK' and data['azioni']:
+    doc=db.getDocument(docId)   
     azioni=data['azioni'].split(',')
     for azione in azioni:
-        if doc and doc.isActionSupported(azione):
+        if doc.isActionSupported(azione):
             doc.doAction(azione)]]></Content>
       <RunAs type="Products.Archetypes.Field.StringField">OWNER</RunAs>
     </element>

@@ -13,41 +13,37 @@ dz = dict(
  
 versionenuova=1,                   
          
-         
 pagopa = False, #PagoPA Abilitato
 
-provider='praticaweb',
-                    
-doc_settings = "0-settings", #id del documento dove sono salvati i settings          
-wsUrl = "http://webservice.gisweb.it/wspraticaweb/andora.wsPraticaweb.php?wsdl",
-elenco_comuni = ['Andora|A278'],
-comune_default = "A278",
+provider='sue',
+
+doc_settings = "0-settings", #id del documento dove sono salvati i settings  
+#ws servizio backoffice pratiche        
+#wsUrl = "http://webservice.gisweb.it/wspraticaweb/andora.wsPraticaweb.php?wsdl",
+#wsUrl = "http://webservice.gisweb.it/wspraticaweb/demo.wsPraticaweb.php?wsdl",
+  
+#elenco dei comuni in combo    
+elenco_comuni = ['Moneglia|F354'],
+comune_default = "F354",
 
 #indirizzi per il modello di stampa
-comune_indirizzo_1 = "Comune di Andora",
-comune_indirizzo_2 = "Via Cavour, 94",
-comune_indirizzo_3 = "17051 Andora (SV)",
-
+comune_indirizzo_1 = "Comune di Moneglia",
+comune_indirizzo_2 = "Corso Libero Longhi, 25",
+comune_indirizzo_3 = "16030 Moneglia (GE)",
 #flag se presente la sezione catastale
-sezione_catasto = True,
+sezione_catasto = False,
 
 #per limitare la combo sportello
-#sportello = ['''Sportello Unico dell'Edilizia|sue'''],
+sportello = ['''Sportello Unico dell'Edilizia|sue'''],
 
 #per avere autocoplete anche in castato urbano
 #autocomplete_nceu = True,
 
-#set di allegati autocertificazione imprese
-autocertificazione_imprese = True,
-
 #tipo di pratica senza pagamento diritti di segreteria come da tabella in documenti
-no_diritti_segreteria = ['cil','art21'],
+#no_diritti_segreteria = ['cil','art21'],
 
-#se il bollo viene pagato con PagoPa
-#paga_bollo = 'PagoPa',
-
-#tipi ti pratica che pagano il bollo
-#paga_bollo = ['pdc','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata','idrogeologico-aut','dsi'],
+#XSPEZIA
+#volumetria_pagamenti = "<strong>Attenzione il volume dell'intervento determina gli importi dei diritti di segreteria</strong> nella seguente misura da 0 a 30: 51.65 fino a 100: 103.29 fino a 300: 154.94 fino a 500: 258.23 fino a 1000: 413.17 oltre 1000: 516.46",
 
 #tipo di pratica con relazione descrittiva aggiuntiva
 #relazione_descrittiva = ['cila','scia'],
@@ -55,54 +51,17 @@ no_diritti_segreteria = ['cil','art21'],
 #stampa della ricevuta di presentazione
 ricevuta_presentazione = False,
 
+#stampa attestazione di intervento ed opere in aree vincolate escluse dall'autorizzazione paesaggistica (RAPALLO)
+#attestazione_intervento = True,
+
 #calcola_pianificazione_x (elenco dei tipi con il calcolo delle zone pianificazione)
-vincoli_particelle = ['cila','scia','scia2','pdc','lr25','lr36'],
+vincoli_particelle = ['cila','scia','scia2','pdc','lr25'],
 
-tipo_pratica = [
-    'CIL|cil',
-    'CILA|cila',
-    'SCIA|scia',
-    'SCIA2|scia2',
-    'PDC|pdc',
-    'Paes. ordinaria|paesaggistica-ordinaria',
-    'Paes. accertamento|paesaggistica-accertamento',
-    'Paes. semplificata|paesaggistica-semplificata', 
-    'AUA|aua',
-    'SCA|sca',
-    'Art.22|art22',
-    'Art.48|art48',
-    'Inizio lavori|iniziolavori',
-    'Fine lavori|finelavori',
-    'Integrazione|integrazione',
-    'Taglio alberi|taglioalberi',
-
+#vincoli della form sub_intervento_paesaggistica/dichiarazione_intervento_opt, se non presente usa elenco default
+vincoli_paesaggistica = [
+    "D.M. 11.06.1954;|1",
+    "D.M. 27.07.1962 - D.M. 24.04.1985;|2"
 ],
-
-nuova_pratica = [
-    'Comunicazione Inizio Lavori - CIL|cil',
-    'Comunicazione Inizio Lavori Asseverata - CILA|cila',
-    '''Segnalazione Certificata di Inizio Attivita' - SCIA|scia''',
-    '''Segnalazione Certificata di Inizio Attivita' Alternativa al Permesso di Costruire|scia2''',
-    'Istanza di Permesso di Costruire|pdc',
-    'Richiesta di Autorizzazione Paesaggistica con procedura ordinaria|paesaggistica-ordinaria',
-    'Richiesta di Autorizzazione Paesaggistica con procedura semplificata|paesaggistica-semplificata', 
-    '''Istanza di Accertamento di Compatibilita' Paesaggistica|paesaggistica-accertamento''',
-    '''Segnalazione Certificata di Agibilita'|sca''',
-    '''Regolarizzazione sotto il profilo amministrativo ai sensi dell'art 22|art22''',
-    '''Regolarizzazione opere in difformita' ai sensi dell'art. 48|art48''',
-    'Richiesta di Autorizzazione in merito al Vincolo Idrogeologico|idrogeologico-aut',
-    '''Segnalazione Certificata di Inizio Attivita' per opere edilizie in zona soggetta a vincolo idrogeologico|idrogeologico-scia''',
-    'Denuncia Sismica Integrata|dsi',
-    '''Denuncia di inizio attivita'|dia''',
-    'Art.22|art22',
-    'Art.48|art48',
-    'Inizio lavori|iniziolavori',
-    'Fine lavori|finelavori',
-    'Integrazione|integrazione',       
-    'Altro tipo di pratica|pe'
-],
-
-
 
 destinazione_uso = [
 'Residenza (L.R. 16/2008 art.13,lett.a)|RESIDENZIALE',
@@ -119,6 +78,30 @@ destinazione_uso = [
 'Servizi Turistici (L.R. 25/1995 art.15bis)|SERVIZI TURISTICI'
 ],
 
+
+#elenco check in form di ricerca
+tipo_ricerca = [
+    'CIL|cil',
+    'CILA|cila',
+    'SCIA|scia',
+    'SCIA2|scia2',
+    'PDC|pdc',
+    'Paes. ordinaria|paesaggistica-ordinaria',
+    'Paes. accertamento|paesaggistica-accertamento',
+    'Paes. semplificata|paesaggistica-semplificata', 
+    'AUA|aua',
+    'SCA|sca',
+    'Art.22|art22',
+    'Art.48|art48',
+    'Inizio lavori|iniziolavori',
+    'Fine lavori|finelavori',
+    'Integrazione|integrazione',
+    'AUT vincolo idrogeologico|idrogeologico-aut',
+    'SCIA vincolo idrogeologico|idrogeologico-scia',
+    'Denuncia Sismica Integrata|dsi',
+    'Pratica importata|pe'
+],
+
 elenco_albo =[
     'Ordine degli Architetti|architetti',
     'Collegio dei Geometri|geometri',
@@ -132,11 +115,9 @@ elenco_albo =[
 #responsabile protezione dati
 #rpd = "Avv.MARCO GIURI - via Cosseria, 28 - 50129 Firenze - mail: dpo@comune.sp.it - Pec: consolve@pec.it (http://www.comune.laspezia.it/Comune/PROTEZIONE_DATI/protezione_dati.html)",
 
-
+#ws di protocollazione automatica
 wsprotocollo = "protocolla_documento",
-#####wsprotocollo = "test-protocollo", #nome  della bw test-protocollo per prove
-
-base_url = "https://andora.istanze-online.it",
+#wsprotocollo = "test-protocollo" #nome  della bw test-protocollo per prove
 
 )
 

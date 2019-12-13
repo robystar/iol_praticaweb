@@ -13,6 +13,11 @@
 <div>
 <span class="plominoLabelClass">tipo_pratica</span><span class="plominoFieldClass">tipo_pratica</span>
 </div>
+<p><span class="plominoHidewhenClass">start:hw_no_altrotipo</span></p>
+<div>
+<span class="plominoLabelClass">tipo_pratica_altro</span><span class="plominoFieldClass">tipo_pratica_altro</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_altrotipo</span></p>
 <p><span class="plominoFieldClass">msg_paesaggistica</span></p>
 <div>
 <span class="plominoLabelClass">descrizione_intervento</span><span class="plominoFieldClass">descrizione_intervento</span>
@@ -44,11 +49,8 @@
 <div>
 <span class="plominoLabelClass">ubicazioni_indirizzo</span><span class="plominoFieldClass">ubicazioni_indirizzo</span>
 </div>
-<div>
-<span class="plominoLabelClass">note_pratica</span><span class="plominoFieldClass">note_pratica</span>
-</div>
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
-<p><span class="plominoFieldClass">altri_campi_importati</span></p>
+<p><span class="plominoFieldClass">altri_campi</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -70,17 +72,13 @@
 ++resource++iol.document/css/iol.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="tipo_pratica" title="Tipo di pratica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">tipo_pratica</id>
+        <element id="iol_form_title" title="Tipo di pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_form_title</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('iol_tipo_app')=='pe':
-    return context.getItem('tipo_pratica_altro')
-else:
-    from iol.document.plomino_utils import getSelectionValue
-    return getSelectionValue(context,'iol_tipo_app','base_sub_pe')]]></Formula>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">TEXTFieldRead</FieldEditTemplate>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -91,8 +89,14 @@ else:
 <value><array><data>
 <value><struct>
 <member>
+<name>size</name>
+<value><string>2</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
 <name>widget</name>
-<value><string>TEXT</string></value>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </data></array></value>
@@ -105,7 +109,7 @@ else:
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">TEXTFieldRead</FieldEditTemplate>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -393,12 +397,13 @@ else:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="altri_campi_importati" title="altri_campi_importati" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">altri_campi_importati</id>
+        <element id="altri_campi" title="altri_campi" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">altri_campi</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">altri_campi_importati</FieldReadTemplate>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if 'getAltriDatiPratica' in context.resources:
+    return context.resources.getAltriDatiPratica(context)]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -406,8 +411,8 @@ else:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="tipo_pratica_xxxx" title="Tipo di pratica xxxxxxxxxxxx" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">tipo_pratica_xxxx</id>
+        <element id="tipo_pratica" title="Tipo di pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipo_pratica</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -417,7 +422,7 @@ else:
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_dati_pratica']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=base_sub_pe']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -450,7 +455,7 @@ else:
         </element>
         <element id="hw_no_altrotipo" title="hw_no_altrotipo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_altrotipo</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app')!='pe']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipo_pratica')!='altro']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="tipo_pratica_altro" title="Altro tipo di pratica (archiviate)" type="PlominoField">
@@ -465,37 +470,6 @@ else:
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="note_pratica" title="Note" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">note_pratica</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>size</name>
-<value><string>2</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
         </element>
       </elements>
     </element>

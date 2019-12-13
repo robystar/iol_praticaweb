@@ -98,7 +98,10 @@ Il cittadino/L’interessato può:
         </element>
         <element id="hw_privacy" title="hw_privacy" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_privacy</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('fisica_nome')!='']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    return context.getwfVariables(varId='wf_presentata')
+except:
+    return True]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="rpd_value" title="rpd_value" type="PlominoField">

@@ -4,15 +4,15 @@
       <id type="Products.Archetypes.Field.StringField">bo_assegnazione</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
-      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('istruttore_temp',context.getItem('istruttore'))]]></beforeSaveDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Form','frm_presentata')
-if context.isActionSupported('assegna'):
-    context.doAction('assegna')
+context.doAction('assegna')
+doc=context
+istruttore = str(doc.getItem('istruttore'))
+nomeIstruttore = doc.getUserGroupFullName(istruttore)
+doc.setItem('istruttore_nominativo',nomeIstruttore)
 
-#riassegnazione
-elif context.getItem('istruttore_temp')!=context.getItem('istruttore'):
-    context.resources.customscripts.Assegna(context)  
-context.removeItem('istruttore_temp')]]></onSaveDocument>
+doc.setWfActivity(activity="pratica assegnata a %s" %nomeIstruttore, notifyTo=[istruttore],priority=1)]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
@@ -20,11 +20,8 @@ context.removeItem('istruttore_temp')]]></onSaveDocument>
 <div class="iol-toolbar"></div>
 <div class="v-content well">
 <div class="row-fluid">
-<div class="span4">
+<div class="span6">
 <span class="plominoLabelClass">istruttore</span><span class="plominoFieldClass">istruttore</span>
-</div>
-<div class="span4">
-<span class="plominoLabelClass">dirigente</span><span class="plominoFieldClass">dirigente</span>
 </div>
 <div class="span3">
 <span class="plominoLabelClass">data_assegnazione</span><span class="plominoFieldClass">data_assegnazione</span>
@@ -61,80 +58,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
-settings = context.getParentDatabase().resources.customscripts.getDocSettings()
-grp = settings.getItem('grp_istruttori')
-if grp:
-    return ['|'] + elencoUtentiGruppi(context,groups=[grp])
-else:
-    return []</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
-        </element>
-        <element id="istruttore_nominativo" title="istruttore_nominativo" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">istruttore_nominativo</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getUserGroupFullName(str(context.getItem('istruttore')))]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>size</name>
-<value><string>5</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
-        </element>
-        <element id="dirigente" title="Dirigente assegnato" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">dirigente</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.resources.config().get('assegnazione_dirigente')]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -165,37 +89,6 @@ if grp:
     return ['|'] + elencoUtentiGruppi(context,groups=[grp])
 else:
     return []</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
-        </element>
-        <element id="dirigente_nominativo" title="dirigente_nominativo" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">dirigente_nominativo</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getUserGroupFullName(str(context.getItem('dirigente')))]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>size</name>
-<value><string>5</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </data></array></value>
@@ -236,6 +129,37 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 </param>
 </params>
         </element>
+        <element id="istruttore_nominativo" title="istruttore_nominativo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">istruttore_nominativo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>5</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
         <element id="hide_toolbar_menus" title="hide_toolbar_menus" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">hide_toolbar_menus</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
@@ -250,7 +174,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="btn_save" title="Salva e continua &gt;&gt;" type="PlominoAction">
+        <element id="btn_save" title="Assegna istruttore &gt;&gt;" type="PlominoAction">
           <id type="Products.Archetypes.Field.StringField">btn_save</id>
           <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>

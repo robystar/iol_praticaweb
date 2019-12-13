@@ -47,7 +47,7 @@ if db.getDocument(newId):
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="iol_tipo_app" title="Tipo pratica" type="PlominoField">
+        <element id="iol_tipo_app" title="Tipo titolo" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>

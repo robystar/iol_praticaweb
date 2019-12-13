@@ -10,24 +10,18 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_pagamento_online_dirittisegreteria</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_diritti_segreteria</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Diritti di segreteria</legend>
 <p><span class="plominoSubformClass">base_sub_info_pagamenti</span></p>
 <p><span class="plominoLabelClass">ricevuta_diritti_segreteria</span><span class="plominoFieldClass">ricevuta_diritti_segreteria</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_bollo</span></p>
+<p><span class="plominoLabelClass">ricevuta_pagamento_bollo</span><span class="plominoFieldClass">ricevuta_pagamento_bollo</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_bollo</span></p>
 </fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_diritti_segreteria</span></p>
-<p><span class="plominoHidewhenClass">start:hw_no_bollo</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">Bolli</legend>
-<div class="row-fluid">
-<div class="span8">
-<span class="plominoLabelClass">ricevuta_pagamento_bollo</span><span class="plominoFieldClass">ricevuta_pagamento_bollo</span>
-</div>
-<div class="span4"><a href="modelli/praticaweb/autorizzazione/marca-da-bollo" target="_blank" title="Dichiarazione sostitutiva per marca da bollo"><span class="label"><img src="pdf.png"> Dichiarazione sostitutiva per marca da bollo </span></a></div>
-</div>
-</fieldset></div>
-<p><span class="plominoHidewhenClass">end:hw_no_bollo</span></p>
+<p><span class="plominoHidewhenClass">end:hw_pagamento_online_dirittisegreteria</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -50,15 +44,6 @@
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="hw_no_diritti_segreteria" title="hw_no_diritti_segreteria" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_diritti_segreteria</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getParentDatabase().resources.customscripts.getPagoPaEnabled(context):
-    return True
-else:
-    no_diritti = context.getParentDatabase().resources.config().get('no_diritti_segreteria',[])
-    return context.getItem('iol_tipo_app','scia') in no_diritti]]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
-        </element>
         <element id="ricevuta_diritti_segreteria" title="Ricevuta versamento dei diritti di segreteria" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">ricevuta_diritti_segreteria</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
@@ -72,16 +57,25 @@ else:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"7","filetype":["jpg","png","pdf","p7m"]}''']]></HTMLAttributesFormula>
         </element>
-        <element id="hw_no_bollo" title="hw_no_bollo" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_bollo</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[pagamento_bollo = context.getParentDatabase().resources.config().get('paga_bollo',['pdc','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata','idrogeologico-aut','dsi'])
-if pagamento_bollo == 'PagoPa':
-    return True
-else:
-    return context.getItem('iol_tipo_app','pdc') not in pagamento_bollo]]></Formula>
+        <element id="hw_no_diritti_segreteria" title="hw_no_diritti_segreteria" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_diritti_segreteria</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[no_pagamento_diritti = context.getParentDatabase().resources.config().get('no_diritti_segreteria',[])
+return context.getItem('iol_tipo_app','scia') in no_pagamento_diritti]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="ricevuta_pagamento_bollo" title="Ricevuta F23 versamento o dichiarazione sostitutiva di annullo (vedi link) per n. 2 marche da bollo da 16 euro ciascuna" type="PlominoField">
+        <element id="hw_pagamento_online_dirittisegreteria" title="hw_pagamento_online_dirittisegreteria" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_pagamento_online_dirittisegreteria</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.customscripts.getPagoPaEnabled(context)]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_bollo" title="hw_no_bollo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_bollo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[pagamento_bollo = context.getParentDatabase().resources.config().get('pagamento_bollo',['pdc','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata','idrogeologico-aut','dsi'])
+pagopa_bollo = context.getParentDatabase().resources.config().get('pagopa_bollo',False)
+return context.getItem('iol_tipo_app','scia') not in pagamento_bollo or pagopa_bollo]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="ricevuta_pagamento_bollo" title="Ricevuta F23 versamento bollo" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">ricevuta_pagamento_bollo</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>

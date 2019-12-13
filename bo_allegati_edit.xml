@@ -2802,7 +2802,7 @@ data-tooltip = "firmato digitalmente"
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
 ''']]></HTMLAttributesFormula>
         </element>
-        <element id="allegati_relazione_paesaggistica" title="Relazione paesaggistica / paesaggistica semplificata ai sensi del DPCM 12 Dicembre 2005" type="PlominoField">
+        <element id="allegati_relazione_paesaggistica" title="Relazione paesaggistica / paesaggistica semplificata" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegati_relazione_paesaggistica</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>

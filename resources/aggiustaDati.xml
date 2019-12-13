@@ -52,7 +52,7 @@ return printed
 for doc in context.getAllDocuments():
     frm = doc.getItem('Form')
     
-    if frm not in ['frm__presentata','frm__presentata_altrodb']:
+    if frm not in []:
         if '__' in frm:
             print frm
             doc.setItem('Form',frm.replace('__','_'))
@@ -179,10 +179,14 @@ for doc in context.getAllDocuments():
         doc.setItem('iol_workflow','iol_sue_wf')
         doc.doAction('init')
         print doc.getId()
-        if doc.getItem('data_invio_pw')!='':
+        if doc.getItem('data_presentazione')!='':
             doc.doAction('presentazione')
-        if doc.getItem('data_protocollo')!='':
-            doc.doAction('protocolla')
+            if doc.getItem('data_protocollo')!='':
+                doc.doAction('protocolla')
+            else:
+                doc.doAction('richiedi_protocollo')
+            
+
 
             
 return printed
@@ -199,22 +203,14 @@ return printed
 ##parameters=
 ##title=
 ##
-doc=context.getDocument('04851-2019-cila')
-doc.removeItem('IOL_ATTACHMENTS')
-
-
-return 'ok'
-
-
 for doc in context.getAllDocuments():
-    #if 'settings' not in doc.getId():
-    #    doc.setItem('pagopa_enabled',1)
+    if 'settings' not in doc.getId():
+        doc.setItem('pagopa_enabled',1)
     
     frm = doc.getItem('Form')
-    if frm=='frm_presentata':
+    if frm=='frm__presentata':
         print doc.getId()
-        doc.setItem('IOL_PREVIOUS_FORM','bo_procedimento')   
-        
+        doc.setItem('Form','frm_presentata')
 
         
     

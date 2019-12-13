@@ -9,11 +9,6 @@
 ##parameters=doc=None,test=0
 ##title=
 ##
-db = context.getParentDatabase()
-if isinstance(doc, basestring):
-    doc = db.getDocument(doc)
-  
-
 diz = {
   "richiedente": {
     "albo": "",
@@ -653,7 +648,9 @@ diz = {
       "fotovoltaico":190000,
       "dsi":201000,
       "deposito-impianti":220000,
-},
+      
+  },
+
   "categoria_pratica": {
       "scia-1":1,
       "scia-2":2,
@@ -689,6 +686,8 @@ diz = {
       "sca":999,
       "aua":999,
       "dsi":999,
+      "idrogeologico-scia":33,
+      "idrogeologico-aut":32,
       "deposito-impianti":999,
       "deposito-impianti-1":231,
       "deposito-impianti-2":232,
@@ -696,7 +695,6 @@ diz = {
       "deposito-impianti-4":234,
       "deposito-impianti-0":230,
   },
-
     "pagamento":{
         "anagrafica":"anagrafica",
         "causale":"causale",
@@ -724,41 +722,9 @@ diz = {
         "documenti":"",
         "iter":""
     },
-    "wsUrl" : "http://webservice.gisweb.it/wspraticaweb/andora.wsPraticaweb.php?wsdl",
-    "resp_proc" : '',
-    'resp_uo' : '',
-    'resp_ia' : '',
-    'resp_it':''
 }
 
 
-if doc and doc.portal_type == 'PlominoDocument':    
-    app = doc.getItem('iol_tipo_app','')
-    sportello = doc.getItem('iol_tipo_proc','')
-    intervento = doc.getItem('qualificazione_intervento_opt','')
-    
-    ###########################################
-    # Responsabile del Procedimento
-    ###########################################
-    
-    diz['resp_proc'] = '24'
-    
-    ###########################################
-    # Responsabile Unità Operativa
-    ###########################################
-    
-        
-    ###########################################
-    # Istruttore Tecnico
-    ###########################################  
-    
-    
-    ###########################################
-    # Istruttore Amministrativo
-    ########################################### 
-    
-    
-    
 return diz
 ]]></resource>
   </design>

@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_paesaggistica-semplificata" title="Richiesta di Autorizzazione Paesaggistica con procedura semplificata art. 146, comma 9, del DLGS 22 gennaio 2004, n. 42, e smi e del Regolamento DPR 13.02.20117 n. 31" type="PlominoForm">
+    <element id="frm_paesaggistica-semplificata" title="Istanza di autorizzazione paesaggistica con procedimento semplificato a norma dell’articolo 146, comma 9, del decreto legislativo 22 gennaio 2004, n. 42, e smi e del Regolamento DPR 13.02.20117 n. 31" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_paesaggistica-semplificata</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>

@@ -38,7 +38,7 @@
 <legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazione</span>
 </fieldset></div>
 <p><span class="plominoSubformClass">sub_intervento_art22</span></p>
-<p><span class="plominoSubformClass">sub_precedenti_edilizi_art22</span></p>
+<p><span class="plominoSubformClass">sub_precedenti_edilizi_cila</span></p>
 <p><span class="plominoSubformClass">sub_immobile_destinazione</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">PROGETTISTA</legend> <span class="plominoSubformClass">base_sub_progettista</span>

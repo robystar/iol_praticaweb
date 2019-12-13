@@ -2,14 +2,15 @@
   <design>
     <element id="frm_pe" title="Nuova pratica edilizia" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_pe</id>
-      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Plomino_Readers',['sue_readers'])
+context.setItem('Plomino_Authors',[context.getCurrentUser().getId()])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
-if 'btn_next' in context.REQUEST.keys():
-    context.setItem('Form','frm_presentata')
-    context.setItem('IOL_PREVIOUS_FORM','bo_procedimento')
-    context.doAction('init_bo')]]></onSaveDocument>
+if 'btn_successivo' in context.REQUEST.keys():
+    context.doAction('init')
+    context.setItem('identificativo',context.getId())
+    return context.toNextForm()]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
@@ -18,12 +19,21 @@ if 'btn_next' in context.REQUEST.keys():
 <p><span class="plominoSubformClass">base_sub_pratica</span></p>
 <p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <p><span class="plominoSubformClass">base_sub_pe</span></p>
+<div class="v-content well"><fieldset class="scheduler-border" title="Richiedente">
+<legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
+<p><span class="plominoSubformClass">base_sub_fisica</span></p>
+<p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
+<p><span class="plominoSubformClass">base_sub_giuridica</span></p>
+<p><span class="plominoSubformClass">sub_condominio</span></p>
+<p><span class="plominoSubformClass">sub_comproprietari</span></p>
+<p><span class="plominoSubformClass">base_sub_delegato</span></p>
+</fieldset></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentTitle(context)]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
-      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentId(context.getItem('iol_tipo_app'),context)]]></DocumentId>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentId('pdc',context)]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
       <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
@@ -40,11 +50,11 @@ if 'btn_next' in context.REQUEST.keys():
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="iol_pe" title="Pratica inserita da istruttore" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">iol_pe</id>
-          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+        <element id="iol_tipo_app" title="Tipo Applicazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[1]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'pe']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

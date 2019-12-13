@@ -9,11 +9,11 @@
 ##parameters=
 ##title=
 ##
-ccp = ""
-ccb = "Conto di Tesoreria presso Banca d’Alba - Filiale di Diano Marina, Corso Roma 92 - Codice IBAN: IT18J 08530 49000 000490800441"
+ccp = "C.C.P. 26731166"
+ccb = "TESORERIA COMUNALE - Banca Carige Filiale di Moneglia - IBAN: IT 72 S 06175 32060 000005877090"
 causale = "Attestazione avvenuto pagamento dei diritti di segreteria - Nominativo - Indirizzo Immobile" 
 
-return 'Ricevuta del versamento effettuato presso: %s <br> In ogni caso con causale :"%s"' %(ccb,causale)
+return '1) %s <br> 2) %s <br> In ogni caso con causale :"%s"' %(ccp,ccb,causale)
 ]]></resource>
   </design>
 </plominodatabase>

@@ -45,7 +45,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('autorizzazione_paesaggistica_opt','')!='3' or context.getItem('procedimento_autorizzazione_paesaggistica_opt','') not in ['1','2']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="allegati_relazione_paesaggistica" title="Relazione paesaggistica / paesaggistica semplificata ai sensi del DPCM 12 Dicembre 2005" type="PlominoField">
+        <element id="allegati_relazione_paesaggistica" title="Relazione paesaggistica / paesaggistica semplificata" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegati_relazione_paesaggistica</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>

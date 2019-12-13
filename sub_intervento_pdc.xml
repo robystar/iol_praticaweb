@@ -9,9 +9,8 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
+		  <fieldset class="scheduler-border">
 <legend class="scheduler-border">QUALIFICAZIONE DELL'INTERVENTO</legend>
 <div>
 <span class="plominoLabelClass">qualificazione_intervento_opt</span><span class="plominoFieldClass">qualificazione_intervento_opt</span>
@@ -55,8 +54,8 @@
 </fieldset>
 <p><span class="plominoHidewhenClass">end:hw_no_variazione_essenziale</span></p>
 <p><span class="plominoSubformClass">sub_qualificazione_suap</span></p>
-</fieldset></div>
-]]></FormLayout>
+</fieldset>
+</div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
