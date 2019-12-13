@@ -13,17 +13,22 @@ from Products.CMFPlomino.PlominoUtils import DateToString,StringToDate,decimal
 
 for doc in context.getAllDocuments():
     if doc.getItem('elenco_pagamenti_dg',[])!=[]:
+        context.plone_log(doc.getId())
+
         newrows=[]
         rows=doc.getItem('elenco_pagamenti_dg',[])
-        for row in rows:
-            if row[3]:
-                row[3] = decimal(row[3])/100
-            if row[6]:
-                row[6] = DateToString(StringToDate(row[6],format="%Y%m%d"),format="%d/%m/%Y")
-            newrows.append(row)
-        doc.setItem('elenco_pagamenti_dg',newrows)
-        print doc.getId()
-        
+        try:
+            for row in rows:
+                if row[3]:
+                    row[3] = decimal(row[3])/100
+                if row[6]:
+                    row[6] = DateToString(StringToDate(row[6],format="%Y%m%d"),format="%d/%m/%Y")
+                newrows.append(row)
+            doc.setItem('elenco_pagamenti_dg',newrows)
+        except:
+            print doc.getId()
+
+print 'ok'
 return printed
 ]]></resource>
   </design>

@@ -11,19 +11,18 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
-<div class="row-fluid">
-<div class="span8">
+<div class="v-content well"><fieldset class="scheduler-border" title="Richiedente">
+<legend class="scheduler-border">DATI DELLA PRATICA</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_newdoc</span></p>
+<div>
 <span class="plominoLabelClass">iol_tipo_app</span><span class="plominoFieldClass">iol_tipo_app</span>
-</div>
-<div class="span4">
-<span class="plominoLabelClass">iol_tipo_proc</span><span class="plominoFieldClass">iol_tipo_proc</span>
-</div>
 </div>
 <p><span class="plominoHidewhenClass">start:hw_no_altrotipo</span></p>
 <div>
 <span class="plominoLabelClass">tipo_pratica_altro</span><span class="plominoFieldClass">tipo_pratica_altro</span>
 </div>
 <p><span class="plominoHidewhenClass">end:hw_no_altrotipo</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_newdoc</span></p>
 <div>
 <span class="plominoLabelClass">descrizione_intervento</span><span class="plominoFieldClass">descrizione_intervento</span>
 </div>
@@ -41,6 +40,7 @@
 <span class="plominoLabelClass">numero_pratica</span> <span class="plominoFieldClass">numero_pratica</span>
 </div>
 </div>
+</fieldset></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -67,7 +67,7 @@
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -107,54 +107,7 @@ else:
 </param>
 </params>
         </element>
-        <element id="iol_tipo_proc" title="Sportello:" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">iol_tipo_proc</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>selectionlistformula</name>
-<value><string>ll = ['''Seleziona|''','''Sportello Unico dell'Edilizia|sue''','''Sportello Unico delle Attività Produttive|suap''']
-if (context.getForm().getId() in ['frm_paesaggistica-ordinaria','frm_paesaggistica-accertamento','frm_paesaggistica-semplificata']) or (context.getItem('iol_tipo_app') in ['paesaggistica-ordinaria','paesaggistica-accertamento','paesaggistica-semplificata']):
-    ll=['''Sportello Unico dell'Edilizia|sue''']
-    
-ll = context.getParentDatabase().resources.config().get('sportello',ll)
-return ll</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
-        </element>
-        <element id="descrizione_intervento" title="Oggetto" type="PlominoField">
+        <element id="descrizione_intervento" title="Descrizione dell'intervento" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">descrizione_intervento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -325,7 +278,7 @@ return DateToString(context.getItem('data_presentazione'),format="%Y/%m/%d %H:%M
         </element>
         <element id="hw_no_newdoc" title="hw_no_newdoc" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_newdoc</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#not context.isNewDocument()]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[not context.isNewDocument()]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

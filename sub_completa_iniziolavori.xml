@@ -22,9 +22,9 @@
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
 </fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
+<fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
-</fieldset></div>
+</fieldset>
 <p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
@@ -35,7 +35,7 @@
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
-<p><span class="plominoSubformClass">sub_iniziolavori</span></p>
+<p><span class="plominoSubformClass">sub_intervento_iniziolavori</span></p>
 <p><span class="plominoSubformClass">sub_integrazione_pagamenti</span></p>
 <p><span class="plominoSubformClass">sub_esecutore_comunicazione</span></p>
 <p><span class="plominoSubformClass">sub_direttore_lavori_comunicazione</span></p>

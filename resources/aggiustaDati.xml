@@ -179,14 +179,10 @@ for doc in context.getAllDocuments():
         doc.setItem('iol_workflow','iol_sue_wf')
         doc.doAction('init')
         print doc.getId()
-        if doc.getItem('data_presentazione')!='':
+        if doc.getItem('data_invio_pw')!='':
             doc.doAction('presentazione')
-            if doc.getItem('data_protocollo')!='':
-                doc.doAction('protocolla')
-            else:
-                doc.doAction('richiedi_protocollo')
-            
-
+        if doc.getItem('data_protocollo')!='':
+            doc.doAction('protocolla')
 
             
 return printed
@@ -204,6 +200,8 @@ return printed
 ##title=
 ##
 for doc in context.getAllDocuments():
+    if 'settings' not in doc.getId():
+        doc.setItem('pagopa_enabled',1)
     
     frm = doc.getItem('Form')
     if frm=='frm__presentata':
@@ -211,6 +209,8 @@ for doc in context.getAllDocuments():
         doc.setItem('Form','frm_presentata')
 
         
+    
+
 return printed
 ]]></resource>
       <resource id="faqualcosa" title="" type="Script (Python)"><![CDATA[## Script (Python) "faqualcosa"
@@ -273,39 +273,6 @@ for doc in context.getAllDocuments():
         print doc.getId(),doc.getItem('iol_owner'),str(getOwner(doc))
     
 return printed
-]]></resource>
-      <resource id="99_AggiustaPRATICAWEB" title="" type="Script (Python)"><![CDATA[## Script (Python) "99_AggiustaPRATICAWEB"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=
-##title=
-##
-for doc in context.getAllDocuments():
-    
-    frm = doc.getItem('Form')
-    if frm=='frm_presentata':
-        print doc.getId()
-        doc.setItem('Form','frm__presentata')
-
-        
-return printed
-]]></resource>
-      <resource id="99_ImpostaTitolo" title="" type="Script (Python)"><![CDATA[## Script (Python) "99_ImpostaTitolo"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=
-##title=
-##
-for doc in context.getAllDocuments():
-    if doc.getItem('iol_tipo_app') in ['aua','pdc','idrogeologico-aut','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata']:  
-        doc.setItem('iol_titolo',1)
-return 'ok'
 ]]></resource>
     </resource>
   </design>

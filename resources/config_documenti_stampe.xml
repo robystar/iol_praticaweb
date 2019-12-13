@@ -41,12 +41,9 @@ comunicazione = {
    "sospensione-lavori":"Comunicazione di Sospensione Lavori|comunicazione_sospensione_lavori",
    "adempimento":"Comunicazione di Adempimento|comunicazione_adempimento",
    "pagamento":"Comunicazione di Pagamento|comunicazione_pagamento",
-   "sostituzione":"Comunicazione sostituzione|sostituzione",
-   "proroga":"Istanza di Proroga|proroga",   
-   "sospensione-lavori":"Comunicazione di sospensione lavori|sospensione-lavori",
-   "ripresa-lavori":"Comunicazione di ripresa lavori|ripresa-lavori",
+   "proroga-iniziolavori":"Istanza di Proroga Inizio Lavori|proroga_inizio_lavori",
+   "proroga-finelavori":"Istanza di Proroga Fine Lavori|proroga_fine_lavori",
    "tipomappale":"Deposito Tipi Mappale|deposito_tipomappale",
-   "finelavori-multipla": "Comunicazione di Fine Lavori|comunicazione_fine_lavori_multipla",
 
 }
 
@@ -81,14 +78,13 @@ if tipo_app in ['scia','scia2','pdc']:
 if doc.getItem('resp_sicurezza_nome'):
     elenco.append(autocertificazione_sicurezza+"&pdf=1")
    
-if context.config().get('autocertificazione_imprese'):    
-    if doc.getItem('lavori_economia_opt','') =='2':
-        elenco.append(autocertificazione_imprese %1)
-        esecutori = doc.getItem('altri_esecutori_grid', [['prova 2'],['prova 3'],['prova 4']])
-        s=autocertificazione_imprese
-        for i,v in enumerate(esecutori):
-            autocertificazione_imprese = s + "&grid=altri_esecutori_grid&grid_index=" + str(i)
-            elenco.append(autocertificazione_imprese %(i+2))
+#if doc.getItem('lavori_economia_opt','') =='2':
+#    elenco.append(autocertificazione_imprese %1)
+#    esecutori = doc.getItem('altri_esecutori_grid', [['prova 2'],['prova 3'],['prova 4']])
+#    s=autocertificazione_imprese
+#    for i,v in enumerate(esecutori):
+#        autocertificazione_imprese = s + "&grid=altri_esecutori_grid&grid_index=" + str(i)
+#        elenco.append(autocertificazione_imprese %(i+2))
          
 if tipo_app=='paesaggistica-ordinaria':
     opt = doc.getItem('relazione_paesaggistica')
@@ -106,18 +102,16 @@ if tipo_app=='paesaggistica-accertamento':
 if tipo_app=='cila':
     elenco.append("Dichiarazioni del Progettista|rel_dichiarazioni_progettista_cila&pdf=1")    
 
-elenco_tipo_relazione = context.config().get('relazione_descrittiva',['art22'])
+elenco_tipo_relazione = context.config().get('relazione_descrittiva',[])
 if tipo_app in elenco_tipo_relazione:
     elenco.append("Relazione descrittiva delle opere|rel_descrittiva_%s" %tipo_app)      
     
 #######AGGIUNGO I PARAMETRI 
-
-app=context.getParentDatabase().getId().replace('iol_','')
 for k in range(len(elenco)):
     if 'rel_' in elenco[k]:
-        elenco[k] = "%s&app=%s&grp=relazioni&form=sub_completa_%s" %(elenco[k],app,tipo_app)
+        elenco[k] = "%s&app=praticaweb&grp=relazioni&form=sub_completa_%s" %(elenco[k],tipo_app)
     else:
-        elenco[k] = "%s&app=%s&grp=autorizzazione&form=sub_completa_%s" %(elenco[k],app,tipo_app)
+        elenco[k] = "%s&app=praticaweb&grp=autorizzazione&form=sub_completa_%s" %(elenco[k],tipo_app)
         
 return elenco
 ]]></resource>

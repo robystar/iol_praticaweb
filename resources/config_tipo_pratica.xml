@@ -22,11 +22,8 @@ for tipo in elenco:
 ##AGGIUNGO QUELLI NON ATTUALI ??????
 
 
+tipo_pratica.append('Altro tipo pratica (vecchie importate ...... boh|altro')
 
-tipo_pratica.append('Vincolo Idrogeologico|vi')
-tipo_pratica.append('Comunicazione art 21 (importata)|com')
-tipo_pratica.append('Pratica edilizia|pe')
-tipo_pratica.append('Altro tipo pratica (vecchie importate|altro')
 
 return tipo_pratica
 ]]></resource>

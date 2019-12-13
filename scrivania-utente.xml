@@ -249,8 +249,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[msg='''Per attivare le pratiche importate vai qui: <a href="../frm_associa_pratica">Associa pratica</a>'''
 
 if context.getParentDatabase().resources.config().get('associa_pratica'):
-    return msg
-]]></Formula>
+    return msg]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

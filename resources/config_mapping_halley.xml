@@ -12,7 +12,6 @@
 dz = {
  
   "Procedimento": {
-    "CodiceFiscale":"fisica_cf",
     "DataProtocollo":"data_protocollo",
     "DataInizioLavori":"data_inizio_lavori",
     "DataFineLavori":"data_fine_lavori",
@@ -438,15 +437,12 @@ dz = {
     "paesaggistica-ordinaria":"BB.AA.",
     "paesaggistica-semplificata":"A.P.SE",
     "paesaggistica-accertamento":"COM.PA",
-    "art21":"C.VARI",    
-    "art22":"REG.22",
-    "art48":"REG.48",
+    "art21":"ED.LIB",    
+    "art22":"C.VARI",
+    "art48":"C.VARI",
     "parere":"PREVEN",
     "lr25":"C.VARI",
-    "aua":"AUA",
-    "dsi":"D.SISM",
-    "idrogeologico-aut":"IDRO",
-    "idrogeologico-scia":"IDRO",
+    "aua":"AUA"
   }
 
 }

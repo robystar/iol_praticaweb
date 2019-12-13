@@ -11,7 +11,7 @@
 ##
 for doc in context.getAllDocuments():
     if doc.getItem('iol_workflow'):
-        doc.setItem('iol_workflow','iol_sue_wf')
+        doc.setItem('iol_workflow','iol_sue_test_wf')
         doc.doAction('init')
 return 'ok'
 ]]></resource>

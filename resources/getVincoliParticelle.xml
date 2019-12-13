@@ -1,59 +1,50 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <resource id="getVincoliParticelle" title="Elenco della zonizzazione" type="Script (Python)"><![CDATA[## Script (Python) "getVincoliParticelle"
+    <resource id="getVincoliParticelle" title="Elenco della zonizzazione (La Spezia)" type="Script (Python)"><![CDATA[## Script (Python) "getVincoliParticelle"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=comune='',sezioni='',fogli='',particelle=''
-##title=Elenco della zonizzazione
+##parameters=comune='E463',sezioni='',fogli='',particelle=''
+##title=Elenco della zonizzazione (La Spezia)
 ##
 # -*- coding: utf-8 -*-
 from Products.CMFPlomino.PlominoUtils import json_dumps,StringToDate,DateToString,open_url,asUnicode
 from iol.document.plomino_utils import parseXML, requests_post, requests_get
 from Products.CMFPlomino.PlominoUtils import json_dumps
 
-def getElencoZone(pianificazione='', comune='',sezione='',foglio='',particella=''):
-    ret=[]
-    text=''
-    andFilters = []
-    andFilters.append("comune='%s'" %comune)
-    andFilters.append("mappale='%s'" %particella)
-    andFilters.append("foglio='%s'" %foglio)
-    txtMap ="Foglio:%s Mappale:%s" %(foglio,particella)
-    if sezione:
-        andFilters.append("sezione='%s'" %sezione)
-        txtMap = ("Sezione:%s " %sezione) + txtMap
-    sFilter = "(" + " AND ".join(andFilters) + ")"
-    pianificazione = 'Pianificazione_%s' %pianificazione
+#SERVIZIO DESTINAZIONE URBANISTICA FABIO
+wsUrl = 'http://127.0.0.1/cduspezia/cdu.php'
 
-    if pianificazione in context.zsql:
-        sVincolo=''
-        lblVincolo=''
-        for res in context.zsql[pianificazione](filter = sFilter).dictionaries():
-            text = "%s: %s" %(res['tavola'],res['zona'])
-            if res['sigla']:
-                text = text + " (%s)"%res['sigla']
-            if lblVincolo!=res['vincolo']:
-                lblVincolo=res['vincolo']
-                if sVincolo:
-                    lblVincolo = '\r\n' + lblVincolo
-                text = lblVincolo + '\n' + text
-                
-            sVincolo = sVincolo + text + '\n'
+def getElencoZone(sezione='',foglio='',particella=''):
+    try:
+        resp = requests_post(wsUrl, data=dict(fg=foglio,map=particella))
+        ret = "Nessuna zona trovata"
+        if resp["status_code"] == 200:
+            data = asUnicode(resp["text"])
+            data =  parseXML(resp["text"])
+            if "Destinazione" in data:
+                if "mappale" in data["Destinazione"]:
+                    rows = [data["Destinazione"]['mappale']]
+                    for key in ['variante2','variante1','puc','vincoli']:
+                        if key in data["Destinazione"]:
+                            if isinstance(data["Destinazione"][key],basestring):
+                                rows.append(data["Destinazione"][key])
+                            else:
+                                rows = rows + data["Destinazione"][key]
+                    ret= "\n".join(rows)
+    except Exception as err:
+        ret="Errore: %s" %err
             
-        if sVincolo:  
-            return txtMap + '\n' + sVincolo
-        else:
-            return ''
+                
+    return ret
 
 ####code
 sezioni = sezioni.split(',')
 fogli = fogli.split(',')
 particelle = particelle.split(',')
-pUrbanistica=[]
-pTerritoriale=[]
+elencoZone=[]
 
 for index in range(len(particelle)):
     if len(sezioni)>1:
@@ -62,26 +53,10 @@ for index in range(len(particelle)):
         sezione=''
     foglio = fogli[index]
     particella = particelle[index]
+    elencoZone.append(getElencoZone(sezione,foglio,particella))
     
-    sUrbanistica = getElencoZone(pianificazione='urbanistica',comune=comune,sezione=sezione,foglio=foglio,particella=particella)
-    if sUrbanistica:
-        pUrbanistica.append(sUrbanistica)
-        
-    sTerritoriale = getElencoZone(pianificazione='territoriale',comune=comune,sezione=sezione,foglio=foglio,particella=particella)
-    if sTerritoriale:
-        pTerritoriale.append(sTerritoriale)
     
-ret=None
-if pUrbanistica:    
-    ret = "Pianificazione Urbanistica:\n\r"
-    ret = ret + "==================\n\r".join(pUrbanistica)
-    ret = ret + "\n\r"
-    
-if pTerritoriale:
-    ret = ret + "Pianificazione Territoriale:\n\r"
-    ret = ret + "==================\n\r".join(pTerritoriale)    
-        
-return ret or "=================="
+return "\n==================\n".join(elencoZone);
 ]]></resource>
   </design>
 </plominodatabase>

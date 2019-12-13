@@ -14,52 +14,55 @@ from Products.CMFPlomino.PlominoUtils import urlencode, asList, htmlencode
 
 class pagopa:
     enabled = 1
-    importi_bloccati = 0
-    url = "http://pagopa.istanze-online.it/SUE-CAndora-M1/richiediIuv"
+    importi_bloccati = 1
+    url = "http://pagopa-sp.istanze-online.it/SUE-ClaSpezia-M1/richiediIuv"
+    # url = "https://sue.istanze-online.it/SUE-Claspezia-M1/richiediIuv"
     url_avviso = ""
     editform = "frm_pagopa"
-    user = "pagopa@istanze-online.it"
-    #user = "pagopa-user"
+    # user = "pagopa@istanze-online.it"
+    user = "pagopa-user"
     passwd = "pagopa-user$$"
     metodi_pagamento = [{'codice': 'BOLLETTINO', 'label': 'Differita - Bollettino'},
                         {'codice': 'Online', 'label': 'Online'}]
     codici_pagamento = {
-        'DIRITT': {'codice': 'DIRITT', 'label': 'Diritti di segreteria - Edilizia, Urbanistica, SUAP', 'ordine': 1,'scadenza': 'Alla presentazione'},
-        'CONCSANZ': {'codice': 'CONCSANZ', 'label': 'Proventi derivanti da concessioni edilizie e da sanzioni previste dalla disciplina urbanistica', 'ordine': 2, 'scadenza': 'Alla presentazione'},
-        'URBA': {'codice': 'URBA', 'label': 'Urbanistica - Oneri derivanti da L.R. 16/2008 art. 38 comma 6bis', 'ordine': 3, 'scadenza': ''},
-        'SANAT': {'codice': 'SANAT', 'label': 'Proventi derivanti da concessioni o autorizzazioni in sanatoria ai sensi D.L. 269/2003', 'ordine': 4, 'scadenza': ''},
-        # 'URBA07':{'codice':'URBA07','label':'Quota 7% Urbanizzazione','ordine':'2','scadenza':''},
-        # 'URBA10':{'codice':'URBA10','label':'Quota 10% Urbanizzazione','ordine':'2','scadenza':''},
-        # 'COND':{'codice':'COND','label':'Oneri Condono','ordine':'10','scadenza':''},
-        # 'SANZ':{'codice':'SANZ','label':'Sanzione Danno Ambientale','ordine':'10','scadenza':''},
-        # 'COND3':{'codice':'COND3','label':'Oneri Terzo Condono','ordine':'10','scadenza':''},
-
-        # 'SVINC':{'codice':'SVINC','label':'Svincolo Obblighi Convenzionali','ordine':'10','scadenza':''},
-        # 'CAUZ':{'codice':'CAUZ','label':'Deposito Cauzionale','ordine':'10','scadenza':''},
-        # 'CIVICI':{'codice':'CIVICI','label':'Proventi Rilascio Targhette','ordine':'20','scadenza':''},
-        # 'TOPONOM':{'codice':'TOPONOM','label':'Diritti Istruttoria Toponomastica','ordine':'20','scadenza':''},
-        # 'ISTR':{'codice':'ISTR','label':'Diritti Istruttoria Ambiente','ordine':'20','scadenza':''},
-        # 'RIMB':{'codice':'RIMB','label':'Rimborsi e Recuperi Diversi','ordine':'20','scadenza':''},
+        'SEGRETERIA': {'codice': 'SEGRETERIA', 'label': 'Diritti di Segreteria', 'ordine': 1,'scadenza': 'Alla presentazione'},
+        'BOLLIED': {'codice': 'BOLLIED', 'label': 'Marche da Bollo', 'ordine': 2, 'scadenza': 'Alla presentazione'},
+        'BOLLI': {'codice': 'BOLLI', 'label': 'Diritti di Segreteria (Bolli Euro 0,26 e Euro 0.57)', 'ordine': 20, 'scadenza': ''},
+        'URBA': {'codice': 'URBA', 'label': 'Oneri o Sanzioni', 'ordine': 3, 'scadenza': ''},
+        'CART': {'codice': 'CART', 'label': 'Modulistica', 'ordine': 4, 'scadenza': ''},
+        'URBA07':{'codice':'URBA07','label':'Quota 7% Urbanizzazione','ordine':5,'scadenza':''},
+        'URBA10':{'codice':'URBA10','label':'Quota 10% Urbanizzazione','ordine':5,'scadenza':''},
+        'COND':{'codice':'COND','label':'Oneri Condono','ordine':10,'scadenza':''},
+        'SANZ':{'codice':'SANZ','label':'Sanzione Danno Ambientale','ordine':10,'scadenza':''},
+        'COND3':{'codice':'COND3','label':'Oneri Terzo Condono','ordine':10,'scadenza':''},
+        'SVINC':{'codice':'SVINC','label':'Svincolo Obblighi Convenzionali','ordine':10,'scadenza':''},
+        'CAUZ':{'codice':'CAUZ','label':'Deposito Cauzionale','ordine':10,'scadenza':''},
+        'CIVICI':{'codice':'CIVICI','label':'Proventi Rilascio Targhette','ordine':20,'scadenza':''},
+        'TOPONOM':{'codice':'TOPONOM','label':'Diritti Istruttoria Toponomastica','ordine':20,'scadenza':''},
+        'ISTR':{'codice':'ISTR','label':'Diritti Istruttoria Ambiente','ordine':20,'scadenza':''},
+        'RIMB':{'codice':'RIMB','label':'Rimborsi e Recuperi Diversi','ordine':20,'scadenza':''},
     }
     tipi_pratica = {
-        'cil': {'label':'CIL','ordine':1,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'cila': {'label':'CILA','ordine':2,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'scia': {'label':'SCIA','ordine':3,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'scia2': {'label':'SCIA2','ordine':4,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'pdc': {'label':'PDC','ordine':5,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'paesaggistica-ordinaria': {'label':'Paes. ordinaria','ordine':6,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'paesaggistica-accertamento': {'label':'Paes. accertamento','ordine':7,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'paesaggistica-semplificata': {'label':'Paes. semplificata','ordine':8,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'aua': {'label':'AUA','ordine':9,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'sca': {'label':'SCA','ordine':10,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'art22': {'label':'Art.22','ordine':11,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'art48': {'label':'Art.48','ordine':12,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'cil': {'label':'CIL','ordine':1,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 51.65, 'URBA':0, 'CARTELLE':0 }},
+        'cila': {'label':'CILA','ordine':2,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 51.65, 'URBA':0, 'CARTELLE':0 }},
+        'scia': {'label':'SCIA','ordine':3,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': -1, 'URBA':0, 'CARTELLE':0 }},
+        'scia2': {'label':'SCIA2','ordine':4,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': -1, 'URBA':0, 'CARTELLE':0 }},
+        'pdc': {'label':'PDC','ordine':5,'pagamenti':{'BOLLIED': 16, 'SEGRETERIA': -1, 'URBA':0, 'CARTELLE':0 }},
+        'paesaggistica-ordinaria': {'label':'Paes. ordinaria','ordine':6,'pagamenti':{'BOLLIED': 16, 'SEGRETERIA': -1, 'URBA':0, 'CARTELLE':0 }},
+        'paesaggistica-accertamento': {'label':'Paes. accertamento','ordine':7,'pagamenti':{'BOLLIED': 16, 'SEGRETERIA': -1, 'URBA':0, 'CARTELLE':0 }},
+        'paesaggistica-semplificata': {'label':'Paes. semplificata','ordine':8,'pagamenti':{'BOLLIED': 16, 'SEGRETERIA': -1, 'URBA':0, 'CARTELLE':0 }},
+        'aua': {'label':'AUA','ordine':9,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 51.65, 'URBA':0, 'CARTELLE':0 }},
+        'sca': {'label':'SCA','ordine':10,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 51.65, 'URBA':0, 'CARTELLE':0 }},
+        'art22': {'label':'Art.22','ordine':11,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 51.65, 'URBA':0, 'CARTELLE':0 }},
+        'art48': {'label':'Art.48','ordine':12,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 51.65, 'URBA':0, 'CARTELLE':0 }},
         'iniziolavori': {'label':'Inizio lavori','ordine':13,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 0, 'URBA':0, 'CARTELLE':0 }},
-        'finelavori': {'label':'Fine lavori','ordine':14,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'integrazione': {'label':'Integrazione','ordine':15,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'idrogeologico-aut': {'label':'AUT vincolo idrogeologico','ordine':16,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'idrogeologico-scia': {'label':'SCIA vincolo idrogeologico','ordine':17,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
-        'dsi': {'label':'Denuncia Sismica Integrata','ordine':18,'pagamenti':{'DIRITT': 0, 'CONCSANZ': 0, 'URBA':0, 'SANAT':0 }},
+        'finelavori': {'label':'Fine lavori','ordine':14,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 0, 'URBA':0, 'CARTELLE':0 }},
+        'integrazione': {'label':'Integrazione','ordine':15,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 0, 'URBA':0, 'CARTELLE':0 }},
+        'idrogeologico-aut': {'label':'AUT vincolo idrogeologico','ordine':16,'pagamenti':{'BOLLIED': 16, 'SEGRETERIA': 150, 'URBA':0, 'CARTELLE':0 }},
+        'idrogeologico-scia': {'label':'SCIA vincolo idrogeologico','ordine':17,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 50, 'URBA':0, 'CARTELLE':0 }},
+        'dsi': {'label':'Denuncia Sismica Integrata','ordine':18,'pagamenti':{'BOLLIED':32, 'SEGRETERIA': 0, 'URBA':0, 'CARTELLE':0 }},
+        'deposito-impianti': {'label':'Deposito Certificazioni/Impianti/Relazioni','ordine':19,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 51.65, 'URBA':0, 'CARTELLE':0 }},
+        'lr25': {'label':'Cambio di destinazione d\'uso','ordine':20,'pagamenti':{'BOLLIED': 0, 'SEGRETERIA': 0, 'URBA':0, 'CARTELLE':0 }},
     }
     importi_field = "elenco_pagamenti"
     pagamenti_field = "pagamenti_online"
@@ -111,32 +114,112 @@ class pagopa:
             return self.codici_pagamento[k]['codice']
         else:
             return ''
+        
+        
+    def calcola_singolo_importo(self,tipo,k,volume):
+        pagam = self.tipi_pratica[tipo]['pagamenti']
+        if pagam[k]==0:
+            importo = 0
+        elif pagam[k] ==-1:
+            importo = self.calcolo_formula(k,int(volume))
+            
+        else:
+            importo = pagam[k]
+        
+        return importo      
+    
+    
+    #Versione della calcola importi che tiene conto solo delle pratica corrente
 
+#    def calcola_importi(self, doc):
+#        tipo = doc.getItem('iol_tipo_app', '')
+#        volume = doc.getItem('immobile_volumetria', 0)
+#        pagam = self.tipi_pratica[tipo]['pagamenti']
+#        res = dict()
+#        i = 1
+#        pagamento = 0
+#        identificativo = doc.getItem('numero_pratica') or doc.getId()
+#        for k in pagam:
+#            if i > 1:
+#                pagamento = 1
+#            
+#            causale = ("%s della pratica %s" % (self.getLabel(k), identificativo))[0:140]
+#            causale = causale.replace('/','-')
+#            if pagam[k]==0:
+#                pass
+#            elif pagam[k] ==-1:
+#                importo = self.calcolo_formula(k,int(volume))
+#                d = {'importo%d' %i:importo,'tipoPagamento%d' % i:k, 'causale%d' %i: causale,'pagamento_%d' %i:pagamento}
+#                res.update(d)
+#                i+=1
+#            else:
+#                d = {'importo%d' %i:pagam[k],'tipoPagamento%d' % i:k, 'causale%d' %i:causale,'pagamento_%d' %i:pagamento}
+#                res.update(d)
+#                i+=1
+#        return res
+
+    #Versione della calcola importi che tiene conto degli importi delle pratiche collegate
     def calcola_importi(self, doc):
         tipo = doc.getItem('iol_tipo_app', '')
-        volume = doc.getItem('immobile_volumetria', 0)
+        volume = doc.getItem('immobile_volumetria_intervento',doc.getItem('immobile_volumetria',0))
+        
+        richiesta_pagam_dsi = str(doc.getItem('interventi_strutturali_opt',''))
+        richiesta_pagam_paes = str(doc.getItem('procedimento_autorizzazione_paesaggistica_opt',''))
+        richiesta_pagam_idro = str(doc.getItem('vincolo_idrogeologico_opt'))
         pagam = self.tipi_pratica[tipo]['pagamenti']
+
+        pagam_ps = self.tipi_pratica['paesaggistica-semplificata']['pagamenti']
+        pagam_po = self.tipi_pratica['paesaggistica-ordinaria']['pagamenti']
+        pagam_ds = self.tipi_pratica['dsi']['pagamenti']
+        pagam_as = self.tipi_pratica['dsi']['pagamenti']
+        pagam_ia = self.tipi_pratica['idrogeologico-aut']['pagamenti']
+        #pagam_is = self.tipi_pratica['idrogeologico-scia']['pagamenti']
         res = dict()
         i = 1
         pagamento = 0
         identificativo = doc.getItem('numero_pratica') or doc.getId()
+        volume_collegato = volume
         for k in pagam:
             if i > 1:
                 pagamento = 1
+                
+            causale = ("Istanza %s : %s" % (identificativo,self.getLabel(k)))[0:140]
+            importo = self.calcola_singolo_importo(tipo,k,volume)
             
-            causale = ("%s della pratica %s" % (self.getLabel(k), identificativo))[0:140]
-            causale = causale.replace('/','-')
-            if pagam[k]==0:
-                pass
-            elif pagam[k] ==-1:
-                importo = self.calcolo_formula(k,int(volume))
-                d = {'importo%d' %i:importo,'tipoPagamento%d' % i:k, 'causale%d' %i: causale,'pagamento_%d' %i:pagamento}
-                res.update(d)
+                
+            #Se contestualmente richiedo una paesaggistica aggiungo gli importi
+            # Valore 1 Semplificata
+            if not tipo in ['paesaggistica-semplificata','paesaggistica-ordinaria']:
+                if richiesta_pagam_paes == '1':
+                    #causale = '%s, %s' %(causale,'Aut. Paesaggistica collegata')
+                    importo += self.calcola_singolo_importo('paesaggistica-semplificata',k,volume_collegato)
+                #Valore 2 Ordinaria
+                elif richiesta_pagam_paes == '2':
+                    #causale = '%s, %s' %(causale,'Aut. Paesaggistica collegata')
+                    importo += self.calcola_singolo_importo('paesaggistica-ordinaria',k,volume_collegato)
+                else:
+                    pass
+            #Se contestualmente richiedo una dsi aggiungo gli importi
+            #Valore 3 Denucia Sismica Integrata
+            if not tipo in ['dsi']:
+                if richiesta_pagam_dsi == '3':
+                    #causale = '%s, %s' %(causale,'Denuncia Sismica collegata')
+                    importo += self.calcola_singolo_importo('dsi',k,volume_collegato)
+                #Valore 4 Autorizzazione Sismica
+                elif richiesta_pagam_dsi == '4':
+                    #causale = '%s, %s' %(causale,'Aut. Sismica collegata')
+                    importo += self.calcola_singolo_importo('dsi',k,volume_collegato)
+                else:
+                    pass
+            #Se contestualmente richiedo una Autorizzazione IdroGeologica aggiungo gli importi
+            #Valore 3,5 Aut. IdroGeologica    
+            #if not tipo in ['idrogeologico-aut']:
+                if richiesta_pagam_idro in ['3','5']:
+                    importo += self.calcola_singolo_importo('idrogeologico-aut',k,volume_collegato)
+            d = {'importo%d' %i:importo,'tipoPagamento%d' % i:k, 'causale%d' %i: causale[0:145],'pagamento_%d' %i:pagamento}
+            if importo > 0:
                 i+=1
-            else:
-                d = {'importo%d' %i:pagam[k],'tipoPagamento%d' % i:k, 'causale%d' %i:causale,'pagamento_%d' %i:pagamento}
                 res.update(d)
-                i+=1
         return res
 
     def calcolo_formula(self,tipo_pagamento, prm):
@@ -181,7 +264,7 @@ class pagopa:
         for i in [1, 2, 3, 4, 5]:
             doc.removeItem('importo_%d' % i)
             doc.removeItem('causale_%d' % i)
-            doc.removeItem('tipoPagamento_%d' % i)        
+            doc.removeItem('tipoPagamento_%d' % i)
         return url
 
     # Metodo che setta il campo elenco pagamenti
@@ -194,10 +277,12 @@ class pagopa:
         for r in rr:
             if r[1] == 'OK':
                 result.append(r)
+        
         for i in [1, 2, 3, 4, 5]:
             importo = doc.getItem('importo_%d' % i, 0)
             causale = doc.getItem('causale_%d' % i, '')
             tipoPag = doc.getItem('tipoPagamento_%d' % i, '')
+            
             if importo > 0:
                 result.append([
                     '',
@@ -212,6 +297,10 @@ class pagopa:
                 ])
 
         doc.setItem(self.importi_field, result)
+        #for i in [1, 2, 3, 4, 5]:
+        #    doc.removeItem('importo_%d' % i)
+        #    doc.removeItem('causale_%d' % i)
+        #    doc.removeItem('tipoPagamento_%d' % i)
         return 1
 
     #Metodo che setta informazioni dello IUV sul campo pagamento e sul campo importi da versare una volta effettuata la richiesta di IUV
@@ -285,9 +374,9 @@ class pagopa:
         result['metodo_pagamento'] = doc.getItem('metodo_pagamento', '')
 
         result['foreign_id'] = doc.getId()
-        result['foreign_url'] = doc.absolute_url()
-        result['redirect_url'] = doc.absolute_url()
-        result['callback_url'] = self.callback_url % db.aq_parent.absolute_url()
+        result['foreign_url'] = doc.absolute_url().replace('suelaspezia.regione.liguria.it','www.istanze.spezianet.it')
+        result['redirect_url'] = doc.absolute_url().replace('suelaspezia.regione.liguria.it','www.istanze.spezianet.it')
+        result['callback_url'] = self.callback_url % db.aq_parent.absolute_url().replace('suelaspezia.regione.liguria.it','www.istanze.spezianet.it')
         application = db.id
         result['application'] = application
         result['foreign_action'] = 'InviaPratica'
@@ -301,7 +390,7 @@ class pagopa:
 
     def backurl(self, doc):
         if doc:
-            return self.back_url % doc.absolute_url()
+            return self.back_url % doc.absolute_url().replace('suelaspezia.regione.liguria.it','www.istanze.spezianet.it')
         else:
             return ''
 

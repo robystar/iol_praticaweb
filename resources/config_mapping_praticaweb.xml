@@ -9,10 +9,11 @@
 ##parameters=doc=None,test=0
 ##title=
 ##
-db = context.getParentDatabase()
+#db = context.getParentDatabase()
+db = context.aq_parent
 if isinstance(doc, basestring):
     doc = db.getDocument(doc)
-  
+    
 
 diz = {
   "richiedente": {
@@ -727,7 +728,7 @@ diz = {
         "documenti":"",
         "iter":""
     },
-    "wsUrl" : "http://webservice.gisweb.it/wspraticaweb/andora.wsPraticaweb.php?wsdl",
+    "wsUrl" : "http://webservice.gisweb.sigmater/wspraticaweb/spezia.wsPraticaweb.php?wsdl",
     "resp_proc" : '',
     'resp_uo' : '',
     'resp_ia' : '',
@@ -735,22 +736,20 @@ diz = {
 }
 
 
-if doc and doc.portal_type == 'PlominoDocument':    
+if doc and doc.portal_type == 'PlominoDocument':     
     app = doc.getItem('iol_tipo_app','')
     sportello = doc.getItem('iol_tipo_proc','')
     intervento = doc.getItem('qualificazione_intervento_opt','')
-    
     ###########################################
     # Responsabile del Procedimento
     ###########################################
-    
-    diz['resp_proc'] = '24'
-    
+    # Nel caso di Deposito Certificazioni o PDC/SCIA in Variante cerco il responsabile del procedimento della pratica collegata
+    if (app in ['deposito-impianti']) or (app in ['scia'] and intervento in ['4','5']) or (app in ['pdc'] and intervento in ['7']):
+        diz["resp_proc"]='-1'
     ###########################################
     # Responsabile Unità Operativa
     ###########################################
-    
-        
+     
     ###########################################
     # Istruttore Tecnico
     ###########################################  
@@ -759,8 +758,7 @@ if doc and doc.portal_type == 'PlominoDocument':
     ###########################################
     # Istruttore Amministrativo
     ########################################### 
-    
-    
+        
     
 return diz
 ]]></resource>

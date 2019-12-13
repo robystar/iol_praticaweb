@@ -10,36 +10,39 @@
 ##title=
 ##
 dz = dict(
+
+wsMailJ = "http://10.95.10.42/wsPECMail.asmx?WSDL",
  
 versionenuova=1,                   
          
 pagopa = True, #PagoPA Abilitato
 
-pgreplica = True, #replica con plomino.replication
+pgreplica = True,
 
-provider='praticaweb', #Per abilitare BO Praticaweb impostare praticaweb
+provider='praticaweb',
 
 doc_settings = "0-settings", #id del documento dove sono salvati i settings  
 #ws servizio backoffice pratiche        
-wsUrl = "http://webservice.gisweb.it/wspraticaweb/demo.wsPraticaweb.php?wsdl",
-  
+wsUrl = "http://webservice.gisweb.sigmater/wspraticaweb/spezia.wsPraticaweb.php?wsdl",
+   
 #elenco dei comuni in combo    
-elenco_comuni = ['Andora|A278','Cesio|C578','Chiusanico|C657','Stellanello|I947','Testico|L152'],
-comune_default = "A278",
+elenco_comuni = ['La Spezia|E463'],
+comune_default = "E463",
 
 #indirizzi per il modello di stampa
-comune_indirizzo_1 = "All'Unione dei Comuni Valmerula e Montarosio",
-comune_indirizzo_2 = "Via Cavour, 94",
-comune_indirizzo_3 = "17051 Andora (SV)",
+comune_indirizzo_1 = "Comune Della Spezia",
+comune_indirizzo_2 = "Piazza Europa n. 1",
+comune_indirizzo_3 = "19124 - La Spezia",
+
+#flag se presente la sezione catastale
+sezione_catasto = False,
+mappale_bloccato = True,
+
 
 #assegnazione automatica itruttore
 #assegnazione_istruttore = 'giorgia.maggiani@comune.sp.it',
 #assegnazione automatica rup
 #assegnazione_rup = 'giorgia.maggiani@comune.sp.it', 
-
-
-#flag se presente la sezione catastale
-sezione_catasto = True,
 
 #per limitare la combo sportello
 #sportello = ['''Sportello Unico dell'Edilizia|sue'''],
@@ -47,29 +50,19 @@ sezione_catasto = True,
 #per avere autocoplete anche in castato urbano
 #autocomplete_nceu = True,
 
-
-#set di allegati autocertificazione imprese
-autocertificazione_imprese = True,
-
 #tipo di pratica senza pagamento diritti di segreteria come da tabella in documenti
 no_diritti_segreteria = ['cil','art21'],
 
 #se il bollo viene pagato con PagoPa
 paga_bollo = 'PagoPa',
 
-#tipi ti pratica che pagano il bollo
-#paga_bollo = ['pdc','paesaggistica-accertamento','paesaggistica-ordinaria','paesaggistica-semplificata','idrogeologico-aut','dsi'],
-
-#XSPEZIA
-#volumetria_pagamenti = "<strong>Attenzione il volume dell'intervento determina gli importi dei diritti di segreteria</strong> nella seguente misura da 0 a 30: 51.65 fino a 100: 103.29 fino a 300: 154.94 fino a 500: 258.23 fino a 1000: 413.17 oltre 1000: 516.46",
+volumetria_pagamenti = "<h5><strong>Volumetria dell'intervento : indicare il volume dell'intervento soggetto a contributo di costruzione ,mettere 0  se non soggetto. I diritti di segreteria variano in base alla volumetria nella seguente misura:</strong></h5> da 0 a 30: 51.65 fino a 100: 103.29 fino a 300: 154.94 fino a 500: 258.23 fino a 1000: 413.17 oltre 1000: 516.46",
 
 #tipo di pratica con relazione descrittiva aggiuntiva
 #relazione_descrittiva = ['cila','scia'],
 
-volumetria_pagamenti = "<strong>Attenzione l'importo dei diritti di segreteria è calcolato in automatico in base al valore inserito in Volume dell'intervento nella seguente misura:</strong> da 0 a 30: 51.65 fino a 100: 103.29 fino a 300: 154.94 fino a 500: 258.23 fino a 1000: 413.17 oltre 1000: 516.46",
-
 #stampa della ricevuta di presentazione
-ricevuta_presentazione = False,
+ricevuta_presentazione = True,
 
 #stampa attestazione di intervento ed opere in aree vincolate escluse dall'autorizzazione paesaggistica (RAPALLO)
 #attestazione_intervento = True,
@@ -79,8 +72,19 @@ vincoli_particelle = ['cila','scia','scia2','pdc','lr25'],
 
 #vincoli della form sub_intervento_paesaggistica/dichiarazione_intervento_opt, se non presente usa elenco default
 vincoli_paesaggistica = [
-    "D.M. 11.06.1954;|1",
-    "D.M. 27.07.1962 - D.M. 24.04.1985;|2"
+    "D.M. 03/08/1959 modificato dal D.M. 14/12/1974 n.vinc. Sopr.070588  (rid.vinc. zona costiera)|12",              
+    "D.M. 02/04/1951 n.vinc. Sopr.070431 (piazzale sopr.aquedotto);|1",
+    "D.M. 04/04/1951 n.vinc. Sopr.070432 (piazz. chiesa Marinasco);|2",
+    "D.M. 09/04/1951 n.vinc. Sopr.070433 (zona zona tra via XXVII marzo e via xx settembre);|3",
+    "D.M. 30/06/1955 n.vinc. Sopr.070434 (zona della foce);|4",
+    "D.M. 12/08/1955 n.vinc. Sopr.070435 (zona della Fondega);|5",
+    "D.M. 03/03/1966 n.vinc. Sopr.070437 (zona coll. in loc.Migliarina,cornice verde);|6",
+    "D.M. 14/12/1974 n.vinc. Sopr.070588-070438 (rid.vinc. zona costiera-S Bartolomeo);|7",
+    "D.M. 24/04/1985 n.vinc. Sopr.070424-070440 (int.vinc. zona costiera-Ameglia Monte Marcello);|8",
+    "D.M. 29/04/49 PIAZZA CHIODO;|9",
+    "D.M. 03/01/50 ZONA PANORAMICA CASTELLO DI SAN GIORGIO;|10",
+    "D.M. 13/01/50 ZONA PANORAMICA TRA VIA DEI COLLI E VIA 27 MARZO;|10",
+    "D.M. 29/04/50 GIARDINI PUBBLICI;|11"                         
 ],
 
 destinazione_uso = [
@@ -109,7 +113,6 @@ tipo_pratica = [
     'Paes. ordinaria|paesaggistica-ordinaria',
     'Paes. accertamento|paesaggistica-accertamento',
     'Paes. semplificata|paesaggistica-semplificata', 
-    'AUA|aua',
     'SCA|sca',
     'Art.22|art22',
     'Art.48|art48',
@@ -119,28 +122,8 @@ tipo_pratica = [
     'AUT vincolo idrogeologico|idrogeologico-aut',
     'SCIA vincolo idrogeologico|idrogeologico-scia',
     'Denuncia Sismica Integrata|dsi',
-    'Pratica importata|pe'
+    'Deposito tipi mappale|tipomappale',
 ],
-
-#elenco per nuova pratica da backoffice
-nuova_pratica = [
-    'Comunicazione Inizio Lavori - CIL|cil',
-    'Comunicazione Inizio Lavori Asseverata - CILA|cila',
-    '''Segnalazione Certificata di Inizio Attivita' - SCIA|scia''',
-    '''Segnalazione Certificata di Inizio Attivita' Alternativa al Permesso di Costruire|scia2''',
-    'Istanza di Permesso di Costruire|pdc',
-    'Richiesta di Autorizzazione Paesaggistica con procedura ordinaria|paesaggistica-ordinaria',
-    'Richiesta di Autorizzazione Paesaggistica con procedura semplificata|paesaggistica-semplificata', 
-    '''Istanza di Accertamento di Compatibilita' Paesaggistica|paesaggistica-accertamento''',
-    '''Segnalazione Certificata di Agibilita'|sca''',
-    '''Regolarizzazione sotto il profilo amministrativo ai sensi dell'art 22|art22''',
-    '''Regolarizzazione opere in difformita' ai sensi dell'art. 48|art48''',
-    'Richiesta di Autorizzazione in merito al Vincolo Idrogeologico|idrogeologico-aut',
-    '''Segnalazione Certificata di Inizio Attivita' per opere edilizie in zona soggetta a vincolo idrogeologico|idrogeologico-scia''',
-    'Denuncia Sismica Integrata|dsi',
-    'Altro tipo di pratica|pe'
-],
-
 
 elenco_albo =[
     'Ordine degli Architetti|architetti',
@@ -153,13 +136,14 @@ elenco_albo =[
 ],
 
 #responsabile protezione dati
-#rpd = "Avv.MARCO GIURI - via Cosseria, 28 - 50129 Firenze - mail: dpo@comune.sp.it - Pec: consolve@pec.it (http://www.comune.laspezia.it/Comune/PROTEZIONE_DATI/protezione_dati.html)",
+rpd = "Avv.MARCO GIURI - via Cosseria, 28 - 50129 Firenze - mail: dpo@comune.sp.it - Pec: consolve@pec.it (http://www.comune.laspezia.it/Comune/PROTEZIONE_DATI/protezione_dati.html)",
 
 #ws di protocollazione automatica
-#wsprotocollo = "protocolla_documento",
-wsprotocollo = "test-protocollo", #nome  della bw test-protocollo per prove
+wsprotocollo = "protocolla_documento",
+#wsprotocollo = "test-protocollo" #nome  della bw test-protocollo per prove
 
-base_url="https://demo.istanze-online.it",
+base_url="https://www.istanze.spezianet.it",
+
 )
 
 if test=='1':
@@ -167,6 +151,8 @@ if test=='1':
     return json_dumps(dz)
 else:
     return dz
+
+return dz
 ]]></resource>
   </design>
 </plominodatabase>

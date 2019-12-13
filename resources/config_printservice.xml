@@ -10,8 +10,8 @@
 ##title=
 ##
 diz={
-     "convertpdf": "http://webservice.gisweb.it/printservice-bb/xDoc2Pdf.php",
-     "createdocx": "http://webservice.gisweb.it/printservice-bb/xCreateDocument.php",
+     "convertpdf": "http://127.0.0.1/printServices/xDoc2Pdf.php",
+     "createdocx": "http://127.0.0.1/printServices/xCreateDocument.php",
      "template_folder": "modelli", 
 }
 return diz
