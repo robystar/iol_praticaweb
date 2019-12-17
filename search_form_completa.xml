@@ -1,28 +1,15 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_taglioalberi_tecnici" title="Tecnici" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">frm_taglioalberi_tecnici</id>
+    <element id="search_form_completa" title="Risultato della Ricerca" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">search_form_completa</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
-if 'btn_next' in context.REQUEST.keys():
-    return context.toNextForm()
-elif 'btn_save' in context.REQUEST.keys():
-    context.setItem('Form','frm_presentata')]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoSubformClass">base_sub_toolbar</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">Progettista</legend>
-<p><span class="plominoSubformClass">sub_progettista</span></p>
-</fieldset></div>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">Esecuzione delle opere</legend> <span class="plominoSubformClass">sub_esecutore</span>
-</fieldset></div>
-]]></FormLayout>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<p><span class="plominoFieldClass">testo</span></p>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
@@ -30,7 +17,7 @@ elif 'btn_save' in context.REQUEST.keys():
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
       <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
-      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
       <SearchView type="Products.Archetypes.Field.StringField"/>
@@ -41,8 +28,29 @@ elif 'btn_save' in context.REQUEST.keys():
 ++resource++iol.document/css/bootstrap-accessibile.min.css
 ++resource++iol.document/css/bootstrap-responsive.min.css
 ++resource++iol.document/css/iol.css
+++resource++iol.document/css/iolmap.css
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="testo" title="testo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">testo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db = context.getParentDatabase()
+view = db.restrictedTraverse('pw-leggi-procedimento')
+prot = context.REQUEST.get('protocollo')
+anno = context.REQUEST.get('anno')
+html = view.leggiProcedimento(protocollo=prot,anno=anno)
+return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
     </element>
   </design>
 </plominodatabase>
