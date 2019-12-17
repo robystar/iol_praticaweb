@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_proroga_iniziolavori" title="sub_proroga_iniziolavori" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_proroga_iniziolavori</id>
+    <element id="sub_allegati_lr36" title="sub_allegati_lr36" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_lr36</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -9,19 +9,24 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">RICHIESTA PROROGA INIZIO LAVORI</legend>
-<div class="row-fluid"><div class="span4">
-<span class="plominoLabelClass">data_proroga_iniziolavori</span><span class="plominoFieldClass">data_proroga_iniziolavori</span>
-</div></div>
-</fieldset></div>]]></FormLayout>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_no_scheda_tecnica_lr36</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Dichiarazione ai fini della verifica di assoggettabilità a Valutazione Ambientale Strategica (VAS) relativa all'intervento</legend>
+<div>
+<span class="plominoLabelClass">allegato_scheda_tecnica_lr36</span><span class="plominoFieldClass">allegato_scheda_tecnica_lr36</span>
+</div>
+<p><a href="modelli/praticaweb/relazioni/scheda-tecnica-lr36" target="_blank" title="Dichiarazione VAS"><span class="label"><img src="pdf.png"> Scarica il modello per dichiarazione VAS </span></a></p>
+</fieldset></div>
+<p><span class="plominoHidewhenClass">end:hw_no_scheda_tecnica_lr36</span></p>
+]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
@@ -36,38 +41,26 @@
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="data_proroga_iniziolavori" title="Data" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">data_proroga_iniziolavori</id>
-          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+        <element id="allegato_scheda_tecnica_lr36" title="Dichiarazione VAS" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_scheda_tecnica_lr36</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat": "dd/mm/yy"}'
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"7","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 7Mb"
 ''']]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>format</name>
-<value><string>%d/%m/%Y</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
+        </element>
+        <element id="hw_no_scheda_tecnica_lr36" title="hw_no_scheda_tecnica_lr36" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_scheda_tecnica_lr36</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','lr36')!='lr36']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

@@ -15,10 +15,7 @@
         context.doAction('pagamento_presentazione')
     
 elif context.REQUEST.get('btn_send') or context.REQUEST.get('btn_send_force'): 
-    context.doAction('presentazione')
-
-
-]]></onSaveDocument>
+    context.doAction('presentazione')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>

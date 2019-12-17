@@ -424,7 +424,7 @@ return layersSettings["layersList"]</string></value>
         </element>
         <element id="hw_no_vincoli" title="hw_no_vincoli" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_vincoli</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in context.getParentDatabase().resources.config().get('vincoli_particelle',['cila','scia','scia2','pdc','lr25'])]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in context.getParentDatabase().resources.config().get('vincoli_particelle',['cila','scia','scia2','pdc','lr25','lr36'])]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="indirizzo_search" title="indirizzo_search" type="PlominoField">

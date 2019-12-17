@@ -10,8 +10,7 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
-<span class="plominoLabelClass">oggetto_avvio_procedimento</span><span class="plominoFieldClass">oggetto_avvio_procedimento</span>
-<div class="row-fluid">
+<span class="plominoLabelClass">oggetto_avvio_procedimento</span><span class="plominoFieldClass">oggetto_avvio_procedimento</span><div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">allegato_comunicazione_avvio_procedimento</span><span class="plominoFieldClass">allegato_comunicazione_avvio_procedimento</span>
 </div>

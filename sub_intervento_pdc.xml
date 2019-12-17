@@ -16,10 +16,8 @@
 <div>
 <span class="plominoLabelClass">qualificazione_intervento_opt</span><span class="plominoFieldClass">qualificazione_intervento_opt</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_specificare</span>
-<p><span class="plominoLabelClass">qualificazione_intervento_specificare</span><span class="plominoFieldClass">qualificazione_intervento_specificare</span></p>
-<span class="plominoHidewhenClass">end:hw_no_specificare</span>
-<p><span class="plominoHidewhenClass">start:hw_no_deroga_urbanistica</span></p>
+<span class="plominoHidewhenClass">start:hw_no_specificare</span><p><span class="plominoLabelClass">qualificazione_intervento_specificare</span><span class="plominoFieldClass">qualificazione_intervento_specificare</span></p>
+<span class="plominoHidewhenClass">end:hw_no_specificare</span><p><span class="plominoHidewhenClass">start:hw_no_deroga_urbanistica</span></p>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">In particolare si chiede di derogare:</legend>
 <div class="row-fluid">
