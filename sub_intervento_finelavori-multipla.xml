@@ -311,7 +311,7 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('varianti_lavori_opt') not in ['1','4']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
-        <element id="dichiarazione_art8_opt" title="Dichiarazione 1???" type="PlominoField">
+        <element id="dichiarazione_art8_opt" title="Dichiarazione 1: Rispondenza alle prescrizioni per il contenimento del consumo di energia" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">dichiarazione_art8_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -353,7 +353,7 @@ return 'Comunicazione di fine lavori della pratica %s protocollo n. %s anno %s' 
 </param>
 </params>
         </element>
-        <element id="dichiarazione_energetica_opt" title="Dichiarazione 2???" type="PlominoField">
+        <element id="dichiarazione_energetica_opt" title="Dichiarazione 2: Conformità delle opere realizzate rispetto al progetto e alle sue eventuali varianti" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">dichiarazione_energetica_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>

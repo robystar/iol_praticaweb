@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_search_soggetti" title="Informazioni sui soggetti" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_search_soggetti</id>
+    <element id="sub_search_soggetti_result" title="Informazioni sui soggetti" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_search_soggetti_result</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>

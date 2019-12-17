@@ -8,13 +8,18 @@ db=context.getParentDatabase()
 
 if 'esito' in data and data['esito']=='OK' and 'azioni' in data:
     doc=db.getDocument(docId)
-    #per replica su db
-    if doc:
-        doc.save(onSaveEvent=False)
-    azioni=data['azioni'].split(',')
+    
+    #fix eventuali valori duplicati
+    v=data['azioni'].split(',')
+    azioni=[]
+    for azione in v:
+        if not azione in azioni:
+            azioni.append(azione)
+    
     for azione in azioni:
         if doc and doc.isActionSupported(azione):
-            doc.doAction(azione)]]></Content>
+            doc.doAction(azione)    
+]]></Content>
       <RunAs type="Products.Archetypes.Field.StringField">OWNER</RunAs>
     </element>
   </design>
