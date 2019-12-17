@@ -3,7 +3,14 @@
     <element id="app-settings" title="Impostazioni generali" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">app-settings</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
-      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[#### TODO 
+#FAR PASSARE SOLO AMMINISTRATORI E RUOLO SETTATO IN PLOMINO
+return '' 
+
+
+### AGGIUNGERE IL RUOLO DI PLOMINO PER L'ACCESSO AI SETTINGS
+if not '[Amministratore impostazioni]' in context.getUserRoles():
+    return '<h3>Non sei autorizzato ad accedere al contenuto della pagina <a href="%s"><< ritorna</a></h3>' %context.getParentDatabase().absolute_url()]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[from iol.document.plomino_utils import setPlominoRole
 setPlominoRole(context, None, 'PlominoAuthor', context.getItem('grp_richiedenti'))

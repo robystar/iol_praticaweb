@@ -38,7 +38,6 @@ comunicazione = {
    "idrogeologico-aut": "Autorizzazione opere vincolo idrogeologico|autorizzazione_idrogeologico",
    "deposito-impianti": "Istanza di deposito impianti|deposito_impianti",
    "pas":"Procedura Abilitativa Semplificata|procedura_abilitativa_semplificata",
-   "sospensione-lavori":"Comunicazione di Sospensione Lavori|comunicazione_sospensione_lavori",
    "adempimento":"Comunicazione di Adempimento|comunicazione_adempimento",
    "pagamento":"Comunicazione di Pagamento|comunicazione_pagamento",
    "sostituzione":"Comunicazione sostituzione|sostituzione",
@@ -46,8 +45,6 @@ comunicazione = {
    "sospensione-lavori":"Comunicazione di sospensione lavori|sospensione-lavori",
    "ripresa-lavori":"Comunicazione di ripresa lavori|ripresa-lavori",
    "tipomappale":"Deposito Tipi Mappale|deposito_tipomappale",
-   "finelavori-multipla": "Comunicazione di Fine Lavori|comunicazione_fine_lavori_multipla",
-
 }
 
 
@@ -80,7 +77,8 @@ if tipo_app in ['scia','scia2','pdc']:
        
 if doc.getItem('resp_sicurezza_nome'):
     elenco.append(autocertificazione_sicurezza+"&pdf=1")
-   
+
+    
 if context.config().get('autocertificazione_imprese'):    
     if doc.getItem('lavori_economia_opt','') =='2':
         elenco.append(autocertificazione_imprese %1)
@@ -105,10 +103,14 @@ if tipo_app=='paesaggistica-accertamento':
  
 if tipo_app=='cila':
     elenco.append("Dichiarazioni del Progettista|rel_dichiarazioni_progettista_cila&pdf=1")    
+    
+if tipo_app=='finelavori':
+    elenco.append("Dichiarazioni del Progettista|rel_dichiarazioni_progettista_fine_lavori&pdf=1")      
 
 elenco_tipo_relazione = context.config().get('relazione_descrittiva',['art22'])
+
 if tipo_app in elenco_tipo_relazione:
-    elenco.append("Relazione descrittiva delle opere|rel_descrittiva_%s" %tipo_app)      
+    elenco.append("Relazione descrittiva per opere interne alle costruzioni|rel_descrittiva_%s" %tipo_app)      
     
 #######AGGIUNGO I PARAMETRI 
 

@@ -9,8 +9,8 @@ db=context.getParentDatabase()
 if 'esito' in data and data['esito']=='OK' and 'azioni' in data:
     doc=db.getDocument(docId)
     #per replica su db
-    if doc:
-        doc.save(onSaveEvent=False)
+    #if doc:
+    #    doc.save(onSaveEvent=False)
     azioni=data['azioni'].split(',')
     for azione in azioni:
         if doc and doc.isActionSupported(azione):

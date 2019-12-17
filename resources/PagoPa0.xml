@@ -1,0 +1,19 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="PagoPa0" title="" type="Script (Python)"><![CDATA[## Script (Python) "PagoPa0"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+doc=context.getDocument(doc)
+doc.setItem('pagopa_enabled',0)
+ll = doc.getItem('iol_menu_list')
+doc.setItem('Form',ll[len(ll)-2])
+return 'ok'
+]]></resource>
+  </design>
+</plominodatabase>

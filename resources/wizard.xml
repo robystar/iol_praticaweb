@@ -399,10 +399,7 @@ menus['front'] = [
     {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
 ]
 menus['back'] = [
-    {"label": "Comunicazione di inizio lavori", "frm": "bo_procedimento", "title": "Dati anagrafici dei richiedenti"},
-    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"},     
-    {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
-    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}     
+    {"label": "Comunicazione di inizio lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
 ]
 
 return menus
@@ -425,13 +422,8 @@ menus['front'] = [
     {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
 ]
 menus['back'] = [
-    {"label": "Comunicazione di fine lavori", "frm": "bo_procedimento", "title": "Dati anagrafici dei richiedenti"},
-    {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"},     
-    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"},     
-    {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
-    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}     
+    {"label": "Comunicazione di fine lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
 ]
-
 return menus
 ]]></resource>
       <resource id="integrazione" title="" type="Script (Python)"><![CDATA[## Script (Python) "integrazione"
@@ -1047,125 +1039,6 @@ menus['front'] = [
 menus['back'] = [
     {"label": "Comunicazione di sospensione lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
 ]
-
-return menus
-]]></resource>
-      <resource id="finelavori-multipla" title="" type="Script (Python)"><![CDATA[## Script (Python) "finelavori-multipla"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=
-##title=
-##
-menus=dict()
-
-menus['front'] = [
-    {"label": "Dati del dichiarante", "frm": "frm_finelavori-multipla", "title": "Dati anagrafici dei richiedenti"},
-    {"label": "Intervento", "frm": "frm_finelavori-multipla_intervento", "title": "Tipo di intervento"}, 
-    {"label": "Documentazione allegata", "frm": "frm_finelavori-multipla_allegati", "title": "Documentazione allegata"},
-    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
-]
-menus['back'] = [
-    {"label": "Comunicazione di fine lavori", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
-]
-return menus
-]]></resource>
-      <resource id="lr36" title="" type="Script (Python)"><![CDATA[## Script (Python) "lr36"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=
-##title=
-##
-menus=dict()
-
-menus['front'] = [
-    {"label": "Richiedenti", "frm": "frm_lr25", "title": "Dati anagrafici dei richiedenti"}, 
-    {"label": "Ubicazione", "frm": "frm_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
-    {"label": "Intervento", "frm": "frm_lr25_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Allegati", "frm": "frm_lr25_allegati", "title": "Documentazione allegata"}, 
-    {"label": "Completata", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}  
-]
-
-menus['back'] = [
-    {"label": "Procedimento", "frm": "bo_procedimento", "title": "Dati del procedimento"}, 
-    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"}, 
-    {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
-    {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}, 
-]
-
-return menus
-]]></resource>
-      <resource id="taglioalberi" title="" type="Script (Python)"><![CDATA[## Script (Python) "taglioalberi"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=
-##title=
-##
-menus=dict()
-
-menus['front'] = [
-    {"label": "Richiedenti", "frm": "frm_taglioalberi", "title": "Dati anagrafici dei richiedenti"}, 
-    {"label": "Ubicazione", "frm": "frm_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
-    {"label": "Tecnici", "frm": "frm_cil_tecnici", "title": "Tecnici incaricati"}, 
-    {"label": "Allegati", "frm": "frm_cil_allegati", "title": "Documentazione allegata"}, 
-    {"label": "Completata", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
-]
-
-menus['back'] = [
-    {"label": "Procedimento", "frm": "bo_procedimento", "title": "Dati del procedimento"}, 
-    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"}, 
-    {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
-    {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
-    {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}
-]
-return menus
-]]></resource>
-      <resource id="dia" title="" type="Script (Python)"><![CDATA[## Script (Python) "dia"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=
-##title=
-##
-menus=dict()
-
-menus['front'] = [
-    {"label": "Richiedenti", "frm": "frm_scia", "title": "Dati anagrafici dei richiedenti"}, 
-    {"label": "Ubicazione", "frm": "frm_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
-    {"label": "Intervento", "frm": "frm_scia_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Tecnici", "frm": "frm_tecnici", "title": "Tecnici incaricati"}, 
-    {"label": "Sicurezza", "frm": "frm_sicurezza", "title": "Sicurezza nei luogi di lavoro"}, 
-    {"label": "Asseverata", "frm": "frm_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
-    {"label": "Vincoli", "frm": "frm_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"}, 
-    {"label": "Oneri", "frm": "frm_scia_oneri", "title": "Contributo di costruzione e oneri di urbanizzazione"}, 
-    {"label": "Allegati", "frm": "frm_allegati", "title": "Documentazione allegata"}, 
-    {"label": "Completata", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
-]
-
-menus['back'] = [
-    {"label": "Procedimento", "frm": "bo_procedimento", "title": "Dati del procedimento"}, 
-    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"}, 
-    {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
-    {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
-    {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
-    {"label": "Inizio / Fine lavori", "frm": "bo_lavori", "title": "Inizio / Fine lavori"},  
-    {"label": "Asseverata", "frm": "bo_asseverata", "title": "Dichiarazioni di asseverazione 1"}, 
-    {"label": "Vincoli", "frm": "bo_vincoli", "title": "Dichiarazioni di asseverazione 2 - Vincoli"},     
-    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}   
-]
-
 
 return menus
 ]]></resource>

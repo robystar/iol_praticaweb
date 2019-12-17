@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_completa_lr36" title="sub_completa_lr36" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_completa_lr36</id>
+    <element id="sub_completa_proroga-iniziolavori" title="sub_completa_proroga-iniziolavori" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_proroga-iniziolavori</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -22,6 +22,9 @@
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
 </fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
+</fieldset>
 <p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
@@ -32,59 +35,7 @@
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
-<p><span class="plominoSubformClass">sub_firma_digitale</span></p>
-<p><span class="plominoSubformClass">sub_consenso_pec</span></p>
-<p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazione</span>
-</fieldset></div>
-<p><span class="plominoSubformClass">sub_intervento_lr36</span></p>
-<p><span class="plominoSubformClass">sub_immobile_destinazione</span></p>
-<p><span class="plominoSubformClass">sub_parti_comuni</span></p>
-<p><span class="plominoSubformClass">sub_dati_geometrici</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">Progettista delle opere architettoniche</legend> <span class="plominoSubformClass">base_sub_progettista</span>
-</fieldset></div>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">Direttore dei lavori delle opere architettoniche</legend> <span class="plominoSubformClass">sub_direttore</span>
-</fieldset></div>
-<div class="v-content well"><p><span class="plominoSubformClass">sub_progettista_strutt</span></p></div>
-<div class="v-content well"><p><span class="plominoSubformClass">sub_direttore_strutt</span></p></div>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border required">Altri Tecnici incaricati</legend>
-<p><span class="plominoSubformClass">sub_altri_tecnici</span></p>
-</fieldset></div>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">Esecuzione delle opere</legend> <span class="plominoSubformClass">sub_esecutore</span>
-</fieldset></div>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">TUTELA DELLA SALUTE E DELLA SICUREZZA NEI LUOGHI DI LAVORO</legend>
-<p><span class="plominoSubformClass">sub_sicurezza</span></p>
-</fieldset></div>
-<p><span class="plominoSubformClass">sub_asseverata_barriere_architettoniche</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_sicurezza_impianti</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_consumi_energetici</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_impatto_acustico</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_materiali_risulta</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_prevenzione_incendi</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_amianto</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_conformita_igienicosanitaria</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_interventi_strutturali</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_qualita_ambientale</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_scarichi_idrici</span></p>
-<p><span class="plominoSubformClass">sub_asseverata_urbanizzazione_primaria</span></p>
-<h4 class="alert-info">DICHIARAZIONI RELATIVE AI VINCOLI</h4>
-<h5 class="alert-info">TUTELA STORICO-PAESAGGISTICA</h5>
-<p><span class="plominoSubformClass">sub_vincoli_paesaggistica</span></p>
-<p><span class="plominoSubformClass">sub_vincoli_soprintendenza</span></p>
-<p><span class="plominoSubformClass">sub_vincoli_area_protetta</span></p>
-<h5 class="alert-info">TUTELA ECOLOGICA/AMBIENTALE</h5>
-<p><span class="plominoSubformClass">sub_vincoli_idrogeologico</span></p>
-<p><span class="plominoSubformClass">sub_vincoli_idraulico</span></p>
-<p><span class="plominoSubformClass">sub_vincoli_natura2000</span></p>
-<p><span class="plominoSubformClass">sub_vincoli_cimiteriale</span></p>
-<p><span class="plominoSubformClass">sub_vincoli_incidente</span></p>
-<p><span class="plominoSubformClass">sub_vincoli_dg</span></p>
+<p><span class="plominoSubformClass">sub_proroga_iniziolavori</span></p>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
@@ -93,7 +44,7 @@
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>

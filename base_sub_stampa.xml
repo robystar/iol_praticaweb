@@ -681,7 +681,7 @@ return destinatari]]></Formula>
           <id type="Products.Archetypes.Field.StringField">rpd_value</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[rpd='''Ai sensi dell’art. 13 del GDPR è possibile rivolgersi al RPD nominato dal Comune per eventuali chiarimenti in materia di tutela dati personali.'''
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[rpd='''Studio Cavaggioni Scarl - E-Mail: scarl@studiocavaggioni.it Soggetto individuato quale referente per il titolare/responsabile Avv. Tarocco Anna Telefono: 045.7614844 E-mail: anna.tarocco@studiocavaggioni.it'''
 return context.getParentDatabase().resources.config().get('rpd',rpd)]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>

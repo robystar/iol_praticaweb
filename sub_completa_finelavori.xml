@@ -22,9 +22,9 @@
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
 </fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
+<fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
-</fieldset></div>
+</fieldset>
 <p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
@@ -38,9 +38,13 @@
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">PROGETTISTA</legend> <span class="plominoSubformClass">base_sub_progettista</span>
 </fieldset></div>
-<div class="v-content well"><fieldset class="scheduler-border">
+<div class="v-content well">
+
+<fieldset class="scheduler-border">
 <legend class="scheduler-border">DIRETTORE LAVORI</legend> <span class="plominoSubformClass">base_sub_direttore</span>
-</fieldset></div>
+</fieldset>
+</div>
+
 <p><span class="plominoSubformClass">sub_intervento_finelavori</span></p>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>

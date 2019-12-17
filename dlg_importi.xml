@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_sospensione_lavori" title="sub_sospensione_lavori" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_sospensione_lavori</id>
+    <element id="dlg_importi" title="Nuovo Importo" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">dlg_importi</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -9,27 +9,32 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">COMUNICAZIONE SOSPENSIONE LAVORI</legend>
-<div class="row-fluid"><div class="span3">
-<span class="plominoLabelClass">data_sospensione_lavori</span><span class="plominoFieldClass">data_sospensione_lavori</span>
-</div></div>
-<div>
-<span class="plominoLabelClass">sospensione_motivazioni</span><span class="plominoFieldClass">sospensione_motivazioni</span>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="row-fluid">
+<div class="span9">
+<span class="plominoLabelClass">tipo</span><span class="plominoFieldClass">tipo</span>
 </div>
-<div>
-<span class="plominoLabelClass">sospensione_comunicazione</span><span class="plominoFieldClass">sospensione_comunicazione</span>
+<div class="span3">
+<span class="plominoLabelClass">importo</span><span class="plominoFieldClass">importo</span>
 </div>
-<div>
-<span class="plominoLabelClass">sospensione_dichiarazione</span><span class="plominoFieldClass">sospensione_dichiarazione</span>
 </div>
-</fieldset></div>]]></FormLayout>
+<div class="row-fluid">
+<div class="span9">
+<span class="plominoLabelClass">causale</span><span class="plominoFieldClass">causale</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">scadenza</span><span class="plominoFieldClass">scadenza</span>
+</div>
+</div>
+<p><span class="plominoFieldClass">azione</span></p>
+<p><span class="plominoFieldClass">codimp</span></p>
+]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
-      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">BOTTOM</ActionBarPosition>
       <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
@@ -45,42 +50,9 @@
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="data_sospensione_lavori" title="In data:" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">data_sospensione_lavori</id>
-          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
-data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat": "dd/mm/yy"}'
-''']]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>format</name>
-<value><string>%d/%m/%Y</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
-        </element>
-        <element id="sospensione_motivazioni" title="Sospensione motivata da:" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">sospensione_motivazioni</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+        <element id="tipo" title="Tipo Pagamento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
@@ -95,37 +67,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <value><array><data>
 <value><struct>
 <member>
-<name>size</name>
-<value><string>4</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
-        </element>
-        <element id="sospensione_comunicazione" title="Il sottoscritto:" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">sospensione_comunicazione</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
 <name>dynamictableparam</name>
 <value><string>'bPaginate': true,
 'bLengthChange': true,
@@ -138,26 +79,20 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>["provvederà a comunicare la ripresa degli stessi, consapevole che l'interruzione non comporta il differimento dell'efficacia temporale del titolo edilizio, così come prevista dall'Art. 15 del DPR 380/2001|1"]</string></value>
-</member>
-</struct></value>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<value><string>return context.getParentDatabase().resources.config_pagopa().get('codice_pagamento')</string></value>
 </member>
 </struct></value>
 </data></array></value>
 </param>
 </params>
         </element>
-        <element id="sospensione_dichiarazione" title="dichiara:" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">sospensione_dichiarazione</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+        <element id="importo" title="Importo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">importo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-NUMBERFieldEdit</FieldEditTemplate>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -168,25 +103,103 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "dateFormat":
 <value><array><data>
 <value><struct>
 <member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
+<name>format</name>
+<value><string>€ %1.2f</string></value>
 </member>
 </struct></value>
 <value><struct>
 <member>
-<name>selectionlistformula</name>
-<value><string>["di adottare tutti gli accorgimento necessari a garantire la sicurezza l'igiene e il decoro pubblico del cantiere, nonché di ottemperare a tutto quanto previsto dal comma 6 dell'Art. 22 del vigente REC in relazione ad una interruzione dei lavori da protrarsi per oltre 30 giorni.|1"]</string></value>
+<name>type</name>
+<value><string>DECIMAL</string></value>
 </member>
 </struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="scadenza" title="Scadenza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">scadenza</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['Presentazione']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[if not 'PlominoEditor' in context.getCurrentUserRights():
+    return 'readonly']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
 <value><struct>
 <member>
 <name>widget</name>
-<value><string>CHECKBOX</string></value>
+<value><string>TEXT</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="causale" title="Causale" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">causale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['maxlength="70"']]></HTMLAttributesFormula>
+        </element>
+        <element id="codimp" title="codimp" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">codimp</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>HIDDEN</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="azione" title="azione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">azione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['presentazione']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>HIDDEN</string></value>
 </member>
 </struct></value>
 </data></array></value>
