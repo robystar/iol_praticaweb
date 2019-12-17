@@ -42,11 +42,8 @@ def getElencoZone(pianificazione='', comune='',sezione='',foglio='',particella='
                 text = lblVincolo + '\n' + text
                 
             sVincolo = sVincolo + text + '\n'
-            
-        if sVincolo:  
-            return txtMap + '\n' + sVincolo
-        else:
-            return ''
+  
+        return txtMap + '\n' + sVincolo
 
 ####code
 sezioni = sezioni.split(',')
@@ -62,26 +59,16 @@ for index in range(len(particelle)):
         sezione=''
     foglio = fogli[index]
     particella = particelle[index]
+    pUrbanistica.append(getElencoZone(pianificazione='urbanistica',comune=comune,sezione=sezione,foglio=foglio,particella=particella))
+    pTerritoriale.append(getElencoZone(pianificazione='territoriale',comune=comune,sezione=sezione,foglio=foglio,particella=particella))
     
-    sUrbanistica = getElencoZone(pianificazione='urbanistica',comune=comune,sezione=sezione,foglio=foglio,particella=particella)
-    if sUrbanistica:
-        pUrbanistica.append(sUrbanistica)
-        
-    sTerritoriale = getElencoZone(pianificazione='territoriale',comune=comune,sezione=sezione,foglio=foglio,particella=particella)
-    if sTerritoriale:
-        pTerritoriale.append(sTerritoriale)
     
-ret=None
-if pUrbanistica:    
-    ret = "Pianificazione Urbanistica:\n\r"
-    ret = ret + "==================\n\r".join(pUrbanistica)
-    ret = ret + "\n\r"
+ret = "Pianificazione Urbanistica:\n\r"
+ret = ret + "==================\n\r".join(pUrbanistica)
+ret = ret + "\n\rPianificazione Territoriale:\n\r"
+ret = ret + "==================\n\r".join(pTerritoriale)    
     
-if pTerritoriale:
-    ret = ret + "Pianificazione Territoriale:\n\r"
-    ret = ret + "==================\n\r".join(pTerritoriale)    
-        
-return ret or "=================="
+return ret
 ]]></resource>
   </design>
 </plominodatabase>

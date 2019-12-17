@@ -9,11 +9,11 @@
 ##parameters=
 ##title=
 ##
-ccp = "C.C.P. 13298179 intestato a: Comune di Savona - Servizio di Tesoreria Comunale"
-ccb = "Conto di Tesoreria presso Banca Carige Spa - Codice IBAN: IT 91Y06 1751 0610 0000 0259 7290"
-causale = "Settore 4 - Oneri/Diritti di segreteria - Nominativo - Indirizzo Immobile - Tipo di pratica di riferimento" 
+ccp = ""
+ccb = "Conto di Tesoreria presso Banca d’Alba - Filiale di Diano Marina, Corso Roma 92 - Codice IBAN: IT18J 08530 49000 000490800441"
+causale = "Attestazione avvenuto pagamento dei diritti di segreteria - Nominativo - Indirizzo Immobile" 
 
-return 'Ricevuta del versamento effettuato presso: <br> 1) %s <br> 2) %s <br> In ogni caso con causale :"%s"' %(ccp,ccb,causale)
+return 'Ricevuta del versamento effettuato presso: %s <br> In ogni caso con causale :"%s"' %(ccb,causale)
 ]]></resource>
   </design>
 </plominodatabase>

@@ -1,8 +1,8 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_completa_tipomappale" title="sub_completa_tipomappale" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_completa_tipomappale</id>
-      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+    <element id="sub_completa_pe" title="sub_completa_pel" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_pe</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Plomino_Readers',[context.getCurrentUserId(),'[Praticaweb Readers]'])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
@@ -10,12 +10,6 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
-<p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
-</fieldset></div>
-<p><span class="plominoHidewhenClass">end:hw_no_comunicazione_digitale</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DI PROTOCOLLAZIONE</legend>
@@ -24,13 +18,32 @@
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
 <p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">DATI DEL RICHIEDENTE</legend>
+<legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
 <p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
 <p><span class="plominoSubformClass">base_sub_giuridica</span></p>
+<p><span class="plominoSubformClass">sub_condominio</span></p>
+<p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
-<div class="v-content well"><p><span class="plominoSubformClass">sub_ubicazione_mappali</span></p></div>
+<div class="v-content well">
+<p><span class="plominoSubformClass">base_sub_pe</span></p>
+</div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazione</span>
+</fieldset></div>
+<p><span class="plominoSubformClass">sub_immobile_destinazione</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Progettista</legend>
+<p><span class="plominoSubformClass">sub_progettista</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Esecuzione delle opere</legend> <span class="plominoSubformClass">sub_esecutore</span>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">TUTELA DELLA SALUTE E DELLA SICUREZZA NEI LUOGHI DI LAVORO</legend>
+<p><span class="plominoSubformClass">sub_sicurezza</span></p>
+</fieldset></div>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

@@ -1,21 +1,19 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_finelavori-multipla_intervento" title="finelavori intervento" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">frm_finelavori-multipla_intervento</id>
+    <element id="bo_parere" title="bo_parere" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">bo_parere</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
-if 'btn_next' in context.REQUEST.keys():
-    return context.toNextForm()
-elif 'btn_save' in context.REQUEST.keys():
-    context.setItem('Form','frm_presentata')]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
-<p><span class="plominoSubformClass">base_sub_toolbar</span></p>
-<p><span class="plominoSubformClass">sub_intervento_finelavori-multipla</span></p>
+<p><span class="plominoSubformClass">bo_parere_richiesta</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_risposta</span></p>
+<p><span class="plominoSubformClass">bo_parere_risposta</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_risposta</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -37,6 +35,13 @@ elif 'btn_save' in context.REQUEST.keys():
 ++resource++iol.document/css/iol.css
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="hw_no_risposta" title="hw_no_risposta" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_risposta</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('data_invio_risposta')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
     </element>
   </design>
 </plominodatabase>

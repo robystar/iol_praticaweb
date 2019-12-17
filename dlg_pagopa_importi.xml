@@ -35,8 +35,7 @@
 <span class="plominoLabelClass">codimp</span><span class="plominoFieldClass">codimp</span>
 </div>
 <div class="span5">
-<br>
-<div class="alert alert-info">Lasciare vuoto in fase di inserimento di nuovi importi</div>
+<br><div class="alert alert-info">Lasciare vuoto in fase di inserimento di nuovi importi</div>
 </div>
 </div>
 ]]></FormLayout>

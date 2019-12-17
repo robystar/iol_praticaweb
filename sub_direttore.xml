@@ -13,9 +13,7 @@
 <div class="iol-toolbar"></div>
 <div><span class="plominoFieldClass">direttore_opt</span></div>
 <p><span class="plominoHidewhenClass">start:hw_no_direttore_avviso</span></p>
-<div class="alert alert-error">
-<h5>Con la scelta di questa opzione si dichiara di essere consapevole che l’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi al direttore dei lavori.<br>L’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi del direttore dei lavori e la sua sottoscrizione</h5>
-</div>
+<div class="alert alert-error"><h5>Con la scelta di questa opzione si dichiara di essere consapevole che l’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi al direttore dei lavori.<br>L’efficacia del titolo abilitativo è condizionata alla obbligatoria comunicazione dell’inizio dei lavori comprensiva di tutti i dati relativi del direttore dei lavori e la sua sottoscrizione</h5></div>
 <p><span class="plominoHidewhenClass">end:hw_no_direttore_avviso</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_direttore_lavori</span></p>
 <p><span class="plominoSubformClass">base_sub_direttore</span></p>
