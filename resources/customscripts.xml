@@ -1912,6 +1912,10 @@ doc.getParentDatabase().getIndex().indexDocument(doc)
 ##
 if isinstance(doc, basestring):
     doc = context.getDocument(doc)
+    
+#if doc.getItem('iol_tipo_app')=='pdc' and doc.getItem('qualificazione_intervento_opt')=='4':
+#    return    
+    
 
 app='dsi'
 
@@ -1938,6 +1942,7 @@ newDoc.setItem('pagopa_enabled',0)
 
 newDoc.removeItem('data_invio_pw')
 newDoc.removeItem('data_protocollo')	
+newDoc.removeItem('data_protocollo_testo')	
 newDoc.removeItem('numero_protocollo')	
 newDoc.removeItem('qualificazione_intervento_opt')	
 newDoc.removeItem('interventi_strutturali_opt')	
@@ -1951,13 +1956,22 @@ newDoc.removeItem('pagopa_response')
 
 
 
+##opzioni relative alla denuncia
+newDoc.setItem('nuova_denuncia_opt','1')        
 
-
+if (doc.getItem('conglomerato_opt') == '2') or (doc.getItem('conglomerato_opt') == '3' and doc.getItem('denuncia_art65_opt')=='1'):
+    newDoc.setItem('tipologia_denuncia_opt','3') #### ATTENZIONE X SPEZIA ART 65 FINISCE COMUNQUE COME CA+ZS
+elif (doc.getItem('interventi_strutturali_opt') == '3' and doc.getItem('documentazione_dsi_opt')=='1'):
+    newDoc.setItem('tipologia_denuncia_opt','2') #SOLO ZS
+elif (doc.getItem('interventi_strutturali_opt') == '4'):
+    newDoc.setItem('tipologia_denuncia_opt','3') #SOLO ZS
+    
 if doc.getItem('interventi_strutturali_opt') == '3':
     newDoc.setItem('tipologia_procedura_opt','1')
 elif doc.getItem('interventi_strutturali_opt') == '4':    
     newDoc.setItem('tipologia_procedura_opt','2')
-
+    
+    
 newDoc.doAction('init')
 newDoc.doAction('presentazione')
 newDoc.doAction('protocolla')
@@ -2344,7 +2358,11 @@ def setClones():
     if "setClonePaesaggistica" in context and doc.getItem('procedimento_autorizzazione_paesaggistica_opt') in ['1','2']:
         context.setClonePaesaggistica(doc)
     
-    if "setCloneDsi" in context and (doc.getItem('interventi_strutturali_opt') == '3' and doc.getItem('documentazione_dsi_opt')=='1') or doc.getItem('interventi_strutturali_opt') == '4':
+    if "setCloneDsi" in context and \
+        (doc.getItem('conglomerato_opt') == '2') or \
+        (doc.getItem('conglomerato_opt') == '3' and doc.getItem('denuncia_art65_opt')=='1') or \
+        (doc.getItem('interventi_strutturali_opt') == '3' and doc.getItem('documentazione_dsi_opt')=='1') or \
+        (doc.getItem('interventi_strutturali_opt') == '4'):
         context.setCloneDsi(doc)
         
     if "setCloneIdrogeologico" in context and doc.getItem('vincolo_idrogeologico_opt') == '3':
