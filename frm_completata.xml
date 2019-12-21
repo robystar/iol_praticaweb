@@ -197,37 +197,6 @@ else:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
-        <element id="pagamenti" title="pagamenti" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">pagamenti</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getRenderedItem('elenco_importi_dg')
-
-
-
-
-
-
-#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
-db=context.getParentDatabase()
-if not context.getParentDatabase().resources.customscripts.getPagoPaEnabled(context):
-    return
-
-renderForm=db.getForm('base_sub_pagopa')
-content=asUnicode(renderForm.displayDocument(context))
-html=''
-if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"> Importi da pagare </legend>%s</fieldset>'%content
-
-return html]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
       </elements>
     </element>
   </design>

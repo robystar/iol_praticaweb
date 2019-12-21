@@ -8,71 +8,20 @@
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
 if not 'btn_next' in context.REQUEST.keys():
     return 
-
-context.setItem('numero_pratica',context.getItem('titolo_esistente_numero'))
-
-
+  
 if context.getParentDatabase().resources.customscripts.getProvider()=='praticaweb':
-    bw = "@@pw-info-procedimento"
-elif context.getParentDatabase().resources.customscripts.getProvider()=='halley':
-    context.doAction('init')
-    return context.toNextForm() 
-else:
-    bw = "@@sue-info-procedimento"
-    
-infoPratica = context.restrictedTraverse(bw)
-    
-if infoPratica:
-    infoPratica.setInfoProcedimento()
-    context.doAction('init')
-    context.setItem('iol_tipo_proc',context.getItem('iol_tipo_proc','sue'))
-    return context.toNextForm()    
-else:
-    context.plone_utils.addPortalMessage('info procedimento fallito, manca info-procedimento','error')
-        
-
-
-
-return
-##### vecchio codice
-
-
-
-
-
-#Solo se ho fatto il salvataggio dal button 
-if 'btn_next' in context.REQUEST.keys():
-    if context.getParentDatabase().resources.customscripts.getProvider()=='praticaweb':
-        view = context.restrictedTraverse('@@pw-info-procedimento')
-        if view:
-            view.setInfoProcedimento()
-        else:
-            context.plone_utils.addPortalMessage('info procedimento fallito, manca pw-info-procedimento','error')
-            
-    context.doAction('init')
-    return context.toNextForm()]]></onSaveDocument>
+    importi = context.getParentDatabase().resources.customscripts.setImportiPagopaPW(context)
+    context.doAction('init_bo')
+    context.setItem('Form','frm__presentata')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoSubformClass">base_sub_toolbar</span></p>
-<div class="alert alert-error"><strong>IL MODULO VA UTILIZZATO SOLO PER PAGAMENTI RIGUARDANTI PRATICHE CHE NON SONO STATE PRESENTATE ONLINE</strong></div>
 <p><span class="plominoSubformClass">base_sub_pratica</span></p>
-<p><span class="plominoSubformClass">base_sub_privacy</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
 </fieldset></div>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">DATI ANAGRAFICI DEL TITOLARE DELLA PRATICA</legend>
-<div class="alert alert-info"><h5>La comunicazione va presenta dal TITOLARE (proprietario o avente titolo in qualsiasi forma) della pratica a cui è collegata, non da altri soggetti (progettista, direttore lavori, esecutore, ecc...).<br> Se materialmente l'invio verrà eseguito da un professionista o altro soggetto, i dati di quest'ultimo andranno riportati nell'apposita sezione "Conferimento di delega".</h5></div>
-<p><span class="plominoSubformClass">base_sub_fisica</span></p>
-<p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
-<p><span class="plominoSubformClass">base_sub_giuridica</span></p>
-<p><span class="plominoSubformClass">sub_condominio</span></p>
-<p><span class="plominoSubformClass">base_sub_delegato</span></p>
-</fieldset></div>
-<p><span class="plominoSubformClass">sub_allegati_pagamento</span></p>
-<p><span class="plominoFieldClass">check_pratica</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentTitle(context)]]></DocumentTitle>
@@ -153,39 +102,6 @@ else:
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="check_pratica" title="check_pratica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">check_pratica</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['ok']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[index=context.getParentDatabase().getIndex()
-anno = int(context.getItem("titolo_esistente_anno","0"))
-protocollo = int(context.getItem("titolo_esistente_protocollo","0"))
-numero_protocollo_testo='Anno %s n. % 6d' %(anno, protocollo)
-query = {"numero_protocollo_testo":numero_protocollo_testo}                          
-brains = index.dbsearch(query)
-
-if len(brains)>0:
-    return "LA PRATICA INDICATA E' STATA PRESENTATA ONLINE. UTILIZZARE QUESTO MODULO SOLO PER PAGAMENTI SU PRATICHE NON PRESENTATE ONLINE"]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>HIDDEN</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
         </element>
       </elements>
     </element>

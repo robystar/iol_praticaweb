@@ -948,8 +948,7 @@ return menus
 menus=dict()
 
 menus['front'] = [
-    {"label": "Dati del dichiarante", "frm": "frm_pagamento", "title": "Dati anagrafici dei richiedenti"},
-    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+    {"label": "Comunicazione di pagamento", "frm": "frm_pagamento", "title": "Dati anagrafici dei richiedenti"}
 ]
 menus['back'] = [
     {"label": "Comunicazione di pagamento", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
