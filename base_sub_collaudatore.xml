@@ -1113,20 +1113,6 @@ data-plugin='iolAutocompleteSoggetti'
 data-plugin-options="{soggetto:'collaudatore'}"
 ''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
         </element>
-        <element id="soggetto_search" title="soggetto_search" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">soggetto_search</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#usato come campo di ricerca
-return "%s %s %s %s %s %s" %(context.getItem('fisica_cognome',''),context.getItem('fisica_nome',''),context.getItem('collaudatore_cognome',''),context.getItem('collaudatore_nome',''),context.getItem('direttore_cognome',''),context.getItem('direttore_nome',''))]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
       </elements>
     </element>
   </design>
