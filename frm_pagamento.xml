@@ -10,6 +10,15 @@ if not 'btn_next' in context.REQUEST.keys():
     return 
   
 if context.getParentDatabase().resources.customscripts.getProvider()=='praticaweb':
+    context.setItem('identificativo',context.getId())
+    # setta info parent
+    context.setItem('fisica_nome',context.getItem('titolo_esistente_anagrafica'))
+    context.setItem('anagrafica_search',context.getItem('titolo_esistente_anagrafica'))
+    context.setItem('fisica_search',context.getItem('titolo_esistente_anagrafica'))
+    context.setItem('fisica_cf',context.getItem('search_cf'))
+    context.setItem('fisica_email',context.getItem('iol_owner'))
+
+    #setta importi
     importi = context.getParentDatabase().resources.customscripts.setImportiPagopaPW(context)
     context.doAction('init_bo')
     context.setItem('Form','frm__presentata')]]></onSaveDocument>

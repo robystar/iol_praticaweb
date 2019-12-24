@@ -18,8 +18,7 @@ if 'esito' in data and data['esito']=='OK' and 'azioni' in data:
     
     for azione in azioni:
         if doc and doc.isActionSupported(azione):
-            doc.doAction(azione)    
-]]></Content>
+            doc.doAction(azione)]]></Content>
       <RunAs type="Products.Archetypes.Field.StringField">OWNER</RunAs>
     </element>
   </design>

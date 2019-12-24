@@ -1796,6 +1796,13 @@ for imp in result:
     importi.append([str(imp["contatore"]),imp["tipo"],imp["causale"],imp["importo"],imp['scadenza'],'pagamento_pw'])
 
 doc.setItem('elenco_importi_dg',importi)
+
+
+bw = "@@pw-invia-pratica"
+
+view = doc.restrictedTraverse(bw) 
+if view:
+    ret = view.inviaComunicazioneSemplice(tipo="pagamento")
 ]]></resource>
       <resource id="InviaPagamento" title="" type="Script (Python)"><![CDATA[## Script (Python) "InviaPagamento"
 ##bind container=container
@@ -1828,7 +1835,11 @@ def inviaPagamento(doc):
     #Bw per invio a backoffice
     view = doc.restrictedTraverse(bw) 
     if view:
-        ret = view.inviaComunicazioneSemplice("pagamento")
+        try:
+            ret = view.inviaComunicazioneSemplice("pagamento")
+        except:
+            doc.setItem('ERRORE_PAGAMENTO',1)
+            ret = 1
         if ret:
             return True
         else:
