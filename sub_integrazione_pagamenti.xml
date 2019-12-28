@@ -11,7 +11,6 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Eventuale Pagamento da Inviare</legend>
-<div class="alert alert-info"><h5>Per tutti i pagamenti richiesti formalmente dal Comune utilizzare il modulo di "Trasmissione pagamento" dove gli importi da pagare sono già preimpostati</h5></div>
 <p><span class="plominoFieldClass">integrazione_pagamento_opt</span><span class="plominoLabelClass">integrazione_pagamento_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_integrazione_pagamento</span></p>
 <div class="alert alert-info"><h5>Indicare la cifra complessiva del pagamento o dei pagamenti che si intendono operare in questa fase. Il dettaglio delle singole voci di pagamento andrà inserito nell'apposità sezione, secondo le istruzioni riportate, al termine della compilazione dei dati e prima dell'invio della pratica.</h5></div>

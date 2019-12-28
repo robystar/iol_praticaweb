@@ -197,7 +197,7 @@ data-tooltip = "firmato digitalmente max 7Mb"
         </element>
         <element id="hw_no_oblazione" title="hw_no_oblazione" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_oblazione</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('qualificazione_intervento_opt','') in ['2','3'] and context.getItem('iol_tipo_app') in [ 'cila','scia'])]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('qualificazione_intervento_opt','') in ['2','3'] and context.getItem('iol_tipo_app','') == 'cila')]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="allegato_versamento_prima_rata" title="Copia del versamento della prima rata del contributo di costruzione" type="PlominoField">

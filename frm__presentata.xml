@@ -15,8 +15,6 @@
 <p><span class="plominoSubformClass">base_sub_pagopa</span></p>
 <h3>Dati di riepilogo della comunicazione</h3>
 <p><span class="plominoFieldClass">display_document</span></p>
-<h3 class="plomino-accordion-header"><a href="?openwithform=sub_ricevute_pec">Elenco delle comunicazioni via PEC / email</a></h3>
-<div>Caricamento elenco in corso ....</div>
 <p><span class="plominoFieldClass">pratiche_collegate</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

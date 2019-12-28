@@ -10,6 +10,14 @@
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="v-content well">
+<p><span class="plominoHidewhenClass">start:hw_no_messaggio_pagopa</span></p>
+<div class="alert alert-error">
+<h4>ATTENZIONE:</h4>
+<h4>Qualora la pratica preveda il pagamento di oneri, sanzioni o diritti è necessario perfezionare il pagamento prima dell'invio, VERIFICARE LA CORRETTEZZA DELLE INFORMAZIONI INSERITE, ALLEGARE I DOCUMENTI RICHIESTI FIRMATI DIGITALMENTE E PROCEDERE CON IL PAGAMENTO. <span style="text-decoration: underline; ">DOPO AVER CLICCATO SU "Procedi con il pagamento" NON SARÀ PIÙ POSSIBILE RIPORTARE LA PRATICA IN COMPILAZIONE.</span>
+</h4>
+<p>Inserire le singole voci con gli importi relativi, specificando la causale; è possibile scegliere la modalità di pagamento differita, mediante produzione di apposita distinta di pagamento, oppure progedere in modalità diretta utilizzato una delle possibilità offerte dal sistema PagoPA. Solo una volta che il pagamento verrà correttamente eseguito la pratica sarà disponibile per le attività istruttorie. Nel caso vega scelto il pagamento mediante distinta (modalità differità), il sistema completerà l'invio solamento dopo che il pagamento verrà materialmente eseguito presso uno dei prestatori di servizio (agenzie della tua banca, sportelli bancomati abilitati, punti vendita SISAL, Lottomatica e Banca 5, Uffici Postali)</p>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_messaggio_pagopa</span></p>
 <div class="alert alert-info">Per abilitare l'invio della richiesta occorre caricare i files eventualmente richiesti.
 <p><strong><span style="text-decoration: underline; ">Si consiglia di verificare la correttezza dei dati prima di procedere.</span></strong></p>
 <p><strong><span style="text-decoration: underline; ">Attenzione: qualora dai controlli successivi il contenuto delle dichiarazioni risulti non corrispondente al vero, oltre alle sanzioni penali, è prevista la decadenza dai benefici ottenuti sulla base delle dichiarazioni stesse (art. 75 del d.P.R. n. 445/2000).</span></strong></p>
@@ -93,13 +101,21 @@ if paEnabled:
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
         </element>
-        <element id="btn_pay" title="Procedi con il pagamento o invio &gt;&gt;" type="PlominoAction">
+        <element id="btn_pay" title="Procedi con il pagamento &gt;&gt;" type="PlominoAction">
           <id type="Products.Archetypes.Field.StringField">btn_pay</id>
           <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getParentDatabase().resources.customscripts.getPagoPaEnabled(context)]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
+        </element>
+        <element id="hw_no_messaggio_pagopa" title="hw_no_messaggio_pagopa" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_messaggio_pagopa</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.isNewDocument():
+    return False
+else: 
+    return not context.getParentDatabase().resources.customscripts.getPagoPaEnabled(context)]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

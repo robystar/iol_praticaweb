@@ -109,15 +109,12 @@ except:
 <value><string>from iol.document.plomino_utils import elencoUtentiGruppi
 settings = context.getParentDatabase().resources.customscripts.getDocSettings()
 grp = settings.getItem('grp_richiedenti')
-try:
-    if grp:
-        if grp=='AuthenticatedUsers':
-            return elencoUtentiGruppi(context)
-        else:
-            return elencoUtentiGruppi(context,groups=[grp])
+if grp:
+    if grp=='AuthenticatedUsers':
+        return elencoUtentiGruppi(context)
     else:
-        return []
-except:
+        return elencoUtentiGruppi(context,groups=[grp])
+else:
     return []</string></value>
 </member>
 </struct></value>

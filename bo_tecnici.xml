@@ -71,11 +71,11 @@
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
 db=context.getParentDatabase()
-renderForm=db.getForm('base_sub_progettista')
+renderForm=db.getForm('sub_progettista')
 content=renderForm.displayDocument(context)
 html=''
 if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=base_sub_progettista"> Progettista delle opere architettoniche <i class="icon-edit"></i></a></legend><div class="v-content well">%s</div></fieldset>'%(context.absolute_url(),content)
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=sub_progettista"> Progettista delle opere architettoniche <i class="icon-edit"></i></a></legend><div class="v-content well">%s</div></fieldset>'%(context.absolute_url(),content)
 
     
 return html]]></Formula>
@@ -268,7 +268,7 @@ for brain in brains:
     if doc.getItem('direttore_lavori_opt') in ['2','3']:
         renderForm=db.getForm('sub_direttore_lavori_comunicazione')
         content=content + renderForm.displayDocument(doc)    
-    if doc.getItem('direttore_strutt_opt') in ['2','3']:
+    if doc.getItem('direttore_strutturale_opt') in ['2','3']:
         renderForm=db.getForm('sub_direttore_strutt_lavori_comunicazione')
         content=content + renderForm.displayDocument(doc)    
 

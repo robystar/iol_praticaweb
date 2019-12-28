@@ -6,13 +6,7 @@
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[if context.REQUEST.get('btn_pay'):
-    pagamenti = context.getItem('elenco_importi_dg', []) + context.getItem('elenco_importi_aggiuntivi_dg', [])
-    if pagamenti == []:
-        context.doAction('presentazione')
-    else:
-        from iol.document.plomino_utils import orderDG
-        orderDG(context,'elenco_importi_aggiuntivi_dg','elenco_importi_index')
-        context.doAction('pagamento_presentazione')
+    context.doAction('pagamento_presentazione')
     
 elif context.REQUEST.get('btn_send') or context.REQUEST.get('btn_send_force'): 
     context.doAction('presentazione')]]></onSaveDocument>
@@ -22,21 +16,21 @@ elif context.REQUEST.get('btn_send') or context.REQUEST.get('btn_send_force'):
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
 <p><span class="plominoHidewhenClass">start:hw_no_edit</span></p>
-<p><span class="plominoSubformClass">base_sub_pagopa_importi</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border"> DOCUMENTI DA SCARICARE E FIRMARE DIGITALMENTE </legend>
+<legend class="scheduler-border">DOCUMENTI DA SCARICARE E FIRMARE DIGITALMENTE</legend>
 <div><span class="plominoFieldClass">documenti_da_scaricare</span></div>
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border"> ALLEGA I DOCUMENTI FIRMATI DIGITALMENTE </legend>
+<legend class="scheduler-border">ALLEGA I DOCUMENTI FIRMATI DIGITALMENTE</legend>
 <p><span class="plominoSubformClass">base_sub_comunicazione_digitale</span></p>
 </fieldset></div>
+<p><span class="plominoSubformClass">base_sub_responsabile_procedimento</span></p>
 <p><span class="plominoSubformClass">base_sub_invio</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_edit</span></p>
-<p><span class="plominoHidewhenClass">start:hw_edit</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_pagamenti</span></p>
 <p><span class="plominoFieldClass">ws_response_message</span></p>
 <p><span class="plominoSubformClass">base_sub_pagopa</span></p>
-<p><span class="plominoHidewhenClass">end:hw_edit</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_pagamenti</span></p>
 <h3>Dati di riepilogo della comunicazione</h3>
 <p><span class="plominoFieldClass">display_document</span></p>
 ]]></FormLayout>
@@ -168,11 +162,9 @@ return 'sub_completa_%s' %context.getItem('iol_tipo_app','vuota')]]></Formula>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode() or not 'PlominoEditor' in context.getCurrentUserRights()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
-        <element id="hw_edit" title="hw_edit" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_edit</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.isEditMode()
-
-return context.getItem('iol_workflow_status')!='attesa_pagamento_presentazione']]></Formula>
+        <element id="hw_no_pagamenti" title="hw_no_pagamenti" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pagamenti</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_workflow_status')!='attesa_pagamento_presentazione']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="hw_no_edit" title="hw_no_edit" type="PlominoHidewhen">
@@ -196,6 +188,25 @@ else:
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="btn_torna_edit" title="Annulla e torna in compilazione" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_torna_edit</id>
+          <ActionType type="Products.Archetypes.Field.StringField">PYTHON</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.removeItem('comunicazione_digitale')
+context.removeItem('rel_asseverata_digitale')
+
+ll=context.getItem('iol_menu_list',[])
+if len(ll)>0:
+    context.setItem('Form',ll[len(ll)-1])
+    
+    
+context.doAction('torna_compilazione_utente')
+
+return "%s/EditDocument?openwithform=frm_completata" %context.absolute_url()]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[###se ho attivato dei pagamenti lo nascondo
+return context.isEditMode() or context.getItem('elenco_pagamenti',context.getItem('elenco_pagamenti_dg',[]))!=[]]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
       </elements>
     </element>

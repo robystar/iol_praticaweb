@@ -58,7 +58,7 @@ data-tooltip = "firmato digitalmente max 7Mb"
         </element>
         <element id="hw_no_consumi_energetici" title="hw_no_consumi_energetici" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_consumi_energetici</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('risparmio_energetico_opt')=='1' or context.getItem('risparmio_energetico_pdc_opt')=='2']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('risparmio_energetico_opt','1')=='1' or context.getItem('risparmio_energetico_pdc_opt','2')=='2']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>

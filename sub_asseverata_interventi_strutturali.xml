@@ -89,7 +89,7 @@ resources/iol-custom.css]]></ResourcesCSS>
 <member>
 <name>selectionlistformula</name>
 <value><string>ll=['''non prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a struttura metallica;|1''']
-if True:
+if context.getItem('iol_tipo_app','pdc')=='pdc':
     ll.append('''prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a struttura metallica|3''')
 else:
     ll.append('''prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a

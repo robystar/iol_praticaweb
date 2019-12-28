@@ -39,14 +39,11 @@
 <div class="span6"><span class="plominoFieldClass">progressivo_pratica</span></div>
 </div>
 <div class="row-fluid">
-<div class="span5">
+<div class="span6">
 <span class="plominoLabelClass">descrizione_intervento</span><span class="plominoFieldClass">descrizione_intervento</span>
 </div>
-<div class="span4">
+<div class="span6">
 <span class="plominoLabelClass">soggetto_search</span><span class="plominoFieldClass">soggetto_search</span>
-</div>
-<div class="span3">
-<span class="plominoLabelClass">pagopa_iuv_ok</span><span class="plominoFieldClass">pagopa_iuv_ok</span>
 </div>
 </div>
 <div class="row-fluid">
@@ -345,7 +342,7 @@ else:
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>["Presentata|presentata","Assegnata in istruttoria|istruttoria","Istruttoria completata|istruttoria_ok","Attesa pagamento|attesa_pagamento_presentazione"]</string></value>
+<value><string>["Presentata|presentata","Assegnata in istruttoria|istruttoria","Istruttoria completata|istruttoria_ok"]</string></value>
 </member>
 </struct></value>
 <value><struct>
@@ -587,45 +584,6 @@ else:
 </data></array></value>
 </param>
 </params>
-        </element>
-        <element id="pagopa_iuv_ok" title="IUV PagoPa" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">pagopa_iuv_ok</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">KeywordIndex</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="pratica" title="pratica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">pratica</id>
-          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="praticaweb_id" title="praticaweb_id" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">praticaweb_id</id>
-          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>
