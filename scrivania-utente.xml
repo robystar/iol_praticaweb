@@ -11,7 +11,6 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-control-buttons"><span class="plominoActionClass">btn_chiudi</span></div>
-<p><span class="plominoFieldClass">avviso_associa_pratica</span></p>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">ISTANZE IN COMPILAZIONE</legend>
 <p><span class="plominoFieldClass">istanze_in_compilazione</span></p>
@@ -156,7 +155,7 @@ resources/iol-custom.css]]></ResourcesCSS>
    "aTargets": [0]
  
 },
-{ "aTargets": [ 3 ], "bSortable": false }         
+{ "aTargets": [ 3,9 ], "bSortable": false }         
                  
 ]</string></value>
 </member>
@@ -241,22 +240,6 @@ resources/iol-custom.css]]></ResourcesCSS>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
-        </element>
-        <element id="avviso_associa_pratica" title="avviso_associa_pratica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">avviso_associa_pratica</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[msg='''Per attivare le pratiche importate vai qui: <a href="../frm_associa_pratica">Associa pratica</a>'''
-
-if context.getParentDatabase().resources.config().get('associa_pratica'):
-    return msg]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

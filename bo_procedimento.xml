@@ -12,8 +12,6 @@
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoFieldClass">info_procedimento</span></p>
 <p><span class="plominoFieldClass">pagamenti</span></p>
-<!-- RIFERIMENTI per integrazioni ecc --><p><span class="plominoFieldClass">riferimenti_pratica</span></p>
-<!-- DATE per integrazioni ecc --><p><span class="plominoFieldClass">riferimenti_comunicazione</span></p>
 <!-- ISTRUTTORIA --><p><span class="plominoFieldClass">istruttoria</span></p>
 <!-- READERS  --><p><span class="plominoFieldClass">utenti_readers</span></p>
 <!-- RESPONSABILE DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
@@ -52,9 +50,9 @@
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
-renderForm=db.getForm('base_sub_pe')
+renderForm=db.getForm('base_sub_protocollo')
 content=asUnicode(renderForm.displayDocument(context))
-renderForm=db.getForm('base_sub_info_procedimento')
+renderForm=db.getForm('sub_dati_pratica')
 content=content + asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
@@ -155,10 +153,7 @@ return html]]></Formula>
           <id type="Products.Archetypes.Field.StringField">avvio_procedimento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('data_avvio_procedimento'):
-    return ''
-
-db=context.getParentDatabase()
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
 renderForm=db.getForm('bo_avvio_procedimento')
 content=asUnicode(renderForm.displayDocument(context))
 html=''
@@ -504,48 +499,6 @@ return iolGetMail(context)# + iolGetMail(context,config='config_mailhost_old')]]
 </data></array></value>
 </param>
 </params>
-        </element>
-        <element id="riferimenti_pratica" title="riferimenti_pratica" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">riferimenti_pratica</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('titolo_esistente_id'):
-    return ''
-
-db=context.getParentDatabase()
-renderForm=db.getForm('sub_riferimenti_pratica')
-content=asUnicode(renderForm.displayDocument(context))
-html=''
-if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"> Pratica di riferimento </legend><div class="v-content well">%s</div></fieldset>'%(content)
-    
-return html]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="riferimenti_comunicazione" title="riferimenti_comunicazione" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">riferimenti_comunicazione</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
-renderForm=db.getForm('sub_%s' %context.getItem('iol_tipo_app'))
-try:
-    content=asUnicode(renderForm.displayDocument(context))
-except:
-    content=''
-return content]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

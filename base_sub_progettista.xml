@@ -1118,7 +1118,7 @@ data-plugin-options="{soggetto:'progettista'}"
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#usato come campo di ricerca
-return "%s %s %s %s" %(context.getItem('fisica_cognome',''),context.getItem('progettista_cognome',''),context.getItem('direttore_cognome',''),context.getItem('giuridica_denominazione',''))]]></Formula>
+return "%s %s %s %s %s %s" %(context.getItem('fisica_cognome',''),context.getItem('fisica_nome',''),context.getItem('progettista_cognome',''),context.getItem('progettista_nome',''),context.getItem('direttore_cognome',''),context.getItem('direttore_nome',''))]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

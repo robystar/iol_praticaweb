@@ -443,7 +443,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=1''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-dhw=base_sub_fisica''']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -700,7 +700,7 @@ return "%s %s %s" %(context.getItem('fisica_cognome',''),context.getItem('fisica
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#usato come campo di ricerca
-return "%s %s %s %s" %(context.getItem('fisica_cognome',''),context.getItem('progettista_cognome',''),context.getItem('direttore_cognome',''),context.getItem('giuridica_denominazione',''))]]></Formula>
+return "%s %s %s %s %s %s" %(context.getItem('fisica_cognome',''),context.getItem('fisica_nome',''),context.getItem('progettista_cognome',''),context.getItem('progettista_nome',''),context.getItem('direttore_cognome',''),context.getItem('direttore_nome',''))]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

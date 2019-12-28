@@ -17,7 +17,6 @@ if 'btn_next' in context.REQUEST.keys():
 <p><span class="plominoSubformClass">sub_allegati_diritti_segreteria</span></p>
 <p><span class="plominoSubformClass">sub_allegati_doc_identita</span></p>
 <p><span class="plominoSubformClass">sub_allegati_modello_istat</span></p>
-<p><span class="plominoSubformClass">sub_allegati_lr36</span></p>
 <p><span class="plominoSubformClass">sub_allegati_sicurezza</span></p>
 <p><span class="plominoSubformClass">sub_allegati_oneri</span></p>
 <p><span class="plominoSubformClass">sub_allegati_progetto</span></p>

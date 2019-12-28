@@ -32,8 +32,8 @@
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
       <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/js/controller_combo_civici.js
-++resource++iol.document/js/controller_combo_particelle.js
-++resource++iol.document/js/controller_posizione_civico.js]]></ResourcesJS>
+++resource++iol.document/js/controller_posizione.js
+resources/controller_occupazione_edit.js]]></ResourcesJS>
       <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
 ++resource++iol.document/css/bootstrap-accessibile.min.css
 ++resource++iol.document/css/bootstrap-responsive.min.css

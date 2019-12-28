@@ -49,8 +49,8 @@
         </element>
         <element id="identificativo" title="Identificativo" type="PlominoColumn">
           <id type="Products.Archetypes.Field.StringField">identificativo</id>
-          <SelectedField type="Products.Archetypes.Field.StringField">base_sub_pratica/identificativo</SelectedField>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <SelectedField type="Products.Archetypes.Field.StringField">PlominoPlaceholder1</SelectedField>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getId()]]></Formula>
           <HiddenColumn type="Products.Archetypes.Field.BooleanField">False</HiddenColumn>
           <RenderField type="Products.Archetypes.Field.BooleanField">False</RenderField>
           <DisplaySum type="Products.Archetypes.Field.BooleanField">False</DisplaySum>
