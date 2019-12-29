@@ -17,6 +17,18 @@ if context.getParentDatabase().resources.customscripts.getProvider()=='praticawe
     context.setItem('fisica_search',context.getItem('titolo_esistente_anagrafica'))
     context.setItem('fisica_cf',context.getItem('search_cf'))
     context.setItem('fisica_email',context.getItem('iol_owner'))
+    
+    #protocollazione fake
+    context.setItem('numero_protocollo',0)
+    context.setItem('data_presentazione',context.getItem('data_pratica'))
+    nProtocollo=context.getItem('numero_protocollo')
+    dProtocollo=context.getItem('data_pratica')
+    context.setItem('data_protocollo',dProtocollo)
+    context.setItem('data_presentazione_testo',DateToString(dProtocollo,format="%Y/%m/%d %H:%M"))
+    context.setItem('anno_protocollo',int(DateToString(dProtocollo,format='%Y')))
+    context.setItem('data_protocollo_testo',DateToString(dProtocollo,format="%Y/%m/%d %H:%M"))
+    context.setItem('numero_protocollo_testo','Anno %s n. % 6d' %(DateToString(dProtocollo,format='%Y'),int(nProtocollo)))  
+    context.setItem('numero_pratica',context.getItem('titolo_esistente_numero'))
 
     #setta importi
     importi = context.getParentDatabase().resources.customscripts.setImportiPagopaPW(context)

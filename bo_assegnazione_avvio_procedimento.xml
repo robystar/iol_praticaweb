@@ -1,6 +1,6 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="bo_assegnazione_avvio_procedimento" title="Assegnazione e avvio del procedimento" type="PlominoForm">
+    <element id="bo_assegnazione_avvio_procedimento" title="Assegnazione responsabile e avvio procedimento" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">bo_assegnazione_avvio_procedimento</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
@@ -12,11 +12,11 @@ if 'btn_stampa_comunicazione' in context.REQUEST.keys():
         context.getParentDatabase().resources.customscripts.stampaModulo(context,
             model=context.getItem('modello_stampa_avvio_procedimento'),
             app=context.getParentDatabase().getId().replace('iol_',''),
-            grp='back-office',            
+            grp='back-office',
             pdf=0,
-            addform='bo_assegnazione_avvio_procedimento',            
-            field='allegato_documento_avvio_procedimento')
-    return "%s/EditDocument?openwithform=bo_assegnazione_avvio_procedimento" %context.absolute_url()
+            field='allegato_documento_avvio_procedimento',
+            addform='bo_avvio_procedimento')
+    return "%s/EditDocument?openwithform=bo_avvio_procedimento" %context.absolute_url()
 else:
     if context.getItem('istruttore_temp')!=context.getItem('istruttore'):
         context.doAction('assegna')
@@ -40,6 +40,16 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div>
 <span class="plominoLabelClass">oggetto_avvio_procedimento</span><span class="plominoFieldClass">oggetto_avvio_procedimento</span>
 </div>
+<div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">data_avvio_procedimento</span><span class="plominoFieldClass">data_avvio_procedimento</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_no_data_comunicazione</span><div class="span3">
+<span class="plominoLabelClass">data_comunicazione_avvio_procedimento</span><span class="plominoFieldClass">data_comunicazione_avvio_procedimento</span>
+</div>
+<div class="span6"><div class="alert alert-info">Per inviare nuovamente la comunicazione annullare il campo "Data comunicazione"</div></div>
+<span class="plominoHidewhenClass">end:hw_no_data_comunicazione</span>
+</div>
 <span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_avvio_procedimento</span><span class="plominoFieldClass">modello_stampa_avvio_procedimento</span>
@@ -48,18 +58,25 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoHidewhenClass">start:hw_new_comunicazione</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p> </p>
+<p><span class="plominoHidewhenClass">start:hw_new_comunicazione</span></p>
 <div class="row-fluid">
-<span class="plominoHidewhenClass">start:hw_no_istruttore_avvio_procedimento</span><div class="span5">
+<div class="span9">
 <span class="plominoLabelClass">allegato_documento_avvio_procedimento</span><span class="plominoFieldClass">allegato_documento_avvio_procedimento</span>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_istruttore_avvio_procedimento</span><div class="span5">
+<div class="span3">
+<br><span class="plominoActionClass">btn_invia_comunicazione</span>
+</div>
+</div>
+<p> </p>
+<div>
+<span class="plominoFieldClass">comunicazione_avvio_procedimento_opt</span><span class="plominoLabelClass">comunicazione_avvio_procedimento_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_avvio_procedimento</span></p>
+<div class="row-fluid"><div class="span4">
 <span class="plominoLabelClass">allegato_comunicazione_avvio_procedimento</span><span class="plominoFieldClass">allegato_comunicazione_avvio_procedimento</span>
-</div>
-<div class="span2">
-<span class="plominoActionClass">btn_invia_comunicazione</span> <span class="plominoHidewhenClass">start:hw_no_data_comunicazione</span> <span class="plominoLabelClass">data_avvio_procedimento</span><span class="plominoFieldClass">data_avvio_procedimento</span> <span class="plominoHidewhenClass">end:hw_no_data_comunicazione</span>
-</div>
-</div>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_allegato_comunicazione_avvio_procedimento</span></p>
 <p><span class="plominoHidewhenClass">end:hw_new_comunicazione</span></p>
 </div>
 ]]></FormLayout>
@@ -95,7 +112,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[#if context.getItem('IOL_AVVISOavvio_procedimento'):
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[#if context.getItem('IOL_AVVISORIGETTO'):
 #    return 'readonly']]></HTMLAttributesFormula>
           <params>
 <param>
@@ -116,8 +133,41 @@ resources/iol-custom.css]]></ResourcesCSS>
 </param>
 </params>
         </element>
-        <element id="data_avvio_procedimento" title="Data avvio_procedimento istanza" type="PlominoField">
+        <element id="data_avvio_procedimento" title="Data avvio procedimento" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">data_avvio_procedimento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-110Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+10"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="data_comunicazione_avvio_procedimento" title="Data comunicazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_comunicazione_avvio_procedimento</id>
           <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
@@ -196,14 +246,14 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'avvio_procedimento')</string></value>
+<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'avvio-procedimento')</string></value>
 </member>
 </struct></value>
 </data></array></value>
 </param>
 </params>
         </element>
-        <element id="allegato_documento_avvio_procedimento" title="Documento creato" type="PlominoField">
+        <element id="allegato_documento_avvio_procedimento" title="Comunicazione avvio procedimento" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_documento_avvio_procedimento</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -215,7 +265,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","filetype":["docx","odt"]}'
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3","filetype":["docx","odt"]}'
 ''']]></HTMLAttributesFormula>
           <params>
 <param>
@@ -255,7 +305,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="allegato_comunicazione_avvio_procedimento" title="Comunicazione di avvio procedimento" type="PlominoField">
+        <element id="allegato_comunicazione_avvio_procedimento" title="Comunicazione firmata digitalmente" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_comunicazione_avvio_procedimento</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -267,7 +317,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
-data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"}'
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3","filetype":["p7m"]}'
 ''']]></HTMLAttributesFormula>
         </element>
         <element id="hw_no_edit" title="hw_no_edit" type="PlominoHidewhen">
@@ -282,7 +332,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
         </element>
         <element id="hw_no_data_comunicazione" title="hw_no_data_comunicazione" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_data_comunicazione</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('data_avvio_procedimento')=='']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('data_comunicazione_avvio_procedimento')=='']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="btn_save" title="Salva e continua &gt;&gt;" type="PlominoAction">
@@ -301,15 +351,27 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
         </element>
+        <element id="btn_delete" title="Elimina" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_delete</id>
+          <ActionType type="Products.Archetypes.Field.StringField">PYTHON</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[#potrei eliminare tutti gli item della form ma se uno sbaglia a cliccare di mangia tutto? metto un js di conferma?
+context.removeItem('istruttore')
+context.removeItem('oggetto_avvio_procedimento')
+#context.removeItem('data_avvio_procedimento')
+
+return context.absolute_url()]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
         <element id="btn_invia_comunicazione" title="Invia la comunicazione &gt;&gt;" type="PlominoAction">
           <id type="Products.Archetypes.Field.StringField">btn_invia_comunicazione</id>
           <ActionType type="Products.Archetypes.Field.StringField">PYTHON</ActionType>
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
-          <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.doAction('rigetta')
-context.setItem('data_avvio_procedimento',Now())
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[context.doAction('avvio_procedimento')
 return context.absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[try:
-    return context.isEditMode() or context.getItem('data_avvio_procedimento')!= ''
+    return context.isEditMode() or context.getItem('data_comunicazione_avvio_procedimento')!= ''
 except:
     return False]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
@@ -330,11 +392,11 @@ except:
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
           <params>
@@ -402,8 +464,8 @@ else:
           <id type="Products.Archetypes.Field.StringField">dirigente</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.resources.config().get('assegnazione_dirigente')]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -470,11 +532,6 @@ else:
 </data></array></value>
 </param>
 </params>
-        </element>
-        <element id="hw_no_istruttore_avvio_procedimento" title="hw_no_istruttore_avvio_procedimento" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_istruttore_avvio_procedimento</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not 'PlominoEditor' in context.getCurrentUserRights()]]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

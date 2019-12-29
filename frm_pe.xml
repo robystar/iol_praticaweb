@@ -2,7 +2,8 @@
   <design>
     <element id="frm_pe" title="Nuova pratica edilizia" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_pe</id>
-      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Plomino_Readers',['sue_readers'])
+context.setItem('Plomino_Authors',[context.getCurrentUser().getId()])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[#Solo se ho fatto il salvataggio dal button 
