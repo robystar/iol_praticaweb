@@ -10,6 +10,7 @@ context.setItem('Plomino_Authors',[context.getCurrentUser().getId()])]]></onCrea
 if 'btn_next' in context.REQUEST.keys():
     context.setItem('Form','frm_presentata')
     context.setItem('IOL_PREVIOUS_FORM','bo_procedimento')
+    context.setItem('identificativo',context.getId())
     context.doAction('init_bo')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>

@@ -190,7 +190,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'preavviso-rigetto')</string></value>
+<value><string>return context.getParentDatabase().resources.customscripts.getElencoModelliBackoffice(context,'preavviso-rigetto')</string></value>
 </member>
 </struct></value>
 </data></array></value>

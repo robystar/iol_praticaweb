@@ -246,7 +246,7 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'avvio-procedimento')</string></value>
+<value><string>return context.getParentDatabase().resources.customscripts.getElencoModelliBackoffice(context,'avvio-procedimento')</string></value>
 </member>
 </struct></value>
 </data></array></value>
