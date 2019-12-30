@@ -56,6 +56,68 @@ resources/iol-custom.css]]></ResourcesCSS>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
+        <element id="elenco_pagamenti_dg" title="Pagamenti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_pagamenti_dg</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>dlg_pagopa_pagamenti</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>codTrans,IUV,esito_pagamento,importo_pagamento,anagrafica_pagamento,email_pagamento,data_pagamento,orario_pagamento,metodo_pagamento,uidriscossione_pagamento,divisa_pagamento,brand_pagamento,alias_pagamento</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    {"sTitle": "Cod Trans"},
+    {"sTitle": "IUV"},
+    {"sTitle": "Esito"},
+    {"sTitle": "Importo"},
+    {"sTitle": "Anagrafica"},
+    {"sTitle": "Email"},
+    {"sTitle": "Data"},
+    {"sTitle": "Ora"},
+    {"sTitle": "Metodo"},
+    {"sTitle": "UID R."},
+    {"sTitle": "Divisa"},
+    {"sTitle": "Banca"},
+    {"sTitle": "Alias"}
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 900,
+        "height": 500
+    }
+</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
       </elements>
     </element>
   </design>
