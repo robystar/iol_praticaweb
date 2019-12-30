@@ -545,7 +545,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.customscripts.getElencoModelliBackoffice(context,'titolo')</string></value>
+<value><string>return context.getParentDatabase().resources.config_backoffice_stampe(context,'titolo')</string></value>
 </member>
 </struct></value>
 </data></array></value>
