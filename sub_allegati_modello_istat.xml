@@ -26,11 +26,9 @@
 <p><span class="plominoHidewhenClass">end:hw_no_modello_istat</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_codice_modello</span></p>
 <div class="alert alert-info"><strong> Attenzione in caso di NUOVA COSTRUZIONE o AMPLIAMENTO compilare il modulo ISTAT sul sito ISTAT <a href="https://indata.istat.it/" target="_blank">indata.istat.it</a> e inserire il CODICE MODELLO </strong></div>
-<div class="row-fluid">
-<div class="span4">
+<div class="row-fluid"><div class="span4">
 <span class="plominoLabelClass">codice_modello_istat</span><span class="plominoFieldClass">codice_modello_istat</span>
-</div>
-</div>
+</div></div>
 <p><span class="plominoHidewhenClass">end:hw_no_codice_modello</span></p>
 </fieldset></div>]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
