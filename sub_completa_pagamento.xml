@@ -9,9 +9,15 @@
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
-      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
-</fieldset>]]></FormLayout>
+</fieldset>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI ANAGRAFICI</legend>
+<p><span class="plominoSubformClass">base_sub_fisica</span></p>
+</fieldset></div>
+]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
