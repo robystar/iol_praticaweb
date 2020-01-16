@@ -12,7 +12,7 @@ if 'btn_stampa_titolo' in context.REQUEST.keys():
         context.getParentDatabase().resources.customscripts.stampaModulo(context,
             model=context.getItem('modello_stampa_titolo'),
             app=context.getParentDatabase().getId().replace('iol_',''),
-            grp='rilascio-titolo',
+            grp='back-office',
             pdf=0,
             field='allegato_titolo',
             addform='bo_istruttoria')
@@ -22,7 +22,7 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
         context.getParentDatabase().resources.customscripts.stampaModulo(context,
             model=context.getItem('modello_stampa_relazione_istruttoria'),
             app=context.getParentDatabase().getId().replace('iol_',''),
-            grp='rilascio-titolo',
+            grp='back-office',
             pdf=0,
             field='allegato_relazione_istruttoria',
             addform='bo_istruttoria')
@@ -33,6 +33,8 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
 <div class="v-content well">
+<p><span class="plominoLabelClass">istruttoria_prescrizioni</span><span class="plominoFieldClass">istruttoria_prescrizioni</span></p>
+<p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
 <span class="plominoHidewhenClass">start:hw_no_titolo</span><div class="row-fluid">
 <div class="span4">
 <span class="plominoLabelClass">numero_titolo</span><span class="plominoFieldClass">numero_titolo</span>
@@ -43,27 +45,24 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 </div>
 <span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
 <div class="span8">
-<span class="plominoLabelClass">modello_stampa_relazione_istruttoria</span><span class="plominoFieldClass">modello_stampa_relazione_istruttoria</span>
-</div>
-<div class="span4">
-<br><span class="plominoActionClass">btn_stampa_relazione_istruttoria</span>
-</div>
-</div>
-<p> </p>
-<div class="row-fluid">
-<div class="span8">
 <span class="plominoLabelClass">modello_stampa_titolo</span><span class="plominoFieldClass">modello_stampa_titolo</span>
 </div>
 <div class="span4">
 <br><span class="plominoActionClass">btn_stampa_titolo</span>
 </div>
 </div>
-<p> </p>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoLabelClass">allegato_titolo</span><span class="plominoFieldClass">allegato_titolo</span></p>
-<p> </p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p> </p>
+<p><span class="plominoLabelClass">allegato_titolo</span><span class="plominoFieldClass">allegato_titolo</span></p>
+<span class="plominoHidewhenClass">end:hw_no_titolo</span> <span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
+<div class="span8">
+<span class="plominoLabelClass">modello_stampa_relazione_istruttoria</span><span class="plominoFieldClass">modello_stampa_relazione_istruttoria</span>
+</div>
+<div class="span4">
+<br><span class="plominoActionClass">btn_stampa_relazione_istruttoria</span>
+</div>
+</div>
+<span class="plominoHidewhenClass">end:hw_no_edit</span><p> </p>
 <p><span class="plominoLabelClass">allegato_relazione_istruttoria</span><span class="plominoFieldClass">allegato_relazione_istruttoria</span></p>
-<p> </p>
-<span class="plominoHidewhenClass">end:hw_no_titolo</span><p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
 <p> </p>
 <p class="legend"><span class="plominoSubformClass">sub_istruttoria_allegati</span></p>
 <p><span class="plominoLabelClass">allegati_controfirmati</span><span class="plominoFieldClass">allegati_controfirmati</span></p>
@@ -177,11 +176,12 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
         </element>
         <element id="numero_titolo" title="Numero titolo" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">numero_titolo</id>
-          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getDocNumber('numero_titolo')]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-NUMBERFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-NUMBERFieldEdit</FieldEditTemplate>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('numero_titolo'):
+    return 'XXXX-YYYY']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
@@ -341,7 +341,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
+<value><string>return context.getPrintFolderContents(grp='back-office',filter=dict(Subject='rilascio-titolo'))</string></value>
 </member>
 </struct></value>
 </data></array></value>
@@ -390,7 +390,7 @@ else:
         </element>
         <element id="hw_no_titolo" title="hw_no_titolo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_titolo</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('iol_titolo')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('iol_titolo',True)]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="allegato_relazione_istruttoria" title="Relazione istruttoria" type="PlominoField">
@@ -449,7 +449,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rilascio-titolo')</string></value>
+<value><string>return context.getPrintFolderContents(grp='back-office',filter=dict(Subject='relazione-istruttoria'))</string></value>
 </member>
 </struct></value>
 </data></array></value>
@@ -482,6 +482,37 @@ except:
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"15","filetype":["p7m"]}'
 data-tooltip = "firmato digitalmente max 15Mb"
 ''']]></HTMLAttributesFormula>
+        </element>
+        <element id="istruttoria_prescrizioni" title="Condizioni e prescrizioni" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">istruttoria_prescrizioni</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>3</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
         </element>
       </elements>
     </element>
