@@ -25,7 +25,6 @@
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">ELENCO DELLE PRATICHE</legend> <span class="plominoSubformClass">sub_riferimenti_multipli</span>
 </fieldset></div>
-<p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
