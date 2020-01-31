@@ -18,13 +18,18 @@ if context.getItem('allegato_comunicazione_titolo',{})!={}:
 <div class="v-content well">
 <p><span class="plominoFieldClass">istruzioni_titolo</span></p>
 <div class="row-fluid">
-<span class="plominoHidewhenClass">start:hw_no_istruttore_titolo</span><div class="span6">
-<span class="plominoLabelClass">allegato_allafirma_titolo</span><span class="plominoFieldClass">allegato_allafirma_titolo</span>
-</div>
-<span class="plominoHidewhenClass">end:hw_no_istruttore_titolo</span><div class="span6">
+<div class="span6">
 <span class="plominoLabelClass">allegato_comunicazione_titolo</span><span class="plominoFieldClass">allegato_comunicazione_titolo</span>
 </div>
+<div class="span6">
+<span class="plominoLabelClass">allegati_controfirmati</span><span class="plominoFieldClass">allegati_controfirmati</span>
 </div>
+</div>
+<span class="plominoHidewhenClass">start:hw_titolo</span>
+<div>
+<span class="plominoLabelClass">allegati_alla_controfirma</span><span class="plominoFieldClass">allegati_alla_controfirma</span>
+</div>
+<span class="plominoHidewhenClass">end:hw_titolo</span><hr>
 </div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
@@ -203,6 +208,66 @@ else :
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_controfirmati" title="Documentazione controfirmata" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_controfirmati</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"15","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente max 15Mb"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_alla_controfirma" title="Documenti da controfirmare" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_alla_controfirma</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
+db=context.getParentDatabase()
+idx = db.getIndex()
+if not 'numero_pratica' in idx.indexes():
+    return []
+
+brains = idx.dbsearch(dict(numero_pratica=context.getItem('numero_pratica'),iol_tipo_app=['integrazione','iniziolavori','finelavori','voltura']))
+
+elenco={}
+
+attachments = context.getItem('iol_attachments',{})
+for f in attachments:
+    if attachments[f]=='pencil':
+        if not context.getId() in elenco:
+            elenco[context.getId()]=[]
+        elenco[context.getId()].append(f)
+
+for brain in brains:
+    doc=brain.getObject()
+    attachments = doc.getItem('iol_attachments',{})
+    for f in attachments:
+        if attachments[f]=='pencil':
+            if not doc.getId() in elenco:
+                elenco[doc.getId()]=[]
+            elenco[doc.getId()].append(f)
+       
+return elenco]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_titolo" title="hw_titolo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_titolo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('allegato_comunicazione_titolo',{})!={}]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
     </element>

@@ -16,6 +16,8 @@
 <p><span class="plominoFieldClass">riferimenti_pratica</span></p>
 <!-- DATE per integrazioni ecc -->
 <p><span class="plominoFieldClass">riferimenti_comunicazione</span></p>
+<!--RILASCIO TITOLO -->
+<p><span class="plominoFieldClass">rilascio_titolo</span></p>
 <!-- ISTRUTTORIA -->
 <p><span class="plominoFieldClass">istruttoria</span></p>
 <!-- READERS  -->
@@ -36,8 +38,6 @@
 <p><span class="plominoFieldClass">preavviso_rigetto</span></p>
 <!--RIGETTO -->
 <p><span class="plominoFieldClass">rigetto</span></p>
-<!--RILASCIO TITOLO -->
-<p><span class="plominoFieldClass">rilascio_titolo</span></p>
 <!--PRATICHE COLLEGATE -->
 <p><span class="plominoFieldClass">pratiche_collegate</span></p>
 <!--EMAIL PEC -->
@@ -294,12 +294,16 @@ return html]]></Formula>
           <id type="Products.Archetypes.Field.StringField">rilascio_titolo</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('allegato_comunicazione_titolo',{})=={}:
+    return ''
+
+
+db=context.getParentDatabase()
 renderForm=db.getForm('bo_titolo')
 content=asUnicode(renderForm.displayDocument(context))
 html=''
 if content:
-    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_titolo"> Rilascio del titolo <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
+    html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_titolo"> Titolo rilasciato <i class="icon-edit"></i></a></legend>%s</fieldset>'%(context.absolute_url(),content)
 
     
 return html]]></Formula>

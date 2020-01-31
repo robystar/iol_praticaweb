@@ -20,6 +20,8 @@
 <p><span class="plominoFieldClass">allegati_scia_condizionata_elenco</span></p>
 </fieldset>
 <p><span class="plominoHidewhenClass">end:hw_no_condizionata</span></p>
+<p><span class="plominoActionClass">btn_zip_allegati</span></p>
+<p> </p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -71,6 +73,14 @@
           <id type="Products.Archetypes.Field.StringField">hw_no_condizionata</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_tipo_app','scia') not in ['cila','scia','scia2','sca','pdc']]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="btn_zip_allegati" title="Scarica tutti gli allegati &gt;&gt;&gt; " type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_zip_allegati</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[return "%s/zip-attachments" %context.absolute_url()]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
         </element>
       </elements>
     </element>
