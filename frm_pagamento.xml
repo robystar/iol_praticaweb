@@ -11,12 +11,15 @@ if not 'btn_next' in context.REQUEST.keys():
   
 if context.getParentDatabase().resources.customscripts.getProvider()=='praticaweb':
     context.setItem('identificativo',context.getId())
+    
     # setta info parent
+    '''
     context.setItem('fisica_nome',context.getItem('titolo_esistente_anagrafica'))
     context.setItem('anagrafica_search',context.getItem('titolo_esistente_anagrafica'))
     context.setItem('fisica_search',context.getItem('titolo_esistente_anagrafica'))
     context.setItem('fisica_cf',context.getItem('search_cf'))
     context.setItem('fisica_email',context.getItem('iol_owner'))
+    '''
     
     #protocollazione fake
     context.setItem('numero_protocollo',0)
@@ -42,6 +45,10 @@ if context.getParentDatabase().resources.customscripts.getProvider()=='praticawe
 <p><span class="plominoSubformClass">base_sub_pratica</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI ANAGRAFICI</legend>
+<p><span class="plominoSubformClass">base_sub_fisica</span></p>
 </fieldset></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

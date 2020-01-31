@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="bo_integrazione_richiesta" title="Richiesta di documentazione integrativa" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">bo_integrazione_richiesta</id>
+    <element id="bo_richiesta_integrazione" title="Richiesta di documentazione integrativa" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">bo_richiesta_integrazione</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[parentDoc = context.getParentDatabase().getDocument(context.getItem('parent_document'))
 if parentDoc:
     context.setItem('Plomino_Readers',parentDoc.getItem('Plomino_Readers'))]]></onCreateDocument>
@@ -36,7 +36,8 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div>
 <span class="plominoLabelClass">oggetto_richiesta_integrazione</span><span class="plominoFieldClass">oggetto_richiesta_integrazione</span>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span>
+<div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_richiesta_integrazione</span><span class="plominoFieldClass">modello_stampa_richiesta_integrazione</span>
 </div>
@@ -44,30 +45,36 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <br><span class="plominoActionClass">btn_stampa_comunicazione</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p><span class="plominoHidewhenClass">start:hw_new_richiesta</span></p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span>
+<p><span class="plominoHidewhenClass">start:hw_new_comunicazione</span></p>
+<p><span class="plominoFieldClass">istruzioni_richiesta_integrazione</span></p>
 <div class="row-fluid">
-<div class="span6">
+<span class="plominoHidewhenClass">start:hw_no_istruttore_richiesta_integrazione</span>
+<div class="span4">
 <span class="plominoLabelClass">allegato_documento_richiesta_integrazione</span><span class="plominoFieldClass">allegato_documento_richiesta_integrazione</span>
 </div>
-<div class="span3">
-<span class="plominoHidewhenClass">start:hw_no_data_richiesta</span> <span class="plominoLabelClass">data_richiesta_integrazione</span><span class="plominoFieldClass">data_richiesta_integrazione</span> <span class="plominoHidewhenClass">end:hw_no_data_richiesta</span>
+<div class="span4">
+<span class="plominoLabelClass">allegato_allafirma_richiesta_integrazione</span><span class="plominoFieldClass">allegato_allafirma_richiesta_integrazione</span>
 </div>
-<div class="span3">
-<br><span class="plominoActionClass">btn_invia_comunicazione</span>
-</div>
-</div>
-<p> </p>
-<div>
-<span class="plominoFieldClass">comunicazione_richiesta_integrazione_opt</span><span class="plominoLabelClass">comunicazione_richiesta_integrazione_opt</span>
-</div>
-<p><span class="plominoHidewhenClass">start:hw_no_allegato_comunicazione_richiesta_integrazione</span></p>
-<div class="row-fluid"><div class="span4">
+<span class="plominoHidewhenClass">end:hw_no_istruttore_richiesta_integrazione</span>
+<div class="span4">
 <span class="plominoLabelClass">allegato_comunicazione_richiesta_integrazione</span><span class="plominoFieldClass">allegato_comunicazione_richiesta_integrazione</span>
-</div></div>
-<p><span class="plominoHidewhenClass">end:hw_no_allegato_comunicazione_richiesta_integrazione</span></p>
-<p><span class="plominoHidewhenClass">end:hw_new_richiesta</span> <span class="plominoFieldClass">parent_document</span></p>
-<!--CHIAVE ESTERNA CHE PUNTA AL PARENT-->
 </div>
+</div>
+<div>
+<span class="plominoHidewhenClass">start:hw_no_data_comunicazione</span>
+<div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">data_comunicazione_richiesta_integrazione</span><span class="plominoFieldClass">data_comunicazione_richiesta_integrazione</span>
+</div>
+</div>
+<span class="plominoHidewhenClass">end:hw_no_data_comunicazione</span>
+</div>
+<p><span class="plominoActionClass">btn_invia_comunicazione</span></p>
+<p> </p>
+<p><span class="plominoHidewhenClass">end:hw_new_comunicazione</span></p>
+</div>
+<p><span class="plominoFieldClass">parent_document</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA['Richiesta integrazione %s' %context.getItem('parent_document')]]></DocumentTitle>
@@ -202,14 +209,15 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>return context.getParentDatabase().resources.customscripts.getElencoModelliBackoffice(context,'richiesta-integrazione')</string></value>
+<value><string>return context.getPrintFolderContents(grp='back-office',filter=dict(Subject='richiesta-integrazione'))
+</string></value>
 </member>
 </struct></value>
 </data></array></value>
 </param>
 </params>
         </element>
-        <element id="allegato_documento_richiesta_integrazione" title="Comunicazione richiesta di integrazione" type="PlominoField">
+        <element id="allegato_documento_richiesta_integrazione" title="Documento richiesta integrazione" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_documento_richiesta_integrazione</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -236,37 +244,12 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="allegato_stampa_richiesta_integrazione" title="Scarica comunicazione in pdf" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">allegato_stampa_richiesta_integrazione</id>
-          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('allegato_documento_richiesta_integrazione')]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTIconFieldReadPdf</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><array><data>
-<value><struct>
-<member>
-<name>type</name>
-<value><string>SINGLE</string></value>
-</member>
-</struct></value>
-</data></array></value>
-</param>
-</params>
-        </element>
-        <element id="allegato_comunicazione_richiesta_integrazione" title="Comunicazione firmata digitalmente" type="PlominoField">
+        <element id="allegato_comunicazione_richiesta_integrazione" title="Comunicazione firmata" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">allegato_comunicazione_richiesta_integrazione</id>
           <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTIconFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
@@ -278,17 +261,18 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
         </element>
         <element id="hw_no_edit" title="hw_no_edit" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_edit</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode()]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[not context.isEditMode() or context.getItem('allegato_documento_richiesta_integrazione',{})!={}]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="hw_new_richiesta" title="hw_new_richiesta" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_new_richiesta</id>
+        <element id="hw_new_comunicazione" title="hw_new_comunicazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_new_comunicazione</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('oggetto_richiesta_integrazione')=='']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
-        <element id="hw_no_data_richiesta" title="hw_no_data_richiesta" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_data_richiesta</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('data_richiesta_integrazione')=='']]></Formula>
+        <element id="hw_no_data_comunicazione" title="hw_no_data_comunicazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_data_comunicazione</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('data_comunicazione_richiesta_integrazione')=='' or not context.isEditMode()
+]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="btn_save" title="Salva e continua &gt;&gt;" type="PlominoAction">
@@ -335,12 +319,15 @@ except:
           <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
           <Content type="Products.Archetypes.Field.TextField"><![CDATA[parentDoc = context.getParentDatabase().getDocument(context.getItem('parent_document'))
 parentDoc.doAction('richiedi_integrazione')
-context.setItem('data_richiesta_integrazione',Now())
+context.setItem('data_comunicazione_richiesta_integrazione',Now())
+#Allineo i readers
+context.setItem('Plomino_Readers',parentDoc.getItem('Plomino_Readers'))  
+context.getParentDatabase().getIndex().indexDocument(context)
 return parentDoc.absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[try:
-    return context.isEditMode() or plominoDocument.getItem('data_richiesta_integrazione')!=''
+    return context.isEditMode() or plominoDocument.getItem('data_comunicazione_richiesta_integrazione')!='' or context.getItem('allegato_comunicazione_richiesta_integrazione',{})=={}
 except:
-    return False]]></Hidewhen>
+    return True]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
         </element>
         <element id="btn_stampa_comunicazione" title="&gt;&gt; Crea il documento" type="PlominoAction">
@@ -378,6 +365,105 @@ except:
 </data></array></value>
 </param>
 </params>
+        </element>
+        <element id="hw_no_istruttore_richiesta_integrazione" title="hw_no_istruttore_richiesta_integrazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_istruttore_richiesta_integrazione</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not 'PlominoEditor' in context.getCurrentUserRights()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="istruzioni_richiesta_integrazione" title="istruzioni_richiesta_integrazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">istruzioni_richiesta_integrazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('allegato_comunicazione_richiesta_integrazione',{})=={}:
+    return '''<div class="alert alert-info">Allegare la comunicazione per abilitare l'invio della richiesta</div>'''
+elif context.getItem('data_comunicazione_richiesta_integrazione')!='':
+    msg = 'Comunicazione di richiesta integrazione inviata in data ' +  DateToString(context.getItem('data_comunicazione_richiesta_integrazione'),format="%d/%m/%Y %H:%M")
+    if context.getItem('protocollo_richiesta_integrazione'):
+        msg = msg + ' Protocollo ' + str(context.getItem('protocollo_richiesta_integrazione'))
+    return '''<div class="alert alert-success"><strong>%s</strong></div>''' %msg
+else:
+    return '''<div class="alert alert-info">Per inviare nuovamente la comunicazione annullare il campo "Data comunicazione"</div>''']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_comunicazione_richiesta_integrazione" title="Data comunicazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_comunicazione_richiesta_integrazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-110Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+10"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="allegato_allafirma_richiesta_integrazione" title="Comunicazione da firmare" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_allafirma_richiesta_integrazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTIconFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3","filetype":["pdf"]}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>type</name>
+<value><string>SINGLE</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="protocollo_richiesta_integrazione" title="Protocollo richiesta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">protocollo_richiesta_integrazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

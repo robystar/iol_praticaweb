@@ -209,7 +209,8 @@ data-target="documenti_da_scaricare"
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>context.getParentDatabase().resources.customscripts.getElencoModelli('rigetto')</string></value>
+<value><string>return context.getPrintFolderContents(grp='back-office',filter=dict(Subject='rilascio-titolo'))
+</string></value>
 </member>
 </struct></value>
 </data></array></value>
@@ -309,6 +310,37 @@ except:
 return context.absolute_url()]]></Content>
           <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[return not context.isEditMode()]]></Hidewhen>
           <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="protocollo_rilascio_titolo" title="Protocollo rilascio titolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">protocollo_rilascio_titolo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="istruzioni_rilascio_titolo" title="istruzioni_rilascio_titolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">istruzioni_rilascio_titolo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('allegato_allafirma_titolo',{})=={}:
+    return '<div class="alert alert-info">Allegare il documento da sottoporre alla firma per inviare il documento di autorizzazione alla firma del responsabile</div>'
+elif context.getItem('allegato_comunicazione_titolo',{})=={}:
+    return '''<div class="alert alert-info">Allegare la comunicazione firmata digitalmente per il rilascio dell'autorizzazione</div>'''
+else:
+    return '''<div class="alert alert-success"><strong>Autorizzazione rilasciata, per la data di rilascio dell'autorizzazione fa fede la data di firma digitale</strong></div>''']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

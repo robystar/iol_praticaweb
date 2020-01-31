@@ -139,7 +139,7 @@ resources/iol-custom.css]]></ResourcesCSS>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-tool=ricerca-cf''']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-tool=ricerca-cf uppercase''']]></HTMLAttributesFormula>
         </element>
         <element id="btn_ricerca" title="Trova Pratica" type="PlominoAction">
           <id type="Products.Archetypes.Field.StringField">btn_ricerca</id>

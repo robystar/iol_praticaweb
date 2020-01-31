@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="bo_parere_risposta" title="bo_parere_risposta" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">bo_parere_risposta</id>
+    <element id="bo_risposta_parere" title="bo_risposta_parere" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">bo_risposta_parere</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -15,9 +15,7 @@
 #context.setItem('data_invio_risposta',Now())
 #context.setItem('data_invio_risposta_testo',DateToString(Now(),format="%Y/%m/%d"))
 
-context.setItem('Form','bo_parere_richiesta')
-
-
+context.setItem('Form','bo_richiesta_parere')
 #in ogni caso torno sul documento padre
 parentDoc = context.getParentDatabase().getDocument(context.getItem('parent_document'))
 return parentDoc.absolute_url()]]></onSaveDocument>
@@ -28,13 +26,13 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
 <div class="v-content well">
-<span class="plominoHidewhenClass">start:hw_no_edit</span><div>
+<h5>DATI PARERE ACQUISITO</h5>
+<span class="plominoHidewhenClass">start:hw_no_edit</span>
+<div>
 <span class="plominoLabelClass">parere_ente_nome</span><span class="plominoFieldClass">parere_ente_nome</span>
 </div>
-<div class="row-fluid"><div class="span3">
-<span class="plominoLabelClass">data_richiesta_parere</span><span class="plominoFieldClass">data_richiesta_parere</span>
-</div></div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><div class="row-fluid">
+<span class="plominoHidewhenClass">end:hw_no_edit</span>
+<div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">parere_tipo</span><span class="plominoFieldClass">parere_tipo</span>
 </div>
@@ -44,6 +42,9 @@ context.REQUEST.set('returnurl',parentDoc.absolute_url())]]></onDeleteDocument>
 <div class="span3">
 <span class="plominoLabelClass">data_protocollo_parere</span><span class="plominoFieldClass">data_protocollo_parere</span>
 </div>
+</div>
+<p> </p>
+<div class="row-fluid">
 <div>
 <span class="plominoLabelClass">parere_ente</span><span class="plominoFieldClass">parere_ente</span>
 </div>
@@ -262,13 +263,13 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=bo_parere_risposta']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=bo_risposta_parere']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>

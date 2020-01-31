@@ -274,7 +274,11 @@ data-tooltip = "firmato digitalmente max 7Mb"
         </element>
         <element id="hw_ca" title="hw_ca" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_ca</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tipologia_denuncia_opt')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[##per spezia non vale
+if context.getParentDatabase().resources.config().get('comune_default') == "E463":
+    return False
+else:
+    return context.getItem('tipologia_denuncia_opt')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="allegato_dichiarazione_progettisti" title="Dichiarazione asseverata progettisti" type="PlominoField">
