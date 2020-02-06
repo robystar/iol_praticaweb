@@ -1168,6 +1168,67 @@ menus['back'] = [
 
 return menus
 ]]></resource>
+      <resource id="art34" title="" type="Script (Python)"><![CDATA[## Script (Python) "art34"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Richiedenti", "frm": "frm_art34", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm_ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_art34_intervento", "title": "Oggetto della comunicazione"}, 
+    {"label": "Progettista", "frm": "frm_progettista", "title": "Progettista incaricato"}, 
+    {"label": "Allegati", "frm": "frm_art34_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}  
+]
+
+menus['back'] = [
+    {"label": "Procedimento", "frm": "bo_procedimento", "title": "Dati del procedimento"}, 
+    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"}, 
+    {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}
+]
+
+return menus
+]]></resource>
+      <resource id="arredo-urbano" title="" type="Script (Python)"><![CDATA[## Script (Python) "arredo-urbano"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Richiedenti", "frm": "frm_arredo-urbano", "title": "Dati anagrafici dei richiedenti"}, 
+    {"label": "Ubicazione", "frm": "frm_ubicazione", "title": "Localizzazione Intervento - Mappa"}, 
+    {"label": "Intervento", "frm": "frm_arredo-urbano_intervento", "title": "Oggetto della comunicazione"}, 
+    {"label": "Allegati", "frm": "frm_arredo-urbano_allegati", "title": "Documentazione allegata"}, 
+    {"label": "Completata", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}  
+]
+
+menus['back'] = [
+    {"label": "Procedimento", "frm": "bo_procedimento", "title": "Dati del procedimento"}, 
+    {"label": "Anagrafiche", "frm": "bo_anagrafiche", "title": "Anagrafiche"}, 
+    {"label": "Tecnici / Imprese", "frm": "bo_tecnici", "title": "Tecnici incaricati"}, 
+    {"label": "Ubicazione e vincoli", "frm": "bo_ubicazione", "title": "Localizzazione Intervento e vincoli"}, 
+    {"label": "Intervento", "frm": "bo_intervento", "title": "Qualificazione e tipo di intervento"}, 
+    {"label": "Documentazione allegata", "frm": "bo_allegati", "title": "Documentazione allegata"}
+]
+
+return menus
+]]></resource>
     </resource>
   </design>
 </plominodatabase>

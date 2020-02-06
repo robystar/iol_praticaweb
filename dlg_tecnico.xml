@@ -1015,7 +1015,7 @@ if tipo == 'sca':
         'Direttore dei Lavori|direttore'          
     ]
 else:
-    return ['|','Direttore lavori|direttore','Responsabile alla sicurezza|sicurezza','Collaudatore|collaudatore','Esecutore|esecutore','Geologo|geologo','tecnico C.A.|tecnico_ca','Collaudatore C.A.|collaudatore_ca','Altro|altro']</string></value>
+    return ['|','''Committente dell'accertamento|accertamento''','Appaltatore|appaltatore','Verificatore strutturale|verificatore','Certificatore strutturale|certificatore','Direttore lavori|direttore','Responsabile alla sicurezza|sicurezza','Collaudatore|collaudatore','Esecutore|esecutore','Geologo|geologo','tecnico C.A.|tecnico_ca','Collaudatore C.A.|collaudatore_ca','Altro|altro']</string></value>
 </member>
 </struct></value>
 <value><struct>

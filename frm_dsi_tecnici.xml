@@ -15,9 +15,11 @@ elif 'btn_save' in context.REQUEST.keys():
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoSubformClass">base_sub_toolbar</span></p>
+<p><span class="plominoHidewhenClass">start:hw_tardiva</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Progettista delle opere architettoniche</legend> <span class="plominoSubformClass">base_sub_progettista</span>
 </fieldset></div>
+<p><span class="plominoHidewhenClass">end:hw_tardiva</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Direttore dei lavori delle opere architettoniche</legend> <span class="plominoSubformClass">sub_direttore</span>
 </fieldset></div>
@@ -67,6 +69,11 @@ resources/iol-custom.css]]></ResourcesCSS>
         <element id="hw_no_tecnici_strutturale" title="hw_no_tecnici_strutturale" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_tecnici_strutturale</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('iol_tipo_app','pdc') not in ['scia','scia2','pdc','dsi']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_tardiva" title="hw_tardiva" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_tardiva</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('tempistica_opt') == '2']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
       </elements>
