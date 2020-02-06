@@ -290,7 +290,7 @@ if not doc.getItem('numero_pratica'):
 
 db=context.getParentDatabase()
 index=db.getIndex()
-query={'numero_pratica':str(doc.getItem('numero_pratica'))}
+query={'numero_pratica':str(doc.getItem('documento_esistente_id'))}
 
 titoli = dict(iniziolavori="Inizio lavori",finelavori="Fine lavori",integrazione="Integrazione",sca="SCA")
 
@@ -472,7 +472,7 @@ else:
 if not doc:
     return list()
     
-hiddenFiles = doc.getItem('IOL_ATTACHMENTS',[]) if hidden else []; 
+attachmentsInfo = doc.getItem('iol_attachments',{})
   
 result = list()
 for row in elenco_campi:
@@ -484,9 +484,15 @@ for row in elenco_campi:
             field=row[1]
             names=[]
             for name in fieldValue.keys():
-                if name not in hiddenFiles:
+                
+                if hidden and name in attachmentsInfo:
+                    if attachmentsInfo[name] not in ['remove','refresh']:
+                        names.append(name)
+                else:
                     names.append(name)
+                 
             if len(names)>0:
+                names.sort()
                 result.append({"label":titolo,"field":field,"files":names})
                 
 return result
@@ -537,41 +543,6 @@ return results
 ##title=
 ##
 return context.aq_parent.config().get('provider','sue')
-]]></resource>
-      <resource id="getElencoModelli" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoModelli"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=grp=''
-##title=
-##
-portal = context.portal_url.getPortalObject()
-modelli = context.aq_parent.config_printservice().get('template_folder')
-app = context.getParentDatabase().getId().replace('iol_','')
-
-
-folder = portal.get(modelli)
-if not folder:
-    return ['MANCA LA CARTELLA DEI MODELLI %s' %modelli]
-
-folder = folder.get(app)
-if not folder:
-    return ['MANCA LA CARTELLA DEI MODELLI %s/%s' %(modelli,app)]
-
-folder = folder.get(grp)
-if not folder:
-    return ['MANCA LA CARTELLA DEI MODELLI %s/%s/%s' %(modelli,app,grp)]
-try:
-    contents =  folder.listFolderContents(contentFilter={"portal_type" : "File"})
-    if len(contents)==0:
-        return ['LA CARTELLA DEI MODELLI %s/%s/%s NON CONTIENE FILE VALIDI' %(modelli,app,grp)]
-except Exception as err:
-    context.plone_utils.addPortalMessage('Elenco modelli non accessibile %s' %err,'error')
-    contents = []
-    
-return ["%s|%s" %(modelFile.title_or_id(),modelFile.id) for modelFile in contents]
 ]]></resource>
       <resource id="getElencoParticelleCU" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoParticelleCU"
 ##bind container=container
@@ -983,25 +954,6 @@ if len(result)>0:
     
 return ret
 ]]></resource>
-      <resource id="getElencoModelliEURL" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoModelliEURL"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=gruppo
-##title=
-##
-portal = context.portal_url.getPortalObject()
-filter={"portal_type" : "File"}
-printForm='00-print'
-modelli = portal.get('modelli').get('sue').get(gruppo)
-if not modelli:
-    return []
-
-contents =  modelli.listFolderContents(contentFilter=filter)
-return ["%s|%s&app=sue&grp=%s&form=%s" %(modelFile.title_or_id(),modelFile.id,gruppo,printForm) for modelFile in contents]
-]]></resource>
       <resource id="getMailJ" title="" type="Script (Python)"><![CDATA[## Script (Python) "getMailJ"
 ##bind container=container
 ##bind context=context
@@ -1120,27 +1072,6 @@ else:
 #se ho configurato la replica su db rilancio un save per sincronizzare i dati in postgresql
 if db.resources.config().get("pgreplica"):
     doc.save(onSaveEvent=False)
-]]></resource>
-      <resource id="AvvioProcedimento" title="" type="Script (Python)"><![CDATA[## Script (Python) "AvvioProcedimento"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None
-##title=
-##
-from Products.CMFPlomino.PlominoUtils import StringToDate, DateToString, Now 
-
-
-if isinstance(doc, basestring):
-    doc = context.getDocument(doc)
-
-
-db=context.getParentDatabase()
-doc.setItem('data_comunicazione_avvio_procedimento',Now())
-doc.setWfActivity(activity="Comunicazione avvio del procedimento")
-context.sendMail(doc=doc,azione='avvio-procedimento')
 ]]></resource>
       <resource id="ImpostaTitolo" title="" type="Script (Python)"><![CDATA[## Script (Python) "ImpostaTitolo"
 ##bind container=container
@@ -1452,39 +1383,6 @@ def trovaCollegate(mydoc):
 
 return trovaCollegate(doc)
 ]]></resource>
-      <resource id="getElencoPraticheCollegate" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoPraticheCollegate"
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=doc=None
-##title=
-##
-#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
-db=context.getParentDatabase()
-idx = db.getIndex()
-if not 'numero_pratica' in idx.indexes():
-    return ''
-
-if isinstance(doc, basestring):
-    doc = context.getDocument(doc)  
-    
-html=''
-#la ricerca deve restituire i documenti dei quelli l'utente corrente  author
-brains = idx.dbsearch(dict(numero_pratica=doc.getItem('numero_pratica')),sortindex="data_protocollo")
-for brain in brains:
-    if brain.id!=doc.getId():
-        dc=brain.getObject()
-        html=html+'<p><h5><a target="_blank" href="%s">%s prot. %s del %s </a></h5></p>'%(dc.absolute_url(),dc.getItem('iol_form_title','Documento'),dc.getItem('numero_protocollo'),dc.getItem('data_protocollo_testo'))  
-
-if not html:
-    html = '<p><h5>Nessuna pratica collegata</h5></p>'
-    
-html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_pratiche_collegate"> Elenco delle pratiche collegate <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),html)    
-    
-return html
-]]></resource>
       <resource id="Assegnazione" title="" type="Script (Python)"><![CDATA[## Script (Python) "Assegnazione"
 ##bind container=container
 ##bind context=context
@@ -1768,12 +1666,16 @@ from Products.CMFPlomino.PlominoUtils import StringToDate, DateToString, Now
 if isinstance(doc, basestring):
     doc = context.getDocument(doc)
 
-db=doc.getParentDatabase()
-doc.setItem('data_titolo',StringToDate(DateToString(Now())))
-doc.setItem('anno_titolo',int(DateToString(Now(),format='%Y')))
-doc.setItem('numero_titolo',doc.getDocNumber('numero_titolo'))
-doc.getParentDatabase().getIndex().indexDocument(doc)
-
+    
+##non lo faccio qui
+'''
+if not doc.getItem('numero_titolo'):  
+    db=doc.getParentDatabase()
+    doc.setItem('data_titolo',StringToDate(DateToString(Now())))
+    doc.setItem('anno_titolo',int(DateToString(Now(),format='%Y')))
+    doc.setItem('numero_titolo',doc.getDocNumber('numero_titolo'))
+    doc.getParentDatabase().getIndex().indexDocument(doc)
+'''
 #crea il pdf del titolo e lo sostiuisce al docx
 #db.resources.customscripts.stampaModulo(doc,app='sp',model='',pdf=1,field='allegato_titolo',fromfield='allegato_titolo',addform='bo_titolo')
 ]]></resource>
@@ -1849,22 +1751,385 @@ def inviaPagamento(doc):
 
 inviaPagamento(doc)
 ]]></resource>
-      <resource id="getElencoModelliBackoffice" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoModelliBackoffice"
+      <resource id="getElencoSoggettiPec" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoSoggettiPec"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=doc=None,azione=''
+##parameters=doc=''
 ##title=
 ##
+db = context.getParentDatabase()
+if isinstance(doc,basestring):
+    doc = db.getDocument(doc)
+
+destinatari = []
+if doc.getItem('progettista_pec'):
+    destinatari.append("progettista")
+if doc.getItem('tecnico_pec'):
+    destinatari.append("tecnico")
+if doc.getItem('delegato_pec'):
+    destinatari.append("delegato")
+if not doc.getItem('consenso_pec') or doc.getItem('iol_tipo_app') == 'aua':
+    if doc.getItem('fisica_pec'):
+        destinatari.append("richiedente")
+
+return destinatari
+]]></resource>
+      <resource id="getSoggettoPec" title="" type="Script (Python)"><![CDATA[## Script (Python) "getSoggettoPec"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc='',key=''
+##title=
+##
+db = context.getParentDatabase()
+if isinstance(doc,basestring):
+    doc = db.getDocument(doc)
+
+if not doc:
+    return dict()
+
+if not "config_protocollo" in db.resources.keys():
+    return False
+
+config = db.resources.config_protocollo()
+if key in config.keys():
+    soggetto = config.get(key)
+    # sostituisco ai nomi dei campi i valori
+    for field in soggetto:
+        soggetto[field] = doc.getItem(soggetto[field])
+
+    return soggetto
+else:
+    return dict()
+]]></resource>
+      <resource id="xxxtest_protocollazione_comunicazione" title="" type="Script (Python)"><![CDATA[## Script (Python) "xxxtest_protocollazione_comunicazione"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=''
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import DateToString, StringToDate, Now, json_loads
+from gisweb.sicrawebprotocollo.plomino_utils import getDocumenti
+db = context.getParentDatabase()
+if isinstance(doc, basestring):
+    doc = db.getDocument(doc)
+
+if not doc:
+    return dict(
+        success=0,
+        message=u'Nessuna Comunicazione da Protocollare'
+    )
+
+#Recupero la configurazione del protocollo
+config = db.resources.config_protocollo()
+#Documenti da Protocollare
+fld_docprincipale = "comunicazione_digitale"
+fld_allegati = ""
+#Soggetti della protocollazione
+#In questo caso la comunicazione va inviata ai soli interessati della pratica
+#La getElencoSoggettiPec restituisce una lista di etichette dei soggetti della pratica a cui inviare la comunicazione (es. richiedente, progettista etc.)
+soggetti = db.resources.customscripts.getElencoSoggettiPec(doc)
+
+#Informazioni dell'Amministrazione
+ente = config["ente"]
+
+elenco_soggetti = list()
+#Inizializzo l'oggetto data necessario alla protocollazione
+data = dict()
+data["soggetti"] = []
+data["allegati"] = []
+#Oggetto della Protocollazione
+data["oggetto"] = "Test Protocollazione Comunicazione in uscita istanza %s" %doc.getId()
+#Amministrazione usata sia in Entrata che in Uscita
+data["ente"] = ente
+#Recupero i soggetti della Protocollazione
+for k in soggetti:
+    s = db.resources.customscripts.getSoggettoPec(doc,k)
+    data["soggetti"].append(s)
+    elenco_soggetti.append("%s %s" %(s["cognome"],s["nome"]))
+
+data['elenco_soggetti'] = ', '.join(elenco_soggetti)
+
+#TEST PER VEDERE SE PROTOCOLLA SENZA CODFIS
+#data["soggetti"] = [
+#    dict(
+#        codfis="",
+#        denominazione="ENTE DI PROVA",
+#        mail="carbone.marco@pec.it",
+#    ),
+#]
+#data["elenco_soggetti"] = "ENTE DI PROVA"
+
+
+#Recupero le informazioni sugli allegati da protocollare
+#la getDocumenti va sostituita magari con la  getAttachmentInfo o cose simili
+data["documento_principale"] = getDocumenti(doc,fld_docprincipale)[0]
+if fld_allegati:
+    allegati = getDocumenti(doc,fld_allegati)
+    for a in allegati:
+        data["allegati"].append(a)
+
+#Se la pratica e' collegata ad un'altra inserisco i riferimenti del protocollo genitore
+#Utile per raggruppare i protocolli sul sistema del protocollo
+if doc.getItem('titolo_esistente_protocollo'):
+    data["protocollo_origine"] = doc.getItem('titolo_esistente_protocollo','')
+    data["anno_protocollo_origine"] = doc.getItem('titolo_esistente_anno','')
+
+#Protocollazione
+
+flusso = 'U'
+#Recupero la Browser View
+view = doc.restrictedTraverse('protocollazione')
+#Se inserisco il terzo parametro 'testxml' non protocolla 
+#testxml = 1 restituisce XML
+#testxml = 2 protocolla con un random
+res = view.protocolla_comunicazione(flusso,data)
+#Recupero il risultato
+res = json_loads(res)
+#Se successo inserisco informazioni su Protocollo
+if res["success"]==1:    
+    protocollo = res["NumeroProtocollo"]
+    anno = DateToString(Now(),'%Y')
+    doc.setItem('numero_protocollo_uscita',protocollo)
+    doc.setItem('data_protocollo_uscita',Now())
+    doc.setItem('anno_protocollo_uscita',anno)
+]]></resource>
+      <resource id="old_AvvioProcedimento" title="" type="Script (Python)"><![CDATA[## Script (Python) "old_AvvioProcedimento"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import StringToDate, DateToString, Now 
+
+
 if isinstance(doc, basestring):
     doc = context.getDocument(doc)
 
-if azione:
-    return doc.getPrintFolderContents(grp='back-office',filter=dict(Subject=azione))
-else:    
-    return doc.getPrintFolderContents(grp='back-office')
+
+db=context.getParentDatabase()
+doc.setItem('data_comunicazione_avvio_procedimento',Now())
+doc.setWfActivity(activity="Comunicazione avvio del procedimento")
+context.sendMail(doc=doc,azione='avvio-procedimento')
+]]></resource>
+      <resource id="AvvioProcedimento" title="" type="Script (Python)"><![CDATA[## Script (Python) "AvvioProcedimento"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import StringToDate, DateToString, Now, json_loads 
+
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)
+
+
+db=context.getParentDatabase()
+
+#Protocollazione In Uscita
+
+#Recupero la Browser View
+view = doc.restrictedTraverse('protocollazione')
+
+#Recupero la configurazione del protocollo
+config = db.resources.config_protocollo()
+#Documenti da Protocollare
+fld_docprincipale = "allegato_comunicazione_avvio_procedimento"
+fld_allegati = ""
+#Soggetti della protocollazione
+#In questo caso la comunicazione va inviata ai soli interessati della pratica
+#La getElencoSoggettiPec restituisce una lista di etichette dei soggetti della pratica a cui inviare la comunicazione (es. richiedente, progettista etc.)
+soggetti = db.resources.customscripts.getElencoSoggettiPec(doc)
+
+#Informazioni dell'Amministrazione
+ente = config["ente"]
+
+elenco_soggetti = list()
+#Inizializzo l'oggetto data necessario alla protocollazione
+data = dict()
+data["soggetti"] = []
+data["allegati"] = []
+#Oggetto della Protocollazione
+data["oggetto"] = "Comunicazione Avvio del Procedimento della pratica %s" %doc.getItem('numero_pratica','')
+#Amministrazione usata sia in Entrata che in Uscita
+data["ente"] = ente
+#Recupero i soggetti della Protocollazione
+for k in soggetti:
+    s = db.resources.customscripts.getSoggettoPec(doc,k)
+    data["soggetti"].append(s)
+    elenco_soggetti.append("%s %s" %(s["cognome"],s["nome"]))
+
+data['elenco_soggetti'] = ', '.join(elenco_soggetti)
+
+#Recupero le informazioni sugli allegati da protocollare
+#la getDocumenti va sostituita magari con la  getAttachmentInfo o cose simili
+data["documento_principale"] = view.getDocumenti(fld_docprincipale)[0]
+if fld_allegati:
+    allegati = view.getDocumenti(fld_allegati)
+    for a in allegati:
+        data["allegati"].append(a)
+
+#Se la pratica e' collegata ad un'altra inserisco i riferimenti del protocollo genitore
+#Utile per raggruppare i protocolli sul sistema del protocollo
+#if doc.getItem('titolo_esistente_protocollo'):
+#    data["protocollo_origine"] = doc.getItem('numero_protocollo','')
+#    data["anno_protocollo_origine"] = doc.getItem('anno_protocollo','')
+
+#Protocollazione
+
+flusso = 'U'
+#Se inserisco il terzo parametro 'testxml' non protocolla 
+#testxml = 1 restituisce XML
+#testxml = 2 protocolla con un random
+res = view.protocolla_comunicazione(flusso,data)
+#Recupero il risultato
+res = json_loads(res)
+#Se successo inserisco informazioni su Protocollo
+if res["success"]==1:    
+    protocollo = res["NumeroProtocollo"]
+    anno = DateToString(Now(),'%Y')
+    doc.setItem('protocollo_avvio_procedimento',protocollo)
+    doc.setItem('data_avvio_procedimento',Now())
+    #doc.setItem('anno_protocollo_uscita',anno)
+    doc.setItem('data_comunicazione_avvio_procedimento',Now())
+    doc.setWfActivity(activity="Comunicazione avvio del procedimento")
+    #Da sostituire con Pec da SicraWeb
+    context.sendMail(doc=doc,azione='avvio-procedimento')
+]]></resource>
+      <resource id="getElencoPraticheCollegate_numeropratica" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoPraticheCollegate_numeropratica"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
+db=context.getParentDatabase()
+idx = db.getIndex()
+if not 'numero_pratica' in idx.indexes():
+    return ''
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)  
+    
+html=''
+#la ricerca deve restituire i documenti dei quelli l'utente corrente  author
+brains = idx.dbsearch(dict(numero_pratica=doc.getItem('numero_pratica')),sortindex="data_protocollo")
+for brain in brains:
+    if brain.id!=doc.getId():
+        dc=brain.getObject()
+        html=html+'<p><h5><a target="_blank" href="%s">%s prot. %s del %s </a></h5></p>'%(dc.absolute_url(),dc.getItem('iol_form_title','Documento'),dc.getItem('numero_protocollo'),dc.getItem('data_protocollo_testo'))  
+
+if not html:
+    html = '<p><h5>Nessuna pratica collegata</h5></p>'
+    
+html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_pratiche_collegate"> Elenco delle pratiche collegate <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),html)    
+    
+return html
+]]></resource>
+      <resource id="getElencoPraticheCollegate" title="" type="Script (Python)"><![CDATA[## Script (Python) "getElencoPraticheCollegate"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
+db=context.getParentDatabase()
+idx = db.getIndex()
+if not 'documento_esistente_id' in idx.indexes():
+    return ''
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)  
+    
+html=''
+#la ricerca deve restituire i documenti dei quelli l'utente corrente  author
+brains = idx.dbsearch(dict(documento_esistente_id=doc.getId()),sortindex="data_protocollo")
+for brain in brains:
+    if brain.id!=doc.getId() and brain.iol_tipo_app not in ['integrazione','iniziolavori','finelavori','voltura']:
+        dc=brain.getObject()
+        html=html+'<p><h5><a target="_blank" href="%s">%s prot. %s del %s </a></h5></p>'%(dc.absolute_url(),dc.getItem('iol_form_title','Documento'),dc.getItem('numero_protocollo'),dc.getItem('data_protocollo_testo'))  
+
+if not html:
+    html = '<p><h5>Nessuna pratica collegata</h5></p>'
+    
+html='<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=bo_pratiche_collegate"> Elenco delle pratiche collegate <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),html)    
+    
+return html
+]]></resource>
+      <resource id="setIstanzaAllegati" title="" type="Script (Python)"><![CDATA[## Script (Python) "setIstanzaAllegati"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=doc=None
+##title=
+##
+db=context.getParentDatabase()
+idx = db.getIndex()
+if not 'documento_esistente_id' in idx.indexes():
+    return ''
+
+if isinstance(doc, basestring):
+    doc = context.getDocument(doc)  
+
+attachments_firma={}
+     
+##carico l'elenco delle integrazioni
+brains = idx.dbsearch(dict(documento_esistente_id=doc.getId(),iol_tipo_app=['integrazione','iniziolavori','finelavori','voltura']))
+
+#aggiorno i campi attachments sui documenti figli e aggiorno i campi con le info sugli allegati da firmare nel documento padre
+for brain in brains:
+    child=brain.getObject()
+    if child.getItem('iol_attachments_edit'):
+        child.setItem('iol_attachments',child.getItem('iol_attachments_edit'))
+        child.removeItem('iol_attachments_edit')
+   
+    #aggiorno l'elenco da firmare    
+    attachments = child.getItem('iol_attachments',{})
+    for f in attachments:
+        if attachments[f]=='pencil':
+            if not child.getId() in attachments_firma:
+                attachments_firma[child.getId()]=[]
+            attachments_firma[child.getId()].append(f)  
+             
+
+#aggiorno gli attachments sul documento padre (lo faccio ad ogni salvataggio non si sa mai)
+if doc.getItem('iol_attachments_edit'):
+    doc.setItem('iol_attachments',doc.getItem('iol_attachments_edit'))
+    doc.removeItem('iol_attachments_edit')
+  
+#aggiorno il campo con l'elenco degli attachment validi sul documento padre (lo faccio ad ogni salvataggio non si sa mai)
+attachments = doc.getItem('iol_attachments',{})
+for f in attachments:
+    if attachments[f]=='pencil':
+        if not doc.getId() in attachments_firma:
+            attachments_firma[doc.getId()]=[]
+        attachments_firma[doc.getId()].append(f)                 
+                
+                
+doc.setItem('iol_attachments_firma',attachments_firma)
 ]]></resource>
     </resource>
   </design>
