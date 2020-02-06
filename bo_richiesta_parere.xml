@@ -414,6 +414,12 @@ else:
     return []</string></value>
 </member>
 </struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
+</member>
+</struct></value>
 </data></array></value>
 </param>
 </params>

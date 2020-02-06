@@ -389,7 +389,7 @@ else:
         </element>
         <element id="hw_no_titolo" title="hw_no_titolo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_titolo</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('iol_titolo')]]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('iol_titolo',0)]]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
         </element>
         <element id="allegato_relazione_istruttoria" title="Relazione istruttoria" type="PlominoField">
