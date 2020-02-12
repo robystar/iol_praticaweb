@@ -100,10 +100,10 @@ return html]]></Formula>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
 db=context.getParentDatabase()
 idx = db.getIndex()
-if not 'documento_esistente_id' in idx.indexes():
+if not 'numero_pratica' in idx.indexes():
     return []
 
-brains = idx.dbsearch(dict(documento_esistente_id=context.getId(),iol_tipo_app=['integrazione','iniziolavori','finelavori','voltura']),sortindex="data_protocollo")
+brains = idx.dbsearch(dict(numero_pratica=context.getItem('numero_pratica'),iol_tipo_app=['integrazione','iniziolavori','finelavori','voltura']),sortindex="data_protocollo")
 
 html=''
 content=''

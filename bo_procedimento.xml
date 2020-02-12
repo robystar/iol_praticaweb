@@ -19,7 +19,8 @@
 <!-- READERS  --><p><span class="plominoFieldClass">utenti_readers</span></p>
 <!-- RESPONSABILE DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">assegnazione_responsabile</span></p>
 <!-- AVVIO DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">avvio_procedimento</span></p>
-<!-- ASSEGNAZIONE E AVVIO DEL PROCEDIMENTO  --><p><span class="plominoFieldClass">assegnazione_avvio_procedimento</span></p>
+<!-- ASSEGNAZIONE E AVVIO DEL PROCEDIMENTO  --><p> </p>
+<!--<p><span class="plominoFieldClass">assegnazione_avvio_procedimento</span></p>--><p> </p>
 <!-- ELENCO INTEGRAZIONI --><p><span class="plominoFieldClass">elenco_integrazioni</span></p>
 <!-- ELENCO PARERI --><p><span class="plominoFieldClass">elenco_pareri</span></p>
 <!-- ELENCO COMMISSIONI --><p><span class="plominoFieldClass">elenco_commissioni</span></p>
@@ -132,8 +133,8 @@ return html]]></Formula>
           <id type="Products.Archetypes.Field.StringField">assegnazione_responsabile</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#if not context.getItem('data_assegnazione'):
-return ''
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('data_assegnazione'):
+    return ''
 
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_assegnazione')
@@ -156,8 +157,8 @@ return html]]></Formula>
           <id type="Products.Archetypes.Field.StringField">avvio_procedimento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#if not context.getItem('data_avvio_procedimento'):
-return ''
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('oggetto_avvio_procedimento'):
+    return ''
 
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_avvio_procedimento')
@@ -180,8 +181,8 @@ return html]]></Formula>
           <id type="Products.Archetypes.Field.StringField">assegnazione_avvio_procedimento</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#if not context.getItem('data_avvio_procedimento'):
-#    return ''
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('data_assegnazione'):
+    return ''
 
 db=context.getParentDatabase()
 renderForm=db.getForm('bo_assegnazione_avvio_procedimento')
@@ -263,7 +264,7 @@ for brain in brains:
         content=content + asUnicode(renderForm.displayDocument(doc))  
 
     if content:
-        html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=%s"> Richiesta di parere / verifica a %s <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),editForm,ente,content)
+        html=html+'<fieldset class="scheduler-border"><legend class="scheduler-border"><a href="%s/EditDocument?openwithform=%s"> Richiesta di parere / verifica <i class="icon-edit"></i></a></legend>%s</fieldset>'%(doc.absolute_url(),editForm,content)
 
     
 return html]]></Formula>

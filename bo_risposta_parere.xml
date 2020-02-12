@@ -304,8 +304,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('parere_tipo')!='2']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
-        <element id="parere_ente_nome" title="Parere richiesto a" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">parere_ente_nome</id>
+        <element id="parere_ente_nome_XXX" title="Parere richiesto a" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">parere_ente_nome_XXX</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('parere_ente_opt')]]></Formula>
@@ -401,6 +401,54 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="parere_ente_nome" title="Parere / accertamento richiesto a Ente / Ufficio" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">parere_ente_nome</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('parere_ente_opt')]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>from iol.document.plomino_utils import elencoUtentiGruppi
+settings = context.getParentDatabase().resources.customscripts.getDocSettings()
+grp = settings.getItem('grp_pareri')
+if grp:
+    return elencoUtentiGruppi(context,groups=[grp])
+else:
+    return []</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
         </element>
       </elements>
     </element>

@@ -35,7 +35,9 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <div class="v-content well">
 <p><span class="plominoLabelClass">istruttoria_prescrizioni</span><span class="plominoFieldClass">istruttoria_prescrizioni</span></p>
 <p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
-<span class="plominoHidewhenClass">start:hw_no_titolo</span><div class="row-fluid">
+<p><span class="plominoLabelClass">conferenza_servizi_opt</span><span class="plominoFieldClass">conferenza_servizi_opt</span></p>
+<span class="plominoHidewhenClass">start:hw_no_conferenza_servizi</span><p><span class="plominoLabelClass">conferenza_servizi_annotazioni</span><span class="plominoFieldClass">conferenza_servizi_annotazioni</span></p>
+<span class="plominoHidewhenClass">end:hw_no_conferenza_servizi</span> <span class="plominoHidewhenClass">start:hw_no_titolo</span><div class="row-fluid">
 <div class="span4">
 <span class="plominoLabelClass">numero_titolo</span><span class="plominoFieldClass">numero_titolo</span>
 </div>
@@ -187,11 +189,10 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
           <id type="Products.Archetypes.Field.StringField">numero_titolo</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.getItem('numero_titolo'):
-    return 'XXXX-YYYY']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
@@ -253,13 +254,13 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="motivazione_morosi" title="Morosità dovuta a" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">motivazione_morosi</id>
+        <element id="conferenza_servizi_annotazioni" title="Note alla conferenza dei servizi" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">conferenza_servizi_annotazioni</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">TEXTFieldEdit</FieldEditTemplate>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
@@ -271,7 +272,7 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 <value><struct>
 <member>
 <name>size</name>
-<value><string>2</string></value>
+<value><string>4</string></value>
 </member>
 </struct></value>
 <value><struct>
@@ -284,9 +285,9 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file"
 </param>
 </params>
         </element>
-        <element id="hw_no_morosi" title="hw_no_morosi" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_morosi</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('morosi_opt')!='si']]></Formula>
+        <element id="hw_no_conferenza_servizi" title="hw_no_conferenza_servizi" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_conferenza_servizi</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('conferenza_servizi_opt')!='si']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_blocco_rinnovi" title="hw_no_blocco_rinnovi" type="PlominoHidewhen">
@@ -543,13 +544,55 @@ data-tooltip = "firmato digitalmente max 15Mb"
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTIconFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField">IOL-ATTACHMENTFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
 data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun file","maxsize":"3"}'
 ''']]></HTMLAttributesFormula>
+        </element>
+        <element id="conferenza_servizi_opt" title="Convocazione conferenza dei servizi" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">conferenza_servizi_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA['no']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldReadCheck</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=bo_istruttoria']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['NO|no','SI|si']</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
         </element>
       </elements>
     </element>
