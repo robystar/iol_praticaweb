@@ -33,6 +33,9 @@
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">PROGETTISTA</legend> <span class="plominoSubformClass">base_sub_progettista</span>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazione</span>
 </fieldset></div>
 <p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>

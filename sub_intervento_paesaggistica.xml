@@ -126,9 +126,7 @@ resources/iol-custom.css]]></ResourcesCSS>
 <value><struct>
 <member>
 <name>selectionlistformula</name>
-<value><string>ll = ['''dell’art. 136, c. 1, lett. …..) del d.lgs. n. 42/2004|1''','''dell’art. 142, c. 1, lett. …..) del d.lgs. n. 42/2004|2''','''dell’art. 134, c. 1, lett. c) del d.lgs. n. 42/2004|3''']
-ll = context.getParentDatabase().resources.config().get('vincoli_paesaggistica',ll)
-return ll</string></value>
+<value><string>return context.getParentDatabase().resources.config().get('vincoli_paesaggistica',[])</string></value>
 </member>
 </struct></value>
 <value><struct>

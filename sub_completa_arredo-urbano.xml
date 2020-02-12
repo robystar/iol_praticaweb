@@ -37,6 +37,7 @@
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazione</span>
 </fieldset></div>
+<p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
 <p><span class="plominoSubformClass">sub_intervento_arredo_urbano</span></p>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
