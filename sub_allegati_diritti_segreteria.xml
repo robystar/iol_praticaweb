@@ -19,7 +19,8 @@
 <p><span class="plominoHidewhenClass">end:hw_no_diritti_segreteria</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_bollo</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">Bolli</legend> <span class="plominoLabelClass">ricevuta_pagamento_bollo</span><span class="plominoFieldClass">ricevuta_pagamento_bollo</span><p><span class="plominoHidewhenClass">start:hw_no_dichiarazione_bollo</span></p>
+<legend class="scheduler-border">Bolli</legend> <span class="plominoLabelClass">ricevuta_pagamento_bollo</span><span class="plominoFieldClass">ricevuta_pagamento_bollo</span>
+<p><span class="plominoHidewhenClass">start:hw_no_dichiarazione_bollo</span></p>
 <p><a href="modelli/praticaweb/autorizzazione/marca-da-bollo" target="_blank" title="Dichiarazione sostitutiva di annullo per n. 2 marche da bollo da 16 euro ciascuna da compilare e allegare"><span class="label"><img src="pdf.png"> Dichiarazione sostitutiva di annullo per n. 2 marche da bollo da 16 euro ciascuna da compilare e allegare </span></a></p>
 <p><span class="plominoHidewhenClass">end:hw_no_dichiarazione_bollo</span></p>
 </fieldset></div>
