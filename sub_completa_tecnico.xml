@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_completa_sostituzione" title="sub_completa_sostituzione" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_completa_sostituzione</id>
+    <element id="sub_completa_tecnico" title="sub_completa_tecnico" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_tecnico</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -22,9 +22,9 @@
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
 </fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<fieldset class="scheduler-border">
+<div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
-</fieldset>
+</fieldset></div>
 <p><span class="plominoSubformClass">base_sub_sportello</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
@@ -35,7 +35,7 @@
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
-<p><span class="plominoSubformClass">sub_sostituzione_tecnici</span></p>
+<p><span class="plominoSubformClass">sub_tecnico_variazioni</span></p>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

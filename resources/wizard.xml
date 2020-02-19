@@ -1229,6 +1229,28 @@ menus['back'] = [
 
 return menus
 ]]></resource>
+      <resource id="tecnico" title="" type="Script (Python)"><![CDATA[## Script (Python) "tecnico"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+menus=dict()
+
+menus['front'] = [
+    {"label": "Dati del richiedente", "frm": "frm_tecnico", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Tecnici variazioni", "frm": "frm_tecnico_variazioni", "title": "Tecnici incaricati"}, 
+    {"label": "Documentazione allegata", "frm": "frm_tecnico_allegati", "title": "Documentazione allegata"},
+    {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
+]
+menus['back'] = [
+    {"label": "Invio documentazione integrativa", "frm": "bo_completa", "title": "Dati anagrafici dei richiedenti"}
+]
+return menus
+]]></resource>
     </resource>
   </design>
 </plominodatabase>

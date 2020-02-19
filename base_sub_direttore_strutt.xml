@@ -144,14 +144,14 @@ resources/iol-custom.css]]></ResourcesCSS>
         <element id="direttore_strutt_search" title="direttore_strutt_search" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">direttore_strutt_search</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return "%s %s" %(context.getItem('direttore_strutt_cognome'),context.getItem('direttore_strutt_nome'))]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
 data-plugin='iolAutocompleteSoggetti' 
 data-plugin-options="{soggetto:'direttore_strutt'}"

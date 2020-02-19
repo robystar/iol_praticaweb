@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="dlg_tecnico" title="Anagrafica Tecnico" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">dlg_tecnico</id>
+    <element id="base_sub_tecnico" title="Anagrafica Tecnico" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">base_sub_tecnico</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -979,7 +979,7 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=dlg_tecnico']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=base_sub_tecnico']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -1081,17 +1081,17 @@ else:
         <element id="tecnico_search" title="tecnico_search" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">tecnico_search</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return "%s %s %s" %(context.getItem('tecnico_cognome'),context.getItem('tecnico_nome'),context.getItem('tecnico_ruolo_opt'))]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
 data-plugin='iolAutocompleteSoggetti' 
-data-plugin-options="{soggetto:'tecnico',form:'dlg_tecnico'}"
+data-plugin-options="{soggetto:'tecnico',form:'base_sub_tecnico'}"
 ''' % (context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
         </element>
       </elements>

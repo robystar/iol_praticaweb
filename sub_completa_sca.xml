@@ -38,7 +38,7 @@
 </fieldset></div>
 <p><span class="plominoSubformClass">sub_intervento_sca</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">DIRETTORE DEI LAVORI O PROFESSIONISTA ABILITATO</legend> <span class="plominoSubformClass">dlg_tecnico</span>
+<legend class="scheduler-border">DIRETTORE DEI LAVORI O PROFESSIONISTA ABILITATO</legend> <span class="plominoSubformClass">base_sub_tecnico</span>
 </fieldset></div>
 <p><span class="plominoSubformClass">sub_asseverata_sca</span></p>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>

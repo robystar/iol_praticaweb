@@ -21,9 +21,7 @@
 <p><span class="plominoHidewhenClass">start:hw_lavori_in_economia</span></p>
 <div class="alert alert-info"><h5>I lavori saranno eseguiti dalle imprese (art.21 bis comma 2 L.R. n.16/2008) e/o dai lavoratori autonomi (art.90 comma 9 D.Lgs. n.81/2008 e s.m. e i.) indicati in premessa. Con riferimento ai relativi nominativi si è provveduto altresì a precisare i rispettivi elementi identificativi, che qui si dichiara corrispondenti a quelli riportati sul DURC, in quanto indispensabili per l’acquisizione d’Ufficio, da parte di Codesto Sportello Unico, dei relativi DURC (art.43 comma 1 ultimo periodo del DPR 445/2000 e s.m. e i.). A tale riguardo, considerato il combinato disposto dell’art.90 comma 9 del DLgs. 9 aprile 2008, n.81 e s.m. e i. e dell’art.14 comma 6-bis della L. 4 aprile 2012, n.35,</h5></div>
 <p><span class="plominoSubformClass">base_sub_esecutore</span></p>
-<div>
-<span class="plominoLabelClass">altri_esecutori_grid</span><span class="plominoFieldClass">altri_esecutori_grid</span>
-</div>
+<p><span class="plominoLabelClass">altri_esecutori_grid</span><span class="plominoFieldClass">altri_esecutori_grid</span></p>
 <hr>
 <p><span class="plominoHidewhenClass">end:hw_lavori_in_economia</span></p>
 ]]></FormLayout>

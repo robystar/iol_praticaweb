@@ -1,0 +1,785 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_tecnico_variazioni" title="sub_tecnico_variazioni" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_tecnico_variazioni</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setItem('Form','frm_presentata')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Progettista</legend>
+<p><span class="plominoFieldClass">progettista_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_progettista_esistente</span></p>
+<p><span class="plominoLabelClass">progettista_sostituito</span><span class="plominoFieldClass">progettista_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_progettista_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_progettista_lavori</span></p>
+<span class="plominoSubformClass">base_sub_progettista</span><p><span class="plominoHidewhenClass">end:hw_no_progettista_lavori</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Direttore Lavori</legend>
+<p><span class="plominoFieldClass">direttore_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_direttore_esistente</span></p>
+<p><span class="plominoLabelClass">direttore_sostituito</span><span class="plominoFieldClass">direttore_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_direttore_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_direttore_lavori</span></p>
+<span class="plominoSubformClass">base_sub_direttore</span><p><span class="plominoHidewhenClass">end:hw_no_direttore_lavori</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Progettista Opere Strutturali</legend>
+<p><span class="plominoFieldClass">progettista_strutt_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_progettista_strutt_esistente</span></p>
+<p><span class="plominoLabelClass">progettista_strutt_sostituito</span><span class="plominoFieldClass">progettista_strutt_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_progettista_strutt_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_progettista_strutt_lavori</span></p>
+<span class="plominoSubformClass">base_sub_progettista_strutt</span><p><span class="plominoHidewhenClass">end:hw_no_progettista_strutt_lavori</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Direttore Lavori Opere Strutturali</legend>
+<p><span class="plominoFieldClass">direttore_strutt_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_direttore_strutt_esistente</span></p>
+<p><span class="plominoLabelClass">direttore_strutt_sostituito</span><span class="plominoFieldClass">direttore_strutt_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_direttore_strutt_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_direttore_strutt_lavori</span></p>
+<span class="plominoSubformClass">base_sub_direttore_strutt</span><p><span class="plominoHidewhenClass">end:hw_no_direttore_strutt_lavori</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Collaudatore</legend>
+<p><span class="plominoFieldClass">collaudatore_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_collaudatore_esistente</span></p>
+<p><span class="plominoLabelClass">collaudatore_sostituito</span><span class="plominoFieldClass">collaudatore_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_collaudatore_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_collaudatore_lavori</span></p>
+<span class="plominoSubformClass">base_sub_collaudatore</span><p><span class="plominoHidewhenClass">end:hw_no_collaudatore_lavori</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Esecutore delle Opere</legend>
+<p><span class="plominoFieldClass">esecutore_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_esecutore_esistente</span></p>
+<div class="alert alert-info"><h5>ATTENZIONE: in caso di sostituzione occorre indicare l'elenco completo delle ditte con la situazione aggiornata</h5></div>
+<p><span class="plominoLabelClass">esecutore_sostituito</span><span class="plominoFieldClass">esecutore_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_esecutore_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_esecutore_lavori</span></p>
+<span class="plominoSubformClass">base_sub_esecutore</span><p><span class="plominoLabelClass">altri_esecutori_grid</span><span class="plominoFieldClass">altri_esecutori_grid</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_esecutore_lavori</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Responsabile alla Sicurezza</legend>
+<p><span class="plominoFieldClass">resp_sicurezza_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_resp_sicurezza_esistente</span></p>
+<p><span class="plominoLabelClass">resp_sicurezza_sostituito</span><span class="plominoFieldClass">resp_sicurezza_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_resp_sicurezza_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_resp_sicurezza_lavori</span></p>
+<span class="plominoSubformClass">base_sub_resp_sicurezza</span><p><span class="plominoHidewhenClass">end:hw_no_resp_sicurezza_lavori</span></p>
+</fieldset></div>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">Altro Tecnico</legend>
+<p><span class="plominoFieldClass">tecnico_lavori_opt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_tecnico_esistente</span></p>
+<p><span class="plominoLabelClass">tecnico_sostituito</span><span class="plominoFieldClass">tecnico_sostituito</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_tecnico_esistente</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_tecnico_lavori</span></p>
+<span class="plominoSubformClass">base_sub_tecnico</span><p><span class="plominoHidewhenClass">end:hw_no_tecnico_lavori</span></p>
+</fieldset></div>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[++resource++iol.document/css/bootstrap.min.css
+++resource++iol.document/css/bootstrap-accessibile.min.css
+++resource++iol.document/css/bootstrap-responsive.min.css
+++resource++iol.document/css/iol.css
+resources/iol-custom.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progettista_lavori_opt" title="Comunicazione del progettista" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+ll=['''Progettista non necessario o già comunicato;|1''']
+
+if parentDoc and parentDoc.getItem("progettista_search"):
+    ll.append('''Comunico le generalità del NUOVO Progettista dei lavori architettonici in sostituzione del precedente;|3''')
+    
+else:
+    ll.append('''Comunico le generalità del Progettista dei lavori architettonici;|2''')
+
+return ll</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_progettista_lavori" title="hw_no_progettista_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_progettista_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_progettista_esistente" title="hw_no_progettista_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_progettista_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="progettista_sostituito" title="Nominativo del progettista da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("progettista_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="direttore_lavori_opt" title="Comunicazione del Direttore Lavori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">direttore_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+ll=['''Direttore lavori non necessario o già comunicato;|1''']
+
+if parentDoc and parentDoc.getItem("direttore_search"):
+    ll.append('''Comunico le generalità del NUOVO Direttore lavori in sostituzione del precedente;|3''')
+else:
+    ll.append('''Comunico le generalità del Direttore lavori;|2''')
+
+return ll</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_direttore_lavori" title="hw_no_direttore_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_direttore_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_direttore_esistente" title="hw_no_direttore_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_direttore_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="direttore_sostituito" title="Nominativo del direttore da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">direttore_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("direttore_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="progettista_strutt_lavori_opt" title="Comunicazione del progettista delle opere strutturali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_strutt_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+ll=['''Progettista opere strutturali non necessario o già comunicato;|1''']
+
+if parentDoc and parentDoc.getItem("progettista_strutt_search"):
+    ll.append('''Comunico le generalità del NUOVO Progettista opere strutturali in sostituzione del precedente;|3''')
+else:
+    ll.append('''Comunico le generalità del Progettista opere strutturali;|2''')
+
+return ll
+</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_progettista_strutt_lavori" title="hw_no_progettista_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_progettista_strutt_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_strutt_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_progettista_strutt_esistente" title="hw_no_progettista_strutt_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_progettista_strutt_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_strutt_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="progettista_strutt_sostituito" title="Nominativo del progettista da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_strutt_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("progettista_strutt_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="direttore_strutt_lavori_opt" title="Comunicazione del direttore opere strutturali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">direttore_strutt_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+ll=['''Direttore opere strutturali non necessario o già comunicato;|1''']
+
+if parentDoc and parentDoc.getItem("direttore_strutt_search"):
+    ll.append('''Comunico le generalità del NUOVO Direttore opere strutturali in sostituzione del precedente;|3''')
+else:
+    ll.append('''Comunico le generalità del Direttore opere strutturali;|2''')
+
+return ll
+</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_direttore_strutt_lavori" title="hw_no_direttore_strutt_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_direttore_strutt_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutt_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_direttore_strutt_esistente" title="hw_no_direttore_strutt_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_direttore_strutt_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutt_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="direttore_strutt_sostituito" title="Nominativo del direttore_strutt da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">direttore_strutt_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("direttore_strutt_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="collaudatore_lavori_opt" title="Comunicazione del collaudatore" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">collaudatore_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+ll=['''Collaudatore non necessario o già comunicato;|1''']
+
+if parentDoc and parentDoc.getItem("collaudatore_search"):
+    ll.append('''Comunico le generalità del NUOVO Collaudatore in sostituzione del precedente;|3''')
+else:
+    ll.append('''Comunico le generalità del Collaudatore;|2''')
+
+return ll</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_collaudatore_lavori" title="hw_no_collaudatore_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_collaudatore_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('collaudatore_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_collaudatore_esistente" title="hw_no_collaudatore_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_collaudatore_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('collaudatore_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="collaudatore_sostituito" title="Nominativo del collaudatore da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">collaudatore_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("collaudatore_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="esecutore_lavori_opt" title="Comunicazione esecutore delle opere" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">esecutore_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+ll=['''Esecutore delle opere non necessario o già comunicato;|1''']
+
+if parentDoc and parentDoc.getItem("esecutore_search"):
+    ll.append('''Comunico le generalità del NUOVO/NUOVI Esecutore/i delle opere in sostituzione del precedente/i;|3''')
+else:
+    ll.append('''Comunico i dati dell'Esecutore/i delle opere;|2''')
+
+return ll</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_esecutore_lavori" title="hw_no_esecutore_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_esecutore_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_esecutore_esistente" title="hw_no_esecutore_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_esecutore_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="esecutore_sostituito" title="Nominativo del esecutore da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">esecutore_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("esecutore_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="resp_sicurezza_lavori_opt" title="Comunicazione del Responsabile alla sicurezza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">resp_sicurezza_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+ll=['''Responsabile alla Sicurezza non necessario o già comunicato;|1''']
+
+if parentDoc and parentDoc.getItem("resp_sicurezza_search"):
+    ll.append('''Comunico le generalità del NUOVO Responsabile alla Sicurezza in sostituzione del precedente;|3''')
+else:
+    ll.append('''Comunico le generalità del Responsabile alla Sicurezza;|2''')
+
+return ll
+</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_resp_sicurezza_lavori" title="hw_no_resp_sicurezza_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_resp_sicurezza_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('resp_sicurezza_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_resp_sicurezza_esistente" title="hw_no_resp_sicurezza_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_resp_sicurezza_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('resp_sicurezza_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="resp_sicurezza_sostituito" title="Nominativo del resp_sicurezza da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">resp_sicurezza_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("resp_sicurezza_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="tecnico_lavori_opt" title="Comunicazione di altro tecnico incaricato" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tecnico_lavori_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Altro Tecnico non necessario o già comunicato;|1''',
+'''Comunico le generalità di Altro Tecnico;|2''',
+]</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_tecnico_lavori" title="hw_no_tecnico_lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_tecnico_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('tecnico_lavori_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_tecnico_esistente" title="hw_no_tecnico_esistente" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_tecnico_esistente</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('tecnico_lavori_opt')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="tecnico_sostituito" title="Nominativo del tecnico da sostituire" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tecnico_sostituito</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[db=context.getParentDatabase()
+parentDoc = db.getDocument(context.getItem('titolo_esistente_id'))
+if parentDoc:
+    return parentDoc.getItem("tecnico_search")]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
+        </element>
+        <element id="altri_esecutori_grid" title="Altri Esecutori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">altri_esecutori_grid</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><array><data>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>base_sub_esecutore</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>field_mapping</name>
+<value><string>esecutore_denominazione,esecutore_cognome,esecutore_comune,esecutore_cf,esecutore_app,esecutore_cap,esecutore_cap_residenza,esecutore_cciaa,esecutore_cciaa_numero,esecutore_cellulare,esecutore_civico,esecutore_civico_residenza,esecutore_cod_cat_nato,esecutore_comune_nato,esecutore_comune_residenza,esecutore_data_nato,esecutore_edile_numero,esecutore_edile_prov,esecutore_email,esecutore_fax,esecutore_inail,esecutore_indirizzo,esecutore_indirizzo_residenza,esecutore_inps,esecutore_nome,esecutore_pec,esecutore_piva,esecutore_piva_comunitaria,esecutore_provincia,esecutore_provincia_nato,esecutore_provincia_residenza,esecutore_qualita,esecutore_qualita_altro,esecutore_ruolo,esecutore_search,esecutore_sesso,esecutore_telefono</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Denominazione"},
+    { "sTitle": "Cognome" },
+    { "sTitle": "Nome"},
+    { "sTitle": "C.F."}     
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 1000,
+        "height": 800
+    }
+</string></value>
+</member>
+</struct></value>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>READ_STATIC</string></value>
+</member>
+</struct></value>
+</data></array></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

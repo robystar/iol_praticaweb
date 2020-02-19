@@ -1024,14 +1024,21 @@ data-plugin = "iolCodicefiscale" data-plugin-options='{"service":"get_codice_fis
         <element id="esecutore_search" title="esecutore_search" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">esecutore_search</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[s = "%s %s" %(context.getItem('esecutore_cognome'),context.getItem('esecutore_nome'))
+if context.getItem('altri_esecutori_grid',[])!=[]:
+    v=[s]
+    for row in context.getItem('altri_esecutori_grid',[]):
+        v.append("%s %s" %(row[0],row[1]))
+    s=", ".join(v)
+    
+return s]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldSearch</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">ZCTextIndex</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-base-url = %s
 data-plugin='iolAutocompleteSoggetti' 
 data-plugin-options="{soggetto:'esecutore'}"

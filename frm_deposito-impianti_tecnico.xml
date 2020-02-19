@@ -17,7 +17,7 @@ elif 'btn_save' in context.REQUEST.keys():
 <p><span class="plominoSubformClass">base_sub_toolbar</span></p>
 <p><span class="plominoSubformClass">sub_deposito_impianti</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">PROGETTISTA DELL'IMPIANTO</legend> <span class="plominoSubformClass">dlg_tecnico</span>
+<legend class="scheduler-border">PROGETTISTA DELL'IMPIANTO</legend> <span class="plominoSubformClass">base_sub_tecnico</span>
 </fieldset></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

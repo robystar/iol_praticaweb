@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_completa_deposito-impianti" title="sub_completa_deposito-impianti" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_completa_deposito-impianti</id>
+    <element id="sub_completa_voltura" title="sub_completa_voltura" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_voltura</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -22,19 +22,18 @@
 <p><span class="plominoSubformClass">base_sub_protocollo</span></p>
 </fieldset></div>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
-<p><span class="plominoSubformClass">base_sub_sportello</span></p>
-<p><span class="plominoSubformClass">sub_riferimenti_pratica_opzione</span></p>
 <div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">DATI DEL COMMITTENTE</legend>
+<legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_riferimenti_pratica</span>
+</fieldset></div>
+<p><span class="plominoSubformClass">base_sub_sportello</span></p>
+<div class="v-content well"><fieldset class="scheduler-border">
+<legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
 <p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
 <p><span class="plominoSubformClass">base_sub_giuridica</span></p>
+<p><span class="plominoSubformClass">sub_condominio</span></p>
+<p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
-</fieldset></div>
-<p><span class="plominoSubformClass">sub_ubicazione</span></p>
-<p><span class="plominoSubformClass">sub_deposito_impianti</span></p>
-<div class="v-content well"><fieldset class="scheduler-border">
-<legend class="scheduler-border">PROGETTISTA DELL'IMPIANTO</legend> <span class="plominoSubformClass">base_sub_tecnico</span>
 </fieldset></div>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>

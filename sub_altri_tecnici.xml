@@ -104,7 +104,7 @@ return ll</string></value>
 <value><struct>
 <member>
 <name>associated_form</name>
-<value><string>dlg_tecnico</string></value>
+<value><string>base_sub_tecnico</string></value>
 </member>
 </struct></value>
 <value><struct>
