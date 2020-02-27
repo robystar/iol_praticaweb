@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_tecnico_variazioni" title="sub_tecnico_variazioni" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_tecnico_variazioni</id>
+    <element id="sub_variazioni_dati" title="sub_variazioni_dati" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_variazioni_dati</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -12,7 +12,7 @@
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Progettista</legend>
-<p><span class="plominoFieldClass">progettista_lavori_opt</span></p>
+<p><span class="plominoFieldClass">progettista_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_progettista_esistente</span></p>
 <p><span class="plominoLabelClass">progettista_sostituito</span><span class="plominoFieldClass">progettista_sostituito</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_progettista_esistente</span></p>
@@ -21,7 +21,7 @@
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Direttore Lavori</legend>
-<p><span class="plominoFieldClass">direttore_lavori_opt</span></p>
+<p><span class="plominoFieldClass">direttore_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_direttore_esistente</span></p>
 <p><span class="plominoLabelClass">direttore_sostituito</span><span class="plominoFieldClass">direttore_sostituito</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_direttore_esistente</span></p>
@@ -30,7 +30,7 @@
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Progettista Opere Strutturali</legend>
-<p><span class="plominoFieldClass">progettista_strutt_lavori_opt</span></p>
+<p><span class="plominoFieldClass">progettista_strutt_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_progettista_strutt_esistente</span></p>
 <p><span class="plominoLabelClass">progettista_strutt_sostituito</span><span class="plominoFieldClass">progettista_strutt_sostituito</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_progettista_strutt_esistente</span></p>
@@ -39,7 +39,7 @@
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Direttore Lavori Opere Strutturali</legend>
-<p><span class="plominoFieldClass">direttore_strutt_lavori_opt</span></p>
+<p><span class="plominoFieldClass">direttore_strutt_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_direttore_strutt_esistente</span></p>
 <p><span class="plominoLabelClass">direttore_strutt_sostituito</span><span class="plominoFieldClass">direttore_strutt_sostituito</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_direttore_strutt_esistente</span></p>
@@ -48,7 +48,7 @@
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Collaudatore</legend>
-<p><span class="plominoFieldClass">collaudatore_lavori_opt</span></p>
+<p><span class="plominoFieldClass">collaudatore_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_collaudatore_esistente</span></p>
 <p><span class="plominoLabelClass">collaudatore_sostituito</span><span class="plominoFieldClass">collaudatore_sostituito</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_collaudatore_esistente</span></p>
@@ -57,7 +57,7 @@
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Esecutore delle Opere</legend>
-<p><span class="plominoFieldClass">esecutore_lavori_opt</span></p>
+<p><span class="plominoFieldClass">esecutore_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_esecutore_esistente</span></p>
 <div class="alert alert-info"><h5>ATTENZIONE: in caso di sostituzione occorre indicare l'elenco completo delle ditte con la situazione aggiornata</h5></div>
 <p><span class="plominoLabelClass">esecutore_sostituito</span><span class="plominoFieldClass">esecutore_sostituito</span></p>
@@ -68,7 +68,7 @@
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Responsabile alla Sicurezza</legend>
-<p><span class="plominoFieldClass">resp_sicurezza_lavori_opt</span></p>
+<p><span class="plominoFieldClass">resp_sicurezza_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_resp_sicurezza_esistente</span></p>
 <p><span class="plominoLabelClass">resp_sicurezza_sostituito</span><span class="plominoFieldClass">resp_sicurezza_sostituito</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_resp_sicurezza_esistente</span></p>
@@ -77,7 +77,7 @@
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">Altro Tecnico</legend>
-<p><span class="plominoFieldClass">tecnico_lavori_opt</span></p>
+<p><span class="plominoFieldClass">tecnico_comunicazione_opt</span></p>
 <p><span class="plominoHidewhenClass">start:hw_no_tecnico_esistente</span></p>
 <p><span class="plominoLabelClass">tecnico_sostituito</span><span class="plominoFieldClass">tecnico_sostituito</span></p>
 <p><span class="plominoHidewhenClass">end:hw_no_tecnico_esistente</span></p>
@@ -106,18 +106,18 @@
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="progettista_lavori_opt" title="Comunicazione del progettista" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">progettista_lavori_opt</id>
+        <element id="progettista_comunicazione_opt" title="Comunicazione del progettista" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -160,12 +160,12 @@ return ll</string></value>
         </element>
         <element id="hw_no_progettista_lavori" title="hw_no_progettista_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_progettista_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_progettista_esistente" title="hw_no_progettista_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_progettista_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="progettista_sostituito" title="Nominativo del progettista da sostituire" type="PlominoField">
@@ -184,18 +184,18 @@ if parentDoc:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
         </element>
-        <element id="direttore_lavori_opt" title="Comunicazione del Direttore Lavori" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">direttore_lavori_opt</id>
+        <element id="direttore_comunicazione_opt" title="Comunicazione del Direttore Lavori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">direttore_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -237,12 +237,12 @@ return ll</string></value>
         </element>
         <element id="hw_no_direttore_lavori" title="hw_no_direttore_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_direttore_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_direttore_esistente" title="hw_no_direttore_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_direttore_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="direttore_sostituito" title="Nominativo del direttore da sostituire" type="PlominoField">
@@ -261,18 +261,18 @@ if parentDoc:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
         </element>
-        <element id="progettista_strutt_lavori_opt" title="Comunicazione del progettista delle opere strutturali" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">progettista_strutt_lavori_opt</id>
+        <element id="progettista_strutt_comunicazione_opt" title="Comunicazione del progettista delle opere strutturali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_strutt_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -315,15 +315,15 @@ return ll
         </element>
         <element id="hw_no_progettista_strutt_lavori" title="hw_no_progettista_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_progettista_strutt_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_strutt_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_strutt_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_progettista_strutt_esistente" title="hw_no_progettista_strutt_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_progettista_strutt_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_strutt_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_strutt_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
-        <element id="progettista_strutt_sostituito" title="Nominativo del progettista da sostituire" type="PlominoField">
+        <element id="progettista_strutt_sostituito" title="Nominativo del progettista opere strutturali da sostituire" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">progettista_strutt_sostituito</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -339,18 +339,18 @@ if parentDoc:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
         </element>
-        <element id="direttore_strutt_lavori_opt" title="Comunicazione del direttore opere strutturali" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">direttore_strutt_lavori_opt</id>
+        <element id="direttore_strutt_comunicazione_opt" title="Comunicazione del direttore opere strutturali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">direttore_strutt_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -393,15 +393,15 @@ return ll
         </element>
         <element id="hw_no_direttore_strutt_lavori" title="hw_no_direttore_strutt_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_direttore_strutt_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutt_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutt_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_direttore_strutt_esistente" title="hw_no_direttore_strutt_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_direttore_strutt_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutt_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutt_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
-        <element id="direttore_strutt_sostituito" title="Nominativo del direttore_strutt da sostituire" type="PlominoField">
+        <element id="direttore_strutt_sostituito" title="Nominativo del direttore opere strutturali da sostituire" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">direttore_strutt_sostituito</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -417,18 +417,18 @@ if parentDoc:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
         </element>
-        <element id="collaudatore_lavori_opt" title="Comunicazione del collaudatore" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">collaudatore_lavori_opt</id>
+        <element id="collaudatore_comunicazione_opt" title="Comunicazione del collaudatore" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">collaudatore_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -470,12 +470,12 @@ return ll</string></value>
         </element>
         <element id="hw_no_collaudatore_lavori" title="hw_no_collaudatore_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_collaudatore_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('collaudatore_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('collaudatore_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_collaudatore_esistente" title="hw_no_collaudatore_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_collaudatore_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('collaudatore_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('collaudatore_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="collaudatore_sostituito" title="Nominativo del collaudatore da sostituire" type="PlominoField">
@@ -494,18 +494,18 @@ if parentDoc:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
         </element>
-        <element id="esecutore_lavori_opt" title="Comunicazione esecutore delle opere" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">esecutore_lavori_opt</id>
+        <element id="esecutore_comunicazione_opt" title="Comunicazione esecutore delle opere" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">esecutore_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -547,15 +547,15 @@ return ll</string></value>
         </element>
         <element id="hw_no_esecutore_lavori" title="hw_no_esecutore_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_esecutore_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_esecutore_esistente" title="hw_no_esecutore_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_esecutore_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
-        <element id="esecutore_sostituito" title="Nominativo del esecutore da sostituire" type="PlominoField">
+        <element id="esecutore_sostituito" title="Nominativo dell' esecutore da sostituire" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">esecutore_sostituito</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -571,18 +571,18 @@ if parentDoc:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
         </element>
-        <element id="resp_sicurezza_lavori_opt" title="Comunicazione del Responsabile alla sicurezza" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">resp_sicurezza_lavori_opt</id>
+        <element id="resp_sicurezza_comunicazione_opt" title="Comunicazione del Responsabile alla sicurezza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">resp_sicurezza_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -625,15 +625,15 @@ return ll
         </element>
         <element id="hw_no_resp_sicurezza_lavori" title="hw_no_resp_sicurezza_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_resp_sicurezza_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('resp_sicurezza_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('resp_sicurezza_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_resp_sicurezza_esistente" title="hw_no_resp_sicurezza_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_resp_sicurezza_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('resp_sicurezza_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('resp_sicurezza_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
-        <element id="resp_sicurezza_sostituito" title="Nominativo del resp_sicurezza da sostituire" type="PlominoField">
+        <element id="resp_sicurezza_sostituito" title="Nominativo del responsabile alla sicurezza da sostituire" type="PlominoField">
           <id type="Products.Archetypes.Field.StringField">resp_sicurezza_sostituito</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
@@ -649,18 +649,18 @@ if parentDoc:
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['readonly']]></HTMLAttributesFormula>
         </element>
-        <element id="tecnico_lavori_opt" title="Comunicazione di altro tecnico incaricato" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">tecnico_lavori_opt</id>
+        <element id="tecnico_comunicazione_opt" title="Comunicazione di altro tecnico incaricato" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tecnico_comunicazione_opt</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">IOL-SELECTIONFieldRead</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
           <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_tecnico_variazioni']]></HTMLAttributesFormula>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=sub_variazioni_dati']]></HTMLAttributesFormula>
           <params>
 <param>
 <value><array><data>
@@ -696,12 +696,12 @@ if parentDoc:
         </element>
         <element id="hw_no_tecnico_lavori" title="hw_no_tecnico_lavori" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_tecnico_lavori</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('tecnico_lavori_opt','1')=='1']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('tecnico_comunicazione_opt','1')=='1']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="hw_no_tecnico_esistente" title="hw_no_tecnico_esistente" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_no_tecnico_esistente</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('tecnico_lavori_opt')!='3']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('tecnico_comunicazione_opt')!='3']]></Formula>
           <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
         </element>
         <element id="tecnico_sostituito" title="Nominativo del tecnico da sostituire" type="PlominoField">

@@ -41,13 +41,8 @@ elif 'btn_save' in context.REQUEST.keys():
 resources/iol-custom.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
-        <element id="hw_no_progettista" title="hw_no_progettista" type="PlominoHidewhen">
-          <id type="Products.Archetypes.Field.StringField">hw_no_progettista</id>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('progettista_opt','')!='2']]></Formula>
-          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
-        </element>
-        <element id="progettista_opt" title="Progettista delle opere" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">progettista_opt</id>
+        <element id="progettista_optXXXXXXXXXXXXXXXXx" title="Progettista delle opere" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_optXXXXXXXXXXXXXXXXx</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>

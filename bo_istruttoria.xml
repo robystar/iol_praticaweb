@@ -16,6 +16,7 @@ if 'btn_stampa_titolo' in context.REQUEST.keys():
             pdf=0,
             field='allegato_documento_titolo',
             addform='bo_istruttoria')
+        return "%s/EditDocument?openwithform=bo_istruttoria" %context.absolute_url()
         
 if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
     if context.getItem('allegato_relazione_istruttoria',{})=={}:
@@ -36,8 +37,10 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <p><span class="plominoLabelClass">istruttoria_prescrizioni</span><span class="plominoFieldClass">istruttoria_prescrizioni</span></p>
 <p><span class="plominoLabelClass">istruttoria_annotazioni</span><span class="plominoFieldClass">istruttoria_annotazioni</span></p>
 <p><span class="plominoLabelClass">conferenza_servizi_opt</span><span class="plominoFieldClass">conferenza_servizi_opt</span></p>
-<span class="plominoHidewhenClass">start:hw_no_conferenza_servizi</span><p><span class="plominoLabelClass">conferenza_servizi_annotazioni</span><span class="plominoFieldClass">conferenza_servizi_annotazioni</span></p>
-<span class="plominoHidewhenClass">end:hw_no_conferenza_servizi</span> <span class="plominoHidewhenClass">start:hw_no_titolo</span><div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_conferenza_servizi</span>
+<p><span class="plominoLabelClass">conferenza_servizi_annotazioni</span><span class="plominoFieldClass">conferenza_servizi_annotazioni</span></p>
+<span class="plominoHidewhenClass">end:hw_no_conferenza_servizi</span> <span class="plominoHidewhenClass">start:hw_no_titolo</span>
+<div class="row-fluid">
 <div class="span4">
 <span class="plominoLabelClass">numero_titolo</span><span class="plominoFieldClass">numero_titolo</span>
 </div>
@@ -45,7 +48,8 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <span class="plominoLabelClass">importo_bolli</span><span class="plominoFieldClass">importo_bolli</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">start:hw_no_edit</span><div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_no_edit</span>
+<div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_titolo</span><span class="plominoFieldClass">modello_stampa_titolo</span>
 </div>
@@ -53,7 +57,8 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <br><span class="plominoActionClass">btn_stampa_titolo</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p> </p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span>
+<p> </p>
 <div class="row-fluid">
 <div class="span6">
 <span class="plominoLabelClass">allegato_documento_titolo</span><span class="plominoFieldClass">allegato_documento_titolo</span>
@@ -62,7 +67,8 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <span class="plominoLabelClass">allegato_allafirma_titolo</span><span class="plominoFieldClass">allegato_allafirma_titolo</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_titolo</span> <span class="plominoHidewhenClass">start:hw_no_edit</span><p> </p>
+<span class="plominoHidewhenClass">end:hw_no_titolo</span> <span class="plominoHidewhenClass">start:hw_no_edit</span>
+<p> </p>
 <div class="row-fluid">
 <div class="span8">
 <span class="plominoLabelClass">modello_stampa_relazione_istruttoria</span><span class="plominoFieldClass">modello_stampa_relazione_istruttoria</span>
@@ -71,7 +77,8 @@ if 'btn_stampa_relazione_istruttoria' in context.REQUEST.keys():
 <br><span class="plominoActionClass">btn_stampa_relazione_istruttoria</span>
 </div>
 </div>
-<span class="plominoHidewhenClass">end:hw_no_edit</span><p> </p>
+<span class="plominoHidewhenClass">end:hw_no_edit</span>
+<p> </p>
 <p><span class="plominoLabelClass">allegato_relazione_istruttoria</span><span class="plominoFieldClass">allegato_relazione_istruttoria</span></p>
 <p> </p>
 <p><span class="plominoLabelClass">allegati_alla_controfirma</span><span class="plominoFieldClass">allegati_alla_controfirma</span></p>

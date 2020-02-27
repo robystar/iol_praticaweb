@@ -1229,7 +1229,7 @@ menus['back'] = [
 
 return menus
 ]]></resource>
-      <resource id="tecnico" title="" type="Script (Python)"><![CDATA[## Script (Python) "tecnico"
+      <resource id="variazioni" title="" type="Script (Python)"><![CDATA[## Script (Python) "variazioni"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
@@ -1241,9 +1241,9 @@ return menus
 menus=dict()
 
 menus['front'] = [
-    {"label": "Dati del richiedente", "frm": "frm_tecnico", "title": "Dati anagrafici dei richiedenti"},
-    {"label": "Tecnici variazioni", "frm": "frm_tecnico_variazioni", "title": "Tecnici incaricati"}, 
-    {"label": "Documentazione allegata", "frm": "frm_tecnico_allegati", "title": "Documentazione allegata"},
+    {"label": "Dati del richiedente", "frm": "frm_variazioni", "title": "Dati anagrafici dei richiedenti"},
+    {"label": "Tecnici variazioni", "frm": "frm_variazioni_dati", "title": "Tecnici incaricati"}, 
+    {"label": "Documentazione allegata", "frm": "frm_variazioni_allegati", "title": "Documentazione allegata"},
     {"label": "Resoconto Finale", "frm": "frm_completata", "title": "Istanza completata - resoconto finale"}
 ]
 menus['back'] = [

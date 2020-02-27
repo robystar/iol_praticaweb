@@ -11,15 +11,7 @@
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <div class="iol-toolbar"></div>
-<p><span class="plominoFieldClass">progettista</span></p>
-<p><span class="plominoFieldClass">direttore</span></p>
-<p><span class="plominoFieldClass">progettista_strutt</span></p>
-<p><span class="plominoFieldClass">direttore_strutt</span></p>
-<p><span class="plominoFieldClass">altri_tecnici</span></p>
-<p><span class="plominoFieldClass">collaudatore</span></p>
-<p><span class="plominoFieldClass">sicurezza</span></p>
-<p><span class="plominoFieldClass">esecutore</span></p>
-<p><span class="plominoFieldClass">child_documents</span></p>
+<p><span class="plominoFieldClass">elenco_tecnici</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
@@ -251,7 +243,7 @@ idx = db.getIndex()
 if not 'titolo_esistente_id' in idx.indexes():
     return []
 #la ricerca deve restituire i documenti dei queli l'utente corrente è author
-brains = idx.dbsearch(dict(titolo_esistente_id=context.getId(),iol_tipo_app=['integrazione','iniziolavori','finelavori']),sortindex="data_protocollo")
+brains = idx.dbsearch(dict(titolo_esistente_id=context.getId(),iol_tipo_app=['integrazione','iniziolavori','finelavori','variazioni']),sortindex="data_protocollo")
 html=''
 for brain in brains:
     content=''
@@ -273,12 +265,26 @@ for brain in brains:
         content=content + renderForm.displayDocument(doc)    
 
     if content:
-        html=html+'<fieldset><legend><a href="%s">%s prot. %s del %s </a></legend>%s</fieldset>'%(doc.absolute_url(),doc.getItem('iol_form_title','Documento'),doc.getItem('numero_protocollo'),doc.getItem('data_protocollo_testo'),content)  
+        html=html+'<div><fieldset><legend><a href="%s">%s prot. %s del %s </a></legend>%s</fieldset></div>'%(doc.absolute_url(),doc.getItem('iol_form_title','Documento'),doc.getItem('numero_protocollo'),doc.getItem('data_protocollo_testo'),content)  
         
 if html:
     html='''<h5>COMUNICAZIONI SUCCESSIVE ALL'INVIO</h5>''' + html
     
 return html]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="elenco_tecnici" title="elenco_tecnici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_tecnici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getParentDatabase().resources.customscripts.getElencoTecnici(context)
+]]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

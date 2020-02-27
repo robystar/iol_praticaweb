@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="frm_tecnico" title="Comunicazione variazioni o sostituzioni tecnici" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">frm_tecnico</id>
+    <element id="frm_variazioni" title="Comunicazione variazioni o sostituzioni tecnici" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_variazioni</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.setDocumentReaders(['sue_readers'])]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -21,7 +21,9 @@ if 'btn_next' in context.REQUEST.keys():
 </fieldset></div>
 <div class="v-content well"><fieldset class="scheduler-border">
 <legend class="scheduler-border">DATI ANAGRAFICI DEL TITOLARE DELLA PRATICA</legend>
-<div class="alert alert-info"><h5>La comunicazione va presenta dal TITOLARE (proprietario o avente titolo in qualsiasi forma) della pratica a cui è collegata, non da altri soggetti (progettista, direttore lavori, esecutore, ecc...).<br> Se materialmente l'invio verrà eseguito da un professionista o altro soggetto, i dati di quest'ultimo andranno riportati nell'apposita sezione "Conferimento di delega".</h5></div>
+<div class="alert alert-info">
+<h5>La comunicazione va presenta dal TITOLARE (proprietario o avente titolo in qualsiasi forma) della pratica a cui è collegata, non da altri soggetti (progettista, direttore lavori, esecutore, ecc...).<br> Se materialmente l'invio verrà eseguito da un professionista o altro soggetto, i dati di quest'ultimo andranno riportati nell'apposita sezione "Conferimento di delega".</h5>
+</div>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
 <p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
 <p><span class="plominoSubformClass">base_sub_giuridica</span></p>
@@ -33,7 +35,7 @@ if 'btn_next' in context.REQUEST.keys():
       <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentTitle(context)]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
-      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentId('tecnico',context)]]></DocumentId>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[context.getParentDatabase().resources.customscripts.getDocumentId('variazioni',context)]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
       <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
       <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
@@ -71,7 +73,7 @@ return 'Comnicazione variazione soggetti pratica %s protocollo n. %s anno %s' %(
           <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'tecnico']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'variazioni']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

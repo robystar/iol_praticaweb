@@ -224,45 +224,6 @@ data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","ma
 data-tooltip = "firmato digitalmente max 15Mb"
 ''']]></HTMLAttributesFormula>
         </element>
-        <element id="allegati_alla_controfirma" title="Documenti da controfirmare" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">allegati_alla_controfirma</id>
-          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#NB il documento viene renderizzato usando la form specificata in settings/labelcolumn
-db=context.getParentDatabase()
-idx = db.getIndex()
-if not 'numero_pratica' in idx.indexes():
-    return []
-
-brains = idx.dbsearch(dict(numero_pratica=context.getItem('numero_pratica'),iol_tipo_app=['integrazione','iniziolavori','finelavori','voltura']))
-
-elenco={}
-
-attachments = context.getItem('iol_attachments',{})
-for f in attachments:
-    if attachments[f]=='pencil':
-        if not context.getId() in elenco:
-            elenco[context.getId()]=[]
-        elenco[context.getId()].append(f)
-
-for brain in brains:
-    doc=brain.getObject()
-    attachments = doc.getItem('iol_attachments',{})
-    for f in attachments:
-        if attachments[f]=='pencil':
-            if not doc.getId() in elenco:
-                elenco[doc.getId()]=[]
-            elenco[doc.getId()].append(f)
-       
-return elenco]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldCell</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
         <element id="hw_titolo" title="hw_titolo" type="PlominoHidewhen">
           <id type="Products.Archetypes.Field.StringField">hw_titolo</id>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[context.getItem('allegato_comunicazione_titolo',{})!={}]]></Formula>
@@ -300,6 +261,19 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 </data></array></value>
 </param>
 </params>
+        </element>
+        <element id="allegati_alla_controfirma" title="Documenti da controfirmare" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_alla_controfirma</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('iol_attachments_firma',{})]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">iol_attachments_firma</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
         </element>
       </elements>
     </element>

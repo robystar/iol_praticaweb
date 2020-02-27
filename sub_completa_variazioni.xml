@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_completa_tecnico" title="sub_completa_tecnico" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_completa_tecnico</id>
+    <element id="sub_completa_variazioni" title="sub_completa_variazioni" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_completa_variazioni</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -35,7 +35,7 @@
 <p><span class="plominoSubformClass">sub_comproprietari</span></p>
 <p><span class="plominoSubformClass">base_sub_delegato</span></p>
 </fieldset></div>
-<p><span class="plominoSubformClass">sub_tecnico_variazioni</span></p>
+<p><span class="plominoSubformClass">sub_variazioni_dati</span></p>
 <div class="v-content well"><span class="plominoSubformClass">base_sub_stampa</span></div>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
